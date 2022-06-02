@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.2"
+   viewBox="0 0 143.96918 131.82434"
+   width="143.96918"
+   height="131.82434"
+   id="svg152"
+   sodipodi:docname="chevron-nws.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   inkscape:export-filename="chevron-nws.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs156" />
+  <sodipodi:namedview
+     id="namedview154"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.2302405"
+     inkscape:cx="102.67951"
+     inkscape:cy="88.779663"
+     inkscape:window-width="1600"
+     inkscape:window-height="829"
+     inkscape:window-x="1592"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg152" />
+  <title
+     id="title2">hero-carousel-3-svg</title>
+  <style
+     id="style4">
+		.s0 { fill: #e6e6e6 } 
+		.s1 { fill: #3f3d56 } 
+		.s2 { fill: #cccccc } 
+		.s3 { fill: #0ea2bd } 
+		.s4 { fill: #f2f2f2 } 
+		.s5 { fill: #ff6584 } 
+		.s6 { fill: #a0616a } 
+		.s7 { fill: #2f2e41 } 
+		.s8 { opacity: .2;fill: #000000 } 
+	</style>
+  <path
+     id="path1117"
+     style="fill:#ffffff;fill-opacity:1;stroke-width:2.67678;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     d="M 73.322266 2.21875 A 64.127312 64.127312 0 0 0 9.1953125 66.347656 A 64.127312 64.127312 0 0 0 73.322266 130.47461 A 64.127312 64.127312 0 0 0 137.44922 66.347656 A 64.127312 64.127312 0 0 0 73.322266 2.21875 z M 67.638672 24.353516 L 73.238281 24.353516 L 80.015625 24.353516 L 80.015625 64.162109 L 80.007812 84.523438 L 88.361328 77.078125 L 107.87305 56.392578 L 107.84375 74.488281 L 107.7168 74.685547 L 90.330078 93.212891 L 73.238281 111.13867 L 56.064453 93.128906 L 38.892578 75.119141 L 38.771484 56.927734 L 46.107422 63.734375 L 56.666016 74.201172 L 67.638672 84.523438 L 67.638672 64.0625 L 67.638672 24.353516 z " />
+</svg>

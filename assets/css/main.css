@@ -96,7 +96,7 @@ section {
   padding-bottom: 30px;
 }
 .section-header h2 {
-  font-size: 43px;
+  font-size: 40px;
   font-weight: 300;
   margin-bottom: 20px;
   color: #fff;
@@ -104,7 +104,7 @@ section {
 }
 .section-header p {
   margin: 0 auto;
-  color: var(--color-secondary-light);
+  color: #fff;
 }
 
 @media (min-width: 1280px) {
@@ -1217,7 +1217,7 @@ p.timeline-year {
 
 p.summary {
   color: #fff;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 
 .timelines .nav-link.active {

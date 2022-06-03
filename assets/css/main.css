@@ -1635,6 +1635,21 @@ p.summary {
 .portfolio .portfolio-flters li:last-child {
   margin-right: 0;
 }
+.img-fluid-portfolio {
+  max-width: 100%;
+  height: auto;
+}
+.glightbox-clean .gslide-description {
+  background: #313131;
+}
+.glightbox-clean .gslide-title {
+  font-size: 1em;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 19px;
+  line-height: 1.4em;
+}
+
 @media (max-width: 575px) {
   .portfolio .portfolio-flters li {
     font-size: 14px;
@@ -1643,9 +1658,9 @@ p.summary {
 }
 .portfolio .portfolio-item {
   position: relative;
-  border: 1px solid #fff;
   overflow: hidden;
   z-index: 1;
+  padding: 9px;
 }
 .portfolio .portfolio-item img {
   transition: all 0.3s;
@@ -1654,7 +1669,7 @@ p.summary {
   content: "";
   inset: 0;
   position: absolute;
-  background: rgba(var(--color-secondary-rgb), 0.8);
+  background: #662f2fcc;
   z-index: 2;
   transition: 0.5s;
   visibility: hidden;

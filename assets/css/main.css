@@ -97,7 +97,7 @@ section {
 }
 .section-header h2 {
   font-size: 40px;
-  font-weight: 300;
+  font-weight: bold;
   margin-bottom: 20px;
   color: #fff;
   cursor: default;

@@ -1222,6 +1222,13 @@ p.summary {
   margin-bottom: 19px;
   line-height: 1.4em;
 }
+.fa-solid {
+  color: #fff;
+}
+
+.fa-solid:hover {
+  color: #be7878;
+}
 
 @media (max-width: 575px) {
   .portfolio .portfolio-flters li {

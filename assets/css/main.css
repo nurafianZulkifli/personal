@@ -1194,7 +1194,7 @@ p.summary {
 .portfolio .portfolio-flters li {
   cursor: pointer;
   display: inline-block;
-  padding: 0;
+  padding: 12px;
   font-size: 18px;
   font-weight: 300;
   margin: 0 10px;
@@ -1203,9 +1203,12 @@ p.summary {
   transition: all 0.3s ease-in-out;
   color: #fff;
   font-family: var(--font-primary);
+  border: 1px solid #934444;
+  border-radius: 20px;
 }
 .portfolio .portfolio-flters li:hover, .portfolio .portfolio-flters li.filter-active {
-  color: #f45b5b;
+  color: #fff;
+  background-color: #f45b5b;
 }
 .portfolio .portfolio-flters li:first-child {
   margin-left: 0;
@@ -1238,7 +1241,7 @@ p.summary {
 @media (max-width: 575px) {
   .portfolio .portfolio-flters li {
     font-size: 14px;
-    margin: 0 5px;
+    margin: 8px 5px;
   }
 }
 .portfolio .portfolio-item {
@@ -1273,6 +1276,11 @@ p.summary {
   font-weight: 600;
   color: #fff;
   padding-right: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  width: 90%;
+  cursor: default;
 }
 .portfolio .portfolio-item .portfolio-info .preview-link, .portfolio .portfolio-item .portfolio-info .details-link {
   position: absolute;

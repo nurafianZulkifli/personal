@@ -1203,12 +1203,16 @@ p.summary {
   transition: all 0.3s ease-in-out;
   color: #fff;
   font-family: var(--font-primary);
-  border: 1px solid #934444;
+  border: 2px solid #934444;
   border-radius: 20px;
 }
-.portfolio .portfolio-flters li:hover, .portfolio .portfolio-flters li.filter-active {
+.portfolio .portfolio-flters li:hover {
+  background-color: #a35d5d;
+} 
+
+.portfolio .portfolio-flters li.filter-active {
   color: #fff;
-  background-color: #f45b5b;
+  background-color: #934444;
 }
 .portfolio .portfolio-flters li:first-child {
   margin-left: 0;

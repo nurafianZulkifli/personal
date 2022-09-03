@@ -1104,6 +1104,12 @@ p.summary {
 }
 .timelines .tab-pane p:last-child {
   margin-bottom: 0;
+  margin: 3%;
+}
+
+.timelines .summary-tit {
+  margin-bottom: 0;
+  margin: 3%;
 }
 
 @keyframes fadeIn {

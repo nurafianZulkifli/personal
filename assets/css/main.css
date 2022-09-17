@@ -172,7 +172,7 @@ section {
   z-index: 997;
 }
 .header.sticked {
-  background: #202020e1;
+  background: #121212e1;
   box-shadow: 0px 2px 20px rgba(var(--color-secondary-rgb), 0.1);
 }
 .header .logo img {

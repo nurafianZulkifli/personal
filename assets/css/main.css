@@ -486,10 +486,12 @@ section {
 .hero-animated .hero-hello {
   font-size: 5.5em;
   color: #fff;
+  cursor: default;
 }
 
 .hero-animated .hero-intro {
   color: #fff;
+  cursor: default;
 }
 
 .hero-animated .hero-span {
@@ -1063,6 +1065,7 @@ p.timeline-year {
 p.summary {
   color: #fff;
   font-size: 1.2em;
+  cursor: default;
 }
 
 .timelines .nav-link.active {

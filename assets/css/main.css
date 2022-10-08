@@ -976,9 +976,7 @@ section {
   color: #fff;
   cursor: default;
 }
-.about-skill:after {
-  content: " |";
-}
+
 .pull-right {
   color: #fff;
   font-size: 1.2em;

@@ -55,6 +55,13 @@ section {
     cursor: default;
     color: #fff;
   }
+
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding-left: 0px !important;
+  }
 }
 
 

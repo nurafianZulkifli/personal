@@ -322,7 +322,6 @@ section {
   .navbar a:focus i {
     font-size: 20px;
     line-height: 0;
-    margin-left: 5px;
   }
 
   .navbar a:hover,

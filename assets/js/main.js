@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: false,
     autoplay: {
       delay: 5000,
-      disableOnInteraction: false
+      disableOnInteraction: true
     },
     slidesPerView: 'auto',
     pagination: {

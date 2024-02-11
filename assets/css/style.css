@@ -196,11 +196,6 @@ h6 {
   color: #fff;
 }
 
-/* Individual Icons */
-i.fa-solid.fa-user {
-  padding: 2px;
-}
-
 @media (min-width: 992px) {
 
   .nav-menu a,

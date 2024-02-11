@@ -366,7 +366,7 @@ h6 {
   color: #45505b;
   margin: 15px 0 0 0;
   font-size: 26px;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Inter', sans-serif;
   cursor: default;
 }
 
@@ -547,7 +547,7 @@ section {
   text-transform: uppercase;
   display: block;
   font-weight: 600;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #fff;
   cursor: default;
 }
@@ -601,7 +601,7 @@ section {
   font-size: 18px;
   font-weight: bolder;
   text-transform: uppercase;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #37619e;
   margin-bottom: 10px;
   cursor: default;
@@ -884,7 +884,7 @@ section {
 .glightbox-clean .gslide-title {
   font-size: 1em;
   font-weight: 400;
-  font-family: "DM Sans";
+  font-family: 'Inter', sans-serif;
   color: #fff;
   margin-bottom: 19px;
   line-height: 1.4em;

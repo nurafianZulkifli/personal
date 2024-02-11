@@ -14,9 +14,10 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -33,97 +34,151 @@
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+  <!-- ===================================================================== Mobile nav toggle button ===================================================================== -->
   <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
-  <!-- ======= Header ======= -->
+
+  <!-- ===================================================================== Header ===================================================================== -->
   <header id="header" class="d-flex flex-column justify-content-center">
 
     <nav id="navbar" class="navbar nav-menu">
       <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Works By
+        <li><a href="#hero" class="nav-link scrollto active"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+        <li><a href="#about-me" class="nav-link scrollto"><i class="fa-solid fa-user"></i><span>About Me</span></a></li>
+        <li><a href="#resume" class="nav-link scrollto"><i class="fa-solid fa-timeline"></i><span>Timelines</span></a></li>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="fa-solid fa-list"></i><span>Works By
               NRFZ</span></a>
         </li>
-        <li><a href="#connect" class="nav-link scrollto"><i class="bx bxs-group"></i><span>Connect</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
 
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
+  <!-- ===================================================================== Hero Section ===================================================================== -->
   <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <p><span class="typed" data-typed-items="Hello! My name is, Hello! Nama Saya"></span></p>
-      <h1>Nurafian Zulkifli</h1>
-      <div class="social-links">
-        <a href="https://twitter.com/_nrf_z" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/Nrfnzlkf/" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/nrfz._/" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/nurafian-zulkifli/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+    <div id="centered-container" data-aos="fade-up">
+      <div id="profile-picture"></div>
+      <span id="title">Nurafian Zulkifli</span>
+      <span id="position">An Aspiring UI/UX Designer &amp; Web Developer</span>
+      <div id="media">
+        <a href="https://github.com/nurafianZulkifli" target="_blank" class="media_link" title="GitHub">
+          <div class="fa-brands fa-github" style="font-size: 32px"></div>
+        </a>
+
+        <a href="https://twitter.com/_nrf_z" target="_blank" class="media_link" title="X (Twitter)">
+          <div class="fa-brands fa-x-twitter" style="font-size: 32px"></div>
+        </a>
+        <a href="https://www.facebook.com/Nrfnzlkf/" target="_blank" class="media_link" title="Facebook">
+          <div class="fa-brands fa-facebook" style="font-size: 32px"></div>
+        </a>
+        <a href="https://www.instagram.com/nrfz._/" target="_blank" class="media_link" title="Instagram">
+          <div class="fa-brands fa-instagram" style="font-size: 32px"></div>
+        </a>
+        <a href="https://www.linkedin.com/in/nurafian-zulkifli/" target="_blank" class="media_link" title="LinkedIn">
+          <div class="fa-brands fa-linkedin" style="font-size: 32px"></div>
+        </a>
+        <a href="mailto:nurafian.bz33@gmail.com" class="media_link" title="Contact me">
+          <div class="fa-solid fa-envelope-open" style="font-size: 32px"></div>
+        </a>
       </div>
     </div>
+
   </section><!-- End Hero -->
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- ===================================================================== About Me Section ===================================================================== -->
+    <section id="about-me" class="about-me">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>About</h2>
-          <p>My name is Nurafian Zulkifli and I'm a graduand from Singapore Polytechnic.
-            My interest revolves mainly around designs, public transport signages and many other illustrations. </p>
+          <h2><i class="fa-solid fa-user"></i>&nbsp;&nbsp;About Me</h2>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 pt-4-img">
-            <img src="assets/img/about.png" class="img-fluid about-img center-block" alt="">
-          </div>
-          <div class="col-lg-8 pt-4  content">
-            <h3>Aspiring UI/UX Designer &amp; Web Developer.</h3>
-            <p class="fst-italic">
-              Currently serving the nation.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi-arrow-right-circle-fill"></i> <strong>Birthday:</strong> <span>04 Mar 2000</span>
-                  </li>
-                  <li><i class="bi-arrow-right-circle-fill"></i> <strong>Country:</strong> <span>Singapore</span></li>
-                  <li><i class="bi-arrow-right-circle-fill"></i> <strong>Age:</strong> <span>23</span></li>
-                  <li><i class="bi-arrow-right-circle-fill"></i> <strong>Highest Education:</strong>
-                    <span>Diploma</span>
-                  </li>
-                  <li><i class="bi-arrow-right-circle-fill"></i> <strong>Email:</strong>
-                    <span>nurafian.bz33@gmail.com</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-12">
-                <ul>
-                  <li><i class="bi-arrow-right-circle-fill"></i> <strong>Likes & Interests:</strong>
-                    <span>Signage Designs, UX Designs & Research, UI Designing, Gadgets & Techs</span>
-                  </li>
-                </ul>
+        <div class="row g-2" data-aos-delay="200">
+
+          <div class="about-item col-lg-12 col-md-12" data-aos="zoom-in">
+            <div class="service-item">
+              <div class="details">
+                <div class="icon">
+                  <i class="fa-solid fa-person-military-rifle"></i>
+                </div>
+                <h3>Currently Serving The Nation</h3>
+                <p>Supply Assistant (GE) - Singapore Armed Forces</p>
               </div>
             </div>
           </div>
+
+          <div class="about-item col-lg-4 col-md-4" data-aos="zoom-in">
+            <div class="service-item">
+              <div class="details">
+                <div class="icon">
+                  <i class="fa-solid fa-cake-candles"></i>
+                </div>
+                <h3>Birthday</h3>
+                <p>04 March 2000</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="about-item col-lg-4 col-md-4" data-aos="zoom-in">
+            <div class="service-item">
+              <div class="details">
+                <div class="icon">
+                  <i class="fa-solid fa-earth-asia"></i>
+                </div>
+                <h3>Country</h3>
+                <p>Singapore</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="about-item col-lg-4 col-md-4" data-aos="zoom-in">
+            <div class="service-item">
+              <div class="details">
+                <div class="icon">
+                  <i class="fa-solid fa-circle-user"></i>
+                </div>
+                <h3>Age</h3>
+                <p>23 years old</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="about-item col-lg-4 col-md-4" data-aos="zoom-in">
+            <div class="service-item">
+              <div class="details">
+                <div class="icon">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <h3>Highest Education</h3>
+                <p>Poly Diploma (Diploma in IT)</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="about-item col-lg-8 col-md-8" data-aos="zoom-in">
+            <div class="service-item">
+              <div class="details">
+                <div class="icon">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3>Likes & Interests</h3>
+                <p>Signage Designs, UX Designs & Research, UI Designing, Gadgets & Techs</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
         </div>
-
       </div>
-    </section><!-- End About Section -->
+    </section>
 
-
-    <!-- ======= Skills Section ======= -->
+    <!-- ===================================================================== Skills Section ===================================================================== -->
     <section id="skills" class="skills section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Skills</h2>
+          <h2><i class="fa-solid fa-chart-bar"></i>&nbsp;&nbsp;Skills</h2>
           <p>Throughout my years, I have learnt several different types of Programming Languages, Softwares and
             Programs.</p>
         </div>
@@ -227,12 +282,12 @@
       </div>
     </section><!-- End Skills Section -->
 
-    <!-- ======= Resume Section ======= -->
+    <!-- ===================================================================== Resume Section ===================================================================== -->
     <section id="resume" class="resume">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Resume</h2>
+          <h2><i class="fa-solid fa-timeline"></i>&nbsp;&nbsp;Timelines</h2>
           <p>Took a longer path to get to where I am today. Here's a look at my education, experiences and achievement
             timelines over the years.</p>
         </div>
@@ -328,12 +383,12 @@
       </div>
     </section><!-- End Resume Section -->
 
-    <!-- ======= Portfolio Section ======= -->
+    <!-- ===================================================================== Portfolio Section ===================================================================== -->
     <section id="portfolio" class="portfolio section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Works By NRFZ</h2>
+          <h2><i class="fa-solid fa-list"></i>&nbsp;&nbsp;Works By NRFZ</h2>
           <p>A collection of works I have done over the years. Some are commisioned, some are just passion projects. My
             huge interests are illustrations, like signages, vehicles and wirerames.</p>
         </div>
@@ -353,17 +408,33 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-id">
+            <div class="portfolio-wrap">
+              <img src="https://i.imgur.com/FW5cI8r.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>How To Use TimeTree Infographic </h4>
+                <p>Infographic Design</p>
+                <div class="portfolio-links">
+                  <a href="https://i.imgur.com/FW5cI8r.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Train Delays Checker V2"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  <a href="worksbynrfz/igra3.html" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-wd">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/s2D8juk.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/3Q3DFDx.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Train Delays Checker V2</h4>
                 <p>Website Design</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/s2D8juk.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Train Delays Checker V2"><i class="bi bi-zoom-in"></i></a>
-                  <a href="worksbynrfz/delays-checker.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                  <a href="https://i.imgur.com/3Q3DFDx.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Train Delays Checker V2"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  <a href="worksbynrfz/delays-checker.html" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -371,15 +442,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-cr">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/onb8rea.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/7xTbMaT.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>New Wayfinding System for BP12 Jelapang</h4>
                 <p>Concepts & Replications</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/onb8rea.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="New Wayfinding System for BP12 Jelapang"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://i.imgur.com/7xTbMaT.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="New Wayfinding System for BP12 Jelapang"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
                   <a href="worksbynrfz/bp12.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                    title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -387,15 +458,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-wd">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/vCrjzcZ.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/dQ1DiXn.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Wayfinding? Right this way. - Improving PT Signages</h4>
                 <p>Website Design</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/vCrjzcZ.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Wayfinding? Right this way. - Improving PT Signages"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://i.imgur.com/dQ1DiXn.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Wayfinding? Right this way. - Improving PT Signages"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
                   <a href="worksbynrfz/wayfind.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                    title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -403,15 +474,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-cr">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/snZqYJ3.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/DkH8xMb.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>MRT Signages Concept/Replications S2</h4>
                 <p>Concepts & Replications</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/snZqYJ3.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="MRT Signages Concept/Replications"><i class="bi bi-zoom-in"></i></a>
-                  <a href="worksbynrfz/mrt-signage-rep-s2.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                  <a href="https://i.imgur.com/DkH8xMb.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="MRT Signages Concept/Replications"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  <a href="worksbynrfz/mrt-signage-rep-s2.html" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -419,15 +490,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-cr">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/wXn720I.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/Ks81VPH.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>More Replications</h4>
                 <p>Concepts & Replications</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/wXn720I.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="More Replications"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://i.imgur.com/Ks81VPH.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="More Replications"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
                   <a href="worksbynrfz/more-rep.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                    title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -435,15 +506,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-am filter-cr">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/fxrS76b.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/GnZ5kWq.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>MyTransport.SG App Redesign </h4>
                 <p>App Mockups/ Concept & Replications</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/fxrS76b.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="MyTransport.SG App Redesign"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://i.imgur.com/GnZ5kWq.pngg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="MyTransport.SG App Redesign"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
                   <a href="worksbynrfz/myts-app.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                    title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -451,15 +522,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-cr">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/dl2R8ZY.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/YPvwxyN.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>LTA Bus PIDS Redesign</h4>
                 <p>Concepts & Replications</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/dl2R8ZY.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="LTA Bus PIDS Redesign"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://i.imgur.com/YPvwxyN.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="LTA Bus PIDS Redesign"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
                   <a href="worksbynrfz/lta-pids.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                    title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -467,15 +538,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-cr">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/uYfevZF.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/ojpKcMf.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>MAN A22 Lion Mascot Replication</h4>
                 <p>Concepts & Replications</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/uYfevZF.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="MAN A22 Lion Mascot Replication"><i class="bi bi-zoom-in"></i></a>
-                  <a href="worksbynrfz/man-a22-masc.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                  <a href="https://i.imgur.com/ojpKcMf.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="MAN A22 Lion Mascot Replication"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  <a href="worksbynrfz/man-a22-masc.html" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -483,15 +554,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-cr">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/oRcN6NQ.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/B1ktST3.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>MRT Signages Concept/Replications S1</h4>
                 <p>Concepts & Replications</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/oRcN6NQ.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="MRT Signages Concept/Replications S1"><i class="bi bi-zoom-in"></i></a>
-                  <a href="worksbynrfz/mrt-signage-rep-s1.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                  <a href="https://i.imgur.com/B1ktST3.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="MRT Signages Concept/Replications S1"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  <a href="worksbynrfz/mrt-signage-rep-s1.html" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -499,15 +570,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-cr">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/RDNwcvC.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/XWWpWCJ.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Bus Replications</h4>
                 <p>Concepts & Replications</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/RDNwcvC.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Bus Replications"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://i.imgur.com/XWWpWCJ.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Bus Replications"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
                   <a href="worksbynrfz/bus-rep.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                    title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -515,15 +586,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/z9t4Cwl.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/QERaZYq.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>EZ-Link Card Redesign</h4>
                 <p>Concepts & Replications</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/z9t4Cwl.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="EZ-Link Card Redesign"><i class="bi bi-zoom-in"></i></a>
-                  <a href="worksbynrfz/ezlink-red.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                  <a href="https://i.imgur.com/QERaZYq.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="EZ-Link Card Redesign"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  <a href="worksbynrfz/ezlink-red.html" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -531,15 +602,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-id">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/v63kyPZ.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/vo3jfnm.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>COVID-19 Shopping Habits Infographic</h4>
                 <p>Infographic Design</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/v63kyPZ.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="COVID-19 Shopping Habits Infographic"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://i.imgur.com/vo3jfnm.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="COVID-19 Shopping Habits Infographic"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
                   <a href="worksbynrfz/igra2.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                    title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -547,15 +618,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-am">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/MKX6hwn.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/XTdnf1y.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Food Review Compiler/Flashify - a Flashcard App </h4>
                 <p>App Mockups</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/MKX6hwn.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Food Review Compiler/Flashify - a Flashcard App"><i class="bi bi-zoom-in"></i></a>
-                  <a href="worksbynrfz/food-rev-flash-app.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                  <a href="https://i.imgur.com/MKX6hwn.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Food Review Compiler/Flashify - a Flashcard App"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                  <a href="worksbynrfz/food-rev-flash-app.html" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -563,15 +634,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-id">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/zDfpCEQ.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/wJYGopb.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Infographic Resume</h4>
                 <p>Infographic Design</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/zDfpCEQ.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Infographic Resume"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://i.imgur.com/wJYGopb.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Infographic Resume"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
                   <a href="worksbynrfz/igra1.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                    title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -579,15 +650,15 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-ld">
             <div class="portfolio-wrap">
-              <img src="https://i.imgur.com/1HQJOAC.png" class="img-fluid" alt="">
+              <img src="https://i.imgur.com/FvSOI1R.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Friends Forever Logo Design</h4>
                 <p>Logo Design</p>
                 <div class="portfolio-links">
-                  <a href="https://i.imgur.com/1HQJOAC.png" data-gallery="portfolioGallery"
-                    class="portfolio-lightbox" title="Friends Forever Logo Design"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://i.imgur.com/FvSOI1R.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="Friends Forever Logo Design"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
                   <a href="worksbynrfz/ffl.html" class="portfolio-details-lightbox" data-glightbox="type: external"
-                    title="Work Details"><i class="bi bi-info-circle-fill"></i></a>
+                    title="Work Details"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
               </div>
             </div>
@@ -599,76 +670,6 @@
     </section><!-- End Portfolio Section -->
 
 
-    <!-- ======= Connect Section ======= -->
-    <section id="connect" class="connect">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Let's Connect!</h2>
-          <p>Have questions? I'm available through these platforms.</p>
-        </div>
-
-        <div class="row gy-5">
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/email.png" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="fa-solid fa-envelope-open-text"></i>
-                </div>
-                <a href="mailto:nurafian.bz33@gmail.com?subject=Referral from the website" class="stretched-link">
-                  <h3>Email Address</h3>
-                </a>
-                <p>For non-urgent enquiries</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/social.png" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="fa-solid fa-circle-user"></i>
-                </div>
-                <!-- <a href="https://linktr.ee/Nrfz" class="stretched-link"> -->
-                <h3>Socials</h3>
-                </a>
-                <p class="socials">
-                  <a href="https://twitter.com/_nrf_z" class="twitter"><i class="bx bxl-twitter"></i></a>
-                  <a href="https://www.facebook.com/Nrfnzlkf/" class="facebook"><i class="bx bxl-facebook"></i></a>
-                  <a href="https://www.instagram.com/nrfz._/" class="instagram"><i class="bx bxl-instagram"></i></a>
-                </p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/work.png" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="fa-brands fa-linkedin"></i>
-                </div>
-                <a href="https://www.linkedin.com/in/nurafian-zulkifli/" class="stretched-link">
-                  <h3>LinkedIn</h3>
-                </a>
-                <p>For Work-related purposes
-                </p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-        </div>
-      </div>
-    </section>
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -678,7 +679,7 @@
         &copy; Copyright <strong><span>2024</span></strong>. All Rights Reserved.
       </div>
       <div class="modified">
-        Last Modified: January 2024
+        Last Modified: February 2024
       </div>
     </div>
   </footer><!-- End Footer -->

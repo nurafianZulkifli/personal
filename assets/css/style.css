@@ -171,7 +171,6 @@ h6 {
 .nav-menu a:focus {
   display: flex;
   align-items: center;
-  justify-content: center;
   color: #fff;
   padding: 17px;
   padding-left: 17px;
@@ -195,6 +194,11 @@ h6 {
 .nav-menu a:focus span {
   padding: 0 5px 0 7px;
   color: #fff;
+}
+
+/* Individual Icons */
+i.fa-solid.fa-user {
+  padding: 2px;
 }
 
 @media (min-width: 992px) {

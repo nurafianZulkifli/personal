@@ -302,6 +302,7 @@ h6 {
   font-weight: 600;
   text-align: center;
   display: block;
+  cursor: default;
 }
 
 #position {
@@ -309,6 +310,7 @@ h6 {
   color: #407edb;
   text-align: center;
   display: block;
+  cursor: default;
 }
 
 #media {

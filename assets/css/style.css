@@ -838,7 +838,7 @@ section {
 }
 
 .portfolio-details .portfolio-info h3 {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -846,7 +846,6 @@ section {
   text-align: center;
   
 }
-
 
 .portfolio-details .portfolio-info ul {
   list-style: none;

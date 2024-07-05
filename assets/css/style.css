@@ -8,7 +8,7 @@ body {
 }
 
 a {
-  color: #37619e;
+  color: #1d2434;
   text-decoration: none;
 }
 
@@ -44,7 +44,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #37619e;
+  background: #2b354d;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -86,9 +86,9 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #37619e;
-  border-top-color: #fff;
-  border-bottom-color: #fff;
+  border: 6px solid #5b7ed4;
+  border-top-color: #3f3a3b;
+  border-bottom-color: #3f3a3b;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -178,7 +178,7 @@ h6 {
   transition: 0.3s;
   font-size: 15px;
   border-radius: 30px;
-  background: #131c29;
+  background: #1d2434;
   height: 56px;
   width: 100%;
   overflow: hidden;
@@ -215,7 +215,7 @@ h6 {
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
   color: #fff;
-  background: #37619e;
+  background: #407edb;
 }
 
 .nav-menu a:hover span,
@@ -270,7 +270,7 @@ h6 {
 
 .mobile-nav-active .mobile-nav-toggle {
   color: #fff;
-  background-color: #37619e;
+  background-color: #1d2434;
 }
 
 /*--------------------------------------------------------------
@@ -315,8 +315,9 @@ h6 {
 
 #media {
   margin-top: 60px;
-  width: 415px;
+  width: 380px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -369,7 +370,7 @@ h6 {
 }
 
 #hero p span {
-  color: #37619e;
+  color: #1d2434;
   letter-spacing: 1px;
   cursor: default;
 }
@@ -442,7 +443,7 @@ h6 {
   margin: 0;
   width: 72px;
   height: 72px;
-  background: #37619e;
+  background: #407edb;
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -454,7 +455,7 @@ h6 {
   position: absolute;
   top: -36px;
   left: calc(50% - 36px);
-  border: 6px solid #37619e;
+  border: 6px solid #407edb;
 }
 
 .about-me .details h3 {
@@ -517,7 +518,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #37619e;
+  background: #407edb;
   bottom: 0;
   left: calc(50% - 20px);
   border-radius: 20px;
@@ -565,7 +566,7 @@ section {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #37619e;
+  background-color: #407edb;
   border-radius: 10px;
 }
 
@@ -591,7 +592,7 @@ section {
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #37619e;
+  border-left: 2px solid #407edb;
   position: relative;
   cursor: default;
 }
@@ -602,14 +603,14 @@ section {
   font-weight: bolder;
   text-transform: uppercase;
   font-family: 'Inter', sans-serif;
-  color: #37619e;
+  color: #407edb;
   margin-bottom: 10px;
   cursor: default;
 }
 
 .resume .resume-item h5 {
   font-size: 16px;
-  background: #37619e;
+  background: #1d2434;
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
@@ -639,7 +640,7 @@ section {
   left: -9px;
   top: 5px;
   background: #18191a;
-  border: 2px solid #37619e;
+  border: 2px solid #407edb;
   cursor: default;
 }
 
@@ -651,8 +652,8 @@ section {
   border-radius: 50px;
   left: -9px;
   top: 5px;
-  background: #37619e;
-  border: 2px solid #37619e;
+  background: #407edb;
+  border: 2px solid #407edb;
   cursor: default;
 }
 
@@ -838,11 +839,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #37619e;
+  border: 1px solid #1d2434;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #37619e;
+  background-color: #1d2434;
 }
 
 .portfolio-details .portfolio-description {
@@ -911,14 +912,14 @@ section {
 }
 
 .btn-outline-download {
-  color: #37619e;
-  border-color: #37619e;
+  color: #1d2434;
+  border-color: #1d2434;
   margin-top: 1em;
 }
 
 .btn-outline-download:hover {
   color: #000;
-  background-color: #37619e;
+  background-color: #1d2434;
 }
 
 
@@ -959,7 +960,7 @@ h6 a {
 .port-cover.single-page h1, .port-cover.single-page .h1 {
   color: #fff;
   font-size: clamp(2rem, 3vw, 5rem);
-}
+}z
 
 .mb-4 {
   margin-bottom: 1.5rem !important;
@@ -1084,7 +1085,7 @@ h4.sa-post {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #37619e;
+  background: #1d2434;
   color: #fff;
   line-height: 1;
   padding: 8px 0;

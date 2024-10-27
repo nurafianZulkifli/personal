@@ -350,6 +350,11 @@ hr {
   scale: 0.3;
 }
 
+.progress-bar {
+  height: 5px;
+  background: #b9683f;
+  width: 0%;
+}
 
 
 /* :: 21.0 Responsive_Extension CSS - Width */

@@ -351,6 +351,12 @@ hr {
 }
 
 .progress-bar {
+  height: 7px;
+  background: #b9683f;
+  width: 0%;
+}
+
+.scroll-bar {
   height: 5px;
   background: #b9683f;
   width: 0%;

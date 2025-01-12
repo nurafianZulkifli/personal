@@ -394,7 +394,7 @@ hr {
 }
 
 .wbnrfz_details .banner {
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 .wbnrfz_details .details_info {
@@ -426,6 +426,10 @@ hr {
   transition-duration: 500ms;
   margin-bottom: 20px;
   margin-top: 5px;
+}
+
+.wbnrfz_details .col-lg-6 {
+  padding-top: 15px;
 }
 
 
@@ -564,7 +568,7 @@ hr {
   }
 
   .wbnrfz_details h1 {
-    font-size: clamp(34px, 8.5vw, 40px) !important;
+    font-size: clamp(30px, 8.5vw, 30px) !important;
     text-align: left;
     margin-bottom: 50px;
   }

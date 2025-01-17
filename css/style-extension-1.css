@@ -704,12 +704,6 @@ hr {
     width: 100% !important;
   }
 
-  .wbnrfz_btn {
-    min-width: auto;
-    padding: 0 12px;
-    margin-bottom: 5px;
-  }
-
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {

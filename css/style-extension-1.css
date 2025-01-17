@@ -441,7 +441,7 @@ hr {
   color: #252525;
   border-radius: 60px;
   transition-duration: 500ms;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-top: 5px;
 }
 
@@ -702,6 +702,12 @@ hr {
 
   .wbnrfz_details .banner img {
     width: 100% !important;
+  }
+
+  .wbnrfz_btn {
+    min-width: auto;
+    padding: 0 12px;
+    margin-bottom: 5px;
   }
 
 }

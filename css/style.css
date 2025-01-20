@@ -1,33 +1,29 @@
 /* ------------------------------------------
-[Tables of Content]
+[Tables of CSS Content]
 
-> style-main (this)
-    - Import
-    - 1.0 Body/Main Styling
-    - 2.0 Spacing
-    - 3.0 Preloader
-    - 4.0 Heading
-    - 5.0 BackToTop/ ProgressBar
-    - 6.0 Buttons
-    - 7.0 Header
-    - 8.0 Hero
-    - 9.0 Animations
-    - 10.0 Footer
-    - 11.0 Softwares
-    - 12.0 About
-    - 13.0 Timelines/Summary
-    - 14.0 Breadcrumb
-    - 15.0 Blog
-    - 16.0 Works by NRFZ
-    - 17.0 Hero Details
-    - 18.0 Skills Section
-    - 19.0 Works by NRFZ_Details Section
-    - 20.0 Blog Post Section
+> style (this)
+- body
+    - 1.0 Reboot CSS
+    - 2.0 Spacing CSS
+    - 3.0 Preloader CSS
+    - 4.0 Heading CSS
+    - 5.0 Backtotop CSS
+    - 6.0 Buttons CSS
+    - 7.0 Header CSS
+    - 8.0 Hero CSS
+    - 9.0 Animations CSS
+    - 10.0 Footer CSS
+    - 11.0 Softwares CSS
+    - 12.0 About CSS
+    - 13.0 Timelines CSS
+    - 14.0 Breadcrumb CSS
+    - 15.0 Blog CSS
+    - 16.0 Works by NRFZ CSS
 
-> style-breakpoints
+> style-extension-1
 --------------------------------------------- */
 
-/* Import Fonts & All  */
+/* Import Fonts & All CSS */
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 @import url(bootstrap.min.css);
 @import url(animate.css);
@@ -37,7 +33,7 @@
 @import url(default-assets/themify-icons.css);
 @import url(style.css);
 
-/* ------------------------------------------ 1.0 Body/Main Styling ------------------------------------------ */
+/* :: 1.0 Reboot CSS */
 * {
     margin: 0;
     padding: 0;
@@ -136,18 +132,27 @@ ul li {
     margin-left: auto;
 }
 
-.container-xxl {
-    max-width: 1450px;
-}
-
-.mfp-arrow {
-    top: 75%;
-}
 
 .bg-img {
     background-position: center center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+}
+
+.jarallax {
+    position: relative;
+    z-index: 0;
+}
+
+.jarallax>.jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    font-family: 'object-fit: cover';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .mfp-image-holder .mfp-close,
@@ -226,9 +231,7 @@ input:required {
     border-left-color: #ffffff;
 }
 
-/*  ------------------------------------------ */
-
-/* ------------------------------------------ 2.0 Spacing ------------------------------------------ */
+/* :: 2.0 Spacing CSS */
 .mt-15 {
     margin-top: 15px;
 }
@@ -387,9 +390,7 @@ section.follow-area.clearfix {
     background-color: #f6f7f2;
 }
 
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 3.0 Preloader ------------------------------------------ */
+/* :: 3.0 Preloader CSS */
 #preloader {
     position: fixed;
     width: 100%;
@@ -477,9 +478,7 @@ section.follow-area.clearfix {
     }
 }
 
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 4.0 Heading ------------------------------------------ */
+/* :: 4.0 Heading CSS */
 .section-heading {
     position: relative;
     z-index: 1;
@@ -495,9 +494,22 @@ section.follow-area.clearfix {
     cursor: default;
 }
 
-/* ------------------------------------------ */
+@media only screen and (max-width: 767px) {
+    .section-heading h2 {
+        font-size: 24px;
+    }
+}
 
-/* ------------------------------------------ 5.0 BackToTop/ ProgressBar ------------------------------------------ */
+.section-heading p {
+    margin-bottom: 0;
+}
+
+.section-heading.white p,
+.section-heading.white h2 {
+    color: #ffffff;
+}
+
+/* :: 5.0 Backtotop CSS */
 #scrollUp {
     position: fixed;
     right: 40px;
@@ -518,27 +530,20 @@ section.follow-area.clearfix {
     z-index: 12345111212;
 }
 
+@media only screen and (max-width: 767px) {
+    #scrollUp {
+        right: 20px;
+        bottom: 50px;
+    }
+}
+
 #scrollUp:focus,
 #scrollUp:hover {
     background-color: #80a8cc;
     color: #ffffff;
 }
 
-.progress-bar {
-    height: 7px;
-    background: #b9683f;
-    width: 0%;
-}
-
-.scroll-bar {
-    height: 5px;
-    background: #b9683f;
-    width: 0%;
-}
-
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 6.0 Buttons ------------------------------------------ */
+/* :: 6.0 Buttons CSS */
 .btn:focus {
     box-shadow: none;
 }
@@ -600,9 +605,7 @@ section.follow-area.clearfix {
     font-weight: 500;
 }
 
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 7.0 Header ------------------------------------------ */
+/* :: 7.0 Header CSS */
 .header-area {
     position: fixed;
     z-index: 100;
@@ -644,6 +647,13 @@ section.follow-area.clearfix {
     margin-left: -73px;
 }
 
+@media only screen and (max-width: 767px) {
+    .classy-nav-container .classy-navbar .nav-brand {
+        max-width: 174px;
+        margin-left: -63px;
+    }
+}
+
 .classynav {
     cursor: default;
 }
@@ -660,6 +670,36 @@ section.follow-area.clearfix {
 .classy-nav-container .classy-navbar .classynav ul li a:hover,
 .classy-nav-container .classy-navbar .classynav ul li a:focus {
     color: #80a8cc;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .classy-nav-container .classy-navbar .classynav ul li a {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .classy-nav-container .classy-navbar .classynav ul li a {
+        font-size: 14px;
+        color: #252525;
+    }
+
+    .classy-nav-container .classy-navbar .classynav ul li a:hover,
+    .classy-nav-container .classy-navbar .classynav ul li a:focus {
+        color: #80a8cc;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .classy-nav-container .classy-navbar .classynav ul li a {
+        font-size: 14px;
+        color: #252525;
+    }
+
+    .classy-nav-container .classy-navbar .classynav ul li a:hover,
+    .classy-nav-container .classy-navbar .classynav ul li a:focus {
+        color: #80a8cc;
+    }
 }
 
 .classy-nav-container .classy-navbar .classynav ul li.cn-dropdown-item ul li a,
@@ -697,7 +737,19 @@ section.follow-area.clearfix {
     transform: translateX(-50%);
 }
 
-classynav ul li.has-down>a::after,
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .classynav ul li.active a::before {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .classynav ul li.active a::before {
+        display: none;
+    }
+}
+
+.classynav ul li.has-down>a::after,
 .classynav ul li.has-down.active>a::after,
 .classynav ul li.megamenu-item>a::after {
     color: #80a8cc;
@@ -738,9 +790,7 @@ classynav ul li.has-down>a::after,
     background-color: #ffffff;
 }
 
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 8.0 Hero ------------------------------------------ */
+/* :: 8.0 Hero CSS */
 #centered-container {
     position: fixed;
     top: 50%;
@@ -846,9 +896,58 @@ classynav ul li.has-down>a::after,
     margin-top: 30px;
 }
 
-/* ------------------------------------------ */
 
-/* ------------------------------------------ 9.0 Animations ------------------------------------------ */
+@media (max-width: 992px) {
+    #hero {
+        text-align: center;
+    }
+
+    #hero h1 {
+        font-size: 52px;
+        line-height: 55px;
+    }
+
+    #hero p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        line-height: 24px;
+    }
+
+    #media {
+        margin-top: 60px;
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 768px) {
+    #centered-container {
+        top: 55%;
+    }
+
+    #profile-picture {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    #media {
+        margin-top: 40px;
+        width: 300px;
+        display: flex;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+/* :: 9.0 Animations CSS */
+
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -887,9 +986,10 @@ classynav ul li.has-down>a::after,
     animation-name: slideInLeft
 }
 
-/* ------------------------------------------ */
 
-/* ------------------------------------------ 10.0 Footer ------------------------------------------ */
+
+
+/* :: 10.0 Footer CSS */
 .footer-content {
     padding: 20px 0;
     padding-right: 57px;
@@ -904,6 +1004,29 @@ classynav ul li.has-down>a::after,
     margin-bottom: 0;
     color: #252525;
     cursor: default;
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-content .copywrite-text p {
+        font-size: 12px;
+    }
+}
+
+.footer-content .copywrite-text p a {
+    color: #fc6060;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-content .copywrite-text p a {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-content .footer-logo a img {
+        max-width: 50px;
+    }
 }
 
 .footer-content .social-info {
@@ -921,9 +1044,20 @@ classynav ul li.has-down>a::after,
     margin-right: 0;
 }
 
-/* ------------------------------------------ */
+@media only screen and (max-width: 767px) {
+    .footer-content .social-info a {
+        margin-right: 5px;
+        font-size: 12px;
+    }
+}
 
-/* ------------------------------------------ 11.0 Softwares ------------------------------------------ */
+.footer-content .social-info a:hover,
+.footer-content .social-info a:focus {
+    color: #80a8cc;
+}
+
+
+/* :: 11.0 Softwares CSS */
 .single-software-item {
     position: relative;
     z-index: 1;
@@ -973,6 +1107,24 @@ classynav ul li.has-down>a::after,
     color: #ffffff;
 }
 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single-software-item .instagram-hover-content a span {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .single-software-item .instagram-hover-content a span {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .single-software-item .instagram-hover-content a span {
+        font-size: 12px;
+    }
+}
+
 .single-software-item:hover img {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
@@ -989,13 +1141,17 @@ classynav ul li.has-down>a::after,
     opacity: 1;
 }
 
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 12.0 About ------------------------------------------ */
+/* :: 12.0 About CSS */
 .about-us-content h3 {
     font-size: 36px;
     display: block;
     margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+    .about-us-content h3 {
+        font-size: 24px;
+    }
 }
 
 .about-me-content {
@@ -1118,9 +1274,8 @@ classynav ul li.has-down>a::after,
 }
 
 
-/* ------------------------------------------ */
 
-/* ------------------------------------------ 13.0 Timelines/Summary ------------------------------------------ */
+/* :: 13.0 Timelines CSS */
 .timeline-content {
     -webkit-transition-duration: 800ms;
     -o-transition-duration: 800ms;
@@ -1228,9 +1383,8 @@ classynav ul li.has-down>a::after,
     padding-bottom: 10px;
 }
 
-/* ------------------------------------------ */
 
-/* ------------------------------------------ 14.0 Breadcrumb ------------------------------------------ */
+/* :: 14.0 Breadcrumb CSS */
 .breadcrumb-area {
     position: relative;
     z-index: 1;
@@ -1243,11 +1397,23 @@ classynav ul li.has-down>a::after,
     height: 370px;
 }
 
+@media only screen and (max-width: 767px) {
+    .breadcrumb-area {
+        height: 240px;
+    }
+}
+
 .breadcrumb-area .page-title,
 .breadcrumb-area-subp .page-title {
     color: #ffffff;
     font-size: 36px;
     cursor: default;
+}
+
+@media only screen and (max-width: 767px) {
+    .breadcrumb-area .page-title {
+        font-size: 24px;
+    }
 }
 
 .breadcrumb-content {
@@ -1312,6 +1478,12 @@ classynav ul li.has-down>a::after,
     margin-bottom: 20px;
 }
 
+@media only screen and (max-width: 767px) {
+    .breadcrumb-area.blog .breadcrumb-content .page-title {
+        font-size: 30px;
+    }
+}
+
 .breadcrumb-area.blog .breadcrumb-content .post-meta {
     position: relative;
     z-index: 1;
@@ -1325,6 +1497,12 @@ classynav ul li.has-down>a::after,
     color: #ffffff;
     font-weight: 500;
     margin-right: 21px;
+}
+
+@media only screen and (max-width: 767px) {
+    .breadcrumb-area.blog .breadcrumb-content .post-meta a {
+        font-size: 13px;
+    }
 }
 
 .breadcrumb-area.blog .breadcrumb-content .post-meta a::after {
@@ -1353,9 +1531,7 @@ li.breadcrumb-item.active a {
     color: #898a77 !important;
 }
 
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 15.0 Blog ------------------------------------------ */
+/* :: 15.0 Blog CSS */
 .single-post-area {
     position: relative;
     z-index: 1;
@@ -1438,6 +1614,12 @@ li.breadcrumb-item.active a {
     margin-bottom: 0;
 }
 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single-post-area .post-content .post-title {
+        font-size: 16px;
+    }
+}
+
 .single-post-area .post-content .post-title:hover,
 .single-post-area .post-content .post-title:focus {
     color: #80a8cc;
@@ -1450,14 +1632,8 @@ li.breadcrumb-item.active a {
     transform: scale(1.4) rotate(10deg);
 }
 
-.ftco-section-blog {
-    padding: 7em 0;
-    background-color: #f6f7f2;
-}
 
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 16.0 Works by NRFZ ------------------------------------------ */
+/* :: 16.0 Works by NRFZ CSS */
 .pw-portfolio-area {
     position: relative;
     z-index: 1;
@@ -1468,6 +1644,27 @@ li.breadcrumb-item.active a {
     padding-right: 5%;
     padding-left: 5%;
     background-color: #f5f6f2;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .pw-portfolio-area .container-fluid {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .pw-portfolio-area .container-fluid {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .pw-portfolio-area .container-fluid {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
 }
 
 .pw-projects-menu {
@@ -1492,6 +1689,14 @@ li.breadcrumb-item.active a {
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
 }
+
+@media only screen and (max-width: 767px) {
+    .pw-projects-menu .portfolio-menu .btn {
+        font-size: 15px;
+        margin: 7px 5px;
+    }
+}
+
 
 .pw-projects-menu .portfolio-menu .btn.active {
     background-color: #898a77;
@@ -1600,570 +1805,3 @@ li.breadcrumb-item.active a {
 .single-portfolio-content:focus .hover-content a {
     margin-top: -12px;
 }
-
-/* ------------------------------------------ */
-
-/* ------------------------------------------  17.0 Hero Details ------------------------------------------ */
-img.profile-pic {
-    width: 220px;
-    height: 220px;
-}
-
-.profile-det {
-    padding: 4em;
-    padding-top: 0.5em;
-    padding-bottom: 2.5em;
-}
-
-.profile-name {
-    color: #fff;
-    font-size: 35px;
-    padding-top: 0.5em;
-    cursor: default;
-}
-
-.profile-desc {
-    color: #898a77;
-    font-size: 20px;
-    font-weight: normal;
-    cursor: default;
-}
-
-.profile-link a {
-    padding: 1.0em;
-}
-
-.profile-link a:hover {
-    color: #80a8cc;
-}
-
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 18.0 Skills Section ------------------------------------------ */
-.owl-carousel.owl-loaded {
-    display: block;
-    scale: 0.8;
-    padding-top: 15px;
-}
-
-.skill-ara {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-
-.skill-ara .single-skill {
-    margin-bottom: 25px;
-}
-
-.skill-ara .single-skill .progress-count {
-    display: flex;
-    justify-content: space-between;
-}
-
-.skill-ara .single-skill .progress-count p {
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: capitalize;
-    color: #000d21;
-    margin-bottom: 10px;
-    cursor: default;
-}
-
-.skill-ara .single-skill .progress-count span {
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: capitalize;
-    color: #898a77;
-    margin: 0;
-}
-
-.skill-ara .single-skill .progress {
-    height: 8px;
-    border-radius: 0;
-    background-color: #dbe3e9;
-    border-radius: 4px;
-}
-
-.skill-ara .single-skill .progress-bar {
-    background-color: #80a8cc;
-    border-radius: 7px;
-}
-
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 19.0 Works by NRFZ_Details Section ------------------------------------------ */
-.wbnrfz_details .details_catagory_wrap {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1400px;
-}
-
-.wbnrfz_details .details_catagory_wrap .single_catagory .social_links a {
-    font-size: 16px;
-    color: #000;
-    margin-right: 10px;
-}
-
-.wbnrfz_details .details_catagory_wrap .single_catagory .social_links a:hover {
-    color: #80a8cc;
-}
-
-.wbnrfz_details .details_catagory_wrap .single_catagory {
-    margin-bottom: 30px;
-}
-
-.wbnrfz_details .details_catagory_wrap .single_catagory h4 {
-    font-size: 16px;
-    color: #000;
-    font-weight: 400;
-}
-
-.wbnrfz_details .details_catagory_wrap .single_catagory span {
-    font-size: 12px;
-    color: #828793;
-    font-weight: 400;
-    font-family: "Roboto", sans-serif;
-    display: block;
-    margin-bottom: 6px;
-}
-
-.wbnrfz_details .banner {
-    margin-bottom: 30px;
-}
-
-.wbnrfz_details .details_info {
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.wbnrfz_details h1 {
-    font-size: clamp(34px, 8.5vw, 40px) !important;
-    margin-bottom: 50px;
-    font-weight: bold;
-}
-
-.wbnrfz_btn {
-    position: relative;
-    z-index: 1;
-    min-width: auto;
-    height: 46px;
-    line-height: 42px;
-    font-size: 14px;
-    font-weight: 500;
-    display: inline-block;
-    padding: 0 30px;
-    text-align: center;
-    text-transform: capitalize;
-    background-color: #e4e6cf;
-    color: #252525;
-    border-radius: 60px;
-    transition-duration: 500ms;
-    margin-bottom: 10px;
-    margin-top: 5px;
-}
-
-.wbnrfz_details .col-lg-6,
-.wbnrfz_details .col-lg-4 {
-    padding-top: 25px;
-}
-
-.wbnrfz_details .banner img {
-    width: 80%;
-}
-
-.dropdown-item:focus {
-    background-color: #80a8cc;
-    color: #fff;
-}
-
-.dropdown-item:hover {
-    background-color: #80a8cc;
-    color: #fff;
-}
-
-/* ------------------------------------------ */
-
-/* ------------------------------------------ 20.0 Blog Post Section ------------------------------------------ */
-.breadcrumb-area .page-title-blog {
-    color: #ffffff;
-    font-size: 55px;
-}
-
-.mb-3 {
-    margin-top: 1.2rem !important;
-    margin-bottom: 1rem !important;
-}
-
-.row-blog {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-    padding-top: 0px;
-    padding: 10px;
-}
-
-.column-pic {
-    float: left;
-    width: 50% !important;
-    padding: 10px !important;
-}
-
-.column-pic-single {
-    float: left;
-    width: 100% !important;
-    padding: 10px !important;
-}
-
-figcaption p {
-    margin-top: 10px;
-    font-size: 15px;
-    color: #636457;
-}
-
-.container-blog {
-    width: 100%;
-    padding-right: 42px;
-    padding-left: 30px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.sidebar-box {
-    margin-bottom: 40px;
-    font-size: 15px;
-    width: 100%;
-    float: left;
-    background: #e9eae5;
-    padding: 20px;
-    border-radius: 20px;
-}
-
-.sidebar-box .heading {
-    font-size: 25px;
-    color: #fff;
-    font-weight: 700;
-    margin: 20px;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    cursor: default;
-}
-
-.sidebar-box *:last-child {
-    margin-bottom: 0;
-}
-
-.mb-4 {
-    margin-bottom: 0rem !important;
-}
-
-.tagcloud a {
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 4px 10px;
-    margin-bottom: 7px;
-    margin-right: 4px;
-    border-radius: 4px;
-    color: #252525;
-    background-color: #e4e6cf;
-    font-size: 11px;
-}
-
-.tagcloud a:hover {
-    -webkit-box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
-    box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
-    background-color: #80a8cc;
-    color: #ffffff;
-}
-
-.bg-light {
-    background-color: #e9eae5 !important;
-    box-shadow: 0px 0 30px rgba(69, 80, 91, 0.08);
-    border-radius: 20px;
-    padding-bottom: 2px;
-}
-
-.about-author {
-    background-color: #e4e6cf !important;
-    box-shadow: 0px 0 30px rgba(69, 80, 91, 0.08);
-    border-radius: 20px;
-    padding-bottom: 2px;
-}
-
-.p-4 {
-    padding: 1.5rem !important;
-}
-
-.d-flex {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-}
-
-.desc {
-    margin-left: 2em;
-}
-
-.sidebar-box h3 {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.blog-img {
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    margin-top: 1.8em;
-}
-
-.block-21 .blog-img {
-    display: block;
-    height: 80px;
-    width: 80px;
-}
-
-.block-21 .text {
-    width: calc(100% - 100px);
-}
-
-.block-21 .text .heading {
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.block-21 .text .meta {
-    margin-left: 20px;
-}
-
-h3.heading {
-    border-bottom: none !important;
-    margin-bottom: 10px !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.sidebar-col {
-    flex: 0 0 auto;
-    width: 100%;
-}
-
-.mb-5 {
-    margin-bottom: 3rem !important;
-}
-
-.row-blog>* {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x)* .5);
-    padding-left: calc(var(--bs-gutter-x)* .5);
-    margin-top: var(--bs-gutter-y);
-}
-
-blockquote {
-    background-color: #e9eae5;
-    padding: 2em;
-    color: #000;
-    border-radius: 1em;
-    cursor: default;
-}
-
-.befaft-slider {
-    padding-top: 3em;
-}
-
-hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid #6364576e;
-}
-
-.ftco-section {
-    background-color: #f6f7f2;
-    padding-bottom: 10px;
-}
-
-#proposal {
-    scroll-margin-top: 8vh;
-}
-
-.img-logo {
-    scale: 0.3;
-}
-
-.img-blog-profile {
-    width: 60%;
-    height: auto;
-}
-
-.container-blogList {
-    max-width: 1450px;
-  }
-  
-  .blog-entry {
-    background: #ffffff;
-    margin-bottom: 30px;
-    border-radius: 20px;
-    box-shadow: 3px 0 15px -1px rgba(0, 0, 0, 0.15);
-  }
-  
-  
-  .blog-entry .col-md-6 {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  
-  .blog-entry .block-20 {
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 45%;
-    position: relative;
-    display: block;
-    border-radius: 20px;
-  }
-  
-  .order-md-last {
-    -webkit-box-ordinal-group: 14;
-    -ms-flex-order: 13;
-    order: 13;
-  }
-  
-  .blog-entry .text {
-    position: relative;
-    border-top: 0;
-    border-radius: 2px;
-    width: 55%;
-  }
-  
-  .blog-entry a {
-    position: relative;
-    border-top: 0;
-    border-radius: 20px;
-    width: 55%;
-    color: #000;
-  }
-  
-  .blog-entry .category {
-    position: absolute;
-    padding: 2px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #252525;
-    background-color: #e4e6cf;
-    top: 15px;
-    left: 15px;
-    font-weight: 500;
-  }
-  
-  .blog-entry .text .heading {
-    font-size: 20px;
-    margin-bottom: 16px;
-  }
-  
-  .blog-entry .icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.8);
-    opacity: 0;
-    border-radius: 50%;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-  }
-  
-  .blog-entry:hover .icon {
-    opacity: 1;
-  }
-  
-  .blog-entry a.blog-date {
-    color: #6d7072
-  }
-  
-  .blog-entry .blog-date-div {
-    margin-top: 2em;
-    font-size: 14px;
-    color: #80a8cc;
-  }
-  
-  .p-4 {
-    padding: 1.5rem !important;
-  }
-  
-  .d-block {
-    display: block !important;
-  }
-  
-  .ftco-section-blog {
-    padding: 7em 0;
-    background-color: #f6f7f2;
-  }
-  
-  .mt-5 {
-    margin-top: 3rem !important;
-  }
-  
-  .block-20 {
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 45%;
-    position: relative;
-    display: block;
-  }
-  
-  .block-27 ul li a,
-  .block-27 ul li span {
-    text-align: center;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    color: #4a5562;
-    border: 1px solid #dee2e6;
-  }
-  
-  .block-27 ul {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .block-27 ul li {
-    display: inline-block;
-    margin-bottom: 4px;
-  }
-  
-  .block-27 ul li a,
-  .block-27 ul li span {
-    text-align: center;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    color: #4a5562;
-    border: 1px solid #dee2e6;
-    border-radius: 20px;
-  }
-  
-  .block-27 ul li.active a,
-  .block-27 ul li.active span {
-    background: #898a77;
-    color: #fff;
-    border: 1px solid transparent;
-    border-radius: 20px;
-  }
-
-/* ------------------------------------------ */

@@ -4,23 +4,26 @@
 > style-main
 > style-breakpoints (this)
     - 1.0 Specific Breakpoints
-    
+        - 1.0.1 Max Width: 992px
+        - 1.0.2 Max Width: 768px
+        - 1.0.3 Max Width: 767px
     - 2.0 Width Breakpoints
-        - 1.0.1 Min Width: 992px Max Width: 1199px
-        - 1.0.2 Min Width: 768px Max Width: 991px
-        - 1.0.3 Min Width: 576px Max Width: 767px
-        - 1.0.4 Min Width: 320px Max Width: 575px
+        - 2.0.1 Min Width: 992px Max Width: 1199px
+        - 2.0.2 Min Width: 768px Max Width: 991px
+        - 2.0.3 Min Width: 576px Max Width: 767px
+        - 2.0.4 Min Width: 320px Max Width: 575px
 
     - 3.0 Height Breakpoints
-        - 2.0.1 Min Height: 531px Max Height: 620px
-        - 2.0.2 Min Height: 510px Max Height: 530px
-        - 2.0.3 Min Height: 400px Max Height: 529px
-        - 2.0.4 Min Height: 320px Max Height: 399px
-        - 2.0.5 Min Height: 319px
+        - 3.0.1 Min Height: 531px Max Height: 620px
+        - 3.0.2 Min Height: 510px Max Height: 530px
+        - 3.0.3 Min Height: 400px Max Height: 529px
+        - 3.0.4 Min Height: 320px Max Height: 399px
+        - 3.0.5 Min Height: 319px
                 
 --------------------------------------------- */
 
 /* ------------------------------------------ 1.0 Specific Breakpoints ------------------------------------------ */
+/* ---- 1.0.1 Max Width: 992px */
 @media (max-width: 992px) {
     #hero {
         text-align: center;
@@ -46,6 +49,9 @@
     }
 }
 
+/* ---- */
+
+/* ---- 1.0.2 Max Width: 768px */
 @media (max-width: 768px) {
     #centered-container {
         top: 55%;
@@ -69,6 +75,9 @@
     }
 }
 
+/* ---- */
+
+/* ---- 1.0.3 Max Width: 767px */
 @media only screen and (max-width: 767px) {
     .section-heading h2 {
         font-size: 24px;
@@ -150,10 +159,10 @@
     }
 }
 
-/* ------------------------------------------ */
+/* ---- */
 
 /* ------------------------------------------ 2.0 Width Breakpoints ------------------------------------------ */
-/* ---- 1.0.1 Min Width: 992px Max Width: 1199px */
+/* ---- 2.0.1 Min Width: 992px Max Width: 1199px */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     img.profile-pic {
         width: 310px;
@@ -192,9 +201,9 @@
     }
 }
 
-/* ------------------------------------------ */
+/* ---- */
 
-/* 2.0 Min Width: 768px Max Width: 991px */
+/* 2.0.2 Min Width: 768px Max Width: 991px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .classy-nav-container .classy-navbar .classynav ul li a {
         font-size: 14px;
@@ -256,9 +265,9 @@
     }
 }
 
-/* ------------------------------------------ */
+/* ---- */
 
-/* 3.0 Min Width: 576px Max Width: 767px */
+/* 2.0.3 Min Width: 576px Max Width: 767px */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     .classy-nav-container .classy-navbar .nav-brand {
         max-width: 174px;
@@ -405,9 +414,9 @@
     }
 }
 
-/* ------------------------------------------ */
+/* ---- */
 
-/* 4.0 Min Width: 320px Max Width: 575px */
+/* 2.0.4 Min Width: 320px Max Width: 575px */
 @media only screen and (min-width: 320px) and (max-width: 575px) {
     img.profile-pic {
         width: 250px;
@@ -502,11 +511,11 @@
 
 }
 
-/* ------------------------------------------ */
+/* ---- */
 
 
 /* ------------------------------------------ 3.0 Height Breakpoints ------------------------------------------ */
-/* ---- 2.0.1 Min Height: 531px Max Height: 620px */
+/* ---- 3.0.1 Min Height: 531px Max Height: 620px */
 @media (min-height: 531px) and (max-height: 620px) {
     .breadcrumb-content {
         scale: 0.8;
@@ -519,9 +528,9 @@
     }
 }
 
-/* ------------------------------------------ */
+/* ---- */
 
-/* ---- 2.0.2 Min Height: 510px Max Height: 530px */
+/* ---- 3.0.2 Min Height: 510px Max Height: 530px */
 @media (min-height: 510px) and (max-height: 530px) {
     img.profile-pic {
         width: 250px;
@@ -539,9 +548,9 @@
     }
 }
 
-/* ------------------------------------------ */
+/* ---- */
 
-/* ---- 2.0.3 Min Height: 400px Max Height: 529px */
+/* ---- 3.0.3 Min Height: 400px Max Height: 529px */
 @media (min-height: 400px) and (max-height: 529px) {
     img.profile-pic {
         width: 200px;
@@ -560,9 +569,9 @@
     }
 }
 
-/* ------------------------------------------ */
+/* ---- */
 
-/* ---- 2.0.4 Min Height: 320px Max Height: 399px */
+/* ---- 3.0.4 Min Height: 320px Max Height: 399px */
 @media (min-height: 320px) and (max-height: 399px) {
     img.profile-pic {
         width: 190px;
@@ -589,9 +598,9 @@
     }
 }
 
-/* ------------------------------------------ */
+/* ---- */
 
-/* ---- 2.0.5 Min Height: 319px */
+/* ---- 3.0.5 Min Height: 319px */
 @media (max-height: 319px) {
     img.profile-pic {
         display: none;
@@ -614,4 +623,4 @@
     }
 }
 
-/* ------------------------------------------ */
+/* ---- */

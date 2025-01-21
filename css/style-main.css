@@ -27,7 +27,7 @@
 > style-breakpoints
 --------------------------------------------- */
 
-/* Import Fonts & All  */
+/* ------------------------------------------ Import ------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
 @import url(bootstrap.min.css);
 @import url(animate.css);
@@ -832,7 +832,7 @@ classynav ul li.has-down>a::after,
     color: #45505b;
     margin: 15px 0 0 0;
     font-size: 26px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Onest', sans-serif;
     cursor: default;
 }
 

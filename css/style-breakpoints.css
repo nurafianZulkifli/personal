@@ -3,13 +3,15 @@
 
 > style-main
 > style-breakpoints (this)
-    - 1.0 Width Breakpoints
+    - 1.0 Specific Breakpoints
+    
+    - 2.0 Width Breakpoints
         - 1.0.1 Min Width: 992px Max Width: 1199px
         - 1.0.2 Min Width: 768px Max Width: 991px
         - 1.0.3 Min Width: 576px Max Width: 767px
         - 1.0.4 Min Width: 320px Max Width: 575px
 
-    - 2.0 Height Breakpoints
+    - 3.0 Height Breakpoints
         - 2.0.1 Min Height: 531px Max Height: 620px
         - 2.0.2 Min Height: 510px Max Height: 530px
         - 2.0.3 Min Height: 400px Max Height: 529px

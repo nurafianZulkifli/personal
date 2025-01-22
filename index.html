@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-breakpoints.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
 
     <link rel="stylesheet" type="text/css"
         href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
@@ -58,7 +59,9 @@
                                     <li><a href="./about.html">About</a></li>
                                     <li><a href="./works-by-nrfz.html">Works By NRFZ</a></li>
                                     <li><a href="./blog.html">Blog</a></li>
-
+                                    <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
+                                            title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -116,7 +119,7 @@
     </section><!-- End Hero -->
 
 
-    <div class="pw-portfolio-area section-padding-80 clearfix">
+    <div class="pw-portfolio-area section-padding-80 clearfix" id="featured">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -127,8 +130,7 @@
             </div>
             <div class="row pw-portfolio">
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp"
-                    data-wow-delay="100ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
                         <img src="https://i.imgur.com/EiaJAoM.png" alt>
                         <div class="hover-content">
@@ -141,8 +143,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp"
-                    data-wow-delay="300ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="300ms">
                     <div class="single-portfolio-content">
                         <img src="https://i.imgur.com/5I39ojc.png" alt>
                         <div class="hover-content">
@@ -155,8 +156,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp"
-                    data-wow-delay="900ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="900ms">
                     <div class="single-portfolio-content">
                         <img src="https://i.imgur.com/wDvqKp1.png" alt>
                         <div class="hover-content">
@@ -169,8 +169,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp"
-                    data-wow-delay="1100ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="1100ms">
                     <div class="single-portfolio-content">
                         <img src="https://i.imgur.com/2ZDDWFy.png" alt>
                         <div class="hover-content">
@@ -183,8 +182,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp"
-                    data-wow-delay="500ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="single-portfolio-content">
                         <img src="https://i.imgur.com/GlYFYka.png" alt="man-a22-mascot">
                         <div class="hover-content">
@@ -197,8 +195,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp"
-                    data-wow-delay="700ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="700ms">
                     <div class="single-portfolio-content">
                         <img src="https://i.imgur.com/kstN8gT.png" alt>
                         <div class="hover-content">
@@ -221,7 +218,7 @@
     </div>
 
 
-    <section class="about-me-area bg-gray section-padding-50 clearfix">
+    <section class="about-me-area section-padding-50 clearfix">
         <div class="container container-xxl">
             <div class="row">
                 <div class="col-12">
@@ -383,22 +380,24 @@
                     </div>
                 </div>
             </div>
-        </div
+        </div>
 
-    <script type="text/javascript" id="cookiebanner" src="js/cookies-banner.js" data-position="bottom" data-bg="#f2f3e5"
-        data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
-        data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
-        </script>
+        <script type="text/javascript" id="cookiebanner" src="js/cookies-banner.js" data-position="bottom"
+            data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
+            data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
+            </script>
 
-    <script src="js/jquery.min.js"></script>
+        <script src="js/theme.js"></script>
 
-    <script src="js/popper.min.js"></script>
+        <script src="js/jquery.min.js"></script>
 
-    <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.min.js"></script>
 
-    <script src="js/pw.bundle.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
-    <script src="js/default-assets/active.js"></script>
+        <script src="js/pw.bundle.js"></script>
+
+        <script src="js/default-assets/active.js"></script>
 
 
 </body>

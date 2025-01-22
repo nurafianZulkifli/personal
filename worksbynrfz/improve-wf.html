@@ -18,6 +18,7 @@
 
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/style-breakpoints.css">
+  <link rel="stylesheet" href="../css/dark-mode.css">
 
   <link rel="stylesheet" href="../css/swiper-bundle.min.css">
   <link rel="stylesheet" href="../css/glightbox.min.css">
@@ -55,9 +56,11 @@
                 <ul id="nav">
                   <li><a href="../index.html">Home</a></li>
                   <li><a href="../about.html">About</a></li>
-                  <li class="active"><a href="../works-by-nrfz.html">Works by NRFZ</a></li>
+                  <li class="active"><a href="../works-by-nrfz.html">Works By NRFZ</a></li>
                   <li><a href="../blog.html">Blog</a></li>
-
+                  <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle" title="Toggle Dark/Light Mode!"><i
+                        class="fa-solid fa-moon"></i></button>
+                  </li>
                 </ul>
               </div>
 
@@ -142,7 +145,7 @@
     </div>
   </section>
 
-  <section class="about-me-summ bg-gray section-padding-80-0 clearfix">
+  <section class="about-me-summ section-padding-80-0 clearfix">
     <div class="wbnrfz_details wow fadeInUp" data-wow-delay="100ms">
       <div class="container">
         <div class="row justify-content-center">
@@ -225,12 +228,14 @@
     data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
     </script>
 
+  <script src="../js/theme.js"></script>
+
   <script src="../js/jquery.min.js"></script>
 
   <script src="../js/popper.min.js"></script>
 
   <script src="../js/bootstrap.min.js"></script>
-    
+
   <script src="../js/pw.bundle.js"></script>
 
   <script src="../js/default-assets/active.js"></script>

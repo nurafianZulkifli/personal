@@ -14,10 +14,11 @@
 
     <link rel="icon" href="../img/core-img/favicon.png">
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/style-breakpoints.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-breakpoints.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
 
 </head>
 
@@ -35,7 +36,8 @@
 
                     <nav class="classy-navbar justify-content-between" id="pwNav">
 
-                        <a class="nav-brand img-logo" href="../index.html"><img class="logo-img" src="../img/core-img/logo.png" alt="logo"></a>
+                        <a class="nav-brand img-logo" href="../index.html"><img class="logo-img"
+                                src="../img/core-img/logo.png" alt="logo"></a>
 
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -53,7 +55,9 @@
                                     <li><a href="../about.html">About</a></li>
                                     <li><a href="../works-by-nrfz.html">Works By NRFZ</a></li>
                                     <li class="active"><a href="../blog.html">Blog</a></li>
-
+                                    <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
+                                            title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -438,7 +442,9 @@
     <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
         data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
-        </script>
+    </script>
+
+    <script src="../js/theme.js"></script>
 
     <script src="../js/jquery.min.js"></script>
 

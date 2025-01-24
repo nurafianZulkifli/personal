@@ -217,4 +217,10 @@ body.dark-mode .about-author {
     transition: all 0.5s ease;
 }
 
+body.dark-mode blockquote {
+    background-color: #3a3b3c;
+    transition: all 0.5s ease;
+    color: #fff;
+}
+
 /* ------------------------------------------ */

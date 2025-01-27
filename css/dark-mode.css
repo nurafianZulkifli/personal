@@ -224,3 +224,32 @@ body.dark-mode blockquote {
 }
 
 /* ------------------------------------------ */
+
+/* ------------------------------------------ x.x EICW ------------------------------------------ */
+body.dark-mode .wbnrfz-summ-micro {
+    background-color: #1e1e1e;
+    transition: all 0.5s ease;
+    padding-top: 8em;
+    padding-bottom: 10px;
+}
+
+body.dark-mode .breadcrumb-item+.breadcrumb-item::before {
+    content: '\f105';
+    color: #fff;
+    font-family: "FontAwesome";
+}
+
+body.dark-mode li.breadcrumb-item a {
+    color: #fff;
+}
+
+body.dark-mode .wbnrfz_details .banner-eicw img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+body.dark-mode h2.page-title {
+    color: #fff;
+}
+
+/* ------------------------------------------ */

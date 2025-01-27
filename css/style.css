@@ -2173,3 +2173,45 @@ hr {
 }
 
 /* ------------------------------------------ */
+
+/* ------------------------------------------ x.x EICW ------------------------------------------ */
+.wbnrfz-summ-micro {
+    background-color: #f5f6f2;
+    padding-top: 8em;
+    padding-bottom: 10px;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: '\f105';
+    color: #000;
+    font-family: "FontAwesome";
+}
+
+li.breadcrumb-item a {
+    color: #000;
+}
+
+.wbnrfz_details .banner-eicw img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.breadcrumb-area-eicw-subs {
+    position: relative;
+    z-index: 1;
+    height: 50vh;
+}
+
+h2.page-title {
+    color: #fff;
+}
+
+/* ------------------------------------------ */
+

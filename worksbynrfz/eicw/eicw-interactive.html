@@ -74,6 +74,12 @@
   <section class="wbnrfz-summ-micro clearfix">
     <div class="wbnrfz_details wow fadeInUp" data-wow-delay="100ms">
       <div class="container container-xxl">
+
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+          <strong>Hello!</strong> This Microsite is actively being developed! Some features may not work as intended.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
         <div class="col-lg-12">
           <div class="main-title">
             <nav aria-label="breadcrumb">
@@ -163,7 +169,7 @@
               Typeface</h2>
             <div class="banner-eicw wow fadeInUp" data-wow-delay="150ms">
               <a href="../../img/eicw/typeface-light.png" id="tf" class="portfolio-img">
-                <img src="../../img/eicw/typeface-light.png" id="tf-img" class="img-fluid" alt="cover-page">
+                <img src="../../img/eicw/typeface-light.png" id="tf-img" class="img-fluid" alt="tf">
               </a>
             </div>
 
@@ -173,7 +179,12 @@
               Palettes</h2>
             <div class="banner-eicw wow fadeInUp" data-wow-delay="150ms">
               <a href="../../img/eicw/palettes-light.png" id="pl" class="portfolio-img">
-                <img src="../../img/eicw/palettes-light.png" id="pl-img" class="img-fluid" alt="cover-page">
+                <img src="../../img/eicw/palettes-light.png" id="pl-img" class="img-fluid" alt="pl">
+              </a>
+            </div>
+            <div class="banner-eicw wow fadeInUp" data-wow-delay="150ms">
+              <a href="../../img/eicw/palettes-light2.png" id="pl2" class="portfolio-img">
+                <img src="../../img/eicw/palettes-light2.png" id="pl2-img" class="img-fluid" alt="pl2">
               </a>
             </div>
           </div>
@@ -424,6 +435,9 @@
       const pl_link = document.getElementById('pl');
       const pl_img = document.getElementById('pl-img');
 
+      const pl2_link = document.getElementById('pl2');
+      const pl2_img = document.getElementById('pl2-img');
+
       const wo1_link = document.getElementById('wo1');
       const wo1_img = document.getElementById('wo1-img');
 
@@ -459,6 +473,9 @@
 
         pl_link.href = '../../img/eicw/palettes-dark.png';
         pl_img.src = '../../img/eicw/palettes-dark.png';
+        
+        pl2_link.href = '../../img/eicw/palettes-dark2.png';
+        pl2_img.src = '../../img/eicw/palettes-dark2.png';
 
         wo1_link.href = '../../img/eicw/wo1-dark.png';
         wo1_img.src = '../../img/eicw/wo1-dark.png';
@@ -488,6 +505,9 @@
 
         pl_link.href = '../../img/eicw/palettes-light.png';
         pl_img.src = '../../img/eicw/palettes-light.png';
+
+        pl2_link.href = '../../img/eicw/palettes-light2.png';
+        pl2_img.src = '../../img/eicw/palettes-light2.png';
 
         wo1_link.href = '../../img/eicw/wo1-light.png';
         wo1_img.src = '../../img/eicw/wo1-light.png';

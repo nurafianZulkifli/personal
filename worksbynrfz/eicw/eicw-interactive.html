@@ -233,8 +233,8 @@
                     </figcaption>
                   </div>
 
-                  <video id="eicw-vid1" autoplay controls muted loop playsinline width="100%" class="column-vid">
-                    <source src="../../img/eicw/eicw-vid1.mp4" type="video/mp4">
+                  <video id="eicw-vid1" autoplay muted loop playsinline width="100%" class="column-vid">
+                    <source src="../../img/eicw/eicw-vid1-light.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
 
@@ -242,6 +242,87 @@
               </div>
             </div>
           </div>
+
+          <hr>
+
+          <div class="col-lg-12">
+            <div class="details_info">
+              <div class="row justify-content-center">
+                <div class="col-lg-12">
+                  <div class="info justify-content-center">
+
+                    <h2 class="mb-3" style="font-size: 30px; font-weight:bold ;">Exit Icon</h2>
+                    <p style="text-align: left;">The proposed new Exit icon standardises the use of the 'Exit Border'
+                      symbol for those using both numbers or alphabets. Currently, the Exit icons for numbers and
+                      alphabets are labelled differently. 
+                    </p>
+                  </div>
+
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="../../img/eicw/exit-light.png" id="exit" class="portfolio-img ">
+                        <img src="../../img/eicw/exit-light.png" id="exit-img" class="img-fluid cp-img" alt="exit">
+                      </a>
+                    </figcaption>
+                  </div>
+
+                  <video id="eicw-vid2" autoplay muted loop playsinline width="100%" class="column-vid">
+                    <source src="../../img/eicw/eicw-vid2-light.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="col-lg-12">
+            <div class="details_info">
+              <div class="row justify-content-center">
+                <div class="col-lg-12">
+                  <div class="info justify-content-center">
+
+                    <h2 class="mb-3" style="font-size: 30px; font-weight:bold ;">Lift Icon</h2>
+                    <p style="text-align: left;">The Lift Icon received a minor change. To maximise space, the Up and
+                      Down arrows have been placed in the icon, and the inclusion of only one person in the lift icon. 
+                      <br>
+                      This is because the wheelchair symbol has been included together with the 'Priority Use' signage,
+                      hence, it is redundant to include the wheelchair icon.
+                      <br><br>
+                      The use of Blue Signages to signify lifts has also been expanded. This is to ensure that the lift signs
+                      are easily distinguishable from the rest of the signage variants. <br> (i.e Blue Signages =
+                      Lift)
+                    </p>
+                  </div>
+
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="../../img/eicw/lift-light1.png" id="lift1" class="portfolio-img ">
+                        <img src="../../img/eicw/lift-light1.png" id="lift1-img" class="img-fluid cp-img" alt="exit">
+                      </a>
+                    </figcaption>
+                  </div>
+
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="../../img/eicw/lift-light2.png" id="lift2" class="portfolio-img ">
+                        <img src="../../img/eicw/lift-light2.png" id="lift2-img" class="img-fluid cp-img" alt="exit">
+                      </a>
+                    </figcaption>
+                  </div>
+
+                  <!-- <video id="eicw-vid2" autoplay muted loop playsinline width="100%" class="column-vid">
+                    <source src="../../img/eicw/eicw-vid2-light.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -331,9 +412,14 @@
       const wo2_link = document.getElementById('wo2');
       const wo2_img = document.getElementById('wo2-img');
 
+      const exit_link = document.getElementById('exit');
+      const exit_img = document.getElementById('exit-img');
+
       const vid1 = document.getElementById('eicw-vid1');
       const vid1Source = vid1.querySelector('source');
 
+      const vid2 = document.getElementById('eicw-vid2');
+      const vid2Source = vid2.querySelector('source');
 
       const isDarkMode = document.body.classList.contains('dark-mode');
 
@@ -353,7 +439,12 @@
         wo2_link.href = '../../img/eicw/wo2-dark.png';
         wo2_img.src = '../../img/eicw/wo2-dark.png';
 
+        exit_link.href = '../../img/eicw/exit-dark.png';
+        exit_img.src = '../../img/eicw/exit-dark.png';
+
         vid1Source.src = '../../img/eicw/eicw-vid1-dark.mp4';
+        vid2Source.src = '../../img/eicw/eicw-vid2-dark.mp4';
+
       } else {
         coverSect.style.backgroundImage = "url('../../img/eicw/cover-light.png')";
         ciSect.style.backgroundImage = "url('../../img/eicw/c-i-light.png')";
@@ -370,14 +461,15 @@
         wo2_link.href = '../../img/eicw/wo2-light.png';
         wo2_img.src = '../../img/eicw/wo2-light.png';
 
+        exit_link.href = '../../img/eicw/exit-light.png';
+        exit_img.src = '../../img/eicw/exit-light.png';
+
         vid1Source.src = '../../img/eicw/eicw-vid1-light.mp4';
+        vid2Source.src = '../../img/eicw/eicw-vid2-light.mp4';
       }
       vid1.load();
+      vid2.load();
     }
-
-    window.addEventListener('resize', updateVideoSource);
-    window.addEventListener('DOMContentLoaded', updateVideoSource);
-
   </script>
 
   <script src="../../js/jquery.min.js"></script>

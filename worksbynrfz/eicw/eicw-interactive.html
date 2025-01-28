@@ -201,6 +201,7 @@
     <div class="wbnrfz_details wow fadeInUp" data-wow-delay="100ms">
       <div class="container container-xxl">
         <div class="row justify-content-center">
+
           <div class="col-lg-12">
             <div class="details_info">
               <div class="row justify-content-center">
@@ -215,33 +216,46 @@
                       as well as the 'Exit Border' symbol, which is currently being used to signify exits.
                     </p>
                   </div>
+
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="../../img/eicw/wo1-light.png" id="wo1" class="portfolio-img ">
+                        <img src="../../img/eicw/wo1-light.png" id="wo1-img" class="img-fluid cp-img" alt="wo1">
+                      </a>
+                    </figcaption>
+                  </div>
+
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="../../img/eicw/wo2-light.png" id="wo2" class="portfolio-img">
+                        <img src="../../img/eicw/wo2-light.png" id="wo2-img" class="img-fluid cp-img" alt="wo2">
+                      </a>
+                    </figcaption>
+                  </div>
+
+                  <video id="eicw-vid1" autoplay muted loop playsinline width="100%" class="column-vid">
+                    <source src="../../img/eicw/eicw-vid1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+
                 </div>
               </div>
             </div>
-
-            <div class="column column-pic">
-              <figcaption>
-                <a href="../../img/eicw/wo1-light.png" id="wo1" class="portfolio-img">
-                  <img src="../../img/eicw/wo1-light.png" id="wo1-img" class="img-fluid" alt="wo1" style="border-radius: 20px;">
-                </a>
-              </figcaption>
-            </div>
-
-            <div class="column column-pic">
-              <figcaption>
-                    <a href="../../img/eicw/wo2-light.png" id="wo2" class="portfolio-img">
-                      <img src="../../img/eicw/wo2-light.png" id="wo2-img" class="img-fluid" alt="wo2" style="border-radius: 20px;">
-                    </a>
-              </figcaption>
-            </div>
-
-            <hr>
           </div>
         </div>
       </div>
     </div>
-
   </section>
+
+  <section class="parallax-video parallax" id="cv-img">
+    <div class="details_single_img">
+      <div class="row">
+
+      </div>
+    </div>
+  </section>
+
+
 
 
 
@@ -329,6 +343,9 @@
       const wo2_link = document.getElementById('wo2');
       const wo2_img = document.getElementById('wo2-img');
 
+      const vid1 = document.getElementById('eicw-vid1');
+      const vid1Source = vid1.querySelector('source');
+
 
       const isDarkMode = document.body.classList.contains('dark-mode');
 
@@ -347,6 +364,8 @@
 
         wo2_link.href = '../../img/eicw/wo2-dark.png';
         wo2_img.src = '../../img/eicw/wo2-dark.png';
+
+        vid1Source.src = '../../img/eicw/eicw-vid1-dark.mp4';
       } else {
         coverSect.style.backgroundImage = "url('../../img/eicw/cover-light.png')";
         ciSect.style.backgroundImage = "url('../../img/eicw/c-i-light.png')";
@@ -362,8 +381,15 @@
 
         wo2_link.href = '../../img/eicw/wo2-light.png';
         wo2_img.src = '../../img/eicw/wo2-light.png';
+
+        vid1Source.src = '../../img/eicw/eicw-vid1-light.mp4';
       }
+      vid1.load();
     }
+
+    window.addEventListener('resize', updateVideoSource);
+    window.addEventListener('DOMContentLoaded', updateVideoSource);
+
   </script>
 
   <script src="../../js/jquery.min.js"></script>

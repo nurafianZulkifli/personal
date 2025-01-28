@@ -894,6 +894,11 @@ classynav ul li.has-down>a::after,
 /* ------------------------------------------ */
 
 /* ------------------------------------------ 10.0 Footer ------------------------------------------ */
+.footer-area {
+    background-color: #ffffff;
+    z-index: 999;
+}
+
 .footer-content {
     padding: 20px 0;
     padding-right: 57px;
@@ -2188,6 +2193,7 @@ hr {
     background-size: cover;
 }
 
+
 .breadcrumb-item+.breadcrumb-item::before {
     content: '\f105';
     color: #000;
@@ -2212,6 +2218,15 @@ li.breadcrumb-item a {
 h2.page-title {
     color: #fff;
 }
+
+.cp-img {
+    border-radius: 20px;
+}
+
+.column-vid {
+    border-radius: 20px;
+}
+
 
 /* ------------------------------------------ */
 

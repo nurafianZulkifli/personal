@@ -66,6 +66,7 @@ body.dark-mode .footer-area {
     background-color: #1e1e1e;
     color: #fff;
     transition: all 0.5s ease;
+    z-index: 999;
 }
 
 body.dark-mode .footer-content .copywrite-text p {
@@ -250,6 +251,10 @@ body.dark-mode .wbnrfz_details .banner-eicw img {
 
 body.dark-mode h2.page-title {
     color: #fff;
+}
+
+body.dark-mode .cp-img {
+    border-radius: 20px;
 }
 
 /* ------------------------------------------ */

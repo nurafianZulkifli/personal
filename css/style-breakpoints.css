@@ -75,6 +75,15 @@
         left: 50%;
         transform: translate(-50%, 0);
     }
+
+    .parallax-video {
+        height: 100vh;
+    }
+
+    .parallax-video video {
+        min-width: 100%;
+        min-height: 100vh;
+    }
 }
 
 /* ---- */
@@ -451,6 +460,11 @@
         margin-left: 15px !important;
         margin-top: 15px !important;
     }
+
+    .cp-img,
+    body.dark-mode .cp-img {
+        border-radius: 10px;
+    }
 }
 
 /* ---- */
@@ -561,6 +575,11 @@
 
     body.dark-mode .wbnrfz_details .banner-eicw img {
         border-radius: 10px !important;
+    }
+
+    .cp-img,
+    body.dark-mode .cp-img {
+        border-radius: 10px;
     }
 
 }

@@ -2210,10 +2210,17 @@ li.breadcrumb-item a {
     margin-bottom: 20px;
 }
 
-.breadcrumb-area-eicw-subs {
+.breadcrumb-area-eicw-cover {
     position: relative;
     z-index: 1;
     height: 50vh;
+}
+
+
+.breadcrumb-area-eicw-subs {
+    position: relative;
+    z-index: 1;
+    height: 40vh;
 }
 
 h2.page-title {
@@ -2225,7 +2232,9 @@ h2.page-title {
 }
 
 .column-vid {
-    border-radius: 20px;
+    width: 100% !important;
+    border-radius: 30px;
+    padding: 10px !important;
 }
 
 

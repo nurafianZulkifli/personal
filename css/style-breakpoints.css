@@ -579,7 +579,12 @@
 
     .cp-img,
     body.dark-mode .cp-img {
-        border-radius: 10px;
+        border-radius: 10px !important;
+    }
+
+    .column-vid,
+    body.dark-mode .column-vid {
+        border-radius: 20px !important;
     }
 
 }

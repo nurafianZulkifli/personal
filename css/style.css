@@ -2237,6 +2237,10 @@ h2.page-title {
     padding: 10px !important;
 }
 
+.col-lg-6-noPads {
+    padding: 0px !important;
+}
+
 
 /* ------------------------------------------ */
 

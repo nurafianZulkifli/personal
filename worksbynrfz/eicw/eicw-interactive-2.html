@@ -132,27 +132,34 @@
   </section>
 
   <section class="about-me-summ section-padding-80-0 clearfix">
-    <div class="wbnrfz_details wow fadeInUp" data-wow-delay="100ms">
+    <div class="wbnrfz_details">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
-            <div class="info justify-content-center">
+            <div class="row justify-content-center">
 
-              <h2 class="mb-3" style="font-size: 30px; font-weight:bold; text-align: left;">Time to get more
-                Experimental!</h2>
-              <p style="text-align: left;">This is a continuation from the <a href="eicw-interactive.html">First
-                  Page</a> which focuses on
-                enhancements and iterations to the existing New Wayfinding system. This page aims to take
-                a more experimental approach by exploring more Implementation ideas and how the new systems can be
-                enhanced further.
-              </p>
+              <!-- Preface -->
+              <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
+                <div class="info justify-content-center">
+                  <h2 class="mb-3" style="font-size: 30px; font-weight:bold; text-align: left;">Time to get more
+                    Experimental!</h2>
+                  <p style="text-align: left;">This is a continuation from the <a href="eicw-interactive.html">First
+                      Page</a> which focuses on
+                    enhancements and iterations to the existing New Wayfinding system. This page aims to take
+                    a more experimental approach by exploring more Implementation ideas and how the new systems can be
+                    enhanced further.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </section>
+
+
 
   <section class="breadcrumb-area-eicw-subs bg-img bg-overlay parallax" id="iu-img"
     style="background-image: url(../../img/eicw/iu-light.png)">
@@ -189,13 +196,13 @@
 
               <div class="column column-pic">
                 <figcaption>
-                  <a href="../../img/eicw/wo1-light.png" id="wo1" class="portfolio-img ">
-                    <img src="../../img/eicw/wo1-light.png" id="wo1-img" class="img-fluid cp-img" alt="wo1">
+                  <a href="../../img/eicw/labels-light1.png" id="lb1" class="portfolio-img ">
+                    <img src="../../img/eicw/labels-light1.png" id="lb1-img" class="img-fluid cp-img" alt="lb1">
                   </a>
                 </figcaption>
               </div>
 
-              <div class="column column-pic">
+              <!-- <div class="column column-pic">
                 <figcaption>
                   <a href="../../img/eicw/wo2-light.png" id="wo2" class="portfolio-img">
                     <img src="../../img/eicw/wo2-light.png" id="wo2-img" class="img-fluid cp-img" alt="wo2">
@@ -206,7 +213,7 @@
               <video id="eicw-vid1" autoplay muted loop playsinline width="100%" class="column-vid">
                 <source src="../../img/eicw/eicw-vid1-light.mp4" type="video/mp4">
                 Your browser does not support the video tag.
-              </video>
+              </video> -->
 
             </div>
           </div>
@@ -311,8 +318,8 @@
       const iuSect = document.getElementById('iu-img');
 
       /* Images */
-      // const tf_link = document.getElementById('tf');
-      // const tf_img = document.getElementById('tf-img');
+      const lb_link = document.getElementById('lb1');
+      const lb_img = document.getElementById('lb1-img');
 
       // const pl_link = document.getElementById('pl');
       // const pl_img = document.getElementById('pl-img');
@@ -350,8 +357,8 @@
         iuSect.style.backgroundImage = "url('../../img/eicw/iu-dark.png')";
 
         /* Images */
-        // tf_link.href = '../../img/eicw/typeface-dark.png';
-        // tf_img.src = '../../img/eicw/typeface-dark.png';
+        lb_link.href = '../../img/eicw/labels-dark1.png';
+        lb_img.src = '../../img/eicw/labels-dark1.png';
 
         // pl_link.href = '../../img/eicw/palettes-dark.png';
         // pl_img.src = '../../img/eicw/palettes-dark.png';
@@ -382,8 +389,8 @@
         iuSect.style.backgroundImage = "url('../../img/eicw/iu-light.png')";
 
         /* Images */
-        // tf_link.href = '../../img/eicw/typeface-light.png';
-        // tf_img.src = '../../img/eicw/typeface-light.png';
+        lb_link.href = '../../img/eicw/labels-light1.png';
+        lb_img.src = '../../img/eicw/labels-light1.png';
 
         // pl_link.href = '../../img/eicw/palettes-light.png';
         // pl_img.src = '../../img/eicw/palettes-light.png';

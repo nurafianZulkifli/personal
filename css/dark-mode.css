@@ -257,11 +257,10 @@ body.dark-mode .cp-img {
     border-radius: 20px;
 }
 
-body.dark-mode .jumplists {
-    background-color: #1e1e1e;
+body.dark-mode .ftco-section-otb {
+    padding: 5em 0;
+    background-color: #18191a;
     transition: all 0.5s ease;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 /* ------------------------------------------ */

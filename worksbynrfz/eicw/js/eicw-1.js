@@ -64,6 +64,30 @@ function updateHrefForDarkMode() {
     const evo_link = document.getElementById('evo');
     const evo_img = document.getElementById('evo-img');
 
+    const es_link = document.getElementById('es');
+    const es_img = document.getElementById('es-img');
+
+    const cp_link = document.getElementById('cp');
+    const cp_img = document.getElementById('cp-img');
+
+    const ls_link = document.getElementById('ls');
+    const ls_img = document.getElementById('ls-img');
+
+    const tt_link = document.getElementById('tt');
+    const tt_img = document.getElementById('tt-img');
+
+    const ttann_link = document.getElementById('ttann');
+    const ttann_img = document.getElementById('ttann-img');
+
+    const lsb_link = document.getElementById('lsb');
+    const lsb_img = document.getElementById('lsb-img');
+
+    const lsbann1_link = document.getElementById('lsbann1');
+    const lsbann1_img = document.getElementById('lsbann1-img');
+
+    const lsbann2_link = document.getElementById('lsbann2');
+    const lsbann2_img = document.getElementById('lsbann2-img');
+
     /* Videos */
     const vid1 = document.getElementById('eicw-vid1');
     const vid1Source = vid1.querySelector('source');
@@ -137,6 +161,30 @@ function updateHrefForDarkMode() {
         evo_link.href = '../../img/eicw/evo-dark.png';
         evo_img.src = '../../img/eicw/evo-dark.png';
 
+        es_link.href = '../../img/eicw/es-dark.png';
+        es_img.src = '../../img/eicw/es-dark.png';
+
+        cp_link.href = '../../img/eicw/cp-dark.png';
+        cp_img.src = '../../img/eicw/cp-dark.png';
+
+        ls_link.href = '../../img/eicw/ls-dark.png';
+        ls_img.src = '../../img/eicw/ls-dark.png';
+
+        tt_link.href = '../../img/eicw/tt-dark.png';
+        tt_img.src = '../../img/eicw/tt-dark.png';
+
+        ttann_link.href = '../../img/eicw/ttann-dark.png';
+        ttann_img.src = '../../img/eicw/ttann-dark.png';
+
+        lsb_link.href = '../../img/eicw/lsb-dark.png';
+        lsb_img.src = '../../img/eicw/lsb-dark.png';
+
+        lsbann1_link.href = '../../img/eicw/lsbann1-dark.png';
+        lsbann1_img.src = '../../img/eicw/lsbann1-dark.png';
+
+        lsbann2_link.href = '../../img/eicw/lsbann2-dark.png';
+        lsbann2_img.src = '../../img/eicw/lsbann2-dark.png';
+
         /* Videos */
         vid1Source.src = '../../img/eicw/eicw-vid1-dark.mp4';
         vid2Source.src = '../../img/eicw/eicw-vid2-dark.mp4';
@@ -192,6 +240,31 @@ function updateHrefForDarkMode() {
 
         evo_link.href = '../../img/eicw/evo-light.png';
         evo_img.src = '../../img/eicw/evo-light.png';
+
+        es_link.href = '../../img/eicw/es-light.png';
+        es_img.src = '../../img/eicw/es-light.png';
+
+        cp_link.href = '../../img/eicw/cp-light.png';
+        cp_img.src = '../../img/eicw/cp-light.png';
+
+        ls_link.href = '../../img/eicw/ls-light.png';
+        ls_img.src = '../../img/eicw/ls-light.png';
+
+        tt_link.href = '../../img/eicw/tt-light.png';
+        tt_img.src = '../../img/eicw/tt-light.png';
+
+        ttann_link.href = '../../img/eicw/ttann-light.png';
+        ttann_img.src = '../../img/eicw/ttann-light.png';
+
+        lsb_link.href = '../../img/eicw/lsb-light.png';
+        lsb_img.src = '../../img/eicw/lsb-light.png';
+
+        lsbann1_link.href = '../../img/eicw/lsbann1-light.png';
+        lsbann1_img.src = '../../img/eicw/lsbann1-light.png';
+
+        lsbann2_link.href = '../../img/eicw/lsbann2-light.png';
+        lsbann2_img.src = '../../img/eicw/lsbann2-light.png';
+
 
         /* Videos */
         vid1Source.src = '../../img/eicw/eicw-vid1-light.mp4';

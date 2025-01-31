@@ -168,6 +168,12 @@
         font-size: 15px;
         margin: 7px 5px;
     }
+
+    .container-mobile {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
 }
 
 /* ---- */

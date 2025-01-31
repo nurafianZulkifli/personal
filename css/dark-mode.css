@@ -45,6 +45,8 @@ body.dark-mode .wbnrfz_btn_theme {
     color: #fff;
 }
 
+/* ---- */
+
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -58,6 +60,21 @@ body.dark-mode p {
 body.dark-mode hr {
     border-color: #fff;
 }
+
+body.dark-mode #scrollUp {
+    box-shadow: 0 2px 40px 0px rgba(15, 15, 15, 0.15);
+    z-index: 12345111212;
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px #8d8d8d6b;
+    }
+    100% {
+      box-shadow: 0 0 0 20px #00000000;
+    }
+  }
 
 /* ---- */
 

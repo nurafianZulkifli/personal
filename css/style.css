@@ -509,13 +509,11 @@ input:required {
     background-color: #898a77;
     color: #ffffff;
     text-align: center;
-    -webkit-transition-duration: 500ms;
-    -o-transition-duration: 500ms;
     transition-duration: 500ms;
     border-radius: 50%;
-    -webkit-box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
-    box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+    box-shadow: 0 2px 40px 0px rgba(15, 15, 15, 0.15);
     z-index: 12345111212;
+    animation: pulse-animation 2s infinite;
 }
 
 #scrollUp:focus,
@@ -532,6 +530,7 @@ input:required {
             #df9e43 100%);
     width: 0%;
     filter: drop-shadow(0 0 5px);
+    border-radius: 20px;
 }
 
 .scroll-bar {
@@ -539,6 +538,16 @@ input:required {
     background: #b9683f;
     width: 0%;
 }
+
+@keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+  }
+  
 
 /* ------------------------------------------ */
 

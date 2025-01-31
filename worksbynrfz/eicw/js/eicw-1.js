@@ -99,9 +99,31 @@ function updateHrefForDarkMode() {
 
     const edann1_link = document.getElementById('edann1');
     const edann1_img = document.getElementById('edann1-img');
-    
+
     const edann2_link = document.getElementById('edann2');
     const edann2_img = document.getElementById('edann2-img');
+
+    const ts_link = document.getElementById('ts');
+    const ts_img = document.getElementById('ts-img');
+
+    const tsann1_link = document.getElementById('tsann1');
+    const tsann1_img = document.getElementById('tsann1-img');
+
+    const tsann2_link = document.getElementById('tsann2');
+    const tsann2_img = document.getElementById('tsann2-img');
+
+    const os_link = document.getElementById('os');
+    const os_img = document.getElementById('os-img');
+
+    const osann1_link = document.getElementById('osann1');
+    const osann1_img = document.getElementById('osann1-img');
+
+    const cs_link = document.getElementById('cs');
+    const cs_img = document.getElementById('cs-img');
+
+    const ud_link = document.getElementById('ud');
+    const ud_img = document.getElementById('ud-img');
+
 
     /* Videos */
     const vid1 = document.getElementById('eicw-vid1');
@@ -215,6 +237,27 @@ function updateHrefForDarkMode() {
         edann2_link.href = '../../img/eicw/edann2-dark.png';
         edann2_img.src = '../../img/eicw/edann2-dark.png';
 
+        ts_link.href = '../../img/eicw/ts-dark.png';
+        ts_img.src = '../../img/eicw/ts-dark.png';
+
+        tsann1_link.href = '../../img/eicw/tsann1-dark.png';
+        tsann1_img.src = '../../img/eicw/tsann1-dark.png';
+
+        tsann2_link.href = '../../img/eicw/tsann2-dark.png';
+        tsann2_img.src = '../../img/eicw/tsann2-dark.png';
+
+        os_link.href = '../../img/eicw/os-dark.png';
+        os_img.src = '../../img/eicw/os-dark.png';
+
+        osann1_link.href = '../../img/eicw/osann1-dark.png';
+        osann1_img.src = '../../img/eicw/osann1-dark.png';
+
+        cs_link.href = '../../img/eicw/cs-dark.png';
+        cs_img.src = '../../img/eicw/cs-dark.png';
+
+        ud_link.href = '../../img/eicw/ud-dark.png';
+        ud_img.src = '../../img/eicw/ud-dark.png';
+
         /* Videos */
         vid1Source.src = '../../img/eicw/eicw-vid1-dark.mp4';
         vid2Source.src = '../../img/eicw/eicw-vid2-dark.mp4';
@@ -310,6 +353,27 @@ function updateHrefForDarkMode() {
         edann2_link.href = '../../img/eicw/edann2-light.png';
         edann2_img.src = '../../img/eicw/edann2-light.png';
 
+        ts_link.href = '../../img/eicw/ts-light.png';
+        ts_img.src = '../../img/eicw/ts-light.png';
+
+        tsann1_link.href = '../../img/eicw/tsann1-light.png';
+        tsann1_img.src = '../../img/eicw/tsann1-light.png';
+
+        tsann2_link.href = '../../img/eicw/tsann2-light.png';
+        tsann2_img.src = '../../img/eicw/tsann2-light.png';
+
+        os_link.href = '../../img/eicw/os-light.png';
+        os_img.src = '../../img/eicw/os-light.png';
+
+        osann1_link.href = '../../img/eicw/osann1-light.png';
+        osann1_img.src = '../../img/eicw/osann1-light.png';
+
+        cs_link.href = '../../img/eicw/cs-light.png';
+        cs_img.src = '../../img/eicw/cs-light.png';
+
+        ud_link.href = '../../img/eicw/ud-light.png';
+        ud_img.src = '../../img/eicw/ud-light.png';
+
 
         /* Videos */
         vid1Source.src = '../../img/eicw/eicw-vid1-light.mp4';
@@ -330,3 +394,12 @@ function updateHrefForDarkMode() {
     vid7.load();
     vid8.load();
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    var videos = document.querySelectorAll('video');
+    videos.forEach(function (video) {
+        video.play().catch(function (error) {
+            console.log('Autoplay was prevented:', error);
+        });
+    });
+});

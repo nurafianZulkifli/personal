@@ -88,6 +88,21 @@ function updateHrefForDarkMode() {
     const lsbann2_link = document.getElementById('lsbann2');
     const lsbann2_img = document.getElementById('lsbann2-img');
 
+    const wf1_link = document.getElementById('wf1');
+    const wf1_img = document.getElementById('wf1-img');
+
+    const wf2_link = document.getElementById('wf2');
+    const wf2_img = document.getElementById('wf2-img');
+
+    const ed_link = document.getElementById('ed');
+    const ed_img = document.getElementById('ed-img');
+
+    const edann1_link = document.getElementById('edann1');
+    const edann1_img = document.getElementById('edann1-img');
+    
+    const edann2_link = document.getElementById('edann2');
+    const edann2_img = document.getElementById('edann2-img');
+
     /* Videos */
     const vid1 = document.getElementById('eicw-vid1');
     const vid1Source = vid1.querySelector('source');
@@ -185,6 +200,21 @@ function updateHrefForDarkMode() {
         lsbann2_link.href = '../../img/eicw/lsbann2-dark.png';
         lsbann2_img.src = '../../img/eicw/lsbann2-dark.png';
 
+        wf1_link.href = '../../img/eicw/wf1-dark.png';
+        wf1_img.src = '../../img/eicw/wf1-dark.png';
+
+        wf2_link.href = '../../img/eicw/wf2-dark.png';
+        wf2_img.src = '../../img/eicw/wf2-dark.png';
+
+        ed_link.href = '../../img/eicw/ed-dark.png';
+        ed_img.src = '../../img/eicw/ed-dark.png';
+
+        edann1_link.href = '../../img/eicw/edann1-dark.png';
+        edann1_img.src = '../../img/eicw/edann1-dark.png';
+
+        edann2_link.href = '../../img/eicw/edann2-dark.png';
+        edann2_img.src = '../../img/eicw/edann2-dark.png';
+
         /* Videos */
         vid1Source.src = '../../img/eicw/eicw-vid1-dark.mp4';
         vid2Source.src = '../../img/eicw/eicw-vid2-dark.mp4';
@@ -264,6 +294,21 @@ function updateHrefForDarkMode() {
 
         lsbann2_link.href = '../../img/eicw/lsbann2-light.png';
         lsbann2_img.src = '../../img/eicw/lsbann2-light.png';
+
+        wf1_link.href = '../../img/eicw/wf1-light.png';
+        wf1_img.src = '../../img/eicw/wf1-light.png';
+
+        wf2_link.href = '../../img/eicw/wf2-light.png';
+        wf2_img.src = '../../img/eicw/wf2-light.png';
+
+        ed_link.href = '../../img/eicw/ed-light.png';
+        ed_img.src = '../../img/eicw/ed-light.png';
+
+        edann1_link.href = '../../img/eicw/edann1-light.png';
+        edann1_img.src = '../../img/eicw/edann1-light.png';
+
+        edann2_link.href = '../../img/eicw/edann2-light.png';
+        edann2_img.src = '../../img/eicw/edann2-light.png';
 
 
         /* Videos */

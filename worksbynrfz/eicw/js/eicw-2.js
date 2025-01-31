@@ -24,8 +24,11 @@ function updateHrefForDarkMode() {
     const iuSect = document.getElementById('iu-img');
 
     /* Images */
-    const lb_link = document.getElementById('lb1');
-    const lb_img = document.getElementById('lb1-img');
+    const lb1_link = document.getElementById('lb1');
+    const lb1_img = document.getElementById('lb1-img');
+
+    const lb2_link = document.getElementById('lb2');
+    const lb2_img = document.getElementById('lb2-img');
 
 
 
@@ -43,8 +46,11 @@ function updateHrefForDarkMode() {
         iuSect.style.backgroundImage = "url('../../img/eicw/iu-dark.png')";
 
         /* Images */
-        lb_link.href = '../../img/eicw/labels-dark1.png';
-        lb_img.src = '../../img/eicw/labels-dark1.png';
+        lb1_link.href = '../../img/eicw/lb1-dark.png';
+        lb1_img.src = '../../img/eicw/lb1-dark.png';
+
+        lb2_link.href = '../../img/eicw/lb2-dark.png';
+        lb2_img.src = '../../img/eicw/lb2-dark.png';
 
 
 
@@ -58,8 +64,11 @@ function updateHrefForDarkMode() {
         iuSect.style.backgroundImage = "url('../../img/eicw/iu-light.png')";
 
         /* Images */
-        lb_link.href = '../../img/eicw/labels-light1.png';
-        lb_img.src = '../../img/eicw/labels-light1.png';
+        lb1_link.href = '../../img/eicw/lb1-light.png';
+        lb1_img.src = '../../img/eicw/lb1-light.png';
+
+        lb2_link.href = '../../img/eicw/lb2-light.png';
+        lb2_img.src = '../../img/eicw/lb2-light.png';
 
 
         /* Videos */

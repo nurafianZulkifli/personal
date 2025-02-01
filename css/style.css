@@ -23,7 +23,7 @@
     - 18.0 Skills Section
     - 19.0 Works By NRFZ_Details Section
     - 20.0 Blog Post Section
-    - 21.0 Theme Function
+    - 21.0 EICW
 
 > style-breakpoints
 > dark theme
@@ -541,13 +541,14 @@ input:required {
 
 @keyframes pulse-animation {
     0% {
-      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
     }
+
     100% {
-      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
     }
-  }
-  
+}
+
 
 /* ------------------------------------------ */
 
@@ -1619,6 +1620,12 @@ li.breadcrumb-item.active a {
     margin-top: -12px;
 }
 
+.btn.show {
+    color: var(--bs-btn-active-color);
+    background-color: var(--bs-btn-active-bg);
+    border-color: var(--bs-btn-active-border-color);
+}
+
 /* ------------------------------------------ */
 
 /* ------------------------------------------  17.0 Hero Details ------------------------------------------ */
@@ -2188,7 +2195,7 @@ hr {
 
 /* ------------------------------------------ */
 
-/* ------------------------------------------ x.x EICW ------------------------------------------ */
+/* ------------------------------------------ 21.0 EICW ------------------------------------------ */
 .wbnrfz-summ-micro {
     background-color: #f5f6f2;
     padding-top: 8em;
@@ -2262,4 +2269,3 @@ h2.page-title {
 }
 
 /* ------------------------------------------ */
-

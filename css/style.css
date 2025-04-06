@@ -121,7 +121,8 @@ ul li {
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: rgba(0, 0, 0, 0.773)
+    background-color: #262626e2;
+    backdrop-filter: blur(2px);
 }
 
 .row {
@@ -529,7 +530,7 @@ input:required {
             #fd1d1d 50%,
             #df9e43 100%);
     width: 0%;
-    filter: drop-shadow(0 0 5px);
+    filter: drop-shadow(0 0 1px);
     border-radius: 20px;
 }
 
@@ -614,6 +615,12 @@ input:required {
     font-weight: 500;
 }
 
+.wbnrfz_btn_theme:hover {
+    background-color: #80a8cc;
+    color: #fff;
+}
+
+
 /* ------------------------------------------ */
 
 /* ------------------------------------------ 7.0 Header ------------------------------------------ */
@@ -665,10 +672,15 @@ input:required {
 .classy-nav-container .classy-navbar .classynav ul li a {
     font-size: 16px;
     text-transform: capitalize;
-    color: #ffffff;
+    color: #fff;
     font-weight: 500;
     padding: 0 20px;
     cursor: pointer;
+}
+
+.main-header-area.sticky .classynav ul li a {
+    color: #000;
+    transition: color 0.3s ease;
 }
 
 .classy-nav-container .classy-navbar .classynav ul li a:hover,
@@ -701,7 +713,20 @@ input:required {
 .classynav ul li.active a::before {
     width: calc(100% - 40px);
     height: 2px;
-    background-color: #898a77;
+    background-color: #bdbea5;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    z-index: 1;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-header-area.sticky .classynav ul li.active a::before {
+    width: calc(100% - 40px);
+    height: 2px;
+    background-color: #959581;
     position: absolute;
     bottom: 4px;
     left: 0;
@@ -745,7 +770,7 @@ classynav ul li.has-down>a::after,
 }
 
 .main-header-area.sticky {
-    background-color: #161714f8;
+    background-color: #dcdcd8;
 }
 
 .classy-navbar-toggler .navbarToggler span {
@@ -819,13 +844,13 @@ classynav ul li.has-down>a::after,
     background: url("../img/bg-img/hero-bg.png") top right no-repeat;
     background-size: cover;
     position: relative;
-    backdrop-filter: blur(5px);
 }
 
 
 #hero:before {
     content: "";
-    background-color: rgba(0, 0, 0, 0.773);
+    background-color: #262626e2;
+    backdrop-filter: blur(2px);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -1648,7 +1673,7 @@ img.profile-pic {
 }
 
 .profile-desc {
-    color: #898a77;
+    color: #e4e6c1;
     font-size: 20px;
     font-weight: normal;
     cursor: default;

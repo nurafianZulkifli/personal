@@ -47,7 +47,7 @@ function updateHrefForDarkMode() {
 
     if (isDarkMode) {
         /* Banners */
-        coverSect.style.backgroundImage = "url('./img/cover-dark.png')";
+        coverSect.style.backgroundImage = "url('./img/cover-3-dark.png')";
         iuSect.style.backgroundImage = "url('./img/iu-dark.png')";
 
 
@@ -72,7 +72,7 @@ function updateHrefForDarkMode() {
 
     } else {
         /* Banners */
-        coverSect.style.backgroundImage = "url('./img/cover-light.png')";
+        coverSect.style.backgroundImage = "url('./img/cover-3-light.png')";
         iuSect.style.backgroundImage = "url('./img/iu-light.png')";
 
 

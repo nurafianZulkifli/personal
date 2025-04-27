@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="css/carousel.css">
 
 
-
     <link rel="stylesheet" type="text/css"
         href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 
@@ -42,50 +41,33 @@
 
 <body>
 
+    <!-- Preloader Section -->
     <div id="preloader">
         <div class="loader"></div>
+        <p id="preloader-text">Just a moment...</p>
     </div>
 
+    <header>
+        <a href="./index.html"><img src="./img/core-img/logo.png" alt="logo" class="logo" /></a>
 
-    <header class="header-area">
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+            <i class="fa-solid fa-xmark" id="close-icon"></i>
+        </label>
 
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container container-xxl">
-
-                    <nav class="classy-navbar justify-content-between" id="pwNav">
-
-                        <a class="nav-brand img-logo" href="./index.html"><img class="logo-img"
-                                src="./img/core-img/logo.png" alt></a>
-
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <div class="classy-menu">
-
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./about.html">About</a></li>
-                                    <li><a href="./works-by-nrfz.html">Works By NRFZ</a></li>
-                                    <li><a href="./blog.html">Blog</a></li>
-                                    <li title="Preview the next Version of this site!"><a href="https://nurafianzulkifli.github.io/nrfz-dev/"><i class="fa-solid fa-person-digging"></i></a></li>
-                                    <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
-                                            title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        <nav class="navbar navbar-mobile">
+            <a href="#" class="nav-item active">Home</a>
+            <a href="./about.html" class="nav-item">About</a>
+            <a href="./works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
+            <a href="eicw/eicw.html" class="nav-item">EICW</a>
+            <a href="./blog.html" class="nav-item">Blog</a>
+            <a href="#" class="nav-item">
+                <button class="wbnrfz_btn_theme" id="dark-mode-toggle" title="Toggle Dark/Light Mode!">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+            </a>
+        </nav>
     </header>
 
 
@@ -146,80 +128,50 @@
             </div>
             <div class="row pw-portfolio">
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 wow fadeInUp" data-wow-delay="100ms"
+                    data-year="2025">
                     <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/EiaJAoM.png" alt>
-                        <div class="hover-content">
+                        <img src="https://i.imgur.com/rBAx6Yy.png" alt>
+                        <div class="hover-content-blog">
                             <h4>EICW - Implementation Brainstorming</h4>
                             <a class="info" href="worksbynrfz/improve-wf.html" class="portfolio-img"><i
-                                    class="fa-solid fa-circle-info"></i></a>
-                            <a href="https://i.imgur.com/EiaJAoM.png" class="portfolio-img"><i
-                                    class="fa-solid fa-expand"></i></a>
+                                    class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="300ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item in mb-30 wow fadeInUp" data-wow-delay="100ms"
+                    data-year="2024">
                     <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/5I39ojc.png" alt>
-                        <div class="hover-content">
-                            <h4>Train Delays Checker V3</h4>
+                        <img src="https://i.imgur.com/iRDMx37.png" alt="tdc-v3">
+                        <div class="hover-content-blog">
+                            <h4>Train Delays Checker V4</h4>
                             <a class="info" href="worksbynrfz/delays-checker.html" class="portfolio-img"><i
-                                    class="fa-solid fa-circle-info"></i></a>
-                            <a href="https://i.imgur.com/5I39ojc.png" class="portfolio-img"><i
-                                    class="fa-solid fa-expand"></i></a>
+                                    class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="900ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 wow fadeInUp" data-wow-delay="500ms"
+                    data-year="2022">
                     <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/wDvqKp1.png" alt>
-                        <div class="hover-content">
+                        <img src="https://i.imgur.com/mrtK74Z.png" alt="bus-rep">
+                        <div class="hover-content-blog">
                             <h4>Bus Replications</h4>
                             <a class="info" href="worksbynrfz/bus-rep.html" class="portfolio-img"><i
-                                    class="fa-solid fa-circle-info"></i></a>
-                            <a href="https://i.imgur.com/wDvqKp1.png" class="portfolio-img"><i
-                                    class="fa-solid fa-expand"></i></a>
+                                    class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="1100ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mc mb-30 wow fadeInUp"
+                    data-wow-delay="700ms">
                     <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/2ZDDWFy.png" alt>
-                        <div class="hover-content">
-                            <h4>MyTransport.SG App Redesign</h4>
-                            <a class="info" href="worksbynrfz/myts-app.html" class="portfolio-img"><i
-                                    class="fa-solid fa-circle-info"></i></a>
-                            <a href="https://i.imgur.com/2ZDDWFy.png" class="portfolio-img"><i
-                                    class="fa-solid fa-expand"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/GlYFYka.png" alt="man-a22-mascot">
-                        <div class="hover-content">
-                            <h4>MAN A22 Lion Mascot Replication</h4>
-                            <a class="info" href="worksbynrfz/man-a22-masc.html" class="portfolio-img"><i
-                                    class="fa-solid fa-circle-info"></i></a>
-                            <a href="https://i.imgur.com/GlYFYka.png" class="portfolio-img"><i
-                                    class="fa-solid fa-expand"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30 wow fadeInUp" data-wow-delay="700ms">
-                    <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/kstN8gT.png" alt>
-                        <div class="hover-content">
-                            <h4>How To Use TimeTree Infographic</h4>
-                            <a class="info" href="worksbynrfz/igra3.html" class="portfolio-img"><i
-                                    class="fa-solid fa-circle-info"></i></a>
-                            <a href="https://i.imgur.com/kstN8gT.png" class="portfolio-img"><i
-                                    class="fa-solid fa-expand"></i></a>
+                        <img src="https://i.imgur.com/GrXbpDs.png" alt="bus-stop-pole">
+                        <div class="hover-content-blog">
+                            <h4>LTA Bus Stop Pole Design Refresh</h4>
+                            <a class="info" href="worksbynrfz/lta-bp.html" class="portfolio-img"><i
+                                    class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -294,7 +246,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading text-center">
-                        <h2 style="font-size: 30px">Skills & Software Proficiency</h2>
+                        <h2 style="font-size: 30px">Skills & Design Proficiency</h2>
                     </div>
                 </div>
             </div>
@@ -335,37 +287,6 @@
             </div>
         </div>
 
-        <div class="instragram-feed-area owl-carousel wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="single-software-item">
-                <img src="img/gallery/brand1.png" alt="inkscape">
-            </div>
-
-            <div class="single-software-item">
-                <img src="img/gallery/brand2.png" alt="sketchup">
-            </div>
-
-            <div class="single-software-item">
-                <img src="img/gallery/brand3.png" alt="illustrator">
-            </div>
-
-            <div class="single-software-item">
-                <img src="img/gallery/brand4.png" alt="xd">
-            </div>
-
-            <div class="single-software-item">
-                <img src="img/gallery/brand5.png" alt="office-365">
-            </div>
-
-            <div class="single-software-item">
-                <img src="img/gallery/brand6.png" alt="windows">
-            </div>
-        </div>
-
-
-
-
-
         <div class="row">
             <div class="col-12 text-center wow fadeInUp" data-wow-delay="700ms">
                 <a href="./about.html" class="btn pw-btn btn-2 mt-15">About Me &nbsp;<i
@@ -374,52 +295,47 @@
         </div>
     </section>
 
-
-
     <footer class="footer-area">
-        <div class="container container-xxl">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-content d-flex align-items-center justify-content-between">
-
-                        <div class="copywrite-text">
-                            <p>
-                                &copy;
-                                <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli</a>
-                            </p>
-                        </div>
-
-                        <div class="social-info">
-                            <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                                    aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="footer-content d-flex flex-column align-items-center text-center">
+                <!-- Social Links -->
+                <div class="social-info">
+                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
+                            aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
+                            aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
+                            aria-hidden="true"></i></a>
+                </div>
+                <!-- Copywrite Text -->
+                <div class="copywrite-text">
+                    <p>&copy;
+                        <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
+                    </p>
                 </div>
             </div>
         </div>
+    </footer>
 
-        <script type="text/javascript" id="cookiebanner" src="js/cookies-banner.js" data-position="bottom"
-            data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
-            data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
-            </script>
+    <script type="text/javascript" id="cookiebanner" src="js/cookies-banner.js" data-position="bottom" data-bg="#f2f3e5"
+        data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
+        data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
+        </script>
 
-        <script src="js/theme-index.js"></script>
+    <script src="js/theme-index.js"></script>
 
-        <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
 
-        <script src="js/popper.min.js"></script>
+    <script src="js/popper.min.js"></script>
 
-        <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-        <script src="js/pw.bundle.js"></script>
+    <script src="js/pw.bundle.js"></script>
 
-        <script src="js/default-assets/active.js"></script>
+    <script src="js/default-assets/active.js"></script>
+
+    <script src="js/preloader.js"></script>
 
 
 </body>

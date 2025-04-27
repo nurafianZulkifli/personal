@@ -24,66 +24,76 @@
 
 <body>
 
+    <!-- Preloader Section -->
     <div id="preloader">
         <div class="loader"></div>
+        <p id="preloader-text">Just a moment...</p>
     </div>
 
-    <header class="header-area">
+    <div id="scroll-indicator-container">
+        <div id="scroll-indicator"></div>
+    </div>
 
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container container-xxl">
 
-                    <nav class="classy-navbar justify-content-between" id="pwNav">
+    <header>
+        <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
 
-                        <a class="nav-brand img-logo" href="../index.html"><img class="logo-img"
-                                src="../img/core-img/logo.png" alt="logo"></a>
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+            <i class="fa-solid fa-xmark" id="close-icon"></i>
+        </label>
 
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <div class="classy-menu">
-
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="../index.html">Home</a></li>
-                                    <li><a href="../about.html">About</a></li>
-                                    <li><a href="../works-by-nrfz.html">Works By NRFZ</a></li>
-                                    <li class="active"><a href="../blog.html">Blog</a></li>
-                                    <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
-                                            title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </nav>
-                </div>
-                <div class="progress-bar" id="scrollIndicator"></div>
-            </div>
-        </div>
+        <nav class="navbar navbar-mobile">
+            <a href="../index.html" class="nav-item">Home</a>
+            <a href="../about.html" class="nav-item">About</a>
+            <a href="../works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
+            <a href="../eicw/eicw.html" class="nav-item">EICW</a>
+            <a href="../blog.html" class="nav-item active">Blog</a>
+            <a href="#" class="nav-item"><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
+                    title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button></a>
+        </nav>
     </header>
 
-
-    <section class="breadcrumb-area bg-img bg-overlay"
+    <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-pv4-3"
         style="background-image: url(https://i.imgur.com/rArbQAw.png); height: 100vh;">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content text-center">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a href="../index.html">Home</a>
-                                </li>
-                                <li class="breadcrumb-item active"><a href="../blog.html">Blog</a></li>
-                            </ol>
-                        </nav>
-                        <h2 class="page-title-blog">Personal Version 4.4 - Optimizations Galore</h2>
+        <div class="wbnrfz_details_blog">
+            <div class="container">
+                <div class="portfolio-controls d-flex justify-content-between align-items-center">
+                    <!-- Filter Buttons -->
+                    <div class="portfolio-filter mt-3">
+                        <div class="col-lg-12">
+                            <div class="main-title">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="https://nurafianzulkifli.com/index.html">
+                                                Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item active"><a href="../blog.html">
+                                                Blog
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                                <h1 class="brc">Personal Version 4.4 - Optimizations Galore</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Collapsible Header -->
+                    <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#portfolioFilter"
+                        aria-controls="portfolioFilter" style="cursor: pointer;" title="Go To">
+                        <i class="fa-solid fa-chevron-down nav-chev"></i>
+                    </div>
+                </div>
+                <!-- Collapsible Content -->
+                <div id="portfolioFilter" class="collapse">
+                    <div class="portfolio-filter mt-3">
+                        <a href="#changes">
+                            <button class="btn">What was changed?</button>
+                        </a>
+                        <a href="#conclusion">
+                            <button class="btn">Conclusion</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -101,14 +111,15 @@
                     </div>
                 </div>
 
-                <h2 class="mb-3" style="font-size: 30px; font-weight:bold ;"><u>What was changed?</u></h2>
+                <h2 class="mb-3" style="font-size: 30px; font-weight:bold;" id="changes"><u>What was changed?</u></h2>
                 <p>The last time I launched the revamped version for both my Personal Website and the Train Delays
                     Checker (TDC) was in September 2024. Since then, many under the hood changes have been made. This
                     includes multiple code cleanups and optimizations to make the website work better. Let's dive in on
                     all of the changes, shall we?</p>
 
+                <hr>
 
-                <h2 class="mb-3" style="font-size: 30px; font-weight:bold ;"><u>Changes & Improvements</u></h2>
+                <h2 style="font-size: 30px; font-weight: bold; padding-top: 1em;"><u>Changes & Improvements</u></h2>
 
                 <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;">Introducing Dark Theme!</h3>
                 <p>This was a long awaited feature for me to implement. As a fan of the Dark Theme myself, I was already
@@ -118,20 +129,18 @@
 
                 <div class="column column-pic">
                     <figcaption>
-                        <a href="https://i.imgur.com/oBfHC8y.jpeg"
-                            class="portfolio-img"><img
-                                src="https://i.imgur.com/oBfHC8y.jpeg"
-                                class="img-fluid" alt="Hero Image/Description Section"></a>
+                        <a href="https://i.imgur.com/oBfHC8y.jpeg" class="portfolio-img"><img
+                                src="https://i.imgur.com/oBfHC8y.jpeg" class="img-fluid"
+                                alt="Hero Image/Description Section"></a>
                         <p>Home Page in Dark Mode</p>
                     </figcaption>
                 </div>
 
                 <div class="column column-pic">
                     <figcaption>
-                        <a href="https://i.imgur.com/qv8Spzp.jpeg"
-                            class="portfolio-img"><img
-                                src="https://i.imgur.com/qv8Spzp.jpeg"
-                                class="img-fluid" alt="Hero Image/Description Section"></a>
+                        <a href="https://i.imgur.com/qv8Spzp.jpeg" class="portfolio-img"><img
+                                src="https://i.imgur.com/qv8Spzp.jpeg" class="img-fluid"
+                                alt="Hero Image/Description Section"></a>
                         <p>About Page in Dark Mode</p>
                     </figcaption>
                 </div>
@@ -265,27 +274,20 @@
 
                 <hr>
 
-                <h2 class="mb-3" style="font-size: 45px; font-weight:bold ;">Conclusion</h2>
+                <h2 class="mb-3" style="font-size: 45px; font-weight:bold;" id="conclusion">Conclusion</h2>
                 <p>I am still very happy with how the website currently looks. Hence, future updates will be more
                     incremental than ever. The changes mentioned above will be rolled out to my <a
                         href="https://nurafianzulkifli.github.io/train-delays-checker/">Train
                         Delays Checker</a> website in the coming days. Sticking with my vision of continuous
-                    improvements, perhaps I can explore different things I can implement in future updates. We shall see 😁.
+                    improvements, perhaps I can explore different things I can implement in future updates. We shall see
+                    😁.
                 </p>
 
                 <hr>
             </div>
 
-            <!-- Tags -->
-            <div class="tag-widget post-tag-container mb-5 mt-5">
-                <div class="tagcloud">
-                    <a href="#" class="tag-cloud-link">Website Design</a>
-                    <a href="#" class="tag-cloud-link">Redesign</a>
-                </div>
-            </div>
-
             <!-- Author -->
-            <div class="about-author d-flex p-4">
+            <div class="about-author d-flex p-4" style="margin-bottom: 2em;">
                 <div class="bio mr-0 text-center">
                     <img src="../img/bg-img/about.png" alt="profile" class="img-blog-profile img-fluid mb-4">
                 </div>
@@ -300,29 +302,23 @@
     </section>
 
     <footer class="footer-area">
-        <div class="container container-xxl">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-content d-flex align-items-center justify-content-between">
-
-                        <div class="copywrite-text">
-                            <p>
-                                &copy;
-                                <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli</a>
-                            </p>
-                        </div>
-
-                        <div class="social-info">
-                            <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                                    aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="footer-content d-flex flex-column align-items-center text-center">
+                <!-- Social Links -->
+                <div class="social-info">
+                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
+                            aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
+                            aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
+                            aria-hidden="true"></i></a>
+                </div>
+                <!-- Copywrite Text -->
+                <div class="copywrite-text">
+                    <p>&copy;
+                        <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
+                    </p>
                 </div>
             </div>
         </div>
@@ -333,7 +329,8 @@
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
-    <script src="../js/theme.js"></script>
+
+    <script src="js/personal-v4-3.js"></script>
 
     <script src="../js/jquery.min.js"></script>
 

@@ -24,66 +24,79 @@
 
 <body>
 
+    <!-- Preloader Section -->
     <div id="preloader">
         <div class="loader"></div>
+        <p id="preloader-text">Just a moment...</p>
     </div>
 
-    <header class="header-area">
+    <div id="scroll-indicator-container">
+        <div id="scroll-indicator"></div>
+    </div>
 
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container container-xxl">
 
-                    <nav class="classy-navbar justify-content-between" id="pwNav">
+    <header>
+        <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
 
-                        <a class="nav-brand img-logo" href="../index.html"><img class="logo-img"
-                                src="../img/core-img/logo.png" alt="logo"></a>
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+            <i class="fa-solid fa-xmark" id="close-icon"></i>
+        </label>
 
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <div class="classy-menu">
-
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="../index.html">Home</a></li>
-                                    <li><a href="../about.html">About</a></li>
-                                    <li><a href="../works-by-nrfz.html">Works By NRFZ</a></li>
-                                    <li class="active"><a href="../blog.html">Blog</a></li>
-                                    <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
-                                            title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </nav>
-                </div>
-                <div class="progress-bar" id="scrollIndicator"></div>
-            </div>
-        </div>
+        <nav class="navbar navbar-mobile">
+            <a href="../index.html" class="nav-item">Home</a>
+            <a href="../about.html" class="nav-item">About</a>
+            <a href="../works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
+            <a href="../eicw/eicw.html" class="nav-item">EICW</a>
+            <a href="../blog.html" class="nav-item active">Blog</a>
+            <a href="#" class="nav-item"><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
+                    title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button></a>
+        </nav>
     </header>
 
-
-    <section class="breadcrumb-area bg-img bg-overlay"
-        style="background-image: url(https://i.imgur.com/XfoBdpk.png); height: 50vh;">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content text-center">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a href="../index.html">Home</a>
-                                </li>
-                                <li class="breadcrumb-item active"><a href="../blog.html">Blog</a></li>
-                            </ol>
-                        </nav>
-                        <h2 class="page-title-blog">Personal V4 - A big redesign</h2>
+    <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-pv4-2"
+        style="background-image: url(https://i.imgur.com/XfoBdpk.png); height: 100vh;">
+        <div class="wbnrfz_details_blog">
+            <div class="container">
+                <div class="portfolio-controls d-flex justify-content-between align-items-center">
+                    <!-- Filter Buttons -->
+                    <div class="portfolio-filter mt-3">
+                        <div class="col-lg-12">
+                            <div class="main-title">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="https://nurafianzulkifli.com/index.html">
+                                                Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item active"><a href="../blog.html">
+                                                Blog
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                                <h1 class="brc">Personal V4 - A big redesign</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Collapsible Header -->
+                    <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#portfolioFilter"
+                        aria-controls="portfolioFilter" style="cursor: pointer;" title="Go To">
+                        <i class="fa-solid fa-chevron-down nav-chev"></i>
+                    </div>
+                </div>
+                <!-- Collapsible Content -->
+                <div id="portfolioFilter" class="collapse">
+                    <div class="portfolio-filter mt-3">
+                        <a href="#changes">
+                            <button class="btn">Changes & Improvements</button>
+                        </a>
+                        <a href="#old-vs-new">
+                            <button class="btn">Old vs New</button>
+                        </a>
+                        <a href="#conclusion">
+                            <button class="btn">Conclusion</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -102,10 +115,11 @@
                 </div>
 
 
-                <h2 class="mb-3" style="font-size: 30px; font-weight:bold ;"><u>Changes & Improvements</u></h2>
+                <h2 class="mb-3" style="font-size: 30px; font-weight:bold;" id="changes"><u>Changes & Improvements</u>
+                </h2>
 
                 <!-- Revamped Website Interface -->
-                <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;">Revamped Website Interface</h3>
+                <h3 style="font-size: 25px; font-weight:bold ;">Revamped Website Interface</h3>
                 <p>The overall theme for Version 4 is "Simplification". I wanted my landing page be like a shortcut, and
                     only brief information be shown on that page. The intention was to retain the user attention. First
                     they'll look at the landing page, then the user will slowly navigate to other pages like the About
@@ -194,7 +208,7 @@
                 <hr>
 
                 <!-- Old vs New -->
-                <h2 class="mb-3" style="font-size: 45px; font-weight:bold ;">Old vs New</h2>
+                <h2 style="font-size: 45px; font-weight:bold; margin-top: 0.5em;" id="old-vs-new">Old vs New</h2>
                 <p>Of course, every new design has to be an improvement, right? Here's a comparison between the Old
                     Design and the New Design.</p>
 
@@ -278,7 +292,7 @@
                 </div>
 
                 <hr>
-                <h2 class="mb-3" style="font-size: 45px; font-weight:bold ;">Conclusion</h2>
+                <h2 style="font-size: 45px; font-weight:bold; margin-top: 0.5em;" id="conclusion">Conclusion</h2>
                 <p>These redesigns were actually planned back in September 2023, including some procrastinations. Then I
                     figured, why not I launch the redesigned website a year later? From Conceptualization to Execution,
                     it was
@@ -289,16 +303,8 @@
                 <hr>
             </div>
 
-            <!-- Tags -->
-            <div class="tag-widget post-tag-container mb-5 mt-5">
-                <div class="tagcloud">
-                    <a href="#" class="tag-cloud-link">Website Design</a>
-                    <a href="#" class="tag-cloud-link">Redesign</a>
-                </div>
-            </div>
-
             <!-- Author -->
-            <div class="about-author d-flex p-4">
+            <div class="about-author d-flex p-4" style="margin-bottom: 2em;">
                 <div class="bio mr-0 text-center">
                     <img src="../img/bg-img/about.png" alt="profile" class="img-blog-profile img-fluid mb-4">
                 </div>
@@ -309,33 +315,27 @@
                         enjoy replicating stuffs that interests me.</p>
                 </div>
             </div>
-
+        </div>
     </section>
 
     <footer class="footer-area">
-        <div class="container container-xxl">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-content d-flex align-items-center justify-content-between">
-
-                        <div class="copywrite-text">
-                            <p>
-                                &copy;
-                                <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli</a>
-                            </p>
-                        </div>
-
-                        <div class="social-info">
-                            <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                                    aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="footer-content d-flex flex-column align-items-center text-center">
+                <!-- Social Links -->
+                <div class="social-info">
+                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
+                            aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
+                            aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
+                            aria-hidden="true"></i></a>
+                </div>
+                <!-- Copywrite Text -->
+                <div class="copywrite-text">
+                    <p>&copy;
+                        <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
+                    </p>
                 </div>
             </div>
         </div>
@@ -344,9 +344,9 @@
     <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
         data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
-    </script>
+        </script>
 
-    <script src="../js/theme.js"></script>
+    <script src="js/personal-v4-2.js"></script>
 
     <script src="../js/jquery.min.js"></script>
 

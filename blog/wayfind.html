@@ -24,72 +24,98 @@
 
 <body>
 
+    <!-- Preloader Section -->
     <div id="preloader">
         <div class="loader"></div>
+        <p id="preloader-text">Just a moment...</p>
     </div>
 
-    <header class="header-area">
+    <div id="scroll-indicator-container">
+        <div id="scroll-indicator"></div>
+    </div>
 
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container container-xxl">
+    <header>
+        <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
 
-                    <nav class="classy-navbar justify-content-between" id="pwNav">
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+            <i class="fa-solid fa-xmark" id="close-icon"></i>
+        </label>
 
-                        <a class="nav-brand img-logo" href="../index.html"><img class="logo-img"
-                                src="../img/core-img/logo.png" alt="logo"></a>
-
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <div class="classy-menu">
-
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="../index.html">Home</a></li>
-                                    <li><a href="../about.html">About</a></li>
-                                    <li><a href="../works-by-nrfz.html">Works By NRFZ</a></li>
-                                    <li class="active"><a href="../blog.html">Blog</a></li>
-                                    <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
-                                            title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </nav>
-                </div>
-                <div class="progress-bar" id="scrollIndicator"></div>
-            </div>
-        </div>
+        <nav class="navbar navbar-mobile">
+            <a href="../index.html" class="nav-item">Home</a>
+            <a href="../about.html" class="nav-item">About</a>
+            <a href="../works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
+            <a href="eicw/eicw.html" class="nav-item">EICW</a>
+            <a href="../blog.html" class="nav-item active">Blog</a>
+            <a href="#" class="nav-item"><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
+                    title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button></a>
+        </nav>
     </header>
 
-
-    <section class="breadcrumb-area bg-img bg-overlay"
+    <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-wf1"
         style="background-image: url(https://i.imgur.com/HmJURmV.jpg); height: 100vh;">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content text-center">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a href="../index.html">Home</a>
-                                </li>
-                                <li class="breadcrumb-item active"><a href="../blog.html">Blog</a></li>
-                            </ol>
-                        </nav>
-                        <h2 class="page-title-blog">New Wayfinding System - How has it been so far?</h2>
+        <div class="wbnrfz_details_blog">
+            <div class="container">
+                <div class="portfolio-controls d-flex justify-content-between align-items-center">
+                    <!-- Filter Buttons -->
+                    <div class="portfolio-filter mt-3">
+                        <div class="col-lg-12">
+                            <div class="main-title">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="https://nurafianzulkifli.com/index.html">
+                                                Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item active"><a href="../blog.html">
+                                                Blog
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                                <h1 class="brc">New Wayfinding System - How has it been so far?</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Collapsible Header -->
+                    <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#portfolioFilter"
+                        aria-controls="portfolioFilter" style="cursor: pointer;" title="Go To">
+                        <i class="fa-solid fa-chevron-down nav-chev"></i>
+                    </div>
+                </div>
+                <!-- Collapsible Content -->
+                <div id="portfolioFilter" class="collapse">
+                    <div class="portfolio-filter mt-3">
+                        <a href="#context">
+                            <button class="btn">Context/Observations</button>
+                        </a>
+                        <a href="#identify">
+                            <button class="btn">Identify</button>
+                        </a>
+                        <a href="#icons">
+                            <button class="btn">Part 1: Iconographies</button>
+                        </a>
+                        <a href="#exit">
+                            <button class="btn">Part 2: Exit Directories</button>
+                        </a>
+                        <a href="#consist">
+                            <button class="btn">Part 3: Consistencies</button>
+                        </a>
+                        <a href="#overall">
+                            <button class="btn">Part 4: Overall Execution</button>
+                        </a>
+                        <a href="#proposed">
+                            <button class="btn">Proposed Ideas/Fixes</button>
+                        </a>
+                        <a href="#summary">
+                            <button class="btn">Summing it up</button>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
 
 
@@ -109,7 +135,7 @@
                     </figcaption>
                     </p>
                     <hr>
-                    <h2 class="mb-3" style="font-size: 35px; font-weight:bold ;">Context</h2>
+                    <h2 class="mb-3" style="font-size: 35px; font-weight:bold ;" id="context">Context</h2>
                     <p>The new Wayfinding system was first launched on the Thomson-East Coast Line stations. It spots a
                         new design
                         system, where the emphasis was mainly on iconographies, rather than pure texts. I for one, am
@@ -172,7 +198,7 @@
 
                     <hr>
 
-                    <h2 class="mb-3" style="font-size: 35px; font-weight:bold ;">Identify</h2>
+                    <h2 class="mb-3" style="font-size: 35px; font-weight:bold;" id="identify">Identify</h2>
                     <p>How can we improve it?
                         <br><br>
                         I understand that the whole intention of these new Wayfinding system is to make wayfinding,
@@ -209,7 +235,8 @@
 
                     <!-- Part 1 -->
                     <div class="row row-blog">
-                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold ;"><u>Part 1: Iconographies</u></h2>
+                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold;" id="icons"><u>Part 1:
+                                Iconographies</u></h2>
                         <p>
                             Let's take a look at <u>Fig. 6</u>. The icons are straight-forward, and I applaud that. The
                             earlier
@@ -268,7 +295,8 @@
 
                     <!-- Part 2 -->
                     <div class="row row-blog">
-                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold ;"><u>Part 2: Exit Directories</u>
+                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold;" id="exit"><u>Part 2: Exit
+                                Directories</u>
                         </h2>
                         <p>
                             I have arrived at my station. Where to, next? This is where the Exit Directories come in.
@@ -304,7 +332,8 @@
 
                     <!-- Part 3 -->
                     <div class="row row-blog">
-                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold ;"><u>Part 3: Consistencies</u></h2>
+                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold;" id="consist"><u>Part 3:
+                                Consistencies</u></h2>
                         <p>Consistencies are a key to a good design system. The current signage designs are almost
                             there, but
                             some parts are not consistent. A most notable example is the Exit Letters/Numbers. TEL uses
@@ -374,7 +403,8 @@
 
                     <!-- Part 4 -->
                     <div class="row row-blog">
-                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold ;"><u>Part 4: Overall Execution</u>
+                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold;" id="overall"><u>Part 4: Overall
+                                Execution</u>
                         </h2>
                         <p> Enough about Design Inconsistencies. Execution Inconsistencies have also arised.
                         </p>
@@ -412,191 +442,200 @@
 
                     <!-- Proposal -->
                     <div id="proposal" class="row row-blog">
-                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold ;">Proposed Ideas/Fixes
-                        </h2>
-                        <p> How I'd fix the problems. Remember, my aim here is not to totally replace the current system
-                            into another one, but to just refine and enhance the existing implementation. Here, I'll
-                            break it into two sections, first is fixing the current implementation, second is how I
-                            would redesign certain aspects of the signages.
-                            <br><br>
-                            My Wayfinding Philosophy is as follows:<br><b>Alight > Confirm > Exit</b><br>Hence,
-                            information at the platform should include the Exit Directories, so immediately upon
-                            alighting from the train, I would know where to go. So once I take the Escalator up, I'd
-                            just tap out, and exit the stations.
-                        </p>
+                        <h2style="font-size: 35px; font-weight:bold;" id="proposed">Proposed Ideas/Fixes
+                            </h2>
+                            <p> How I'd fix the problems. Remember, my aim here is not to totally replace the current
+                                system
+                                into another one, but to just refine and enhance the existing implementation. Here, I'll
+                                break it into two sections, first is fixing the current implementation, second is how I
+                                would redesign certain aspects of the signages.
+                                <br><br>
+                                My Wayfinding Philosophy is as follows:<br><b>Alight > Confirm > Exit</b><br>Hence,
+                                information at the platform should include the Exit Directories, so immediately upon
+                                alighting from the train, I would know where to go. So once I take the Escalator up, I'd
+                                just tap out, and exit the stations.
+                            </p>
 
-                        <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;"><u>Fixes</u></h3>
+                            <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;"><u>Fixes</u></h3>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/cJYNWpl.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/cJYNWpl.png" class="img-fluid" style="width: 70%;"
-                                        alt="te2-conc"></a>
-                                <p><u>Fig. 17a:</u> For: TE 2 Woodlands </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/cJYNWpl.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/cJYNWpl.png" class="img-fluid" style="width: 70%;"
+                                            alt="te2-conc"></a>
+                                    <p><u>Fig. 17a:</u> For: TE 2 Woodlands </p>
+                                </figcaption>
+                            </div>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/bOzpKMa.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/bOzpKMa.png" class="img-fluid" style="width: 70%;"
-                                        alt="te2-ann"></a>
-                                <p><u>Fig. 17b:</u> For: TE 2 Woodlands - Annotation </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/bOzpKMa.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/bOzpKMa.png" class="img-fluid" style="width: 70%;"
+                                            alt="te2-ann"></a>
+                                    <p><u>Fig. 17b:</u> For: TE 2 Woodlands - Annotation </p>
+                                </figcaption>
+                            </div>
 
-                        <hr>
+                            <hr>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/NKHK6GN.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/NKHK6GN.png" class="img-fluid" style="width: 70%;"
-                                        alt="te11-conc"></a>
-                                <p><u>Fig. 18a:</u> For: TE 11 Stevens </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/NKHK6GN.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/NKHK6GN.png" class="img-fluid" style="width: 70%;"
+                                            alt="te11-conc"></a>
+                                    <p><u>Fig. 18a:</u> For: TE 11 Stevens </p>
+                                </figcaption>
+                            </div>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/wZFtpMI.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/wZFtpMI.png" class="img-fluid" style="width: 70%;"
-                                        alt="te11-ann"></a>
-                                <p><u>Fig. 18b:</u> For: TE 11 Stevens - Annotation </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/wZFtpMI.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/wZFtpMI.png" class="img-fluid" style="width: 70%;"
+                                            alt="te11-ann"></a>
+                                    <p><u>Fig. 18b:</u> For: TE 11 Stevens - Annotation </p>
+                                </figcaption>
+                            </div>
 
-                        <hr>
+                            <hr>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/DST8Hop.jpeg" class="portfolio-img"><img
-                                        src="https://i.imgur.com/DST8Hop.jpeg" class="img-fluid" style="width: 90%;"
-                                        alt="te26-conc"></a>
-                                <p><u>Fig. 19a:</u> For: TE 26 Marine Parade </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/DST8Hop.jpeg" class="portfolio-img"><img
+                                            src="https://i.imgur.com/DST8Hop.jpeg" class="img-fluid" style="width: 90%;"
+                                            alt="te26-conc"></a>
+                                    <p><u>Fig. 19a:</u> For: TE 26 Marine Parade </p>
+                                </figcaption>
+                            </div>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/gVeGHiS.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/gVeGHiS.png" class="img-fluid" style="width: 70%;"
-                                        alt="te26-ann"></a>
-                                <p><u>Fig. 19b:</u> For: TE 26 Marine Parade - Annotation </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/gVeGHiS.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/gVeGHiS.png" class="img-fluid" style="width: 70%;"
+                                            alt="te26-ann"></a>
+                                    <p><u>Fig. 19b:</u> For: TE 26 Marine Parade - Annotation </p>
+                                </figcaption>
+                            </div>
 
-                        <hr>
+                            <hr>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/0saz87M.jpeg" class="portfolio-img"><img
-                                        src="https://i.imgur.com/0saz87M.jpeg" class="img-fluid" style="width: 90%;"
-                                        alt="sns-conc"></a>
-                                <p><u>Fig. 20a:</u> Station Name Signs - Standardised layout </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/0saz87M.jpeg" class="portfolio-img"><img
+                                            src="https://i.imgur.com/0saz87M.jpeg" class="img-fluid" style="width: 90%;"
+                                            alt="sns-conc"></a>
+                                    <p><u>Fig. 20a:</u> Station Name Signs - Standardised layout </p>
+                                </figcaption>
+                            </div>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/UWDczCC.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/UWDczCC.png" class="img-fluid" style="width: 70%;"
-                                        alt="sns-ann"></a>
-                                <p><u>Fig. 20b:</u> Station Name Signs - Standardised layout - Annotation </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/UWDczCC.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/UWDczCC.png" class="img-fluid" style="width: 70%;"
+                                            alt="sns-ann"></a>
+                                    <p><u>Fig. 20b:</u> Station Name Signs - Standardised layout - Annotation </p>
+                                </figcaption>
+                            </div>
 
-                        <hr>
+                            <hr>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/8lx9WPp.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/8lx9WPp.png" class="img-fluid" style="width: 90%;"
-                                        alt="te26-exit-conc"></a>
-                                <p><u>Fig. 21a:</u> For TE 26 Marine Parade's Exit Directory</p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/8lx9WPp.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/8lx9WPp.png" class="img-fluid" style="width: 90%;"
+                                            alt="te26-exit-conc"></a>
+                                    <p><u>Fig. 21a:</u> For TE 26 Marine Parade's Exit Directory</p>
+                                </figcaption>
+                            </div>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/RfCGK2V.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/RfCGK2V.png" class="img-fluid" style="width: 70%;"
-                                        alt="te26-exit-ann"></a>
-                                <p><u>Fig. 21b:</u> For TE 26 Marine Parade's Exit Directory - Annotation </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/RfCGK2V.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/RfCGK2V.png" class="img-fluid" style="width: 70%;"
+                                            alt="te26-exit-ann"></a>
+                                    <p><u>Fig. 21b:</u> For TE 26 Marine Parade's Exit Directory - Annotation </p>
+                                </figcaption>
+                            </div>
 
-                        <hr>
+                            <hr>
 
-                        <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;"><u>New Ideas</u></h3>
+                            <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;"><u>New Ideas</u></h3>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/OWNY1UQ.jpeg" class="portfolio-img"><img
-                                        src="https://i.imgur.com/OWNY1UQ.jpeg" class="img-fluid" style="width: 70%;"
-                                        alt="eis"></a>
-                                <p><u>Fig. 22:</u> Enhanced Icon Sets </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/OWNY1UQ.jpeg" class="portfolio-img"><img
+                                            src="https://i.imgur.com/OWNY1UQ.jpeg" class="img-fluid" style="width: 70%;"
+                                            alt="eis"></a>
+                                    <p><u>Fig. 22:</u> Enhanced Icon Sets </p>
+                                </figcaption>
+                            </div>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/9m4bO8I.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/9m4bO8I.png" class="img-fluid" style="width: 70%;"
-                                        alt="lis"></a>
-                                <p><u>Fig. 22a:</u> Lift Icon sets </p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/9m4bO8I.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/9m4bO8I.png" class="img-fluid" style="width: 70%;"
+                                            alt="lis"></a>
+                                    <p><u>Fig. 22a:</u> Lift Icon sets </p>
+                                </figcaption>
+                            </div>
 
-                        <p>Reworked some of the icons (<u>Fig. 22</u>). For the way out, I've decided to use a universal
-                            way
-                            out icon
-                            (literally a guy on his way to an exit). For the Lift Icon, I've decided to replace the
-                            elderly with a walking stick to a normal man standing icon. This is because there is a
-                            separate 'Priority Use' sign which shows the different set of people who should be
-                            prioritised to use the lift.</p>
+                            <p>Reworked some of the icons (<u>Fig. 22</u>). For the way out, I've decided to use a
+                                universal
+                                way
+                                out icon
+                                (literally a guy on his way to an exit). For the Lift Icon, I've decided to replace the
+                                elderly with a walking stick to a normal man standing icon. This is because there is a
+                                separate 'Priority Use' sign which shows the different set of people who should be
+                                prioritised to use the lift.</p>
 
-                        <hr>
+                            <hr>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/YdN47M4.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/YdN47M4.png" class="img-fluid" style="width: 70%;"
-                                        alt="EDLM"></a>
-                                <p><u>Fig. 23:</u> Addition of Exit Directories (summarized) at Platforms</p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/YdN47M4.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/YdN47M4.png" class="img-fluid" style="width: 70%;"
+                                            alt="EDLM"></a>
+                                    <p><u>Fig. 23:</u> Addition of Exit Directories (summarized) at Platforms</p>
+                                </figcaption>
+                            </div>
 
-                        <p>I have gathered several feedbacks on my own, and what often pops up among the other requests
-                            is the addition of Exit Directories at Platforms. You can see this evidently in TEL4
-                            stations, with paper signages. Here, I've decided to
-                            put it at an empty space (exactly where the paper signage were, in <u>Fig. 4</u>), where it
-                            corresponds to the Exits the Escalator sets would bring you to.</p>
+                            <p>I have gathered several feedbacks on my own, and what often pops up among the other
+                                requests
+                                is the addition of Exit Directories at Platforms. You can see this evidently in TEL4
+                                stations, with paper signages. Here, I've decided to
+                                put it at an empty space (exactly where the paper signage were, in <u>Fig. 4</u>), where
+                                it
+                                corresponds to the Exits the Escalator sets would bring you to.</p>
 
-                        <hr>
+                            <hr>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/yhFIFVt.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/yhFIFVt.png" class="img-fluid" style="width: 70%;"
-                                        alt="IS"></a>
-                                <p><u>Fig. 24:</u> Informative Signages, following the current Design Language</p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/yhFIFVt.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/yhFIFVt.png" class="img-fluid" style="width: 70%;"
+                                            alt="IS"></a>
+                                    <p><u>Fig. 24:</u> Informative Signages, following the current Design Language</p>
+                                </figcaption>
+                            </div>
 
-                        <p>If you recall the rather crude Signage in <u>Fig. 5</u>, I've decided to make it a permanent
-                            signage. Added in the design cues from the Current Design Language, now it looks more
-                            proper. The other poster is a redesign of what is currently being pasted at Jurong East MRT,
-                            but I've redesigned it in accordance to the current design, as well.</p>
+                            <p>If you recall the rather crude Signage in <u>Fig. 5</u>, I've decided to make it a
+                                permanent
+                                signage. Added in the design cues from the Current Design Language, now it looks more
+                                proper. The other poster is a redesign of what is currently being pasted at Jurong East
+                                MRT,
+                                but I've redesigned it in accordance to the current design, as well.</p>
 
-                        <hr>
+                            <hr>
 
-                        <div class="column column-pic">
-                            <figcaption><a href="https://i.imgur.com/iHQ83Gh.png" class="portfolio-img"><img
-                                        src="https://i.imgur.com/iHQ83Gh.png" class="img-fluid" style="width: 70%;"
-                                        alt="IS"></a>
-                                <p><u>Fig. 25:</u> Further utilization of Totem Signages</p>
-                            </figcaption>
-                        </div>
+                            <div class="column column-pic">
+                                <figcaption><a href="https://i.imgur.com/iHQ83Gh.png" class="portfolio-img"><img
+                                            src="https://i.imgur.com/iHQ83Gh.png" class="img-fluid" style="width: 70%;"
+                                            alt="IS"></a>
+                                    <p><u>Fig. 25:</u> Further utilization of Totem Signages</p>
+                                </figcaption>
+                            </div>
 
-                        <p>This is an extension of the fixes from <u>Fig. 19a</u>. Exits are clearly labelled in Yellow,
-                            with
-                            prominent Exit Numbers, so commuters would be aware which exits would that set of Escalators
-                            bring them to.</p>
+                            <p>This is an extension of the fixes from <u>Fig. 19a</u>. Exits are clearly labelled in
+                                Yellow,
+                                with
+                                prominent Exit Numbers, so commuters would be aware which exits would that set of
+                                Escalators
+                                bring them to.</p>
 
-                        <hr>
+                            <hr>
                     </div>
 
                     <!-- Summary -->
                     <div id="summary" class="row row-blog">
-                        <h2 class="mb-3" style="font-size: 35px; font-weight:bold ;">Summing it up
+                        <h2 style="font-size: 35px; font-weight:bold; margin-top: 0.5em;" id="summary">Summing it up
                         </h2>
-                        <p> As you can see, redesigns do not need to be drastic. I mean, a major redesign has already
+                        <p style="padding-bottom: 2em;"> As you can see, redesigns do not need to be drastic. I mean, a
+                            major redesign has already
                             happened back in 2019, thus, it is absurd to introduce yet another design system. Hence i've
                             taken a different approach - an iterative redesign. <br><br>
 
@@ -609,17 +648,8 @@
                             can view them <a href="../worksbynrfz/improve-wf.html">here.</a>
                         </p>
 
-                        <!-- Tags -->
-                        <div class="tag-widget post-tag-container mb-5 mt-5">
-                            <div class="tagcloud">
-                                <a href="#" class="tag-cloud-link">Design</a>
-                                <a href="#" class="tag-cloud-link">Replication</a>
-                                <a href="#" class="tag-cloud-link">Mockups</a>
-                            </div>
-                        </div>
-
                         <!-- Author -->
-                        <div class="about-author d-flex p-4">
+                        <div class="about-author d-flex p-4" style="margin-bottom: 2em;">
                             <div class="bio mr-0 text-center">
                                 <img src="../img/bg-img/about.png" alt="profile"
                                     class="img-blog-profile img-fluid mb-4">
@@ -638,51 +668,46 @@
     </section>
 
     <footer class="footer-area">
-        <div class="container container-xxl">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-content d-flex align-items-center justify-content-between">
-
-                        <div class="copywrite-text">
-                            <p>
-                                &copy;
-                                <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli</a>
-                            </p>
-                        </div>
-
-                        <div class="social-info">
-                            <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                                    aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="footer-content d-flex flex-column align-items-center text-center">
+                <!-- Social Links -->
+                <div class="social-info">
+                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
+                            aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
+                            aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
+                            aria-hidden="true"></i></a>
+                </div>
+                <!-- Copywrite Text -->
+                <div class="copywrite-text">
+                    <p>&copy;
+                        <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
+                    </p>
                 </div>
             </div>
-        </div> 
-        
-        <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
-            data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
-            data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
+        </div>
+    </footer>
+
+    <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
+        data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
+        data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
-        <script src="../js/theme.js"></script>
+    <script src="js/wayfind.js"></script>
 
-        <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
 
-        <script src="../js/popper.min.js"></script>
+    <script src="../js/popper.min.js"></script>
 
-        <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
-        <script src="../js/pw.bundle.js"></script>
+    <script src="../js/pw.bundle.js"></script>
 
-        <script src="../js/default-assets/active.js"></script>
+    <script src="../js/default-assets/active.js"></script>
 
-        <script src="../js/scroll.js"></script>
+    <script src="../js/scroll.js"></script>
 
 </body>
 

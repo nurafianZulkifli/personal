@@ -24,66 +24,89 @@
 
 <body>
 
+    <!-- Preloader Section -->
     <div id="preloader">
         <div class="loader"></div>
+        <p id="preloader-text">Just a moment...</p>
     </div>
 
-    <header class="header-area">
+    <div id="scroll-indicator-container">
+        <div id="scroll-indicator"></div>
+    </div>
 
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container container-xxl">
 
-                    <nav class="classy-navbar justify-content-between" id="pwNav">
+    <header>
+        <a href="./index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
 
-                        <a class="nav-brand img-logo" href="../index.html"><img class="logo-img"
-                                src="../img/core-img/logo.png" alt="logo"></a>
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+            <i class="fa-solid fa-xmark" id="close-icon"></i>
+        </label>
 
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <div class="classy-menu">
-
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="../index.html">Home</a></li>
-                                    <li><a href="../about.html">About</a></li>
-                                    <li><a href="../works-by-nrfz.html">Works By NRFZ</a></li>
-                                    <li class="active"><a href="../blog.html">Blog</a></li>
-                                    <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
-                                            title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </nav>
-                </div>
-                <div class="progress-bar" id="scrollIndicator"></div>
-            </div>
-        </div>
+        <nav class="navbar navbar-mobile">
+            <a href="../index.html" class="nav-item">Home</a>
+            <a href="../about.html" class="nav-item">About</a>
+            <a href="../works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
+            <a href="../eicw/eicw.html" class="nav-item">EICW</a>
+            <a href="../blog.html" class="nav-item active">Blog</a>
+            <a href="#" class="nav-item"><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
+                    title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button></a>
+        </nav>
     </header>
 
-
-    <section class="breadcrumb-area bg-img bg-overlay"
+    <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-pv4"
         style="background-image: url(https://i.imgur.com/XfoBdpk.png); height: 100vh;">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content text-center">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a href="../index.html">Home</a>
-                                </li>
-                                <li class="breadcrumb-item active"><a href="../blog.html">Blog</a></li>
-                            </ol>
-                        </nav>
-                        <h2 class="page-title-blog">Personal V4 - A big redesign</h2>
+        <div class="wbnrfz_details_blog">
+            <div class="container">
+                <div class="portfolio-controls d-flex justify-content-between align-items-center">
+                    <!-- Filter Buttons -->
+                    <div class="portfolio-filter mt-3">
+                        <div class="col-lg-12">
+                            <div class="main-title">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="https://nurafianzulkifli.com/index.html">
+                                                Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item active"><a href="../blog.html">
+                                                Blog
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                                <h1 class="brc">Personal V4 - A big redesign</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Collapsible Header -->
+                    <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#portfolioFilter"
+                        aria-controls="portfolioFilter" style="cursor: pointer;" title="Go To">
+                        <i class="fa-solid fa-chevron-down nav-chev"></i>
+                    </div>
+                </div>
+                <!-- Collapsible Content -->
+                <div id="portfolioFilter" class="collapse">
+                    <div class="portfolio-filter mt-3">
+                        <a href="#history">
+                            <button class="btn">History</button>
+                        </a>
+                        <a href="#v1">
+                            <button class="btn">Personal Website - Version 1</button>
+                        </a>
+                        <a href="#v2">
+                            <button class="btn">Personal Website - Version 2</button>
+                        </a>
+                        <a href="#v3">
+                            <button class="btn">Personal Website - Version 3</button>
+                        </a>
+                        <a href="#whats-next">
+                            <button class="btn">What's Next?</button>
+                        </a>
+                        <a href="#v4">
+                            <button class="btn">Personal Website - Version 4</button>
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -91,13 +114,11 @@
     </section>
 
 
-
-
     <section class="ftco-section ftco-degree-bg">
         <div class="container container-blog">
             <div class="row row-blog">
 
-                <h2 class="mb-3" style="font-size: 30px; font-weight:bold ;"><u>History</u></h2>
+                <h2 class="mb-3" style="font-size: 30px; font-weight: bold;" id="history"><u>History</u></h2>
 
                 <p> It all began in 2019 when I was given an assignment in my Poly module to develop a Portfolio
                     Website. Bear in mind, my website coding experience was close to nothing, back then.
@@ -128,7 +149,7 @@
                     </figcaption>
                 </div>
 
-                <h3 class="mb-3" style="font-size: 20px; font-weight:bold ;">But why do a Personal Portfolio Website of
+                <h3 class="mb-3" style="font-size: 20px; font-weight: bold;">But why do a Personal Portfolio Website of
                     all things?</h3>
 
                 <p> I came across one Personal Portfolio website randomly and I was heavily inspired to use it as my
@@ -149,7 +170,8 @@
                 <hr>
 
                 <!-- V1 -->
-                <h2 class="mb-3" style="font-size: 23px; font-weight:bold; text-align: center;"><u>Personal Website -
+                <h2 class="mb-3" style="font-size: 23px; font-weight: bold; text-align: center;" id="v1"><u>Personal
+                        Website -
                         Version 1 (2019 - 2020)</u></h2>
 
                 <p> For the <b>first version</b>, I went ahead with the same concept in mind, but this time, I replaced
@@ -162,7 +184,7 @@
                     website to the outfit colour I was wearing - Pinkish Maroon (#815060)
                 </p>
 
-                <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;">Landing Page (Version 1)</h3>
+                <h3 class="mb-3" style="font-size: 25px; font-weight: bold;">Landing Page (Version 1)</h3>
 
 
                 <div class="column column-pic">
@@ -192,7 +214,7 @@
 
                 <hr>
 
-                <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;">About Page (Version 2)</h3>
+                <h3 class="mb-3" style="font-size: 25px; font-weight: bold;">About Page (Version 2)</h3>
 
                 <p>The About Page included the use of Timelines, as well as the section where I put my photos of the
                     achievements. I did not bring this idea over to the next version, cos I don't have photos for most
@@ -219,7 +241,8 @@
                 <hr>
 
                 <!-- V2 -->
-                <h2 class="mb-3" style="font-size: 23px; font-weight:bold; text-align: center;"><u>Personal Website -
+                <h2 class="mb-3" style="font-size: 23px; font-weight: bold; text-align: center;" id="v2"><u>Personal
+                        Website -
                         Version 2 (2020 - 2021)</u></h2>
 
                 <p> For the <b>second version</b>, I went with another major design change, and "embraced the dark
@@ -241,7 +264,7 @@
                 <p>This Version was pretty short-lived, as the Responsiveness and how it looked on Mobile did not meet
                     my expectations. Hence I began developing Version 3 super early.</p>
 
-                <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;">Landing Page (Version 2)</h3>
+                <h3 class="mb-3" style="font-size: 25px; font-weight: bold;">Landing Page (Version 2)</h3>
 
 
 
@@ -286,7 +309,8 @@
                 <hr>
 
                 <!-- V3 -->
-                <h2 class="mb-3" style="font-size: 23px; font-weight:bold; text-align: center;"><u>Personal Website -
+                <h2 class="mb-3" style="font-size: 23px; font-weight: bold; text-align: center;" id="v3"><u>Personal
+                        Website -
                         Version 3 (2021 - 2024)</u></h2>
 
                 <p> For the <b>third version</b>, I wanted this version to be highly experimental - navigation bar was
@@ -310,7 +334,7 @@
                         href="https://www.merriam-webster.com/dictionary/yap"><i>yap</i></a>.
                 </p>
 
-                <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;">Landing Page (Version 3)</h3>
+                <h3 class="mb-3" style="font-size: 25px; font-weight: bold;">Landing Page (Version 3)</h3>
 
                 <div class="column column-pic">
                     <figcaption>
@@ -355,7 +379,7 @@
                     </figcaption>
                 </div>
 
-                <h3 class="mb-3" style="font-size: 25px; font-weight:bold ;">Blog Page (Version 3)</h3>
+                <h3 class="mb-3" style="font-size: 25px; font-weight: bold;">Blog Page (Version 3)</h3>
 
                 <div class="column column-pic">
                     <figcaption>
@@ -367,7 +391,7 @@
 
                 <hr>
 
-                <h2 class="mb-3" style="font-size: 23px; font-weight:bold;">What's Next?</h2>
+                <h2 class="mb-3" style="font-size: 23px; font-weight: bold;" id="whats-next">What's Next?</h2>
 
                 <p> I thought my Website Design peaked, and that was the best, so Version 4 was the most challenging to
                     work on. But hopefully this design can last longer, cos I cannot keep updating it - it take a loooot
@@ -378,7 +402,8 @@
                 <hr>
 
                 <!-- V4 -->
-                <h2 class="mb-3" style="font-size: 23px; font-weight:bold; text-align: center;"><u>Personal Website -
+                <h2 class="mb-3" style="font-size: 23px; font-weight: bold; text-align: center;" id="v4"><u>Personal
+                        Website -
                         Version 4 (2024 - Present)</u></h2>
 
                 <p> For the <b>fourth version</b>, I wanted something new. I've decided to go back to using a light
@@ -411,29 +436,23 @@
     </section>
 
     <footer class="footer-area">
-        <div class="container container-xxl">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-content d-flex align-items-center justify-content-between">
-
-                        <div class="copywrite-text">
-                            <p>
-                                &copy;
-                                <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli</a>
-                            </p>
-                        </div>
-
-                        <div class="social-info">
-                            <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                                    aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="footer-content d-flex flex-column align-items-center text-center">
+                <!-- Social Links -->
+                <div class="social-info">
+                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
+                            aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
+                            aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
+                            aria-hidden="true"></i></a>
+                </div>
+                <!-- Copywrite Text -->
+                <div class="copywrite-text">
+                    <p>&copy;
+                        <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
+                    </p>
                 </div>
             </div>
         </div>
@@ -442,9 +461,9 @@
     <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
         data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
-    </script>
+        </script>
 
-    <script src="../js/theme.js"></script>
+    <script src="js/personal-v4-1.js"></script>
 
     <script src="../js/jquery.min.js"></script>
 

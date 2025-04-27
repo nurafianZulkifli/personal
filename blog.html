@@ -34,211 +34,208 @@
 
 <body>
 
+    <!-- Preloader Section -->
     <div id="preloader">
         <div class="loader"></div>
+        <p id="preloader-text">Just a moment...</p>
     </div>
 
-    <header class="header-area">
+    <header>
+        <a href="./index.html"><img src="./img/core-img/logo.png" alt="logo" class="logo" /></a>
 
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container container-xxl">
+        <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+            <i class="fa-solid fa-xmark" id="close-icon"></i>
+        </label>
 
-                    <nav class="classy-navbar justify-content-between" id="pwNav">
-
-                        <a class="nav-brand img-logo" href="./index.html"><img src="./img/core-img/logo.png" alt></a>
-
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <div class="classy-menu">
-
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="./index.html">Home</a></li>
-                                    <li><a href="./about.html">About</a></li>
-                                    <li><a href="./works-by-nrfz.html">Works By NRFZ</a></li>
-                                    <li class="active"><a href="./blog.html">Blog</a></li>
-                                    <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle" title="Toggle Dark/Light Mode!"><i
-                                                class="fa-solid fa-moon"></i></button></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+        <nav class="navbar navbar-mobile">
+            <a href="./index.html" class="nav-item">Home</a>
+            <a href="./about.html" class="nav-item">About</a>
+            <a href="./works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
+            <a href="eicw/eicw.html" class="nav-item">EICW</a>
+            <a href="#" class="nav-item active">Blog</a>
+            <a href="#" class="nav-item"><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
+                    title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button></a>
+        </nav>
     </header>
 
 
-    <section class="breadcrumb-area-subp bg-img bg-overlay" id="cv-about"
-        style="background-image: url(img/bg-img/hero-bg-small.png);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content text-center">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
-                            </ol>
-                        </nav>
-                        <h2 class="page-title">My Blogs</h2>
+    <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-about"
+        style="background-image: url(img/bg-img/hero-bg-small.png); height: 100vh;">
+        <div class="wbnrfz_details_blog">
+            <div class="container">
+                <div class="portfolio-controls d-flex justify-content-between align-items-center">
+                    <!-- Filter Buttons -->
+                    <div class="portfolio-filter mt-3">
+                        <div class="col-lg-12">
+                            <div class="main-title">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="https://nurafianzulkifli.com/index.html">
+                                                Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item active"><a
+                                                href="https://nurafianzulkifli.com/works-by-nrfz.html">
+                                                Blog
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                                <h1 class="brc">My Blogs</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Collapsible Header -->
+                    <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#portfolioFilter"
+                        aria-expanded="false" aria-controls="portfolioFilter" style="cursor: pointer;"
+                        title="Filter/Sort">
+                        <i class="fa-solid fa-chevron-down nav-chev"></i>
+                    </div>
+                </div>
+                <!-- Collapsible Content -->
+                <div id="portfolioFilter" class="collapse">
+                    <div class="portfolio-controls">
+                        <!-- Filter Buttons -->
+                        <div class="portfolio-filter">
+                            <button class="btn btn-filter-blog active" data-filter="*">All Posts</button>
+                            <button class="btn btn-filter-blog" data-filter=".wbd">Website Design</button>
+                            <button class="btn btn-filter-blog" data-filter=".wfd">Wayfinding Design</button>
+                        </div>
+
+                        <!-- Sort Dropdown -->
+                        <div class="portfolio-sort">
+                            <label for="sort-options">Sort By:</label>
+                            <select id="sort-options">
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                                <option value="alphabetical">Alphabetical</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <section class="ftco-section-blog">
-        <div class="container container-xxl container-blogList">
+    <section class="ftco-section-blog" style="padding-top: 4em; padding-bottom: 3em;">
+        <div class="container-fluid container-blogList">
             <div class="row">
-                <div class="col-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="100ms">
-
-                        <a href="blog/personal-v4-3.html" class="post-thumbnail"><img
-                                src="https://i.imgur.com/zeS2WFn.png" alt="thumbnail-1"></a>
-
-                        <a href="#" class="btn post-catagory">Website Design</a>
-
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">January 22, 2025</a>
-                            </div>
-                            <a href="blog/personal-v4-3.html" class="post-title">Personal Version 4.4 - Optimizations
-                                Galore</a>
-                        </div>
+                <div class="col-12">
+                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                        <h2 id="filter-title">All Posts</h2>
                     </div>
                 </div>
-
-                <div class="col-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="100ms">
-
-                        <a href="blog/wayfind-2.html" class="post-thumbnail"><img src="https://i.imgur.com/Z6vKAa9.png"
-                                alt="thumbnail-1"></a>
-
-                        <a href="#" class="btn post-catagory">Wayfinding Design</a>
-
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">October 12, 2024</a>
-                            </div>
-                            <a href="blog/wayfind-2.html" class="post-title">If you can't beat them, join them</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="100ms">
-
-                        <a href="blog/personal-v4-1.html" class="post-thumbnail"><img
-                                src="https://i.imgur.com/Ny70zFt.png" alt="thumbnail-1"></a>
-
-                        <a href="#" class="btn post-catagory">Website Design</a>
-
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">September 1, 2024</a>
-                            </div>
-                            <a href="blog/personal-v4-1.html" class="post-title">Personal V4 - A big redesign</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="100ms">
-
-                        <a href="blog/wayfind.html" class="post-thumbnail"><img src="https://i.imgur.com/fZdhMEU.png"
-                                alt="thumbnail-1"></a>
-
-                        <a href="#" class="btn post-catagory">Wayfinding Design</a>
-
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">June 30, 2024</a>
-                            </div>
-                            <a href="blog/wayfind.html" class="post-title">New Wayfinding System - How has it been so
-                                far?</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-            <div class="row mt-5">
-                <div class="col-pg text-center">
-                    <div class="block-27">
-                        <ul>
-                            <li><a href="#">&lt;</a></li>
-                            <li class="active"><span>1</span></li>
-                            <!-- <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li> 
-                            -->
-                            <li><a href="#">&gt;</a></li>
-                        </ul>
+            <div class="row pw-portfolio">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item wbd mb-30 wow fadeInUp" data-wow-delay="100ms"
+                data-date="2025-06-01">
+                <div class="single-portfolio-content">
+                    <img src="https://i.imgur.com/753URzQ.png" alt>
+                    <div class="hover-content-blog">
+                        <h4>Personal Version 5.0 - Iterations & AI</h4>
+                        <a class="read" href="blog/personal-v5-0.html" class="portfolio-img"><i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item wbd mb-30 wow fadeInUp" data-wow-delay="100ms"
+                    data-date="2024-10-12">
+                    <div class="single-portfolio-content">
+                        <img src="https://i.imgur.com/2XiV79F.png" alt>
+                        <div class="hover-content-blog">
+                            <h4>Personal Version 4.4 - Optimizations Galore</h4>
+                            <a class="read" href="blog/personal-v4-3.html" class="portfolio-img"><i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item wfd mb-30 wow fadeInUp" data-wow-delay="100ms"
+                    data-date="2024-10-12">
+                    <div class="single-portfolio-content">
+                        <img src="https://i.imgur.com/lsSie7o.png" alt>
+                        <div class="hover-content-blog">
+                            <h4>If you can't beat them, join them</h4>
+                            <a class="read" href="blog/wayfind-2.html" class="portfolio-img"><i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item wbd mb-30 wow fadeInUp" data-wow-delay="100ms"
+                    data-date="2024-09-01">
+                    <div class="single-portfolio-content">
+                        <img src="https://i.imgur.com/f84Pcxo.png" alt>
+                        <div class="hover-content-blog">
+                            <h4>Personal V4 - A big redesign</h4>
+                            <a class="read" href="blog/personal-v4-1.html" class="portfolio-img"><i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item wfd mb-30 wow fadeInUp" data-wow-delay="100ms"
+                    data-date="2024-06-30">
+                    <div class="single-portfolio-content">
+                        <img src="https://i.imgur.com/JFAxwwd.png" alt>
+                        <div class="hover-content-blog">
+                            <h4>New Wayfinding System - How has it been so far?</h4>
+                            <a class="read" href="blog/wayfind.html" class="portfolio-img"><i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
 
     <footer class="footer-area">
-        <div class="container container-xxl">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-content d-flex align-items-center justify-content-between">
-
-                        <div class="copywrite-text">
-                            <p>
-                                &copy;
-                                <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli</a>
-                            </p>
-                        </div>
-
-                        <div class="social-info">
-                            <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                                    aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                                    aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="footer-content d-flex flex-column align-items-center text-center">
+                <!-- Social Links -->
+                <div class="social-info">
+                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
+                            aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
+                            aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
+                            aria-hidden="true"></i></a>
+                </div>
+                <!-- Copywrite Text -->
+                <div class="copywrite-text">
+                    <p>&copy;
+                        <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
+                    </p>
                 </div>
             </div>
-        </div> 
-        
-        <script type="text/javascript" id="cookiebanner" src="js/cookies-banner.js" data-position="bottom"
-            data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
-            data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
+        </div>
+    </footer>
+
+    <script type="text/javascript" id="cookiebanner" src="js/cookies-banner.js" data-position="bottom" data-bg="#f2f3e5"
+        data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
+        data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
-        <script src="js/theme.js"></script>
+    <script src="js/theme-subPages.js"></script>
 
-        <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
 
-        <script src="js/popper.min.js"></script>
+    <script src="js/popper.min.js"></script>
 
-        <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-        <script src="js/pw.bundle.js"></script>
+    <script src="js/pw.bundle.js"></script>
 
-        <script src="js/default-assets/active.js"></script>
+    <script src="js/default-assets/active.js"></script>
+
+    <script src="js/isotope.pkgd.min.js"></script>
+
+    <script src="js/blogFunct.js"></script>
+
+    <script src="js/preloader.js"></script>
 
 </body>
 

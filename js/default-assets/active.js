@@ -223,5 +223,3 @@ function calculateAge(birthday) {
     }
     return age;
 }
-
-document.getElementById('age').textContent = calculateAge('2000-03-04') + ' years old';

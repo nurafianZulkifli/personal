@@ -36,116 +36,99 @@
 
 <body>
 
+  <!-- Preloader Section -->
   <div id="preloader">
     <div class="loader"></div>
+    <p id="preloader-text">Just a moment...</p>
   </div>
 
 
-  <header class="header-area">
 
-    <div class="main-header-area">
-      <div class="classy-nav-container breakpoint-off">
-        <div class="container container-xxl">
+  <header>
+    <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
 
-          <nav class="classy-navbar justify-content-between" id="pwNav">
+    <input type="checkbox" id="check" />
+    <label for="check" class="icons">
+      <i class="fa-solid fa-bars" id="menu-icon"></i>
+      <i class="fa-solid fa-xmark" id="close-icon"></i>
+    </label>
 
-            <a class="nav-brand img-logo" href="../index.html"><img class="logo-img" src="../img/core-img/logo.png"
-                alt></a>
-
-            <div class="classy-navbar-toggler">
-              <span class="navbarToggler"><span></span><span></span><span></span></span>
-            </div>
-
-            <div class="classy-menu">
-
-              <div class="classycloseIcon">
-                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-              </div>
-
-              <div class="classynav">
-                <ul id="nav">
-                  <li><a href="../index.html">Home</a></li>
-                  <li><a href="../about.html">About</a></li>
-                  <li class="active"><a href="../works-by-nrfz.html">Works By NRFZ</a></li>
-                  <li><a href="../blog.html">Blog</a></li>
-                  <li><button class="wbnrfz_btn_theme" id="dark-mode-toggle" title="Toggle Dark/Light Mode!"><i
-                        class="fa-solid fa-moon"></i></button>
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
+    <nav class="navbar navbar-mobile">
+      <a href="../index.html" class="nav-item">Home</a>
+      <a href="../about.html" class="nav-item">About</a>
+      <a href="../works-by-nrfz.html" class="nav-item active">Works By NRFZ</a>
+      <a href="../eicw/eicw.html" class="nav-item">EICW</a>
+      <a href="../blog.html" class="nav-item">Blog</a>
+      <a href="#" class="nav-item"><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
+          title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button></a>
+    </nav>
   </header>
 
-
-  <section class="breadcrumb-area bg-img bg-overlay" style="background-image: url(https://i.imgur.com/ZGhtKD7.png)">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-          <div class="breadcrumb-content text-center">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb justify-content-center">
-                <li class="breadcrumb-item"><a href="../index.html"> Home</a>
-                </li>
-                <li class="breadcrumb-item"><a href="../works-by-nrfz.html"> Works By NRFZ</a>
-                </li>
-              </ol>
-            </nav>
-            <h2 class="page-title">COVID-19 Shopping Habits Infographic</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="wbnrfz-summ clearfix">
-    <div class="wbnrfz_details wow fadeInUp" data-wow-delay="100ms">
+  <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-tdc"
+    style="background-image: url(https://i.imgur.com/ZGhtKD7.png); height: 100vh;">
+    <div class="wbnrfz_details_blog">
       <div class="container">
-        <div class="col-lg-12">
-          <div class="main-title">
-            <span>Infographic Assignment</span>
-            <h1>COVID-19 Shopping Habits Infographic</h1>
-          </div>
-        </div>
-
-        <div class="details_catagory_wrap">
-          <div class="col-sm-3 single_catagory ">
-            <span>Category</span>
-            <h4>Infographic Design</h4>
-          </div>
-          <div class="col-sm-3 single_catagory">
-            <span>Project Year</span>
-            <h4>2021</h4>
-          </div>
-          <div class="col-sm-3 single_catagory">
-            <span>Share Project</span>
-            <div class="social_links">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://nurafianzulkifli.com/worksbynrfz/igra2.html"
-                title="Facebook">
-                <i class="fa-brands fa-facebook"></i> </a>
-              <a href="https://x.com/intent/post?url=https://nurafianzulkifli.com/worksbynrfz/igra2.html&text= COVID-19 Shopping Habits Infographic"
-                title="X (Twitter)">
-                <i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#" class="clipboard" onclick="copyToClipboard()" title="Copy Link"><i
-                  class="fa-solid fa-link"></i>
-                <p class="clipboard-copied" style="font-size: 12px;"></p>
-              </a>
+        <div class="portfolio-controls d-flex justify-content-between align-items-center">
+          <!-- Filter Buttons -->
+          <div class="portfolio-filter mt-3">
+            <div class="col-lg-12">
+              <div class="main-title">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../works-by-nrfz.html"> Works By NRFZ</a>
+                    </li>
+                    <li class="breadcrumb-item active"><a href="#">Infographics
+                      </a>
+                    </li>
+                  </ol>
+                </nav>
+                <h1 class="brc">COVID-19 Shopping Habits Infographic</h1>
+              </div>
             </div>
           </div>
+          <!-- Collapsible Header -->
+          <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#portfolioFilter"
+            aria-expanded="false" aria-controls="portfolioFilter" style="cursor: pointer;" title="More Details">
+            <i class="fa-solid fa-chevron-down nav-chev"></i>
+          </div>
+        </div>
+        <!-- Collapsible Content -->
+        <div id="portfolioFilter" class="collapse">
+          <div class="details_catagory_wrap">
+            <div class="col-sm-4 single_catagory ">
+              <span>Category</span>
+              <h4>Infographics</h4>
+            </div>
+            <div class="col-sm-4 single_catagory">
+              <span>Project Year</span>
+              <h4>2021</h4>
+            </div>
+            <div class="col-sm-4 single_catagory">
+              <span>Share Project</span>
+              <div class="social_links">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://nurafianzulkifli.com/worksbynrfz/improve-wf.html"
+                  title="Facebook">
+                  <i class="fa-brands fa-facebook"></i> </a>
+                <a href="https://x.com/intent/post?url=https://nurafianzulkifli.com/worksbynrfz/improve-wf.html&text= Experimenting Improvements of Current Wayfinding"
+                  title="X (Twitter)">
+                  <i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="clipboard" onclick="copyToClipboard()" title="Copy Link"><i
+                    class="fa-solid fa-link"></i>
+                  <p class="clipboard-copied" style="font-size: 12px;"></p>
+                </a>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-
-    </div>
     </div>
   </section>
 
-  <section class="about-me-summ section-padding-80-0 clearfix">
-    <div class="wbnrfz_details wow fadeInUp" data-wow-delay="100ms">
+
+
+  <section class="about-me-summ clearfix">
+    <div class="wbnrfz_details_section wow fadeIn" data-wow-delay="100ms">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
@@ -153,7 +136,7 @@
               <div class="row justify-content-center">
                 <div class="col-lg-12">
                   <div class="info justify-content-center">
-                    <p style="text-align: center;">A submission for an assignment to produce an actual
+                    <p style="text-align: center; padding-bottom: 2em;">A submission for an assignment to produce an actual
                       Infographic, based on a given topic.</p>
                   </div>
                 </div>
@@ -165,6 +148,7 @@
               <a href="https://i.imgur.com/lkWD0vn.png" class="portfolio-img"><img src="https://i.imgur.com/lkWD0vn.png"
                   class="img-fluid" alt="cover-page"></a>
             </div>
+
           </div>
         </div>
       </div>
@@ -172,28 +156,21 @@
   </section>
 
 
-
   <footer class="footer-area">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="footer-content d-flex align-items-center justify-content-between">
-
-            <div class="copywrite-text">
-              <p>
-                &copy;
-                <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli</a>
-              </p>
-            </div>
-
-            <div class="social-info">
-              <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-              <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-              <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
-              <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                  aria-hidden="true"></i></a>
-            </div>
-          </div>
+      <div class="footer-content d-flex flex-column align-items-center text-center">
+        <!-- Social Links -->
+        <div class="social-info">
+          <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <!-- Copywrite Text -->
+        <div class="copywrite-text">
+          <p>&copy;
+            <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
+          </p>
         </div>
       </div>
     </div>
@@ -202,9 +179,7 @@
   <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
     data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
     data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
-  </script>
-
-  <script src="../js/theme.js"></script>
+    </script>
 
   <script src="../js/jquery.min.js"></script>
 
@@ -226,6 +201,46 @@
 
   <script src="../js/copy-to-clipboard.js"></script>
 
+  <script src="../js/preloader.js"></script>
+
+  <!-- Script for Indiv Page - Modes -->
+  <script>
+    /* Dark Mode Functionality for Individual Pages */
+
+    // Check localStorage for dark mode preference
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      updateHrefForDarkMode();
+    }
+
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      // Save the preference in localStorage
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+      } else {
+        localStorage.setItem('dark-mode', 'disabled');
+      }
+      updateHrefForDarkMode();
+    });
+
+    function updateHrefForDarkMode() {
+      /* Banners */
+      const tdcPage = document.getElementById('cv-tdc');
+
+      const isDarkMode = document.body.classList.contains('dark-mode');
+
+      if (isDarkMode) {
+        /* Banners */
+        tdcPage.style.backgroundImage = "url('https://i.imgur.com/ZGhtKD7.png')";
+
+      } else {
+        /* Banners */
+        tdcPage.style.backgroundImage = "url('https://i.imgur.com/ZGhtKD7.png')";
+      }
+    }
+  </script>
 
 </body>
 

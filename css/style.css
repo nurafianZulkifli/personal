@@ -463,15 +463,15 @@ input:required {
     position: fixed;
     right: 40px;
     font-size: 20px;
-    line-height: 40px;
-    width: 40px;
-    height: 40px;
+    line-height: 47px;
+    width: 70px;
+    height: 46px;
     bottom: 60px;
     background-color: #8c8e75;
     color: #fff;
     text-align: center;
-    transition-duration: 500ms;
-    border-radius: 50%;
+    transition: width 500ms ease;
+    border-radius: 25px;
     box-shadow: 0 2px 40px 0px rgba(15, 15, 15, 0.15);
     z-index: 12345111212;
     animation: pulse-animation 2s infinite;
@@ -483,16 +483,6 @@ input:required {
     color: #ffffff;
 }
 
-/* #scrollIndicator {
-    height: 5px;
-    background: linear-gradient(90deg,
-            #de650f 0%,
-            #fd1d1d 50%,
-            #df9e43 100%);
-    width: 0%;
-    filter: drop-shadow(0 0 1px);
-    border-radius: 20px;
-} */
 
 /* Scroll Indicator Container */
 #scroll-indicator-container {
@@ -1447,15 +1437,14 @@ li.breadcrumb-item.active a {
     position: absolute;
     top: 70%;
     margin-top: 0;
-    margin-left: -26px;
     z-index: 100;
     display: inline-block;
-    width: 52px;
-    height: 52px;
+    width: 80px;
+    height: 56px;
     border-radius: 25px;
     background-color: #7b7c64;
     text-align: center;
-    line-height: 52px;
+    line-height: 56px;
     font-size: 30px;
     color: #fff;
 }
@@ -2332,8 +2321,6 @@ h2.page-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* flex-wrap: wrap; */
-    /* Ensures responsiveness */
     margin-bottom: 20px;
 }
 
@@ -2341,7 +2328,13 @@ h2.page-title {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    /* Space between buttons */
+}
+
+.portfolio-filter-sub {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .portfolio-filter .btn {
@@ -2534,7 +2527,11 @@ select:focus {
 #whats-next,
 #tooSoon,
 #rewrite,
-#ai {
+#ai,
+#typeface,
+#colour,
+#icon-assets,
+#brainstorm {
     scroll-margin-top: 10vh;
 }
 

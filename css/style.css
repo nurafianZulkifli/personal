@@ -464,13 +464,13 @@ input:required {
     right: 40px;
     font-size: 20px;
     line-height: 47px;
-    width: 70px;
+    width: 46px;
     height: 46px;
     bottom: 60px;
     background-color: #8c8e75;
     color: #fff;
     text-align: center;
-    transition: width 500ms ease;
+    transition-duration: 500ms;
     border-radius: 25px;
     box-shadow: 0 2px 40px 0px rgba(15, 15, 15, 0.15);
     z-index: 12345111212;

@@ -108,11 +108,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('contextmenu', function(e) {
-    if (e.target.tagName === 'IMG') {
-        e.preventDefault();
-    }
-});
+// document.addEventListener('contextmenu', function(e) {
+//     if (e.target.tagName === 'IMG') {
+//         e.preventDefault();
+//     }
+// });
 
 // Update the scroll indicator width based on scroll position
 window.addEventListener("scroll", function () {

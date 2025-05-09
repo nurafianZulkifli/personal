@@ -1835,7 +1835,7 @@ h1.brc {
 
 
 .wbnrfz_details_section img:hover,
-.banner-eicw img:hover,
+.banner-eicw:hover,
 .cp-img:hover,
 .column-pic:hover {
     transform: scale(1.03);

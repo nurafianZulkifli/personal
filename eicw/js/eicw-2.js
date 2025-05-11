@@ -3,7 +3,10 @@
 // Check localStorage for dark mode preference
 if (localStorage.getItem('dark-mode') === 'enabled') {
     document.body.classList.add('dark-mode');
+    updateThemeIcon('dark');
     updateHrefForDarkMode();
+} else {
+    updateThemeIcon('light');
 }
 
 const toggleButton = document.getElementById('dark-mode-toggle');
@@ -12,11 +15,35 @@ toggleButton.addEventListener('click', () => {
     // Save the preference in localStorage
     if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('dark-mode', 'enabled');
+        updateThemeIcon('dark');
     } else {
         localStorage.setItem('dark-mode', 'disabled');
+        updateThemeIcon('light');
     }
     updateHrefForDarkMode();
 });
+
+// Function to update the theme icon with animation
+function updateThemeIcon(theme) {
+    const themeIcon = document.getElementById('theme-icon');
+
+    // Add animation class
+    themeIcon.classList.add('animate');
+
+    // Update the icon based on the theme
+    if (theme === 'dark') {
+        themeIcon.classList.remove('fa-sun-bright');
+        themeIcon.classList.add('fa-moon-stars');
+    } else {
+        themeIcon.classList.remove('fa-moon-stars');
+        themeIcon.classList.add('fa-sun-bright');
+    }
+
+    // Remove the animation class after the animation ends
+    setTimeout(() => {
+        themeIcon.classList.remove('animate');
+    }, 300); // Match the duration of the CSS transition
+}
 
 function updateHrefForDarkMode() {
     /* Banners */
@@ -39,6 +66,9 @@ function updateHrefForDarkMode() {
 
     const ic3_link = document.getElementById('ic3');
     const ic3_img = document.getElementById('ic3-img');
+
+    const ic4_link = document.getElementById('ic4');
+    const ic4_img = document.getElementById('ic4-img');
 
     const sne1_link = document.getElementById('sne1');
     const sne1_img = document.getElementById('sne1-img');
@@ -107,6 +137,9 @@ function updateHrefForDarkMode() {
         ic3_link.href = './img/ic3-dark.png';
         ic3_img.src = './img/ic3-dark.png';
 
+        ic4_link.href = './img/ic4-dark.png';
+        ic4_img.src = './img/ic4-dark.png';
+
         sne1_link.href = './img/sne1-dark.png';
         sne1_img.src = './img/sne1-dark.png';
 
@@ -165,6 +198,9 @@ function updateHrefForDarkMode() {
 
         ic3_link.href = './img/ic3-light.png';
         ic3_img.src = './img/ic3-light.png';
+
+        ic4_link.href = './img/ic4-light.png';
+        ic4_img.src = './img/ic4-light.png';
 
         sne1_link.href = './img/sne1-light.png';
         sne1_img.src = './img/sne1-light.png';

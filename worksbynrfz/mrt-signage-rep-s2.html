@@ -14,7 +14,7 @@
 
   <link rel="icon" href="../img/core-img/favicon.png">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/style-breakpoints.css">
@@ -59,8 +59,11 @@
       <a href="../works-by-nrfz.html" class="nav-item active">Works By NRFZ</a>
       <a href="../eicw/eicw.html" class="nav-item">EICW</a>
       <a href="../blog.html" class="nav-item">Blog</a>
-      <a href="#" class="nav-item"><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
-          title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button></a>
+      <a href="#" class="nav-item">
+        <button class="wbnrfz_btn_theme" id="dark-mode-toggle" title="Toggle Dark/Light Mode!">
+          <i class="fa-solid fa-moon-stars" id="theme-icon"></i>
+        </button>
+      </a>
     </nav>
   </header>
 
@@ -136,7 +139,8 @@
               <div class="row justify-content-center">
                 <div class="col-lg-12">
                   <div class="info justify-content-center">
-                    <p style="text-align: center; padding-bottom: 2em;">Ever taken the brown line (heh, poop colour)? Some of
+                    <p style="text-align: center; padding-bottom: 2em;">Ever taken the brown line (heh, poop colour)?
+                      Some of
                       these may look familiar to you. But I've injected some of my improvements in the designs in here.
                       The
                       first picture - The Yew Tee Train Timings, were made way back in 2021. But the real-life
@@ -238,7 +242,10 @@
     // Check localStorage for dark mode preference
     if (localStorage.getItem('dark-mode') === 'enabled') {
       document.body.classList.add('dark-mode');
+      updateThemeIcon('dark');
       updateHrefForDarkMode();
+    } else {
+      updateThemeIcon('light');
     }
 
     const toggleButton = document.getElementById('dark-mode-toggle');
@@ -247,11 +254,35 @@
       // Save the preference in localStorage
       if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('dark-mode', 'enabled');
+        updateThemeIcon('dark');
       } else {
         localStorage.setItem('dark-mode', 'disabled');
+        updateThemeIcon('light');
       }
       updateHrefForDarkMode();
     });
+
+// Function to update the theme icon with animation
+function updateThemeIcon(theme) {
+    const themeIcon = document.getElementById('theme-icon');
+
+    // Add animation class
+    themeIcon.classList.add('animate');
+
+    // Update the icon based on the theme
+    if (theme === 'dark') {
+        themeIcon.classList.remove('fa-sun-bright');
+        themeIcon.classList.add('fa-moon-stars');
+    } else {
+        themeIcon.classList.remove('fa-moon-stars');
+        themeIcon.classList.add('fa-sun-bright');
+    }
+
+    // Remove the animation class after the animation ends
+    setTimeout(() => {
+        themeIcon.classList.remove('animate');
+    }, 300); // Match the duration of the CSS transition
+}
 
     function updateHrefForDarkMode() {
       /* Banners */

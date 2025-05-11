@@ -593,6 +593,29 @@ input:required {
     background-color: #6d99c0;
 }
 
+#theme-icon {
+    transition: transform 1.8s ease, opacity 1.8s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#theme-icon.animate {
+    animation: pulse 0.5s infinite;
+    opacity: 0.5;
+}
+
 /* ------------------------------------------ */
 
 /* ------------------------------------------ 7.0 Header ------------------------------------------ */
@@ -2531,7 +2554,9 @@ select:focus {
 #typeface,
 #colour,
 #icon-assets,
-#brainstorm {
+#brainstorm,
+#psrith,
+#cckint {
     scroll-margin-top: 10vh;
 }
 

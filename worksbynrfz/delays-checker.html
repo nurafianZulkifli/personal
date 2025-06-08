@@ -14,7 +14,7 @@
 
   <link rel="icon" href="../img/core-img/favicon.png">
 
-   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/style-breakpoints.css">
@@ -68,7 +68,7 @@
   </header>
 
   <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-tdc"
-    style="background-image: url(https://i.imgur.com/5I39ojc.png); height: 100vh;">
+    style="background-image: url(https://i.imgur.com/3nt0PoJ.png); height: 100vh;">
     <div class="wbnrfz_details_blog">
       <div class="container">
         <div class="portfolio-controls d-flex justify-content-between align-items-center">
@@ -142,7 +142,8 @@
               <div class="row justify-content-center">
                 <div class="col-lg-12">
                   <div class="info justify-content-center">
-                    <p style="text-align: center; padding-bottom: 2em;">A pet-project of mine. Created just to keep track of
+                    <p style="text-align: center; padding-bottom: 2em;">A pet-project of mine. Created just to keep
+                      track of
                       train delays and breakdowns. The current features only included an Overview of Days Since Last
                       Reported
                       Failure, the Delays Overview, as well as Recent Incidents (i.e. Incidents History). I do wish to
@@ -155,22 +156,22 @@
 
 
             <div class="banner text-center wow fadeInUp" data-wow-delay="150ms">
-              <a href="https://i.imgur.com/XPq0mvF.png" class="portfolio-img"><img src="https://i.imgur.com/XPq0mvF.png"
-                  class="img-fluid" alt="cover-page"></a>
+              <a href="https://i.imgur.com/XPq0mvF.png" class="portfolio-img" id="tdt1"><img
+                  src="https://i.imgur.com/XPq0mvF.png" class="img-fluid" id="tdt1-img" alt="tdt1-img"></a>
             </div>
 
             <div class="details_single_img wow fadeInUp" data-wow-delay="150ms">
               <div class="row">
                 <div class="col-lg-6 col-md-6">
                   <div class="thumb">
-                    <a href="https://i.imgur.com/Q4bz8gp.png" class="portfolio-img"><img
-                        src="https://i.imgur.com/Q4bz8gp.png" class="img-fluid" alt="web-2"></a>
+                    <a href="https://i.imgur.com/Q4bz8gp.png" class="portfolio-img" id="tdt2" alt="tdt2"><img
+                        src="https://i.imgur.com/Q4bz8gp.png" class="img-fluid" id="tdt2-img" alt="tdt2-img"></a>
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="thumb">
-                    <a href="https://i.imgur.com/xKLVJbC.png" class="portfolio-img"><img
-                        src="https://i.imgur.com/xKLVJbC.png" class="img-fluid" alt="web-3"></a>
+                    <a href="https://i.imgur.com/xKLVJbC.png" class="portfolio-img" id="tdt3" alt="tdt3"><img
+                        src="https://i.imgur.com/xKLVJbC.png" class="img-fluid" id="tdt3-img" alt="tdt3-img"></a>
                   </div>
                 </div>
               </div>
@@ -256,41 +257,74 @@
       updateHrefForDarkMode();
     });
 
-// Function to update the theme icon with animation
-function updateThemeIcon(theme) {
-    const themeIcon = document.getElementById('theme-icon');
+    // Function to update the theme icon with animation
+    function updateThemeIcon(theme) {
+      const themeIcon = document.getElementById('theme-icon');
 
-    // Add animation class
-    themeIcon.classList.add('animate');
+      // Add animation class
+      themeIcon.classList.add('animate');
 
-    // Update the icon based on the theme
-    if (theme === 'dark') {
+      // Update the icon based on the theme
+      if (theme === 'dark') {
         themeIcon.classList.remove('fa-sun-bright');
         themeIcon.classList.add('fa-moon-stars');
-    } else {
+      } else {
         themeIcon.classList.remove('fa-moon-stars');
         themeIcon.classList.add('fa-sun-bright');
-    }
+      }
 
-    // Remove the animation class after the animation ends
-    setTimeout(() => {
+      // Remove the animation class after the animation ends
+      setTimeout(() => {
         themeIcon.classList.remove('animate');
-    }, 300); // Match the duration of the CSS transition
-}
+      }, 300); // Match the duration of the CSS transition
+    }
 
     function updateHrefForDarkMode() {
       /* Banners */
       const tdcPage = document.getElementById('cv-tdc');
+      // const coverPage = document.getElementById('coverPage');
 
       const isDarkMode = document.body.classList.contains('dark-mode');
+
+      const tdt1_link = document.getElementById('tdt1');
+      const tdt1_img = document.getElementById('tdt1-img');
+
+      const tdt2_link = document.getElementById('tdt2');
+      const tdt2_img = document.getElementById('tdt2-img');
+
+      const tdt3_link = document.getElementById('tdt3');
+      const tdt3_img = document.getElementById('tdt3-img');
+
 
       if (isDarkMode) {
         /* Banners */
         tdcPage.style.backgroundImage = "url('https://i.imgur.com/AwqBdiJ.png')";
+        // coverPage.style.backgroundImage = "url('./img/iu-dark.png')";
+
+        tdt1_link.href = 'https://i.imgur.com/FpOufoV.png';
+        tdt1_img.src = 'https://i.imgur.com/FpOufoV.png';
+
+        tdt2_link.href = 'https://i.imgur.com/UwMCmXE.png';
+        tdt2_img.src = 'https://i.imgur.com/UwMCmXE.png';
+
+        tdt3_link.href = 'https://i.imgur.com/eX0NhWw.png';
+        tdt3_img.src = 'https://i.imgur.com/eX0NhWw.png';
+
 
       } else {
         /* Banners */
         tdcPage.style.backgroundImage = "url('https://i.imgur.com/AwqBdiJ.png')";
+        // coverPage.style.backgroundImage = "url('https://i.imgur.com/XPq0mvF.png')";
+
+        tdt1_link.href = 'https://i.imgur.com/XPq0mvF.png';
+        tdt1_img.src = 'https://i.imgur.com/XPq0mvF.png';
+
+        tdt2_link.href = 'https://i.imgur.com/Q4bz8gp.png';
+        tdt2_img.src = 'https://i.imgur.com/Q4bz8gp.png';
+
+        tdt3_link.href = 'https://i.imgur.com/xKLVJbC.png';
+        tdt3_img.src = 'https://i.imgur.com/xKLVJbC.png';
+
       }
     }
   </script>

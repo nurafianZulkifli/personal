@@ -48,23 +48,17 @@ function updateThemeIcon(theme) {
 function updateHrefForDarkMode() {
     /* Banners */
     const coverSect = document.getElementById('cv-img');
-    const platSect = document.getElementById('plat-img');
-    const entSect = document.getElementById('ent-img');
-    const concSect = document.getElementById('conc-img');
+    const cdSect = document.getElementById('cd-img');
 
     /* Images */
-    const cclDiag_link = document.getElementById('ccl-diag');
-    const cclDiag_img = document.getElementById('ccl-diag-img');
+    const lcd1_link = document.getElementById('lcd1');
+    const lcd1_img = document.getElementById('lcd1-img');
 
-    const arrow_link = document.getElementById('arrow');
-    const arrow_img = document.getElementById('arrow-img');
+    const lcd2_link = document.getElementById('lcd2');
+    const lcd2_img = document.getElementById('lcd2-img');
 
-    const wfm_link = document.getElementById('wfm');
-    const wfm_img = document.getElementById('wfm-img');
-
-    const evo3_link = document.getElementById('evo3');
-    const evo3_img = document.getElementById('evo3-img');
-
+    const lcd3_link = document.getElementById('lcd3');
+    const lcd3_img = document.getElementById('lcd3-img');
 
     /* Videos */
 
@@ -75,23 +69,19 @@ function updateHrefForDarkMode() {
     if (isDarkMode) {
         /* Banners */
         coverSect.style.backgroundImage = "url('./img/cover-eicw-4-dark.png')";
-        platSect.style.backgroundImage = "url('./img/plat-dark.png')";
-        entSect.style.backgroundImage = "url('./img/ent-dark.png')";
-        concSect.style.backgroundImage = "url('./img/conc-dark.png')";
+        cdSect.style.backgroundImage = "url('./img/cdui-dark.png')";
 
 
         /* Images */
-        cclDiag_link.href = './img/ccl-diag-dark.png';
-        cclDiag_img.src = './img/ccl-diag-dark.png';
+        lcd1_link.href = './img/lcd-dark.png';
+        lcd1_img.src = './img/lcd-dark.png';
 
-        arrow_link.href = './img/arrow-dark.png';
-        arrow_img.src = './img/arrow-dark.png';
+        lcd2_link.href = './img/lcd2-dark.png';
+        lcd2_img.src = './img/lcd2-dark.png';
 
-        wfm_link.href = './img/ccl6-7aD.png';
-        wfm_img.src = './img/ccl6-7aD.png';
+        lcd3_link.href = './img/lcd3-dark.png';
+        lcd3_img.src = './img/lcd3-dark.png';
 
-        evo3_link.href = './img/ccl6-overview-dark.png';
-        evo3_img.src = './img/ccl6-overview-dark.png';
 
         /* Videos */
 
@@ -99,23 +89,17 @@ function updateHrefForDarkMode() {
     } else {
         /* Banners */
         coverSect.style.backgroundImage = "url('./img/cover-eicw-4-light.png')";
-        platSect.style.backgroundImage = "url('./img/plat-light.png')";
-        entSect.style.backgroundImage = "url('./img/ent-light.png')";
-        concSect.style.backgroundImage = "url('./img/conc-light.png')";
-
+        cdSect.style.backgroundImage = "url('./img/cdui-light.png')";
 
         /* Images */
-        cclDiag_link.href = './img/ccl-diag-light.png';
-        cclDiag_img.src = './img/ccl-diag-light.png';
+        lcd1_link.href = './img/lcd-light.png';
+        lcd1_img.src = './img/lcd-light.png';
 
-        arrow_link.href = './img/arrow-light.png';
-        arrow_img.src = './img/arrow-light.png';
+        lcd2_link.href = './img/lcd2-light.png';
+        lcd2_img.src = './img/lcd2-light.png';
 
-        wfm_link.href = './img/ccl6-7aL.png';
-        wfm_img.src = './img/ccl6-7aL.png';
-
-        evo3_link.href = './img/ccl6-overview-light.png';
-        evo3_img.src = './img/ccl6-overview-light.png';
+        lcd3_link.href = './img/lcd3-light.png';
+        lcd3_img.src = './img/lcd3-light.png';
 
 
         /* Videos */
@@ -134,6 +118,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+const video = document.getElementById('eicw-vid3');
+if (video) {
+  video.autoplay = false;
+  video.pause();
+}
 
 // document.addEventListener('contextmenu', function(e) {
 //     if (e.target.tagName === 'IMG') {

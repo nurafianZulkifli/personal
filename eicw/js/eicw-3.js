@@ -181,14 +181,9 @@ function updateHrefForDarkMode() {
 
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    var videos = document.querySelectorAll('video');
-    videos.forEach(function (video) {
-        video.play().catch(function (error) {
-            console.log('Autoplay was prevented:', error);
-        });
-    });
-});
+// Only autoplay the video you want
+document.getElementById('autoplayVideo').play();
+
 
 // document.addEventListener('contextmenu', function(e) {
 //     if (e.target.tagName === 'IMG') {

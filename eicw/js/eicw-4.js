@@ -61,7 +61,8 @@ function updateHrefForDarkMode() {
     const lcd3_img = document.getElementById('lcd3-img');
 
     /* Videos */
-
+    const vid1 = document.getElementById('eicw-vid3');
+    const vid1Source = vid1.querySelector('source');
 
 
     const isDarkMode = document.body.classList.contains('dark-mode');
@@ -84,6 +85,7 @@ function updateHrefForDarkMode() {
 
 
         /* Videos */
+        vid1Source.src = './img/staris2-red.mp4';
 
 
     } else {
@@ -103,27 +105,16 @@ function updateHrefForDarkMode() {
 
 
         /* Videos */
-
+        vid1Source.src = './img/staris2-red.mp4';
 
     }
 
-
+        vid1.load();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    var videos = document.querySelectorAll('video');
-    videos.forEach(function (video) {
-        video.play().catch(function (error) {
-            console.log('Autoplay was prevented:', error);
-        });
-    });
-});
+// Only autoplay the video you want
+document.getElementById('autoplayVideo').play();
 
-const video = document.getElementById('eicw-vid3');
-if (video) {
-  video.autoplay = false;
-  video.pause();
-}
 
 // document.addEventListener('contextmenu', function(e) {
 //     if (e.target.tagName === 'IMG') {

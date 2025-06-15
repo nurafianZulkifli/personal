@@ -141,9 +141,6 @@ function updateHrefForDarkMode() {
     }
 }
 
-// Only autoplay the video you want
-document.getElementById('autoplayVideo').play();
-
 
 // Update the scroll indicator width based on scroll position
 window.addEventListener("scroll", function () {

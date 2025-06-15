@@ -112,16 +112,6 @@ function updateHrefForDarkMode() {
         vid1.load();
 }
 
-// Only autoplay the video you want
-document.getElementById('autoplayVideo').play();
-
-
-// document.addEventListener('contextmenu', function(e) {
-//     if (e.target.tagName === 'IMG') {
-//         e.preventDefault();
-//     }
-// });
-
 // Update the scroll indicator width based on scroll position
 window.addEventListener("scroll", function () {
     const scrollIndicator = document.getElementById("scroll-indicator");

@@ -492,9 +492,6 @@ function updateHrefForDarkMode() {
     vid10.load();
 }
 
-// Only autoplay the video you want
-document.getElementById('autoplayVideo').play();
-
 
 // Update the scroll indicator width based on scroll position
 window.addEventListener("scroll", function () {

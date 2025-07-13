@@ -60,6 +60,18 @@ function updateHrefForDarkMode() {
     const lcd3_link = document.getElementById('lcd3');
     const lcd3_img = document.getElementById('lcd3-img');
 
+    const bcr1_link = document.getElementById('bcr1');
+    const bcr1_img = document.getElementById('bcr1-img');
+
+    const bcr2_link = document.getElementById('bcr2');
+    const bcr2_img = document.getElementById('bcr2-img');
+
+    const bcr3_link = document.getElementById('bcr3');
+    const bcr3_img = document.getElementById('bcr3-img');
+
+    const bcr4_link = document.getElementById('bcr4');
+    const bcr4_img = document.getElementById('bcr4-img');
+
     /* Videos */
     const vid1 = document.getElementById('eicw-vid3');
     const vid1Source = vid1.querySelector('source');
@@ -83,6 +95,18 @@ function updateHrefForDarkMode() {
         lcd3_link.href = './img/lcd3-dark.png';
         lcd3_img.src = './img/lcd3-dark.png';
 
+        bcr1_link.href = './img-2/bcr-dark.png';
+        bcr1_img.src = './img-2/bcr-dark.png';
+
+        bcr2_link.href = './img-2/bcr-compare-dark.png';
+        bcr2_img.src = './img-2/bcr-compare-dark.png';
+
+        bcr3_link.href = './img-2/bcr-tap-dark.png';
+        bcr3_img.src = './img-2/bcr-tap-dark.png';
+
+        bcr4_link.href = './img-2/bcr-var-dark.png';
+        bcr4_img.src = './img-2/bcr-var-dark.png';
+
 
         /* Videos */
         vid1Source.src = './img/staris2-red.mp4';
@@ -103,13 +127,24 @@ function updateHrefForDarkMode() {
         lcd3_link.href = './img/lcd3-light.png';
         lcd3_img.src = './img/lcd3-light.png';
 
+        bcr1_link.href = './img-2/bcr-light.png';
+        bcr1_img.src = './img-2/bcr-light.png';
+
+        bcr2_link.href = './img-2/bcr-compare-light.png';
+        bcr2_img.src = './img-2/bcr-compare-light.png';
+
+        bcr3_link.href = './img-2/bcr-tap-light.png';
+        bcr3_img.src = './img-2/bcr-tap-light.png';
+
+        bcr4_link.href = './img-2/bcr-var-light.png';   
+        bcr4_img.src = './img-2/bcr-var-light.png';
 
         /* Videos */
         vid1Source.src = './img/staris2-red.mp4';
 
     }
 
-        vid1.load();
+    vid1.load();
 }
 
 // Update the scroll indicator width based on scroll position

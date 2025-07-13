@@ -2560,7 +2560,8 @@ select:focus {
 #br-diag,
 #bat,
 #tv,
-#staris2 {
+#staris2,
+#bcr {
     scroll-margin-top: 10vh;
 }
 

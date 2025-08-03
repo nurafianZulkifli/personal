@@ -187,12 +187,13 @@
     }
 
     .portfolio-filter {
-        order: 1;
+        order: 2;
     }
 
     .portfolio-sort {
         margin-top: 0em;
-        order: 2;
+        order: 1;
+        margin-bottom: 30px;
     }
 
     .single_catagory {
@@ -582,11 +583,12 @@
     }
 
     .portfolio-filter {
-        order: 1;
+        order: 2;
     }
 
     .portfolio-sort {
-        order: 2;
+        order: 1;
+        margin-bottom: 30px;
     }
 }
 
@@ -670,6 +672,7 @@
     .portfolio-sort {
         margin-top: 0em;
         order: 2;
+        margin-bottom: 30px;
         /* Ensure it appears below */
     }
 }
@@ -848,12 +851,13 @@
     }
 
     .portfolio-filter {
-        order: 1;
+        order: 2;
         /* Ensure it appears first */
     }
 
     .portfolio-sort {
-        order: 2;
+        order: 1;
+        margin-bottom: 30px;
         /* Ensure it appears below */
     }
 }

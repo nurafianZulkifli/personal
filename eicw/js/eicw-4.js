@@ -73,8 +73,8 @@ function updateHrefForDarkMode() {
     const bcr4_img = document.getElementById('bcr4-img');
 
     /* Videos */
-    const vid1 = document.getElementById('eicw-vid3');
-    const vid1Source = vid1.querySelector('source');
+    // const vid1 = document.getElementById('eicw-vid3');
+    // const vid1Source = vid1.querySelector('source');
 
 
     const isDarkMode = document.body.classList.contains('dark-mode');
@@ -109,7 +109,7 @@ function updateHrefForDarkMode() {
 
 
         /* Videos */
-        vid1Source.src = './img/staris2-red.mp4';
+        // vid1Source.src = './img/staris2-red.mp4';
 
 
     } else {
@@ -140,7 +140,7 @@ function updateHrefForDarkMode() {
         bcr4_img.src = './img-2/bcr-var-light.png';
 
         /* Videos */
-        vid1Source.src = './img/staris2-red.mp4';
+        // vid1Source.src = './img/staris2-red.mp4';
 
     }
 

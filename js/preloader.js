@@ -1,7 +1,7 @@
 // Dynamic Preloader Text
 document.addEventListener("DOMContentLoaded", () => {
     const preloaderText = document.getElementById("preloader-text");
-    const messages = ["Getting ready...","Almost there...", "Anytime Now..."];
+    const messages = ["Fetching Image from Database...","Almost there...", "Anytime Now..."];
     let index = 0;
   
     const interval = setInterval(() => {

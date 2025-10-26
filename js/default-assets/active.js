@@ -196,7 +196,7 @@
     if ($.fn.scrollUp) {
         pw_window.scrollUp({
             scrollSpeed: 1000,
-            scrollText: '<i class="fa-solid fa-arrow-up"</i>'
+            scrollText: '<i class="fa-solid fa-arrow-up-to-line"></i>'
         });
     }
 

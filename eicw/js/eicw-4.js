@@ -9,8 +9,12 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
     updateThemeIcon('light');
 }
 
-const toggleButton = document.getElementById('dark-mode-toggle');
-toggleButton.addEventListener('click', () => {
+// Get both toggle buttons
+const toggleButtonDesktop = document.getElementById('dark-mode-toggle-desktop');
+const toggleButtonMobile = document.getElementById('dark-mode-toggle-mobile');
+
+// Function to toggle dark mode
+function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     // Save the preference in localStorage
     if (document.body.classList.contains('dark-mode')) {
@@ -21,33 +25,56 @@ toggleButton.addEventListener('click', () => {
         updateThemeIcon('light');
     }
     updateHrefForDarkMode();
-});
+}
 
+// Add event listeners to both buttons if they exist
+if (toggleButtonDesktop) {
+    toggleButtonDesktop.addEventListener('click', toggleDarkMode);
+}
+
+if (toggleButtonMobile) {
+    toggleButtonMobile.addEventListener('click', toggleDarkMode);
+}
 // Function to update the theme icon with animation
 function updateThemeIcon(theme) {
-    const themeIcon = document.getElementById('theme-icon');
+    const themeIconDesktop = document.getElementById('theme-icon-desktop');
+    const themeIconMobile = document.getElementById('theme-icon-mobile');
 
-    // Add animation class
-    themeIcon.classList.add('animate');
+    // Add animation class to both icons
+    if (themeIconDesktop) themeIconDesktop.classList.add('animate');
+    if (themeIconMobile) themeIconMobile.classList.add('animate');
 
     // Update the icon based on the theme
     if (theme === 'dark') {
-        themeIcon.classList.remove('fa-sun-bright');
-        themeIcon.classList.add('fa-moon-stars');
+        if (themeIconDesktop) {
+            themeIconDesktop.classList.remove('fa-sun-bright');
+            themeIconDesktop.classList.add('fa-moon-stars');
+        }
+        if (themeIconMobile) {
+            themeIconMobile.classList.remove('fa-sun-bright');
+            themeIconMobile.classList.add('fa-moon-stars');
+        }
     } else {
-        themeIcon.classList.remove('fa-moon-stars');
-        themeIcon.classList.add('fa-sun-bright');
+        if (themeIconDesktop) {
+            themeIconDesktop.classList.remove('fa-moon-stars');
+            themeIconDesktop.classList.add('fa-sun-bright');
+        }
+        if (themeIconMobile) {
+            themeIconMobile.classList.remove('fa-moon-stars');
+            themeIconMobile.classList.add('fa-sun-bright');
+        }
     }
 
     // Remove the animation class after the animation ends
     setTimeout(() => {
-        themeIcon.classList.remove('animate');
+        if (themeIconDesktop) themeIconDesktop.classList.remove('animate');
+        if (themeIconMobile) themeIconMobile.classList.remove('animate');
     }, 300); // Match the duration of the CSS transition
 }
 
 function updateHrefForDarkMode() {
     /* Banners */
-    const coverSect = document.getElementById('cv-img');
+    const coverSect = document.getElementById('cui-img');
     const cdSect = document.getElementById('cd-img');
 
     /* Images */
@@ -82,7 +109,6 @@ function updateHrefForDarkMode() {
     if (isDarkMode) {
         /* Banners */
         coverSect.style.backgroundImage = "url('./img/cover-eicw-4-dark.png')";
-        cdSect.style.backgroundImage = "url('./img/cdui-dark.png')";
 
 
         /* Images */
@@ -115,7 +141,6 @@ function updateHrefForDarkMode() {
     } else {
         /* Banners */
         coverSect.style.backgroundImage = "url('./img/cover-eicw-4-light.png')";
-        cdSect.style.backgroundImage = "url('./img/cdui-light.png')";
 
         /* Images */
         lcd1_link.href = './img/lcd-light.png';
@@ -136,7 +161,7 @@ function updateHrefForDarkMode() {
         bcr3_link.href = './img-2/bcr-tap-light.png';
         bcr3_img.src = './img-2/bcr-tap-light.png';
 
-        bcr4_link.href = './img-2/bcr-var-light.png';   
+        bcr4_link.href = './img-2/bcr-var-light.png';
         bcr4_img.src = './img-2/bcr-var-light.png';
 
         /* Videos */

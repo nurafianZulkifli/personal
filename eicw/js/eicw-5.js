@@ -9,8 +9,12 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
     updateThemeIcon('light');
 }
 
-const toggleButton = document.getElementById('dark-mode-toggle');
-toggleButton.addEventListener('click', () => {
+// Get both toggle buttons
+const toggleButtonDesktop = document.getElementById('dark-mode-toggle-desktop');
+const toggleButtonMobile = document.getElementById('dark-mode-toggle-mobile');
+
+// Function to toggle dark mode
+function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     // Save the preference in localStorage
     if (document.body.classList.contains('dark-mode')) {
@@ -21,33 +25,56 @@ toggleButton.addEventListener('click', () => {
         updateThemeIcon('light');
     }
     updateHrefForDarkMode();
-});
+}
 
+// Add event listeners to both buttons if they exist
+if (toggleButtonDesktop) {
+    toggleButtonDesktop.addEventListener('click', toggleDarkMode);
+}
+
+if (toggleButtonMobile) {
+    toggleButtonMobile.addEventListener('click', toggleDarkMode);
+}
 // Function to update the theme icon with animation
 function updateThemeIcon(theme) {
-    const themeIcon = document.getElementById('theme-icon');
+    const themeIconDesktop = document.getElementById('theme-icon-desktop');
+    const themeIconMobile = document.getElementById('theme-icon-mobile');
 
-    // Add animation class
-    themeIcon.classList.add('animate');
+    // Add animation class to both icons
+    if (themeIconDesktop) themeIconDesktop.classList.add('animate');
+    if (themeIconMobile) themeIconMobile.classList.add('animate');
 
     // Update the icon based on the theme
     if (theme === 'dark') {
-        themeIcon.classList.remove('fa-sun-bright');
-        themeIcon.classList.add('fa-moon-stars');
+        if (themeIconDesktop) {
+            themeIconDesktop.classList.remove('fa-sun-bright');
+            themeIconDesktop.classList.add('fa-moon-stars');
+        }
+        if (themeIconMobile) {
+            themeIconMobile.classList.remove('fa-sun-bright');
+            themeIconMobile.classList.add('fa-moon-stars');
+        }
     } else {
-        themeIcon.classList.remove('fa-moon-stars');
-        themeIcon.classList.add('fa-sun-bright');
+        if (themeIconDesktop) {
+            themeIconDesktop.classList.remove('fa-moon-stars');
+            themeIconDesktop.classList.add('fa-sun-bright');
+        }
+        if (themeIconMobile) {
+            themeIconMobile.classList.remove('fa-moon-stars');
+            themeIconMobile.classList.add('fa-sun-bright');
+        }
     }
 
     // Remove the animation class after the animation ends
     setTimeout(() => {
-        themeIcon.classList.remove('animate');
+        if (themeIconDesktop) themeIconDesktop.classList.remove('animate');
+        if (themeIconMobile) themeIconMobile.classList.remove('animate');
     }, 300); // Match the duration of the CSS transition
 }
 
 function updateHrefForDarkMode() {
     /* Banners */
-    const coverSect = document.getElementById('cv-img');
+    const coverSect = document.getElementById('covccl-img');
     const platSect = document.getElementById('plat-img');
     const entSect = document.getElementById('ent-img');
     const concSect = document.getElementById('conc-img');
@@ -58,6 +85,9 @@ function updateHrefForDarkMode() {
 
     const arrow_link = document.getElementById('arrow');
     const arrow_img = document.getElementById('arrow-img');
+
+    const wfp_link = document.getElementById('wfp');
+    const wfp_img = document.getElementById('wfp-img');
 
     const wfm_link = document.getElementById('wfm');
     const wfm_img = document.getElementById('wfm-img');
@@ -90,6 +120,9 @@ function updateHrefForDarkMode() {
         wfm_link.href = './img/ccl6-7aD.png';
         wfm_img.src = './img/ccl6-7aD.png';
 
+        wfp_link.href = './img/ccl6-7D.png';
+        wfp_img.src = './img/ccl6-7D.png';
+
         evo3_link.href = './img/ccl6-overview-dark.png';
         evo3_img.src = './img/ccl6-overview-dark.png';
 
@@ -114,6 +147,9 @@ function updateHrefForDarkMode() {
         wfm_link.href = './img/ccl6-7aL.png';
         wfm_img.src = './img/ccl6-7aL.png';
 
+        wfp_link.href = './img/ccl6-7.png';
+        wfp_img.src = './img/ccl6-7.png';
+
         evo3_link.href = './img/ccl6-overview-light.png';
         evo3_img.src = './img/ccl6-overview-light.png';
 
@@ -123,7 +159,7 @@ function updateHrefForDarkMode() {
 
     }
 
-    
+
 
 }
 
@@ -150,3 +186,83 @@ window.addEventListener("scroll", function () {
     const scrollPercentage = (scrollTop / scrollHeight) * 100; // Calculate scroll percentage
     scrollIndicator.style.width = scrollPercentage + "%"; // Update the width of the indicator
 });
+
+var ccl = document.getElementById("chimes");
+
+
+/* Audio Elements */
+// Only attach handlers once DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+    var ccl = document.getElementById("chimes");
+    if (ccl) {
+        ccl.addEventListener('mousedown', handleChimesClick);
+        ccl.addEventListener('touchstart', handleChimesTap);
+    }
+});
+
+let clickCount = 0;
+let clickTimer = null;
+let tapCount = 0;
+let tapTimer = null;
+
+// Single click/tap to play normal chime, triple click/tap to play alternate chime
+function handleChimesClick(event) {
+    if (event.button !== 0) return; // Only left mouse button
+    clickCount++;
+    if (clickCount === 3) {
+        clearTimeout(clickTimer);
+        playAltAudio();
+        clickCount = 0;
+    } else {
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(() => {
+            if (clickCount === 1) playAudio();
+            clickCount = 0;
+        }, 400);
+    }
+}
+
+function handleChimesTap(event) {
+    tapCount++;
+    if (tapCount === 3) {
+        clearTimeout(tapTimer);
+        playAltAudio();
+        tapCount = 0;
+    } else {
+        clearTimeout(tapTimer);
+        tapTimer = setTimeout(() => {
+            if (tapCount === 1) playAudio();
+            tapCount = 0;
+        }, 500);
+    }
+}
+
+function playAudio() {
+    const audio = document.getElementById('chimes-audio');
+    const altAudio = document.getElementById('chimes-alt');
+    if (audio) {
+        // Stop and reset both audios before playing
+        if (altAudio) {
+            altAudio.pause();
+            altAudio.currentTime = 0;
+        }
+        audio.pause();
+        audio.currentTime = 0;
+        audio.play();
+    }
+}
+
+function playAltAudio() {
+    const audio = document.getElementById('chimes-audio');
+    const altAudio = document.getElementById('chimes-alt');
+    if (altAudio) {
+        // Stop and reset both audios before playing
+        if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+        altAudio.pause();
+        altAudio.currentTime = 0;
+        altAudio.play();
+    }
+}

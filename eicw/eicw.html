@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content>
-       <meta charset="UTF-8">
-    <meta name="description" content>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Design System Introduction | EICW</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <meta property="og:image" content="https://i.imgur.com/kMi3VsK.png" />
+    <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
 
     <link rel="icon" href="../img/core-img/favicon.png">
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
+
+    <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css'>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/style-breakpoints.css">
@@ -38,131 +38,262 @@
 
 <body>
 
-    <!-- Preloader Section -->
-    <div id="preloader">
-        <div class="loader"></div>
-        <p id="preloader-text">Just a moment...</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar-container">
+        <div class="navbar">
+            <!-- Logo -->
+            <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../works-by-nrfz.html" class="nav-link">
+                        <i class="fa-solid fa-pen-paintbrush"></i>
+                        <span>Works By NRFZ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="eicw.html" class="nav-link active">
+                        <i class="fa-solid fa-map-location"></i>
+                        <span>EICW</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link">
+                        <i class="fa-solid fa-comment"></i>
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item-toggle">
+                    <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
+                        <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="mobile-menu-brand">
+                <span class="brand-text">
+                    <li class="mobile-menu-item mobile-theme-toggle">
+                        <button class="wbnrfz_btn_theme mobile-theme-btn" id="dark-mode-toggle-mobile"
+                            title="Toggle Dark/Light Mode!">
+                            <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
+                        </button>
+                    </li>
+                </span>
+            </a>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <span>×</span>
+            </button>
+        </div>
+
+        <ul class="mobile-menu-nav">
+            <li class="mobile-menu-item">
+                <a href="../index.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-regular fa-house"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="../about.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-regular fa-circle-user"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="../works-by-nrfz.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-pen-paintbrush"></i>
+                    <span>Works By NRFZ</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="eicw.html" class="mobile-menu-link active">
+                    <i class="fa-solid fa-map-location"></i>
+                    <span>EICW</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="../blog.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-comment"></i>
+                    <span>Blog</span>
+                </a>
+            </li>
+        </ul>
     </div>
 
+    <!-- Scroll Indicator -->
     <div id="scroll-indicator-container">
         <div id="scroll-indicator"></div>
     </div>
 
 
-    <header>
-        <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+    <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
 
-        <input type="checkbox" id="check" />
-        <label for="check" class="icons">
-            <i class="fa-solid fa-bars" id="menu-icon"></i>
-            <i class="fa-solid fa-xmark" id="close-icon"></i>
-        </label>
-
-        <nav class="navbar navbar-mobile">
-            <a href="../index.html" class="nav-item">Home</a>
-            <a href="../about.html" class="nav-item">About</a>
-            <a href="../works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
-            <a href="#" class="nav-item active">EICW</a>
-            <a href="../blog.html" class="nav-item">Blog</a>
-            <a href="#" class="nav-item">
-                <button class="wbnrfz_btn_theme" id="dark-mode-toggle" title="Toggle Dark/Light Mode!">
-                    <i class="fa-solid fa-moon-stars" id="theme-icon"></i>
-                </button>
-            </a>
-        </nav>
-    </header>
-
-    <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-img"
-        style="background-image: url(img/cover-light.png); height: 100vh;">
-        <div class="wbnrfz_details_blog">
-            <div class="container">
-                <div class="portfolio-controls d-flex justify-content-between align-items-center">
-                    <!-- Filter Buttons -->
-                    <div class="portfolio-filter mt-3">
-                        <div class="col-lg-12">
-                            <div class="main-title">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="https://nurafianzulkifli.com/index.html">
-                                                Home</a>
-                                        </li>
-                                        <li class="breadcrumb-item active"><a href="#">
-                                                EICW
-                                            </a>
-                                        </li>
-                                    </ol>
-                                </nav>
-                                <h1 class="brc">Experimenting Improvements of Current Wayfinding</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Collapsible Header -->
-                    <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#portfolioFilter"
-                        aria-controls="portfolioFilter" style="cursor: pointer;" title="Go To">
-                        <i class="fa-solid fa-chevron-down nav-chev"></i>
-                    </div>
-                </div>
-                <!-- Collapsible Content -->
-                <div id="portfolioFilter" class="collapse">
-                    <div class="portfolio-filter mt-3">
-                        <a href="#">
-                            <button class="btn active">Design System Introduction</button>
-                        </a>
-                        <a href="eicw-2.html">
-                            <button class="btn">Proposed Wayfinding Changes - Trains</button>
-                        </a>
-                        <a href="eicw-3.html">
-                            <button class="btn">Proposed Wayfinding Changes - Buses</button>
-                        </a>
-                        <a href="eicw-4.html">
-                            <button class="btn">Proposed UI/UX Changes</button>
-                        </a>
-                        <a href="eicw-5.html">
-                            <button class="btn">Rethinking CCL6 Signages</button>
-                        </a>
-                    </div>
+    <!-- Cover Header -->
+    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-img">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Content -->
+    <!-- Title/Breadcrumbs -->
     <section class="about-me-sum clearfix">
         <div class="wbnrfz_eicw">
-            <div class="container container-mobile">
+            <div class="page-header-section">
+                <div class="container-xxl container-mobile container-mobile-header">
+                    <div class="breadcrumb-wrapper">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="../index.html">
+                                        <i class="fa-solid fa-house"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">EICW</a>
+                                </li>
+                            </ol>
+                        </nav>
+                        <div class="page-title-wrapper">
+                            <h1 class="page-title-single">Experimenting Improvements of Current Wayfinding</h1>
+                            <p class="page-subtitle">4 mins read</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scrollable-tabs-container">
+                    <div class="left-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+
+                    </div>
+
+                    <ul>
+                        <li>
+                            <a href="eicw.html" class="active">Design System Introduction</a>
+                        </li>
+
+                        <li>
+                            <a href="eicw-2.html">Proposed Wayfinding Changes - Trains</a>
+                        </li>
+
+                        <li>
+                            <a href="eicw-3.html">Proposed Wayfinding Changes - Buses</a>
+                        </li>
+
+                        <li>
+                            <a href="eicw-4.html">Proposed UI/UX Changes</a>
+                        </li>
+
+                        <li>
+                            <a href="eicw-5.html">Rethinking CCL6 Signages</a>
+                        </li>
+                    </ul>
+
+                    <div class="right-arrow active">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Section Contents -->
+    <section class="about-me-sum clearfix">
+        <div class="wbnrfz_eicw">
+            <div class="container container-mobile" style="padding-bottom: 2em;">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="row justify-content-center">
 
                             <!-- Preface -->
-                            <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="dsi"
+                                style="padding-top: 10px;">
                                 <div class="info justify-content-center">
-                                    <h2 class="mb-3 text-center" style="font-size: 30px; font-weight:bold;">Design
+                                    <h2 style="font-size: 30px; font-weight:bold;">Design
                                         System Introduction</h2>
                                     <p style="text-align: left;">The new Wayfinding system was first launched on the
                                         Thomson-East
                                         Coast Line stations. It spots a new design
-                                        system, where the emphasis was mainly on iconographies, rather than pure texts.
+                                        system, where the emphasis was mainly on iconographies, rather than pure
+                                        texts.
                                         I for one, am a
                                         huge fan of this new design.
-                                        <br><br>I love icons and pictorials as compared to texts.
-                                        Of course, with every new implementations, there has got to be areas that can be
-                                        improved, and in
-                                        this microsite, I will be brainstorming on ideas on how to make the current
-                                        system better. Do take
-                                        note, these are just
-                                        ideas and concepts, and technicalities like Dimensions & Measurements will not
-                                        be taken into
-                                        account.
-                                        Overall Assets and Designs' credit go to the Land Transport Authority.
-                                        <br><br> The Colour Palettes provided here are matched to be identical to the
-                                        real-life
-                                        counterparts as
-                                        well.
                                     </p>
                                 </div>
 
-                                <div class="portfolio-filter portfolio-filter-sub mt-3 wow fadeInUp"
+                                <!-- Evolution of our Transit System Design -->
+                                <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                                    <div class="banner-eicw">
+                                        <a href="img/evo-light.png" id="evo" class="portfolio-img" style="box-shadow: none; border: none;">
+                                            <img src="img/evo-light.png" id="evo-img" class="img-fluid" alt="evo" style="box-shadow: none; border: none;">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <p style="text-align: left;">I love icons and pictorials as compared to texts.
+                                    Of course, with every new implementations, there has got to be areas that
+                                    can be
+                                    improved, and in
+                                    this microsite, I will be brainstorming on ideas on how to make the current
+                                    system better. Do take
+                                    note, these are just
+                                    ideas and concepts, and technicalities like Dimensions & Measurements will
+                                    not
+                                    be taken into
+                                    account.
+                                    Overall Assets and Designs' credit go to the Land Transport Authority.
+                                    <br><br> The Colour Palettes provided here are matched to be identical to
+                                    the
+                                    real-life
+                                    counterparts as
+                                    well.
+                                </p>
+                                </p>
+
+                                <div class="portfolio-filter portfolio-filter-sub mt-3 wow fadeIn"
                                     data-wow-delay="100ms" style="padding-top: 1em;">
                                     <a href="#typeface">
                                         <button class="btn">Font Typeface</button>
@@ -178,7 +309,7 @@
                             </div>
 
                             <!-- Font Typeface -->
-                            <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms" id="typeface">
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="typeface">
                                 <h2 class="mb-3"
                                     style="font-size: 30px; font-weight:bold; text-align: center; padding-top: 10px;">
                                     Font
@@ -192,7 +323,7 @@
                             </div>
 
                             <!-- Colour Palettes -->
-                            <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms" id="colour">
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="colour">
                                 <h2 class="mb-3"
                                     style="font-size: 30px; font-weight:bold; text-align: center; padding-top: 10px;">
                                     Colour
@@ -216,15 +347,14 @@
         </div>
     </section>
 
-
     <!-- Section Header -->
-    <section class="breadcrumb-area-eicw-subs bg-img bg-overlay parallax" id="eia-img"
+    <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="eia-img"
         style="background-image: url(img/eia-light.png)">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcrumb-content text-center">
-                        <h2 class="page-title">Existing Icon Assets</h2>
+                        <!-- <h2 class="page-title">Existing Icon Assets</h2> -->
                     </div>
                 </div>
             </div>
@@ -239,8 +369,17 @@
                     <div class="col-lg-12">
                         <div class="row justify-content-center">
 
+                            <div class="info justify-content-center text-center" style="padding-top: 3em;">
+                                <h2 style="font-size: 30px; font-weight:bold;">Existing Icon Assets</h2>
+                                <p style="text-align: center;">This section will showcase the existing icon assets
+                                    currently in use, categorised into different sections.
+                                </p>
+                            </div>
+
+                            <hr>
+
                             <!-- Exit Signs -->
-                            <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
                                 <h2 class="mb-3"
                                     style="font-size: 30px; font-weight:bold; text-align: center; padding-top: 10px;">
                                     Exit
@@ -254,7 +393,7 @@
                             </div>
 
                             <!-- Line/Station/Network Caplets -->
-                            <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
                                 <h2 class="mb-3"
                                     style="font-size: 30px; font-weight:bold; text-align: center; padding-top: 10px;">
                                     Line/Station/Network Caplets</h2>
@@ -266,7 +405,7 @@
                             </div>
 
                             <!-- Lift Signs -->
-                            <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
                                 <h2 class="mb-3"
                                     style="font-size: 30px; font-weight:bold; text-align: center; padding-top: 10px;">
                                     Lift Signs</h2>
@@ -278,7 +417,7 @@
                             </div>
 
                             <!-- Wayfinding Signs -->
-                            <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
                                 <h2 class="mb-3"
                                     style="font-size: 30px; font-weight:bold; text-align: center; padding-top: 10px;">
                                     Wayfinding Signs</h2>
@@ -301,58 +440,27 @@
         </div>
     </section>
 
-
-    <!-- Overview Content -->
-    <section class="about-me-summ clearfix" style="padding-top: 10px;">
-        <div class="wbnrfz_details_body">
-            <div class="container container-xxl">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="row justify-content-center">
-
-                            <!-- Evolution of our Transit System Design -->
-                            <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
-                                <h2 class="mb-3"
-                                    style="font-size: 30px; font-weight:bold; text-align: center; padding-top: 10px;">
-                                    Evolution of our Transit System Design</h2>
-                                <div class="banner-eicw">
-                                    <a href="img/evo-light.png" id="evo" class="portfolio-img">
-                                        <img src="img/evo-light.png" id="evo-img" class="img-fluid" alt="evo">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://github.com/nurafianZulkifli" class="social-link">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/nrfzlkf_" class="social-link">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
+                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
-        </div>
-    </section>
 
-
-    <footer class="footer-area">
-        <div class="container">
-            <div class="footer-content d-flex flex-column align-items-center text-center">
-                <!-- Social Links -->
-                <div class="social-info">
-                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                            aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                            aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                            aria-hidden="true"></i></a>
-                </div>
-                <!-- Copywrite Text -->
-        <div class="copywrite-text">
-          <p>&copy;
-            <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
-          </p>
-          <p><strong>Preview the new Design
-              <a href="https://nurafianzulkifli.github.io/nrfz-dev/">here!</a></strong>
-          </p>
-        </div>
-            </div>
+        <div class="footer-copy">
+            © 2025 Nurafian Zulkifli
         </div>
     </footer>
 
@@ -361,9 +469,15 @@
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
+    <script src="../js/navtabs.js"></script>
+
     <script src="js/eicw-1.js"></script>
 
     <script src="../js/jquery.min.js"></script>
+
+    <script src='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.js'></script>
+
+    <script src="../js/dstabs.js"></script>
 
     <script src="../js/popper.min.js"></script>
 
@@ -372,8 +486,6 @@
     <script src="../js/pw.bundle.js"></script>
 
     <script src="../js/default-assets/active.js"></script>
-
-    <script src="../js/preloader.js"></script>
 
 </body>
 

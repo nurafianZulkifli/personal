@@ -2,9 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content>
-       <meta charset="UTF-8">
     <meta name="description" content>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
@@ -12,11 +9,11 @@
     <title>NRFZ | Home</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <meta property="og:image" content="https://i.imgur.com/kMi3VsK.png" />
+    <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
 
     <link rel="icon" href="./img/core-img/favicon.png">
 
-     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-breakpoints.css">
@@ -43,52 +40,135 @@
 
 <body>
 
-    <!-- Preloader Section -->
-    <div id="preloader">
-        <div class="loader"></div>
-        <p id="preloader-text">Just a moment...</p>
-    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar-container">
+        <div class="navbar">
+            <!-- Logo -->
+            <a href="index.html"><img src="img/core-img/logo.png" alt="logo" class="logo" /></a>
 
-    <header>
-        <a href="./index.html"><img src="./img/core-img/logo.png" alt="logo" class="logo" /></a>
+            <!-- Navigation Links -->
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="works-by-nrfz.html" class="nav-link">
+                        <i class="fa-solid fa-pen-paintbrush"></i>
+                        <span>Works By NRFZ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="eicw/eicw.html" class="nav-link">
+                        <i class="fa-solid fa-map-location"></i>
+                        <span>EICW</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">
+                        <i class="fa-solid fa-comment"></i>
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item-toggle">
+                    <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
+                        <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+                    </a>
+                </li>
+            </ul>
 
-        <input type="checkbox" id="check" />
-        <label for="check" class="icons">
-            <i class="fa-solid fa-bars" id="menu-icon"></i>
-            <i class="fa-solid fa-xmark" id="close-icon"></i>
-        </label>
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
 
-        <nav class="navbar navbar-mobile">
-            <a href="#" class="nav-item active">Home</a>
-            <a href="./about.html" class="nav-item">About</a>
-            <a href="./works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
-            <a href="eicw/eicw.html" class="nav-item">EICW</a>
-            <a href="./blog.html" class="nav-item">Blog</a>
-            <a href="#" class="nav-item">
-                <button class="wbnrfz_btn_theme" id="dark-mode-toggle" title="Toggle Dark/Light Mode!">
-                    <i class="fa-solid fa-moon-stars" id="theme-icon"></i>
-                </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <li class="mobile-menu-item mobile-theme-toggle">
+                <a href="#" class="nav-link-toggle" id="dark-mode-toggle-mobile" title="Toggle Dark/Light Mode!">
+                    <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
+                </a>
+            </li>
+            <a href="#" class="mobile-menu-brand">
+                <span class="brand-text"></span>
             </a>
-        </nav>
-    </header>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <span>×</span>
+            </button>
+        </div>
+
+        <ul class="mobile-menu-nav">
+            <li class="mobile-menu-item">
+                <a href="#" class="mobile-menu-link active">
+                    <i class="fa-solid fa-regular fa-house"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="about.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-regular fa-circle-user"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="works-by-nrfz.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-pen-paintbrush"></i>
+                    <span>Works By NRFZ</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="eicw/eicw.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-map-location"></i>
+                    <span>EICW</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="blog.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-comment"></i>
+                    <span>Blog</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
 
     <!-- ============================================= Hero Section ============================================= -->
     <section id="hero" class="d-flex flex-column justify-content-center">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content text-center">
-                        <img class="profile-pic wow fadeInUp" data-wow-delay="100ms" src="img/bg-img/about.png"
+    </div>
+        <!-- <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="breadcrumb-content text-center wow fadeIn" data-wow-delay="100ms">
+                        <img class="profile-pic wow fadeIn" data-wow-delay="100ms" src="img/bg-img/about.png"
                             alt="profile-pic">
-                        <div class="profile-det wow fadeInUp" data-wow-delay="200ms">
-                            <h2 class="profile-name wow fadeInUp" data-wow-delay="400ms">Nurafian Zulkifli</h2>
-                            <h2 class="profile-desc wow fadeInUp" data-wow-delay="400ms">Passionate about UI/UX, and
+                        <div class="profile-det wow fadeIn" data-wow-delay="200ms">
+                            <h2 class="profile-name wow fadeIn" data-wow-delay="400ms">Nurafian Zulkifli</h2>
+                            <h2 class="profile-desc wow fadeIn" data-wow-delay="400ms">Passionate about UI/UX, and
                                 everything else Design
                             </h2>
                         </div>
 
-                        <div class="profile-link wow fadeInUp" data-wow-delay="700ms">
+                        <div class="profile-link wow fadeIn" data-wow-delay="700ms">
                             <a href="https://github.com/nurafianZulkifli" target="_blank" class="media_link"
                                 title="GitHub">
                                 <div class="fa-brands fa-github" style="font-size: 30px; padding-bottom: 25px;"></div>
@@ -113,27 +193,27 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </section><!-- End Hero -->
 
 
-    <div class="pw-portfolio-area section-padding-80 clearfix" id="featured">
-        <div class="container-fluid">
+    <div class="pw-portfolio-area-featured clearfix" id="featured">
+        <div class="container-xxl container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="100ms">
                         <h2>Featured Works</h2>
                     </div>
                 </div>
             </div>
             <div class="row pw-portfolio">
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 wow fadeInUp" data-wow-delay="100ms"
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 wow fadeIn" data-wow-delay="100ms"
                     data-year="2025">
                     <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/rBAx6Yy.png" alt>
+                        <img src="https://i.imgur.com/HaCQ71l.png" alt>
                         <div class="hover-content-blog">
                             <h4>EICW - Implementation Brainstorming</h4>
                             <a class="info" href="eicw/eicw.html" class="portfolio-img"><i
@@ -142,22 +222,22 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item in mb-30 wow fadeInUp" data-wow-delay="100ms"
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item in mb-30 wow fadeIn" data-wow-delay="300ms"
                     data-year="2024">
                     <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/tKQajl6.png" alt="tdc-v3">
+                        <img src="https://i.imgur.com/6js4RYj.png" alt="tdc-v3">
                         <div class="hover-content-blog">
                             <h4>Train Delays Tracker</h4>
-                            <a class="info" href="https://nurafianzulkifli.github.io/train-delays-checker/" class="portfolio-img"><i
-                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a class="info" href="https://nurafianzulkifli.github.io/train-delays-checker/"
+                                class="portfolio-img"><i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 wow fadeInUp" data-wow-delay="500ms"
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 wow fadeIn" data-wow-delay="500ms"
                     data-year="2022">
                     <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/mrtK74Z.png" alt="bus-rep">
+                        <img src="https://i.imgur.com/JAQpFxJ.png" alt="bus-rep">
                         <div class="hover-content-blog">
                             <h4>Bus Replications</h4>
                             <a class="info" href="worksbynrfz/bus-rep.html" class="portfolio-img"><i
@@ -166,10 +246,9 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mc mb-30 wow fadeInUp"
-                    data-wow-delay="700ms">
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mc mb-30 wow fadeIn" data-wow-delay="700ms">
                     <div class="single-portfolio-content">
-                        <img src="https://i.imgur.com/GrXbpDs.png" alt="bus-stop-pole">
+                        <img src="https://i.imgur.com/IeRTJiV.png" alt="bus-stop-pole">
                         <div class="hover-content-blog">
                             <h4>LTA Bus Stop Pole Design Refresh</h4>
                             <a class="info" href="worksbynrfz/lta-bp.html" class="portfolio-img"><i
@@ -179,7 +258,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 text-center wow fadeInUp" data-wow-delay="700ms">
+                <div class="col-12 text-center wow fadeIn" data-wow-delay="700ms">
                     <a href="./works-by-nrfz.html" class="btn pw-btn btn-2 mt-15">View All &nbsp;<i
                             class="fa-solid fa-arrow-right"></i></a>
                 </div>
@@ -188,18 +267,18 @@
     </div>
 
 
-    <section class="about-me-area section-padding-50 clearfix">
+    <section class="about-me-area clearfix">
         <div class="container container-xxl">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms"
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="100ms"
                         style="margin-bottom: 18px;">
                         <h2>Likes & Interests</h2>
                     </div>
                 </div>
 
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="100ms">
                         <h1><a href="https://en.wikipedia.org/wiki/Jack_of_all_trades"
                                 style="font-size: 20px; color: #5f6051;">"Jack of all trades, master of
                                 none"</a></h2>
@@ -209,7 +288,7 @@
             <div class="row">
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="about-me-content text-center mb-80 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="about-me-content text-center mb-80 wow fadeIn" data-wow-delay="100ms">
                         <div class="wsd-icon">
                             <i class="fa-solid fa-signs-post"></i>
                         </div>
@@ -219,7 +298,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="about-me-content text-center mb-80 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="about-me-content text-center mb-80 wow fadeIn" data-wow-delay="300ms">
                         <div class="ui-icon">
                             <i class="fa-solid fa-pen-ruler"></i>
                         </div>
@@ -229,7 +308,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="about-me-content text-center mb-80 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="about-me-content text-center mb-80 wow fadeIn" data-wow-delay="500ms">
                         <div class="ux-icon">
                             <i class="fa-regular fa-face-smile-beam"></i>
                         </div>
@@ -253,7 +332,7 @@
                 </div>
             </div>
 
-            <div class="skill-ara wow fadeInUp" data-wow-delay="100ms">
+            <div class="skill-ara wow fadeIn" data-wow-delay="100ms">
                 <div class="skill">
                     <div class="single-skill">
                         <div class="progress-count">
@@ -290,36 +369,34 @@
         </div>
 
         <div class="row">
-            <div class="col-12 text-center wow fadeInUp" data-wow-delay="700ms">
+            <div class="col-12 text-center wow fadeIn" data-wow-delay="700ms">
                 <a href="./about.html" class="btn pw-btn btn-2 mt-15">About Me &nbsp;<i
                         class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <footer class="footer-area">
-        <div class="container">
-            <div class="footer-content d-flex flex-column align-items-center text-center">
-                <!-- Social Links -->
-                <div class="social-info">
-                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                            aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                            aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                            aria-hidden="true"></i></a>
-                </div>
-                <!-- Copywrite Text -->
-        <div class="copywrite-text">
-          <p>&copy;
-            <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
-          </p>
-          <p><strong>Preview the new Design
-              <a href="https://nurafianzulkifli.github.io/nrfz-dev/">here!</a></strong>
-          </p>
-        </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://github.com/nurafianZulkifli" class="social-link">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/nrfzlkf_" class="social-link">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
+                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
             </div>
+        </div>
+
+        <div class="footer-copy">
+            © 2025 Nurafian Zulkifli
         </div>
     </footer>
 
@@ -327,6 +404,8 @@
         data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
+
+    <script src="js/navtabs.js"></script>
 
     <script src="js/theme-index.js"></script>
 
@@ -340,7 +419,7 @@
 
     <script src="js/default-assets/active.js"></script>
 
-    <script src="js/preloader.js"></script>
+    <!-- <script src="js/preloader.js"></script> -->
 
 
 </body>

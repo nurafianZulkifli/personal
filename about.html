@@ -3,20 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content>
-       <meta charset="UTF-8">
-    <meta name="description" content>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>NRFZ | About</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <meta property="og:image" content="https://i.imgur.com/kMi3VsK.png" />
+    <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
 
     <link rel="icon" href="./img/core-img/favicon.png">
 
-     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-breakpoints.css">
@@ -38,100 +35,213 @@
 
 <body>
 
-    <!-- Preloader Section -->
-    <div id="preloader">
-        <div class="loader"></div>
-        <p id="preloader-text">Just a moment...</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar-container">
+        <div class="navbar">
+            <!-- Logo -->
+            <a href="index.html"><img src="img/core-img/logo.png" alt="logo" class="logo" /></a>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="works-by-nrfz.html" class="nav-link">
+                        <i class="fa-solid fa-pen-paintbrush"></i>
+                        <span>Works By NRFZ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="eicw/eicw.html" class="nav-link">
+                        <i class="fa-solid fa-map-location"></i>
+                        <span>EICW</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">
+                        <i class="fa-solid fa-comment"></i>
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item-toggle">
+                    <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
+                        <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <li class="mobile-menu-item mobile-theme-toggle">
+                <a href="#" class="nav-link-toggle" id="dark-mode-toggle-mobile" title="Toggle Dark/Light Mode!">
+                    <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
+                </a>
+            </li>
+            <a href="#" class="mobile-menu-brand">
+                <span class="brand-text"></span>
+            </a>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <span>×</span>
+            </button>
+        </div>
+
+        <ul class="mobile-menu-nav">
+            <li class="mobile-menu-item">
+                <a href="index.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-regular fa-house"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="#" class="mobile-menu-link active">
+                    <i class="fa-solid fa-regular fa-circle-user"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="works-by-nrfz.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-pen-paintbrush"></i>
+                    <span>Works By NRFZ</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="eicw/eicw.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-map-location"></i>
+                    <span>EICW</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="blog.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-comment"></i>
+                    <span>Blog</span>
+                </a>
+            </li>
+        </ul>
     </div>
 
-    <header>
-        <a href="./index.html"><img src="./img/core-img/logo.png" alt="logo" class="logo" /></a>
 
-        <input type="checkbox" id="check" />
-        <label for="check" class="icons">
-            <i class="fa-solid fa-bars" id="menu-icon"></i>
-            <i class="fa-solid fa-xmark" id="close-icon"></i>
-        </label>
 
-        <nav class="navbar navbar-mobile">
-            <a href="./index.html" class="nav-item">Home</a>
-            <a href="#" class="nav-item active">About</a>
-            <a href="./works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
-            <a href="eicw/eicw.html" class="nav-item">EICW</a>
-            <a href="./blog.html" class="nav-item">Blog</a>
-            <a href="#" class="nav-item">
-                <button class="wbnrfz_btn_theme" id="dark-mode-toggle" title="Toggle Dark/Light Mode!">
-                    <i class="fa-solid fa-moon-stars" id="theme-icon"></i>
-                </button>
-            </a>
-        </nav>
-    </header>
+    <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
 
-    <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-about"
-        style="background-image: url(img/bg-img/hero-bg-small.png); height: 100vh;">
-        <div class="wbnrfz_details_blog">
-            <div class="container">
-                <div class="portfolio-controls d-flex justify-content-between align-items-center">
-                    <!-- Filter Buttons -->
-                    <div class="portfolio-filter mt-3">
-                        <div class="col-lg-12">
-                            <div class="main-title">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="https://nurafianzulkifli.com/index.html">
-                                                Home</a>
-                                        </li>
-                                        <li class="breadcrumb-item active"><a
-                                                href="https://nurafianzulkifli.com/works-by-nrfz.html">
-                                                About
-                                            </a>
-                                        </li>
-                                    </ol>
-                                </nav>
-                                <h1 class="brc">About Me</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Collapsible Header -->
-                    <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#portfolioFilter"
-                        aria-expanded="false" aria-controls="portfolioFilter" style="cursor: pointer;" title="Jump To">
-                        <i class="fa-solid fa-chevron-down nav-chev"></i>
-                    </div>
-                </div>
-                <!-- Collapsible Content -->
-                <div id="portfolioFilter" class="collapse">
-                    <div class="portfolio-filter mt-3">
-                        <a href="#summary">
-                            <button class="btn">Summary</button>
-                        </a>
-                        <a href="#tm">
-                            <button class="btn">Timelines & Milestones</button>
-                        </a>
-                        <a href="#lppl">
-                            <button class="btn">Language Proficiency</button>
-                        </a>
-                        <a href="#lppl">
-                            <button class="btn">Programming Languages</button>
-                        </a>
-                    </div>
+    <!-- Cover Header -->
+    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-about">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Title/Breadcrumbs -->
+    <section class="about-me-sum clearfix">
+        <div class="wbnrfz_eicw">
+            <div class="page-header-section">
+                <div class="container-xxl container-mobile container-mobile-header">
+                    <div class="breadcrumb-wrapper">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">
+                                        <i class="fa-solid fa-house"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">About</a>
+                                </li>
+                                <!-- <li class="breadcrumb-item active" aria-current="page">
+                                    EICW
+                                </li> -->
+                            </ol>
+                        </nav>
+                        <div class="page-title-wrapper">
+                            <h1 class="page-title-single">About Me</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scrollable-tabs-container">
+                    <div class="left-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+
+                    </div>
+
+                    <ul>
+                        <li>
+                            <a href="#summary" class="active">Summary</a>
+                        </li>
+
+                        <li>
+                            <a href="#tm">Timelines & Milestones</a>
+                        </li>
+
+                        <li>
+                            <a href="#lppl">Language Proficiency</a>
+                        </li>
+
+                        <li>
+                            <a href="#lppl">Programming Languages</a>
+                        </li>
+                    </ul>
+
+                    <div class="right-arrow active">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- Summary -->
-    <section class="about-me-summ clearfix" style="padding-top: 4em; padding-bottom: 5em;" id="summary">
+    <section class="about-me-summ clearfix" style="padding-top: 2em; padding-bottom: 5em;" id="summary">
         <div class="container container-xxl">
             <div class="row">
                 <div class="col-12 sect-title">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="0ms">
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="100ms">
                         <h2 style="font-size: 36px">Summary</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-4 box-indiv">
-                    <div class="about-me-summary text-center mb-80 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="about-me-summary text-center mb-80 wow fadeIn" data-wow-delay="100ms">
                         <div class="summ-icon">
                             <i class="fa-solid fa-cake-candles"></i>
                         </div>
@@ -141,7 +251,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4 box-indiv">
-                    <div class="about-me-summary text-center mb-80 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="about-me-summary text-center mb-80 wow fadeIn" data-wow-delay="100ms">
                         <div class="summ-icon">
                             <i class="fa-solid fa-earth-asia"></i>
                         </div>
@@ -151,7 +261,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4 box-indiv">
-                    <div class="about-me-summary text-center mb-80 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="about-me-summary text-center mb-80 wow fadeIn" data-wow-delay="100ms">
                         <div class="summ-icon">
                             <i class="fa-solid fa-circle-user"></i>
                         </div>
@@ -161,7 +271,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4 box-indiv">
-                    <div class="about-me-summary text-center mb-80 wow fadeInUp" data-wow-delay="700ms">
+                    <div class="about-me-summary text-center mb-80 wow fadeIn" data-wow-delay="100ms">
                         <div class="summ-icon">
                             <i class="fa-solid fa-user-graduate"></i>
                         </div>
@@ -171,7 +281,7 @@
                 </div>
 
                 <div class="col-md-8 col-lg-8 box-indiv">
-                    <div class="about-me-summary text-center mb-80 wow fadeInUp" data-wow-delay="900ms">
+                    <div class="about-me-summary text-center mb-80 wow fadeIn" data-wow-delay="100ms">
                         <div class="summ-icon">
                             <i class="fa-solid fa-user-graduate"></i>
                         </div>
@@ -185,24 +295,24 @@
     </section>
 
     <!-- Timelines -->
-    <section class="about-me-area bg-gray clearfix" style="padding-top: 4em; padding-bottom: 5em;" id="tm">
+    <section class="about-me-area bg-gray clearfix" style="padding-top: 3em; padding-bottom: 5em;" id="tm">
         <div class="container container-xxl">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="0ms">
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="0ms">
                         <h2 style="font-size: 35px">Timelines & Milestones</h2>
                     </div>
                 </div>
 
                 <!-- Education -->
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
-                        <h1 style="text-align: left; margin-bottom: -45px; font-size: 36px;"><u>Education</u></h2>
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="100ms">
+                        <h1 style="text-align: left; margin-bottom: -45px; margin-top: 3em; font-size: 25px;"><u>Education</u></h2>
                     </div>
                 </div>
             </div>
 
-            <div class="timeline-horizontal wow fadeInUp" data-wow-delay="100ms">
+            <div class="timeline-horizontal wow fadeIn" data-wow-delay="100ms">
                 <div class="timeline-item ">
                     <h4 class="timeline-date-edu">2019 - 2022</h4>
                     <h3 style="font-size: 16px; font-weight: bolder; margin-top: 15px;">Diploma in Information
@@ -230,14 +340,14 @@
             <!-- Awards & Achievements -->
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
-                        <h1 style="text-align: left; margin-bottom: -45px; margin-top: 3em; font-size: 30px;"><u>Awards
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="300ms">
+                        <h1 style="text-align: left; margin-bottom: -45px; margin-top: 3em; font-size: 25px;"><u>Awards
                                 & Achievements</u></h2>
                     </div>
                 </div>
             </div>
 
-            <div class="timeline-horizontal wow fadeInUp" data-wow-delay="300ms">
+            <div class="timeline-horizontal wow fadeIn" data-wow-delay="300ms">
                 <div class="timeline-item ">
                     <h4 class="timeline-date-aa">2023</h4>
                     <h3 style="font-size: 16px; font-weight: bolder; margin-top: 15px;">Singapore Armed Forces (SAF)
@@ -288,14 +398,14 @@
             <!-- Experiences -->
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="50ms">
-                        <h1 style="text-align: left; margin-bottom: -45px; margin-top: 3em; font-size: 30px;">
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="50ms">
+                        <h1 style="text-align: left; margin-bottom: -45px; margin-top: 3em; font-size: 25px;">
                             <u>Experiences</u></h2>
                     </div>
                 </div>
             </div>
 
-            <div class="timeline-horizontal wow fadeInUp" data-wow-delay="500ms">
+            <div class="timeline-horizontal wow fadeIn" data-wow-delay="500ms">
                 <div class="timeline-item ">
                     <h4 class="timeline-date-exp">Mar 2025 - Present</h4>
                     <h3 style="font-size: 16px; font-weight: bolder; margin-top: 15px;">National Trades Union Congress
@@ -349,18 +459,18 @@
         </div>
     </section>
 
-
+    <!-- Proficiencies -->
     <section class="follow-area clearfix" id="lppl">
         <div class="container container-xxl">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
-                        <h2 style="font-size: 30px">Language Proficiency</h2>
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="100ms">
+                        <h2 style="font-size: 25px">Language Proficiency</h2>
                     </div>
                 </div>
             </div>
 
-            <div class="skill-ara wow fadeInUp" data-wow-delay="300ms">
+            <div class="skill-ara wow fadeIn" data-wow-delay="300ms">
                 <div class="skill">
                     <div class="single-skill">
                         <div class="progress-count">
@@ -389,13 +499,13 @@
         <div class="container container-xxl">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="500ms">
-                        <h2 style="font-size: 30px">Programming Languages</h2>
+                    <div class="section-heading text-center wow fadeIn" data-wow-delay="500ms">
+                        <h2 style="font-size: 25px">Programming Languages</h2>
                     </div>
                 </div>
             </div>
 
-            <div class="skill-ara wow fadeInUp" data-wow-delay="700ms">
+            <div class="skill-ara wow fadeIn" data-wow-delay="700ms">
                 <div class="skill">
                     <div class="single-skill">
                         <div class="progress-count">
@@ -433,29 +543,27 @@
 
     </section>
 
-    <footer class="footer-area">
-        <div class="container">
-            <div class="footer-content d-flex flex-column align-items-center text-center">
-                <!-- Social Links -->
-                <div class="social-info">
-                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                            aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                            aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                            aria-hidden="true"></i></a>
-                </div>
-                <!-- Copywrite Text -->
-        <div class="copywrite-text">
-          <p>&copy;
-            <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
-          </p>
-          <p><strong>Preview the new Design
-              <a href="https://nurafianzulkifli.github.io/nrfz-dev/">here!</a></strong>
-          </p>
-        </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://github.com/nurafianZulkifli" class="social-link">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/nrfzlkf_" class="social-link">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
+                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
             </div>
+        </div>
+
+        <div class="footer-copy">
+            © 2025 Nurafian Zulkifli
         </div>
     </footer>
 
@@ -463,6 +571,8 @@
         data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
+
+    <script src="js/navtabs.js"></script>
 
     <script src="js/theme-subPages.js"></script>
 
@@ -476,7 +586,9 @@
 
     <script src="js/default-assets/active.js"></script>
 
-    <script src="js/preloader.js"></script>
+    <script src="js/dstabs.js"></script>
+
+    <!-- <script src="js/preloader.js"></script> -->
 
     <script> document.getElementById('age').textContent = calculateAge('2000-03-04') + ' years old'; </script>
 

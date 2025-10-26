@@ -9,8 +9,12 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
     updateThemeIcon('light');
 }
 
-const toggleButton = document.getElementById('dark-mode-toggle');
-toggleButton.addEventListener('click', () => {
+// Get both toggle buttons
+const toggleButtonDesktop = document.getElementById('dark-mode-toggle-desktop');
+const toggleButtonMobile = document.getElementById('dark-mode-toggle-mobile');
+
+// Function to toggle dark mode
+function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     // Save the preference in localStorage
     if (document.body.classList.contains('dark-mode')) {
@@ -21,33 +25,58 @@ toggleButton.addEventListener('click', () => {
         updateThemeIcon('light');
     }
     updateHrefForDarkMode();
-});
+}
 
+// Add event listeners to both buttons if they exist
+if (toggleButtonDesktop) {
+    toggleButtonDesktop.addEventListener('click', toggleDarkMode);
+}
+
+if (toggleButtonMobile) {
+    toggleButtonMobile.addEventListener('click', toggleDarkMode);
+}
 // Function to update the theme icon with animation
 function updateThemeIcon(theme) {
-    const themeIcon = document.getElementById('theme-icon');
+    const themeIconDesktop = document.getElementById('theme-icon-desktop');
+    const themeIconMobile = document.getElementById('theme-icon-mobile');
 
-    // Add animation class
-    themeIcon.classList.add('animate');
+    // Add animation class to both icons
+    if (themeIconDesktop) themeIconDesktop.classList.add('animate');
+    if (themeIconMobile) themeIconMobile.classList.add('animate');
 
     // Update the icon based on the theme
     if (theme === 'dark') {
-        themeIcon.classList.remove('fa-sun-bright');
-        themeIcon.classList.add('fa-moon-stars');
+        if (themeIconDesktop) {
+            themeIconDesktop.classList.remove('fa-sun-bright');
+            themeIconDesktop.classList.add('fa-moon-stars');
+        }
+        if (themeIconMobile) {
+            themeIconMobile.classList.remove('fa-sun-bright');
+            themeIconMobile.classList.add('fa-moon-stars');
+        }
     } else {
-        themeIcon.classList.remove('fa-moon-stars');
-        themeIcon.classList.add('fa-sun-bright');
+        if (themeIconDesktop) {
+            themeIconDesktop.classList.remove('fa-moon-stars');
+            themeIconDesktop.classList.add('fa-sun-bright');
+        }
+        if (themeIconMobile) {
+            themeIconMobile.classList.remove('fa-moon-stars');
+            themeIconMobile.classList.add('fa-sun-bright');
+        }
     }
 
     // Remove the animation class after the animation ends
     setTimeout(() => {
-        themeIcon.classList.remove('animate');
+        if (themeIconDesktop) themeIconDesktop.classList.remove('animate');
+        if (themeIconMobile) themeIconMobile.classList.remove('animate');
     }, 300); // Match the duration of the CSS transition
 }
+
 
 function updateHrefForDarkMode() {
     /* Existing logic for updating banners, images, and videos */
     const coverSect = document.getElementById('cv-img');
+    const eiaSect = document.getElementById('eia-img');
 
     const tf_link = document.getElementById('tf');
     const tf_img = document.getElementById('tf-img');
@@ -80,6 +109,7 @@ function updateHrefForDarkMode() {
 
     if (isDarkMode) {
         coverSect.style.backgroundImage = "url('./img/cover-dark.png')";
+        eiaSect.style.backgroundImage = "url('./img/eia-dark.png')";
 
         tf_link.href = './img/typeface-dark.png';
         tf_img.src = './img/typeface-dark.png';
@@ -111,6 +141,7 @@ function updateHrefForDarkMode() {
 
     } else {
         coverSect.style.backgroundImage = "url('./img/cover-light.png')";
+        eiaSect.style.backgroundImage = "url('./img/eia-light.png')";
 
         tf_link.href = './img/typeface-light.png';
         tf_img.src = './img/typeface-light.png';
@@ -142,11 +173,18 @@ function updateHrefForDarkMode() {
 }
 
 
-// Update the scroll indicator width based on scroll position
-window.addEventListener("scroll", function () {
-    const scrollIndicator = document.getElementById("scroll-indicator");
-    const scrollTop = window.scrollY; // Current scroll position
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
-    const scrollPercentage = (scrollTop / scrollHeight) * 100; // Calculate scroll percentage
-    scrollIndicator.style.width = scrollPercentage + "%"; // Update the width of the indicator
+// Update the scroll indicator width on scroll
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / docHeight) * 100;
+    document.getElementById('scroll-indicator').style.width = scrollPercentage + '%';
+});
+
+// Update the scroll indicator width on scroll
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = Math.min((scrollTop / docHeight) * 100, 100); // Cap at 100%
+    document.getElementById('scroll-indicator').style.width = scrollPercentage + '%';
 });

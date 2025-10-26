@@ -4,19 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content>
-       <meta charset="UTF-8">
-    <meta name="description" content>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>If you can't beat them, join them | Blog</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <meta property="og:image" content="https://i.imgur.com/kMi3VsK.png" />
+    <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
 
     <link rel="icon" href="../img/core-img/favicon.png">
 
-     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/style-breakpoints.css">
@@ -26,91 +24,204 @@
 
 <body>
 
-    <!-- Preloader Section -->
-    <div id="preloader">
-        <div class="loader"></div>
-        <p id="preloader-text">Just a moment...</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar-container">
+        <div class="navbar">
+            <!-- Logo -->
+            <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../works-by-nrfz.html" class="nav-link">
+                        <i class="fa-solid fa-pen-paintbrush"></i>
+                        <span>Works By NRFZ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../eicw/eicw.html" class="nav-link">
+                        <i class="fa-solid fa-map-location"></i>
+                        <span>EICW</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link active">
+                        <i class="fa-solid fa-comment"></i>
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item-toggle">
+                    <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
+                        <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="mobile-menu-brand">
+                <span class="brand-text">
+                    <li class="mobile-menu-item mobile-theme-toggle">
+                        <button class="wbnrfz_btn_theme mobile-theme-btn" id="dark-mode-toggle-mobile"
+                            title="Toggle Dark/Light Mode!">
+                            <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
+                        </button>
+                    </li>
+                </span>
+            </a>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <span>×</span>
+            </button>
+        </div>
+
+        <ul class="mobile-menu-nav">
+            <li class="mobile-menu-item">
+                <a href="../index.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-regular fa-house"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="../about.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-regular fa-circle-user"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="../works-by-nrfz.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-pen-paintbrush"></i>
+                    <span>Works By NRFZ</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="../eicw/eicw.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-map-location"></i>
+                    <span>EICW</span>
+                </a>
+            </li>
+            <li class="mobile-menu-item active">
+                <a href="blog.html" class="mobile-menu-link">
+                    <i class="fa-solid fa-comment"></i>
+                    <span>Blog</span>
+                </a>
+            </li>
+        </ul>
     </div>
 
+    <!-- Scroll Indicator -->
     <div id="scroll-indicator-container">
         <div id="scroll-indicator"></div>
     </div>
 
 
-    <header>
-        <a href="./index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+    <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
 
-        <input type="checkbox" id="check" />
-        <label for="check" class="icons">
-            <i class="fa-solid fa-bars" id="menu-icon"></i>
-            <i class="fa-solid fa-xmark" id="close-icon"></i>
-        </label>
-
-        <nav class="navbar navbar-mobile">
-            <a href="../index.html" class="nav-item">Home</a>
-            <a href="../about.html" class="nav-item">About</a>
-            <a href="../works-by-nrfz.html" class="nav-item">Works By NRFZ</a>
-            <a href="../eicw/eicw.html" class="nav-item">EICW</a>
-            <a href="../blog.html" class="nav-item active">Blog</a>
-            <a href="#" class="nav-item"><button class="wbnrfz_btn_theme" id="dark-mode-toggle"
-                    title="Toggle Dark/Light Mode!"><i class="fa-solid fa-moon"></i></button></a>
-        </nav>
-    </header>
-
-    <section class="wbnrfz-summ breadcrumb-area-eicw-cover bg-img parallax" id="cv-wf2"
-        style="background-image: url(https://i.imgur.com/LMu9vuD.png); height: 100vh;">
-        <div class="wbnrfz_details_blog">
-            <div class="container">
-                <div class="portfolio-controls d-flex justify-content-between align-items-center">
-                    <!-- Filter Buttons -->
-                    <div class="portfolio-filter mt-3">
-                        <div class="col-lg-12">
-                            <div class="main-title">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="https://nurafianzulkifli.com/index.html">
-                                                Home</a>
-                                        </li>
-                                        <li class="breadcrumb-item active"><a href="../blog.html">
-                                                Blog
-                                            </a>
-                                        </li>
-                                    </ol>
-                                </nav>
-                                <h1 class="brc">If you can't beat them, join them</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Collapsible Header -->
-                    <div class="collapsible-header" data-bs-toggle="collapse" data-bs-target="#portfolioFilter"
-                        aria-controls="portfolioFilter" style="cursor: pointer;" title="Go To">
-                        <i class="fa-solid fa-chevron-down nav-chev"></i>
-                    </div>
-                </div>
-                <!-- Collapsible Content -->
-                <div id="portfolioFilter" class="collapse">
-                    <div class="portfolio-filter mt-3">
-                        <a href="#whathappened">
-                            <button class="btn">What has happened?</button>
-                        </a>
-                        <a href="#paperSign">
-                            <button class="btn">Paper Signages to the rescue!</button>
-                        </a>
-                    </div>
+    <!-- Cover Header -->
+    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-pv5"
+        style="background-image: url(https://i.imgur.com/LMu9vuD.png); height: 72vh;">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Title/Breadcrumbs -->
+    <section class="about-me-sum clearfix">
+        <div class="wbnrfz_eicw">
+            <div class="page-header-section">
+                <div class="container-xxl container-mobile container-mobile-header">
+                    <div class="breadcrumb-wrapper">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="../index.html">
+                                        <i class="fa-solid fa-house"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="../blog.html">Blog</a>
+                                </li>
+                            </ol>
+                        </nav>
+                        <div class="page-title-wrapper">
+                            <h1 class="page-title-single">If you can't beat them, join them</h1>
+                            <p class="page-subtitle">5 mins read • By Nurafian Zulkifli</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="scrollable-tabs-container">
+                    <div class="left-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
 
+                    </div>
 
+                    <ul>
+                        <li>
+                            <a href="#whathappened">What has happened?</a>
+                        </li>
+
+                        <li>
+                            <a href="#paperSign">Paper Signages to the rescue!</a>
+                        </li>
+                    </ul>
+
+                    <div class="right-arrow active">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Section Contents -->
     <section class="ftco-section ftco-degree-bg">
         <div class="container container-blog">
             <div class="row">
                 <!-- Wayfind-1 Button -->
                 <div class="row">
-                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms" style="padding-top: 3em;">
+                    <div class="col-12 text-center wow fadeIn" data-wow-delay="500ms" style="padding-top: 1em;">
                         <a href="./wayfind.html" class="btn pw-btn btn-2 mt-15"><i
                                 class="fa-solid fa-arrow-left"></i>&nbsp; Context</a>
                     </div>
@@ -119,7 +230,8 @@
                     <h2 class="mb-3" style="font-size: 35px; font-weight:bold;" id="whathappened">What has happened?
                     </h2>
                     <p>Replacing Wayfinding signs aren't easy. Yea, I totally get it. Even the <a
-                            href="https://i.imgur.com/9EFau4B.jpeg">man himself</a> has said it and I quote: </p>
+                            href="https://i.imgur.com/9EFau4B.jpeg" class="hyperlink">man himself</a> has said it and I
+                        quote: </p>
 
                     <blockquote
                         cite="https://www.lasalle.edu.sg/features/conversation-samuel-lim-redesigning-singapores-subway-signage">
@@ -318,48 +430,32 @@
                                 <p><u>Fig. 5c:</u> Assets</p>
                             </figcaption>
                         </div>
-
-                        <!-- Author -->
-                        <div class="about-author d-flex p-4" style="margin-bottom: 2em;">
-                            <div class="bio mr-0 text-center">
-                                <img src="../img/bg-img/about.png" alt="profile"
-                                    class="img-blog-profile img-fluid mb-4">
-                            </div>
-                            <div class="desc">
-                                <h3 style="font-size: 30px; font-weight: bold;">Nurafian Zulkifli</h3>
-                                <p>Passionate about Technology and Designs - mainly UI Designs, Wayfinding and
-                                    Signage Designs.<br><br> I also
-                                    enjoy replicating stuffs that interests me.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
     </section>
 
-    <footer class="footer-area">
-        <div class="container">
-            <div class="footer-content d-flex flex-column align-items-center text-center">
-                <!-- Social Links -->
-                <div class="social-info">
-                    <a href="https://github.com/nurafianZulkifli"><i class="fa-brands fa-github"
-                            aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/nrfzlkf_"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-                    <a href="https://www.facebook.com/Nrfnzlkf/"><i class="fa-brands fa-facebook"
-                            aria-hidden="true"></i></a>
-                    <a href="https://www.instagram.com/nrfzlkf/"><i class="fa-brands fa-instagram"
-                            aria-hidden="true"></i></a>
-                </div>
-                <!-- Copywrite Text -->
-        <div class="copywrite-text">
-          <p>&copy;
-            <script>document.write(new Date().getFullYear());</script> Nurafian Zulkifli
-          </p>
-          <p><strong>Preview the new Design
-              <a href="https://nurafianzulkifli.github.io/nrfz-dev/">here!</a></strong>
-          </p>
-        </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://github.com/nurafianZulkifli" class="social-link">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/nrfzlkf_" class="social-link">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
+                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
             </div>
+        </div>
+
+        <div class="footer-copy">
+            © 2025 Nurafian Zulkifli
         </div>
     </footer>
 
@@ -368,9 +464,15 @@
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
+    <script src="../js/navtabs.js"></script>
+
     <script src="js/wayfind-2.js"></script>
 
     <script src="../js/jquery.min.js"></script>
+
+    <script src='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.js'></script>
+
+    <script src="../js/dstabs.js"></script>
 
     <script src="../js/popper.min.js"></script>
 
@@ -381,8 +483,6 @@
     <script src="../js/default-assets/active.js"></script>
 
     <script src="../js/scroll.js"></script>
-
-    <script src="../js/preloader.js"></script>
 
 </body>
 

@@ -2937,7 +2937,7 @@ li.breadcrumb-item a:hover {
     color: #000;
     text-decoration: none;
     background: #fff;
-    padding: 12px 24px;
+    padding: 12px 14px;
     display: inline-block;
     border-radius: 24px;
     white-space: nowrap;
@@ -3066,7 +3066,7 @@ li.breadcrumb-item a:hover {
     text-decoration: none;
     color: #000000e6;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 25px;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
@@ -3082,7 +3082,7 @@ li.breadcrumb-item a:hover {
     text-decoration: none;
     color: #000;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 25px;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
     position: relative;

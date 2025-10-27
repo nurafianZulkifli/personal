@@ -1583,9 +1583,9 @@ img.profile-pic {
 
 .skill-ara .single-skill .progress-count span {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: bold;
     text-transform: capitalize;
-    color: #b5b69f;
+    color: #c2492d;
     margin: 0;
     cursor: default;
 }

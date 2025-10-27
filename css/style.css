@@ -3482,6 +3482,8 @@ li.breadcrumb-item a:hover {
     padding: 2em 0;
     max-width: 1400px;
     overflow: visible;
+    padding-left: 4vw;   /* Added for responsiveness */
+    padding-right: 4vw;  /* Added for responsiveness */
 }
 
 .carousel-cell {

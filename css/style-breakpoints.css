@@ -30,13 +30,12 @@
 
 /* ------------------------------------------ 1.0 Specific Breakpoints ------------------------------------------ */
 /* ---- 1.0.0 Max Width: 1450px */
-@media (max-width: 1450px) {
-  body {
+/* @media (max-width: 1450px) {
+  .navbar {
     transform: scale(0.9);
     transform-origin: top left;
-    width: 111.11vw;
   }
-}
+} */
 
 /* ---- 1.0.1 Max Width: 1200px */
 @media (max-width: 1399px) {

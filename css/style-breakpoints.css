@@ -29,7 +29,16 @@
 --------------------------------------------- */
 
 /* ------------------------------------------ 1.0 Specific Breakpoints ------------------------------------------ */
-/* ---- 1.0.0 Max Width: 1200px */
+/* ---- 1.0.0 Max Width: 1450px */
+@media (max-width: 1450px) {
+  body {
+    transform: scale(0.9);
+    transform-origin: top left;
+    width: 111.11vw;
+  }
+}
+
+/* ---- 1.0.1 Max Width: 1200px */
 @media (max-width: 1399px) {
     h1.brc {
         overflow: hidden;
@@ -46,7 +55,7 @@
 
 /* ---- */
 
-/* ---- 1.0.1 Max Width: 1201px */
+/* ---- 1.0.2 Max Width: 1201px */
 @media (min-width: 1201px) {
     .navbar-nav {
         display: flex !important;
@@ -64,7 +73,7 @@
 
 /* ---- */
 
-/* ---- 1.0.0 Max Width: 1200px */
+/* ---- 1.0.3 Max Width: 1200px */
 @media (max-width: 1200px) {
     .timeline-horizontal {
         grid-template-columns: repeat(3, 1fr);
@@ -118,7 +127,7 @@
 
 /* ---- */
 
-/* ---- 1.0.1 Max Width: 992px */
+/* ---- 1.0.4 Max Width: 992px */
 @media (max-width: 992px) {
     #hero {
         text-align: center;
@@ -151,7 +160,7 @@
 
 /* ---- */
 
-/* ---- 1.0.2 Max Width: 768px */
+/* ---- 1.0.5 Max Width: 768px */
 @media (max-width: 768px) {
     #centered-container {
         top: 55%;
@@ -329,7 +338,7 @@
 
 /* ---- */
 
-/* ---- 1.0.3 Max Width: 767px */
+/* ---- 1.0.6 Max Width: 767px */
 @media (max-width: 767px) {
     .container {
         max-width: 720px;
@@ -510,7 +519,7 @@
 
 /* ---- */
 
-/* ---- 1.0.4 Max Width: 600px */
+/* ---- 1.0.7 Max Width: 600px */
 @media (max-width: 600px) {
     .breadcrumb-content {
         max-width: 98vw;
@@ -543,7 +552,7 @@
 
 /* ---- */
 
-/* ---- 1.0.5 Max Width: 576px */
+/* ---- 1.0.8 Max Width: 576px */
 @media (max-width: 576px) {
     .timeline-horizontal {
         grid-template-columns: 1fr;
@@ -583,7 +592,7 @@
 
 /* ---- */
 
-/* ---- 1.0.6 Max Width: 480px */
+/* ---- 1.0.9 Max Width: 480px */
 @media (max-width: 480px) {
     .footer {
         width: calc(100% - 20px);
@@ -619,7 +628,7 @@
 
 /* ---- */
 
-/* ---- 1.0.6 Max Width: 450px */
+/* ---- 1.0.10 Max Width: 450px */
 @media (max-width: 450px) {
     .btn {
         width: 130px;

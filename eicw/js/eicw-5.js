@@ -187,8 +187,6 @@ window.addEventListener("scroll", function () {
     scrollIndicator.style.width = scrollPercentage + "%"; // Update the width of the indicator
 });
 
-var ccl = document.getElementById("chimes");
-
 
 /* Audio Elements */
 // Only attach handlers once DOM is ready

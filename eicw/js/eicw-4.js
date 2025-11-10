@@ -75,7 +75,6 @@ function updateThemeIcon(theme) {
 function updateHrefForDarkMode() {
     /* Banners */
     const coverSect = document.getElementById('cui-img');
-    const cdSect = document.getElementById('cd-img');
 
     /* Images */
     const lcd1_link = document.getElementById('lcd1');
@@ -99,9 +98,8 @@ function updateHrefForDarkMode() {
     const bcr4_link = document.getElementById('bcr4');
     const bcr4_img = document.getElementById('bcr4-img');
 
-    /* Videos */
-    const vid1 = document.getElementById('eicw-vid3');
-    const vid1Source = vid1.querySelector('source');
+    const cddbp_link = document.getElementById('cddbp');
+    const cddbp_img = document.getElementById('cddbp-img');
 
 
     const isDarkMode = document.body.classList.contains('dark-mode');
@@ -133,9 +131,8 @@ function updateHrefForDarkMode() {
         bcr4_link.href = './img-2/bcr-var-dark.png';
         bcr4_img.src = './img-2/bcr-var-dark.png';
 
-
-        /* Videos */
-        vid1Source.src = './img/staris2-red.mp4';
+        cddbp_link.href = './img-2/cddbp-dark.png';
+        cddbp_img.src = './img-2/cddbp-dark.png';
 
 
     } else {
@@ -164,12 +161,11 @@ function updateHrefForDarkMode() {
         bcr4_link.href = './img-2/bcr-var-light.png';
         bcr4_img.src = './img-2/bcr-var-light.png';
 
-        /* Videos */
-        vid1Source.src = './img/staris2-red.mp4';
+        cddbp_link.href = './img-2/cddbp-light.png';
+        cddbp_img.src = './img-2/cddbp-light.png';
 
     }
 
-    vid1.load();
 }
 
 // Update the scroll indicator width based on scroll position

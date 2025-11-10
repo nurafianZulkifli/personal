@@ -223,3 +223,24 @@ function calculateAge(birthday) {
     }
     return age;
 }
+
+// *********************************
+// :: 16.0 Align Paragraphs
+// *********************************
+
+function alignParagraphs() {
+  document.querySelectorAll("p").forEach(function (p) {
+    const lineHeight = parseFloat(window.getComputedStyle(p).lineHeight);
+    const height = p.offsetHeight;
+    const lines = Math.round(height / lineHeight);
+
+    if (lines <= 1) {
+      p.style.textAlign = "center";
+    } else {
+      p.style.textAlign = "justify";
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", alignParagraphs);
+window.addEventListener("resize", alignParagraphs);

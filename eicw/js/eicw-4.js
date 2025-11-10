@@ -98,8 +98,8 @@ function updateHrefForDarkMode() {
     const bcr4_link = document.getElementById('bcr4');
     const bcr4_img = document.getElementById('bcr4-img');
 
-    const cddbp_link = document.getElementById('cddbp');
-    const cddbp_img = document.getElementById('cddbp-img');
+    const cddbp_link = document.getElementById('cddbp-lcd');
+    const cddbp_img = document.getElementById('cddbp-lcd-img');
 
 
     const isDarkMode = document.body.classList.contains('dark-mode');

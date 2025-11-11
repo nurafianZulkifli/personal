@@ -1601,7 +1601,7 @@ img.profile-pic {
     font-size: 16px;
     font-weight: bold;
     text-transform: capitalize;
-    color: #c2492d;
+    color: #db9119;
     margin: 0;
     cursor: default;
 }
@@ -2134,6 +2134,10 @@ hr {
     color: #000;
     border: 1px solid transparent;
     border-radius: 20px;
+}
+
+.page-subtitle {
+    text-align: left !important;
 }
 
 /* ------------------------------------------ */

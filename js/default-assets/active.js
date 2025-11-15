@@ -230,6 +230,11 @@ function calculateAge(birthday) {
 
 function alignParagraphs() {
   document.querySelectorAll("p").forEach(function (p) {
+    // Skip paragraphs with the class 'no-align'
+    if (p.classList.contains("no-align")) {
+      return;
+    }
+
     const lineHeight = parseFloat(window.getComputedStyle(p).lineHeight);
     const height = p.offsetHeight;
     const lines = Math.round(height / lineHeight);

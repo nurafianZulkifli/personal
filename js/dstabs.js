@@ -106,3 +106,15 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
     setTimeout(manageIcons, 100);
 });
+
+// Enable horizontal scrolling with mouse wheel
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollableTabsContainer = document.querySelector(".scrollable-tabs-container ul");
+
+    if (scrollableTabsContainer) {
+        scrollableTabsContainer.addEventListener("wheel", (event) => {
+            event.preventDefault();
+            scrollableTabsContainer.scrollLeft += event.deltaY;
+        });
+    }
+});

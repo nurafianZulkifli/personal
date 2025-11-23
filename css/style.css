@@ -3112,6 +3112,7 @@ li.breadcrumb-item a:hover {
     white-space: nowrap;
     border: 1px solid #cccccc;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff4d;
 }
 
 .nav-link::before {
@@ -3593,3 +3594,210 @@ img.mfp-img {
 }
 
 /* ------------------------------------------*/
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    padding-left: 20px;
+}
+
+.table tr:last-child td:first-child {
+    border-bottom-left-radius: 25px;
+}
+
+.table tr:last-child td:last-child {
+    border-bottom-right-radius: 25px;
+}
+
+table th {
+    background-color: #94d40b !important;
+    color: #000;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.bus-time {
+    display: inline-block;
+    width: 130px;
+    text-align: center;
+    margin-right: 10em;
+    font-size: 20px;
+}
+
+.svcNum {
+    background-color: #94d40b;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+}
+
+.svcNumtd {
+    text-align: center;
+    width: 85px;
+    white-space: nowrap;
+    margin-right: 3em;
+}
+
+.departure-spacing {
+    padding-left: 3em !important;
+    padding-right: 1em !important;
+}
+
+.sch-spacing {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+}
+
+.operator-logo {
+    max-width: 100px;
+    max-height: 50px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.operator-column {
+    text-align: center;
+    width: 20em;
+}
+
+.operator-logo {
+    max-width: 100px;
+    max-height: 50px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.arrival-now {
+    color: #7bb108;
+    font-weight: bold;
+}
+
+.message {
+    font-size: 15px;
+    text-align: center;
+}
+
+.fleet-legend {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #000;
+    padding-bottom: 20px;
+    cursor: default;
+}
+
+.fleet-legend span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fleet-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+#bus-stops {
+    margin-top: 20px;
+}
+
+.bus-stop {
+    transition-duration: 800ms;
+    background-color: #fff;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    margin-top: 1em;
+    border: 1px solid #2b2b2b33;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.bus-stop:hover {
+    background-color: #d8e6f3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bus-stop-code {
+    color: #3294ac !important;
+    cursor: pointer;
+    transition-duration: 800ms;
+}
+
+.bus-stop-code:hover {
+    color: #52718d !important;
+}
+
+.bs-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.bs-info {
+    cursor: pointer;
+}
+
+.list-group-item:first-child,
+.list-group-item:last-child {
+    transition-duration: 800ms;
+    border-radius: 20px;
+    margin-top: 1em;
+    font-size: 20px;
+}
+
+.list-group-item {
+    transition-duration: 800ms;
+    border-radius: 20px;
+    margin-top: 1em;
+    font-size: 20px;
+    border: 1px solid #2b2b2b33;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.list-group-item:hover {
+    background-color: #d8e6f3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ccc;
+    border-top: 3px solid #3b3b3b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

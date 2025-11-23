@@ -1039,6 +1039,10 @@
         margin-right: 5vw;
     }
 
+    .departure-spacing {
+        padding-left: 3em !important;
+    }
+
 }
 
 /* ---- */
@@ -1206,6 +1210,11 @@
 
     }
 
+    #cv-bat {
+        /* height: 25vh !important; */
+        height: 10vh !important;
+    }
+
     .single_gallery_item {
         left: 0px !important;
     }
@@ -1224,6 +1233,39 @@
     .carousel {
         margin-left: 5vw;
         margin-right: 5vw;
+    }
+
+    .departure-spacing {
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+    }
+
+    .bus-time {
+        margin-right: 1em;
+        /* Adjust spacing as needed */
+        font-size: 18px;
+    }
+
+    table th {
+        font-size: 15px;
+    }
+
+    .table {
+        border-radius: 15px;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+        padding-left: 9px;
+    }
+
+    .table tr:last-child td:first-child {
+        border-bottom-left-radius: 15px;
+    }
+
+    .table tr:last-child td:last-child {
+        border-bottom-right-radius: 15px;
     }
 
 }

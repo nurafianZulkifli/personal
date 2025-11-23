@@ -3778,6 +3778,7 @@ table th {
     font-weight: bold;
     margin-bottom: 2px;
     cursor: pointer;
+    text-align: left;
 }
 
 .bs-info {

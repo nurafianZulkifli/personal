@@ -781,7 +781,7 @@ body.dark-mode .table {
 }
 
 body.dark-mode table th {
-    background-color: #94d40b;
+    background-color: #7db603 !important;
     color: #000;
 }
 
@@ -792,13 +792,13 @@ body.dark-mode table td {
 }
 
 body.dark-mode .svcNum {
-    background-color: #94d40b;
+    background-color: #7db603;
     border-radius: 5px;
     color: #000;
 }
 
 body.dark-mode .arrival-now {
-    color: #94d40b;
+    color: #7db603;
     font-weight: bold;
 }
 

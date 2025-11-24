@@ -332,10 +332,6 @@
     .navbar-container {
         width: calc(100% - 30px);
     }
-
-    .bs-name {
-        text-align: left;
-    }
 }
 
 /* ---- */
@@ -1045,6 +1041,10 @@
 
     .departure-spacing {
         padding-left: 3em !important;
+    }
+
+    .bs-name {
+        text-align: left;
     }
 
 }

@@ -254,7 +254,7 @@
             <div class="list-group">
                 <p style="text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px;"><span class="spinner"></span>Fetching Bus Stops list for the first time...</p>
             </div>
-            <div class="pagination-buttons" style="text-align: center; margin-top: 20px; margin-right: 3em;">
+            <div class="pagination-buttons">
                 <button id="prev-button" class="btn pw-btn-prev btn-2 mt-15" style="display: none;">Previous</button>
                 <button id="next-button" class="btn pw-btn-next btn-2 mt-15" style="display: none;">Next</button>
             </div>
@@ -377,7 +377,7 @@
                 // Clear the list group and display the bus stops
                 listGroup.innerHTML = '';
                 if (busStops.length === 0) {
-                    listGroup.innerHTML = '<p>Fetching Bus Stops List for the first time...</p>';
+                    listGroup.innerHTML = '<p style="text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px;"><span class="spinner"></span> Searching for nearby bus stops...</p>';
                     prevButton.style.display = 'none'; // Hide buttons if fetching message is shown
                     nextButton.style.display = 'none';
                     return;

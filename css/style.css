@@ -2880,6 +2880,12 @@ li.breadcrumb-item a:hover {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+#bus-stop-search {
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    width: auto; /* Allow it to adjust based on content or parent */
+    padding-left: 35px; /* Keep the padding for the icon */
+}
+
 .form-control::placeholder {
     color: #aaaaaa;
     opacity: 1;

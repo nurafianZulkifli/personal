@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Nearby Bus Stops | BAT</title>
+    <title>Nearby Bus Stops | Buszy</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
@@ -187,7 +187,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="#">Bus Arrival Timings</a>
+                                    <a href="../bat.html">Buszy</a>
                                 </li>
                             </ol>
                         </nav>
@@ -214,15 +214,16 @@
 
                     <ul>
                         <li>
-                            <a href="nbs.html" class="active">Nearby Bus Stops</a>
+                            <a href="../bat.html"><i class="fa-solid fa-star"></i> Favourites</a>
                         </li>
 
                         <li>
-                            <a href="bat.html" id="search-bus-stop-button">Search Bus Stop</a>
+                            <a href="#" class="active" ><i class="fa-solid fa-location-dot"></i> Nearby</a>
                         </li>
 
                         <li>
-                            <a href="abs.html">Bus Stops</a>
+                            <a href="abs.html"><i class="fa-solid fa-magnifying-glass"></i>
+                                Search</a>
                         </li>
                     </ul>
 
@@ -292,7 +293,6 @@
     <script src="../js/default-assets/active.js"></script>
 
     <script src="../js/isotope.pkgd.min.js"></script>
-
 
     <script src="../js/dstabs.js"></script>
 
@@ -415,7 +415,7 @@ function displayBusStops(busStops) {
         // Add click event listener to the entire div
         busStopElement.addEventListener('click', () => {
             // Navigate to bat.html with the BusStopCode as a query parameter
-            window.location.href = `bat.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
+            window.location.href = `art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
         });
 
         busStopsContainer.appendChild(busStopElement);
@@ -447,8 +447,6 @@ function displayBusStops(busStops) {
                 }
             }
         });
-
-
 
     </script>
 </body>

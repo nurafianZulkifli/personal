@@ -1219,6 +1219,10 @@
         height: 10vh !important;
     }
 
+    #cv-bat-main {
+        height: 50vh !important;
+    }
+
     .single_gallery_item {
         left: 0px !important;
     }

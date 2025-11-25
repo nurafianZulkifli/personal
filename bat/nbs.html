@@ -187,7 +187,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="../bat.html">Buszy</a>
+                                    <a href="../buszy.html">Buszy</a>
                                 </li>
                             </ol>
                         </nav>
@@ -214,7 +214,7 @@
 
                     <ul>
                         <li>
-                            <a href="../bat.html"><i class="fa-solid fa-star"></i> Favourites</a>
+                            <a href="../buszy.html"><i class="fa-solid fa-star"></i> Favourites</a>
                         </li>
 
                         <li>
@@ -280,7 +280,7 @@
 
     <script src="../js/navtabs.js"></script>
 
-    <script src="bat.js"></script>
+    <script src="buszy.js"></script>
 
     <script src="../js/jquery.min.js"></script>
 
@@ -414,7 +414,7 @@ function displayBusStops(busStops) {
 
         // Add click event listener to the entire div
         busStopElement.addEventListener('click', () => {
-            // Navigate to bat.html with the BusStopCode as a query parameter
+            // Navigate to buszy.html with the BusStopCode as a query parameter
             window.location.href = `art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
         });
 
@@ -425,7 +425,7 @@ function displayBusStops(busStops) {
 }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const searchBusStopButton = document.querySelector('a[href="bat.html"]'); // Select the "Search Bus Stop" button
+            const searchBusStopButton = document.querySelector('a[href="buszy.html"]'); // Select the "Search Bus Stop" button
             const searchInput = document.getElementById('bus-stop-search'); // Select the search input field
 
             if (searchBusStopButton && searchInput) {

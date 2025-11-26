@@ -332,6 +332,8 @@
     .navbar-container {
         width: calc(100% - 30px);
     }
+
+
 }
 
 /* ---- */
@@ -1215,12 +1217,8 @@
     }
 
     #cv-bat {
-        /* height: 25vh !important; */
-        height: 10vh !important;
-    }
-
-    #cv-bat-main {
         height: 50vh !important;
+        /* height: 10vh !important; */
     }
 
     .single_gallery_item {
@@ -1274,6 +1272,11 @@
 
     .table tr:last-child td:last-child {
         border-bottom-right-radius: 15px;
+    }
+
+    .all-apps h2 {
+        text-align: center;
+        margin-left: 0em;
     }
 
 }

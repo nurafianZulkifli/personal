@@ -2881,9 +2881,12 @@ li.breadcrumb-item a:hover {
 }
 
 #bus-stop-search {
-    max-width: 100%; /* Ensure it doesn't exceed the container width */
-    width: auto; /* Allow it to adjust based on content or parent */
-    padding-left: 35px; /* Keep the padding for the icon */
+    max-width: 100%;
+    /* Ensure it doesn't exceed the container width */
+    width: auto;
+    /* Allow it to adjust based on content or parent */
+    padding-left: 35px;
+    /* Keep the padding for the icon */
 }
 
 .form-control::placeholder {
@@ -3816,7 +3819,7 @@ table th {
 
 .pagination-buttons {
     margin-right: 0em;
-    text-align: center; 
+    text-align: center;
     margin-top: 20px;
 }
 
@@ -3877,4 +3880,171 @@ table th {
     background-color: #6d99c0 !important;
     color: #fff;
     transform: translateY(-2px);
+}
+
+/*  */
+.card-bz {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 1em;
+    text-align: center;
+    flex: 1 1 calc(20% - 1em);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: default;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+.card-bz:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.header p {
+    margin: 0.5em 0 0;
+    font-size: 1em;
+    color: #666;
+}
+
+.all-apps,
+.pinned {
+    margin-bottom: 2em;
+}
+
+.all-apps h2 {
+    font-size: 30px;
+    margin-left: 1em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: bolder;
+    color: #3b3b3b;
+}
+
+.pinned h2 {
+    font-size: 25px;
+}
+
+.card-container {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin-bottom: 4em;
+    padding: 0 1em;
+}
+
+.pinned p {
+    text-align: center;
+    color: #0078d4;
+    cursor: pointer;
+}
+
+.card-bz p {
+    margin-top: 0.7em;
+    font-size: 25px;
+    color: #000;
+    font-weight: bold;
+    text-align: center !important;
+    line-height: 1.5;
+}
+
+.card-icon {
+    border-radius: 25px;
+}
+
+.bz-btn {
+    position: relative;
+    z-index: 1;
+    min-width: 50px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 0 30px;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #de652e;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border-radius: 60px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: none;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.btn-unpin {
+    position: relative;
+    z-index: 1;
+    min-width: 50px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 0 30px;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #ec451b;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border-radius: 60px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: none;
+    margin-left: 1em;
+}
+
+.btn-toPin {
+    position: relative;
+    z-index: 1;
+    min-width: 50px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 0 30px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #000;
+    border-radius: 60px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: none;
+    margin-left: 1em;
+    border: 1px solid #cccccc;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff4d;
+}
+
+
+.bz-btn.btn-2,
+.btn-unpin.btn-2,
+.btn-toPin.btn-2 {
+    color: #fff;
+}
+
+.bz-btn:focus,
+.bz-btn:hover,
+.btn-unpin:focus,
+.btn-unpin:hover,
+.btn-toPin:focus,
+.btn-toPin:hover {
+    font-weight: 500;
+    background-color: #6d99c0 !important;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/*  */
+.list-group-item.active {
+    z-index: 2;
+    color: #000;
+    background-color: #c7e3fb;
 }

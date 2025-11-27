@@ -336,58 +336,58 @@
 
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const searchInput = document.getElementById('bus-stop-search'); // Search input field
-        const tableBody = document.querySelector('table tbody'); // Table body
-        const footer = document.querySelector('.footer'); // Footer
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('bus-stop-search'); // Search input field
+            const tableBody = document.querySelector('table tbody'); // Table body
+            const footer = document.querySelector('.footer'); // Footer
 
-        // Get the BusStopCode from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const busStopCode = urlParams.get('BusStopCode');
+            // Get the BusStopCode from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const busStopCode = urlParams.get('BusStopCode');
 
-        if (busStopCode) {
-            searchInput.value = busStopCode;
-            fetchBusArrivals();
-        } else {
-            const savedSearch = sessionStorage.getItem('busStopSearch');
-            if (savedSearch) {
-                searchInput.value = savedSearch;
+            if (busStopCode) {
+                searchInput.value = busStopCode;
                 fetchBusArrivals();
             } else {
-                tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
-                footer.style.display = 'none';
+                const savedSearch = sessionStorage.getItem('busStopSearch');
+                if (savedSearch) {
+                    searchInput.value = savedSearch;
+                    fetchBusArrivals();
+                } else {
+                    tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
+                    footer.style.display = 'none';
+                }
             }
+
+            const updateUrl = () => {
+                const url = new URL(window.location.href);
+                const currentValue = searchInput.value.trim();
+
+                if (currentValue) {
+                    url.searchParams.set('busStopCode', currentValue);
+                } else {
+                    url.searchParams.delete('busStopCode');
+                }
+
+                window.history.replaceState({}, document.title, url.toString());
+            };
+
+            searchInput.addEventListener('input', debounce(() => {
+                updateUrl();
+                fetchBusArrivals();
+            }, 300));
+
+            // Refresh data every 5 seconds
+            setInterval(fetchBusArrivals, 5000);
+        });
+
+        function debounce(func, delay) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), delay);
+            };
         }
-
-        const updateUrl = () => {
-            const url = new URL(window.location.href);
-            const currentValue = searchInput.value.trim();
-
-            if (currentValue) {
-                url.searchParams.set('busStopCode', currentValue);
-            } else {
-                url.searchParams.delete('busStopCode');
-            }
-
-            window.history.replaceState({}, document.title, url.toString());
-        };
-
-        searchInput.addEventListener('input', debounce(() => {
-            updateUrl();
-            fetchBusArrivals();
-        }, 300));
-
-        // Refresh data every 5 seconds
-        setInterval(fetchBusArrivals, 5000);
-    });
-
-    function debounce(func, delay) {
-        let timeout;
-        return function (...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(this, args), delay);
-        };
-    }
 
         // Updated fetchBusArrivals function
         async function fetchBusArrivals() {
@@ -427,25 +427,25 @@
                 data.Services.forEach((service) => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                    <td class="svcNumtd">
-                        <p class="svcNum">${service.ServiceNo}</p>
-                    </td>
-                    <td class="departure-spacing">
-                        <span class="bus-time">
-                            ${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : '-'} 
-                            &nbsp; 
-                            ${service.NextBus.Type ? `<img src="assets/${service.NextBus.Type.toLowerCase()}.png" alt="${service.NextBus.Type}" style="width: 30px; height: auto;">` : ''}
-                        </span>
-                        <span class="bus-time">
-                            ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : ''} 
-                            &nbsp; 
-                            ${service.NextBus2.Type ? `<img src="assets/${service.NextBus2.Type.toLowerCase()}.png" alt="${service.NextBus2.Type}" style="width: 30px; height: auto;">` : ''}
-                        </span>
-                    </td>
-                    <td> 
-                        ${service.Operator ? `<img src="assets/${service.Operator.toLowerCase()}.png" alt="${service.Operator}" class="operator-logo">` : ''}
-                    </td>
-                `;
+                <td class="svcNumtd">
+                    <p class="svcNum">${service.ServiceNo}</p>
+                </td>
+                <td class="departure-spacing">
+                    <span class="bus-time">
+                        ${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : '-'} 
+                        &nbsp; 
+                        ${service.NextBus.Type ? `<img src="assets/${service.NextBus.Type.toLowerCase()}.png" alt="${service.NextBus.Type}" style="width: 30px; height: auto;">` : ''}
+                    </span>
+                    <span class="bus-time">
+                        ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : ''} 
+                        &nbsp; 
+                        ${service.NextBus2.Type ? `<img src="assets/${service.NextBus2.Type.toLowerCase()}.png" alt="${service.NextBus2.Type}" style="width: 30px; height: auto;">` : ''}
+                    </span>
+                </td>
+                <td> 
+                    ${service.Operator ? `<img src="assets/${service.Operator.toLowerCase()}.png" alt="${service.Operator}" class="operator-logo">` : ''}
+                </td>
+            `;
                     tableBody.appendChild(row);
                 });
 
@@ -466,30 +466,15 @@
 
             const timeDifference = arrivalTime - now;
 
+            // Show "Arr" if the time has passed but within a 1-minute window
             if (timeDifference <= 0 && timeDifference > -60000) {
                 return `<span class="arrival-now">Arr</span>`;
             }
 
+            // Format the time as hh:mm
             const hours = arrivalTime.getHours().toString().padStart(2, '0');
             const minutes = arrivalTime.getMinutes().toString().padStart(2, '0');
             return `${hours}:${minutes}`;
-        }
-
-        function formatArrivalTime(isoString) {
-            const date = new Date(isoString);
-            const hours = date.getHours().toString().padStart(2, '0');
-            const minutes = date.getMinutes().toString().padStart(2, '0');
-            const formattedTime = `${hours}:${minutes}`;
-
-            const now = new Date();
-            const currentHours = now.getHours().toString().padStart(2, '0');
-            const currentMinutes = now.getMinutes().toString().padStart(2, '0');
-            const currentTime = `${currentHours}:${currentMinutes}`;
-
-            if (formattedTime === currentTime) {
-                return `<span class="arrival-now">Arr</span>`;
-            }
-            return formattedTime;
         }
 
         document.addEventListener('DOMContentLoaded', () => {

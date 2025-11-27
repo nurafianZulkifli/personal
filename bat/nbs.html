@@ -396,7 +396,6 @@ function displayBusStops(busStops) {
 
     if (!busStops || busStops.length === 0) {
         busStopsContainer.innerHTML = '<p>No bus stops found nearby.</p>';
-        footer.style.display = 'block'; // Show footer even if no bus stops are found
         return;
     }
 
@@ -425,7 +424,6 @@ function displayBusStops(busStops) {
         busStopsContainer.appendChild(busStopElement);
     });
 
-    footer.style.display = 'block'; // Show footer after bus stops are loaded
 }
 
         document.addEventListener('DOMContentLoaded', () => {

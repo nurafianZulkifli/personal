@@ -339,7 +339,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('bus-stop-search'); // Search input field
             const tableBody = document.querySelector('table tbody'); // Table body
-            const footer = document.querySelector('.footer'); // Footer
 
             // Get the BusStopCode from the URL
             const urlParams = new URLSearchParams(window.location.search);
@@ -355,7 +354,6 @@
                     fetchBusArrivals();
                 } else {
                     tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
-                    footer.style.display = 'none';
                 }
             }
 
@@ -394,11 +392,9 @@
             try {
                 const searchInput = document.getElementById('bus-stop-search').value.trim();
                 const tableBody = document.querySelector('table tbody');
-                const footer = document.querySelector('.footer');
 
                 if (!searchInput) {
                     tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
-                    footer.style.display = 'none'; // Hide footer if no input
                     return;
                 }
 
@@ -418,7 +414,6 @@
 
                 if (!data.Services || data.Services.length === 0) {
                     tableBody.innerHTML = '<tr><td colspan="3">No data available</td></tr>';
-                    footer.style.display = 'none'; // Hide footer if no data
                     return;
                 }
 
@@ -449,14 +444,10 @@
                     tableBody.appendChild(row);
                 });
 
-                footer.style.display = 'block'; // Show footer if data is available
-
             } catch (error) {
                 console.error('Error fetching bus arrivals:', error);
                 const tableBody = document.querySelector('table tbody');
-                const footer = document.querySelector('.footer');
                 tableBody.innerHTML = '<tr><td colspan="3">Error loading data</td></tr>';
-                footer.style.display = 'none'; // Hide footer on error
             }
         }
 

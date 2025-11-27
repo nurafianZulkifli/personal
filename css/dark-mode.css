@@ -881,3 +881,7 @@ body.dark-mode .list-group-item.active {
     color: #000;
     background-color: #52718d;
 }
+
+body.dark-mode .lg-date {
+    color: #dbdbdb;
+}

@@ -277,7 +277,7 @@
     }
 
     .scrollable-tabs-container ul {
-        padding: 12px 30px !important;
+        padding: 12px 50px !important;
     }
 
     .page-title-wrapper>div {
@@ -333,6 +333,16 @@
         width: calc(100% - 30px);
     }
 
+    .card-container {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+    .lg-ann {
+        font-size: 20px;
+        margin-bottom: 0px;
+        font-weight: bolder;
+    }
 
 }
 
@@ -509,10 +519,6 @@
     .portfolio-filter a {
         flex: 1 1 calc(50% - 10px);
         text-align: center;
-    }
-
-    .scrollable-tabs-container ul {
-        padding: 12px 30px !important;
     }
 
 }
@@ -1218,7 +1224,10 @@
 
     #cv-bat {
         height: 50vh !important;
-        /* height: 10vh !important; */
+    }
+
+    #cv-bat-subp {
+        height: 10vh !important;
     }
 
     .single_gallery_item {

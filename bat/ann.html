@@ -33,9 +33,7 @@
 </head>
 
 <style>
-    #cv-bat {
-        /* background-image: url("../img/bg-img/cover-bat.jpg"); */
-        /* height: 40vh; */
+    #cv-bat-subp {
         height: 10vh;
     }
 
@@ -164,7 +162,7 @@
     <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
 
     <!-- Cover Header -->
-    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-bat">
+    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-bat-subp">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -251,44 +249,43 @@
     <!-- Section Contents -->
     <section class="about-me-summ clearfix" style="padding-bottom: 5em;">
         <div class="container">
-            <div class="list-group">
-                <a href="https://www.ptc.gov.sg/newsroom/news-releases/newsroom-view/fare-review-exercise-2025"
-                    class="list-group-item list-group-item-action flex-column align-items-start active">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Fare Review Exercise</h5>
-                        <small>14 Oct 2025</small>
+        <div class="list-group">
+            <a href="https://www.ptc.gov.sg/newsroom/news-releases/newsroom-view/fare-review-exercise-2025"
+                class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex">
+                    <div>
+                        <h5 class="lg-ann">Fare Review Exercise</h5>
+                        <small class="lg-date">14 Oct 2025</small>
                     </div>
-                    <p class="mb-1" style="cursor: pointer;">
-                        PTC grants overall fare adjustment of 5.0% - below the maximum allowable quantum of 14.4%;
-                        deferment of remaining quantum (9.4%) supported by additional Government subsidies
-
-                        Prices of monthly passes for adults, workfare transport concession cardholders, seniors, and
-                        persons with disabilities reduced by up to 5%
-
-                        No increase in fares for short-distance journeys (up to 3.2km) for about 2 million concession
-                        card holders; 3-4 cents increase for journeys longer than 3.2 km...</p>
-                </a>
-                <a href="https://landtransportguru.net/ecid-ewl-closure-nov25/"
-                    class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Service Adjustments - EWL</h5>
-                        <small>03 Oct 2025</small>
+                </div>
+                <p class="mb-1" style="cursor: pointer;">
+                    PTC grants overall fare adjustment of 5.0% - below the maximum allowable quantum of 14.4%;
+                    deferment of remaining quantum (9.4%) supported by additional Government subsidies...</p>
+            </a>
+            <a href="https://landtransportguru.net/ecid-ewl-closure-nov25/"
+                class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex">
+                    <div>
+                        <h5 class="lg-ann">Service Adjustments - EWL</h5>
+                        <small class="lg-date">03 Oct 2025</small>
                     </div>
-                    <p class="mb-1">No Train Service will be available on the East-West Line (EWL) between Bedok –
-                        Tampines & Tanah Merah – Expo from Saturday, 29 November 2025 to Monday, 8 December 2025.</p>
-
-                </a>
-                <a href="https://landtransportguru.net/shortened-ops-hours-ccl-sep-dec-2025/"
-                    class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Service Adjustments - CCL</h5>
-                        <small>12 Aug 2025</small>
+                </div>
+                <p class="mb-1">No Train Service will be available on the East-West Line (EWL) between Bedok –
+                    Tampines & Tanah Merah – Expo from Saturday, 29 November 2025 to Monday, 8 December 2025.</p>
+            </a>
+            <a href="https://landtransportguru.net/shortened-ops-hours-ccl-sep-dec-2025/"
+                class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex">
+                    <div>
+                        <h5 class="lg-ann">Service Adjustments - CCL</h5>
+                        <small class="lg-date">12 Aug 2025</small>
                     </div>
-                    <p class="mb-1">Early Closures & Late Openings (ECLO) along the entire Circle Line (CCL), between
-                        Dhoby Ghaut / Marina Bay and HarbourFront, will take place across 14 Fridays, Saturdays &
-                        Sundays between 5 September 2025 and 28 December 2025.</p>
-                </a>
-            </div>
+                </div>
+                <p class="mb-1">Early Closures & Late Openings (ECLO) along the entire Circle Line (CCL), between
+                    Dhoby Ghaut / Marina Bay and HarbourFront, will take place across 14 Fridays, Saturdays &
+                    Sundays between 5 September 2025 and 28 December 2025.</p>
+            </a>
+        </div>
 
         </div>
     </section>
@@ -342,207 +339,6 @@
 
     <script src="../js/utils.js"></script>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('bus-stop-search'); // Search input field
-            const tableBody = document.querySelector('table tbody'); // Table body
-            const footer = document.querySelector('.footer'); // Footer
-
-            let idleTimeout; // Timer for idle detection
-            let isIdle = false; // Flag to track if the user is idle
-            const idleTimeLimit = 20000; // 20 seconds of inactivity to consider idle
-
-            // Get the BusStopCode from the URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const busStopCode = urlParams.get('BusStopCode');
-
-            if (busStopCode) {
-                searchInput.value = busStopCode;
-                fetchBusArrivals();
-            } else {
-                const savedSearch = sessionStorage.getItem('busStopSearch');
-                if (savedSearch) {
-                    searchInput.value = savedSearch;
-                    fetchBusArrivals();
-                } else {
-                    tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
-                    footer.style.display = 'none';
-                }
-            }
-
-            const updateUrl = () => {
-                const url = new URL(window.location.href);
-                const currentValue = searchInput.value.trim();
-
-                if (currentValue) {
-                    url.searchParams.set('busStopCode', currentValue);
-                } else {
-                    url.searchParams.delete('busStopCode');
-                }
-
-                window.history.replaceState({}, document.title, url.toString());
-            };
-
-            searchInput.addEventListener('input', debounce(() => {
-                updateUrl();
-                fetchBusArrivals();
-            }, 300));
-
-            // Auto-refresh data when idle
-            const startAutoRefresh = () => {
-                if (!isIdle) {
-                    isIdle = true;
-                    fetchBusArrivals();
-                    setInterval(() => {
-                        if (isIdle) {
-                            fetchBusArrivals();
-                        }
-                    }, 5000); // Refresh every 5 seconds
-                }
-            };
-
-            const resetIdleTimer = () => {
-                isIdle = false;
-                clearTimeout(idleTimeout);
-                idleTimeout = setTimeout(startAutoRefresh, idleTimeLimit);
-            };
-
-            // Detect user activity
-            ['mousemove', 'keydown', 'scroll', 'touchstart'].forEach(event => {
-                window.addEventListener(event, resetIdleTimer);
-            });
-
-            // Start the idle timer
-            resetIdleTimer();
-        });
-
-        function debounce(func, delay) {
-            let timeout;
-            return function (...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, args), delay);
-            };
-        }
-
-        // Updated fetchBusArrivals function
-        async function fetchBusArrivals() {
-            try {
-                const searchInput = document.getElementById('bus-stop-search').value.trim();
-                const tableBody = document.querySelector('table tbody');
-                const footer = document.querySelector('.footer');
-
-                if (!searchInput) {
-                    tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
-                    footer.style.display = 'none'; // Hide footer if no input
-                    return;
-                }
-
-                const url = new URL('https://bat-lta-9eb7bbf231a2.herokuapp.com/bus-arrivals');
-                url.searchParams.append('BusStopCode', searchInput);
-
-                const response = await fetch(url);
-
-                if (!response.ok) {
-                    throw new Error('Failed to fetch bus arrivals');
-                }
-
-                const data = await response.json();
-                console.log('API Response:', data);
-
-                tableBody.innerHTML = '';
-
-                if (!data.Services || data.Services.length === 0) {
-                    tableBody.innerHTML = '<tr><td colspan="3">No data available</td></tr>';
-                    footer.style.display = 'none'; // Hide footer if no data
-                    return;
-                }
-
-                const now = new Date();
-
-                data.Services.forEach((service) => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-            <td class="svcNumtd">
-                <p class="svcNum">${service.ServiceNo}</p>
-            </td>
-            <td class="departure-spacing">
-                <span class="bus-time">
-                    ${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : '-'} 
-                    &nbsp; 
-                    ${service.NextBus.Type ? `<img src="assets/${service.NextBus.Type.toLowerCase()}.png" alt="${service.NextBus.Type}" style="width: 30px; height: auto;">` : ''}
-                </span>
-                <span class="bus-time">
-                    ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : ''} 
-                    &nbsp; 
-                    ${service.NextBus2.Type ? `<img src="assets/${service.NextBus2.Type.toLowerCase()}.png" alt="${service.NextBus2.Type}" style="width: 30px; height: auto;">` : ''}
-                </span>
-            </td>
-            <td> 
-                ${service.Operator ? `<img src="assets/${service.Operator.toLowerCase()}.png" alt="${service.Operator}" class="operator-logo">` : ''}
-            </td>
-        `;
-                    tableBody.appendChild(row);
-                });
-
-                footer.style.display = 'block'; // Show footer if data is available
-
-            } catch (error) {
-                console.error('Error fetching bus arrivals:', error);
-                const tableBody = document.querySelector('table tbody');
-                const footer = document.querySelector('.footer');
-                tableBody.innerHTML = '<tr><td colspan="3">Error loading data</td></tr>';
-                footer.style.display = 'none'; // Hide footer on error
-            }
-        }
-
-        // Function to format ISO string to hh:mm or show "Arr" if the time has passed
-        function formatArrivalTimeOrArr(isoString, now) {
-            const arrivalTime = new Date(isoString);
-
-            // Allow a small margin for matching the current time
-            const timeDifference = arrivalTime - now;
-
-            // If the arrival time is in the past or within the current minute, show "Arr"
-            if (timeDifference <= 0 && timeDifference > -60000) {
-                return `<span class="arrival-now">Arr</span>`;
-            }
-
-            // Otherwise, format the time as hh:mm
-            const hours = arrivalTime.getHours().toString().padStart(2, '0');
-            const minutes = arrivalTime.getMinutes().toString().padStart(2, '0');
-            return `${hours}:${minutes}`;
-        }
-
-        function formatArrivalTime(isoString) {
-            const date = new Date(isoString);
-            const hours = date.getHours().toString().padStart(2, '0');
-            const minutes = date.getMinutes().toString().padStart(2, '0');
-            const formattedTime = `${hours}:${minutes}`;
-
-            const now = new Date();
-            const currentHours = now.getHours().toString().padStart(2, '0');
-            const currentMinutes = now.getMinutes().toString().padStart(2, '0');
-            const currentTime = `${currentHours}:${currentMinutes}`;
-
-            if (formattedTime === currentTime) {
-                return `<span class="arrival-now">Arr</span>`;
-            }
-            return formattedTime;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchBusStopButton = document.getElementById('search-bus-stop-button'); // Select the "Search Bus Stop" button
-            const searchInput = document.getElementById('bus-stop-search'); // Select the search input field
-
-            if (searchBusStopButton && searchInput) {
-                searchBusStopButton.addEventListener('click', () => {
-                    searchInput.value = ''; // Clear the search input field
-                    sessionStorage.removeItem('busStopSearch'); // Clear the session storage value
-                });
-            }
-        });
-    </script>
 
 </body>
 

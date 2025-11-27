@@ -2882,11 +2882,8 @@ li.breadcrumb-item a:hover {
 
 #bus-stop-search {
     max-width: 100%;
-    /* Ensure it doesn't exceed the container width */
-    width: auto;
-    /* Allow it to adjust based on content or parent */
+    width: 100%;
     padding-left: 35px;
-    /* Keep the padding for the icon */
 }
 
 .form-control::placeholder {
@@ -3933,7 +3930,7 @@ table th {
 
 .card-container {
     display: flex;
-    gap: 1em;
+    gap: 3em;
     flex-wrap: wrap;
     margin-bottom: 4em;
     padding: 0 1em;
@@ -4047,4 +4044,16 @@ table th {
     z-index: 2;
     color: #000;
     background-color: #c7e3fb;
+}
+
+.lg-ann {
+    font-size: 25px;
+    margin-bottom: 0px;
+    font-weight: bolder;
+}
+
+.lg-date {
+    font-size: 15px;
+    margin-bottom: 0px;
+    color: #757575;
 }

@@ -34,12 +34,12 @@
 
 <style>
     #cv-bat {
-        background-image: url("img/bg-img/cover-bat.jpg");
+        background-image: url("img/bg-img/hero-buszy.png");
         height: 40vh;
         /* height: 10vh; */
     }
 
-    @media only screen and (min-width: 489px) and (max-width: 816px) {
+    @media only screen and (min-width: 455px) and (max-width: 816px) {
         .all-apps h2 {
             margin-left: 0em;
         }
@@ -50,6 +50,29 @@
             gap: 20px;
             margin-bottom: 4em;
             padding: 0 0em;
+        }
+
+        .card-bz {
+            width: 100%;
+        }
+
+        .card-bz p {
+            font-size: 20px;
+        }
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 454px) {
+        .all-apps h2 {
+            margin-left: 0em;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            margin-bottom: 4em;
+            padding-left: 3em;
+            padding-right: 3em;
         }
 
         .card-bz {
@@ -284,7 +307,7 @@
                 bookmarksContainer.innerHTML = '';
 
                 if (bookmarks.length === 0) {
-                    bookmarksContainer.innerHTML = '<p>Pin a Bus Stop to get started!</p>';
+                    bookmarksContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-circle-info"></i>Pin a Bus Stop to get started.</p>';
                     return;
                 }
 

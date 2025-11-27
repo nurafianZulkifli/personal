@@ -219,7 +219,8 @@
 
                     <ul>
                         <li>
-                            <a href="../buszy.html"><i class="fa-solid fa-star"></i> Favourites</a>
+                            <a href="../buszy.html#pinned"><i class="fa-sharp fa-solid fa-thumbtack-angle"></i>
+                                Pinned</a>
                         </li>
 
                         <li>
@@ -335,86 +336,58 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('bus-stop-search'); // Search input field
-            const tableBody = document.querySelector('table tbody'); // Table body
-            const footer = document.querySelector('.footer'); // Footer
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('bus-stop-search'); // Search input field
+        const tableBody = document.querySelector('table tbody'); // Table body
+        const footer = document.querySelector('.footer'); // Footer
 
-            let idleTimeout; // Timer for idle detection
-            let isIdle = false; // Flag to track if the user is idle
-            const idleTimeLimit = 20000; // 20 seconds of inactivity to consider idle
+        // Get the BusStopCode from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const busStopCode = urlParams.get('BusStopCode');
 
-            // Get the BusStopCode from the URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const busStopCode = urlParams.get('BusStopCode');
-
-            if (busStopCode) {
-                searchInput.value = busStopCode;
+        if (busStopCode) {
+            searchInput.value = busStopCode;
+            fetchBusArrivals();
+        } else {
+            const savedSearch = sessionStorage.getItem('busStopSearch');
+            if (savedSearch) {
+                searchInput.value = savedSearch;
                 fetchBusArrivals();
             } else {
-                const savedSearch = sessionStorage.getItem('busStopSearch');
-                if (savedSearch) {
-                    searchInput.value = savedSearch;
-                    fetchBusArrivals();
-                } else {
-                    tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
-                    footer.style.display = 'none';
-                }
+                tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
+                footer.style.display = 'none';
+            }
+        }
+
+        const updateUrl = () => {
+            const url = new URL(window.location.href);
+            const currentValue = searchInput.value.trim();
+
+            if (currentValue) {
+                url.searchParams.set('busStopCode', currentValue);
+            } else {
+                url.searchParams.delete('busStopCode');
             }
 
-            const updateUrl = () => {
-                const url = new URL(window.location.href);
-                const currentValue = searchInput.value.trim();
+            window.history.replaceState({}, document.title, url.toString());
+        };
 
-                if (currentValue) {
-                    url.searchParams.set('busStopCode', currentValue);
-                } else {
-                    url.searchParams.delete('busStopCode');
-                }
+        searchInput.addEventListener('input', debounce(() => {
+            updateUrl();
+            fetchBusArrivals();
+        }, 300));
 
-                window.history.replaceState({}, document.title, url.toString());
-            };
+        // Refresh data every 5 seconds
+        setInterval(fetchBusArrivals, 5000);
+    });
 
-            searchInput.addEventListener('input', debounce(() => {
-                updateUrl();
-                fetchBusArrivals();
-            }, 300));
-
-            // Auto-refresh data when idle
-            const startAutoRefresh = () => {
-                if (!isIdle) {
-                    isIdle = true;
-                    fetchBusArrivals();
-                    setInterval(() => {
-                        if (isIdle) {
-                            fetchBusArrivals();
-                        }
-                    }, 5000); // Refresh every 5 seconds
-                }
-            };
-
-            const resetIdleTimer = () => {
-                isIdle = false;
-                clearTimeout(idleTimeout);
-                idleTimeout = setTimeout(startAutoRefresh, idleTimeLimit);
-            };
-
-            // Detect user activity
-            ['mousemove', 'keydown', 'scroll', 'touchstart'].forEach(event => {
-                window.addEventListener(event, resetIdleTimer);
-            });
-
-            // Start the idle timer
-            resetIdleTimer();
-        });
-
-        function debounce(func, delay) {
-            let timeout;
-            return function (...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, args), delay);
-            };
-        }
+    function debounce(func, delay) {
+        let timeout;
+        return function (...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), delay);
+        };
+    }
 
         // Updated fetchBusArrivals function
         async function fetchBusArrivals() {
@@ -454,25 +427,25 @@
                 data.Services.forEach((service) => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
-            <td class="svcNumtd">
-                <p class="svcNum">${service.ServiceNo}</p>
-            </td>
-            <td class="departure-spacing">
-                <span class="bus-time">
-                    ${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : '-'} 
-                    &nbsp; 
-                    ${service.NextBus.Type ? `<img src="assets/${service.NextBus.Type.toLowerCase()}.png" alt="${service.NextBus.Type}" style="width: 30px; height: auto;">` : ''}
-                </span>
-                <span class="bus-time">
-                    ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : ''} 
-                    &nbsp; 
-                    ${service.NextBus2.Type ? `<img src="assets/${service.NextBus2.Type.toLowerCase()}.png" alt="${service.NextBus2.Type}" style="width: 30px; height: auto;">` : ''}
-                </span>
-            </td>
-            <td> 
-                ${service.Operator ? `<img src="assets/${service.Operator.toLowerCase()}.png" alt="${service.Operator}" class="operator-logo">` : ''}
-            </td>
-        `;
+                    <td class="svcNumtd">
+                        <p class="svcNum">${service.ServiceNo}</p>
+                    </td>
+                    <td class="departure-spacing">
+                        <span class="bus-time">
+                            ${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : '-'} 
+                            &nbsp; 
+                            ${service.NextBus.Type ? `<img src="assets/${service.NextBus.Type.toLowerCase()}.png" alt="${service.NextBus.Type}" style="width: 30px; height: auto;">` : ''}
+                        </span>
+                        <span class="bus-time">
+                            ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : ''} 
+                            &nbsp; 
+                            ${service.NextBus2.Type ? `<img src="assets/${service.NextBus2.Type.toLowerCase()}.png" alt="${service.NextBus2.Type}" style="width: 30px; height: auto;">` : ''}
+                        </span>
+                    </td>
+                    <td> 
+                        ${service.Operator ? `<img src="assets/${service.Operator.toLowerCase()}.png" alt="${service.Operator}" class="operator-logo">` : ''}
+                    </td>
+                `;
                     tableBody.appendChild(row);
                 });
 
@@ -491,15 +464,12 @@
         function formatArrivalTimeOrArr(isoString, now) {
             const arrivalTime = new Date(isoString);
 
-            // Allow a small margin for matching the current time
             const timeDifference = arrivalTime - now;
 
-            // If the arrival time is in the past or within the current minute, show "Arr"
             if (timeDifference <= 0 && timeDifference > -60000) {
                 return `<span class="arrival-now">Arr</span>`;
             }
 
-            // Otherwise, format the time as hh:mm
             const hours = arrivalTime.getHours().toString().padStart(2, '0');
             const minutes = arrivalTime.getMinutes().toString().padStart(2, '0');
             return `${hours}:${minutes}`;

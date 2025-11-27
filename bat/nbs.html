@@ -310,7 +310,7 @@
             const busStopsContainer = document.getElementById('bus-stops');
 
             // Display "Searching for nearby bus stops..." message
-            busStopsContainer.innerHTML = '<p style="text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px;"><span class="spinner"></span> Searching for nearby bus stops...</p>';
+            busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span> Searching for nearby bus stops...</p>';
 
             // Check if geolocation is available
             if (!navigator.geolocation) {

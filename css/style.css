@@ -2586,7 +2586,8 @@ select:focus {
 #summary,
 #time,
 #conc-rea,
-#descol {
+#descol,
+#pinned {
     scroll-margin-top: 12vh;
 }
 
@@ -3936,12 +3937,6 @@ table th {
     padding: 0 1em;
 }
 
-.pinned p {
-    text-align: center;
-    color: #0078d4;
-    cursor: pointer;
-}
-
 .card-bz p {
     margin-top: 0.7em;
     font-size: 25px;
@@ -4056,4 +4051,24 @@ table th {
     font-size: 15px;
     margin-bottom: 0px;
     color: #757575;
+}
+
+.pin-msg {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pinned p {
+    text-align: center;
+    color: #000;
+    cursor: pointer;
 }

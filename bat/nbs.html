@@ -212,11 +212,12 @@
 
                     <ul>
                         <li>
-                            <a href="../buszy.html#pinned"><i class="fa-sharp fa-solid fa-thumbtack-angle"></i> Pinned</a>
+                            <a href="../buszy.html#pinned"><i class="fa-sharp fa-solid fa-thumbtack-angle"></i>
+                                Pinned</a>
                         </li>
 
                         <li>
-                            <a href="#" class="active" ><i class="fa-solid fa-location-dot"></i> Nearby</a>
+                            <a href="#" class="active"><i class="fa-solid fa-location-dot"></i> Nearby</a>
                         </li>
 
                         <li>
@@ -310,12 +311,12 @@
             const busStopsContainer = document.getElementById('bus-stops');
 
             // Display "Searching for nearby bus stops..." message
-            busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span> Searching for nearby bus stops...</p>';
+            busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Searching for nearby bus stops...</p>';
 
             // Check if geolocation is available
             if (!navigator.geolocation) {
                 alert('Geolocation is not supported by your browser.');
-                busStopsContainer.innerHTML = '<p style="text-align:center;">Geolocation is not supported by your browser.</p>';
+                busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Geolocation is not supported by your browser.</p>';
                 return;
             }
 
@@ -335,12 +336,11 @@
                     displayBusStops(busStops);
                 } catch (error) {
                     console.error('Error:', error);
-                    busStopsContainer.innerHTML = '<p>Failed to fetch nearby bus stops. Please try again later.</p>';
-                    footer.style.display = 'block';
+                    busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Failed to fetch nearby bus stops. Please try again later.</p>';
                 }
             }, (error) => {
                 console.error('Geolocation error:', error);
-                busStopsContainer.innerHTML = '<p>Unable to retrieve your location.</p>';
+                busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.</p>';
             });
         });
 
@@ -363,7 +363,7 @@
                     fetchNearbyBusStops(latitude, longitude);
                 }, (error) => {
                     console.error('Geolocation error:', error);
-                    busStopsContainer.innerHTML = '<p>Unable to retrieve your location.</p>';
+                    busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.</p>';
                 }, {
                     enableHighAccuracy: true,
                     timeout: 10000,
@@ -383,30 +383,28 @@
                 displayBusStops(busStops);
             } catch (error) {
                 console.error('Error:', error);
-                busStopsContainer.innerHTML = '<p style="text-align:center;">Failed to fetch nearby bus stops. Please try again later.</p>';
-                footer.style.display = 'block';
+                busStopsContainer.innerHTML = '<p class="pin-msg"<i class="fa-solid fa-triangle-exclamation"></i>Failed to fetch nearby bus stops. Please try again later.</p>';
             }
         }
 
-// Display the 3 nearest bus stops
-function displayBusStops(busStops) {
-    const busStopsContainer = document.getElementById('bus-stops');
-    const footer = document.querySelector('.footer'); // Select the footer
-    busStopsContainer.innerHTML = ''; // Clear previous results
+        // Display the 3 nearest bus stops
+        function displayBusStops(busStops) {
+            const busStopsContainer = document.getElementById('bus-stops');
+            busStopsContainer.innerHTML = ''; // Clear previous results
 
-    if (!busStops || busStops.length === 0) {
-        busStopsContainer.innerHTML = '<p>No bus stops found nearby.</p>';
-        return;
-    }
+            if (!busStops || busStops.length === 0) {
+                busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-circle-info"></i>No Bus Stops found nearby.</p>';
+                return;
+            }
 
-    busStops.forEach((busStop) => {
-        const distance = busStop.distance < 1
-            ? `${(busStop.distance * 1000).toFixed(0)} m` // Convert to meters if less than 1 km
-            : `${busStop.distance.toFixed(2)} km`; // Show in kilometers otherwise
+            busStops.forEach((busStop) => {
+                const distance = busStop.distance < 1
+                    ? `${(busStop.distance * 1000).toFixed(0)} m` // Convert to meters if less than 1 km
+                    : `${busStop.distance.toFixed(2)} km`; // Show in kilometers otherwise
 
-        const busStopElement = document.createElement('div');
-        busStopElement.className = 'bus-stop';
-        busStopElement.innerHTML = `
+                const busStopElement = document.createElement('div');
+                busStopElement.className = 'bus-stop';
+                busStopElement.innerHTML = `
             <p class="bs-name"><span>${busStop.Description}</span> </p>
             <p class="bs-info">
                 <span style="font-weight:bold;">${busStop.BusStopCode}</span> | 
@@ -415,16 +413,16 @@ function displayBusStops(busStops) {
             </p>
         `;
 
-        // Add click event listener to the entire div
-        busStopElement.addEventListener('click', () => {
-            // Navigate to buszy.html with the BusStopCode as a query parameter
-            window.location.href = `art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
-        });
+                // Add click event listener to the entire div
+                busStopElement.addEventListener('click', () => {
+                    // Navigate to buszy.html with the BusStopCode as a query parameter
+                    window.location.href = `art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
+                });
 
-        busStopsContainer.appendChild(busStopElement);
-    });
+                busStopsContainer.appendChild(busStopElement);
+            });
 
-}
+        }
 
         document.addEventListener('DOMContentLoaded', () => {
             const searchBusStopButton = document.querySelector('a[href="buszy.html"]'); // Select the "Search Bus Stop" button

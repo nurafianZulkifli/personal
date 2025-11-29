@@ -246,7 +246,8 @@
                 <div class="card-bz card-ann">
                     <img src="bat/assets/settings.png" alt="settings" class="card-icon" />
                     <p>Settings</p>
-                    <a href="bat/settings.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="bat/settings.html" class="btn bz-btn btn-2 mt-15"><i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -389,6 +390,11 @@
 
             // Update the <h2> element with the all-apps
             allappsElement.textContent = getGreeting();
+        });
+
+        // Refresh the active tab when the back button is pressed
+        window.addEventListener('popstate', () => {
+            location.reload();
         });
     </script>
 

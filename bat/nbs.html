@@ -452,42 +452,7 @@
                 }
             }
         });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabs = document.querySelectorAll('.scrollable-tabs-container ul li a');
-
-            // Function to update the active tab based on the current URL
-            function updateActiveTab() {
-                const currentPath = window.location.pathname;
-
-                tabs.forEach(tab => {
-                    const tabHref = tab.getAttribute('href');
-                    if (currentPath.endsWith(tabHref)) {
-                        tab.classList.add('active');
-                    } else {
-                        tab.classList.remove('active');
-                    }
-                });
-            }
-
-            // Call the function on page load
-            updateActiveTab();
-
-            // Listen for the popstate event (triggered by back/forward buttons)
-            window.addEventListener('popstate', () => {
-                updateActiveTab();
-            });
-
-            // Update the browser history when a tab is clicked
-            tabs.forEach(tab => {
-                tab.addEventListener('click', (event) => {
-                    const href = tab.getAttribute('href');
-                    history.pushState(null, '', href);
-                    updateActiveTab();
-                });
-            });
-        });
-
+        
         // Refresh the active tab when the back button is pressed
         window.addEventListener('popstate', () => {
             location.reload();

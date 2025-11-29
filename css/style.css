@@ -3636,7 +3636,7 @@ table th {
 
 .bus-time {
     display: inline-block;
-    width: 130px;
+    width: 144px;
     text-align: center;
     margin-right: 10em;
     font-size: 20px;
@@ -3689,6 +3689,11 @@ table th {
 
 .arrival-now {
     color: #7bb108;
+    font-weight: bold;
+}
+
+.arrival-grey {
+    color: #8d8d8d;
     font-weight: bold;
 }
 
@@ -3970,6 +3975,7 @@ table th {
     border: none;
     margin-left: 3em;
     margin-right: 3em;
+    width: 100px;
 }
 
 .btn-unpin {
@@ -4072,4 +4078,10 @@ table th {
     text-align: center;
     color: #000;
     cursor: pointer;
+}
+
+.fetch {
+    margin-top: 1em;
+    color: #4d4d4d;
+    text-align: left !important;
 }

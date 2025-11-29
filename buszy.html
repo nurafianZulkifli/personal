@@ -68,11 +68,11 @@
 
         .card-container {
             display: grid;
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: 50% 50%;
             gap: 20px;
             margin-bottom: 4em;
-            padding-left: 3em;
-            padding-right: 3em;
+            padding-left: 0em;
+
         }
 
         .card-bz {
@@ -80,8 +80,15 @@
         }
 
         .card-bz p {
-            font-size: 20px;
+            font-size: 16px;
         }
+
+        .bz-btn {
+            margin-left: 0em;
+            margin-right: 0em;
+            width: 100px;
+        }
+
     }
 
     .footer {
@@ -236,14 +243,18 @@
                     <p>Announcements</p>
                     <a href="bat/ann.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-
+                <div class="card-bz card-ann">
+                    <img src="bat/assets/ann.png" alt="ann" class="card-icon" />
+                    <p>Settings</p>
+                    <a href="bat/settings.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="pinned" id="pinned">
         <div class="container">
-            <h2><i class="fa-solid fa-location-pin"></i>&nbsp; Pinned Bus Stops</h2>
+            <h2><i class="fa-solid fa-location-pin"></i>&nbsp;Pinned Bus Stops</h2>
             <!-- Section Contents -->
             <section class="about-me-summ clearfix" style="padding-bottom: 5em;">
                 <div id="bookmarks-container" class="list-group"></div>
@@ -370,7 +381,7 @@
                 if (hours >= 5 && hours < 12) {
                     return 'Good Morning!';
                 } else if (hours >= 12 && hours < 18) {
-                    return 'Good Afternoon!!';
+                    return 'Good Afternoon!';
                 } else {
                     return 'Good Evening!';
                 }

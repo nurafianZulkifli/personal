@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Search Bus Stop | Buszy</title>
+    <title>Nearby Bus Stops | Buszy</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
@@ -39,6 +39,35 @@
 
     .footer {
         display: none;
+    }
+
+    .btn-rfetch {
+        position: relative;
+        z-index: 1;
+        min-width: 50px;
+        width: 170px;
+        height: 46px;
+        line-height: 46px;
+        font-size: 14px;
+        font-weight: 500;
+        display: inline-block;
+        padding: 0 30px;
+        text-align: center;
+        text-transform: capitalize;
+        color: #fff;
+        border-radius: 60px;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        border: none;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+        background-color: #bb2d3b;
+    }
+
+    .btn-rfetch:focus,
+    .btn-rfetch:hover {
+        font-weight: 500;
+        background-color: #6d99c0 !important;
+        color: #fff;
+        transform: translateY(-2px);
     }
 </style>
 
@@ -193,15 +222,8 @@
                             <div
                                 style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                                 <div>
-                                    <h1 class="page-title" id="filter-title">Arrival Timings</h1>
+                                    <h1 class="page-title" id="filter-title">Settings</h1>
                                 </div>
-                                <div style="position: relative; max-width: 400px; margin-top: 5px; display: none;">
-                                    <i class="fa-solid fa-search"
-                                        style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #cccccc; z-index: 1;"></i>
-                                    <input type="text" id="bus-stop-search" class="form-control"
-                                        placeholder=" Search Bus Stop Code" style="padding-left: 35px; width: 100%;">
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -224,7 +246,7 @@
                         </li>
 
                         <li>
-                            <a href="nbs.html"><i class="fa-solid fa-location-dot"></i> Nearby</a>
+                            <a href="#"><i class="fa-solid fa-location-dot"></i> Nearby</a>
                         </li>
 
                         <li>
@@ -236,9 +258,8 @@
                             <a href="ann.html"><i class="fa-solid fa-bullhorn"></i>
                                 Announcements</a>
                         </li>
-
                         <li>
-                            <a href="settings.html"><i class="fa-solid fa-gear"></i>
+                            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i>
                                 Settings</a>
                         </li>
                     </ul>
@@ -257,37 +278,38 @@
         </div>
 
     </section>
-
     <!-- Section Contents -->
     <section class="about-me-summ clearfix" style="padding-bottom: 5em;">
+
         <div class="container">
-            <div class="fleet-legend">
-                <span><img src="assets/dd.png" alt="BD Icon" class="fleet-icon"> Double</span>
-                <span><img src="assets/bd.png" alt="SMRT Icon" class="fleet-icon"> Bendy</span>
-                <span><img src="assets/sd.png" alt="Other Icon" class="fleet-icon"> Single</span>
-            </div>
+            <h2 class="text-center" style="padding-top: 1em;">Time Formats</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <label for="time-format-12">
+                        <input type="radio" id="time-format-12" name="time-format" value="12-hour" checked>
+                        12-Hour Format (e.g. 2:30 PM) <br>
+                        <label for="time-format-24">
+                            <input type="radio" id="time-format-24" name="time-format" value="24-hour">
+                            24-Hour Format (e.g. 14:30)
+                        </label><br>
+                        <label for="time-format-mins">
+                            <input type="radio" id="time-format-mins" name="time-format" value="mins">
+                            Mins (e.g., 5 mins)
+                        </label>
+                    </label>
+                </li>
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col" class="svc-spacing">Services</th>
-                        <th scope="col" class="departure-spacing">Arrival Times</th>
-                        <th class="operator-column" scope="col">Operator</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="message">
-                        <td colspan="3">
-                            <p
-                                style="text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                                <span class="spinner"></span> Loading Data...
-                            </p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            </ul>
 
+            <h2 class="text-center" style="padding-top: 1em;">Data</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <button id="clear-cache-btn" class="btn btn-rfetch">Re-fetch data</button><br>
+                    <p class="fetch">Clear cached bus stop data to ensure you have the latest information.</p>
+                </li>
+            </ul>
         </div>
+
     </section>
 
     <!-- Footer -->
@@ -339,173 +361,55 @@
 
     <script src="../js/utils.js"></script>
 
-
     <script>
+        // Function to handle time format change
         document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('bus-stop-search'); // Search input field
-            const tableBody = document.querySelector('table tbody'); // Table body
+            const timeFormatRadios = document.querySelectorAll('input[name="time-format"]');
 
-            // Get the BusStopCode from the URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const busStopCode = urlParams.get('BusStopCode');
-
-            if (busStopCode) {
-                searchInput.value = busStopCode;
-                fetchBusArrivals();
-            } else {
-                const savedSearch = sessionStorage.getItem('busStopSearch');
-                if (savedSearch) {
-                    searchInput.value = savedSearch;
-                    fetchBusArrivals();
-                } else {
-                    tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
-                }
+            // Load the saved time format from localStorage
+            const savedFormat = localStorage.getItem('timeFormat');
+            if (savedFormat) {
+                document.querySelector(`input[value="${savedFormat}"]`).checked = true;
             }
 
-            const updateUrl = () => {
-                const url = new URL(window.location.href);
-                const currentValue = searchInput.value.trim();
+            // Add event listeners to update the time format
+            timeFormatRadios.forEach(radio => {
+                radio.addEventListener('change', (event) => {
+                    const selectedFormat = event.target.value;
+                    localStorage.setItem('timeFormat', selectedFormat);
+                    alert(`Time format updated to ${selectedFormat}`);
+                });
+            });
 
-                if (currentValue) {
-                    url.searchParams.set('busStopCode', currentValue);
-                } else {
-                    url.searchParams.delete('busStopCode');
-                }
+            // Handle re-fetch data button
+            const clearCacheBtn = document.getElementById('clear-cache-btn');
+            clearCacheBtn.addEventListener('click', async () => {
+                if (confirm('Are you sure you want to re-fetch data? This will delete existing cached data.')) {
+                    try {
+                        // Clear cached data
+                        localStorage.removeItem('allBusStops');
 
-                window.history.replaceState({}, document.title, url.toString());
-            };
+                        // Fetch updated data from the API
+                        const response = await fetch('https://bat-lta-9eb7bbf231a2.herokuapp.com/bus-stops'); // Replace with your API URL
+                        if (!response.ok) {
+                            throw new Error('Failed to fetch data from the API.');
+                        }
 
-            searchInput.addEventListener('input', debounce(() => {
-                updateUrl();
-                fetchBusArrivals();
-            }, 300));
+                        const updatedData = await response.json();
 
-            // Refresh data every 5 seconds
-            setInterval(fetchBusArrivals, 5000);
+                        // Save the updated data to localStorage
+                        localStorage.setItem('allBusStops', JSON.stringify(updatedData));
 
-            // Listen for changes in localStorage to update time format dynamically
-            window.addEventListener('storage', (event) => {
-                if (event.key === 'timeFormat') {
-                    fetchBusArrivals(); // Re-fetch and update the table with the new format
+                        alert('Data successfully re-fetched and updated.');
+                    } catch (error) {
+                        console.error('Error re-fetching data:', error);
+                        alert('An error occurred while re-fetching data. Please try again later.');
+                    }
                 }
             });
         });
-
-        function debounce(func, delay) {
-            let timeout;
-            return function (...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, args), delay);
-            };
-        }
-
-        // Updated fetchBusArrivals function
-        async function fetchBusArrivals() {
-            try {
-                const searchInput = document.getElementById('bus-stop-search').value.trim();
-                const tableBody = document.querySelector('table tbody');
-
-                if (!searchInput) {
-                    tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
-                    return;
-                }
-
-                const url = new URL('https://bat-lta-9eb7bbf231a2.herokuapp.com/bus-arrivals');
-                url.searchParams.append('BusStopCode', searchInput);
-
-                const response = await fetch(url);
-
-                if (!response.ok) {
-                    throw new Error('Failed to fetch bus arrivals');
-                }
-
-                const data = await response.json();
-                console.log('API Response:', data);
-
-                tableBody.innerHTML = '';
-
-                if (!data.Services || data.Services.length === 0) {
-                    tableBody.innerHTML = '<tr><td colspan="3">No data available</td></tr>';
-                    return;
-                }
-
-                const now = new Date();
-
-                data.Services.forEach((service) => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                <td class="svcNumtd">
-                    <p class="svcNum">${service.ServiceNo}</p>
-                </td>
-                <td class="departure-spacing">
-                    <span class="bus-time">
-                        ${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : '-'} 
-                        &nbsp; 
-                        ${service.NextBus.Type ? `<img src="assets/${service.NextBus.Type.toLowerCase()}.png" alt="${service.NextBus.Type}" style="width: 30px; height: auto;">` : ''}
-                    </span>
-                    <span class="bus-time">
-                        ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : ''} 
-                        &nbsp; 
-                        ${service.NextBus2.Type ? `<img src="assets/${service.NextBus2.Type.toLowerCase()}.png" alt="${service.NextBus2.Type}" style="width: 30px; height: auto;">` : ''}
-                    </span>
-                </td>
-                <td> 
-                    ${service.Operator ? `<img src="assets/${service.Operator.toLowerCase()}.png" alt="${service.Operator}" class="operator-logo">` : ''}
-                </td>
-            `;
-                    tableBody.appendChild(row);
-                });
-
-            } catch (error) {
-                console.error('Error fetching bus arrivals:', error);
-                const tableBody = document.querySelector('table tbody');
-                tableBody.innerHTML = '<tr><td colspan="3"><p style = "text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px;" Error loading data</td></tr>';
-            }
-        }
-
-        // Function to format ISO string to hh:mm or show "Arrive" or greyed-out time
-        function formatArrivalTimeOrArr(isoString, now) {
-            const arrivalTime = new Date(isoString);
-
-            const timeDifference = arrivalTime - now;
-
-            if (timeDifference === 0) {
-                // Show "Arr" if the time difference is exactly 0
-                return `<span class="arrival-now">Arr</span>`;
-            } else if (timeDifference < 0) {
-                // Continue showing "Arr" if the time difference is -1 or more
-                return `<span class="arrival-now">Arr</span>`;
-            }
-
-            // Get the saved time format from localStorage
-            const savedFormat = localStorage.getItem('timeFormat') || '12-hour';
-
-            if (savedFormat === 'mins') {
-                // Calculate the time difference in minutes
-                const minutes = Math.ceil(timeDifference / (1000 * 60));
-                return `${minutes} min${minutes === 1 ? '' : 's'}`; // Singular/plural handling
-            }
-
-            // Format the time based on the saved format
-            const options = savedFormat === '24-hour'
-                ? { hour: '2-digit', minute: '2-digit', hour12: false }
-                : { hour: '2-digit', minute: '2-digit', hour12: true };
-
-            return arrivalTime.toLocaleTimeString('en-US', options);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchBusStopButton = document.getElementById('search-bus-stop-button'); // Select the "Search Bus Stop" button
-            const searchInput = document.getElementById('bus-stop-search'); // Select the search input field
-
-            if (searchBusStopButton && searchInput) {
-                searchBusStopButton.addEventListener('click', () => {
-                    searchInput.value = ''; // Clear the search input field
-                    sessionStorage.removeItem('busStopSearch'); // Clear the session storage value
-                });
-            }
-        });
     </script>
+
 
 </body>
 

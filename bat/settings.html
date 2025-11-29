@@ -70,8 +70,10 @@
         transform: translateY(-2px);
     }
 
-    .label {
-        font-size: 15px;
+    .label-set {
+        padding-top: 0.5em !important;
+        padding-bottom: 0.5em !important;
+        font-size: 16px !important;
     }
 </style>
 
@@ -289,19 +291,20 @@
             <h2 class="text-center" style="padding-top: 1em;">Time Formats</h2>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <label for="time-format-12">
+                    <label for="time-format-12" class="label-set">
                         <input class="form-check-input" type="radio" id="time-format-12" name="time-format"
-                            value="12-hour" checked>
-                        12-Hour Format (e.g. 2:30 PM) <br>
-                        <label for="time-format-24">
-                            <input class="form-check-input" type="radio" id="time-format-24" name="time-format"
-                                value="24-hour">
-                            24-Hour Format (e.g. 14:30)
+                            value="12-hour" checked>&nbsp;
+                        12-Hour Format (02:30 PM)
                         </label><br>
-                        <label for="time-format-mins">
+                        <label for="time-format-24" class="label-set">
+                            <input class="form-check-input" type="radio" id="time-format-24" name="time-format"
+                                value="24-hour">&nbsp;
+                            24-Hour Format (14:30)
+                        </label><br>
+                        <label for="time-format-mins" class="label-set">
                             <input class="form-check-input" type="radio" id="time-format-mins" name="time-format"
-                                value="mins">
-                            Mins (e.g., 5 mins)
+                                value="mins">&nbsp;
+                            Mins (5 mins)
                         </label>
                     </label>
                 </li>

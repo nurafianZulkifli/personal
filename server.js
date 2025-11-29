@@ -8,7 +8,6 @@ const LTA_API_KEY = process.env.LTA_API_KEY;
 
 app.use(cors()); // Enable CORS
 
-
 // Define the /bus-arrivals route
 app.get('/bus-arrivals', async (req, res) => {
   try {
@@ -33,21 +32,17 @@ app.get('/bus-arrivals', async (req, res) => {
   }
 });
 
-
 // Define the /bus-stops route with skip support
-// Define the /bus-stops route with $skip support
 app.get('/bus-stops', async (req, res) => {
   try {
-    // Use $skip, $limit, and $end as query parameters
     const skip = parseInt(req.query.$skip) || 0;
     const limit = parseInt(req.query.$limit) || 500;
-    const end = req.query.$end === 'true'; // Check if $end is set to true
+    const end = req.query.$end === 'true';
 
     let busStops = [];
     let currentSkip = 0;
     let hasMoreData = true;
 
-    // Fetch all bus stops
     while (hasMoreData) {
       const response = await axios.get(`https://datamall2.mytransport.sg/ltaodataservice/BusStops?$skip=${currentSkip}`, {
         headers: {
@@ -66,16 +61,13 @@ app.get('/bus-stops', async (req, res) => {
       }
     }
 
-    // If $end is true, slice the last `limit` records
     let paginatedBusStops;
     if (end) {
       paginatedBusStops = busStops.slice(-limit);
     } else {
-      // Otherwise, slice based on $skip and $limit
       paginatedBusStops = busStops.slice(skip, skip + limit);
     }
 
-    // Return the data wrapped in an object with a "value" property
     res.json({ value: paginatedBusStops });
   } catch (error) {
     console.error('Error fetching bus stops from LTA:', error.message);
@@ -107,7 +99,6 @@ app.get('/nearby-bus-stops', async (req, res) => {
       return res.status(400).send('Latitude and Longitude are required');
     }
 
-    // Fetch all bus stops (handle pagination)
     let busStops = [];
     let skip = 0;
     let hasMoreData = true;
@@ -123,16 +114,14 @@ app.get('/nearby-bus-stops', async (req, res) => {
       const data = response.data.value;
       busStops = busStops.concat(data);
 
-      // If fewer than 500 records are returned, we've reached the last page
       if (data.length < 500) {
         hasMoreData = false;
       } else {
-        skip += 500; // Move to the next page
+        skip += 500;
       }
     }
 
-    // Calculate distances and find the 4 nearest bus stops
-    const nearbyBusStops = busStops // Replace `validBusStops` with `busStops`
+    const nearbyBusStops = busStops
       .map((busStop) => {
         const distance = calculateDistance(
           parseFloat(latitude),
@@ -143,12 +132,29 @@ app.get('/nearby-bus-stops', async (req, res) => {
         return { ...busStop, distance };
       })
       .filter((busStop) => busStop.distance <= parseFloat(radius))
-      .sort((a, b) => a.distance - b.distance) // Sort by distance
-      .slice(0, 4); // Get the 4 closest bus stops
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 4);
 
     res.json(nearbyBusStops);
   } catch (error) {
     console.error('Error fetching nearby bus stops:', error.message);
+    res.status(500).send('Error connecting to LTA DataMall');
+  }
+});
+
+// Define the /train-service-alerts route
+app.get('/train-service-alerts', async (req, res) => {
+  try {
+    const response = await axios.get('https://datamall2.mytransport.sg/ltaodataservice/TrainServiceAlerts', {
+      headers: {
+        AccountKey: LTA_API_KEY,
+        accept: 'application/json',
+      },
+    });
+
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error fetching train service alerts from LTA:', error.message);
     res.status(500).send('Error connecting to LTA DataMall');
   }
 });

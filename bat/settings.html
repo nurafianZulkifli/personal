@@ -69,6 +69,10 @@
         color: #fff;
         transform: translateY(-2px);
     }
+
+    .label {
+        font-size: 15px;
+    }
 </style>
 
 <body>
@@ -246,7 +250,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa-solid fa-location-dot"></i> Nearby</a>
+                            <a href="nbs.html"><i class="fa-solid fa-location-dot"></i> Nearby</a>
                         </li>
 
                         <li>
@@ -259,7 +263,7 @@
                                 Announcements</a>
                         </li>
                         <li>
-                            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i>
+                            <a href="#" class="active"><i class="fa-solid fa-gear"></i>
                                 Settings</a>
                         </li>
                     </ul>
@@ -286,14 +290,17 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     <label for="time-format-12">
-                        <input type="radio" id="time-format-12" name="time-format" value="12-hour" checked>
+                        <input class="form-check-input" type="radio" id="time-format-12" name="time-format"
+                            value="12-hour" checked>
                         12-Hour Format (e.g. 2:30 PM) <br>
                         <label for="time-format-24">
-                            <input type="radio" id="time-format-24" name="time-format" value="24-hour">
+                            <input class="form-check-input" type="radio" id="time-format-24" name="time-format"
+                                value="24-hour">
                             24-Hour Format (e.g. 14:30)
                         </label><br>
                         <label for="time-format-mins">
-                            <input type="radio" id="time-format-mins" name="time-format" value="mins">
+                            <input class="form-check-input" type="radio" id="time-format-mins" name="time-format"
+                                value="mins">
                             Mins (e.g., 5 mins)
                         </label>
                     </label>
@@ -377,7 +384,7 @@
                 radio.addEventListener('change', (event) => {
                     const selectedFormat = event.target.value;
                     localStorage.setItem('timeFormat', selectedFormat);
-                    alert(`Time format updated to ${selectedFormat}`);
+                    alert(`Time format updated to ${selectedFormat}.`);
                 });
             });
 

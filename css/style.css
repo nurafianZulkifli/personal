@@ -4085,3 +4085,7 @@ table th {
     color: #4d4d4d;
     text-align: left !important;
 }
+
+.alert-warning {
+    border-radius: 25px;
+}

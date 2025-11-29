@@ -288,8 +288,8 @@
         </div>
     </footer>
 
-    <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
-        data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
+    <script type="text/javascript" id="cookiebanner" src="js/cookies-banner.js" data-position="bottom" data-bg="#f2f3e5"
+        data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
@@ -392,9 +392,11 @@
             allappsElement.textContent = getGreeting();
         });
 
-        // Refresh the active tab when the back button is pressed
-        window.addEventListener('popstate', () => {
-            location.reload();
+        // Handle the back button
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.tab) {
+                location.reload(); // Reload the page or handle the tab change
+            }
         });
     </script>
 

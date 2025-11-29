@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Nearby Bus Stops | Buszy</title>
+    <title>Settings | Buszy</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
@@ -295,17 +295,17 @@
                         <input class="form-check-input" type="radio" id="time-format-12" name="time-format"
                             value="12-hour" checked>&nbsp;
                         12-Hour Format (02:30 PM)
-                        </label><br>
-                        <label for="time-format-24" class="label-set">
-                            <input class="form-check-input" type="radio" id="time-format-24" name="time-format"
-                                value="24-hour">&nbsp;
-                            24-Hour Format (14:30)
-                        </label><br>
-                        <label for="time-format-mins" class="label-set">
-                            <input class="form-check-input" type="radio" id="time-format-mins" name="time-format"
-                                value="mins">&nbsp;
-                            Mins (5 mins)
-                        </label>
+                    </label><br>
+                    <label for="time-format-24" class="label-set">
+                        <input class="form-check-input" type="radio" id="time-format-24" name="time-format"
+                            value="24-hour">&nbsp;
+                        24-Hour Format (14:30)
+                    </label><br>
+                    <label for="time-format-mins" class="label-set">
+                        <input class="form-check-input" type="radio" id="time-format-mins" name="time-format"
+                            value="mins">&nbsp;
+                        Mins (5 mins)
+                    </label>
                     </label>
                 </li>
 
@@ -419,14 +419,13 @@
             });
         });
 
-        // Refresh the active tab when the back button is pressed
-        window.addEventListener('popstate', () => {
-            location.reload();
+        // Handle the back button
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.tab) {
+                location.reload(); // Reload the page or handle the tab change
+            }
         });
     </script>
-
-
-
 </body>
 
 </html>

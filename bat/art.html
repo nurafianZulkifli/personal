@@ -506,9 +506,11 @@
             }
         });
 
-        // Refresh the active tab when the back button is pressed
-        window.addEventListener('popstate', () => {
-            location.reload();
+        // Handle the back button
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.tab) {
+                location.reload(); // Reload the page or handle the tab change
+            }
         });
     </script>
 

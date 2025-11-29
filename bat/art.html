@@ -505,6 +505,11 @@
                 });
             }
         });
+
+        // Refresh the active tab when the back button is pressed
+        window.addEventListener('popstate', () => {
+            location.reload();
+        });
     </script>
 
 </body>

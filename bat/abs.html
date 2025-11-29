@@ -219,7 +219,8 @@
 
                     <ul>
                         <li>
-                            <a href="../buszy.html#pinned"><i class="fa-sharp fa-solid fa-thumbtack-angle"></i> Pinned</a>
+                            <a href="../buszy.html#pinned"><i class="fa-sharp fa-solid fa-thumbtack-angle"></i>
+                                Pinned</a>
                         </li>
 
                         <li>
@@ -230,13 +231,13 @@
                             <a href="#" class="active"><i class="fa-solid fa-magnifying-glass"></i>
                                 Search</a>
                         </li>
-                        
+
                         <li>
                             <a href="ann.html"><i class="fa-solid fa-bullhorn"></i>
                                 Announcements</a>
                         </li>
 
-                                                <li>
+                        <li>
                             <a href="settings.html"><i class="fa-solid fa-gear"></i>
                                 Settings</a>
                         </li>
@@ -494,6 +495,11 @@
                 currentPage = 1;
                 displayBusStops(filteredBusStops, currentPage);
             });
+        });
+
+        // Refresh the active tab when the back button is pressed
+        window.addEventListener('popstate', () => {
+            location.reload();
         });
     </script>
 

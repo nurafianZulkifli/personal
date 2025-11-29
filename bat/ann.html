@@ -348,32 +348,37 @@
 
     <script src="../js/utils.js"></script>
 
-<script>
-    // Fetch train service alerts and update the alert box
-    async function fetchTrainServiceAlerts() {
-        const alertBox = document.getElementById('train-alert');
-        try {
-            const response = await fetch('https://bat-lta-9eb7bbf231a2.herokuapp.com/train-service-alerts');
-            if (!response.ok) {
-                throw new Error(`Failed to fetch train service alerts: ${response.statusText}`);
-            }
-            const data = await response.json();
+    <script>
+        // Fetch train service alerts and update the alert box
+        async function fetchTrainServiceAlerts() {
+            const alertBox = document.getElementById('train-alert');
+            try {
+                const response = await fetch('https://bat-lta-9eb7bbf231a2.herokuapp.com/train-service-alerts');
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch train service alerts: ${response.statusText}`);
+                }
+                const data = await response.json();
 
-            // Check if there is a valid alert message
-            if (data && data.value && data.value.Message && Array.isArray(data.value.Message) && data.value.Message.length > 0) {
-                const alerts = data.value.Message.map(msg => msg.Content || 'No content available').join('<br>');
-                alertBox.innerHTML = `<i class="fa-solid fa-bullhorn"></i> ${alerts}`;
-            } else {
-                alertBox.innerHTML = `<i class="fa-solid fa-bullhorn"></i> No active train service alerts.`;
+                // Check if there is a valid alert message
+                if (data && data.value && data.value.Message && Array.isArray(data.value.Message) && data.value.Message.length > 0) {
+                    const alerts = data.value.Message.map(msg => msg.Content || 'No content available').join('<br>');
+                    alertBox.innerHTML = `<i class="fa-solid fa-bullhorn"></i> ${alerts}`;
+                } else {
+                    alertBox.innerHTML = `<i class="fa-solid fa-bullhorn"></i> No active train service alerts.`;
+                }
+            } catch (error) {
+                alertBox.innerHTML = `<i class="fa-solid fa-bullhorn"></i> Unable to load train service alerts.`;
             }
-        } catch (error) {
-            alertBox.innerHTML = `<i class="fa-solid fa-bullhorn"></i> Unable to load train service alerts.`;
         }
-    }
 
-    // Call the function to fetch train service alerts
-    fetchTrainServiceAlerts();
-</script>
+        // Call the function to fetch train service alerts
+        fetchTrainServiceAlerts();
+
+        // Refresh the active tab when the back button is pressed
+        window.addEventListener('popstate', () => {
+            location.reload();
+        });
+    </script>
 </body>
 
 </html>

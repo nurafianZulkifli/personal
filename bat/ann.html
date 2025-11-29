@@ -382,13 +382,6 @@
 
         // Call the function to fetch train service alerts
         fetchTrainServiceAlerts();
-
-        // Handle the back button
-        window.addEventListener('popstate', (event) => {
-            if (event.state && event.state.tab) {
-                location.reload(); // Reload the page or handle the tab change
-            }
-        });
     </script>
 </body>
 

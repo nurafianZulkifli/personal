@@ -402,9 +402,9 @@
 
                     // Pinned button
                     const bookmarkButton = document.createElement('button');
-                    const isPinneded = bookmarks.some((b) => b.BusStopCode === busStop.BusStopCode);
+                    const isPinned = bookmarks.some((b) => b.BusStopCode === busStop.BusStopCode);
 
-                    if (isPinneded) {
+                    if (isPinned) {
                         // If already bookmarked, show as bookmarked
                         bookmarkButton.innerHTML = '<i class="fa-solid fa-thumbtack-angle-slash"></i>'
                         bookmarkButton.className = 'btn btn-unpin btn-sm';
@@ -439,7 +439,7 @@
                     // Add the pinned bus stop
                     bookmarks.push(busStop);
                     localStorage.setItem('bookmarkedBusStops', JSON.stringify(bookmarks));
-                    alert('Bus Stop Pinned!');
+                    alert('Bus Stop Pinned.');
 
                     // Update the button to indicate the bus stop is pinned
                     button.innerHTML = '<i class="fa-solid fa-thumbtack-angle-slash"></i>';
@@ -449,7 +449,7 @@
                     // Remove the pinned bus stop
                     bookmarks.splice(bookmarkIndex, 1);
                     localStorage.setItem('bookmarkedBusStops', JSON.stringify(bookmarks));
-                    alert('Bus Stop Unpinned');
+                    alert('Bus Stop Unpinned.');
 
                     // Update the button to indicate the bus stop is not pinned
                     button.innerHTML = '<i class="fa-sharp fa-regular fa-thumbtack-angle"></i>';

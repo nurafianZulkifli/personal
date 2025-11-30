@@ -548,10 +548,6 @@ body.dark-mode .wbnrfz_eicw {
 body.dark-mode .form-control {
     display: block;
     width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
     color: #fff;
     appearance: none;
     background: #494949;

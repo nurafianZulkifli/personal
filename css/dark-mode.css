@@ -906,3 +906,9 @@ body.dark-mode .pinned p {
     color: #fff;
     cursor: pointer;
 }
+
+body.dark-mode .alert-warning {
+    background-color: #332701;
+    color: #ffda6a;
+    border-color:  #997404;
+}

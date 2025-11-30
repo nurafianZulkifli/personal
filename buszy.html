@@ -63,6 +63,7 @@
 
     @media only screen and (min-width: 320px) and (max-width: 454px) {
         .all-apps h2 {
+            margin-top: 1em;
             margin-left: 0em;
         }
 
@@ -80,7 +81,7 @@
         }
 
         .card-bz p {
-            font-size: 16px;
+            font-size: 17px;
         }
 
         .bz-btn {
@@ -387,8 +388,11 @@
                     return 'Good Evening!';
                 }
             }
+
+            // Update the <h2> element with the all-apps
+            allappsElement.textContent = getGreeting();
         });
-        
+
     </script>
 
 </body>

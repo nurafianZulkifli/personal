@@ -3999,6 +3999,11 @@ table th {
     margin-left: 1em;
 }
 
+.btn-nbs {
+    margin-left: 0em !important;
+    width: 100px !important;
+}
+
 .btn-toPin {
     position: relative;
     z-index: 1;

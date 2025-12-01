@@ -36,20 +36,73 @@
     #cv-bat {
         background-image: url("img/bg-img/hero-buszy.png");
         height: 40vh;
-        /* height: 10vh; */
     }
 
-    @media only screen and (min-width: 455px) and (max-width: 816px) {
+    @media only screen and (min-width: 1001px) and (max-width: 1199px) {
+        .card-container {
+            display: grid;
+            grid-template-columns: 47% 48%;
+            gap: 2em;
+            margin-bottom: 4em;
+            padding: 0 4em;
+        }
+
+        .all-apps h2 {
+            text-align: center;
+            margin-left: 0em;
+        }
+
+    }
+
+    @media only screen and (min-width: 844px) and (max-width: 1000px) {
+        .card-container {
+            display: grid;
+            grid-template-columns: 47% 48%;
+            gap: 2em;
+            margin-bottom: 4em;
+            padding: 0 5em;
+        }
+
+        .card-bz p {
+            font-size: 20px;
+        }
+
+        .all-apps h2 {
+            text-align: center;
+            margin-left: 0em;
+        }
+
+    }
+
+    @media only screen and (min-width: 801px) and (max-width: 843px) {
+        .card-container {
+            display: grid;
+            grid-template-columns: 47% 48%;
+            gap: 2em;
+            margin-bottom: 4em;
+            padding: 0 3em;
+        }
+
+        .card-bz p {
+            font-size: 19px;
+        }
+
+        .all-apps h2 {
+            text-align: center;
+            margin-left: 0em;
+        }
+    }
+
+    @media only screen and (min-width: 455px) and (max-width: 800px) {
         .all-apps h2 {
             margin-left: 0em;
         }
 
         .card-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: 47% 48%;
+            gap: 2em;
             margin-bottom: 4em;
-            padding: 0 0em;
         }
 
         .card-bz {
@@ -57,7 +110,17 @@
         }
 
         .card-bz p {
-            font-size: 20px;
+            font-size: 19px;
+        }
+
+        .bz-btn {
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+
+        .all-apps h2 {
+            text-align: center;
+            margin-left: 0em;
         }
     }
 
@@ -230,24 +293,24 @@
             <h2></h2>
             <div class="card-container">
                 <div class="card-bz card-nbs">
-                    <img src="bat/assets/nbs.png" alt="nbs" class="card-icon" />
+                    <img src="buszy/assets/nbs.png" alt="nbs" class="card-icon" />
                     <p>Nearby Bus Stops</p>
-                    <a href="bat/nbs.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="buszy/nbs.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="card-bz card-sbs">
-                    <img src="bat/assets/sbs.png" alt="sbs" class="card-icon" />
+                    <img src="buszy/assets/sbs.png" alt="sbs" class="card-icon" />
                     <p>Search Bus Stops</p>
-                    <a href="bat/abs.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="buszy/abs.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="card-bz card-ann">
-                    <img src="bat/assets/ann.png" alt="ann" class="card-icon" />
+                    <img src="buszy/assets/ann.png" alt="ann" class="card-icon" />
                     <p>Announcements</p>
-                    <a href="bat/ann.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="buszy/ann.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="card-bz card-ann">
-                    <img src="bat/assets/settings.png" alt="settings" class="card-icon" />
+                    <img src="buszy/assets/settings.png" alt="settings" class="card-icon" />
                     <p>Settings</p>
-                    <a href="bat/settings.html" class="btn bz-btn btn-2 mt-15"><i
+                    <a href="buszy/settings.html" class="btn bz-btn btn-2 mt-15"><i
                             class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -296,7 +359,7 @@
 
     <script src="js/navtabs.js"></script>
 
-    <script src="bat/buszy.js"></script>
+    <script src="buszy/buszy.js"></script>
 
     <script src="js/jquery.min.js"></script>
 
@@ -337,7 +400,7 @@
 
                     // Make the bus stop details clickable
                     const link = document.createElement('a');
-                    link.href = `bat/art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
+                    link.href = `buszy/art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
                     link.textContent = `${busStop.BusStopCode} - ${busStop.Description} (${busStop.RoadName})`;
                     link.style.flexGrow = '1';
                     link.style.textDecoration = 'none';

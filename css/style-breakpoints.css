@@ -855,6 +855,11 @@
         margin-left: 5vw;
         margin-right: 5vw;
     }
+
+    .all-apps h2 {
+        text-align: center;
+        margin-left: 0em;
+    }
 }
 
 /* ---- */
@@ -1052,6 +1057,11 @@
 
     .bs-name {
         text-align: left;
+    }
+
+    .all-apps h2 {
+        text-align: center;
+        margin-left: 0em;
     }
 
 }

@@ -392,25 +392,25 @@
             }
         }
 
-        // Display the 3 nearest bus stops
-        function displayBusStops(busStops) {
-            const busStopsContainer = document.getElementById('bus-stops');
-            busStopsContainer.innerHTML = ''; // Clear previous results
+      // Display the 3 nearest bus stops
+function displayBusStops(busStops) {
+    const busStopsContainer = document.getElementById('bus-stops');
+    busStopsContainer.innerHTML = ''; // Clear previous results
 
-            if (!busStops || busStops.length === 0) {
-                busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-circle-info"></i>No Bus Stops found nearby.</p>';
-                return;
-            }
+    if (!busStops || busStops.length === 0) {
+        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-circle-info"></i>No Bus Stops found nearby.</p>';
+        return;
+    }
 
-            busStops.forEach((busStop) => {
-                const distance = busStop.distance < 1
-                    ? `${(busStop.distance * 1000).toFixed(0)} m` // Convert to meters if less than 1 km
-                    : `${busStop.distance.toFixed(2)} km`; // Show in kilometers otherwise
+    busStops.forEach((busStop) => {
+        const distance = busStop.distance < 1
+            ? `${(busStop.distance * 1000).toFixed(0)} m` // Convert to meters if less than 1 km
+            : `${busStop.distance.toFixed(2)} km`; // Show in kilometers otherwise
 
-                const busStopElement = document.createElement('div');
-                busStopElement.className = 'bus-stop';
-                busStopElement.innerHTML = `
-            <p class="bs-name"><span>${busStop.Description}</span> </p>
+        const busStopElement = document.createElement('div');
+        busStopElement.className = 'bus-stop';
+        busStopElement.innerHTML = `
+            <p class="bs-name"><span>${busStop.Description}</span></p>
             <p class="bs-info">
                 <span style="font-weight:bold;">${busStop.BusStopCode}</span> | 
                 <span>${busStop.RoadName}</span> | 
@@ -418,16 +418,105 @@
             </p>
         `;
 
-                // Add click event listener to the entire div
-                busStopElement.addEventListener('click', () => {
-                    // Navigate to buszy.html with the BusStopCode as a query parameter
-                    window.location.href = `art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
-                });
+        // Add click event listener to the entire div
+        busStopElement.addEventListener('click', () => {
+            // Navigate to buszy.html with the BusStopCode as a query parameter
+            window.location.href = `art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
+        });
 
-                busStopsContainer.appendChild(busStopElement);
-            });
+        // Add click event listener to the "Pin" button
+        const pinButton = busStopElement.querySelector('.pin-btn');
+        pinButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent triggering the parent div's click event
+            pinBusStop(busStop); // Pin the bus stop
+        });
 
+        busStopsContainer.appendChild(busStopElement);
+    });
+}
+
+// Function to toggle pin/unpin for a bus stop
+function togglePinBusStop(busStop, pinButton) {
+    // Retrieve existing pinned bus stops from localStorage
+    let pinnedBusStops = JSON.parse(localStorage.getItem('bookmarkedBusStops')) || [];
+
+    // Check if the bus stop is already pinned
+    const isAlreadyPinned = pinnedBusStops.some((stop) => stop.BusStopCode === busStop.BusStopCode);
+
+    if (isAlreadyPinned) {
+        // Unpin the bus stop
+        const confirmUnpin = confirm(`Are you sure you want to unpin this bus stop?`);
+        if (confirmUnpin) {
+            pinnedBusStops = pinnedBusStops.filter((stop) => stop.BusStopCode !== busStop.BusStopCode);
+            localStorage.setItem('bookmarkedBusStops', JSON.stringify(pinnedBusStops));
+            alert(`Bus Stop Unpinned.`);
+
+            // Update the button class and icon to "unpin"
+            pinButton.className = 'btn btn-toPin btn-nbs btn-sm';
+            pinButton.innerHTML = '<i class="fa-sharp fa-regular fa-thumbtack-angle"></i>';
         }
+    } else {
+        // Pin the bus stop
+        pinnedBusStops.push(busStop);
+        localStorage.setItem('bookmarkedBusStops', JSON.stringify(pinnedBusStops));
+        alert(`Bus Stop Pinned.`);
+
+        // Update the button class and icon to "pin"
+        pinButton.className = 'btn btn-unpin btn-nbs btn-sm';
+        pinButton.innerHTML = '<i class="fa-solid fa-thumbtack-angle-slash"></i>';
+    }
+}
+
+// Display the 3 nearest bus stops
+function displayBusStops(busStops) {
+    const busStopsContainer = document.getElementById('bus-stops');
+    busStopsContainer.innerHTML = ''; // Clear previous results
+
+    if (!busStops || busStops.length === 0) {
+        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-circle-info"></i>No Bus Stops found nearby.</p>';
+        return;
+    }
+
+    // Retrieve existing pinned bus stops from localStorage
+    const pinnedBusStops = JSON.parse(localStorage.getItem('bookmarkedBusStops')) || [];
+
+    busStops.forEach((busStop) => {
+        const distance = busStop.distance < 1
+            ? `${(busStop.distance * 1000).toFixed(0)} m` // Convert to meters if less than 1 km
+            : `${busStop.distance.toFixed(2)} km`; // Show in kilometers otherwise
+
+        const isPinned = pinnedBusStops.some((stop) => stop.BusStopCode === busStop.BusStopCode);
+
+        const busStopElement = document.createElement('div');
+        busStopElement.className = 'bus-stop';
+        busStopElement.innerHTML = `
+            <p class="bs-name"><span>${busStop.Description}</span></p>
+            <p class="bs-info">
+                <span style="font-weight:bold;">${busStop.BusStopCode}</span> | 
+                <span>${busStop.RoadName}</span> | 
+                <span>${distance}</span>
+            </p>
+            <button class="${isPinned ? 'btn btn-unpin btn-nbs btn-sm' : 'btn btn-toPin btn-nbs btn-sm'}">
+                <i class="${isPinned ? 'fa-solid fa-thumbtack-angle-slash' : 'fa-sharp fa-regular fa-thumbtack-angle'}"></i>
+            </button>
+        `;
+
+        // Add click event listener to the entire div
+        busStopElement.addEventListener('click', () => {
+            // Navigate to buszy.html with the BusStopCode as a query parameter
+            window.location.href = `art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
+        });
+
+        // Add click event listener to the "Pin" button
+        const pinButton = busStopElement.querySelector('button');
+        pinButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent triggering the parent div's click event
+            togglePinBusStop(busStop, pinButton); // Toggle pin/unpin
+        });
+
+        busStopsContainer.appendChild(busStopElement);
+    });
+}
 
         document.addEventListener('DOMContentLoaded', () => {
             const searchBusStopButton = document.querySelector('a[href="buszy.html"]'); // Select the "Search Bus Stop" button

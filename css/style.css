@@ -3611,6 +3611,8 @@ img.mfp-img {
     border: 1px solid #ddd;
     border-radius: 25px;
     overflow: hidden;
+    border: 1px solid #2b2b2b33;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .table th,
@@ -3635,11 +3637,15 @@ table th {
 }
 
 .bus-time {
-    display: inline-block;
-    width: 144px;
+    display: inline-flex;
+    width: 200px;
     text-align: center;
-    margin-right: 10em;
+    margin-right: 4em;
     font-size: 20px;
+    justify-content: space-evenly;
+    font-weight: bold;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .svcNum {
@@ -3721,7 +3727,7 @@ table th {
 }
 
 .fleet-icon {
-    width: 20px;
+    width: 50px;
     height: 20px;
     object-fit: contain;
 }
@@ -4093,4 +4099,41 @@ table th {
 
 .alert-warning {
     border-radius: 25px;
+}
+
+/* Load Indicator Styles */
+.load-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Seats Available (SEA) - Green */
+.load-indicator.sea i {
+    color: #28a745;
+    font-size: 18px;
+}
+
+/* Standing Available (SDA) - Yellow */
+.load-indicator.sda i {
+    color: #dfa908;
+    font-size: 18px;
+}
+
+/* Limited Standing (LSD) - Red */
+.load-indicator.lsd i {
+    color: #dc3545;
+    font-size: 18px;
+}
+
+/* Default Load Indicator (Fallback) */
+.load-indicator.default i {
+    color: #6c757d;
+    font-size: 18px;
 }

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Search Bus Stop | Buszy</title>
+    <title>Arrival Timings | Buszy</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
@@ -35,6 +35,14 @@
 <style>
     #cv-bat-subp {
         height: 10vh;
+    }
+
+    .fl {
+        font-size: 15px;
+        background-color: #000;
+        color: #fff;
+        padding: 8px;
+        border-radius: 10px;
     }
 
     .footer {
@@ -441,15 +449,20 @@
                     <span class="bus-time">
                         ${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : '-'} 
                         &nbsp; 
-                        ${service.NextBus.Type ? `<img src="assets/${service.NextBus.Type.toLowerCase()}.png" alt="${service.NextBus.Type}" style="width: 30px; height: auto;">` : ''}
+                        ${service.NextBus.Type ? `<img src="assets/${service.NextBus.Type.toLowerCase()}.png" alt="${service.NextBus.Type}" style="width: 50px; height: auto;">` : ''}
+                        &nbsp;
+                        ${service.NextBus.Load ? `<span class="load-indicator ${service.NextBus.Load.toLowerCase()}"> ${getLoadIcon(service.NextBus.Load)}</span>` : ''}
                     </span>
+
                     <span class="bus-time">
-                        ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : ''} 
+                        ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : '-'} 
                         &nbsp; 
-                        ${service.NextBus2.Type ? `<img src="assets/${service.NextBus2.Type.toLowerCase()}.png" alt="${service.NextBus2.Type}" style="width: 30px; height: auto;">` : ''}
+                        ${service.NextBus2.Type ? `<img src="assets/${service.NextBus2.Type.toLowerCase()}.png" alt="${service.NextBus2.Type}" style="width: 50px; height: auto;">` : ''}
+                        &nbsp;
+                        ${service.NextBus2.Load ? `<span class="load-indicator ${service.NextBus2.Load.toLowerCase()}"> ${getLoadIcon(service.NextBus2.Load)}</span>` : ''}
                     </span>
                 </td>
-                <td> 
+                <td>
                     ${service.Operator ? `<img src="assets/${service.Operator.toLowerCase()}.png" alt="${service.Operator}" class="operator-logo">` : ''}
                 </td>
             `;
@@ -460,6 +473,19 @@
                 console.error('Error fetching bus arrivals:', error);
                 const tableBody = document.querySelector('table tbody');
                 tableBody.innerHTML = '<tr><td colspan="3"><p style = "text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px;" Error loading data</td></tr>';
+            }
+        }
+
+        function getLoadIcon(load) {
+            switch (load) {
+                case 'SEA':
+                    return '<i class="fa-solid fa-user" title="Seats Available"></i>'; // Icon for SEA
+                case 'SDA':
+                    return '<i class="fa-solid fa-user-group" title="Standing Available"></i>'; // Icon for SDA
+                case 'LSD':
+                    return '<i class="fa-solid fa-people-group" title="Limited Standing"></i>'; // Icon for LSD
+                default:
+                    return ''; // No icon for unknown load values
             }
         }
 

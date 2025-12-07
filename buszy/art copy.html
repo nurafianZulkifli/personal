@@ -349,9 +349,9 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', async () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('bus-stop-search'); // Search input field
-            const filterTitle = document.getElementById('filter-title'); // Title element
+            const tableBody = document.querySelector('table tbody'); // Table body
 
             // Get the BusStopCode from the URL
             const urlParams = new URLSearchParams(window.location.search);
@@ -359,49 +359,15 @@
 
             if (busStopCode) {
                 searchInput.value = busStopCode;
-
-                // Fetch the bus stop name from the /bus-stops endpoint
-                try {
-                    let busStops = JSON.parse(localStorage.getItem('allBusStops')) || [];
-
-                    // If bus stops are not cached, fetch them from the server
-                    if (busStops.length === 0) {
-                        let skip = 0;
-                        let hasMoreData = true;
-
-                        while (hasMoreData) {
-                            const response = await fetch(`https://bat-lta-9eb7bbf231a2.herokuapp.com/bus-stops?$skip=${skip}`);
-                            const data = await response.json();
-
-                            if (data.value.length === 0) {
-                                hasMoreData = false;
-                            } else {
-                                busStops = busStops.concat(data.value);
-                                skip += 500; // Move to the next page
-                            }
-                        }
-
-                        // Save the fetched bus stops to localStorage
-                        localStorage.setItem('allBusStops', JSON.stringify(busStops));
-                    }
-
-                    // Find the bus stop by BusStopCode
-                    const busStop = busStops.find(stop => stop.BusStopCode === busStopCode);
-
-                    if (busStop) {
-                        // Update title with bus stop name and code
-                        filterTitle.textContent = `${busStop.BusStopCode} - ${busStop.Description}`;
-                    } else {
-                        filterTitle.textContent = `Bus Stop Not Found (${busStopCode})`;
-                    }
-                } catch (error) {
-                    console.error('Error fetching bus stop name:', error);
-                    filterTitle.textContent = `Error Loading Bus Stop Name (${busStopCode})`;
-                }
-
-                fetchBusArrivals(); // Fetch bus arrival timings
+                fetchBusArrivals();
             } else {
-                filterTitle.textContent = 'Enter Bus Stop Code';
+                const savedSearch = sessionStorage.getItem('busStopSearch');
+                if (savedSearch) {
+                    searchInput.value = savedSearch;
+                    fetchBusArrivals();
+                } else {
+                    tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
+                }
             }
 
             const updateUrl = () => {
@@ -409,9 +375,9 @@
                 const currentValue = searchInput.value.trim();
 
                 if (currentValue) {
-                    url.searchParams.set('BusStopCode', currentValue);
+                    url.searchParams.set('busStopCode', currentValue);
                 } else {
-                    url.searchParams.delete('BusStopCode');
+                    url.searchParams.delete('busStopCode');
                 }
 
                 window.history.replaceState({}, document.title, url.toString());
@@ -423,7 +389,7 @@
             }, 300));
 
             // Refresh data every 5 seconds
-            // setInterval(fetchBusArrivals, 5000);
+            setInterval(fetchBusArrivals, 5000);
 
             // Listen for changes in localStorage to update time format dynamically
             window.addEventListener('storage', (event) => {
@@ -448,12 +414,7 @@
                 const tableBody = document.querySelector('table tbody');
 
                 if (!searchInput) {
-                    tableBody.innerHTML = `
-                <tr class="no-data">
-                    <td colspan="3">
-                        <p>Pick a Bus stop in the Search Page.</p>
-                    </td>
-                </tr>`;
+                    tableBody.innerHTML = '<tr class="message"><td colspan="3">Enter Bus Stop Code on the Search Box.</td></tr>';
                     return;
                 }
 
@@ -472,12 +433,7 @@
                 tableBody.innerHTML = '';
 
                 if (!data.Services || data.Services.length === 0) {
-                    tableBody.innerHTML = `
-                <tr class="no-data">
-                    <td colspan="3">
-                        <p>No Data Available</p>
-                    </td>
-                </tr>`;
+                    tableBody.innerHTML = '<tr><td colspan="3"><p style = "text-align:center; display: flex; align-items: center; justify-content: center; gap: 10px;" No Data Avaliable</td></tr>';
                     return;
                 }
 
@@ -491,16 +447,16 @@
                 </td>
                 <td class="departure-spacing">
                     <span class="bus-time">
-                        ${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : ''} 
-                        &nbsp; &nbsp; 
+                        ${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : '-'} 
+                        &nbsp; 
                         ${service.NextBus.Type ? `<img src="assets/${service.NextBus.Type.toLowerCase()}.png" alt="${service.NextBus.Type}" style="width: 50px; height: auto;">` : ''}
                         &nbsp;
                         ${service.NextBus.Load ? `<span class="load-indicator ${service.NextBus.Load.toLowerCase()}"> ${getLoadIcon(service.NextBus.Load)}</span>` : ''}
                     </span>
 
                     <span class="bus-time">
-                        ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : ''} 
-                        &nbsp;&nbsp; 
+                        ${service.NextBus2.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus2.EstimatedArrival, now) : '-'} 
+                        &nbsp; 
                         ${service.NextBus2.Type ? `<img src="assets/${service.NextBus2.Type.toLowerCase()}.png" alt="${service.NextBus2.Type}" style="width: 50px; height: auto;">` : ''}
                         &nbsp;
                         ${service.NextBus2.Load ? `<span class="load-indicator ${service.NextBus2.Load.toLowerCase()}"> ${getLoadIcon(service.NextBus2.Load)}</span>` : ''}

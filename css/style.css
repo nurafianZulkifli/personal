@@ -3642,7 +3642,7 @@ table th {
     text-align: center;
     margin-right: 4em;
     font-size: 20px;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     font-weight: bold;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -4108,7 +4108,6 @@ table th {
     justify-content: center;
     border-radius: 15px;
     font-size: 14px;
-    padding-top: 0.5em;
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;
@@ -4117,7 +4116,7 @@ table th {
 /* Seats Available (SEA) - Green */
 .load-indicator.sea i {
     color: #28a745;
-    font-size: 15px;
+    font-size: 19px;
 }
 
 /* Standing Available (SDA) - Yellow */
@@ -4135,5 +4134,5 @@ table th {
 /* Default Load Indicator (Fallback) */
 .load-indicator.default i {
     color: #6c757d;
-    font-size: 15px;
+    font-size: 17px;
 }

@@ -208,8 +208,7 @@ async function fetchBusArrivals() {
                 const latitude = parseFloat(button.getAttribute('data-lat'));
                 const longitude = parseFloat(button.getAttribute('data-lng'));
                 const busNumber = button.getAttribute('data-bus');
-                const busType = button.getAttribute('data-type'); // Extract bus type
-                const busLoad = button.getAttribute('data-load'); // Extract bus load
+                const eta = button.parentElement.parentElement.querySelector('.bus-time').textContent;
 
                 if (!isNaN(latitude) && !isNaN(longitude)) {
                     // Show the map section
@@ -231,10 +230,10 @@ async function fetchBusArrivals() {
                     // Center the map on the selected bus location and add a marker
                     map.setView([latitude, longitude], 15);
                     const marker = L.marker([latitude, longitude]).addTo(map);
+
                     marker.bindPopup(`
                                 <b>Bus ${busNumber}</b><br>
-                                Type: ${busType || 'N/A'}<br>
-                                Load: ${busLoad || 'N/A'}
+                                ${eta || 'N/A'}
                             `).openPopup();
                 } else {
                     alert('Bus location not available.');
@@ -351,6 +350,7 @@ currentLocationBtn.addEventListener('click', () => {
         alert('Unable to retrieve your location. Please ensure location services are enabled.');
     });
 });
+
 
 // Fetch bus locations and plot them on the map
 async function fetchBusLocations() {

@@ -1252,22 +1252,6 @@ h4.timeline-date-aa {
     padding-bottom: 2em;
 }
 
-.wbnrfz-grid .card {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  opacity: 1;
-  transform: scale(1);
-  visibility: visible;
-  position: relative;
-}
-
-.wbnrfz-grid .card.is-hidden {
-  opacity: 0;
-  transform: scale(0.9);
-  visibility: hidden;
-  position: absolute;
-  pointer-events: none;
-}
-
 .wbnrfz-grid.two-cards {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     max-width: 600px;
@@ -1309,8 +1293,8 @@ h4.timeline-date-aa {
     text-align: left;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    transform: scale(1);
+    transition-duration: 300ms;
     position: absolute;
     bottom: 0;
     left: 0;

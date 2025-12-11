@@ -189,7 +189,7 @@
                 <div style="position: relative; max-width: 400px; margin-top: 5px;">
                   <i class="fa-solid fa-search"
                     style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #cccccc; z-index: 1;"></i>
-                  <input type="text" id="portfolio-search" class="form-control" placeholder=" Search for a project"
+                  <input type="text" id="search-input" class="form-control" placeholder=" Search for a project"
                     style="padding-left: 35px; width: 100%;">
                 </div>
 
@@ -210,27 +210,27 @@
 
           <ul>
             <li>
-              <a href="#" class="btn-fliter active" data-filter="*">All Projects</a>
+              <a href="#" class="btn-filter active" data-filter="*">All Projects</a>
             </li>
 
             <li>
-              <a href="#" class="btn-fliter" data-filter=".ds">Designs</a>
+              <a href="#" class="btn-filter" data-filter=".ds">Designs</a>
             </li>
 
             <li>
-              <a href="#" class="btn-fliter" data-filter=".mc">Mockups</a>
+              <a href="#" class="btn-filter" data-filter=".mc">Mockups</a>
             </li>
 
             <li>
-              <a href="#" class="btn-fliter" data-filter=".ig">Infographics</a>
+              <a href="#" class="btn-filter" data-filter=".ig">Infographics</a>
             </li>
 
             <li>
-              <a href="#" class="btn-fliter" data-filter=".lg">Logos</a>
+              <a href="#" class="btn-filter" data-filter=".lg">Logos</a>
             </li>
 
             <li>
-              <a href="#" class="btn-fliter" data-filter=".in">Innovations</a>
+              <a href="#" class="btn-filter" data-filter=".in">Innovations</a>
             </li>
           </ul>
 
@@ -249,257 +249,214 @@
 
   </section>
 
-
   <!-- Section Contents -->
   <section class="about-me-summ clearfix">
-    <div class="pw-portfolio-area clearfix">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
-              <div class="portfolio-sort">
-                <label for="sort-options">Sort By:</label>
-                <select id="sort-options">
-                  <option value="newest">Newest</option>
-                  <option value="oldest">Oldest</option>
-                  <option value="alphabetical">Alphabetical</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <!-- Placeholder for "Project Not Found" -->
-          <div class="row">
-            <div class="col-12">
-              <p id="no-results-message" class="text-center mt-3" style="display: none;">No Results Available</p>
-            </div>
-          </div>
-
-
-          <div class="row pw-portfolio">
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 " data-year="2025">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/9zxAL3F.png" alt>
-                <div class="hover-content-blog align-items-center">
-                  <h4>Buszy - Bus Arrival Timings</h4>
-                  <a class="info" href="worksbynrfz/buszy.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 " data-year="2025">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/HaCQ71l.png" alt>
-                <div class="hover-content-blog align-items-center">
-                  <h4>EICW - Implementation Brainstorming</h4>
-                  <a class="info" href="worksbynrfz/improve-wf.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item in mb-30 " data-year="2024">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/Dlkjslp.png" alt="tdc-v3">
-                <div class="hover-content-blog">
-                  <h4>Train Delays Tracker</h4>
-                  <a class="info" href="worksbynrfz/delays-checker.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item in mb-30 " data-year="2023">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/h91oHX9.png" alt="store-invent">
-                <div class="hover-content-blog">
-                  <h4>Store Inventory Tracking</h4>
-                  <a class="info" href="worksbynrfz/sit.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 " data-year="2023">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/Y7RzeWB.png" alt="bp12-nws">
-                <div class="hover-content-blog">
-                  <h4>New Wayfinding System for BP12 Jelapang</h4>
-                  <a class="info" href="worksbynrfz/bp12.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mc mb-30 " data-year="2024">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/H41Qcdd.png" alt="bus-pids">
-                <div class="hover-content-blog">
-                  <h4>LTA Bus PIDS Redesign</h4>
-                  <a class="info" href="worksbynrfz/lta-pids.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mc mb-30 " data-year="2024">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/IeRTJiV.png" alt="bus-stop-pole">
-                <div class="hover-content-blog">
-                  <h4>LTA Bus Stop Pole Design Refresh</h4>
-                  <a class="info" href="worksbynrfz/lta-bp.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 " data-year="2022">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/GeKldfP.png" alt="man-a22-mascot">
-                <div class="hover-content-blog">
-                  <h4>MAN A22 Lion Mascot Replication</h4>
-                  <a class="info" href="worksbynrfz/man-a22-masc.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mc mb-30 " data-year="2023">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/NsltGte.png" alt="myts-app">
-                <div class="hover-content-blog">
-                  <h4>MyTransport.SG App Redesign</h4>
-                  <a class="info" href="worksbynrfz/myts-app.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 " data-year="2022">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/JAQpFxJ.png" alt="bus-rep">
-                <div class="hover-content-blog">
-                  <h4>Bus Replications</h4>
-                  <a class="info" href="worksbynrfz/bus-rep.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video ig mb-30 " data-year="2023">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/fLPs7g4.png" alt="time-tree">
-                <div class="hover-content-blog">
-                  <h4>How To Use TimeTree Infographic</h4>
-                  <a class="info" href="worksbynrfz/igra3.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 " data-year="2023">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/VEDgOwO.png" alt="more-rep">
-                <div class="hover-content-blog">
-                  <h4>More Replications</h4>
-                  <a class="info" href="worksbynrfz/more-rep.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mc mb-30 " data-year="2023">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/b1p4yg3.png" alt="mrt-sign-s1">
-                <div class="hover-content-blog">
-                  <h4>MRT Signages Concept/Replications S1</h4>
-                  <a class="info" href="worksbynrfz/mrt-signage-rep-s1.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mc mb-30 " data-year="2023">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/OOsyWrU.png" alt="mrt-sign-s2">
-                <div class="hover-content-blog">
-                  <h4>MRT Signages Concept/Replications S2</h4>
-                  <a class="info" href="worksbynrfz/mrt-signage-rep-s2.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ig mb-30 " data-year="2022">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/y8FkWzk.png" alt="hydration-reg">
-                <div class="hover-content-blog">
-                  <h4>Hydration Regime Infographic</h4>
-                  <a class="info" href="worksbynrfz/hydrationreg.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ds mb-30 " data-year="2023">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/2STNFPm.png" alt="ezlink-red">
-                <div class="hover-content-blog">
-                  <h4>EZ-Link Card Redesign</h4>
-                  <a class="info" href="worksbynrfz/ezlink-red.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mc mb-30 " data-year="2020">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/rW2romm.png" alt="frc-flash-app">
-                <div class="hover-content-blog">
-                  <h4>Food Review Compiler/Flashify - a Flashcard App</h4>
-                  <a class="info" href="worksbynrfz/food-rev-flash-app.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item lg mb-30 " data-year="2017">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/ian4hrp.png" alt="friends-forever">
-                <div class="hover-content-blog">
-                  <h4>Friends Forever Logo Design</h4>
-                  <a class="info" href="worksbynrfz/ffl.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ig mb-30 " data-year="2020">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/AsrVHVA.png" alt="infographic-resume">
-                <div class="hover-content-blog">
-                  <h4>Infographic Resume</h4>
-                  <a class="info" href="worksbynrfz/igra1.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3 single_gallery_item ig mb-30 " data-year="2021">
-              <div class="single-portfolio-content">
-                <img src="https://i.imgur.com/FtHn22x.png" alt="hydration-reg">
-                <div class="hover-content-blog">
-                  <h4>COVID-19 Shopping Habits Infographic</h4>
-                  <a class="info" href="worksbynrfz/igra2.html" class="portfolio-img"><i
-                      class="fa-solid fa-arrow-right"></i></a>
-                </div>
-              </div>
+    <div class="container-xxl">
+      <div class="row">
+        <div class="col-12">
+          <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+            <div class="portfolio-sort">
+              <label for="sort-options">Sort By:</label>
+              <select id="sort-options">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="alphabetical">Alphabetical</option>
+              </select>
             </div>
           </div>
         </div>
       </div>
 
+      <div class="container">
+        <div class="wbnrfz-grid">
+          <div class="card ds" data-date="2025-11-30">
+            <img src="https://i.imgur.com/9zxAL3F.png" alt="buszy">
+            <div class="card-content">
+              <h3>Buszy - Bus Arrival Timings</h3>
+              <a href="worksbynrfz/buszy.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card ds" data-date="2025-01-01">
+            <img src="https://i.imgur.com/HaCQ71l.png" alt="eicw-brainstorm">
+            <div class="card-content">
+              <h3>EICW - Implementation Brainstorming</h3>
+              <a href="worksbynrfz/improve-wf.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card in" data-date="2025-01-01">
+            <img src="https://i.imgur.com/Dlkjslp.png" alt="tdc-v3">
+            <div class="card-content">
+              <h3>Train Delays Tracker</h3>
+              <a href="worksbynrfz/delays-checker.html" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card in" data-date="2023-01-01">
+            <img src="https://i.imgur.com/h91oHX9.png" alt="store-invent">
+            <div class="card-content">
+              <h3>Store Inventory Tracking</h3>
+              <a href="worksbynrfz/sit.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card ds" data-date="2023-01-01">
+            <img src="https://i.imgur.com/Y7RzeWB.png" alt="bp12-nws">
+            <div class="card-content">
+              <h3>New Wayfinding System for BP12 Jelapang</h3>
+              <a href="worksbynrfz/bp12.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card ds mc" data-date="2024-01-01">
+            <img src="https://i.imgur.com/H41Qcdd.png" alt="bus-pids">
+            <div class="card-content">
+              <h3>LTA Bus PIDS Redesign</h3>
+              <a href="worksbynrfz/lta-pids.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card ds mc" data-date="2024-01-01">
+            <img src="https://i.imgur.com/IeRTJiV.png" alt="bus-stop-pole">
+            <div class="card-content">
+              <h3>LTA Bus Stop Pole Design Refresh</h3>
+              <a href="worksbynrfz/lta-bp.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card mc" data-date="2022-01-01">
+            <img src="https://i.imgur.com/GeKldfP.png" alt="man-a22-mascot">
+            <div class="card-content">
+              <h3>MAN A22 Lion Mascot Replication</h3>
+              <a href="worksbynrfz/man-a22-masc.html" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card mc" data-date="2023-01-01">
+            <img src="https://i.imgur.com/NsltGte.png" alt="myts-app">
+            <div class="card-content">
+              <h3>MyTransport.SG App Redesign</h3>
+              <a href="worksbynrfz/myts-app.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card ds" data-date="2022-01-01">
+            <img src="https://i.imgur.com/JAQpFxJ.png" alt="bus-rep">
+            <div class="card-content">
+              <h3>Bus Replications</h3>
+              <a href="worksbynrfz/bus-rep.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card ig" data-date="2023-01-01">
+            <img src="https://i.imgur.com/fLPs7g4.png" alt="time-tree">
+            <div class="card-content">
+              <h3>How To Use TimeTree Infographic</h3>
+              <a href="worksbynrfz/igra3.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card ds" data-date="2023-01-01">
+            <img src="https://i.imgur.com/VEDgOwO.png" alt="more-rep">
+            <div class="card-content">
+              <h3>More Replications</h3>
+              <a href="worksbynrfz/more-rep.html" class="pw-btn-small btn-2"><i 
+                class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card ds mc" data-date="2023-01-01">
+            <img src="https://i.imgur.com/b1p4yg3.png" alt="mrt-sign-s1">
+            <div class="card-content">
+              <h3>MRT Signages Concept/Replications S1</h3>
+              <a href="worksbynrfz/mrt-signage-rep-s1.html" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="card ds mc" data-date="2023-01-01">
+              <img src="https://i.imgur.com/OOsyWrU.png" alt="mrt-sign-s2">
+              <div class="card-content">
+                <h3>MRT Signages Concept/Replications S2</h3>
+                <a href="worksbynrfz/mrt-signage-rep-s2.html" class="pw-btn-small btn-2"><i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+
+          <div class="card ig" data-date="2022-01-01">
+              <img src="https://i.imgur.com/y8FkWzk.png" alt="hydration-reg">
+              <div class="card-content">
+                <h3>Hydration Regime Infographic</h3>
+                <a href="worksbynrfz/hydrationreg.html" class="pw-btn-small btn-2"><i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+
+          <div class="card ds" data-date="2023-01-01">
+              <img src="https://i.imgur.com/2STNFPm.png" alt="ezlink-red">
+              <div class="card-content">
+                <h3>EZ-Link Card Redesign</h3>
+                <a href="worksbynrfz/ezlink-red.html" class="pw-btn-small btn-2"><i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+
+
+          <div class="card mc" data-date="2020-01-01">
+              <img src="https://i.imgur.com/rW2romm.png" alt="frc-flash-app">
+              <div class="card-content">
+                <h3>Food Review Compiler/Flashify - a Flashcard App</h3>
+                <a href="worksbynrfz/food-rev-flash-app.html" class="pw-btn-small btn-2"><i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+   
+
+          <div class="card lg" data-date="2017-01-01">
+              <img src="https://i.imgur.com/ian4hrp.png" alt="friends-forever">
+              <div class="card-content">
+                <h3>Friends Forever Logo Design</h3>
+                <a href="worksbynrfz/ffl.html" class="pw-btn-small btn-2"><i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+       
+
+          <div class="card ig" data-date="2020-01-01">
+              <img src="https://i.imgur.com/AsrVHVA.png" alt="infographic-resume">
+              <div class="card-content">
+                <h3>Infographic Resume</h3>
+                <a href="worksbynrfz/igra1.html" class="pw-btn-small btn-2"><i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+        
+
+          <div class="card ig" data-date="2021-01-01">
+              <img src="https://i.imgur.com/FtHn22x.png" alt="hydration-reg">
+              <div class="card-content">
+                <h3>COVID-19 Shopping Habits Infographic</h3>
+                <a href="worksbynrfz/igra2.html" class="pw-btn-small btn-2"><i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->

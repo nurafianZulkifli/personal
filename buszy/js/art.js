@@ -160,7 +160,7 @@ async function fetchBusArrivals() {
                         ${service.Operator ? `<img src="assets/${service.Operator.toLowerCase()}.png" alt="${service.Operator}" class="img-fluid" style="width: 50px;">` : ''}
                     </div>
                     <div class="card-body">
-                        <div class="card-content">
+                        <div class="card-content-art">
                             <div class="d-flex justify-content-between">
                                 <span class="bus-time">${service.NextBus.EstimatedArrival ? formatArrivalTimeOrArr(service.NextBus.EstimatedArrival, now) : 'N/A'}</span>
                                 <span>

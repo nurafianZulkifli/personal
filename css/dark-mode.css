@@ -8,7 +8,7 @@
     - 1.0 Home Page
     - 2.0 About Page
     - 3.0 Indiv Pages
-    - 4.0 Blog Page(s)
+    - 4.0 Works By NRFZ/Blogs (Featured/Main)
     - 5.0 EICW
     - 6.0 Timeline
     - 7.0 Portfolio Controls
@@ -335,7 +335,11 @@ body.dark-mode .btn.show {
 
 /* ------------------------------------------ */
 
-/* ------------------------------------------ 4.0 Blog Page(s) ------------------------------------------ */
+/* ------------------------------------------ 4.0 Works By NRFZ/Blogs (Featured/Main) ------------------------------------------ */
+body.dark-mode .wbnrfz-works {
+    background-color: #18191a;
+}
+
 body.dark-mode .ftco-section-blog {
     background-color: #18191a;
     transition: all 0.5s ease;
@@ -360,6 +364,15 @@ body.dark-mode blockquote {
     background-color: #3a3b3c;
     transition: all 0.5s ease;
     color: #fff;
+}
+
+body.dark-mode .card {
+    background: #000;
+}
+
+body.dark-mode .card-content {
+    background: #0e0e0e91;
+    backdrop-filter: blur(25px);
 }
 
 /* ------------------------------------------ */

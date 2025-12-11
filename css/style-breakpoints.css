@@ -1486,4 +1486,34 @@
     }
 }
 
-/* ---- */
+/* ------------------------------------------ 4.0 Responsive Columns ------------------------------------------ */
+
+    /* Breakpoints for Responsive Columns */
+    @media (max-width: 992px) {
+        .wbnrfz-grid {
+            grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
+            /* Adjust column size for medium screens */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .wbnrfz-grid {
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columns for smaller screens */
+        }
+    }
+
+
+    @media (max-width: 581px) {
+        .wbnrfz-grid {
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columns for small screens */
+        }
+    }
+
+        @media (max-width: 580px) {
+        .wbnrfz-grid {
+            grid-template-columns: repeat(1, 1fr);
+            /* Single column for extra small screens */
+        }
+    }

@@ -672,7 +672,7 @@
 
     .bus-stop-code-text,
     body.dark-mode .bus-stop-code-text {
-        font-size: 15px;
+        font-size: 22px !important;
         font-weight: bold;
         color: #000;
         background-color: #fff;
@@ -684,7 +684,7 @@
 
     .bus-stop-description,
     body.dark-mode .bus-stop-description-title {
-        font-size: 25px;
+        font-size: 30px !important;
     }
 }
 
@@ -923,7 +923,7 @@
     }
 
     .section-heading h2 {
-        font-size: 24px;
+        font-size: 30px;
     }
 
     .section-heading p {

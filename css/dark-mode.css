@@ -182,8 +182,10 @@ body.dark-mode .cookiebanner span {
 
 /* ---- Progress Bar */
 body.dark-mode .single-skill .progress {
-    background-color: #2e2e2e;
     transition: all 0.5s ease;
+    background-color: #2e2e2e;
+    border: 1px solid #2b2b2b33;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* ------------------------------------------ */
@@ -760,11 +762,12 @@ body.dark-mode .flickity-prev-next-button {
     height: 44px;
     border: none;
     border-radius: 50%;
-    background: #494949 !important;
     cursor: pointer;
     transform: translateY(0%) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(61, 61, 61, 0.384) !important;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    background-color: #444444 !important;
+    border: 1px solid #2b2b2b33;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .flickity-prev-next-button:hover {

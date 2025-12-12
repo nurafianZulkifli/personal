@@ -131,7 +131,7 @@ async function fetchBusArrivals() {
         }
 
         const data = await response.json();
-        console.log('API Response:', data);
+        // console.log('API Response:', data); // Debugging line to check API response
 
         container.innerHTML = '';
 

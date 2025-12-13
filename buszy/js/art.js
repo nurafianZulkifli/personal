@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, 300));
 
     // Refresh data every 5 seconds
-    setInterval(fetchBusArrivals, 5000);
+    // setInterval(fetchBusArrivals, 5000);
 
     // Listen for changes in localStorage to update time format dynamically
     window.addEventListener('storage', (event) => {
@@ -152,7 +152,7 @@ async function fetchBusArrivals() {
 
         data.Services.forEach((service) => {
             const card = document.createElement('div');
-            card.classList.add('col-12', 'col-sm-6', 'col-md-4', 'col-xl-3', 'card-bt'); // Add col-sm-6 for 2 cards per row on small screens
+            card.classList.add('col-12', 'col-md-4', 'col-xl-3', 'card-bt'); // Add col-sm-6 for 2 cards per row on small screens
             card.innerHTML = `
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">

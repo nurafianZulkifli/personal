@@ -213,6 +213,13 @@
         background-color: #2e2e2e;
     }
 
+    @media (min-width: 1200px) {
+        .col-xl-3 {
+            flex: 0 0 auto;
+            width: 30%;
+        }
+    }
+
     @media (max-width: 576px) {
         .fleet-legend {
             display: flex;
@@ -226,6 +233,28 @@
 
         .fleet-legend span {
             font-size: 12px;
+        }
+
+        .img-fluid {
+            width: 40px !important;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card .card-content-art span {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 485px) {
+        .card .card-content-art span {
+            font-size: 17px;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .btn {
+            width: 35px;
         }
     }
 </style>

@@ -204,10 +204,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // ****************************
 document.addEventListener('DOMContentLoaded', () => {
     const loadingMessages = [
-        "Loading Bus Stop Data...",
+        "Loading Bus Arrival Data...",
         "Fetching All Bus Stop Data...",
-        "As this is the first time, it will take a bit longer...",
-        "This will be cached for faster access next time.",
+        "If this is your first time using Buszy, it will take a bit longer...",
+        "Fret not, the data will be cached for faster access next time.",
+        "Patience is a virtue! Loading data just for you..."
     ];
 
     const loadingMessageElement = document.getElementById('loading-message');

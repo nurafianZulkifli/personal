@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, 300));
 
     // Refresh data every 5 seconds
-    // setInterval(fetchBusArrivals, 5000);
+    setInterval(fetchBusArrivals, 5000);
 
     // Listen for changes in localStorage to update time format dynamically
     window.addEventListener('storage', (event) => {

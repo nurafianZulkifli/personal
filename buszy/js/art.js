@@ -453,7 +453,7 @@ fetchBusLocations();
 
 
 // ****************************
-// :: Loading Messages
+// :: Loading Messages Rotation
 // ****************************
 document.addEventListener('DOMContentLoaded', () => {
     const loadingMessages = [

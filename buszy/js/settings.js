@@ -63,6 +63,40 @@ if ('serviceWorker' in navigator) {
 
 let deferredPrompt;
 const installBtn = document.getElementById('install-btn');
+const updateBtn = document.getElementById('update-btn');
+
+// Register service worker and listen for updates
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('js/service-worker.js').then(reg => {
+        // Listen for updates to the service worker
+        reg.addEventListener('updatefound', () => {
+            const newWorker = reg.installing;
+            newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New update available
+                    updateBtn.style.display = 'inline-block';
+                }
+            });
+        });
+    });
+}
+
+// Handle update button click
+updateBtn.addEventListener('click', () => {
+    if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+            for (let reg of registrations) {
+                if (reg.waiting) {
+                    reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+                }
+            }
+        });
+    }
+    updateBtn.textContent = 'Updating...';
+    setTimeout(() => {
+        window.location.reload();
+    }, 1500);
+});
 
 // Function to update button text
 function updateInstallButton(installed) {
@@ -80,7 +114,7 @@ function updateInstallButton(installed) {
 // Detect if app is installed
 window.addEventListener('DOMContentLoaded', () => {
     let isInstalled = (window.matchMedia('(display-mode: standalone)').matches) ||
-                      (window.navigator.standalone === true);
+        (window.navigator.standalone === true);
     updateInstallButton(isInstalled);
 });
 

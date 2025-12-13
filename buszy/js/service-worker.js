@@ -9,3 +9,9 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   // Simple pass-through for now
 });
+
+self.addEventListener('message', event => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
+});

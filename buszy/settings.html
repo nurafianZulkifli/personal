@@ -345,11 +345,15 @@
 
             <h2 class="text-center" style="padding-top: 1em;">Miscellaneous</h2>
             <ul class="list-group">
-                <li class="list-group-item">
-                    <button id="install-btn" class="btn btn-install">Install App</button><br>
-                    <p class="fetch">Install this web app on your device for a better experience.</p>
-                </li>
-            </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button id="install-btn" class="btn btn-install">Install App</button>
+                            <button id="update-btn" class="btn btn-install" style="display:none;">Update App</button>
+                        </div>
+                        <p class="fetch">Install this web app on your device for a better experience.</p>
+                    </li>
+                </ul>
         </div>
 
     </section>

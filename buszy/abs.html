@@ -110,6 +110,15 @@
             margin-top: 5px;
         }
     }
+
+    @media screen and (max-width: 400px) {
+        .pin-msg {
+            font-size: 12px !important;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+    }
 </style>
 
 <body>
@@ -289,7 +298,8 @@
 
                     <ul>
                         <li>
-                            <a href="../buszy.html#pinned"><i class="fa-sharp fa-solid fa-thumbtack-angle" title="Pinned"></i>
+                            <a href="../buszy.html#pinned"><i class="fa-sharp fa-solid fa-thumbtack-angle"
+                                    title="Pinned"></i>
                             </a>
                         </li>
 
@@ -336,7 +346,7 @@
             <div class="list-group">
                 <p class="pin-msg" id="loading-message"
                     style="display: flex; align-items: center; justify-content: center;">
-                    <span class="spinner-border" role="status" style="margin-right: 1em;"></span>Loading Data...
+                    <span class="spinner" role="status" style="margin-right: 1em;"></span>Loading Data...
                 </p>
             </div>
             <div class="pagination-buttons">

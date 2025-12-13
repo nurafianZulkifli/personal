@@ -144,8 +144,8 @@ function displayBusStops(busStops) {
                 </div>
                 <div class="bus-stop-details">
                 <span class="bus-stop-description">${busStop.Description}</span>&nbsp;&nbsp;|&nbsp;
-                <span>${busStop.RoadName}</span>&nbsp;|&nbsp;
-                <span>${distance}</span>
+                <span class="road-name">${busStop.RoadName}</span>&nbsp;|&nbsp;
+                <span class="distance">${distance}</span>
                 </div>
             </div>
             <button class="${isPinned ? 'btn btn-unpin btn-nbs btn-sm' : 'btn btn-toPin btn-nbs btn-sm'} pin-button">

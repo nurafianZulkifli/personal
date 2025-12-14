@@ -3,8 +3,10 @@
   "short_name": "Buszy",
   "start_url": "buszy.html",
   "display": "standalone",
-  "background_color": "#ffffff",
   "theme_color": "#007bff",
+  "background_color": "#ffffff",
+  "dark_theme_color": "#222b36",
+  "dark_background_color": "#111418",
   "icons": [
     {
       "src": "buszy/assets/icon-192.png",

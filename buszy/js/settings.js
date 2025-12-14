@@ -61,52 +61,19 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('js/service-worker.js');
 }
 
-let deferredPrompt;
 const installBtn = document.getElementById('install-btn');
-const updateBtn = document.getElementById('update-btn');
+const refreshBtn = document.getElementById('refresh-btn');
 
-// Register service worker and listen for updates
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('js/service-worker.js').then(reg => {
-        // Listen for updates to the service worker
-        reg.addEventListener('updatefound', () => {
-            const newWorker = reg.installing;
-            newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                    updateBtn.style.display = 'inline-block';
-                }
-            });
-        });
-    });
-}
-
-// Handle update button click
-updateBtn.addEventListener('click', () => {
-    if (navigator.serviceWorker.controller) {
-        navigator.serviceWorker.getRegistrations().then(registrations => {
-            for (let reg of registrations) {
-                if (reg.waiting) {
-                    reg.waiting.postMessage({ type: 'SKIP_WAITING' });
-                }
-            }
-        });
-    }
-    updateBtn.textContent = 'Updating...';
-    setTimeout(() => {
-        window.location.reload();
-    }, 1500);
-});
-
-// Function to update button text
+// Function to update button text and refresh button visibility
 function updateInstallButton(installed) {
     if (installed) {
         installBtn.textContent = 'Installed';
         installBtn.disabled = true;
-
+        refreshBtn.style.display = 'inline-block'; // Show refresh if installed
     } else {
         installBtn.textContent = 'Not installed';
         installBtn.disabled = false;
-
+        refreshBtn.style.display = 'none'; // Hide refresh if not installed
     }
 }
 
@@ -115,6 +82,11 @@ window.addEventListener('DOMContentLoaded', () => {
     let isInstalled = (window.matchMedia('(display-mode: standalone)').matches) ||
         (window.navigator.standalone === true);
     updateInstallButton(isInstalled);
+});
+
+
+refreshBtn.addEventListener('click', () => {
+    window.location.reload();
 });
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -135,7 +107,7 @@ installBtn.addEventListener('click', async () => {
 });
 
 // Listen for appinstalled event
-window.addEventListener('appinstalled', () => {
-    updateInstallButton(true);
+refreshBtn.addEventListener('click', () => {
+    window.location.reload();
 });
 

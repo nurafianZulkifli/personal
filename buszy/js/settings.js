@@ -84,8 +84,21 @@ window.addEventListener('DOMContentLoaded', () => {
     updateInstallButton(isInstalled);
 });
 
+// Show a message if the app was just refreshed
+window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('appJustRefreshed')) {
+        alert('App refreshed!');
+        localStorage.removeItem('appJustRefreshed');
+    }
+
+    let isInstalled = (window.matchMedia('(display-mode: standalone)').matches) ||
+        (window.navigator.standalone === true);
+    updateInstallButton(isInstalled);
+});
+
 
 refreshBtn.addEventListener('click', () => {
+    localStorage.setItem('appJustRefreshed', '1');
     window.location.reload();
 });
 

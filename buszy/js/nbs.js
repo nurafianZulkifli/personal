@@ -1,43 +1,71 @@
 const apiUrl = 'https://bat-lta-9eb7bbf231a2.herokuapp.com/nearby-bus-stops'; // Update with your server URL
 
-// Show loading message immediately
-const busStopsContainer = document.getElementById('bus-stops');
-if (busStopsContainer) {
-    busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Searching for nearby bus stops...</p>';
-}
-
-// Fetch location as soon as possible
-(function fetchLocationFast() {
+// Function to fetch and display nearby bus stops using cached location
+document.addEventListener('DOMContentLoaded', () => {
     const cachedLocation = sessionStorage.getItem('userLocation');
+    const busStopsContainer = document.getElementById('bus-stops');
+
     if (cachedLocation) {
         const { latitude, longitude } = JSON.parse(cachedLocation);
         fetchNearbyBusStops(latitude, longitude);
-    } else if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-                sessionStorage.setItem('userLocation', JSON.stringify({ latitude, longitude }));
-                fetchNearbyBusStops(latitude, longitude);
-            },
-            (error) => {
-                console.error('Geolocation error:', error);
-                if (busStopsContainer) {
-                    busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.</p>';
-                }
-            },
-            {
-                enableHighAccuracy: false, // Faster, less battery
-                timeout: 3000,             // 3 seconds max wait
-                maximumAge: 0
-            }
-        );
     } else {
-        if (busStopsContainer) {
-            busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Geolocation is not supported by your browser.</p>';
-        }
+        // Get the user's current location
+        navigator.geolocation.getCurrentPosition((position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Cache the location
+            sessionStorage.setItem('userLocation', JSON.stringify({ latitude, longitude }));
+
+            fetchNearbyBusStops(latitude, longitude);
+        }, (error) => {
+            console.error('Geolocation error:', error);
+            busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.</p>';
+        }, {
+            enableHighAccuracy: true,
+            timeout: 2000,
+            maximumAge: 0
+        });
     }
-})();
+});
+
+// Automatically fetch nearby bus stops on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const busStopsContainer = document.getElementById('bus-stops');
+
+    // Display "Searching for nearby bus stops..." message
+    busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Searching for nearby bus stops...</p>';
+
+    // Check if geolocation is available
+    if (!navigator.geolocation) {
+        alert('Geolocation is not supported by your browser.');
+        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Geolocation is not supported by your browser.</p>';
+        return;
+    }
+
+    // Get the user's current location
+    navigator.geolocation.getCurrentPosition(async (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        try {
+            // Fetch nearby bus stops from the backend
+            const response = await fetch(`${apiUrl}?latitude=${latitude}&longitude=${longitude}&radius=2`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch nearby bus stops');
+            }
+
+            const busStops = await response.json();
+            displayBusStops(busStops);
+        } catch (error) {
+            console.error('Error:', error);
+            busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Failed to fetch nearby bus stops. Please try again later.</p>';
+        }
+    }, (error) => {
+        console.error('Geolocation error:', error);
+        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.</p>';
+    });
+});
 
 async function fetchNearbyBusStops(latitude, longitude) {
     try {
@@ -50,30 +78,38 @@ async function fetchNearbyBusStops(latitude, longitude) {
         displayBusStops(busStops);
     } catch (error) {
         console.error('Error:', error);
-        if (busStopsContainer) {
-            busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Failed to fetch nearby bus stops. Please try again later.</p>';
-        }
+        busStopsContainer.innerHTML = '<p class="pin-msg"<i class="fa-solid fa-triangle-exclamation"></i>Failed to fetch nearby bus stops. Please try again later.</p>';
     }
 }
 
+
 // Function to toggle pin/unpin for a bus stop
 function togglePinBusStop(busStop, pinButton) {
+    // Retrieve existing pinned bus stops from localStorage
     let pinnedBusStops = JSON.parse(localStorage.getItem('bookmarkedBusStops')) || [];
+
+    // Check if the bus stop is already pinned
     const isAlreadyPinned = pinnedBusStops.some((stop) => stop.BusStopCode === busStop.BusStopCode);
 
     if (isAlreadyPinned) {
+        // Unpin the bus stop
         const confirmUnpin = confirm(`Are you sure you want to unpin this bus stop?`);
         if (confirmUnpin) {
             pinnedBusStops = pinnedBusStops.filter((stop) => stop.BusStopCode !== busStop.BusStopCode);
             localStorage.setItem('bookmarkedBusStops', JSON.stringify(pinnedBusStops));
             alert(`Bus Stop Unpinned.`);
+
+            // Update the button class and icon to "unpin"
             pinButton.className = 'btn btn-toPin btn-nbs btn-sm';
             pinButton.innerHTML = '<i class="fa-sharp fa-regular fa-thumbtack-angle"></i>';
         }
     } else {
+        // Pin the bus stop
         pinnedBusStops.push(busStop);
         localStorage.setItem('bookmarkedBusStops', JSON.stringify(pinnedBusStops));
         alert(`Bus Stop Pinned.`);
+
+        // Update the button class and icon to "pin"
         pinButton.className = 'btn btn-unpin btn-nbs btn-sm';
         pinButton.innerHTML = '<i class="fa-solid fa-thumbtack-angle-slash"></i>';
     }
@@ -82,19 +118,20 @@ function togglePinBusStop(busStop, pinButton) {
 // Display the 3 nearest bus stops
 function displayBusStops(busStops) {
     const busStopsContainer = document.getElementById('bus-stops');
-    busStopsContainer.innerHTML = '';
+    busStopsContainer.innerHTML = ''; // Clear previous results
 
     if (!busStops || busStops.length === 0) {
         busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-circle-info"></i>No Bus Stops found nearby.</p>';
         return;
     }
 
+    // Retrieve existing pinned bus stops from localStorage
     const pinnedBusStops = JSON.parse(localStorage.getItem('bookmarkedBusStops')) || [];
 
     busStops.forEach((busStop) => {
         const distance = busStop.distance < 1
-            ? `${(busStop.distance * 1000).toFixed(0)}m`
-            : `${busStop.distance.toFixed(2)} km`;
+            ? `${(busStop.distance * 1000).toFixed(0)}m` // Convert to meters if less than 1 km
+            : `${busStop.distance.toFixed(2)} km`; // Show in kilometers otherwise
 
         const isPinned = pinnedBusStops.some((stop) => stop.BusStopCode === busStop.BusStopCode);
 
@@ -103,7 +140,7 @@ function displayBusStops(busStops) {
         busStopElement.innerHTML = `
             <div class="bus-stop-info">
                 <div class="bus-stop-code">
-                    <img src="assets/bus-icon.png" alt="Bus Icon">
+                    <img src="assets/bus-icon.png" alt="Bus Icon"> <!-- Replace with your bus icon path -->
                     <span class="bus-stop-code-text">${busStop.BusStopCode}</span>
                 </div>
                 <div class="bus-stop-details">
@@ -117,14 +154,18 @@ function displayBusStops(busStops) {
             </button>
         `;
 
+        // Add click event listener to the entire div
         busStopElement.addEventListener('click', () => {
+            // Navigate to buszy.html with the BusStopCode as a query parameter
             window.location.href = `art.html?BusStopCode=${encodeURIComponent(busStop.BusStopCode)}`;
         });
 
+
+        // Add click event listener to the "Pin" button
         const pinButton = busStopElement.querySelector('.pin-button');
         pinButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            togglePinBusStop(busStop, pinButton);
+            event.stopPropagation(); // Prevent triggering the parent div's click event
+            togglePinBusStop(busStop, pinButton); // Toggle pin/unpin
         });
 
         busStopsContainer.appendChild(busStopElement);
@@ -132,22 +173,25 @@ function displayBusStops(busStops) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const searchBusStopButton = document.querySelector('a[href="buszy.html"]');
-    const searchInput = document.getElementById('bus-stop-search');
+    const searchBusStopButton = document.querySelector('a[href="buszy.html"]'); // Select the "Search Bus Stop" button
+    const searchInput = document.getElementById('bus-stop-search'); // Select the search input field
+
     if (searchBusStopButton && searchInput) {
         searchBusStopButton.addEventListener('click', () => {
-            searchInput.value = '';
+            searchInput.value = ''; // Clear the search bar
         });
     }
 });
 
+// Populate the search bar with the BusStopCode from query parameters
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const busStopCode = urlParams.get('BusStopCode');
+    const busStopCode = urlParams.get('BusStopCode'); // Get the BusStopCode from the query parameters
+
     if (busStopCode) {
-        const searchInput = document.getElementById('bus-stop-search');
+        const searchInput = document.getElementById('bus-stop-search'); // Select the search bar
         if (searchInput) {
-            searchInput.value = busStopCode;
+            searchInput.value = busStopCode; // Populate the search bar with the BusStopCode
         }
     }
 });

@@ -26,14 +26,14 @@ const manageIcons = () => {
     if (!tabsList || !leftArrowContainer || !rightArrowContainer) {
         return;
     }
-    
+
     // Force recalculate layout
     tabsList.offsetHeight;
-    
+
     // Check if scrolling is needed with a small tolerance
     const isScrollable = tabsList.scrollWidth > (tabsList.clientWidth + 2);
-    
-    
+
+
     if (!isScrollable) {
         // Force hide both arrows if no scrolling is needed
         leftArrowContainer.style.setProperty('display', 'none', 'important');
@@ -42,11 +42,11 @@ const manageIcons = () => {
         rightArrowContainer.classList.remove("active");
         return;
     }
-    
+
     // Show arrows if scrolling is needed
     leftArrowContainer.style.setProperty('display', 'flex', 'important');
     rightArrowContainer.style.setProperty('display', 'flex', 'important');
-    
+
     // Manage left arrow - hide if at the beginning
     if (tabsList.scrollLeft <= 5) {
         leftArrowContainer.classList.remove("active");
@@ -118,3 +118,62 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// Draggable scroll for scrollableTabs
+const scrollableTabs = document.getElementById('scrollableTabs');
+let isDown = false;
+let startX;
+let scrollLeft;
+let lastTouchX = 0;
+
+if (scrollableTabs) {
+    // Mouse events
+    scrollableTabs.addEventListener('mousedown', (e) => {
+        isDown = true;
+        scrollableTabs.classList.add('dragging');
+        startX = e.pageX - scrollableTabs.offsetLeft;
+        scrollLeft = scrollableTabs.scrollLeft;
+    });
+    scrollableTabs.addEventListener('mouseleave', () => {
+        isDown = false;
+        scrollableTabs.classList.remove('dragging');
+    });
+    scrollableTabs.addEventListener('mouseup', () => {
+        isDown = false;
+        scrollableTabs.classList.remove('dragging');
+    });
+    scrollableTabs.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollableTabs.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollableTabs.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch events
+    scrollableTabs.addEventListener('touchstart', (e) => {
+        isDown = true;
+        scrollableTabs.classList.add('dragging');
+        startX = e.touches[0].pageX - scrollableTabs.offsetLeft;
+        scrollLeft = scrollableTabs.scrollLeft;
+        lastTouchX = e.touches[0].pageX;
+    }, { passive: false });
+
+    scrollableTabs.addEventListener('touchend', () => {
+        isDown = false;
+        scrollableTabs.classList.remove('dragging');
+    }, { passive: false });
+
+    scrollableTabs.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const touchX = e.touches[0].pageX - scrollableTabs.offsetLeft;
+        const walk = (touchX - startX) * 2;
+        scrollableTabs.scrollLeft = scrollLeft - walk;
+
+        // Prevent vertical scroll if horizontal movement is significant
+        if (Math.abs(e.touches[0].pageX - lastTouchX) > 5) {
+            e.preventDefault();
+        }
+        lastTouchX = e.touches[0].pageX;
+    }, { passive: false });
+}

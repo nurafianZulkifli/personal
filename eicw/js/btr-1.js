@@ -92,6 +92,12 @@ function updateHrefForDarkMode() {
     const btrcr3_link = document.getElementById('btrcr3');
     const btrcr3_img = document.getElementById('btrcr3-img');
 
+    const btrcr4_link = document.getElementById('btrcr4');
+    const btrcr4_img = document.getElementById('btrcr4-img');
+
+    const btrcr5_link = document.getElementById('btrcr5');
+    const btrcr5_img = document.getElementById('btrcr5-img');
+
 
 
     const isDarkMode = document.body.classList.contains('dark-mode');
@@ -117,6 +123,11 @@ function updateHrefForDarkMode() {
         btrcr3_link.href = './img-2/btrcr3-dark.png';
         btrcr3_img.src = './img-2/btrcr3-dark.png';
 
+        btrcr4_link.href = './img-2/btrcr4-dark.png';
+        btrcr4_img.src = './img-2/btrcr4-dark.png';
+
+        btrcr5_link.href = './img-2/btrcr5-dark.png';
+        btrcr5_img.src = './img-2/btrcr5-dark.png';
 
 
     } else {
@@ -127,8 +138,8 @@ function updateHrefForDarkMode() {
         bcrcrc_link.href = './img-2/bcr-compare-light.png';
         bcrcrc_img.src = './img-2/bcr-compare-light.png';
 
-        bcrtap_link.href = './img/lcd3-light.png';
-        bcrtap_img.src = './img/lcd3-light.png';
+        bcrtap_link.href = './img-2/bcr-tap-light.png';
+        bcrtap_img.src = './img-2/bcr-tap-light.png';
 
         btrcr1_link.href = './img-2/btrcr1-light.png';
         btrcr1_img.src = './img-2/btrcr1-light.png';
@@ -138,6 +149,12 @@ function updateHrefForDarkMode() {
 
         btrcr3_link.href = './img-2/btrcr3-light.png';
         btrcr3_img.src = './img-2/btrcr3-light.png';
+
+        btrcr4_link.href = './img-2/btrcr4-light.png';
+        btrcr4_img.src = './img-2/btrcr4-light.png';
+
+        btrcr5_link.href = './img-2/btrcr5-light.png';
+        btrcr5_img.src = './img-2/btrcr5-light.png';
 
 
     }

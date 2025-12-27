@@ -2565,6 +2565,10 @@ li.breadcrumb-item a:hover {
     padding-bottom: 3em;
 }
 
+  .video-row {
+    display: block;
+  }
+
 /* ------------------------------------------ */
 
 /* ------------------------------------------ 20.0 Filter/Jumplist Controls ------------------------------------------ */

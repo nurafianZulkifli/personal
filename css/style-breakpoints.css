@@ -8,6 +8,7 @@
         - 1.0.2 Max Width: 768px
         - 1.0.3 Max Width: 767px
         - 1.0.4 Max Width: 450px
+        - 1.0.4a Min Width: 992px
         - 1.0.5 Max Width: 576px
 
     - 2.0 Width Breakpoints
@@ -157,6 +158,27 @@
 
 }
 
+/* ---- */
+
+/* ---- 1.0.4a Min Width: 992px */
+  @media (min-width: 992px) {
+    .video-row {
+      display: flex;
+      gap: 2em;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .video-row video {
+      width: 48%;
+      max-width: 600px;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .video-row video {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+  }
 /* ---- */
 
 /* ---- 1.0.5 Max Width: 768px */

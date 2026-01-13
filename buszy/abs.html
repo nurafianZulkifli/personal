@@ -340,6 +340,13 @@
     <!-- Section Contents -->
     <section class="about-me-summ clearfix" style="padding-bottom: 5em;">
 
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="api-refresh-alert" style="display: none; margin-bottom: 1em;">
+  <strong>Notice:</strong> Data may have changed. <a href="#" id="refetch-data-link" style="text-decoration: underline;">Click here to re-fetch the latest data.</a>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="document.getElementById('api-refresh-alert').style.display='none';">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
         <div class="container">
             <h2 class="text-center" style="padding-top: 1em;">Bus Stops</h2>
             <div class="list-group">

@@ -228,24 +228,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Change the message every 4 seconds
     setInterval(updateLoadingMessage, 4000);
 });
-
-
-// ****************************
-// :: API Data Refresh Alert   
-// ****************************
-function showApiRefreshAlert() {
-    document.getElementById('api-refresh-alert').style.display = 'block';
-}
-
-// Handle refetch link click
-document.addEventListener('DOMContentLoaded', function() {
-    var refetchLink = document.getElementById('refetch-data-link');
-    if (refetchLink) {
-        refetchLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Call your data fetching function here
-            fetchBusStopData(); // Replace with your actual function
-            document.getElementById('api-refresh-alert').style.display = 'none';
-        });
-    }
-});

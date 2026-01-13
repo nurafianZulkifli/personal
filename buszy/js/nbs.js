@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, (error) => {
         console.error('Geolocation error:', error);
-        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.</p>';
+        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location. Retrying...</p>';
     });
 });
 
@@ -140,7 +140,7 @@ function displayBusStops(busStops) {
         busStopElement.innerHTML = `
             <div class="bus-stop-info">
                 <div class="bus-stop-code">
-                    <img src="assets/bus-icon.png" alt="Bus Icon"> <!-- Replace with your bus icon path -->
+                    <img src="assets/bus-icon.png" alt="Bus Icon">
                     <span class="bus-stop-code-text">${busStop.BusStopCode}</span>
                 </div>
                 <div class="bus-stop-details">

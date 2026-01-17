@@ -503,6 +503,10 @@
     <!-- Add a container for the map -->
     <section class="bus-location-section">
         <div class="container">
+            <button id="collapse-map-btn" style="padding: 10px; margin-bottom: 1em; margin-right: 1em;" class="btn btn-busloc btn-sm"
+                title="Collapse Map">
+                <i class="fa-solid fa-chevron-up"></i> Collapse Map
+            </button>
             <button id="current-location-btn" style="padding: 10px; margin-bottom: 1em;" class="btn btn-busloc btn-sm"
                 title="Go to Current Location">
                 <i class="fa-solid fa-location-crosshairs"></i>
@@ -585,7 +589,16 @@
 
     <script src="js/art.js"></script>
 
-
+    <script>
+        // Collapse map button logic
+        const collapseBtn = document.getElementById('collapse-map-btn');
+        const mapSection = document.querySelector('.bus-location-section');
+        if (collapseBtn && mapSection) {
+            collapseBtn.addEventListener('click', () => {
+                mapSection.style.display = 'none';
+            });
+        }
+    </script>
 
 </body>
 

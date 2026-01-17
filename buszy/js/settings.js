@@ -1,4 +1,3 @@
-
 // ****************************
 // :: Time Format Change Handling
 // ****************************
@@ -67,8 +66,7 @@ if ('serviceWorker' in navigator) {
 
 const installBtn = document.getElementById('install-btn');
 const refreshBtn = document.getElementById('refresh-btn');
-// Ensure deferredPrompt is always defined in global scope
-window.deferredPrompt = null;
+let deferredPrompt = null;
 
 function updateInstallButton(installed) {
     if (installed) {
@@ -77,7 +75,7 @@ function updateInstallButton(installed) {
         refreshBtn.style.display = 'inline-block';
     } else {
         installBtn.textContent = 'Not installed';
-        installBtn.disabled = false;
+        installBtn.disabled = deferredPrompt === null;
         refreshBtn.style.display = 'none';
     }
 }
@@ -91,6 +89,11 @@ function detectInstalled() {
 
 window.addEventListener('DOMContentLoaded', () => {
     updateInstallButton(detectInstalled());
+    // Fallback for browsers that do not support beforeinstallprompt
+    if (!('onbeforeinstallprompt' in window)) {
+        installBtn.disabled = true;
+        installBtn.textContent = 'Install not supported';
+    }
 });
 
 window.addEventListener('appinstalled', () => {
@@ -103,18 +106,22 @@ refreshBtn.addEventListener('click', () => {
 
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
-    window.deferredPrompt = e;
+    deferredPrompt = e;
+    installBtn.disabled = false;
     updateInstallButton(false);
 });
 
 installBtn.addEventListener('click', async () => {
-    if (window.deferredPrompt) {
-        window.deferredPrompt.prompt();
-        const { outcome } = await window.deferredPrompt.userChoice;
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
         if (outcome === 'accepted') {
             updateInstallButton(true);
         }
-        window.deferredPrompt = null;
+        deferredPrompt = null;
+        installBtn.disabled = true;
+    } else {
+        alert('Install prompt is not available. Try refreshing the page or using a supported browser.');
     }
 });
 

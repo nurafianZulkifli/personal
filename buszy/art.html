@@ -189,6 +189,14 @@
         align-items: center;
     }
 
+    #collapse-map-btn,
+    #current-location-btn {
+        padding: 10px;
+        margin-bottom: 1em;
+        margin-right: 1em
+    }
+
+
     body.dark-mode .card {
         background-color: #2e2e2e;
         border: 1px solid #2b2b2b33;
@@ -269,6 +277,14 @@
     @media (max-width: 450px) {
         .btn {
             width: 35px;
+        }
+
+        #collapse-map-btn,
+        #current-location-btn {
+            width: auto;
+            padding: 10px;
+            margin-bottom: 1em;
+            margin-right: 1em
         }
     }
 
@@ -503,13 +519,11 @@
     <!-- Add a container for the map -->
     <section class="bus-location-section">
         <div class="container">
-            <button id="collapse-map-btn" style="padding: 10px; margin-bottom: 1em; margin-right: 1em;" class="btn btn-busloc btn-sm"
-                title="Collapse Map">
-                <i class="fa-solid fa-chevron-up"></i> Collapse Map
+            <button id="collapse-map-btn" class="btn btn-busloc btn-sm" title="Collapse Map">
+                <i class="fa-solid fa-chevron-up"></i>&nbsp;&nbsp;Collapse Map
             </button>
-            <button id="current-location-btn" style="padding: 10px; margin-bottom: 1em;" class="btn btn-busloc btn-sm"
-                title="Go to Current Location">
-                <i class="fa-solid fa-location-crosshairs"></i>
+            <button id="current-location-btn" class="btn btn-busloc btn-sm" title="Go to Current Location">
+                <i class="fa-solid fa-location-crosshairs"></i>&nbsp;&nbsp;Current Location
             </button>
             <div id="bus-map" style="height: 400px; width: 100%;"></div>
         </div>

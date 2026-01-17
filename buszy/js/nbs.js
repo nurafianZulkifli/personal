@@ -5,40 +5,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const busStopsContainer = document.getElementById('bus-stops');
     busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Searching for nearby bus stops...</p>';
 
-    // Helper to show error only if nothing can be loaded
+    // Add a retry/allow location button only on error
     function showLocationError() {
-        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.</p>';
+        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.<br><button id="retry-location-btn" class="btn btn-rfetch">Allow Location</button></p>';
+        const retryBtn = document.getElementById('retry-location-btn');
+        if (retryBtn) {
+            retryBtn.addEventListener('click', () => {
+                requestLocation();
+            });
+        }
     }
 
-    // Try cached location first
-    const cachedLocation = sessionStorage.getItem('userLocation');
-    if (cachedLocation) {
-        const { latitude, longitude } = JSON.parse(cachedLocation);
-        fetchNearbyBusStops(latitude, longitude, showLocationError);
-        return;
+    // Unified location request logic
+    function requestLocation() {
+        // Try cached location first
+        const cachedLocation = sessionStorage.getItem('userLocation');
+        if (cachedLocation) {
+            const { latitude, longitude } = JSON.parse(cachedLocation);
+            fetchNearbyBusStops(latitude, longitude, showLocationError);
+            return;
+        }
+
+        // Check if geolocation is available
+        if (!navigator.geolocation) {
+            alert('Geolocation is not supported by your browser.');
+            busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Geolocation is not supported by your browser.</p>';
+            return;
+        }
+
+        // Request location
+        navigator.geolocation.getCurrentPosition((position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            sessionStorage.setItem('userLocation', JSON.stringify({ latitude, longitude }));
+            fetchNearbyBusStops(latitude, longitude, showLocationError);
+        }, (error) => {
+            console.error('Geolocation error:', error);
+            showLocationError();
+        }, {
+            enableHighAccuracy: true,
+            timeout: 10000, // Increased timeout for mobile reliability
+            maximumAge: 0
+        });
     }
 
-    // Check if geolocation is available
-    if (!navigator.geolocation) {
-        alert('Geolocation is not supported by your browser.');
-        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Geolocation is not supported by your browser.</p>';
-        return;
-    }
-
-    // Try to get current location
-    navigator.geolocation.getCurrentPosition((position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        sessionStorage.setItem('userLocation', JSON.stringify({ latitude, longitude }));
-        fetchNearbyBusStops(latitude, longitude, showLocationError);
-    }, (error) => {
-        console.error('Geolocation error:', error);
-        showLocationError();
-    }, {
-        enableHighAccuracy: true,
-        timeout: 2000,
-        maximumAge: 0
-    });
+    // Always try to fetch location on load
+    requestLocation();
 });
 
 async function fetchNearbyBusStops(latitude, longitude, onError) {

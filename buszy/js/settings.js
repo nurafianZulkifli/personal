@@ -35,7 +35,7 @@ clearCacheBtn.addEventListener('click', async () => {
             localStorage.removeItem('allBusStops');
 
             // Fetch updated data from the API
-            const response = await fetch('https://bat-lta-9eb7bbf231a2.herokuapp.com/bus-stops'); // Replace with your API URL
+            const response = await fetch('https://bat-lta-9eb7bbf231a2.herokuapp.com/bus-stops');
             if (!response.ok) {
                 throw new Error('Failed to fetch data from the API.');
             }

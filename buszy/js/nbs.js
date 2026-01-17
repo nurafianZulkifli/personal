@@ -1,4 +1,4 @@
-const apiUrl = 'https://bat-lta-9eb7bbf231a2.herokuapp.com/nearby-bus-stops'; // Update with your server URL
+const apiUrl = 'https://bat-lta-9eb7bbf231a2.herokuapp.com/nearby-bus-stops'; 
 
 // Unified logic for geolocation and bus stop loading
 document.addEventListener('DOMContentLoaded', () => {

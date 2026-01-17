@@ -57,33 +57,41 @@ clearCacheBtn.addEventListener('click', async () => {
 // ****************************
 // :: PWA Installation Handling
 // ****************************
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('js/service-worker.js');
 }
 
 const installBtn = document.getElementById('install-btn');
 const refreshBtn = document.getElementById('refresh-btn');
+let deferredPrompt = null;
 
-// Function to update button text and refresh button visibility
 function updateInstallButton(installed) {
     if (installed) {
         installBtn.textContent = 'Installed';
         installBtn.disabled = true;
-        refreshBtn.style.display = 'inline-block'; // Show refresh if installed
+        refreshBtn.style.display = 'inline-block';
     } else {
         installBtn.textContent = 'Not installed';
         installBtn.disabled = false;
-        refreshBtn.style.display = 'none'; // Hide refresh if not installed
+        refreshBtn.style.display = 'none';
     }
 }
 
-// Detect if app is installed
+function detectInstalled() {
+    // For most browsers
+    return window.matchMedia('(display-mode: standalone)').matches
+        // For iOS Safari
+        || window.navigator.standalone === true;
+}
+
 window.addEventListener('DOMContentLoaded', () => {
-    let isInstalled = (window.matchMedia('(display-mode: standalone)').matches) ||
-        (window.navigator.standalone === true);
-    updateInstallButton(isInstalled);
+    updateInstallButton(detectInstalled());
 });
 
+window.addEventListener('appinstalled', () => {
+    updateInstallButton(true);
+});
 
 refreshBtn.addEventListener('click', () => {
     window.location.reload();
@@ -104,10 +112,5 @@ installBtn.addEventListener('click', async () => {
         }
         deferredPrompt = null;
     }
-});
-
-// Listen for appinstalled event
-refreshBtn.addEventListener('click', () => {
-    window.location.reload();
 });
 

@@ -1,40 +1,22 @@
 const apiUrl = 'https://bat-lta-9eb7bbf231a2.herokuapp.com/nearby-bus-stops'; // Update with your server URL
 
-// Function to fetch and display nearby bus stops using cached location
+// Unified logic for geolocation and bus stop loading
 document.addEventListener('DOMContentLoaded', () => {
-    const cachedLocation = sessionStorage.getItem('userLocation');
     const busStopsContainer = document.getElementById('bus-stops');
+    busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Searching for nearby bus stops...</p>';
 
+    // Helper to show error only if nothing can be loaded
+    function showLocationError() {
+        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.</p>';
+    }
+
+    // Try cached location first
+    const cachedLocation = sessionStorage.getItem('userLocation');
     if (cachedLocation) {
         const { latitude, longitude } = JSON.parse(cachedLocation);
-        fetchNearbyBusStops(latitude, longitude);
-    } else {
-        // Get the user's current location
-        navigator.geolocation.getCurrentPosition((position) => {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
-
-            // Cache the location
-            sessionStorage.setItem('userLocation', JSON.stringify({ latitude, longitude }));
-
-            fetchNearbyBusStops(latitude, longitude);
-        }, (error) => {
-            console.error('Geolocation error:', error);
-            busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.</p>';
-        }, {
-            enableHighAccuracy: true,
-            timeout: 2000,
-            maximumAge: 0
-        });
+        fetchNearbyBusStops(latitude, longitude, showLocationError);
+        return;
     }
-});
-
-// Automatically fetch nearby bus stops on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const busStopsContainer = document.getElementById('bus-stops');
-
-    // Display "Searching for nearby bus stops..." message
-    busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Searching for nearby bus stops...</p>';
 
     // Check if geolocation is available
     if (!navigator.geolocation) {
@@ -43,42 +25,42 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Get the user's current location
-    navigator.geolocation.getCurrentPosition(async (position) => {
+    // Try to get current location
+    navigator.geolocation.getCurrentPosition((position) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-
-        try {
-            // Fetch nearby bus stops from the backend
-            const response = await fetch(`${apiUrl}?latitude=${latitude}&longitude=${longitude}&radius=2`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch nearby bus stops');
-            }
-
-            const busStops = await response.json();
-            displayBusStops(busStops);
-        } catch (error) {
-            console.error('Error:', error);
-            busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Failed to fetch nearby bus stops. Please try again later.</p>';
-        }
+        sessionStorage.setItem('userLocation', JSON.stringify({ latitude, longitude }));
+        fetchNearbyBusStops(latitude, longitude, showLocationError);
     }, (error) => {
         console.error('Geolocation error:', error);
-        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location. Retrying...</p>';
+        showLocationError();
+    }, {
+        enableHighAccuracy: true,
+        timeout: 2000,
+        maximumAge: 0
     });
 });
 
-async function fetchNearbyBusStops(latitude, longitude) {
+async function fetchNearbyBusStops(latitude, longitude, onError) {
+    const busStopsContainer = document.getElementById('bus-stops');
     try {
         const response = await fetch(`${apiUrl}?latitude=${latitude}&longitude=${longitude}&radius=2`);
         if (!response.ok) {
             throw new Error('Failed to fetch nearby bus stops');
         }
-
         const busStops = await response.json();
-        displayBusStops(busStops);
+        if (busStops && busStops.length > 0) {
+            displayBusStops(busStops);
+        } else {
+            busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-circle-info"></i>No Bus Stops found nearby.</p>';
+        }
     } catch (error) {
         console.error('Error:', error);
-        busStopsContainer.innerHTML = '<p class="pin-msg"<i class="fa-solid fa-triangle-exclamation"></i>Failed to fetch nearby bus stops. Please try again later.</p>';
+        if (typeof onError === 'function') {
+            onError();
+        } else {
+            busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Failed to fetch nearby bus stops. Please try again later.</p>';
+        }
     }
 }
 

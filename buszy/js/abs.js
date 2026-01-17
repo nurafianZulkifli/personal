@@ -204,9 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // ****************************
 document.addEventListener('DOMContentLoaded', () => {
     const loadingMessages = [
-        "Loading Bus Arrival Data...",
-        "Fetching All Bus Stop Data...",
-        "First time use will take a lot longer...",
+        "Fetching Bus Stop Data...",
+        "This might take a while...",
+        "Do re-fetch your data once in a while.",
+        "This ensures you are up to date...",
         "Once loaded, everything will be cached.",
         "Cached data means faster load times!"
     ];

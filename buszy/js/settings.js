@@ -59,12 +59,16 @@ clearCacheBtn.addEventListener('click', async () => {
 // ****************************
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('js/service-worker.js');
+    // Use relative path from settings.html to service-worker.js
+    navigator.serviceWorker.register('../service-worker.js').catch((err) => {
+        console.error('Service Worker registration failed:', err);
+    });
 }
 
 const installBtn = document.getElementById('install-btn');
 const refreshBtn = document.getElementById('refresh-btn');
-let deferredPrompt = null;
+// Ensure deferredPrompt is always defined in global scope
+window.deferredPrompt = null;
 
 function updateInstallButton(installed) {
     if (installed) {
@@ -99,18 +103,18 @@ refreshBtn.addEventListener('click', () => {
 
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
-    deferredPrompt = e;
+    window.deferredPrompt = e;
     updateInstallButton(false);
 });
 
 installBtn.addEventListener('click', async () => {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
+    if (window.deferredPrompt) {
+        window.deferredPrompt.prompt();
+        const { outcome } = await window.deferredPrompt.userChoice;
         if (outcome === 'accepted') {
             updateInstallButton(true);
         }
-        deferredPrompt = null;
+        window.deferredPrompt = null;
     }
 });
 

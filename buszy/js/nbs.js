@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const busStopsContainer = document.getElementById('bus-stops');
     busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Searching for nearby bus stops...</p>';
 
-    // Add a retry/allow location button only on error
+    // Helper to show error only if nothing can be loaded
     function showLocationError() {
-        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.<br><button id="retry-location-btn" class="btn btn-rfetch">Allow Location</button></p>';
+        busStopsContainer.innerHTML = '<p class="pin-msg"><i class="fa-solid fa-triangle-exclamation"></i>Unable to retrieve your location.<br><button id="retry-location-btn" class="btn btn-rfetch">Retry</button></p>';
         const retryBtn = document.getElementById('retry-location-btn');
         if (retryBtn) {
             retryBtn.addEventListener('click', () => {
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Unified location request logic
     function requestLocation() {
         // Try cached location first
         const cachedLocation = sessionStorage.getItem('userLocation');
@@ -33,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Request location
+        // Show spinner while waiting for location
+        busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Requesting your location...</p>';
+
         navigator.geolocation.getCurrentPosition((position) => {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showLocationError();
         }, {
             enableHighAccuracy: true,
-            timeout: 10000, // Increased timeout for mobile reliability
+            timeout: 10000,
             maximumAge: 0
         });
     }

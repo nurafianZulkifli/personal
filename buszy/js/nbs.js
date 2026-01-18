@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Show spinner while waiting for location
-        busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Fetching your location...</p>';
+        busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Searching for nearby bus stops...</p>';
 
         navigator.geolocation.getCurrentPosition((position) => {
             const latitude = position.coords.latitude;

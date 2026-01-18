@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function requestLocation() {
-        // Try cached location first
+    function requestLocation(force = false) {
+        // Try cached location first, unless force is true
         const cachedLocation = sessionStorage.getItem('userLocation');
-        if (cachedLocation) {
+        if (cachedLocation && !force) {
             const { latitude, longitude } = JSON.parse(cachedLocation);
             fetchNearbyBusStops(latitude, longitude, showLocationError);
             return;
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Show spinner while waiting for location
-        busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Requesting your location...</p>';
+        busStopsContainer.innerHTML = '<p class="pin-msg"><span class="spinner"></span>Fetching your location...</p>';
 
         navigator.geolocation.getCurrentPosition((position) => {
             const latitude = position.coords.latitude;
@@ -52,6 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Always try to fetch location on load
     requestLocation();
+
+    // Add refresh event listener to re-fetch location
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            // If coming from bfcache (back/forward cache), force location refresh
+            requestLocation(true);
+        }
+    });
 });
 
 async function fetchNearbyBusStops(latitude, longitude, onError) {

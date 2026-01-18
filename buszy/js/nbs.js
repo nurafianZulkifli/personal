@@ -51,14 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Always try to fetch location on load
-    requestLocation();
+    requestLocation(true); // Always force location fetch on load
 
     // Add refresh event listener to re-fetch location
     window.addEventListener('pageshow', (event) => {
-        if (event.persisted) {
-            // If coming from bfcache (back/forward cache), force location refresh
-            requestLocation(true);
-        }
+        requestLocation(true); // Always force location fetch on refresh or bfcache
     });
 });
 

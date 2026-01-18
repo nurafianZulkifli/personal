@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ****************************
 // :: Mobile Swipe Navigation for Tabs
 // ****************************
-(function() {
+(function () {
     let touchStartX = 0;
     let touchEndX = 0;
     const minSwipeDistance = 50; // Minimum px for swipe
@@ -191,12 +191,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    document.addEventListener('touchstart', function(e) {
+    document.addEventListener('touchstart', function (e) {
         if (e.touches.length === 1) {
             touchStartX = e.touches[0].clientX;
         }
     });
-    document.addEventListener('touchend', function(e) {
+    document.addEventListener('touchend', function (e) {
         if (e.changedTouches.length === 1) {
             touchEndX = e.changedTouches[0].clientX;
             handleGesture();

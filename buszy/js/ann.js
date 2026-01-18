@@ -36,6 +36,7 @@ async function fetchTrainServiceAlerts(retries = 3) {
 // Call the function to fetch train service alerts
 fetchTrainServiceAlerts();
 
+
 // ****************************
 // :: Mobile Swipe Navigation for Tabs
 // ****************************

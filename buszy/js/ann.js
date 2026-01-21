@@ -3,7 +3,7 @@
 // ****************************
 
 // Fetch train service alerts and update the alert box
-async function fetchTrainServiceAlerts(retries = 3) {
+async function fetchTrainServiceAlerts(retries = 7) {
     const alertBox = document.getElementById('train-alert');
     const url = 'https://bat-lta-9eb7bbf231a2.herokuapp.com/train-service-alerts';
 
@@ -34,7 +34,7 @@ async function fetchTrainServiceAlerts(retries = 3) {
 }
 
 // Call the function to fetch train service alerts
-fetchTrainServiceAlerts();
+fetchTrainServiceAlerts(7);
 
 
 // ****************************

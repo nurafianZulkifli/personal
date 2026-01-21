@@ -18,14 +18,14 @@ async function fetchTrainServiceAlerts(retries = 3) {
             // Check if there is a valid alert message
             if (data && data.value && data.value.Message && Array.isArray(data.value.Message) && data.value.Message.length > 0) {
                 const alerts = data.value.Message.map(msg => msg.Content || 'No content available').join('<br>');
-                alertBox.innerHTML = `<i class="fa-solid fa-bullhorn"></i> ${alerts}`;
+                alertBox.innerHTML = `<p><i class="fa-solid fa-bullhorn"></i> ${alerts}</p>`;
             } else {
-                alertBox.innerHTML = `<i class="fa-solid fa-bullhorn"></i> No active train service alerts.`;
+                alertBox.innerHTML = `<p><i class="fa-solid fa-bullhorn"></i> No active train service alerts.</p>`;
             }
             return; // Exit the function if successful
         } catch (error) {
             if (attempt === retries) {
-                alertBox.innerHTML = `<i class="fa-solid fa-bullhorn"></i> Unable to load train service alerts after ${retries} attempts.`;
+                alertBox.innerHTML = `<p><i class="fa-solid fa-bullhorn"></i> Unable to load train service alerts after ${retries} attempts.</p>`;
             } else {
                 console.warn(`Attempt ${attempt} failed. Retrying...`);
             }
@@ -45,10 +45,15 @@ fetchTrainServiceAlerts();
 (function () {
     let touchStartX = 0;
     let touchEndX = 0;
+    let isSwiping = false;
     const minSwipeDistance = 50; // Minimum px for swipe
     const tabLinks = Array.from(document.querySelectorAll('#scrollable-tabs a'));
     const tabsElem = document.getElementById('scrollable-tabs');
-    if (!tabLinks.length || !tabsElem) return;
+    const tabsContainer = tabsElem ? tabsElem.parentElement : null;
+    if (!tabLinks.length || !tabsElem || !tabsContainer) return;
+
+    // Add transition style to the container
+    tabsContainer.style.transition = 'transform 0.25s cubic-bezier(0.4,0,0.2,1)';
 
     // Helper: check if an input or textarea is focused (keyboard likely open)
     function isKeyboardShown() {
@@ -67,16 +72,31 @@ fetchTrainServiceAlerts();
             // Swipe left: go to next tab
             const current = tabLinks.findIndex(link => link.classList.contains('active'));
             if (current !== -1 && current < tabLinks.length - 1) {
-                window.location.href = tabLinks[current + 1].href;
+                animateSwipe(-1, () => {
+                    window.location.href = tabLinks[current + 1].href;
+                });
             }
         }
         if (touchEndX > touchStartX + minSwipeDistance) {
             // Swipe right: go to previous tab
             const current = tabLinks.findIndex(link => link.classList.contains('active'));
             if (current > 0) {
-                window.location.href = tabLinks[current - 1].href;
+                animateSwipe(1, () => {
+                    window.location.href = tabLinks[current - 1].href;
+                });
             }
         }
+    }
+
+    function animateSwipe(direction, callback) {
+        if (!tabsContainer) return callback();
+        isSwiping = true;
+        tabsContainer.style.transform = `translateX(${direction * 60}px)`;
+        setTimeout(() => {
+            tabsContainer.style.transform = '';
+            isSwiping = false;
+            callback();
+        }, 250);
     }
 
     let swipeStartY = 0;
@@ -85,7 +105,7 @@ fetchTrainServiceAlerts();
         if (e.touches.length === 1) {
             // Only start swipe if below tabs and keyboard is not shown
             swipeStartY = e.touches[0].clientY;
-            if (isBelowTabs(swipeStartY) && !isKeyboardShown()) {
+            if (isBelowTabs(swipeStartY) && !isKeyboardShown() && !isSwiping) {
                 touchStartX = e.touches[0].clientX;
             } else {
                 touchStartX = null;

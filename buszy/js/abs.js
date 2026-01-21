@@ -235,16 +235,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // ****************************
 
 // Only enable swipe navigation for touches below the tabs and not when keyboard is shown
-
-// Use the bounding rect of the visible tabs container for swipe detection
 (function () {
     let touchStartX = 0;
     let touchEndX = 0;
+    let isSwiping = false;
     const minSwipeDistance = 50; // Minimum px for swipe
     const tabLinks = Array.from(document.querySelectorAll('#scrollable-tabs a'));
-    // Use the container div, not the ul
-    const tabsContainer = document.querySelector('.scrollable-tabs-container');
-    if (!tabLinks.length || !tabsContainer) return;
+    const tabsElem = document.getElementById('scrollable-tabs');
+    const tabsContainer = tabsElem ? tabsElem.parentElement : null;
+    if (!tabLinks.length || !tabsElem || !tabsContainer) return;
+
+    // Add transition style to the container
+    tabsContainer.style.transition = 'transform 0.25s cubic-bezier(0.4,0,0.2,1)';
 
     // Helper: check if an input or textarea is focused (keyboard likely open)
     function isKeyboardShown() {
@@ -254,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Only respond to swipes below the tabs
     function isBelowTabs(y) {
-        const rect = tabsContainer.getBoundingClientRect();
+        const rect = tabsElem.getBoundingClientRect();
         return y > rect.bottom;
     }
 
@@ -263,16 +265,31 @@ document.addEventListener('DOMContentLoaded', () => {
             // Swipe left: go to next tab
             const current = tabLinks.findIndex(link => link.classList.contains('active'));
             if (current !== -1 && current < tabLinks.length - 1) {
-                window.location.href = tabLinks[current + 1].href;
+                animateSwipe(-1, () => {
+                    window.location.href = tabLinks[current + 1].href;
+                });
             }
         }
         if (touchEndX > touchStartX + minSwipeDistance) {
             // Swipe right: go to previous tab
             const current = tabLinks.findIndex(link => link.classList.contains('active'));
             if (current > 0) {
-                window.location.href = tabLinks[current - 1].href;
+                animateSwipe(1, () => {
+                    window.location.href = tabLinks[current - 1].href;
+                });
             }
         }
+    }
+
+    function animateSwipe(direction, callback) {
+        if (!tabsContainer) return callback();
+        isSwiping = true;
+        tabsContainer.style.transform = `translateX(${direction * 60}px)`;
+        setTimeout(() => {
+            tabsContainer.style.transform = '';
+            isSwiping = false;
+            callback();
+        }, 250);
     }
 
     let swipeStartY = 0;
@@ -281,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.touches.length === 1) {
             // Only start swipe if below tabs and keyboard is not shown
             swipeStartY = e.touches[0].clientY;
-            if (isBelowTabs(swipeStartY) && !isKeyboardShown()) {
+            if (isBelowTabs(swipeStartY) && !isKeyboardShown() && !isSwiping) {
                 touchStartX = e.touches[0].clientX;
             } else {
                 touchStartX = null;

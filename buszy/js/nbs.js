@@ -200,12 +200,28 @@ document.addEventListener('DOMContentLoaded', () => {
 // ****************************
 // :: Mobile Swipe Navigation for Tabs
 // ****************************
+
+// Only enable swipe navigation for touches below the tabs and not when keyboard is shown
 (function () {
     let touchStartX = 0;
     let touchEndX = 0;
     const minSwipeDistance = 50; // Minimum px for swipe
     const tabLinks = Array.from(document.querySelectorAll('#scrollable-tabs a'));
-    if (!tabLinks.length) return;
+    const tabsElem = document.getElementById('scrollable-tabs');
+    if (!tabLinks.length || !tabsElem) return;
+
+    // Helper: check if an input or textarea is focused (keyboard likely open)
+    function isKeyboardShown() {
+        const active = document.activeElement;
+        return active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable);
+    }
+
+    // Only respond to swipes below the tabs
+    function isBelowTabs(y) {
+        const rect = tabsElem.getBoundingClientRect();
+        return y > rect.bottom;
+    }
+
     function handleGesture() {
         if (touchEndX < touchStartX - minSwipeDistance) {
             // Swipe left: go to next tab
@@ -222,15 +238,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    let swipeStartY = 0;
+
     document.addEventListener('touchstart', function (e) {
         if (e.touches.length === 1) {
-            touchStartX = e.touches[0].clientX;
+            // Only start swipe if below tabs and keyboard is not shown
+            swipeStartY = e.touches[0].clientY;
+            if (isBelowTabs(swipeStartY) && !isKeyboardShown()) {
+                touchStartX = e.touches[0].clientX;
+            } else {
+                touchStartX = null;
+            }
         }
     });
     document.addEventListener('touchend', function (e) {
-        if (e.changedTouches.length === 1) {
+        if (e.changedTouches.length === 1 && touchStartX !== null) {
             touchEndX = e.changedTouches[0].clientX;
             handleGesture();
         }
+        touchStartX = null;
     });
 })();

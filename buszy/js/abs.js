@@ -235,13 +235,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // ****************************
 
 // Only enable swipe navigation for touches below the tabs and not when keyboard is shown
+
+// Use the bounding rect of the visible tabs container for swipe detection
 (function () {
     let touchStartX = 0;
     let touchEndX = 0;
     const minSwipeDistance = 50; // Minimum px for swipe
     const tabLinks = Array.from(document.querySelectorAll('#scrollable-tabs a'));
-    const tabsElem = document.getElementById('scrollable-tabs');
-    if (!tabLinks.length || !tabsElem) return;
+    // Use the container div, not the ul
+    const tabsContainer = document.querySelector('.scrollable-tabs-container');
+    if (!tabLinks.length || !tabsContainer) return;
 
     // Helper: check if an input or textarea is focused (keyboard likely open)
     function isKeyboardShown() {
@@ -251,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Only respond to swipes below the tabs
     function isBelowTabs(y) {
-        const rect = tabsElem.getBoundingClientRect();
+        const rect = tabsContainer.getBoundingClientRect();
         return y > rect.bottom;
     }
 

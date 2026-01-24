@@ -248,7 +248,7 @@ async function fetchBusArrivals() {
                 <div class="card">
                     <div class="card-header">Error</div>
                     <div class="card-body">
-                        <p class="card-text">Error loading data</p>
+                        <p class="card-text">Error loading data. Try Refreshing.</p>
                     </div>
                 </div>
             </div>`;

@@ -65,18 +65,15 @@ if ('serviceWorker' in navigator) {
 }
 
 const installBtn = document.getElementById('install-btn');
-const refreshBtn = document.getElementById('refresh-btn');
 let deferredPrompt = null;
 
 function updateInstallButton(installed) {
     if (installed) {
         installBtn.textContent = 'Installed';
         installBtn.disabled = true;
-        refreshBtn.style.display = 'inline-block';
     } else {
         installBtn.textContent = 'Not installed';
         installBtn.disabled = deferredPrompt === null;
-        refreshBtn.style.display = 'none';
     }
 }
 
@@ -98,10 +95,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('appinstalled', () => {
     updateInstallButton(true);
-});
-
-refreshBtn.addEventListener('click', () => {
-    window.location.reload();
 });
 
 window.addEventListener('beforeinstallprompt', (e) => {

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="buszy/css/style-buszy.css">
     <link rel="stylesheet" href="css/style-breakpoints.css">
     <link rel="stylesheet" href="css/dark-mode.css">
 
@@ -38,124 +39,7 @@
 <style>
     #cv-bat {
         background-image: url("img/bg-img/hero-buszy.png");
-        height: 40vh;
-    }
-
-    @media only screen and (min-width: 1001px) and (max-width: 1199px) {
-        .card-container {
-            display: grid;
-            grid-template-columns: 47% 48%;
-            gap: 2em;
-            margin-bottom: 4em;
-            padding: 0 4em;
-        }
-
-        .all-apps h2 {
-            text-align: center;
-            margin-left: 0em;
-        }
-
-    }
-
-    @media only screen and (min-width: 844px) and (max-width: 1000px) {
-        .card-container {
-            display: grid;
-            grid-template-columns: 47% 48%;
-            gap: 2em;
-            margin-bottom: 4em;
-            padding: 0 5em;
-        }
-
-        .card-bz p {
-            font-size: 20px;
-        }
-
-        .all-apps h2 {
-            text-align: center;
-            margin-left: 0em;
-        }
-
-    }
-
-    @media only screen and (min-width: 801px) and (max-width: 843px) {
-        .card-container {
-            display: grid;
-            grid-template-columns: 47% 48%;
-            gap: 2em;
-            margin-bottom: 4em;
-            padding: 0 3em;
-        }
-
-        .card-bz p {
-            font-size: 19px;
-        }
-
-        .all-apps h2 {
-            text-align: center;
-            margin-left: 0em;
-        }
-    }
-
-    @media only screen and (min-width: 455px) and (max-width: 800px) {
-        .all-apps h2 {
-            margin-left: 0em;
-        }
-
-        .card-container {
-            display: grid;
-            grid-template-columns: 47% 48%;
-            gap: 2em;
-            margin-bottom: 4em;
-        }
-
-        .card-bz {
-            width: 100%;
-        }
-
-        .card-bz p {
-            font-size: 19px;
-        }
-
-        .bz-btn {
-            margin-left: 1em;
-            margin-right: 1em;
-        }
-
-        .all-apps h2 {
-            text-align: center;
-            margin-left: 0em;
-        }
-    }
-
-    @media only screen and (min-width: 320px) and (max-width: 454px) {
-        .all-apps h2 {
-            margin-top: 1em;
-            margin-left: 0em;
-        }
-
-        .card-container {
-            display: grid;
-            grid-template-columns: 50% 50%;
-            gap: 20px;
-            margin-bottom: 4em;
-            padding-left: 0em;
-
-        }
-
-        .card-bz {
-            width: 100%;
-        }
-
-        .card-bz p {
-            font-size: 17px;
-        }
-
-        .bz-btn {
-            margin-left: 0em;
-            margin-right: 0em;
-            width: 100px;
-        }
-
+        height: 35vh;
     }
 
     .footer {
@@ -231,123 +115,93 @@
             margin-top: 5px;
             font-size: 20px;
         }
+
+        .pinned h2 {
+            font-size: 30px;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            font-weight: bolder;
+            color: #3b3b3b;
+            text-align: center;
+        }
     }
 </style>
 
 <body>
-
     <!-- Navigation Bar -->
     <nav class="navbar-container">
         <div class="navbar">
             <!-- Logo -->
-            <a href="index.html"><img src="img/core-img/logo.png" alt="logo" class="logo" /></a>
+            <a href="../buszy.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
 
             <!-- Navigation Links -->
             <ul class="navbar-nav" id="navbarNav">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">
-                        <i class="fa-solid fa-house"></i>
-                        <span>Home</span>
+                    <a href="#" class="nav-link active">
+                        <i class="fa-sharp fa-solid fa-thumbtack-angle"></i>
+                        <span>Pinned</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.html" class="nav-link">
-                        <i class="fa-solid fa-circle-user"></i>
-                        <span>About</span>
+                    <a href="buszy/nbs.html" class="nav-link">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Nearby</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="works-by-nrfz.html" class="nav-link">
-                        <i class="fa-solid fa-pen-paintbrush"></i>
-                        <span>Works By NRFZ</span>
+                    <a href="buszy/abs.html" class="nav-link">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Search</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="eicw/eicw.html" class="nav-link">
-                        <i class="fa-solid fa-map-location"></i>
-                        <span>EICW</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="blog.html" class="nav-link">
-                        <i class="fa-solid fa-comment"></i>
-                        <span>Blog</span>
-                    </a>
-                </li>
-                <li class="nav-item-toggle">
-                    <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
-                        <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+                <li class="nav-item ">
+                    <a href="buszy/menu.html" class="nav-link">
+                        <i class="fa-solid fa-bars"></i>
+                        <span>Menu</span>
                     </a>
                 </li>
             </ul>
-
-            <!-- Mobile Toggle -->
-            <button class="mobile-toggle" id="mobileToggle">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
         </div>
 
-        </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="#" class="mobile-menu-brand">
-                <span class="brand-text">
-                    <li class="mobile-menu-item mobile-theme-toggle">
-                        <button class="wbnrfz_btn_theme mobile-theme-btn" id="dark-mode-toggle-mobile"
-                            title="Toggle Dark/Light Mode!">
-                            <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
-                        </button>
-                    </li>
-                </span>
-            </a>
-            <button class="mobile-menu-close" id="mobileMenuClose">
-                <span>×</span>
-            </button>
-        </div>
-
-        <ul class="mobile-menu-nav">
-            <li class="mobile-menu-item">
-                <a href="index.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-regular fa-house"></i>
-                    <span>Home</span>
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <ul>
+            <li class="active">
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-sharp fa-solid fa-thumbtack-angle"></i>
+                    </span>
+                    <span class="label">Pinned</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="about.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-regular fa-circle-user"></i>
-                    <span>About</span>
+            <li>
+                <a href="buszy/nbs.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                    <span class="label">Nearby</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="works-by-nrfz.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-pen-paintbrush"></i>
-                    <span>Works By NRFZ</span>
+            <li>
+                <a href="buszy/abs.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <span class="label">Search</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="eicw/eicw.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-map-location"></i>
-                    <span>EICW</span>
-                </a>
-            </li>
-            <li class="mobile-menu-item">
-                <a href="blog.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-comment"></i>
-                    <span>Blog</span>
+            <li>
+                <a href="buszy/menu.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </span>
+                    <span class="label">Menu</span>
                 </a>
             </li>
         </ul>
-    </div>
+    </nav>
 
 
 
@@ -362,42 +216,6 @@
             </div>
     </section>
 
-    <section class="all-apps">
-        <div class="container">
-            <h2></h2>
-            <div class="card-container">
-                <div class="card-bz card-nbs">
-                    <a href="buszy/nbs.html">
-                        <img src="buszy/assets/nbs.png" alt="nbs" class="card-icon" />
-                    </a>
-                    <p>Nearby Bus Stops</p>
-                    <a href="buszy/nbs.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="card-bz card-sbs">
-                    <a href="buszy/abs.html">
-                        <img src="buszy/assets/sbs.png" alt="sbs" class="card-icon" />
-                    </a>
-                    <p>Search Bus Stops</p>
-                    <a href="buszy/abs.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="card-bz card-ann">
-                    <a href="buszy/ann.html">
-                        <img src="buszy/assets/ann.png" alt="ann" class="card-icon" />
-                    </a>
-                    <p>Announcements</p>
-                    <a href="buszy/ann.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="card-bz card-ann">
-                    <a href="buszy/settings.html">
-                        <img src="buszy/assets/settings.png" alt="settings" class="card-icon" />
-                    </a>
-                    <p>Settings</p>
-                    <a href="buszy/settings.html" class="btn bz-btn btn-2 mt-15"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="pinned" id="pinned">
         <div class="container">
             <h2><i class="fa-solid fa-location-pin"></i>&nbsp;Pinned Bus Stops</h2>
@@ -409,36 +227,13 @@
     </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-social">
-                <a href="https://github.com/nurafianZulkifli" class="social-link">
-                    <i class="fa-brands fa-github" aria-hidden="true"></i>
-                </a>
-                <a href="https://twitter.com/nrfzlkf_" class="social-link">
-                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
-                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
-                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="footer-copy">
-            © 2026 Nurafian Zulkifli
-        </div>
-    </footer>
 
     <script type="text/javascript" id="cookiebanner" src="js/cookies-banner.js" data-position="bottom" data-bg="#f2f3e5"
         data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
-    <script src="js/navtabs.js"></script>
+    <script src="buszy/js/mob-navtabs.js"></script>
 
     <script src="buszy/buszy.js"></script>
 

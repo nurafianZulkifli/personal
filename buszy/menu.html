@@ -34,6 +34,13 @@
 </head>
 
 <style>
+    html,
+    body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
     #cv-bat-subp {
         height: 10vh;
     }
@@ -46,10 +53,18 @@
         margin-bottom: 0rem !important;
     }
 
-    .alert-warning a {
-        color: #000;
-        text-decoration: underline;
+    .breadcrumb.breadcrumb-fixed {
+        background: none;
+        backdrop-filter: none;
+        box-shadow: none;
     }
+
+    body.dark-mode .breadcrumb.breadcrumb-fixed {
+        background: none;
+        backdrop-filter: none;
+        box-shadow: none;
+    }
+
 
     body.dark-mode .alert-warning p {
         color: #ffda6a;
@@ -57,13 +72,8 @@
         overflow-wrap: break-word;
         line-height: 1.7;
         margin-bottom: 0rem !important;
-        text-align: left;
     }
 
-    body.dark-mode .alert-warning a {
-        color: #fff;
-        text-decoration: underline;
-    }
 
     .footer {
         display: none;
@@ -168,6 +178,7 @@
 
     <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
 
+
     <!-- Title/Breadcrumbs -->
     <section class="about-me-sum clearfix">
         <div class="wbnrfz_eicw">
@@ -191,88 +202,61 @@
                             <div
                                 style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                                 <div>
-                                    <h1 class="page-title" id="filter-title">Announcements</h1>
+                                    <h1 class="page-title" id="filter-title">Menu</h1>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
             </div>
+
         </div>
+
     </section>
 
     <!-- Section Contents -->
     <section class="about-me-summ clearfix" style="padding-bottom: 5em;">
         <div class="container">
-                        <div class="alert alert-warning" role="alert" id="train-alert">
-                <i class="fa-solid fa-bullhorn"></i> Loading Alerts...
-            </div>
             <div class="list-group">
-                <a href="settings.html#refetch-stops"
-                    class="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="ann.html" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex">
                         <div>
-                            <h5 class="lg-ann"><i class="fa-solid fa-thumbtack"></i> Bus Stop Description Changes -
-                                January 2026</h5>
+                            <h5 class="lg-menu"><i class="fa-solid fa-bullhorn"></i> Announcements</h5>
                         </div>
                     </div>
-                    <p class="mb-1" style="cursor: pointer;">
-                        A few Bus Stop Descriptions (Names) have been updated in January 2026. Do head over to Settings
-                        and re-fetch
-                        your bus stop data to get the most up to date information.</p>
                 </a>
-                <hr>
-                <a href="https://landtransportguru.net/sunday-closure-bplrt-jan-2026/"
-                    class="list-group-item list-group-item-action flex-column align-items-start">
+
+                <a href="settings.html" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex">
                         <div>
-                            <h5 class="lg-ann">Line Closure - BPLRT</h5>
-                            <small class="lg-date">26 Dec 2025</small>
+                            <h5 class="lg-menu"><i class="fa-solid fa-gear"></i> Settings</h5>
                         </div>
                     </div>
-                    <p class="mb-1" style="cursor: pointer;">
-                        A Full-Day Closure of the entire Bukit Panjang LRT Line (BPLRT) will take place on Sunday, 25
-                        January 2026. This is to facilitate the migration of the BPLRT’s Operations Control Centre
-                        (OCC).</p>
                 </a>
-                <a href="https://landtransportguru.net/ccl-degraded-service-jan-apr-26/"
-                    class="list-group-item list-group-item-action flex-column align-items-start">
+
+                <a href="" class="list-group-item list-group-item-action flex-column align-items-start"
+                    id="dark-mode-toggle-desktop">
                     <div class="d-flex">
                         <div>
-                            <h5 class="lg-ann">Service Adjustments - CCL</h5>
-                            <small class="lg-date">01 Dec 2025</small>
+                            <h5 class="lg-menu"><i class="fa-solid fa-sun-bright"></i> Display: Light</h5>
                         </div>
                     </div>
-                    <p class="mb-1" style="cursor: pointer;">
-                        Reduced train services along the entire Circle Line (CCL) will take place from Saturday 17
-                        January 2026 to Sunday 19 April 2026 to facilitate essential tunnel strengthening works between
-                        Mountbatten, Dakota and Paya Lebar stations.</p>
-                </a>
-                <a href="https://www.ptc.gov.sg/newsroom/news-releases/newsroom-view/fare-review-exercise-2025"
-                    class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex">
-                        <div>
-                            <h5 class="lg-ann">Fare Review Exercise</h5>
-                            <small class="lg-date">14 Oct 2025</small>
-                        </div>
-                    </div>
-                    <p class="mb-1" style="cursor: pointer;">
-                        PTC grants overall fare adjustment of 5.0% - below the maximum allowable quantum of 14.4%;
-                        deferment of remaining quantum (9.4%) supported by additional Government subsidies...</p>
                 </a>
             </div>
+            <hr>
 
-        </div>
+            <div style="text-align: center; color: gray; font-size: 14px; margin-top: 1em; margin-bottom: 2em;">
+                Version 3.0.0
+            </div>
     </section>
+
 
     <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
         data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
-    <script src="js/mob-navtabs.js"></script>
 
     <script src="buszy-subp.js"></script>
 
@@ -292,7 +276,7 @@
 
     <script src="../js/utils.js"></script>
 
-    <script src="js/ann.js"></script>
+    <script src="js/menu.js"></script>
 
 </body>
 

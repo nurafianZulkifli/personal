@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                     // Make the bus stop details clickable
                     const link = document.createElement('a');
-                    link.href = `buszy/art.html?BusStopCode=${encodeURIComponent(bookmark.BusStopCode)}`;
+                    link.href = `art.html?BusStopCode=${encodeURIComponent(bookmark.BusStopCode)}`;
                     link.innerHTML = `
                     <div class="bus-stop-info">
                         <span class="bus-stop-code">
-                            <img src="buszy/assets/bus-icon.png" alt="Bus Icon">
+                            <img src="assets/bus-icon.png" alt="Bus Icon"> <!-- Replace with your bus icon path -->
                             <span class="bus-stop-code-text">${busStop.BusStopCode}</span>
                         </span>
                         <span class="bus-stop-description">${busStop.Description}</span>
@@ -116,52 +116,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Load bookmarks on page load
     loadBookmarks();
-});
-
-
-// ****************************
-// :: Dynamic Greeting Based on Time of Day
-// ****************************
-document.addEventListener('DOMContentLoaded', () => {
-    const pinnedBusElement = document.querySelector('h2'); // Select the <h2> element
-
-    // Function to determine the all-apps based on the current time
-    function getGreeting() {
-        const now = new Date();
-        const hours = now.getHours();
-
-        if (hours >= 5 && hours < 12) {
-            return 'Good Morning!';
-        } else if (hours >= 12 && hours < 18) {
-            return 'Good Afternoon!';
-        } else {
-            return 'Good Evening!';
-        }
-    }
-
-    // Update the <h2> element with the all-apps
-    pinnedBusElement.textContent = getGreeting();
-});
-
-
-// ****************************
-// :: Bus Stop Click Navigation
-// ****************************
-document.addEventListener('DOMContentLoaded', () => {
-    const busStopElements = document.querySelectorAll('.bus-stop'); // Add a class to bus stop elements
-
-    busStopElements.forEach((element) => {
-        element.addEventListener('click', () => {
-            const busStopCode = element.getAttribute('data-bus-stop-code'); // Get the bus stop code
-            const busStopName = element.getAttribute('data-bus-stop-name'); // Optional: Get the bus stop name
-
-            // Redirect to art.html with the bus stop code as a query parameter
-            const url = new URL('art.html', window.location.origin);
-            url.searchParams.set('BusStopCode', busStopCode);
-            if (busStopName) {
-                url.searchParams.set('BusStopName', busStopName); // Optional
-            }
-            window.location.href = url.toString();
-        });
-    });
 });

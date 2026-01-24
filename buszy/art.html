@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style-buszy.css">
     <link rel="stylesheet" href="../css/style-breakpoints.css">
     <link rel="stylesheet" href="../css/dark-mode.css">
 
@@ -299,133 +300,100 @@
 </style>
 
 <body>
+    <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+    <div class="breadcrumb-fixed-placeholder">
+        <nav aria-label="breadcrumb" style="margin-bottom:0;">
+            <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="nbs.html"><i class="fa-solid fa-location-dot"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="abs.html"><i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar-container">
         <div class="navbar">
             <!-- Logo -->
-            <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+            <a href="../buszy.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
 
             <!-- Navigation Links -->
             <ul class="navbar-nav" id="navbarNav">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">
-                        <i class="fa-solid fa-house"></i>
-                        <span>Home</span>
+                    <a href="pinned.html" class="nav-link">
+                        <i class="fa-sharp fa-solid fa-thumbtack-angle"></i>
+                        <span>Pinned</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../about.html" class="nav-link">
-                        <i class="fa-solid fa-circle-user"></i>
-                        <span>About</span>
+                    <a href="nbs.html" class="nav-link">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Nearby</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../works-by-nrfz.html" class="nav-link">
-                        <i class="fa-solid fa-pen-paintbrush"></i>
-                        <span>Works By NRFZ</span>
+                    <a href="abs.html" class="nav-link">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Search</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="../eicw/eicw.html" class="nav-link">
-                        <i class="fa-solid fa-map-location"></i>
-                        <span>EICW</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="../blog.html" class="nav-link">
-                        <i class="fa-solid fa-comment"></i>
-                        <span>Blog</span>
-                    </a>
-                </li>
-                <li class="nav-item-toggle">
-                    <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
-                        <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+                <li class="nav-item ">
+                    <a href="menu.html" class="nav-link active">
+                        <i class="fa-solid fa-bars"></i>
+                        <span>Menu</span>
                     </a>
                 </li>
             </ul>
-
-            <!-- Mobile Toggle -->
-            <button class="mobile-toggle" id="mobileToggle">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
         </div>
 
-        </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="#" class="mobile-menu-brand">
-                <span class="brand-text">
-                    <li class="mobile-menu-item mobile-theme-toggle">
-                        <button class="wbnrfz_btn_theme mobile-theme-btn" id="dark-mode-toggle-mobile"
-                            title="Toggle Dark/Light Mode!">
-                            <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
-                        </button>
-                    </li>
-                </span>
-            </a>
-            <button class="mobile-menu-close" id="mobileMenuClose">
-                <span>×</span>
-            </button>
-        </div>
-
-        <ul class="mobile-menu-nav">
-            <li class="mobile-menu-item">
-                <a href="../index.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-regular fa-house"></i>
-                    <span>Home</span>
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <ul>
+            <li>
+                <a href="../buszy.html">
+                    <span class="icon">
+                        <i class="fa-sharp fa-solid fa-thumbtack-angle"></i>
+                    </span>
+                    <span class="label">Pinned</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="../about.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-regular fa-circle-user"></i>
-                    <span>About</span>
+            <li>
+                <a href="nbs.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                    <span class="label">Nearby</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="../works-by-nrfz.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-pen-paintbrush"></i>
-                    <span>Works By NRFZ</span>
+            <li class="active">
+                <a href="abs.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <span class="label">Search</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="../eicw/eicw.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-map-location"></i>
-                    <span>EICW</span>
-                </a>
-            </li>
-            <li class="mobile-menu-item">
-                <a href="../blog.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-comment"></i>
-                    <span>Blog</span>
+            <li>
+                <a href="menu.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </span>
+                    <span class="label">Menu</span>
                 </a>
             </li>
         </ul>
-    </div>
+    </nav>
 
 
 
     <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
-
-    <!-- Cover Header -->
-    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-bat-subp">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Title/Breadcrumbs -->
     <section class="about-me-sum clearfix">
@@ -433,15 +401,15 @@
             <div class="page-header-section">
                 <div class="container container-xxl container-mobile container-mobile-header">
                     <div class="breadcrumb-wrapper">
-                        <nav aria-label="breadcrumb">
+                        <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="../index.html">
-                                        <i class="fa-solid fa-house"></i>
+                                    <a href="nbs.html"><i class="fa-solid fa-location-dot"></i>
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="../buszy.html">Buszy</a>
+                                    <a href="abs.html"><i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
                                 </li>
                             </ol>
                         </nav>
@@ -461,62 +429,13 @@
                             </div>
                         </div>
                     </div>
-
-                </div>
-
-
-                <div class="scrollable-tabs-container">
-                    <div class="left-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                        </svg>
-                    </div>
-
-                    <ul id="scrollable-tabs">
-                        <li>
-                            <a href="../buszy.html#pinned"><i class="fa-sharp fa-solid fa-thumbtack-angle"
-                                    title="Pinned"></i>
-                                Pinned</a>
-                        </li>
-
-                        <li>
-                            <a href="nbs.html"><i class="fa-solid fa-location-dot" title="Nearby"></i>
-                                Nearby</a>
-                        </li>
-
-                        <li>
-                            <a href="abs.html"><i class="fa-solid fa-magnifying-glass" title="Search"></i>
-                                Search </a>
-                        </li>
-
-                        <li>
-                            <a href="ann.html"><i class="fa-solid fa-bullhorn" title="Announcements"></i>
-                                Announcements </a>
-                        </li>
-
-                        <li>
-                            <a href="settings.html"><i class="fa-solid fa-gear" title="Settings"></i>
-                                Settings </a>
-                        </li>
-                    </ul>
-
-                    <div class="right-arrow active">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                        </svg>
-
-                    </div>
                 </div>
                 <hr>
             </div>
-
         </div>
-
     </section>
 
-    <!-- Add a container for the map -->
+    <!-- Container for the map -->
     <section class="bus-location-section">
         <div class="container">
             <button id="collapse-map-btn" class="btn btn-busloc btn-sm" title="Collapse Map">
@@ -581,7 +500,7 @@
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
-    <script src="../js/navtabs.js"></script>
+    <script src="js/mob-navtabs.js"></script>
 
     <script src="buszy-subp.js"></script>
 

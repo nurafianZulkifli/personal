@@ -27,6 +27,13 @@ body.dark-mode .mobile-bottom-nav {
     margin-bottom: 0px;
 }
 
+li.breadcrumb-item a:hover,
+body.dark-mode li.breadcrumb-item a:hover {
+    padding: 10px;
+    border-radius: 52px;
+    margin-right: 0.3em;
+}
+
 
 @media (min-width: 995px) {
     .page-header-section {

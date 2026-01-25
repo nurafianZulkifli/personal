@@ -144,7 +144,7 @@ function displayBusStops(busStops) {
                     <span class="bus-stop-code-text">${busStop.BusStopCode}</span>
                 </div>
                 <div class="bus-stop-details">
-                <span class="bus-stop-description">${busStop.Description}</span>&nbsp;&nbsp;|&nbsp;
+                <span class="bus-stop-description">${busStop.Description}</span>&nbsp;|
                 <span class="road-name">${busStop.RoadName}</span>&nbsp;|&nbsp;
                 <span class="distance">${distance}</span>
                 </div>

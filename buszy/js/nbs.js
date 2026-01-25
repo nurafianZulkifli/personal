@@ -128,10 +128,10 @@ function displayBusStops(busStops) {
     // Retrieve existing pinned bus stops from localStorage
     const pinnedBusStops = JSON.parse(localStorage.getItem('bookmarkedBusStops')) || [];
 
-    busStops.forEach((busStop) => {
+    busStops.forEach((busStop, idx) => {
         const distance = busStop.distance < 1
-            ? `${(busStop.distance * 1000).toFixed(0)}m` // Convert to meters if less than 1 km
-            : `${busStop.distance.toFixed(2)} km`; // Show in kilometers otherwise
+            ? `${(busStop.distance * 1000).toFixed(0)}m`
+            : `${busStop.distance.toFixed(2)} km`;
 
         const isPinned = pinnedBusStops.some((stop) => stop.BusStopCode === busStop.BusStopCode);
 
@@ -144,9 +144,9 @@ function displayBusStops(busStops) {
                     <span class="bus-stop-code-text">${busStop.BusStopCode}</span>
                 </div>
                 <div class="bus-stop-details">
-                <span class="bus-stop-description">${busStop.Description}</span>&nbsp;|
+                <span class="bus-stop-description">${busStop.Description}</span>&nbsp;&nbsp;|&nbsp;
                 <span class="road-name">${busStop.RoadName}</span>&nbsp;|&nbsp;
-                <span class="distance">${distance}</span>
+                <span class="distance${idx === 0 ? ' distance-nearest' : ''}">${distance}</span>
                 </div>
             </div>
             <button class="${isPinned ? 'btn btn-unpin btn-nbs btn-sm' : 'btn btn-toPin btn-nbs btn-sm'} pin-button">

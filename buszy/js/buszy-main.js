@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Check if there are no bookmarks
         if (bookmarks.length === 0) {
-            bookmarksContainer.innerHTML = '<p class="pin-msg">Add a Bus Stop.</p>';
+            bookmarksContainer.innerHTML = '<p class="pin-msg">Your Pinned Bus Stops will appear here.</p>';
             return;
         }
 
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // :: Bus Stop Click Navigation
 // ****************************
 document.addEventListener('DOMContentLoaded', () => {
-    const busStopElements = document.querySelectorAll('.bus-stop'); // Add a class to bus stop elements
+    const busStopElements = document.querySelectorAll('.bus-stop'); // Select all bus stop elements
 
     busStopElements.forEach((element) => {
         element.addEventListener('click', () => {

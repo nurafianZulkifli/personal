@@ -49,6 +49,18 @@
     .alert-warning a {
         color: #000;
         text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .list-group-item {
+        transition-duration: 800ms;
+        border-radius: 20px;
+        margin-top: 1em;
+        font-size: 20px;
+        border: 1px solid #2b2b2b33;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
 
     body.dark-mode .alert-warning p {
@@ -61,8 +73,9 @@
     }
 
     body.dark-mode .alert-warning a {
-        color: #fff;
+        color: #ffda6a;
         text-decoration: underline;
+        font-weight: bold;
     }
 
     .footer {
@@ -206,7 +219,7 @@
     <!-- Section Contents -->
     <section class="about-me-summ clearfix" style="padding-bottom: 5em;">
         <div class="container">
-                        <div class="alert alert-warning" role="alert" id="train-alert">
+            <div class="alert alert-warning" role="alert" id="train-alert">
                 <i class="fa-solid fa-bullhorn"></i> Loading Alerts...
             </div>
             <div class="list-group">

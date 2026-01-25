@@ -211,6 +211,11 @@
            letter-spacing: 0.01em;
            transition: color 0.2s, font-weight 0.2s;
        }
+
+       body.dark-mode .mobile-bottom-nav .label,
+       body.dark-mode .mobile-bottom-nav .icon {
+           color: #fff;
+       }
    }
 
 
@@ -413,6 +418,11 @@
        padding-top: 0.5em;
        padding-bottom: 0.5em;
    }
+
+   body.dark-mode .list-group-item {
+       padding-top: 0.5em;
+       padding-bottom: 0.5em;
+}
 
    .list-group-item:hover {
        background-color: #d8e6f3;

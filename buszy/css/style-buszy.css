@@ -32,6 +32,15 @@ body.dark-mode li.breadcrumb-item a:hover {
     padding: 10px;
     border-radius: 52px;
     margin-right: 0.3em;
+    margin-left: 0.3em;
+}
+
+li.breadcrumb-item a,
+body.dark-mode li.breadcrumb-item a {
+    padding: 10px;
+    border-radius: 52px;
+    margin-right: 0.3em;
+    margin-left: 0.3em;
 }
 
 

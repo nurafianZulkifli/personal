@@ -4,8 +4,10 @@
 if (localStorage.getItem('dark-mode') === 'enabled') {
     document.body.classList.add('dark-mode');
     updateThemeIcon('dark');
+    setThemeColorMeta('dark');
 } else {
     updateThemeIcon('light');
+    setThemeColorMeta('light');
 }
 
 // Get both toggle buttons
@@ -19,9 +21,27 @@ function toggleDarkMode() {
     if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('dark-mode', 'enabled');
         updateThemeIcon('dark');
+        setThemeColorMeta('dark');
     } else {
         localStorage.setItem('dark-mode', 'disabled');
         updateThemeIcon('light');
+        setThemeColorMeta('light');
+    }
+
+}
+// Dynamically update the theme-color meta tag and splash background
+function setThemeColorMeta(mode) {
+    var metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (!metaThemeColor) {
+        metaThemeColor = document.createElement('meta');
+        metaThemeColor.setAttribute('name', 'theme-color');
+        document.head.appendChild(metaThemeColor);
+    }
+    if (mode === 'dark') {
+        metaThemeColor.setAttribute('content', '#18191a'); // match dark background
+        // Optionally, update manifest dynamically if needed (not widely supported)
+    } else {
+        metaThemeColor.setAttribute('content', '#ececea'); // match light theme
     }
 }
 

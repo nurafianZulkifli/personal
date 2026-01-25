@@ -42,7 +42,7 @@ function setThemeColorMeta(mode) {
         metaThemeColor.setAttribute('content', '#18191a'); // match dark background
         // Optionally, update manifest dynamically if needed (not widely supported)
     } else {
-        metaThemeColor.setAttribute('content', '#007bff'); // match light theme
+        metaThemeColor.setAttribute('content', '#ececea'); // match light theme
     }
 }
 

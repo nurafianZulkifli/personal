@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Menu | Buszy</title>
+    <title>Train Service Updates | Buszy</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="css/style-buszy.css">
     <link rel="stylesheet" href="../css/style-breakpoints.css">
     <link rel="stylesheet" href="../css/dark-mode.css">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN76281P3Q"></script>
@@ -34,57 +38,84 @@
 </head>
 
 <style>
-    html,
-    body {
-        margin: 0;
-        height: 100%;
-        overflow: hidden;
+    .custom-list-item {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 40px;
+        padding: 18px 32px;
+        width: 100%;
+        margin: 24px 0;
+        box-sizing: border-box;
+        gap: 18px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
     }
 
-    #cv-bat-subp {
-        height: 10vh;
+    body.dark-mode .custom-list-item {
+        background-color: #2e2e2e;
+        color: #fff !important;
+        border: 1px solid #2b2b2b33;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .alert-warning p {
-        color: #000;
-        font-size: 16px;
-        overflow-wrap: break-word;
-        line-height: 1.7;
-        margin-bottom: 0rem !important;
+    .line-label {
+        background: #ff3b3b;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 16px;
+        padding: 6px 18px;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        margin-right: 8px;
     }
 
-    .breadcrumb.breadcrumb-fixed {
-        background: none;
-        backdrop-filter: none;
-        box-shadow: none;
+    .line-name {
+        font-weight: 600;
+        font-size: 1.3em;
+        color: #111;
+        flex: 1;
     }
 
-    .list-group-item {
-        padding-top: 1em;
-        padding-bottom: 1em;
+    .status-icon {
+        background: #43b02a;
+        color: #fff;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6em;
     }
 
-    body.dark-mode .breadcrumb.breadcrumb-fixed {
-        background: none;
-        backdrop-filter: none;
-        box-shadow: none;
+    .line-label.nsl {
+        background: #e1251b;
     }
 
-
-    body.dark-mode .alert-warning p {
-        color: #ffda6a;
-        font-size: 16px;
-        overflow-wrap: break-word;
-        line-height: 1.7;
-        margin-bottom: 0rem !important;
+    .line-label.ewl {
+        background: #00953b;
     }
 
+    .line-label.ccl {
+        background: #ff9e18;
+    }
 
-    .footer {
-        display: none;
+    .line-label.dtl {
+        background: #0055b8;
+    }
+
+    .line-label.nel {
+        background: #9e28b5;
+    }
+
+    .line-label.tel {
+        background: #9d5918;
+    }
+
+    .line-label.lrt {
+        background: #718472;
     }
 </style>
-
 
 <body>
     <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
@@ -92,12 +123,11 @@
         <nav aria-label="breadcrumb" style="margin-bottom:0;">
             <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="../buszy.html">
-                        <i class="fa-solid fa-house"></i>
+                    <a href="nbs.html"><i class="fa-solid fa-location-dot"></i>
                     </a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="menu.html"><i class="fa-solid fa-bars"></i>
+                    <a href="abs.html"><i class="fa-solid fa-magnifying-glass"></i>
                     </a>
                 </li>
             </ol>
@@ -113,7 +143,7 @@
             <!-- Navigation Links -->
             <ul class="navbar-nav" id="navbarNav">
                 <li class="nav-item">
-                    <a href="../buszy.html" class="nav-link">
+                    <a href="pinned.html" class="nav-link">
                         <i class="fa-sharp fa-solid fa-thumbtack-angle"></i>
                         <span>Pinned</span>
                     </a>
@@ -160,7 +190,7 @@
                     <span class="label">Nearby</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="abs.html">
                     <span class="icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -168,7 +198,7 @@
                     <span class="label">Search</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="menu.html">
                     <span class="icon">
                         <i class="fa-solid fa-bars"></i>
@@ -183,7 +213,6 @@
 
     <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
 
-
     <!-- Title/Breadcrumbs -->
     <section class="about-me-sum clearfix">
         <div class="wbnrfz_eicw">
@@ -193,8 +222,7 @@
                         <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="../buszy.html">
-                                        <i class="fa-solid fa-house"></i>
+                                    <a href="nbs.html"><i class="fa-solid fa-location-dot"></i>
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
@@ -207,61 +235,81 @@
                             <div
                                 style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                                 <div>
-                                    <h1 class="page-title" id="filter-title">Menu</h1>
+                                    <h1 class="page-title" id="filter-title">Train Service Updates</h1>
                                 </div>
+                                <div style="position: relative; max-width: 400px; margin-top: 5px; display: none;">
+                                    <i class="fa-solid fa-search"
+                                        style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #cccccc; z-index: 1;"></i>
+                                    <input type="text" id="bus-stop-search" class="form-control"
+                                        placeholder=" Search Bus Stop Code" style="padding-left: 35px; width: 100%;">
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
             </div>
-
         </div>
-
     </section>
 
-    <!-- Section Contents -->
-    <section class="about-me-summ clearfix" style="padding-bottom: 5em;">
-        <div class="container">
-            <div class="list-group">
-                <a href="ann.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex">
-                        <div>
-                            <h5 class="lg-menu"><i class="fa-solid fa-bullhorn"></i> Announcements</h5>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="tsa.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex">
-                        <div>
-                            <h5 class="lg-menu"><i class="fa-solid fa-train"></i> Train Service Updates (BETA)</h5>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="settings.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex">
-                        <div>
-                            <h5 class="lg-menu"><i class="fa-solid fa-gear"></i> Settings</h5>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="" class="list-group-item list-group-item-action flex-column align-items-start"
-                    id="dark-mode-toggle-desktop">
-                    <div class="d-flex">
-                        <div>
-                            <h5 class="lg-menu"><i class="fa-solid fa-sun-bright"></i> Display: Light</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
+    <section class="tsu">
+        <div class="container container-xxl container-mobile container-mobile-header">
+            <div class='alert-last-updated' style='margin-top:12px;font-size:0.98em;color:#888;'></div>
+            <li class="custom-list-item">
+                <span class="line-label nsl">NSL</span>
+                <span class="line-name">North South Line</span>
+                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+            </li>
             <hr>
-
-            <div style="text-align: center; color: gray; font-size: 14px; margin-top: 1em; margin-bottom: 2em;">
-                Version 3.0.10
-            </div>
+            <li class="custom-list-item">
+                <span class="line-label ewl">EWL</span>
+                <span class="line-name">East West Line</span>
+                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+            </li>
+            <hr>
+            <li class="custom-list-item">
+                <span class="line-label ccl">CCL</span>
+                <span class="line-name">Circle Line</span>
+                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+            </li>
+            <hr>
+            <li class="custom-list-item">
+                <span class="line-label dtl">DTL</span>
+                <span class="line-name">Downtown Line</span>
+                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+            </li>
+            <hr>
+            <li class="custom-list-item">
+                <span class="line-label tel">TEL</span>
+                <span class="line-name">Thomson-East Coast Line</span>
+                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+            </li>
+            <hr>
+            <li class="custom-list-item">
+                <span class="line-label nel">NEL</span>
+                <span class="line-name">North East Line</span>
+                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+            </li>
+            <hr>
+            <li class="custom-list-item">
+                <span class="line-label lrt">BP</span>
+                <span class="line-name">Bukit Panjang LRT</span>
+                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+            </li>
+            <hr>
+            <li class="custom-list-item">
+                <span class="line-label lrt">SK</span>
+                <span class="line-name">Sengkang LRT</span>
+                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+            </li>
+            <hr>
+            <li class="custom-list-item">
+                <span class="line-label lrt">PG</span>
+                <span class="line-name">Punggol LRT</span>
+                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+            </li>
+        </div>
     </section>
 
 
@@ -270,6 +318,7 @@
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
+    <script src="js/mob-navtabs.js"></script>
 
     <script src="buszy-subp.js"></script>
 
@@ -289,7 +338,7 @@
 
     <script src="../js/utils.js"></script>
 
-    <script src="js/menu.js"></script>
+    <script src="js/tsa.js"></script>
 
 </body>
 

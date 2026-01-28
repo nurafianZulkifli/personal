@@ -22,9 +22,6 @@
     <link rel="stylesheet" href="../css/dark-mode.css">
 
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN76281P3Q"></script>
     <script>
@@ -43,7 +40,7 @@
         align-items: center;
         background: #fff;
         border-radius: 40px;
-        padding: 18px 32px;
+        padding: 12px 16px;
         width: 100%;
         margin: 24px 0;
         box-sizing: border-box;
@@ -62,16 +59,17 @@
         background: #ff3b3b;
         color: #fff;
         font-weight: bold;
-        border-radius: 16px;
-        padding: 6px 18px;
-        font-size: 1.2em;
+        border-radius: 15px;
+        padding: 5px 10px;
+        font-size: 15px;
         letter-spacing: 1px;
         margin-right: 8px;
+        border: 2px solid #fff;
     }
 
     .line-name {
         font-weight: 600;
-        font-size: 1.3em;
+        font-size: 18px;
         color: #111;
         flex: 1;
     }
@@ -80,12 +78,12 @@
         background: #43b02a;
         color: #fff;
         border-radius: 50%;
-        width: 36px;
-        height: 36px;
+        width: 33px;
+        height: 33px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.6em;
+        font-size: 15px;
     }
 
     .line-label.nsl {
@@ -98,6 +96,7 @@
 
     .line-label.ccl {
         background: #ff9e18;
+        color: #000;
     }
 
     .line-label.dtl {
@@ -114,6 +113,18 @@
 
     .line-label.lrt {
         background: #718472;
+    }
+
+    .alert-message-content a {
+        color: #000;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    body.dark-mode .alert-message-content a {
+        color: #fff;
+        text-decoration: underline;
+        font-weight: bold;
     }
 </style>
 
@@ -190,7 +201,7 @@
                     <span class="label">Nearby</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="abs.html">
                     <span class="icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -198,7 +209,7 @@
                     <span class="label">Search</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="menu.html">
                     <span class="icon">
                         <i class="fa-solid fa-bars"></i>

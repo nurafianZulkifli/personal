@@ -1,3 +1,18 @@
+  // Helper: convert URLs in text to clickable links and newlines to <br>
+  function linkify(text) {
+    const urlRegex = /(https?:\/\/[\w\-._~:/?#[\]@!$&'()*+,;=%]+)|(www\.[\w\-._~:/?#[\]@!$&'()*+,;=%]+)|(go\.gov\.sg\/[\w\-._~:/?#[\]@!$&'()*+,;=%]+)/gi;
+    let linked = text.replace(urlRegex, function(url) {
+      let href = url;
+      if (url.match(/^go\.gov\.sg\//i)) {
+        href = 'https://' + url;
+      } else if (!href.match(/^https?:\/\//i)) {
+        href = 'http://' + href;
+      }
+      return `<a href="${href}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    });
+    return linked.replace(/\n/g, '<br>');
+  }
+  
 // Ensure DOM is loaded before running script
 document.addEventListener('DOMContentLoaded', function() {
   fetch('https://bat-lta-9eb7bbf231a2.herokuapp.com/train-service-alerts')
@@ -40,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
           let foundMsg = '';
           if (alert.Message && Array.isArray(alert.Message) && alert.Message.length > 0) {
             const msg = alert.Message[0].Content || '';
-            foundMsg = msg;
+            foundMsg = linkify(msg);
             for (const [lineName, code] of Object.entries(lineMap)) {
               if (msg.includes(lineName) || msg.includes(code)) {
                 foundLine = code;
@@ -69,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (foundMsg && !item.nextElementSibling?.classList.contains('alert-message-box')) {
                   const msgBox = document.createElement('div');
                   msgBox.className = 'alert-message-box';
-                  msgBox.innerHTML = `<span class="alert-message-content">${foundMsg.replace(/\n/g, '<br>')}</span>`;
+                  msgBox.innerHTML = `<span class=\"alert-message-content\">${foundMsg}</span>`;
                   item.parentNode.insertBefore(msgBox, item.nextSibling);
                 }
               }

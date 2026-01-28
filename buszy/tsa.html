@@ -44,7 +44,7 @@
         width: 100%;
         margin: 24px 0;
         box-sizing: border-box;
-        gap: 18px;
+        gap: 12px;
         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
     }
 
@@ -59,11 +59,11 @@
         background: #ff3b3b;
         color: #fff;
         font-weight: bold;
-        border-radius: 15px;
+        border-radius: 13.6px / 19.2px;
         padding: 5px 10px;
         font-size: 15px;
         letter-spacing: 1px;
-        margin-right: 8px;
+        margin-right: 0px;
         border: 2px solid #fff;
     }
 
@@ -119,6 +119,20 @@
         color: #000;
         text-decoration: underline;
         font-weight: bold;
+    }
+
+    .pulse {
+        animation: pulse-animation 2s infinite;
+    }
+
+    @keyframes pulse-animation {
+        0% {
+            box-shadow: 0 0 0 0px rgba(148, 148, 148, 0.2);
+        }
+
+        100% {
+            box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+        }
     }
 
     body.dark-mode .alert-message-content a {
@@ -270,55 +284,55 @@
             <li class="custom-list-item">
                 <span class="line-label nsl">NSL</span>
                 <span class="line-name">North South Line</span>
-                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="status-icon pulse"><i class="fa-solid fa-check"></i></span>
             </li>
             <hr>
             <li class="custom-list-item">
                 <span class="line-label ewl">EWL</span>
                 <span class="line-name">East West Line</span>
-                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="status-icon pulse"><i class="fa-solid fa-check"></i></span>
             </li>
             <hr>
             <li class="custom-list-item">
                 <span class="line-label ccl">CCL</span>
                 <span class="line-name">Circle Line</span>
-                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="status-icon pulse"><i class="fa-solid fa-check"></i></span>
             </li>
             <hr>
             <li class="custom-list-item">
                 <span class="line-label dtl">DTL</span>
                 <span class="line-name">Downtown Line</span>
-                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="status-icon pulse"><i class="fa-solid fa-check"></i></span>
             </li>
             <hr>
             <li class="custom-list-item">
                 <span class="line-label tel">TEL</span>
                 <span class="line-name">Thomson-East Coast Line</span>
-                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="status-icon pulse"><i class="fa-solid fa-check"></i></span>
             </li>
             <hr>
             <li class="custom-list-item">
                 <span class="line-label nel">NEL</span>
                 <span class="line-name">North East Line</span>
-                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="status-icon pulse"><i class="fa-solid fa-check"></i></span>
             </li>
             <hr>
             <li class="custom-list-item">
                 <span class="line-label lrt">BP</span>
                 <span class="line-name">Bukit Panjang LRT</span>
-                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="status-icon pulse"><i class="fa-solid fa-check"></i></span>
             </li>
             <hr>
             <li class="custom-list-item">
                 <span class="line-label lrt">SK</span>
                 <span class="line-name">Sengkang LRT</span>
-                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="status-icon pulse"><i class="fa-solid fa-check"></i></span>
             </li>
             <hr>
             <li class="custom-list-item">
                 <span class="line-label lrt">PG</span>
                 <span class="line-name">Punggol LRT</span>
-                <span class="status-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="status-icon pulse"><i class="fa-solid fa-check"></i></span>
             </li>
         </div>
     </section>

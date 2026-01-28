@@ -12,7 +12,7 @@
     });
     return linked.replace(/\n/g, '<br>');
   }
-  
+
 // Ensure DOM is loaded before running script
 document.addEventListener('DOMContentLoaded', function() {
   fetch('https://bat-lta-9eb7bbf231a2.herokuapp.com/train-service-alerts')
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!data || !data.value) return;
       // Map line names to codes used in your HTML
       const lineMap = {
-        'North South Line': 'NSL',
-        'East West Line': 'EWL',
+        'North-South Line': 'NSL',
+        'East-West Line': 'EWL',
         'Circle Line': 'CCL',
         'Downtown Line': 'DTL',
         'Thomson-East Coast Line': 'TEL',
@@ -72,11 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (icon) {
                   if (alert.Status === 1) {
                     icon.style.background = '#ffb300'; // amber
-                    icon.innerHTML = '&#9888;'; // warning sign
+                    icon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>'; // warning sign
                     icon.style.color = '#000';
                   } else if (alert.Status === 2) {
                     icon.style.background = '#e53935'; // red
-                    icon.innerHTML = '&#10071;'; // exclamation icon
+                    icon.innerHTML = '<i class="fa-solid fa-diamond-exclamation"></i>'; // critical sign
                     icon.style.color = '#fff';
                   }
                 }
@@ -120,5 +120,5 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
     })
-    .catch(err => { /* Optionally handle error */ });
+    .catch(err => {});
 });

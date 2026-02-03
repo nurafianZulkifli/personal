@@ -103,6 +103,12 @@
         align-items: center;
     }
 
+    body.dark-mode .alert-warning a {
+    color: #ffda6a;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
     @media (max-width: 545px) {
         #cv-bat {
             background-image: url("img/bg-img/hero-buszy.png");
@@ -229,6 +235,12 @@
     <section class="pinned" id="pinned">
         <div class="container">
             <h2><i class="fa-solid fa-location-pin"></i>&nbsp;Pinned Bus Stops</h2>
+            <div class="alert alert-warning text-center mb-0" role="alert"
+                style="font-weight: bold; font-size: 1.1em; border: 2px solid #ffd700; z-index: 9999; position: relative;">
+                <i class="fa-solid fa-bullhorn me-2" aria-hidden="true"></i>
+                We'll be moving to the new <a href="https://worksbynrfz.com" class="alert-link"
+                    style="font-weight: bold;">worksbynrfz.com</a> site in March 2026!
+            </div>
             <!-- Section Contents -->
             <section class="about-me-summ clearfix" style="padding-bottom: 5em;">
                 <div id="bookmarks-container" class="list-group"></div>

@@ -54,6 +54,50 @@ clearCacheBtn.addEventListener('click', async () => {
 
 
 // ****************************
+// :: Export Storage Handling
+// ****************************
+// Handle export storage button
+const exportStorageBtn = document.getElementById('export-storage-btn');
+exportStorageBtn.addEventListener('click', () => {
+    try {
+        // Get only specific localStorage keys
+        const keysToExport = ['dark-mode', 'timeFormat', 'bookmarkedBusStops'];
+        const storageData = {};
+
+        keysToExport.forEach(key => {
+            const value = localStorage.getItem(key);
+            if (value !== null) {
+                storageData[key] = value;
+            }
+        });
+
+        // Create a blob from the JSON data
+        const jsonString = JSON.stringify(storageData, null, 2);
+        const blob = new Blob([jsonString], { type: 'application/json' });
+
+        // Create a temporary download link
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `buszy-storage-${new Date().toISOString().split('T')[0]}.json`;
+
+        // Trigger the download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Clean up the object URL
+        URL.revokeObjectURL(url);
+
+        alert('Storage data exported successfully.');
+    } catch (error) {
+        console.error('Error exporting storage:', error);
+        alert('An error occurred while exporting storage. Please try again.');
+    }
+});
+
+
+// ****************************
 // :: PWA Installation Handling
 // ****************************
 

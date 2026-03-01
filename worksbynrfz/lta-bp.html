@@ -346,6 +346,15 @@
   <script>
     /* Dark Mode Functionality for Individual Pages */
 
+    // Check for theme parameter in URL (for cross-domain sync from worksbynrfz.com)
+    (function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+      if (themeParam && ['light', 'dark', 'system'].includes(themeParam)) {
+        localStorage.setItem('theme-preference', themeParam);
+      }
+    })();
+
     // Use window properties if they exist from initial script, otherwise create them
     if (typeof window._themePreference === 'undefined') {
       window._themePreference = localStorage.getItem('theme-preference') || 'system';

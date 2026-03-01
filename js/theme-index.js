@@ -1,5 +1,14 @@
 /* Dark Mode Functionality for Individual Pages */
 
+// Check for theme parameter in URL (for cross-domain sync from worksbynrfz.com)
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const themeParam = urlParams.get('theme');
+    if (themeParam && ['light', 'dark', 'system'].includes(themeParam)) {
+        localStorage.setItem('theme-preference', themeParam);
+    }
+})();
+
 // Use window properties if they exist from initial script, otherwise create them
 if (typeof window._themePreference === 'undefined') {
     window._themePreference = localStorage.getItem('theme-preference') || 'system';
@@ -153,3 +162,15 @@ function updateThemeIcon(theme) {
 //         }
 //     });
 // });
+
+// Append current theme preference to outgoing worksbynrfz.com links (cross-domain sync)
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href*="worksbynrfz.com"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            const pref = localStorage.getItem('theme-preference') || 'system';
+            const url = new URL(link.href);
+            url.searchParams.set('theme', pref);
+            link.href = url.toString();
+        });
+    });
+});

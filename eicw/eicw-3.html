@@ -15,10 +15,11 @@
 
   <link rel="icon" href="../img/core-img/favicon.png">
 
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.2.0/css/all.css" />
   <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css'>
 
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style-mobNav.css">
   <link rel="stylesheet" href="../css/style-breakpoints.css">
   <link rel="stylesheet" href="../css/dark-mode.css">
 
@@ -34,122 +35,100 @@
 
 </head>
 
-</head>
-
 <body>
+
+  <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+  <div class="breadcrumb-fixed-placeholder">
+    <nav aria-label="breadcrumb" style="margin-bottom:0;">
+      <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../index.html">
+            <i class="fa-regular fa-house"></i>
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="eicw-2.html"><i class="fa-regular fa-train"></i>
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
 
   <!-- Navigation Bar -->
   <nav class="navbar-container">
     <div class="navbar">
       <!-- Logo -->
-      <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+      <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo"></a>
 
       <!-- Navigation Links -->
       <ul class="navbar-nav" id="navbarNav">
         <li class="nav-item">
           <a href="../index.html" class="nav-link">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-sharp fa-regular fa-house"></i>
             <span>Home</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="../about.html" class="nav-link">
-            <i class="fa-solid fa-circle-user"></i>
+            <i class="fa-regular fa-circle-user"></i>
             <span>About</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="../works-by-nrfz.html" class="nav-link">
-            <i class="fa-solid fa-pen-paintbrush"></i>
-            <span>Works By NRFZ</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="eicw.html" class="nav-link active">
-            <i class="fa-solid fa-map-location"></i>
+          <a href="../eicw/eicw.html" class="nav-link active">
+            <i class="fa-regular fa-map-location"></i>
             <span>EICW</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="../blog.html" class="nav-link">
-            <i class="fa-solid fa-comment"></i>
-            <span>Blog</span>
-          </a>
-        </li>
-        <li class="nav-item-toggle">
-          <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
-            <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+        <li class="nav-item ">
+          <a href="../menu.html" class="nav-link">
+            <i class="fa-regular fa-bars"></i>
+            <span>Menu</span>
           </a>
         </li>
       </ul>
-
-      <!-- Mobile Toggle -->
-      <button class="mobile-toggle" id="mobileToggle">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
     </div>
 
-    </div>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-header">
-      <a href="#" class="mobile-menu-brand">
-        <span class="brand-text">
-          <li class="mobile-menu-item mobile-theme-toggle">
-            <button class="wbnrfz_btn_theme mobile-theme-btn" id="dark-mode-toggle-mobile"
-              title="Toggle Dark/Light Mode!">
-              <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
-            </button>
-          </li>
-        </span>
-      </a>
-      <button class="mobile-menu-close" id="mobileMenuClose">
-        <span>×</span>
-      </button>
-    </div>
-
-    <ul class="mobile-menu-nav">
-      <li class="mobile-menu-item">
-        <a href="../index.html" class="mobile-menu-link">
-          <i class="fa-solid fa-regular fa-house"></i>
-          <span>Home</span>
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <ul>
+      <li>
+        <a href="../index.html">
+          <span class="icon">
+            <i class="fa-sharp fa-regular fa-house"></i>
+          </span>
+          <span class="label">Home</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="../about.html" class="mobile-menu-link">
-          <i class="fa-solid fa-regular fa-circle-user"></i>
-          <span>About</span>
+      <li>
+        <a href="../about.html">
+          <span class="icon">
+            <i class="fa-regular fa-circle-user"></i>
+          </span>
+          <span class="label">About</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="../works-by-nrfz.html" class="mobile-menu-link">
-          <i class="fa-solid fa-pen-paintbrush"></i>
-          <span>Works By NRFZ</span>
+      <li class="active">
+        <a href="../eicw/eicw.html">
+          <span class="icon">
+            <i class="fa-regular fa-map-location"></i>
+          </span>
+          <span class="label">EICW</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="eicw.html" class="mobile-menu-link active">
-          <i class="fa-solid fa-map-location"></i>
-          <span>EICW</span>
-        </a>
-      </li>
-      <li class="mobile-menu-item">
-        <a href="../blog.html" class="mobile-menu-link">
-          <i class="fa-solid fa-comment"></i>
-          <span>Blog</span>
+      <li>
+        <a href="../menu.html">
+          <span class="icon">
+            <i class="fa-regular fa-bars"></i>
+          </span>
+          <span class="label">Menu</span>
         </a>
       </li>
     </ul>
-  </div>
+  </nav>
+
 
   <!-- Scroll Indicator -->
   <div id="scroll-indicator-container">
@@ -158,32 +137,22 @@
 
 
   <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
-
-  <!-- Cover Header -->
-  <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cbus-img">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Title/Breadcrumbs -->
   <section class="about-me-summ clearfix">
     <div class="wbnrfz_eicw">
       <div class="page-header-section">
         <div class="container-xxl container-mobile container-mobile-header">
           <div class="breadcrumb-wrapper">
-            <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                   <a href="../index.html">
-                    <i class="fa-solid fa-house"></i>
+                    <i class="fa-regular fa-house"></i>
                   </a>
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="eicw.html">EICW</a>
+                  <a href="eicw-3.html"><i class="fa-regular fa-bus"></i>
+                  </a>
                 </li>
               </ol>
             </nav>
@@ -205,27 +174,28 @@
 
           <ul id="scrollableTabs">
             <li>
-              <a href="eicw.html">Design System Introduction</a>
+              <a href="eicw.html"><i class="fa-regular fa-circle-info"></i>
+                Introduction</a>
             </li>
 
             <li>
-              <a href="eicw-2.html">Proposed Wayfinding Changes - Trains</a>
+              <a href="eicw-2.html"><i class="fa-regular fa-train"></i> Trains</a>
             </li>
 
             <li>
-              <a href="eicw-3.html" class="active">Proposed Wayfinding Changes - Buses</a>
+              <a href="eicw-3.html" class="active"><i class="fa-regular fa-bus"></i> Buses</a>
             </li>
 
             <li>
-              <a href="eicw-4.html">Proposed UI/UX Changes</a>
+              <a href="eicw-4.html"><i class="fa-regular fa-pencil"></i> UI/UX</a>
             </li>
 
             <li>
-              <a href="eicw-5.html">Rethinking CCL6 Signages</a>
+              <a href="eicw-5.html"><i class="fa-regular fa-signs-post"></i> CCL6 Signages</a>
             </li>
 
             <li>
-              <a href="btr-1.html">Behind The Redesign</a>
+              <a href="btr-1.html"><i class="fa-regular fa-eye"></i> Behind The Redesign</a>
             </li>
           </ul>
 
@@ -243,6 +213,16 @@
     </div>
   </section>
 
+  <!-- Cover Header -->
+  <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cbus-img">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Section Content -->
   <section class="about-me-summ clearfix">
     <div class="wbnrfz_details_body">
@@ -254,7 +234,7 @@
               <!-- Preface -->
               <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
                 <div class="info justify-content-center">
-                  <p style="text-align: justify; padding-top: 2em;">This section is catered for the Buses side of things
+                  <p style="padding-top: 2em;">This section is catered for the Buses side of things
                     - signages and what
                     not. A lot of focus has been given to the Train's side of things, so why not show the same love for
                     the Buses' side of things too?</i></p>
@@ -282,21 +262,10 @@
     </div>
   </section>
 
-  <!-- Section Header -->
-  <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="cd-img"
-    style="background-image: url(img/cdbus-light.png)">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-          <div class="breadcrumb-content text-center">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <hr>
 
   <!-- Section Content 1 -->
-  <section class="about-me-summ section-padding-80-0 clearfix" style="padding-bottom: 10px;" id="psrith">
+  <section class="about-me-summ clearfix" style="padding-bottom: 10px; padding-top: 3em;" id="psrith">
     <div class="wbnrfz_details_body_tchp">
       <div class="container container-mobile">
         <div class="row justify-content-center">
@@ -329,7 +298,7 @@
                   <a href="img/psr-1.jpg" id="psr1" class="portfolio-img ">
                     <img src="img/psr-1.jpg" id="psr1-img" class="img-fluid cp-img" alt="psr1">
                   </a>
-                  <p style="text-align: justify;">Current Implementation</p>
+                  <p>Current Implementation</p>
                 </figcaption>
               </div>
               <div class="column column-pic">
@@ -337,7 +306,7 @@
                   <a href="img/psr-1a-light.png" id="psr1a" class="portfolio-img ">
                     <img src="img/psr-1a-light.png" id="psr1a-img" class="img-fluid cp-img" alt="psr1a">
                   </a>
-                  <p style="text-align: justify;">Current Implementation - Recreated</p>
+                  <p>Current Implementation - Recreated</p>
                 </figcaption>
               </div>
             </div>
@@ -350,7 +319,7 @@
                 <img src="https://landtransportguru.net/web/wp-content/uploads/2025/05/Pasir-Ris-ITH-May25-5.jpg"
                   id="dpm-img" class="img-fluid cp-img" alt="ltg1" style="margin-bottom: 0em;">
               </a>
-              <p style="text-align: justify;">📸: Land Transport Guru</p>
+              <p>📸: Land Transport Guru</p>
             </figcaption>
           </div>
 
@@ -366,7 +335,7 @@
             </figcaption>
           </div>
 
-          <video id="eicw-vid9" autoplay controls controlsList="nodownload" oncontextmenu="return false;" muted loop
+          <video id="eicw-vid9" controls controlsList="nodownload" oncontextmenu="return false;" muted loop
             playsinline width="100%" class="column-vid" style="margin-top: 2em;">
             <source src="img/eicw-vid9-light.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -383,7 +352,7 @@
               <a href="img/psr3.jpg" id="psr3" class="portfolio-img ">
                 <img src="img/psr3.jpg" id="psr3-img" class="img-fluid cp-img" alt="psr3">
               </a>
-              <p style="text-align: justify;">Current Implementation <br> 📸: Land Transport Guru</p>
+              <p>Current Implementation <br> 📸: Land Transport Guru</p>
             </figcaption>
           </div>
           <div class="column column-pic">
@@ -391,7 +360,7 @@
               <a href="img/psr-3a-light.png" id="psr3a" class="portfolio-img ">
                 <img src="img/psr-3a-light.png" id="psr3a-img" class="img-fluid cp-img" alt="psr3a">
               </a>
-              <p style="text-align: justify;">Current Implementation - Recreated</p>
+              <p>Current Implementation - Recreated</p>
             </figcaption>
           </div>
         </div>
@@ -406,7 +375,7 @@
               <a href="img/psr-3b-light.png" id="psr3b" class="portfolio-img ">
                 <img src="img/psr-3b-light.png" id="psr3b-img" class="img-fluid cp-img" alt="psr3b">
               </a>
-              <p style="text-align: justify;">Interchange Name signage with the old design system</p>
+              <p>Interchange Name signage with the old design system</p>
             </figcaption>
           </div>
         </div>
@@ -466,7 +435,7 @@
                   <a href="img/cck-1.png" id="psr1" class="portfolio-img ">
                     <img src="img/cck-1.png" id="psr1-img" class="img-fluid cp-img" alt="psr1">
                   </a>
-                  <p style="text-align: justify;">Current Implementation <br> 📸: Land Transport Guru</p>
+                  <p>Current Implementation <br> 📸: Land Transport Guru</p>
                 </figcaption>
               </div>
               <div class="column column-pic">
@@ -474,7 +443,7 @@
                   <a href="img/cck-1a-light.png" id="cck1a" class="portfolio-img ">
                     <img src="img/cck-1a-light.png" id="cck1a-img" class="img-fluid cp-img" alt="cck1a">
                   </a>
-                  <p style="text-align: justify;">Current Implementation - Recreated (188R has been withdrawn)</p>
+                  <p>Current Implementation - Recreated (188R has been withdrawn)</p>
                 </figcaption>
               </div>
             </div>
@@ -487,7 +456,7 @@
                 <img src="https://landtransportguru.net/web/wp-content/uploads/2018/12/Choa-Chu-Kang-Int-Dec-18-5.jpg"
                   id="dpm-img" class="img-fluid cp-img" alt="ltg1" style="margin-bottom: 0em;">
               </a>
-              <p style="text-align: justify;">📸: Land Transport Guru</p>
+              <p>📸: Land Transport Guru</p>
             </figcaption>
           </div>
 
@@ -505,7 +474,7 @@
             </figcaption>
           </div>
 
-          <video id="eicw-vid10" autoplay controls controlsList="nodownload" oncontextmenu="return false;" muted loop
+          <video id="eicw-vid10" controls controlsList="nodownload" oncontextmenu="return false;" muted loop
             playsinline width="100%" class="column-vid" style="margin-top: 2em;">
             <source src="img/eicw-vid10-light.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -527,7 +496,7 @@
               <a href="img/cck3.png" id="cck3" class="portfolio-img ">
                 <img src="img/cck3.png" id="cck3-img" class="img-fluid cp-img" alt="cck3">
               </a>
-              <p style="text-align: justify;">Current Implementation <br> 📸: Land Transport Guru</p>
+              <p>Current Implementation <br> 📸: Land Transport Guru</p>
             </figcaption>
           </div>
           <div class="column column-pic">
@@ -535,7 +504,7 @@
               <a href="img/cck-3a-light.png" id="cck3a" class="portfolio-img ">
                 <img src="img/cck-3a-light.png" id="cck3a-img" class="img-fluid cp-img" alt="cck3a">
               </a>
-              <p style="text-align: justify;">Current Implementation - Recreated</p>
+              <p>Current Implementation - Recreated</p>
             </figcaption>
           </div>
         </div>
@@ -584,43 +553,18 @@
                 <img src="img/cs-light.png" id="cs-img" class="img-fluid" alt="cs">
               </a>
             </div>
-            <hr>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-social">
-        <a href="https://github.com/nurafianZulkifli" class="social-link">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://twitter.com/nrfzlkf_" class="social-link">
-          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
-          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-
-    <div class="footer-copy">
-      © 2026 Nurafian Zulkifli
-    </div>
-  </footer>
-
   <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
     data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
     data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
     </script>
 
-  <script src="../js/navtabs.js"></script>
+  <script src="../js/mob-navtabs.js"></script>
 
   <script src="js/eicw-3.js"></script>
 

@@ -19,12 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Filter functionality
+    const filterTitle = document.getElementById("filter-title");
+
     filterButtons.forEach(button => {
         button.addEventListener("click", function (e) {
             e.preventDefault();
 
             filterButtons.forEach(btn => btn.classList.remove("active"));
             this.classList.add("active");
+
+            // Update the page title to match the active filter
+            if (filterTitle) {
+                filterTitle.textContent = this.textContent.trim();
+            }
 
             const filter = this.getAttribute("data-filter");
 

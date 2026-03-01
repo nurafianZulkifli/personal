@@ -15,10 +15,11 @@
 
   <link rel="icon" href="../img/core-img/favicon.png">
 
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.2.0/css/all.css" />
   <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css'>
 
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style-mobNav.css">
   <link rel="stylesheet" href="../css/style-breakpoints.css">
   <link rel="stylesheet" href="../css/dark-mode.css">
 
@@ -34,122 +35,100 @@
 
 </head>
 
-</head>
-
 <body>
+
+  <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+  <div class="breadcrumb-fixed-placeholder">
+    <nav aria-label="breadcrumb" style="margin-bottom:0;">
+      <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../index.html">
+            <i class="fa-regular fa-house"></i>
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="eicw-2.html"><i class="fa-regular fa-train"></i>
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
 
   <!-- Navigation Bar -->
   <nav class="navbar-container">
     <div class="navbar">
       <!-- Logo -->
-      <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+      <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo"></a>
 
       <!-- Navigation Links -->
       <ul class="navbar-nav" id="navbarNav">
         <li class="nav-item">
           <a href="../index.html" class="nav-link">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-sharp fa-regular fa-house"></i>
             <span>Home</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="../about.html" class="nav-link">
-            <i class="fa-solid fa-circle-user"></i>
+            <i class="fa-regular fa-circle-user"></i>
             <span>About</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="../works-by-nrfz.html" class="nav-link">
-            <i class="fa-solid fa-pen-paintbrush"></i>
-            <span>Works By NRFZ</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link active">
-            <i class="fa-solid fa-map-location"></i>
+          <a href="../eicw/eicw.html" class="nav-link active">
+            <i class="fa-regular fa-map-location"></i>
             <span>EICW</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="../blog.html" class="nav-link">
-            <i class="fa-solid fa-comment"></i>
-            <span>Blog</span>
-          </a>
-        </li>
-        <li class="nav-item-toggle">
-          <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
-            <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+        <li class="nav-item ">
+          <a href="../menu.html" class="nav-link">
+            <i class="fa-regular fa-bars"></i>
+            <span>Menu</span>
           </a>
         </li>
       </ul>
-
-      <!-- Mobile Toggle -->
-      <button class="mobile-toggle" id="mobileToggle">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
     </div>
 
-    </div>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-header">
-      <a href="#" class="mobile-menu-brand">
-        <span class="brand-text">
-          <li class="mobile-menu-item mobile-theme-toggle">
-            <button class="wbnrfz_btn_theme mobile-theme-btn" id="dark-mode-toggle-mobile"
-              title="Toggle Dark/Light Mode!">
-              <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
-            </button>
-          </li>
-        </span>
-      </a>
-      <button class="mobile-menu-close" id="mobileMenuClose">
-        <span>×</span>
-      </button>
-    </div>
-
-    <ul class="mobile-menu-nav">
-      <li class="mobile-menu-item">
-        <a href="../index.html" class="mobile-menu-link">
-          <i class="fa-solid fa-regular fa-house"></i>
-          <span>Home</span>
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <ul>
+      <li>
+        <a href="../index.html">
+          <span class="icon">
+            <i class="fa-sharp fa-regular fa-house"></i>
+          </span>
+          <span class="label">Home</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="../about.html" class="mobile-menu-link">
-          <i class="fa-solid fa-regular fa-circle-user"></i>
-          <span>About</span>
+      <li>
+        <a href="../about.html">
+          <span class="icon">
+            <i class="fa-regular fa-circle-user"></i>
+          </span>
+          <span class="label">About</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="../works-by-nrfz.html" class="mobile-menu-link">
-          <i class="fa-solid fa-pen-paintbrush"></i>
-          <span>Works By NRFZ</span>
+      <li class="active">
+        <a href="../eicw/eicw.html">
+          <span class="icon">
+            <i class="fa-regular fa-map-location"></i>
+          </span>
+          <span class="label">EICW</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="#" class="mobile-menu-link active">
-          <i class="fa-solid fa-map-location"></i>
-          <span>EICW</span>
-        </a>
-      </li>
-      <li class="mobile-menu-item">
-        <a href="../blog.html" class="mobile-menu-link">
-          <i class="fa-solid fa-comment"></i>
-          <span>Blog</span>
+      <li>
+        <a href="../menu.html">
+          <span class="icon">
+            <i class="fa-regular fa-bars"></i>
+          </span>
+          <span class="label">Menu</span>
         </a>
       </li>
     </ul>
-  </div>
+  </nav>
+
 
   <!-- Scroll Indicator -->
   <div id="scroll-indicator-container">
@@ -158,32 +137,22 @@
 
 
   <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
-
-  <!-- Cover Header -->
-  <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cui-img">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Title/Breadcrumbs -->
   <section class="about-me-sum clearfix">
     <div class="wbnrfz_eicw">
       <div class="page-header-section">
         <div class="container-xxl container-mobile container-mobile-header">
           <div class="breadcrumb-wrapper">
-            <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                   <a href="../index.html">
-                    <i class="fa-solid fa-house"></i>
+                    <i class="fa-regular fa-house"></i>
                   </a>
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="eicw.html">EICW</a>
+                  <a href="eicw-4.html"><i class="fa-regular fa-pencil"></i>
+                  </a>
                 </li>
               </ol>
             </nav>
@@ -205,27 +174,28 @@
 
           <ul id="scrollableTabs">
             <li>
-              <a href="eicw.html">Design System Introduction</a>
+              <a href="eicw.html"><i class="fa-regular fa-circle-info"></i>
+                Introduction</a>
             </li>
 
             <li>
-              <a href="eicw-2.html">Proposed Wayfinding Changes - Trains</a>
+              <a href="eicw-2.html"><i class="fa-regular fa-train"></i> Trains</a>
             </li>
 
             <li>
-              <a href="eicw-3.html">Proposed Wayfinding Changes - Buses</a>
+              <a href="eicw-3.html"><i class="fa-regular fa-bus"></i> Buses</a>
             </li>
 
             <li>
-              <a href="eicw-4.html" class="active">Proposed UI/UX Changes</a>
+              <a href="eicw-4.html" class="active"><i class="fa-regular fa-pencil"></i> UI/UX</a>
             </li>
 
             <li>
-              <a href="eicw-5.html">Rethinking CCL6 Signages</a>
+              <a href="eicw-5.html"><i class="fa-regular fa-signs-post"></i> CCL6 Signages</a>
             </li>
 
             <li>
-              <a href="btr-1.html">Behind The Redesign</a>
+              <a href="btr-1.html"><i class="fa-regular fa-eye"></i> Behind The Redesign</a>
             </li>
           </ul>
 
@@ -243,6 +213,16 @@
     </div>
   </section>
 
+  <!-- Cover Header -->
+  <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cui-img">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Section Content 1 -->
   <section class="about-me-summ clearfix">
     <div class="wbnrfz_details_body">
@@ -257,7 +237,7 @@
                   <h2 class="text-center"
                     style="font-size: 30px; font-weight:bold; text-align: left; padding-top: 1em;">Proposed UI/UX
                     Changes</h2>
-                  <p style="text-align: justify;">In aligning with the current Wayfinding System, I have incorporated
+                  <p>In aligning with the current Wayfinding System, I have incorporated
                     the
                     elements of simplicity, clarity, and consistency. The designs aim to ensure that users can easily
                     navigate and understand the information presented, regardless of their familiarity with the system.
@@ -306,7 +286,7 @@
                 Reader UI (LTA)
               </h2>
               </h2>
-              <p style="text-align: justify;">The current Bus Card Readers are getting replaced! As such, I have come up
+              <p>The current Bus Card Readers are getting replaced! As such, I have come up
                 with a design whereby the Interface match the ones used on the MRT systems, particularly the NSEWL and
                 CCL. For those MRT lines, they too, are getting their faregates replaced. As we can see, we're
                 progressively going for a more full-screen approach, where you will tap your card on the screen itself.
@@ -340,7 +320,7 @@
               <h2 class="text-center" style="font-size: 30px; font-weight: bold; margin-top: 1em;" id="bat">Bus Arrival
                 Timings (LTA)
               </h2>
-              <p style="text-align: justify;">The new panels are an improved version with vibrant graphics and bigger
+              <p>The new panels are an improved version with vibrant graphics and bigger
                 fonts and provide information that allows commuters to better plan their journeys. I have redesigned it
                 to match the current design system standards.</p>
 
@@ -361,7 +341,7 @@
               <h2 class="text-center" style="font-size: 30px; font-weight: bold; margin-top: 1em;" id="tv">TrainVision
                 (TEL)
               </h2>
-              <p style="text-align: justify;"> For the LCD screens on the TEL trains, I have redesigned it to look
+              <p> For the LCD screens on the TEL trains, I have redesigned it to look
                 exactly
                 like the other counterparts on the NSL, EWL, NEL and CCL.</p>
 
@@ -382,7 +362,7 @@
               <h2 class="text-center" style="font-size: 30px; font-weight: bold; margin-top: 1em;" id="staris2">STARiS
                 2.0 (SMRT)
               </h2>
-              <p style="text-align: justify;"> For the LCD screens on the KSFB/C (C151B/C) trains, I have redesigned it
+              <p> For the LCD screens on the KSFB/C (C151B/C) trains, I have redesigned it
                 to
                 look
                 exactly like the other counterparts on the NSL, EWL, NEL and CCL. The current UI is <i>waaay</i> too
@@ -394,7 +374,7 @@
                     <a href="img/staris2-B.png" id="staris2-b" class="portfolio-img ">
                       <img src="img/staris2-B.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b">
                     </a>
-                    <p style="text-align: justify;">Current STARiS 2.0 UI, on most of the KSFB/C Trains. <b>Older</b>
+                    <p>Current STARiS 2.0 UI, on most of the KSFB/C Trains. <b>Older</b>
                       Line
                       Diagram Layout.
                     </p>
@@ -407,7 +387,7 @@
                     <a href="img/staris2-C.png" id="staris2-c" class="portfolio-img ">
                       <img src="img/staris2-C.png" id="staris2-c-img" class="img-fluid cp-img" alt="staris2-c">
                     </a>
-                    <p style="text-align: justify;">Current STARiS 2.0 UI, on the KSFC Trains. <b>Updated</b> Line
+                    <p>Current STARiS 2.0 UI, on the KSFC Trains. <b>Updated</b> Line
                       Diagram Layout.
                     </p>
                   </figcaption>
@@ -418,7 +398,7 @@
                     <a href="img-2/staris2-D.png" id="staris2-b" class="portfolio-img ">
                       <img src="img-2/staris2-D.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b">
                     </a>
-                    <p style="text-align: justify;">Revamped STARiS 2.0 UI, on most of the KSFC Trains. <b>Updated</b>
+                    <p>Revamped STARiS 2.0 UI, on most of the KSFC Trains. <b>Updated</b>
                       Line
                       Diagram Layout and <b>New</b> Next Station Interface
                     </p>
@@ -430,7 +410,7 @@
                     <a href="img-2/staris2-red.png" id="staris2-b" class="portfolio-img ">
                       <img src="img-2/staris2-red.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b">
                     </a>
-                    <p style="text-align: justify;">Revamped STARiS 2.0 UI. <b>Proposed Redesign</b>
+                    <p>Revamped STARiS 2.0 UI. <b>Proposed Redesign</b>
                     </p>
                   </figcaption>
                 </div>
@@ -459,7 +439,7 @@
               <h2 class="text-center" style="font-size: 30px; font-weight: bold; margin-top: 1em;" id="cddbp">Car Door
                 Display (BPLRT)
               </h2>
-              <p style="text-align: justify;"> For the LCD screens on the new C801B trains, I have redesigned it to
+              <p> For the LCD screens on the new C801B trains, I have redesigned it to
                 look
                 exactly like the other counterparts on the NSL, EWL, NEL and CCL. The current UI works I guess, but it's
                 starting to look old, and the design does not match current design standards.</p>
@@ -470,7 +450,7 @@
                     <a href="img-2/cddbpori.png" id="cddbpori" class="portfolio-img ">
                       <img src="img-2/cddbpori.png" id="cddbpori-img" class="img-fluid cp-img" alt="cddbpori">
                     </a>
-                    <p style="text-align: justify;">Current CDD UI Design on the C801B Trains.
+                    <p>Current CDD UI Design on the C801B Trains.
                     </p>
                   </figcaption>
                 </div>
@@ -496,36 +476,12 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-social">
-        <a href="https://github.com/nurafianZulkifli" class="social-link">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://twitter.com/nrfzlkf_" class="social-link">
-          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
-          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-
-    <div class="footer-copy">
-      © 2026 Nurafian Zulkifli
-    </div>
-  </footer>
-
   <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
     data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
     data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
     </script>
 
-  <script src="../js/navtabs.js"></script>
+  <script src="../js/mob-navtabs.js"></script>
 
   <script src="js/eicw-4.js"></script>
 

@@ -15,10 +15,11 @@
 
   <link rel="icon" href="../img/core-img/favicon.png">
 
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.2.0/css/all.css" />
   <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css'>
 
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style-mobNav.css">
   <link rel="stylesheet" href="../css/style-breakpoints.css">
   <link rel="stylesheet" href="../css/dark-mode.css">
 
@@ -34,122 +35,100 @@
 
 </head>
 
-</head>
-
 <body>
+
+  <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+  <div class="breadcrumb-fixed-placeholder">
+    <nav aria-label="breadcrumb" style="margin-bottom:0;">
+      <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../index.html">
+            <i class="fa-regular fa-house"></i>
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="eicw-2.html"><i class="fa-regular fa-train"></i>
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
 
   <!-- Navigation Bar -->
   <nav class="navbar-container">
     <div class="navbar">
       <!-- Logo -->
-      <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+      <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo"></a>
 
       <!-- Navigation Links -->
       <ul class="navbar-nav" id="navbarNav">
         <li class="nav-item">
           <a href="../index.html" class="nav-link">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-sharp fa-regular fa-house"></i>
             <span>Home</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="../about.html" class="nav-link">
-            <i class="fa-solid fa-circle-user"></i>
+            <i class="fa-regular fa-circle-user"></i>
             <span>About</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="../works-by-nrfz.html" class="nav-link">
-            <i class="fa-solid fa-pen-paintbrush"></i>
-            <span>Works By NRFZ</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link active">
-            <i class="fa-solid fa-map-location"></i>
+          <a href="../eicw/eicw.html" class="nav-link active">
+            <i class="fa-regular fa-map-location"></i>
             <span>EICW</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="../blog.html" class="nav-link">
-            <i class="fa-solid fa-comment"></i>
-            <span>Blog</span>
-          </a>
-        </li>
-        <li class="nav-item-toggle">
-          <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
-            <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+        <li class="nav-item ">
+          <a href="../menu.html" class="nav-link">
+            <i class="fa-regular fa-bars"></i>
+            <span>Menu</span>
           </a>
         </li>
       </ul>
-
-      <!-- Mobile Toggle -->
-      <button class="mobile-toggle" id="mobileToggle">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
     </div>
 
-    </div>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-header">
-      <a href="#" class="mobile-menu-brand">
-        <span class="brand-text">
-          <li class="mobile-menu-item mobile-theme-toggle">
-            <button class="wbnrfz_btn_theme mobile-theme-btn" id="dark-mode-toggle-mobile"
-              title="Toggle Dark/Light Mode!">
-              <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
-            </button>
-          </li>
-        </span>
-      </a>
-      <button class="mobile-menu-close" id="mobileMenuClose">
-        <span>×</span>
-      </button>
-    </div>
-
-    <ul class="mobile-menu-nav">
-      <li class="mobile-menu-item">
-        <a href="../index.html" class="mobile-menu-link">
-          <i class="fa-solid fa-regular fa-house"></i>
-          <span>Home</span>
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <ul>
+      <li>
+        <a href="../index.html">
+          <span class="icon">
+            <i class="fa-sharp fa-regular fa-house"></i>
+          </span>
+          <span class="label">Home</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="../about.html" class="mobile-menu-link">
-          <i class="fa-solid fa-regular fa-circle-user"></i>
-          <span>About</span>
+      <li>
+        <a href="../about.html">
+          <span class="icon">
+            <i class="fa-regular fa-circle-user"></i>
+          </span>
+          <span class="label">About</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="../works-by-nrfz.html" class="mobile-menu-link">
-          <i class="fa-solid fa-pen-paintbrush"></i>
-          <span>Works By NRFZ</span>
+      <li class="active">
+        <a href="../eicw/eicw.html">
+          <span class="icon">
+            <i class="fa-regular fa-map-location"></i>
+          </span>
+          <span class="label">EICW</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="#" class="mobile-menu-link active">
-          <i class="fa-solid fa-map-location"></i>
-          <span>EICW</span>
-        </a>
-      </li>
-      <li class="mobile-menu-item">
-        <a href="../blog.html" class="mobile-menu-link">
-          <i class="fa-solid fa-comment"></i>
-          <span>Blog</span>
+      <li>
+        <a href="../menu.html">
+          <span class="icon">
+            <i class="fa-regular fa-bars"></i>
+          </span>
+          <span class="label">Menu</span>
         </a>
       </li>
     </ul>
-  </div>
+  </nav>
+
 
   <!-- Scroll Indicator -->
   <div id="scroll-indicator-container">
@@ -158,32 +137,22 @@
 
 
   <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
-
-  <!-- Cover Header -->
-  <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="covbtr-img">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Title/Breadcrumbs -->
   <section class="about-me-sum clearfix">
     <div class="wbnrfz_eicw">
       <div class="page-header-section">
         <div class="container-xxl container-mobile container-mobile-header">
           <div class="breadcrumb-wrapper">
-            <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                   <a href="../index.html">
-                    <i class="fa-solid fa-house"></i>
+                    <i class="fa-regular fa-house"></i>
                   </a>
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="#">EICW</a>
+                  <a href="btr-1.html"><i class="fa-regular fa-eye"></i>
+                  </a>
                 </li>
               </ol>
             </nav>
@@ -205,27 +174,28 @@
 
           <ul id="scrollableTabs">
             <li>
-              <a href="eicw.html">Design System Introduction</a>
+              <a href="eicw.html"><i class="fa-regular fa-circle-info"></i>
+                Introduction</a>
             </li>
 
             <li>
-              <a href="eicw-2.html">Proposed Wayfinding Changes - Trains</a>
+              <a href="eicw-2.html"><i class="fa-regular fa-train"></i> Trains</a>
             </li>
 
             <li>
-              <a href="eicw-3.html">Proposed Wayfinding Changes - Buses</a>
+              <a href="eicw-3.html"><i class="fa-regular fa-bus"></i> Buses</a>
             </li>
 
             <li>
-              <a href="eicw-4.html">Proposed UI/UX Changes</a>
+              <a href="eicw-4.html"><i class="fa-regular fa-pencil"></i> UI/UX</a>
             </li>
 
             <li>
-              <a href="eicw-5.html">Rethinking CCL6 Signages</a>
+              <a href="eicw-5.html"><i class="fa-regular fa-signs-post"></i> CCL6 Signages</a>
             </li>
 
             <li>
-              <a href="btr-1.html" class="active">Behind The Redesign</a>
+              <a href="btr-1.html" class="active"><i class="fa-regular fa-eye"></i> Behind The Redesign</a>
             </li>
           </ul>
 
@@ -244,6 +214,16 @@
 
   </section>
 
+  <!-- Cover Header -->
+  <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="covbtr-img">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Section Content 1 -->
   <section class="about-me-summ clearfix">
     <div class="wbnrfz_details_body">
@@ -258,14 +238,14 @@
                   <h2 class="text-center"
                     style="font-size: 30px; font-weight:bold; text-align: left; padding-top: 1em;">My redesigns are not
                     radical.</h2>
-                  <p style="text-align: justify;">People often design their own concepts based on how they want it to
+                  <p>People often design their own concepts based on how they want it to
                     look
                     like, rather than how it should look like. My redesigns are not about changing the entire
                     design of the Wayfinding System, but rather improving on the existing design to make it more
                     user-friendly and accessible to all users. I do not believe in creating another Design System, when
                     the current ones are barely a decades old.</p>
 
-                  <p style="text-align: justify;">Honestly, each designs and UIs you see in real-life are not entirely
+                  <p>Honestly, each designs and UIs you see in real-life are not entirely
                     bad. So in this section, I'll bring you through my thought process in redesigning these elements.
                   </p>
                 </div>
@@ -303,7 +283,7 @@
                 Reader UI (LTA)
               </h2>
               </h2>
-              <p style="text-align: justify;">The current Bus Card Readers are getting old. Hence, the UI will need a
+              <p>The current Bus Card Readers are getting old. Hence, the UI will need a
                 refresh as well!
                 Had a quick look at the upcoming Card Readers that are being trialled on selected buses, and I feel the
                 UI is good! I have decided to make a guess on how the UI could look like, and also incorporated some
@@ -316,7 +296,7 @@
                     <a href="img-2/bcr-compare-light.png" id="bcrcrc" class="portfolio-img ">
                       <img src="img-2/bcr-compare-light.png" id="bcrcrc-img" class="img-fluid cp-img" alt="bcrcrc">
                     </a>
-                    <p style="text-align: justify;">📸: <br>
+                    <p>📸: <br>
                       - <a
                         href="//images.squarespace-cdn.com/content/v1/5bcfc8c07a1fbd730b2ba933/1558377402895-3VI3FNHXOZQWI997KRES/MRT+gate+to+tap.jpg">Current
                         MRT Card Reader</a><br>
@@ -362,7 +342,7 @@
 
               <h2 class="text-center" style="font-size: 30px; font-weight: bold;" id="staris2">STARiS 2 (SMRT)
               </h2>
-              <p style="text-align: justify;">The current STARiS 2's UI is about 16 years old, and it recently got a
+              <p>The current STARiS 2's UI is about 16 years old, and it recently got a
                 minor upgrade, though only for the Next Stop and Station Name Screens. A major redesign is needed to
                 align with the current design used on the R151s, but at the same time I wanted to retain some elements
                 from the current STARiS UI.
@@ -374,7 +354,7 @@
                     <a href="img-2/staris2-D.png" id="staris2-b" class="portfolio-img ">
                       <img src="img-2/staris2-D.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b">
                     </a>
-                    <p style="text-align: justify;">Revamped STARiS 2.0 UI - <b>Updated</b>
+                    <p>Revamped STARiS 2.0 UI - <b>Updated</b>
                       Line
                       Diagram Layout and <b>New</b> Next Station Interface
                     </p>
@@ -386,7 +366,7 @@
                     <a href="img-2/staris2-D-stn.png" id="staris2-b" class="portfolio-img ">
                       <img src="img-2/staris2-D-stn.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b">
                     </a>
-                    <p style="text-align: justify;">Revamped STARiS 2.0 UI - <b>Updated</b>
+                    <p>Revamped STARiS 2.0 UI - <b>Updated</b>
                       Station Name Interface
                     </p>
                   </figcaption>
@@ -394,10 +374,10 @@
 
                 <hr>
 
-                <p style="text-align: justify; margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
+                <p style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
                   It's time for a makeover.</p>
 
-                <p style="text-align: justify;">As mentioned, I wanted to retain some elements from the current STARiS
+                <p>As mentioned, I wanted to retain some elements from the current STARiS
                   UI,
                   hence I kept the Line Diagram layout similar to the current one, modernized with a newer Doors Closing
                   animation and also a simplified Arrival Screen.
@@ -426,7 +406,7 @@
                   Doors Closing Animation
                 </h3>
 
-                <p style="text-align: justify;">The Door Closing Animations pays homage to the countdown, now presented
+                <p>The Door Closing Animations pays homage to the countdown, now presented
                   in a different manner. The two blinking arrow replaces the numbered countdown, giving a more dynamic
                   feel to
                   it.
@@ -434,48 +414,48 @@
 
                 <div class="video-row">
                   <figure style="width:100%;">
-                    <video id="eicw2-vid2" autoplay controls controlsList="nodownload" oncontextmenu="return false;"
+                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
                       muted loop playsinline width="100%" class="column-vid">
                       <source src="img-2/door-old.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                     <figcaption>
-                      <p style="text-align: justify;">Original Doors Closing Animation - Left Screen</p>
+                      <p>Original Doors Closing Animation - Left Screen</p>
                     </figcaption>
                   </figure>
 
                   <figure style="width:100%;">
-                    <video id="eicw2-vid2" autoplay controls controlsList="nodownload" oncontextmenu="return false;"
+                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
                       muted loop playsinline width="100%" class="column-vid">
                       <source src="img-2/door-old-r.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                     <figcaption>
-                      <p style="text-align: justify;">Original Doors Closing Animation - Right Screen</p>
+                      <p>Original Doors Closing Animation - Right Screen</p>
                     </figcaption>
                   </figure>
                 </div>
 
                 <div class="video-row">
                   <figure style="width:100%;">
-                    <video id="eicw2-vid2" autoplay controls controlsList="nodownload" oncontextmenu="return false;"
+                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
                       muted loop playsinline width="100%" class="column-vid">
                       <source src="img-2/door-new.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                     <figcaption>
-                      <p style="text-align: justify;">Revamped Doors Closing Animation - Left Screen</p>
+                      <p>Revamped Doors Closing Animation - Left Screen</p>
                     </figcaption>
                   </figure>
 
                   <figure style="width:100%;">
-                    <video id="eicw2-vid2" autoplay controls controlsList="nodownload" oncontextmenu="return false;"
+                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
                       muted loop playsinline width="100%" class="column-vid">
                       <source src="img-2/door-new-r.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                     <figcaption>
-                      <p style="text-align: justify;">Revamped Doors Closing Animation - Right Screen</p>
+                      <p>Revamped Doors Closing Animation - Right Screen</p>
                     </figcaption>
                   </figure>
                 </div>
@@ -488,24 +468,24 @@
 
                 <div class="video-row">
                   <figure style="width:100%;">
-                    <video id="eicw2-vid2" autoplay controls controlsList="nodownload" oncontextmenu="return false;"
+                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
                       muted loop playsinline width="100%" class="column-vid">
                       <source src="img-2/arr-jur.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                     <figcaption>
-                      <p style="text-align: justify;">Revamped Arrival Animation Example 1 - Jurong East [A]</p>
+                      <p>Revamped Arrival Animation Example 1 - Jurong East [A]</p>
                     </figcaption>
                   </figure>
 
                   <figure style="width:100%;">
-                    <video id="eicw2-vid2" autoplay controls controlsList="nodownload" oncontextmenu="return false;"
+                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
                       muted loop playsinline width="100%" class="column-vid">
                       <source src="img-2/arr-wdl.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                     <figcaption>
-                      <p style="text-align: justify;">Revamped Arrival Animation Example 2 - Woodlands [A]</p>
+                      <p>Revamped Arrival Animation Example 2 - Woodlands [A]</p>
                     </figcaption>
                   </figure>
                 </div>
@@ -522,36 +502,12 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-social">
-        <a href="https://github.com/nurafianZulkifli" class="social-link">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://twitter.com/nrfzlkf_" class="social-link">
-          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
-          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-
-    <div class="footer-copy">
-      © 2026 Nurafian Zulkifli
-    </div>
-  </footer>
-
   <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
     data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
     data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
     </script>
 
-  <script src="../js/navtabs.js"></script>
+  <script src="../js/mob-navtabs.js"></script>
 
   <script src="js/btr-1.js"></script>
 

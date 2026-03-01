@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const cards = Array.from(cardsContainer.querySelectorAll(".card"));
 
     // Filter functionality
+    const filterTitle = document.getElementById("filter-title");
+
     filterButtons.forEach(button => {
         button.addEventListener("click", function (e) {
             e.preventDefault();
@@ -12,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
             // Remove active class from all buttons and add to the clicked one
             filterButtons.forEach(btn => btn.classList.remove("active"));
             this.classList.add("active");
+
+            // Update the page title to match the active filter
+            if (filterTitle) {
+                filterTitle.textContent = this.textContent.trim();
+            }
 
             const filter = this.getAttribute("data-filter");
 

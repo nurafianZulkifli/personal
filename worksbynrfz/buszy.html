@@ -15,9 +15,10 @@
 
   <link rel="icon" href="../img/core-img/favicon.png">
 
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.2.0/css/all.css" />
 
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style-mobNav.css">
   <link rel="stylesheet" href="../css/style-breakpoints.css">
   <link rel="stylesheet" href="../css/dark-mode.css">
 
@@ -38,159 +39,138 @@
 
 <style>
   #cv-tdc {
-    background-image: url('https://i.imgur.com/3DcTWDA.png');
-    height: 75vh;
+    background-image: url('https://i.imgur.com/Wvet10n.png');
+    height: 70vh;
   }
 </style>
 
 <body>
-
+  <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+  <div class="breadcrumb-fixed-placeholder">
+    <nav aria-label="breadcrumb" style="margin-bottom:0;">
+      <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../index.html">
+            <i class="fa-regular fa-house"></i>
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="../menu.html"><i class="fa-regular fa-bars"></i>
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="works-by-nrfz.html"><i class="fa-regular fa-pen-paintbrush"></i>
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
 
   <!-- Navigation Bar -->
   <nav class="navbar-container">
     <div class="navbar">
       <!-- Logo -->
-      <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+      <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo"></a>
 
       <!-- Navigation Links -->
       <ul class="navbar-nav" id="navbarNav">
         <li class="nav-item">
           <a href="../index.html" class="nav-link">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-sharp fa-regular fa-house"></i>
             <span>Home</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="../about.html" class="nav-link">
-            <i class="fa-solid fa-circle-user"></i>
+            <i class="fa-regular fa-circle-user"></i>
             <span>About</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="../works-by-nrfz.html" class="nav-link active">
-            <i class="fa-solid fa-pen-paintbrush"></i>
-            <span>Works By NRFZ</span>
-          </a>
-        </li>
-        <li class="nav-item">
           <a href="../eicw/eicw.html" class="nav-link">
-            <i class="fa-solid fa-map-location"></i>
+            <i class="fa-regular fa-map-location"></i>
             <span>EICW</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="../blog.html" class="nav-link">
-            <i class="fa-solid fa-comment"></i>
-            <span>Blog</span>
-          </a>
-        </li>
-        <li class="nav-item-toggle">
-          <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
-            <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+        <li class="nav-item ">
+          <a href="../menu.html" class="nav-link active">
+            <i class="fa-regular fa-bars"></i>
+            <span>Menu</span>
           </a>
         </li>
       </ul>
-
-      <!-- Mobile Toggle -->
-      <button class="mobile-toggle" id="mobileToggle">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </button>
     </div>
 
-    </div>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-header">
-      <li class="mobile-menu-item mobile-theme-toggle">
-        <a href="#" class="nav-link-toggle" id="dark-mode-toggle-mobile" title="Toggle Dark/Light Mode!">
-          <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <ul>
+      <li>
+        <a href="../index.html">
+          <span class="icon">
+            <i class="fa-sharp fa-regular fa-house"></i>
+          </span>
+          <span class="label">Home</span>
         </a>
       </li>
-      <a href="#" class="mobile-menu-brand">
-        <span class="brand-text"></span>
-      </a>
-      <button class="mobile-menu-close" id="mobileMenuClose">
-        <span>×</span>
-      </button>
-    </div>
-
-    <ul class="mobile-menu-nav">
-      <li class="mobile-menu-item">
-        <a href="../index.html" class="mobile-menu-link">
-          <i class="fa-solid fa-regular fa-house"></i>
-          <span>Home</span>
+      <li>
+        <a href="../about.html">
+          <span class="icon">
+            <i class="fa-regular fa-circle-user"></i>
+          </span>
+          <span class="label">About</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="#" class="mobile-menu-link">
-          <i class="fa-solid fa-regular fa-circle-user"></i>
-          <span>About</span>
+      <li>
+        <a href="../eicw/eicw.html">
+          <span class="icon">
+            <i class="fa-regular fa-map-location"></i>
+          </span>
+          <span class="label">EICW</span>
         </a>
       </li>
-      <li class="mobile-menu-item">
-        <a href="../works-by-nrfz.html" class="mobile-menu-link active">
-          <i class="fa-solid fa-pen-paintbrush"></i>
-          <span>Works By NRFZ</span>
-        </a>
-      </li>
-      <li class="mobile-menu-item">
-        <a href="../eicw/eicw.html" class="mobile-menu-link">
-          <i class="fa-solid fa-map-location"></i>
-          <span>EICW</span>
-        </a>
-      </li>
-      <li class="mobile-menu-item">
-        <a href="../blog.html" class="mobile-menu-link">
-          <i class="fa-solid fa-comment"></i>
-          <span>Blog</span>
+      <li class="active">
+        <a href="../menu.html">
+          <span class="icon">
+            <i class="fa-regular fa-bars"></i>
+          </span>
+          <span class="label">Menu</span>
         </a>
       </li>
     </ul>
-  </div>
-
+  </nav>
 
 
   <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
-
-  <!-- Cover Header -->
-  <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-tdc">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12">
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Title/Breadcrumbs -->
   <section class="about-me-sum clearfix">
     <div class="wbnrfz_eicw">
       <div class="page-header-section">
-        <div class="container-xxl container-mobile container-mobile-header">
+        <div class="container container-xxl container-mobile container-mobile-header">
           <div class="breadcrumb-wrapper">
-            <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                   <a href="../index.html">
-                    <i class="fa-solid fa-house"></i>
+                    <i class="fa-regular fa-house"></i>
                   </a>
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="../works-by-nrfz.html">Works By NRFZ</a>
+                  <a href="../menu.html"><i class="fa-regular fa-bars"></i>
+                  </a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="../works-by-nrfz.html"><i class="fa-regular fa-pen-paintbrush"></i>
+                  </a>
                 </li>
               </ol>
             </nav>
             <div class="page-title-wrapper">
-              <h1 class="page-title-single">Buszy - Bus Arrival Timings</h1>
+              <div>
+                <h1 class="page-title-single">Buszy - Bus Arrival Timings</h1>
+              </div>
+
             </div>
           </div>
         </div>
@@ -226,7 +206,15 @@
 
   </section>
 
-  <br>
+  <!-- Cover Header -->
+  <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-tdc">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Details Section -->
   <section class="about-me-summ clearfix">
@@ -301,13 +289,13 @@
   <div class="wrapper">
     <div class="carousel" id="delays-carousel">
       <div class="carousel-cell">
-        <a href="https://i.imgur.com/SMCr2oe.png" class="portfolio-img" data-gallery="carousel" id="bsz1">
-          <img class="img-fluid" src="https://i.imgur.com/SMCr2oe.png" alt="bsz1-img" draggable="false" id="bsz1-img">
+        <a href="https://i.imgur.com/fH61bhG.png" class="portfolio-img" data-gallery="carousel" id="bsz1">
+          <img class="img-fluid" src="https://i.imgur.com/fH61bhG.png" alt="bsz1-img" draggable="false" id="bsz1-img">
         </a>
       </div>
       <div class="carousel-cell">
-        <a href="https://i.imgur.com/yDqSZ2E.png" class="portfolio-img" data-gallery="carousel" id="bsz2">
-          <img class="img-fluid" src="https://i.imgur.com/yDqSZ2E.png" alt="bsz2-img" draggable="false" id="bsz2-img">
+        <a href="https://i.imgur.com/JCXkgpK.png" class="portfolio-img" data-gallery="carousel" id="bsz2">
+          <img class="img-fluid" src="https://i.imgur.com/JCXkgpK.png" alt="bsz2-img" draggable="false" id="bsz2-img">
         </a>
       </div>
       <div class="carousel-cell">
@@ -316,72 +304,64 @@
         </a>
       </div>
       <div class="carousel-cell">
-        <a href="https://i.imgur.com/aSrc8OZ.png" class="portfolio-img" data-gallery="carousel" id="bsz4">
-          <img class="img-fluid" src="https://i.imgur.com/aSrc8OZ.png" alt="bsz4-img" draggable="false" id="bsz4-img">
-        </a>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-social">
-        <a href="https://github.com/nurafianZulkifli" class="social-link">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://twitter.com/nrfzlkf_" class="social-link">
-          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
-          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        <a href="https://i.imgur.com/Qo9M4nH.png" class="portfolio-img" data-gallery="carousel" id="bsz4">
+          <img class="img-fluid" src="https://i.imgur.com/Qo9M4nH.png" alt="bsz4-img" draggable="false" id="bsz4-img">
         </a>
       </div>
     </div>
 
-    <div class="footer-copy">
-      © 2026 Nurafian Zulkifli
-    </div>
-  </footer>
+    <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
+      data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
+      data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
+      </script>
 
-  <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
-    data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
-    data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
-    </script>
+    <script src="../js/mob-navtabs.js"></script>
 
-  <script src="../js/navtabs.js"></script>
+    <script src="../js/jquery.min.js"></script>
 
-  <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
 
-  <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
-  <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/pw.bundle.js"></script>
 
-  <script src="../js/pw.bundle.js"></script>
+    <script src="../js/default-assets/active.js"></script>
 
-  <script src="../js/default-assets/active.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
 
-  <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/isotope.pkgd.min.js"></script>
 
-  <script src="../js/isotope.pkgd.min.js"></script>
+    <script src="../js/copy-to-clipboard.js"></script>
 
-  <script src="../js/copy-to-clipboard.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js'></script>
 
-  <script src='//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js'></script>
+    <script src="../js/dis.js"></script>
 
-  <script src="../js/dis.js"></script>
-
-  <script src="../js/dstabs.js"></script>
+    <script src="../js/dstabs.js"></script>
 
 
-  <!-- Script for Indiv Page - Modes -->
-  <script>
-    /* Dark Mode Functionality for Individual Pages */
+    <!-- Script for Indiv Page - Modes -->
+    <script>
+          /* Dark Mode Functionality for Individual Pages */
 
-    // Check localStorage for dark mode preference
-    if (localStorage.getItem('dark-mode') === 'enabled') {
+    // Use window properties if they exist from initial script, otherwise create them
+    if (typeof window._themePreference === 'undefined') {
+      window._themePreference = localStorage.getItem('theme-preference') || 'system';
+    }
+    if (typeof window._prefersDark === 'undefined') {
+      window._prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    // Determine if dark mode should be active
+    function shouldBeDark() {
+      if (window._themePreference === 'dark') return true;
+      if (window._themePreference === 'light') return false;
+      if (window._themePreference === 'system') return window._prefersDark;
+      return window._prefersDark; // Default to system preference
+    }
+
+    // Apply theme on page load
+    if (shouldBeDark()) {
       document.body.classList.add('dark-mode');
       updateThemeIcon('dark');
       updateHrefForDarkMode();
@@ -389,36 +369,80 @@
       updateThemeIcon('light');
     }
 
-    // Get both toggle buttons
+    // Listen to theme toggle clicks
+    document.addEventListener('DOMContentLoaded', function () {
+      const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+      const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+      function cycleTheme() {
+        const themes = ['light', 'dark', 'system'];
+        const currentTheme = window._themePreference || 'system';
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextTheme = themes[(currentIndex + 1) % themes.length];
+        applyTheme(nextTheme);
+      }
+
+      function applyTheme(preference) {
+        localStorage.setItem('theme-preference', preference);
+        window._themePreference = preference;
+
+        if (preference === 'dark') {
+          document.body.classList.add('dark-mode');
+          updateThemeIcon('dark');
+        } else if (preference === 'light') {
+          document.body.classList.remove('dark-mode');
+          updateThemeIcon('light');
+        } else if (preference === 'system') {
+          if (window._prefersDark) {
+            document.body.classList.add('dark-mode');
+            updateThemeIcon('dark');
+          } else {
+            document.body.classList.remove('dark-mode');
+            updateThemeIcon('light');
+          }
+        }
+      }
+
+      if (themeToggleDesktop) {
+        themeToggleDesktop.addEventListener('click', (e) => {
+          e.preventDefault();
+          cycleTheme();
+        });
+      }
+
+      if (themeToggleMobile) {
+        themeToggleMobile.addEventListener('click', (e) => {
+          e.preventDefault();
+          cycleTheme();
+        });
+      }
+    });
+
+    // Follow system theme changes when set to 'system' preference
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      window._prefersDark = e.matches;
+      if (localStorage.getItem('theme-preference') === 'system' || localStorage.getItem('theme-preference') === null) {
+        if (e.matches) {
+          document.body.classList.add('dark-mode');
+          updateThemeIcon('dark');
+        } else {
+          document.body.classList.remove('dark-mode');
+          updateThemeIcon('light');
+        }
+      }
+    });
+
+    // Get both toggle buttons (for backward compatibility with mobile views)
     const toggleButtonDesktop = document.getElementById('dark-mode-toggle-desktop');
     const toggleButtonMobile = document.getElementById('dark-mode-toggle-mobile');
 
-    // Function to toggle dark mode
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-      // Save the preference in localStorage
-      if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('dark-mode', 'enabled');
-        updateThemeIcon('dark');
-      } else {
-        localStorage.setItem('dark-mode', 'disabled');
-        updateThemeIcon('light');
-      }
-      updateHrefForDarkMode();
-    }
-
-    // Add event listeners to both buttons if they exist
-    if (toggleButtonDesktop) {
-      toggleButtonDesktop.addEventListener('click', toggleDarkMode);
-    }
-
-    if (toggleButtonMobile) {
-      toggleButtonMobile.addEventListener('click', toggleDarkMode);
-    }
-    // Function to update the theme icon with animation
+    // Function to update the theme icon and text with animation
     function updateThemeIcon(theme) {
       const themeIconDesktop = document.getElementById('theme-icon-desktop');
       const themeIconMobile = document.getElementById('theme-icon-mobile');
+      const themeTextDesktop = document.getElementById('theme-text-desktop');
+      const themeTextMobile = document.getElementById('theme-text-mobile');
+      const preference = window._themePreference || 'system';
 
       // Add animation class to both icons
       if (themeIconDesktop) themeIconDesktop.classList.add('animate');
@@ -445,6 +469,19 @@
         }
       }
 
+      // Update display text
+      let displayText = 'Display: ';
+      if (preference === 'light') {
+        displayText += 'Light';
+      } else if (preference === 'dark') {
+        displayText += 'Dark';
+      } else if (preference === 'system') {
+        displayText += 'Follow System';
+      }
+
+      if (themeTextDesktop) themeTextDesktop.textContent = displayText;
+      if (themeTextMobile) themeTextMobile.textContent = displayText;
+
       // Remove the animation class after the animation ends
       setTimeout(() => {
         if (themeIconDesktop) themeIconDesktop.classList.remove('animate');
@@ -452,61 +489,61 @@
       }, 300); // Match the duration of the CSS transition
     }
 
-    function updateHrefForDarkMode() {
-      /* Banners */
-      const tdcPage = document.getElementById('cv-tdc');
-
-      const isDarkMode = document.body.classList.contains('dark-mode');
-
-      const bsz1_link = document.getElementById('bsz1');
-      const bsz1_img = document.getElementById('bsz1-img');
-
-      const bsz2_link = document.getElementById('bsz2');
-      const bsz2_img = document.getElementById('bsz2-img');
-
-      const bsz3_link = document.getElementById('bsz3');
-      const bsz3_img = document.getElementById('bsz3-img');
-
-      const bsz4_link = document.getElementById('bsz4');
-      const bsz4_img = document.getElementById('bsz4-img');
-
-
-      if (isDarkMode) {
+      function updateHrefForDarkMode() {
         /* Banners */
-        tdcPage.style.backgroundImage = "url('https://i.imgur.com/3DcTWDA.png')";
+        const tdcPage = document.getElementById('cv-tdc');
 
-        bsz1_link.href = 'https://i.imgur.com/VQgauU6.png';
-        bsz1_img.src = 'https://i.imgur.com/VQgauU6.png';
+        const isDarkMode = document.body.classList.contains('dark-mode');
 
-        bsz2_link.href = 'https://i.imgur.com/BAE7d2M.png';
-        bsz2_img.src = 'https://i.imgur.com/BAE7d2M.png';
+        const bsz1_link = document.getElementById('bsz1');
+        const bsz1_img = document.getElementById('bsz1-img');
 
-        bsz3_link.href = 'https://i.imgur.com/TajBbwn.png';
-        bsz3_img.src = 'https://i.imgur.com/TajBbwn.png';
-        
-        bsz4_link.href = 'https://i.imgur.com/No8bZfD.png';
-        bsz4_img.src = 'https://i.imgur.com/No8bZfD.png';
+        const bsz2_link = document.getElementById('bsz2');
+        const bsz2_img = document.getElementById('bsz2-img');
+
+        const bsz3_link = document.getElementById('bsz3');
+        const bsz3_img = document.getElementById('bsz3-img');
+
+        const bsz4_link = document.getElementById('bsz4');
+        const bsz4_img = document.getElementById('bsz4-img');
 
 
-      } else {
-        /* Banners */
-        tdcPage.style.backgroundImage = "url('https://i.imgur.com/3DcTWDA.png')";
+        if (isDarkMode) {
+          /* Banners */
+          tdcPage.style.backgroundImage = "url('https://i.imgur.com/Wvet10n.png')";
 
-        bsz1_link.href = 'https://i.imgur.com/SMCr2oe.png';
-        bsz1_img.src = 'https://i.imgur.com/SMCr2oe.png';
+          bsz1_link.href = 'https://i.imgur.com/jXfKRXX.png';
+          bsz1_img.src = 'https://i.imgur.com/jXfKRXX.png';
 
-        bsz2_link.href = 'https://i.imgur.com/yDqSZ2E.png';
-        bsz2_img.src = 'https://i.imgur.com/yDqSZ2E.png';
+          bsz2_link.href = 'https://i.imgur.com/yrf1Zx2.png';
+          bsz2_img.src = 'https://i.imgur.com/yrf1Zx2.png';
 
-        bsz3_link.href = 'https://i.imgur.com/92W7KRL.png';
-        bsz3_img.src = 'https://i.imgur.com/92W7KRL.png';
+          bsz3_link.href = 'https://i.imgur.com/0TKCwAE.png';
+          bsz3_img.src = 'https://i.imgur.com/0TKCwAE.png';
 
-        bsz4_link.href = 'https://i.imgur.com/aSrc8OZ.png';
-        bsz4_img.src = 'https://i.imgur.com/aSrc8OZ.png';
+          bsz4_link.href = 'https://i.imgur.com/CTympKJ.png';
+          bsz4_img.src = 'https://i.imgur.com/CTympKJ.png';
 
+
+        } else {
+          /* Banners */
+          tdcPage.style.backgroundImage = "url('https://i.imgur.com/Wvet10n.png')";
+
+          bsz1_link.href = 'https://i.imgur.com/fH61bhG.png';
+          bsz1_img.src = 'https://i.imgur.com/fH61bhG.png';
+
+          bsz2_link.href = 'https://i.imgur.com/JCXkgpK.png';
+          bsz2_img.src = 'https://i.imgur.com/JCXkgpK.png';
+
+          bsz3_link.href = 'https://i.imgur.com/dqz0TfZ.png';
+          bsz3_img.src = 'https://i.imgur.com/dqz0TfZ.png';
+
+          bsz4_link.href = 'https://i.imgur.com/Qo9M4nH.png';
+          bsz4_img.src = 'https://i.imgur.com/Qo9M4nH.png';
+
+        }
       }
-    }
-  </script>
+    </script>
 
 </body>
 

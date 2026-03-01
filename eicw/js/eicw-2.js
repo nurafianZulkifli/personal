@@ -1,7 +1,23 @@
 /* Dark Mode Functionality for Individual Pages */
 
-// Check localStorage for dark mode preference
-if (localStorage.getItem('dark-mode') === 'enabled') {
+// Use window properties if they exist from initial script, otherwise create them
+if (typeof window._themePreference === 'undefined') {
+    window._themePreference = localStorage.getItem('theme-preference') || 'system';
+}
+if (typeof window._prefersDark === 'undefined') {
+    window._prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+// Determine if dark mode should be active
+function shouldBeDark() {
+    if (window._themePreference === 'dark') return true;
+    if (window._themePreference === 'light') return false;
+    if (window._themePreference === 'system') return window._prefersDark;
+    return window._prefersDark; // Default to system preference
+}
+
+// Apply theme on page load
+if (shouldBeDark()) {
     document.body.classList.add('dark-mode');
     updateThemeIcon('dark');
     updateHrefForDarkMode();
@@ -9,36 +25,80 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
     updateThemeIcon('light');
 }
 
-// Get both toggle buttons
+// Listen to theme toggle clicks
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    
+    function cycleTheme() {
+        const themes = ['light', 'dark', 'system'];
+        const currentTheme = window._themePreference || 'system';
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextTheme = themes[(currentIndex + 1) % themes.length];
+        applyTheme(nextTheme);
+    }
+    
+    function applyTheme(preference) {
+        localStorage.setItem('theme-preference', preference);
+        window._themePreference = preference;
+        
+        if (preference === 'dark') {
+            document.body.classList.add('dark-mode');
+            updateThemeIcon('dark');
+        } else if (preference === 'light') {
+            document.body.classList.remove('dark-mode');
+            updateThemeIcon('light');
+        } else if (preference === 'system') {
+            if (window._prefersDark) {
+                document.body.classList.add('dark-mode');
+                updateThemeIcon('dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                updateThemeIcon('light');
+            }
+        }
+    }
+    
+    if (themeToggleDesktop) {
+        themeToggleDesktop.addEventListener('click', (e) => {
+            e.preventDefault();
+            cycleTheme();
+        });
+    }
+    
+    if (themeToggleMobile) {
+        themeToggleMobile.addEventListener('click', (e) => {
+            e.preventDefault();
+            cycleTheme();
+        });
+    }
+});
+
+// Follow system theme changes when set to 'system' preference
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    window._prefersDark = e.matches;
+    if (localStorage.getItem('theme-preference') === 'system' || localStorage.getItem('theme-preference') === null) {
+        if (e.matches) {
+            document.body.classList.add('dark-mode');
+            updateThemeIcon('dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            updateThemeIcon('light');
+        }
+    }
+});
+
+// Get both toggle buttons (for backward compatibility with mobile views)
 const toggleButtonDesktop = document.getElementById('dark-mode-toggle-desktop');
 const toggleButtonMobile = document.getElementById('dark-mode-toggle-mobile');
 
-// Function to toggle dark mode
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    // Save the preference in localStorage
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('dark-mode', 'enabled');
-        updateThemeIcon('dark');
-    } else {
-        localStorage.setItem('dark-mode', 'disabled');
-        updateThemeIcon('light');
-    }
-    updateHrefForDarkMode();
-}
-
-// Add event listeners to both buttons if they exist
-if (toggleButtonDesktop) {
-    toggleButtonDesktop.addEventListener('click', toggleDarkMode);
-}
-
-if (toggleButtonMobile) {
-    toggleButtonMobile.addEventListener('click', toggleDarkMode);
-}
-// Function to update the theme icon with animation
+// Function to update the theme icon and text with animation
 function updateThemeIcon(theme) {
     const themeIconDesktop = document.getElementById('theme-icon-desktop');
     const themeIconMobile = document.getElementById('theme-icon-mobile');
+    const themeTextDesktop = document.getElementById('theme-text-desktop');
+    const themeTextMobile = document.getElementById('theme-text-mobile');
+    const preference = window._themePreference || 'system';
 
     // Add animation class to both icons
     if (themeIconDesktop) themeIconDesktop.classList.add('animate');
@@ -64,6 +124,19 @@ function updateThemeIcon(theme) {
             themeIconMobile.classList.add('fa-sun-bright');
         }
     }
+    
+    // Update display text
+    let displayText = 'Display: ';
+    if (preference === 'light') {
+        displayText += 'Light';
+    } else if (preference === 'dark') {
+        displayText += 'Dark';
+    } else if (preference === 'system') {
+        displayText += 'Follow System';
+    }
+    
+    if (themeTextDesktop) themeTextDesktop.textContent = displayText;
+    if (themeTextMobile) themeTextMobile.textContent = displayText;
 
     // Remove the animation class after the animation ends
     setTimeout(() => {
@@ -71,6 +144,7 @@ function updateThemeIcon(theme) {
         if (themeIconMobile) themeIconMobile.classList.remove('animate');
     }, 300); // Match the duration of the CSS transition
 }
+
 
 
 function updateHrefForDarkMode() {
@@ -237,294 +311,294 @@ function updateHrefForDarkMode() {
     const isDarkMode = document.body.classList.contains('dark-mode');
 
     if (isDarkMode) {
-        coverSect.style.backgroundImage = "url('./img/cover-2-dark.png')";
-        ciSect.style.backgroundImage = "url('./img/c-i-dark.png')";
-        dsbSect.style.backgroundImage = "url('./img/dsb-dark.png')";
-        iuSect.style.backgroundImage = "url('./img/iu-dark.png')";
-        ieSect.style.backgroundImage = "url('./img/ie-dark.png')";
+        if (coverSect) coverSect.style.backgroundImage = "url('./img/cover-2-dark.png')";
+        if (ciSect) ciSect.style.backgroundImage = "url('./img/c-i-dark.png')";
+        if (dsbSect) dsbSect.style.backgroundImage = "url('./img/dsb-dark.png')";
+        if (iuSect) iuSect.style.backgroundImage = "url('./img/iu-dark.png')";
+        if (ieSect) ieSect.style.backgroundImage = "url('./img/ie-dark.png')";
 
-        wo1_link.href = './img/wo1-dark.png';
-        wo1_img.src = './img/wo1-dark.png';
+        if (wo1_link) wo1_link.href = './img/wo1-dark.png';
+        if (wo1_img) wo1_img.src = './img/wo1-dark.png';
 
-        wo2_link.href = './img/wo2-dark.png';
-        wo2_img.src = './img/wo2-dark.png';
+        if (wo2_link) wo2_link.href = './img/wo2-dark.png';
+        if (wo2_img) wo2_img.src = './img/wo2-dark.png';
 
-        exit_link.href = './img/exit-dark.png';
-        exit_img.src = './img/exit-dark.png';
+        if (exit_link) exit_link.href = './img/exit-dark.png';
+        if (exit_img) exit_img.src = './img/exit-dark.png';
 
-        lift1_link.href = './img/lift-dark1.png';
-        lift1_img.src = './img/lift-dark1.png';
+        if (lift1_link) lift1_link.href = './img/lift-dark1.png';
+        if (lift1_img) lift1_img.src = './img/lift-dark1.png';
 
-        lift2_link.href = './img/lift-dark2.png';
-        lift2_img.src = './img/lift-dark2.png';
+        if (lift2_link) lift2_link.href = './img/lift-dark2.png';
+        if (lift2_img) lift2_img.src = './img/lift-dark2.png';
 
-        liftd_link.href = './img/liftd-dark.png';
-        liftd_img.src = './img/liftd-dark.png';
+        if (liftd_link) liftd_link.href = './img/liftd-dark.png';
+        if (liftd_img) liftd_img.src = './img/liftd-dark.png';
 
-        ed1_link.href = './img/ed1-dark.png';
-        ed1_img.src = './img/ed1-dark.png';
+        if (ed1_link) ed1_link.href = './img/ed1-dark.png';
+        if (ed1_img) ed1_img.src = './img/ed1-dark.png';
 
-        sn_link.href = './img/sn-dark.png';
-        sn_img.src = './img/sn-dark.png';
+        if (sn_link) sn_link.href = './img/sn-dark.png';
+        if (sn_img) sn_img.src = './img/sn-dark.png';
 
-        se_link.href = './img/se-dark.png';
-        se_img.src = './img/se-dark.png';
+        if (se_link) se_link.href = './img/se-dark.png';
+        if (se_img) se_img.src = './img/se-dark.png';
 
-        tt_link.href = './img/tt-dark.png';
-        tt_img.src = './img/tt-dark.png';
+        if (tt_link) tt_link.href = './img/tt-dark.png';
+        if (tt_img) tt_img.src = './img/tt-dark.png';
 
-        ttann_link.href = './img/ttann-dark.png';
-        ttann_img.src = './img/ttann-dark.png';
+        if (ttann_link) ttann_link.href = './img/ttann-dark.png';
+        if (ttann_img) ttann_img.src = './img/ttann-dark.png';
 
-        lsb_link.href = './img/lsb-dark.png';
-        lsb_img.src = './img/lsb-dark.png';
+        if (lsb_link) lsb_link.href = './img/lsb-dark.png';
+        if (lsb_img) lsb_img.src = './img/lsb-dark.png';
 
-        lsbann1_link.href = './img/lsbann1-dark.png';
-        lsbann1_img.src = './img/lsbann1-dark.png';
+        if (lsbann1_link) lsbann1_link.href = './img/lsbann1-dark.png';
+        if (lsbann1_img) lsbann1_img.src = './img/lsbann1-dark.png';
 
-        lsbann2_link.href = './img/lsbann2-dark.png';
-        lsbann2_img.src = './img/lsbann2-dark.png';
+        if (lsbann2_link) lsbann2_link.href = './img/lsbann2-dark.png';
+        if (lsbann2_img) lsbann2_img.src = './img/lsbann2-dark.png';
 
-        ed_link.href = './img/ed-dark.png';
-        ed_img.src = './img/ed-dark.png';
+        if (ed_link) ed_link.href = './img/ed-dark.png';
+        if (ed_img) ed_img.src = './img/ed-dark.png';
 
-        edann1_link.href = './img/edann1-dark.png';
-        edann1_img.src = './img/edann1-dark.png';
+        if (edann1_link) edann1_link.href = './img/edann1-dark.png';
+        if (edann1_img) edann1_img.src = './img/edann1-dark.png';
 
-        edann2_link.href = './img/edann2-dark.png';
-        edann2_img.src = './img/edann2-dark.png';
+        if (edann2_link) edann2_link.href = './img/edann2-dark.png';
+        if (edann2_img) edann2_img.src = './img/edann2-dark.png';
 
-        ts_link.href = './img/ts-dark.png';
-        ts_img.src = './img/ts-dark.png';
+        if (ts_link) ts_link.href = './img/ts-dark.png';
+        if (ts_img) ts_img.src = './img/ts-dark.png';
 
-        tsann1_link.href = './img/tsann1-dark.png';
-        tsann1_img.src = './img/tsann1-dark.png';
+        if (tsann1_link) tsann1_link.href = './img/tsann1-dark.png';
+        if (tsann1_img) tsann1_img.src = './img/tsann1-dark.png';
 
-        tsann2_link.href = './img/tsann2-dark.png';
-        tsann2_img.src = './img/tsann2-dark.png';
+        if (tsann2_link) tsann2_link.href = './img/tsann2-dark.png';
+        if (tsann2_img) tsann2_img.src = './img/tsann2-dark.png';
 
-        os_link.href = './img/os-dark.png';
-        os_img.src = './img/os-dark.png';
+        if (os_link) os_link.href = './img/os-dark.png';
+        if (os_img) os_img.src = './img/os-dark.png';
 
-        osann1_link.href = './img/osann1-dark.png';
-        osann1_img.src = './img/osann1-dark.png';
+        if (osann1_link) osann1_link.href = './img/osann1-dark.png';
+        if (osann1_img) osann1_img.src = './img/osann1-dark.png';
 
-        ud_link.href = './img/ud-dark.png';
-        ud_img.src = './img/ud-dark.png';
+        if (ud_link) ud_link.href = './img/ud-dark.png';
+        if (ud_img) ud_img.src = './img/ud-dark.png';
 
-        lb1_link.href = './img/lb1-dark.png';
-        lb1_img.src = './img/lb1-dark.png';
+        if (lb1_link) lb1_link.href = './img/lb1-dark.png';
+        if (lb1_img) lb1_img.src = './img/lb1-dark.png';
 
-        lb2_link.href = './img/lb2-dark.png';
-        lb2_img.src = './img/lb2-dark.png';
+        if (lb2_link) lb2_link.href = './img/lb2-dark.png';
+        if (lb2_img) lb2_img.src = './img/lb2-dark.png';
 
-        ic1_link.href = './img/ic1-dark.png';
-        ic1_img.src = './img/ic1-dark.png';
+        if (ic1_link) ic1_link.href = './img/ic1-dark.png';
+        if (ic1_img) ic1_img.src = './img/ic1-dark.png';
 
-        ic2_link.href = './img/ic2-dark.png';
-        ic2_img.src = './img/ic2-dark.png';
+        if (ic2_link) ic2_link.href = './img/ic2-dark.png';
+        if (ic2_img) ic2_img.src = './img/ic2-dark.png';
 
-        ic3_link.href = './img/ic3-dark.png';
-        ic3_img.src = './img/ic3-dark.png';
+        if (ic3_link) ic3_link.href = './img/ic3-dark.png';
+        if (ic3_img) ic3_img.src = './img/ic3-dark.png';
 
-        ic4_link.href = './img/ic4-dark.png';
-        ic4_img.src = './img/ic4-dark.png';
+        if (ic4_link) ic4_link.href = './img/ic4-dark.png';
+        if (ic4_img) ic4_img.src = './img/ic4-dark.png';
 
-        sne1_link.href = './img/sne1-dark.png';
-        sne1_img.src = './img/sne1-dark.png';
+        if (sne1_link) sne1_link.href = './img/sne1-dark.png';
+        if (sne1_img) sne1_img.src = './img/sne1-dark.png';
 
-        sne2_link.href = './img/sne2-dark.png';
-        sne2_img.src = './img/sne2-dark.png';
+        if (sne2_link) sne2_link.href = './img/sne2-dark.png';
+        if (sne2_img) sne2_img.src = './img/sne2-dark.png';
 
-        sne3_link.href = './img/sne3-dark.png';
-        sne3_img.src = './img/sne3-dark.png';
+        if (sne3_link) sne3_link.href = './img/sne3-dark.png';
+        if (sne3_img) sne3_img.src = './img/sne3-dark.png';
 
-        evo2_link.href = './img/evo2-dark.png';
-        evo2_img.src = './img/evo2-dark.png';
+        if (evo2_link) evo2_link.href = './img/evo2-dark.png';
+        if (evo2_img) evo2_img.src = './img/evo2-dark.png';
 
-        ep1_link.href = './img/ep1-dark.png';
-        ep1_img.src = './img/ep1-dark.png';
+        if (ep1_link) ep1_link.href = './img/ep1-dark.png';
+        if (ep1_img) ep1_img.src = './img/ep1-dark.png';
 
-        ep2_link.href = './img/ep2-dark.png';
-        ep2_img.src = './img/ep2-dark.png';
+        if (ep2_link) ep2_link.href = './img/ep2-dark.png';
+        if (ep2_img) ep2_img.src = './img/ep2-dark.png';
 
-        ms1_link.href = './img/ms1-dark.png';
-        ms1_img.src = './img/ms1-dark.png';
+        if (ms1_link) ms1_link.href = './img/ms1-dark.png';
+        if (ms1_img) ms1_img.src = './img/ms1-dark.png';
 
-        ms2_link.href = './img/ms2-dark.png';
-        ms2_img.src = './img/ms2-dark.png';
+        if (ms2_link) ms2_link.href = './img/ms2-dark.png';
+        if (ms2_img) ms2_img.src = './img/ms2-dark.png';
 
-        ms3_link.href = './img/ms3-dark.png';
-        ms3_img.src = './img/ms3-dark.png';
+        if (ms3_link) ms3_link.href = './img/ms3-dark.png';
+        if (ms3_img) ms3_img.src = './img/ms3-dark.png';
 
-        ms4_link.href = './img/ms4-dark.png';
-        ms4_img.src = './img/ms4-dark.png';
+        if (ms4_link) ms4_link.href = './img/ms4-dark.png';
+        if (ms4_img) ms4_img.src = './img/ms4-dark.png';
 
-        ms5_link.href = './img/ms5-dark.png';
-        ms5_img.src = './img/ms5-dark.png';
+        if (ms5_link) ms5_link.href = './img/ms5-dark.png';
+        if (ms5_img) ms5_img.src = './img/ms5-dark.png';
 
         /* Videos */
-        vid1Source.src = './img/eicw-vid1-dark.mp4';
-        vid2Source.src = './img/eicw-vid2-dark.mp4';
-        vid3Source.src = './img/eicw-vid3-dark.mp4';
-        vid4Source.src = './img/eicw-vid4-dark.mp4';
-        vid5Source.src = './img/eicw-vid5-dark.mp4';
-        vid6Source.src = './img/eicw-vid6-dark.mp4';
-        vid7Source.src = './img/eicw-vid7-dark.mp4';
-        vid8Source.src = './img/eicw-vid8-dark.mp4';
-        vid9Source.src = './img/eicw2-vid1-dark.mp4';
-        vid10Source.src = './img/eicw2-vid2-dark.mp4';
+        if (vid1Source) vid1Source.src = './img/eicw-vid1-dark.mp4';
+        if (vid2Source) vid2Source.src = './img/eicw-vid2-dark.mp4';
+        if (vid3Source) vid3Source.src = './img/eicw-vid3-dark.mp4';
+        if (vid4Source) vid4Source.src = './img/eicw-vid4-dark.mp4';
+        if (vid5Source) vid5Source.src = './img/eicw-vid5-dark.mp4';
+        if (vid6Source) vid6Source.src = './img/eicw-vid6-dark.mp4';
+        if (vid7Source) vid7Source.src = './img/eicw-vid7-dark.mp4';
+        if (vid8Source) vid8Source.src = './img/eicw-vid8-dark.mp4';
+        if (vid9Source) vid9Source.src = './img/eicw2-vid1-dark.mp4';
+        if (vid10Source) vid10Source.src = './img/eicw2-vid2-dark.mp4';
 
     } else {
-        coverSect.style.backgroundImage = "url('./img/cover-2-light.png')";
-        ciSect.style.backgroundImage = "url('./img/c-i-light.png')";
-        dsbSect.style.backgroundImage = "url('./img/dsb-light.png')";
-        iuSect.style.backgroundImage = "url('./img/iu-light.png')";
-        ieSect.style.backgroundImage = "url('./img/ie-light.png')";
+        if (coverSect) coverSect.style.backgroundImage = "url('./img/cover-2-light.png')";
+        if (ciSect) ciSect.style.backgroundImage = "url('./img/c-i-light.png')";
+        if (dsbSect) dsbSect.style.backgroundImage = "url('./img/dsb-light.png')";
+        if (iuSect) iuSect.style.backgroundImage = "url('./img/iu-light.png')";
+        if (ieSect) ieSect.style.backgroundImage = "url('./img/ie-light.png')";
 
-        wo1_link.href = './img/wo1-light.png';
-        wo1_img.src = './img/wo1-light.png';
+        if (wo1_link) wo1_link.href = './img/wo1-light.png';
+        if (wo1_img) wo1_img.src = './img/wo1-light.png';
 
-        wo2_link.href = './img/wo2-light.png';
-        wo2_img.src = './img/wo2-light.png';
+        if (wo2_link) wo2_link.href = './img/wo2-light.png';
+        if (wo2_img) wo2_img.src = './img/wo2-light.png';
 
-        exit_link.href = './img/exit-light.png';
-        exit_img.src = './img/exit-light.png';
+        if (exit_link) exit_link.href = './img/exit-light.png';
+        if (exit_img) exit_img.src = './img/exit-light.png';
 
-        lift1_link.href = './img/lift-light1.png';
-        lift1_img.src = './img/lift-light1.png';
+        if (lift1_link) lift1_link.href = './img/lift-light1.png';
+        if (lift1_img) lift1_img.src = './img/lift-light1.png';
 
-        lift2_link.href = './img/lift-light2.png';
-        lift2_img.src = './img/lift-light2.png';
+        if (lift2_link) lift2_link.href = './img/lift-light2.png';
+        if (lift2_img) lift2_img.src = './img/lift-light2.png';
 
-        liftd_link.href = './img/liftd-light.png';
-        liftd_img.src = './img/liftd-light.png';
+        if (liftd_link) liftd_link.href = './img/liftd-light.png';
+        if (liftd_img) liftd_img.src = './img/liftd-light.png';
 
-        ed1_link.href = './img/ed1-light.png';
-        ed1_img.src = './img/ed1-light.png';
+        if (ed1_link) ed1_link.href = './img/ed1-light.png';
+        if (ed1_img) ed1_img.src = './img/ed1-light.png';
 
-        sn_link.href = './img/sn-light.png';
-        sn_img.src = './img/sn-light.png';
+        if (sn_link) sn_link.href = './img/sn-light.png';
+        if (sn_img) sn_img.src = './img/sn-light.png';
 
-        se_link.href = './img/se-light.png';
-        se_img.src = './img/se-light.png';
+        if (se_link) se_link.href = './img/se-light.png';
+        if (se_img) se_img.src = './img/se-light.png';
 
-        tt_link.href = './img/tt-light.png';
-        tt_img.src = './img/tt-light.png';
+        if (tt_link) tt_link.href = './img/tt-light.png';
+        if (tt_img) tt_img.src = './img/tt-light.png';
 
-        ttann_link.href = './img/ttann-light.png';
-        ttann_img.src = './img/ttann-light.png';
+        if (ttann_link) ttann_link.href = './img/ttann-light.png';
+        if (ttann_img) ttann_img.src = './img/ttann-light.png';
 
-        lsb_link.href = './img/lsb-light.png';
-        lsb_img.src = './img/lsb-light.png';
+        if (lsb_link) lsb_link.href = './img/lsb-light.png';
+        if (lsb_img) lsb_img.src = './img/lsb-light.png';
 
-        lsbann1_link.href = './img/lsbann1-light.png';
-        lsbann1_img.src = './img/lsbann1-light.png';
+        if (lsbann1_link) lsbann1_link.href = './img/lsbann1-light.png';
+        if (lsbann1_img) lsbann1_img.src = './img/lsbann1-light.png';
 
-        lsbann2_link.href = './img/lsbann2-light.png';
-        lsbann2_img.src = './img/lsbann2-light.png';
+        if (lsbann2_link) lsbann2_link.href = './img/lsbann2-light.png';
+        if (lsbann2_img) lsbann2_img.src = './img/lsbann2-light.png';
 
-        ed_link.href = './img/ed-light.png';
-        ed_img.src = './img/ed-light.png';
+        if (ed_link) ed_link.href = './img/ed-light.png';
+        if (ed_img) ed_img.src = './img/ed-light.png';
 
-        edann1_link.href = './img/edann1-light.png';
-        edann1_img.src = './img/edann1-light.png';
+        if (edann1_link) edann1_link.href = './img/edann1-light.png';
+        if (edann1_img) edann1_img.src = './img/edann1-light.png';
 
-        edann2_link.href = './img/edann2-light.png';
-        edann2_img.src = './img/edann2-light.png';
+        if (edann2_link) edann2_link.href = './img/edann2-light.png';
+        if (edann2_img) edann2_img.src = './img/edann2-light.png';
 
-        ts_link.href = './img/ts-light.png';
-        ts_img.src = './img/ts-light.png';
+        if (ts_link) ts_link.href = './img/ts-light.png';
+        if (ts_img) ts_img.src = './img/ts-light.png';
 
-        tsann1_link.href = './img/tsann1-light.png';
-        tsann1_img.src = './img/tsann1-light.png';
+        if (tsann1_link) tsann1_link.href = './img/tsann1-light.png';
+        if (tsann1_img) tsann1_img.src = './img/tsann1-light.png';
 
-        tsann2_link.href = './img/tsann2-light.png';
-        tsann2_img.src = './img/tsann2-light.png';
+        if (tsann2_link) tsann2_link.href = './img/tsann2-light.png';
+        if (tsann2_img) tsann2_img.src = './img/tsann2-light.png';
 
-        os_link.href = './img/os-light.png';
-        os_img.src = './img/os-light.png';
+        if (os_link) os_link.href = './img/os-light.png';
+        if (os_img) os_img.src = './img/os-light.png';
 
-        osann1_link.href = './img/osann1-light.png';
-        osann1_img.src = './img/osann1-light.png';
+        if (osann1_link) osann1_link.href = './img/osann1-light.png';
+        if (osann1_img) osann1_img.src = './img/osann1-light.png';
 
-        ud_link.href = './img/ud-light.png';
-        ud_img.src = './img/ud-light.png';
+        if (ud_link) ud_link.href = './img/ud-light.png';
+        if (ud_img) ud_img.src = './img/ud-light.png';
 
-        lb1_link.href = './img/lb1-light.png';
-        lb1_img.src = './img/lb1-light.png';
+        if (lb1_link) lb1_link.href = './img/lb1-light.png';
+        if (lb1_img) lb1_img.src = './img/lb1-light.png';
 
-        lb2_link.href = './img/lb2-light.png';
-        lb2_img.src = './img/lb2-light.png';
+        if (lb2_link) lb2_link.href = './img/lb2-light.png';
+        if (lb2_img) lb2_img.src = './img/lb2-light.png';
 
-        ic1_link.href = './img/ic1-light.png';
-        ic1_img.src = './img/ic1-light.png';
+        if (ic1_link) ic1_link.href = './img/ic1-light.png';
+        if (ic1_img) ic1_img.src = './img/ic1-light.png';
 
-        ic2_link.href = './img/ic2-light.png';
-        ic2_img.src = './img/ic2-light.png';
+        if (ic2_link) ic2_link.href = './img/ic2-light.png';
+        if (ic2_img) ic2_img.src = './img/ic2-light.png';
 
-        ic3_link.href = './img/ic3-light.png';
-        ic3_img.src = './img/ic3-light.png';
+        if (ic3_link) ic3_link.href = './img/ic3-light.png';
+        if (ic3_img) ic3_img.src = './img/ic3-light.png';
 
-        ic4_link.href = './img/ic4-light.png';
-        ic4_img.src = './img/ic4-light.png';
+        if (ic4_link) ic4_link.href = './img/ic4-light.png';
+        if (ic4_img) ic4_img.src = './img/ic4-light.png';
 
-        sne1_link.href = './img/sne1-light.png';
-        sne1_img.src = './img/sne1-light.png';
+        if (sne1_link) sne1_link.href = './img/sne1-light.png';
+        if (sne1_img) sne1_img.src = './img/sne1-light.png';
 
-        sne2_link.href = './img/sne2-light.png';
-        sne2_img.src = './img/sne2-light.png';
+        if (sne2_link) sne2_link.href = './img/sne2-light.png';
+        if (sne2_img) sne2_img.src = './img/sne2-light.png';
 
-        sne3_link.href = './img/sne3-light.png';
-        sne3_img.src = './img/sne3-light.png';
+        if (sne3_link) sne3_link.href = './img/sne3-light.png';
+        if (sne3_img) sne3_img.src = './img/sne3-light.png';
 
-        evo2_link.href = './img/evo2-light.png';
-        evo2_img.src = './img/evo2-light.png';
+        if (evo2_link) evo2_link.href = './img/evo2-light.png';
+        if (evo2_img) evo2_img.src = './img/evo2-light.png';
 
-        ep1_link.href = './img/ep1-light.png';
-        ep1_img.src = './img/ep1-light.png';
+        if (ep1_link) ep1_link.href = './img/ep1-light.png';
+        if (ep1_img) ep1_img.src = './img/ep1-light.png';
 
-        ep2_link.href = './img/ep2-light.png';
-        ep2_img.src = './img/ep2-light.png';
+        if (ep2_link) ep2_link.href = './img/ep2-light.png';
+        if (ep2_img) ep2_img.src = './img/ep2-light.png';
 
-        ms1_link.href = './img/ms1-light.png';
-        ms1_img.src = './img/ms1-light.png';
+        if (ms1_link) ms1_link.href = './img/ms1-light.png';
+        if (ms1_img) ms1_img.src = './img/ms1-light.png';
 
-        ms2_link.href = './img/ms2-light.png';
-        ms2_img.src = './img/ms2-light.png';
+        if (ms2_link) ms2_link.href = './img/ms2-light.png';
+        if (ms2_img) ms2_img.src = './img/ms2-light.png';
 
-        ms3_link.href = './img/ms3-light.png';
-        ms3_img.src = './img/ms3-light.png';
+        if (ms3_link) ms3_link.href = './img/ms3-light.png';
+        if (ms3_img) ms3_img.src = './img/ms3-light.png';
 
-        ms4_link.href = './img/ms4-light.png';
-        ms4_img.src = './img/ms4-light.png';
+        if (ms4_link) ms4_link.href = './img/ms4-light.png';
+        if (ms4_img) ms4_img.src = './img/ms4-light.png';
 
-        ms5_link.href = './img/ms5-light.png';
-        ms5_img.src = './img/ms5-light.png';
+        if (ms5_link) ms5_link.href = './img/ms5-light.png';
+        if (ms5_img) ms5_img.src = './img/ms5-light.png';
 
 
         /* Videos */
-        vid1Source.src = './img/eicw-vid1-light.mp4';
-        vid2Source.src = './img/eicw-vid2-light.mp4';
-        vid3Source.src = './img/eicw-vid3-light.mp4';
-        vid4Source.src = './img/eicw-vid4-light.mp4';
-        vid5Source.src = './img/eicw-vid5-light.mp4';
-        vid6Source.src = './img/eicw-vid6-light.mp4';
-        vid7Source.src = './img/eicw-vid7-light.mp4';
-        vid8Source.src = './img/eicw-vid8-light.mp4';
-        vid9Source.src = './img/eicw2-vid1-light.mp4';
-        vid10Source.src = './img/eicw2-vid2-light.mp4';
+        if (vid1Source) vid1Source.src = './img/eicw-vid1-light.mp4';
+        if (vid2Source) vid2Source.src = './img/eicw-vid2-light.mp4';
+        if (vid3Source) vid3Source.src = './img/eicw-vid3-light.mp4';
+        if (vid4Source) vid4Source.src = './img/eicw-vid4-light.mp4';
+        if (vid5Source) vid5Source.src = './img/eicw-vid5-light.mp4';
+        if (vid6Source) vid6Source.src = './img/eicw-vid6-light.mp4';
+        if (vid7Source) vid7Source.src = './img/eicw-vid7-light.mp4';
+        if (vid8Source) vid8Source.src = './img/eicw-vid8-light.mp4';
+        if (vid9Source) vid9Source.src = './img/eicw2-vid1-light.mp4';
+        if (vid10Source) vid10Source.src = './img/eicw2-vid2-light.mp4';
     }
-    vid1.load();
-    vid2.load();
-    vid3.load();
-    vid4.load();
-    vid5.load();
-    vid6.load();
-    vid7.load();
-    vid8.load();
-    vid9.load();
-    vid10.load();
+    if (vid1) vid1.load();
+    if (vid2) vid2.load();
+    if (vid3) vid3.load();
+    if (vid4) vid4.load();
+    if (vid5) vid5.load();
+    if (vid6) vid6.load();
+    if (vid7) vid7.load();
+    if (vid8) vid8.load();
+    if (vid9) vid9.load();
+    if (vid10) vid10.load();
 }
 
 
@@ -542,4 +616,63 @@ window.addEventListener('scroll', () => {
     const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrollPercentage = Math.min((scrollTop / docHeight) * 100, 100); // Cap at 100%
     document.getElementById('scroll-indicator').style.width = scrollPercentage + '%';
+});
+
+// Autoplay videos one by one when scrolled into view
+document.addEventListener('DOMContentLoaded', function () {
+    var videos = Array.from(document.querySelectorAll('video'));
+    if (videos.length === 0) return;
+
+    var currentIndex = 0;
+    var isPlaying = false;
+
+    // Prepare all videos: muted, no loop, inline
+    videos.forEach(function (video) {
+        video.loop = false;
+        video.muted = true;
+        video.playsInline = true;
+    });
+
+    function isInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    function playNext(index) {
+        if (index >= videos.length) {
+            isPlaying = false;
+            return;
+        }
+
+        currentIndex = index;
+
+        if (!isInViewport(videos[index])) {
+            isPlaying = false;
+            return;
+        }
+
+        isPlaying = true;
+        var video = videos[index];
+
+        video.addEventListener('ended', function onEnded() {
+            video.removeEventListener('ended', onEnded);
+            playNext(index + 1);
+        });
+
+        video.play().catch(function (error) {
+            console.log('Autoplay was prevented:', error);
+            playNext(index + 1);
+        });
+    }
+
+    function onScroll() {
+        if (!isPlaying && currentIndex < videos.length && isInViewport(videos[currentIndex])) {
+            playNext(currentIndex);
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Check immediately in case the first video is already visible
+    onScroll();
 });

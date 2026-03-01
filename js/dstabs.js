@@ -119,56 +119,125 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Draggable scroll for scrollableTabs
+// Draggable scroll for scrollableTabs with smooth easing
 const scrollableTabs = document.getElementById('scrollableTabs');
 let isDown = false;
 let startX;
 let scrollLeft;
 let lastTouchX = 0;
+let velocity = 0;
+let lastX = 0;
+let lastTime = 0;
+let animationId = null;
+
+// Easing function for smooth deceleration
+function easeOut(t) {
+    return t * (2 - t); // Quadratic easing out
+}
+
+// Momentum scroll animation
+function animateMomentum() {
+    if (Math.abs(velocity) < 0.5 || !scrollableTabs) {
+        if (animationId) cancelAnimationFrame(animationId);
+        animationId = null;
+        return;
+    }
+    
+    velocity *= 0.95; // Friction
+    scrollableTabs.scrollLeft += velocity;
+    
+    animationId = requestAnimationFrame(animateMomentum);
+}
 
 if (scrollableTabs) {
     // Mouse events
     scrollableTabs.addEventListener('mousedown', (e) => {
         isDown = true;
         scrollableTabs.classList.add('dragging');
+        scrollableTabs.style.scrollBehavior = 'auto';
         startX = e.pageX - scrollableTabs.offsetLeft;
+        lastX = startX;
         scrollLeft = scrollableTabs.scrollLeft;
+        lastTime = Date.now();
+        velocity = 0;
+        if (animationId) cancelAnimationFrame(animationId);
     });
+
     scrollableTabs.addEventListener('mouseleave', () => {
         isDown = false;
         scrollableTabs.classList.remove('dragging');
+        scrollableTabs.style.scrollBehavior = 'smooth';
+        // Start momentum animation
+        if (Math.abs(velocity) > 0.5) {
+            animateMomentum();
+        }
     });
+
     scrollableTabs.addEventListener('mouseup', () => {
         isDown = false;
         scrollableTabs.classList.remove('dragging');
+        scrollableTabs.style.scrollBehavior = 'smooth';
+        // Start momentum animation
+        if (Math.abs(velocity) > 0.5) {
+            animateMomentum();
+        }
     });
+
     scrollableTabs.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - scrollableTabs.offsetLeft;
-        const walk = (x - startX) * 2;
+        const walk = (x - startX) * 1.5; // Slightly reduced sensitivity for smoothness
         scrollableTabs.scrollLeft = scrollLeft - walk;
+        
+        // Calculate velocity for momentum
+        const now = Date.now();
+        const timeDelta = now - lastTime;
+        if (timeDelta > 0) {
+            velocity = (lastX - x) / timeDelta * 16; // Normalize to ~60fps
+        }
+        lastX = x;
+        lastTime = now;
     });
 
     // Touch events
     scrollableTabs.addEventListener('touchstart', (e) => {
         isDown = true;
         scrollableTabs.classList.add('dragging');
+        scrollableTabs.style.scrollBehavior = 'auto';
         startX = e.touches[0].pageX - scrollableTabs.offsetLeft;
+        lastX = startX;
         scrollLeft = scrollableTabs.scrollLeft;
+        lastTime = Date.now();
+        velocity = 0;
         lastTouchX = e.touches[0].pageX;
+        if (animationId) cancelAnimationFrame(animationId);
     }, { passive: false });
 
     scrollableTabs.addEventListener('touchend', () => {
         isDown = false;
         scrollableTabs.classList.remove('dragging');
+        scrollableTabs.style.scrollBehavior = 'smooth';
+        // Start momentum animation
+        if (Math.abs(velocity) > 0.5) {
+            animateMomentum();
+        }
     }, { passive: false });
 
     scrollableTabs.addEventListener('touchmove', (e) => {
         if (!isDown) return;
         const touchX = e.touches[0].pageX - scrollableTabs.offsetLeft;
-        const walk = (touchX - startX) * 2;
+        const walk = (touchX - startX) * 1.5; // Slightly reduced sensitivity for smoothness
         scrollableTabs.scrollLeft = scrollLeft - walk;
+
+        // Calculate velocity for momentum
+        const now = Date.now();
+        const timeDelta = now - lastTime;
+        if (timeDelta > 0) {
+            velocity = (lastX - touchX) / timeDelta * 16; // Normalize to ~60fps
+        }
+        lastX = touchX;
+        lastTime = now;
 
         // Prevent vertical scroll if horizontal movement is significant
         if (Math.abs(e.touches[0].pageX - lastTouchX) > 5) {

@@ -26,7 +26,7 @@ body.dark-mode {
 }
 
 body.dark-mode {
-    background: #18191a;
+    background: #121521;
     min-height: 100vh;
     padding: 0;
     margin: 0;
@@ -57,7 +57,6 @@ body.dark-mode .wbnrfz_btn_theme:hover {
 
 body.dark-mode #hero {
     width: 100%;
-    height: 100vh;
     background: url("../img/bg-img/hero-bg-dark.png") top right no-repeat;
     background-size: cover;
     position: relative;
@@ -83,6 +82,10 @@ body.dark-mode p,
 body.dark-mode strong,
 body.dark-mode li {
     color: #fff;
+}
+
+body.dark-mode .card-content h3 {
+    color: #fff !important;
 }
 
 
@@ -183,7 +186,7 @@ body.dark-mode .cookiebanner span {
 /* ---- Progress Bar */
 body.dark-mode .single-skill .progress {
     transition: all 0.5s ease;
-    background-color: #2e2e2e;
+    background-color: #292d3d;
     border: 1px solid #2b2b2b33;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -228,14 +231,16 @@ body.dark-mode h2.profile-desc {
 }
 
 body.dark-mode .about-me-area {
-    background-color: #1e1e1e;
+    background-color: #1c1f2b !important;
     color: #fff;
     transition: all 0.5s ease;
 }
 
 body.dark-mode .about-me-content {
-    background-color: #2e2e2e;
+    background-color: #292d3d;
     transition: all 0.5s ease;
+    border: 1px solid #2b2b2b33;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .about-me-content h4,
@@ -248,7 +253,7 @@ body.dark-mode .about-me-content:hover {
 }
 
 body.dark-mode .follow-area {
-    background-color: #18191a;
+    background-color: #121521;
     color: #fff;
     transition: all 0.5s ease;
 }
@@ -275,7 +280,7 @@ body.dark-mode .about-me-summ {
 body.dark-mode .about-me-summary {
     color: #fff;
     transition: all 0.5s ease;
-    background-color: #2e2e2e;
+    background-color: #292d3d;
     border: 1px solid #2b2b2b33;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -288,7 +293,7 @@ body.dark-mode .about-me-summary:hover {
 body.dark-mode .port-summary {
     color: #fff;
     transition: all 0.5s ease;
-    background-color: #2e2e2e;
+    background-color: #1c1f2b;
     border: 1px solid #2b2b2b33;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -299,7 +304,7 @@ body.dark-mode .port-summary:hover {
 }
 
 body.dark-mode .about-me-area {
-    background-color: #1e1e1e !important;
+    background-color: #1c1f2b !important;
     transition: all 0.5s ease;
 }
 
@@ -339,11 +344,23 @@ body.dark-mode .btn.show {
 
 /* ------------------------------------------ 4.0 Works By NRFZ/Blogs (Featured/Main) ------------------------------------------ */
 body.dark-mode .wbnrfz-works {
-    background-color: #18191a;
+    background-color: #121521;
+}
+
+body.dark-mode .wbnrfz-works.floating-cards {
+    background: transparent;
+}
+
+body.dark-mode .wbnrfz-works.floating-cards::before {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.15) 15%,
+            rgba(0, 0, 0, 0.25) 50%,
+            rgba(0, 0, 0, 0.3) 100%);
 }
 
 body.dark-mode .ftco-section-blog {
-    background-color: #18191a;
+    background-color: #121521;
     transition: all 0.5s ease;
 }
 
@@ -353,7 +370,7 @@ body.dark-mode .block-27 ul li a {
 }
 
 body.dark-mode .ftco-section {
-    background-color: #18191a;
+    background-color: #121521;
     transition: all 0.5s ease;
 }
 
@@ -363,7 +380,7 @@ body.dark-mode .about-author {
 }
 
 body.dark-mode blockquote {
-    background-color: #3a3b3c;
+    background-color: #393e53;
     transition: all 0.5s ease;
     color: #fff;
 }
@@ -373,8 +390,7 @@ body.dark-mode .card {
 }
 
 body.dark-mode .card-content {
-    background: #0e0e0e91;
-    backdrop-filter: blur(25px);
+    background: #0f121fda;
 }
 
 /* ------------------------------------------ */
@@ -413,19 +429,17 @@ body.dark-mode .banner-eicw img {
     border-radius: 20px;
     margin-bottom: 2em;
     margin-top: 2em;
-    border: 1px solid #2b2b2b33;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(61, 61, 61, 0.384);
 }
 
 body.dark-mode h2.page-title {
     color: #fff;
 }
 
-body.dark-mode .cp-img {
+/* body.dark-mode .cp-img {
     border-radius: 20px;
     border: 1px solid #2b2b2b33;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(61, 61, 61, 0.384);
-}
+} */
 
 body.dark-mode .ftco-section-otb {
     padding: 5em 0;
@@ -447,7 +461,7 @@ body.dark-mode li.breadcrumb-item a {
 
 body.dark-mode .timeline-item {
     transition: all 0.5s ease;
-    background-color: #2e2e2e;
+    background-color: #292d3d;
     border: 1px solid #2b2b2b33;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -474,7 +488,7 @@ body.dark-mode #sort-options {
     padding-right: 30px;
     padding-left: 15px;
     color: #fff;
-    background-color: #2e2e2e;
+    background-color: #393e53;
     border: 1px solid #2b2b2b33;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -530,14 +544,14 @@ body.dark-mode .wbnrfz_details {
 }
 
 body.dark-mode .wbnrfz_details_body {
-    background: #18191a;
+    background: #121521;
     margin-top: -3.2em;
     padding-top: 3em;
     padding-bottom: 2em;
 }
 
 body.dark-mode .wbnrfz_details_body_tchp {
-    background: #18191a;
+    background: #121521;
     margin-top: -3.2em;
     padding-top: 0em;
     padding-bottom: 2em;
@@ -554,7 +568,7 @@ body.dark-mode .wbnrfz_details_blog {
 }
 
 body.dark-mode .wbnrfz_eicw {
-    background: #18191a;
+    background: #121521;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     padding-bottom: 0em;
@@ -566,12 +580,11 @@ body.dark-mode .form-control {
     width: 100%;
     color: #fff;
     appearance: none;
-    background: #2e2e2e;
+    background: #1c1f2b;
     background-clip: padding-box;
     border-radius: 25px;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    border: 1px solid #2b2b2b33;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #393e53;
 }
 
 body.dark-mode .form-control::placeholder {
@@ -590,7 +603,7 @@ body.dark-mode .scrollable-tabs-container a {
     display: inline-block;
     border-radius: 24px;
     white-space: nowrap;
-    background-color: #494949;
+    background-color: #393e53;
     border: 1px solid #2b2b2b33;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -602,12 +615,12 @@ body.dark-mode .scrollable-tabs-container a:hover {
 
 body.dark-mode .scrollable-tabs-container .right-arrow {
     right: 0;
-    background: linear-gradient(to left, #18191a 50%, transparent);
+    background: linear-gradient(to left, #121521 50%, transparent);
     justify-content: flex-end;
 }
 
 body.dark-mode .scrollable-tabs-container .left-arrow {
-    background: linear-gradient(to right, #18191a 50%, transparent);
+    background: linear-gradient(to right, #121521 50%, transparent);
     justify-content: flex-start;
 }
 
@@ -621,20 +634,14 @@ body.dark-mode .scrollable-tabs-container svg {
     border-radius: 50%;
 }
 
-body.dark-mode .scrollable-tabs-container a.active {
-    background: linear-gradient(58deg, rgba(190, 62, 48, 1) 0%, rgba(220, 147, 25, 1) 100%);
-    color: #fff;
-}
-
 /* ------------------------------------------*/
 
 /* ------------------------------------------ 9.0 Navigation ------------------------------------------ */
 
 body.dark-mode .navbar {
-    background: #0e0e0e91;
+    background: #1a1f35be;
     backdrop-filter: blur(25px);
-    border: 1px solid #2b2b2b33;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(61, 61, 61, 0.384);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     padding: 10px 25px;
     display: flex;
@@ -746,7 +753,6 @@ body.dark-mode .social-link {
 }
 
 body.dark-mode .footer-copy {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
@@ -765,7 +771,7 @@ body.dark-mode .flickity-prev-next-button {
     cursor: pointer;
     transform: translateY(0%) !important;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-    background-color: #444444 !important;
+    background-color: #7e899a !important;
     border: 1px solid #2b2b2b33;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }

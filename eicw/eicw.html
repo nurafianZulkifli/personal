@@ -7,20 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Design System Introduction | EICW</title>
+    <title>Introduction | EICW</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
 
     <link rel="icon" href="../img/core-img/favicon.png">
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.2.0/css/all.css" />
 
     <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css'>
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-mobNav.css">
     <link rel="stylesheet" href="../css/style-breakpoints.css">
     <link rel="stylesheet" href="../css/dark-mode.css">
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN76281P3Q"></script>
@@ -34,122 +36,100 @@
 
 </head>
 
-</head>
-
 <body>
+
+    <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+    <div class="breadcrumb-fixed-placeholder">
+        <nav aria-label="breadcrumb" style="margin-bottom:0;">
+            <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="../index.html">
+                        <i class="fa-regular fa-house"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="eicw.html"><i class="fa-regular fa-circle-info"></i>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar-container">
         <div class="navbar">
             <!-- Logo -->
-            <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+            <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo"></a>
 
             <!-- Navigation Links -->
             <ul class="navbar-nav" id="navbarNav">
                 <li class="nav-item">
                     <a href="../index.html" class="nav-link">
-                        <i class="fa-solid fa-house"></i>
+                        <i class="fa-sharp fa-regular fa-house"></i>
                         <span>Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="../about.html" class="nav-link">
-                        <i class="fa-solid fa-circle-user"></i>
+                        <i class="fa-regular fa-circle-user"></i>
                         <span>About</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../works-by-nrfz.html" class="nav-link">
-                        <i class="fa-solid fa-pen-paintbrush"></i>
-                        <span>Works By NRFZ</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="eicw.html" class="nav-link active">
-                        <i class="fa-solid fa-map-location"></i>
+                    <a href="../eicw/eicw.html" class="nav-link active">
+                        <i class="fa-regular fa-map-location"></i>
                         <span>EICW</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="../blog.html" class="nav-link">
-                        <i class="fa-solid fa-comment"></i>
-                        <span>Blog</span>
-                    </a>
-                </li>
-                <li class="nav-item-toggle">
-                    <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
-                        <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+                <li class="nav-item ">
+                    <a href="../menu.html" class="nav-link">
+                        <i class="fa-regular fa-bars"></i>
+                        <span>Menu</span>
                     </a>
                 </li>
             </ul>
-
-            <!-- Mobile Toggle -->
-            <button class="mobile-toggle" id="mobileToggle">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
         </div>
 
-        </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="#" class="mobile-menu-brand">
-                <span class="brand-text">
-                    <li class="mobile-menu-item mobile-theme-toggle">
-                        <button class="wbnrfz_btn_theme mobile-theme-btn" id="dark-mode-toggle-mobile"
-                            title="Toggle Dark/Light Mode!">
-                            <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
-                        </button>
-                    </li>
-                </span>
-            </a>
-            <button class="mobile-menu-close" id="mobileMenuClose">
-                <span>×</span>
-            </button>
-        </div>
-
-        <ul class="mobile-menu-nav">
-            <li class="mobile-menu-item">
-                <a href="../index.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-regular fa-house"></i>
-                    <span>Home</span>
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <span class="icon">
+                        <i class="fa-sharp fa-regular fa-house"></i>
+                    </span>
+                    <span class="label">Home</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="../about.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-regular fa-circle-user"></i>
-                    <span>About</span>
+            <li>
+                <a href="../about.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-circle-user"></i>
+                    </span>
+                    <span class="label">About</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="../works-by-nrfz.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-pen-paintbrush"></i>
-                    <span>Works By NRFZ</span>
+            <li class="active">
+                <a href="../eicw/eicw.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-map-location"></i>
+                    </span>
+                    <span class="label">EICW</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="eicw.html" class="mobile-menu-link active">
-                    <i class="fa-solid fa-map-location"></i>
-                    <span>EICW</span>
-                </a>
-            </li>
-            <li class="mobile-menu-item">
-                <a href="../blog.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-comment"></i>
-                    <span>Blog</span>
+            <li>
+                <a href="../menu.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-bars"></i>
+                    </span>
+                    <span class="label">Menu</span>
                 </a>
             </li>
         </ul>
-    </div>
+    </nav>
+
 
     <!-- Scroll Indicator -->
     <div id="scroll-indicator-container">
@@ -159,37 +139,31 @@
 
     <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
 
-    <!-- Cover Header -->
-    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-img">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Title/Breadcrumbs -->
     <section class="about-me-sum clearfix">
         <div class="wbnrfz_eicw">
             <div class="page-header-section">
-                <div class="container-xxl container-mobile container-mobile-header">
+                <div class="container container-xxl container-mobile container-mobile-header">
                     <div class="breadcrumb-wrapper">
-                        <nav aria-label="breadcrumb">
+                        <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
                                     <a href="../index.html">
-                                        <i class="fa-solid fa-house"></i>
+                                        <i class="fa-regular fa-house"></i>
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="#">EICW</a>
+                                    <a href="eicw.html"><i class="fa-regular fa-circle-info"></i>
+                                    </a>
                                 </li>
                             </ol>
                         </nav>
                         <div class="page-title-wrapper">
-                            <h1 class="page-title-single">Experimenting Improvements of Current Wayfinding</h1>
-                            <p class="page-subtitle">4 mins read</p>
+                            <div>
+                                <h1 class="page-title-single">Experimenting Improvements of Current Wayfinding</h1>
+                                <p class="page-subtitle">4 mins read</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -205,27 +179,28 @@
 
                     <ul id="scrollableTabs">
                         <li>
-                            <a href="eicw.html" class="active">Design System Introduction</a>
+                            <a href="eicw.html" class="active"><i class="fa-regular fa-circle-info"></i>
+                                Introduction</a>
                         </li>
 
                         <li>
-                            <a href="eicw-2.html">Proposed Wayfinding Changes - Trains</a>
+                            <a href="eicw-2.html"><i class="fa-regular fa-train"></i> Trains</a>
                         </li>
 
                         <li>
-                            <a href="eicw-3.html">Proposed Wayfinding Changes - Buses</a>
+                            <a href="eicw-3.html"><i class="fa-regular fa-bus"></i> Buses</a>
                         </li>
 
                         <li>
-                            <a href="eicw-4.html">Proposed UI/UX Changes</a>
+                            <a href="eicw-4.html"><i class="fa-regular fa-pencil"></i> UI/UX</a>
                         </li>
 
                         <li>
-                            <a href="eicw-5.html">Rethinking CCL6 Signages</a>
+                            <a href="eicw-5.html"><i class="fa-regular fa-signs-post"></i> CCL6 Signages</a>
                         </li>
 
                         <li>
-                            <a href="btr-1.html">Behind The Redesign</a>
+                            <a href="btr-1.html"><i class="fa-regular fa-eye"></i> Behind The Redesign</a>
                         </li>
                     </ul>
 
@@ -244,6 +219,16 @@
 
     </section>
 
+    <!-- Cover Header -->
+    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-img">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Section Contents -->
     <section class="about-me-sum clearfix">
         <div class="wbnrfz_eicw">
@@ -253,8 +238,7 @@
                         <div class="row justify-content-center">
 
                             <!-- Preface -->
-                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="dsi"
-                                style="padding-top: 10px;">
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="dsi" style="padding-top: 3em;">
                                 <div class="info justify-content-center">
                                     <h2 style="font-size: 30px; font-weight:bold;">Design
                                         System Introduction</h2>
@@ -446,36 +430,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-social">
-                <a href="https://github.com/nurafianZulkifli" class="social-link">
-                    <i class="fa-brands fa-github" aria-hidden="true"></i>
-                </a>
-                <a href="https://twitter.com/nrfzlkf_" class="social-link">
-                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
-                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
-                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="footer-copy">
-            © 2026 Nurafian Zulkifli
-        </div>
-    </footer>
-
     <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
         data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
-    <script src="../js/navtabs.js"></script>
+    <script src="../js/mob-navtabs.js"></script>
 
     <script src="js/eicw-1.js"></script>
 

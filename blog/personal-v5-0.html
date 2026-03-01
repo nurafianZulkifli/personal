@@ -14,9 +14,10 @@
 
     <link rel="icon" href="../img/core-img/favicon.png">
 
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.2.0/css/all.css" />
 
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-mobNav.css">
     <link rel="stylesheet" href="../css/style-breakpoints.css">
     <link rel="stylesheet" href="../css/dark-mode.css">
 
@@ -24,118 +25,102 @@
 
 <body>
 
+    <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+    <div class="breadcrumb-fixed-placeholder">
+        <nav aria-label="breadcrumb" style="margin-bottom:0;">
+            <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="../index.html">
+                        <i class="fa-regular fa-house"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="../menu.html"><i class="fa-regular fa-bars"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="../blog.html"><i class="fa-regular fa-comment-dots"></i>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar-container">
         <div class="navbar">
             <!-- Logo -->
-            <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo" /></a>
+            <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo"></a>
 
             <!-- Navigation Links -->
             <ul class="navbar-nav" id="navbarNav">
                 <li class="nav-item">
                     <a href="../index.html" class="nav-link">
-                        <i class="fa-solid fa-house"></i>
+                        <i class="fa-sharp fa-regular fa-house"></i>
                         <span>Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="../about.html" class="nav-link">
-                        <i class="fa-solid fa-circle-user"></i>
+                        <i class="fa-regular fa-circle-user"></i>
                         <span>About</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../works-by-nrfz.html" class="nav-link">
-                        <i class="fa-solid fa-pen-paintbrush"></i>
-                        <span>Works By NRFZ</span>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="../eicw/eicw.html" class="nav-link">
-                        <i class="fa-solid fa-map-location"></i>
+                        <i class="fa-regular fa-map-location"></i>
                         <span>EICW</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="../blog.html" class="nav-link active">
-                        <i class="fa-solid fa-comment"></i>
-                        <span>Blog</span>
-                    </a>
-                </li>
-                <li class="nav-item-toggle">
-                    <a href="#" class="nav-link-toggle" id="dark-mode-toggle-desktop" title="Toggle Dark/Light Mode!">
-                        <i class="fa-solid fa-moon-stars" id="theme-icon-desktop"></i>
+                <li class="nav-item ">
+                    <a href="../menu.html" class="nav-link active">
+                        <i class="fa-regular fa-bars"></i>
+                        <span>Menu</span>
                     </a>
                 </li>
             </ul>
-
-            <!-- Mobile Toggle -->
-            <button class="mobile-toggle" id="mobileToggle">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
         </div>
 
-        </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="#" class="mobile-menu-brand">
-                <span class="brand-text">
-                    <li class="mobile-menu-item mobile-theme-toggle">
-                        <button class="wbnrfz_btn_theme mobile-theme-btn" id="dark-mode-toggle-mobile"
-                            title="Toggle Dark/Light Mode!">
-                            <i class="fa-solid fa-moon-stars" id="theme-icon-mobile"></i>
-                        </button>
-                    </li>
-                </span>
-            </a>
-            <button class="mobile-menu-close" id="mobileMenuClose">
-                <span>×</span>
-            </button>
-        </div>
-
-        <ul class="mobile-menu-nav">
-            <li class="mobile-menu-item">
-                <a href="../index.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-regular fa-house"></i>
-                    <span>Home</span>
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <span class="icon">
+                        <i class="fa-sharp fa-regular fa-house"></i>
+                    </span>
+                    <span class="label">Home</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="../about.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-regular fa-circle-user"></i>
-                    <span>About</span>
+            <li>
+                <a href="../about.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-circle-user"></i>
+                    </span>
+                    <span class="label">About</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="../works-by-nrfz.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-pen-paintbrush"></i>
-                    <span>Works By NRFZ</span>
+            <li>
+                <a href="../eicw/eicw.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-map-location"></i>
+                    </span>
+                    <span class="label">EICW</span>
                 </a>
             </li>
-            <li class="mobile-menu-item">
-                <a href="../eicw/eicw.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-map-location"></i>
-                    <span>EICW</span>
-                </a>
-            </li>
-            <li class="mobile-menu-item active">
-                <a href="../blog.html" class="mobile-menu-link">
-                    <i class="fa-solid fa-comment"></i>
-                    <span>Blog</span>
+            <li class="active">
+                <a href="../menu.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-bars"></i>
+                    </span>
+                    <span class="label">Menu</span>
                 </a>
             </li>
         </ul>
-    </div>
+    </nav>
+
 
     <!-- Scroll Indicator -->
     <div id="scroll-indicator-container">
@@ -143,40 +128,37 @@
     </div>
 
 
+
     <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
-
-    <!-- Cover Header -->
-    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-pv5"
-        style="background-image: url(https://i.imgur.com/JfP4t5u.png); height: 72vh;">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Title/Breadcrumbs -->
     <section class="about-me-sum clearfix">
         <div class="wbnrfz_eicw">
             <div class="page-header-section">
-                <div class="container-xxl container-mobile container-mobile-header">
+                <div class="container container-xxl container-mobile container-mobile-header">
                     <div class="breadcrumb-wrapper">
-                        <nav aria-label="breadcrumb">
+                        <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
                                     <a href="../index.html">
-                                        <i class="fa-solid fa-house"></i>
+                                        <i class="fa-regular fa-house"></i>
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="../blog.html">Blog</a>
+                                    <a href="../menu.html"><i class="fa-regular fa-bars"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="../blog.html"><i class="fa-regular fa-comment-dots"></i>
+                                    </a>
                                 </li>
                             </ol>
                         </nav>
                         <div class="page-title-wrapper">
-                            <h1 class="page-title-single">Personal Version 5.0 - Iterations & AI</h1>
-                            <p class="page-subtitle">9 mins read • By Nurafian Zulkifli</p>
+                            <div>
+                                <h1 class="page-title-single">Personal Version 5.0 - Iterations & AI</h1>
+                                <p class="page-subtitle">9 mins read • By Nurafian Zulkifli</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -227,6 +209,17 @@
 
     </section>
 
+    <!-- Cover Header -->
+    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-pv5"
+        style="background-image: url(https://i.imgur.com/JfP4t5u.png); height: 72vh;">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Section Contents -->
     <section class="ftco-section ftco-degree-bg">
         <div class="container container-blog">
@@ -249,7 +242,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/M6Lb08s.jpeg" class="portfolio-img"><img
-                                src="https://i.imgur.com/M6Lb08s.jpeg" class="img-fluid"
+                                src="https://i.imgur.com/M6Lb08s.jpeg" class="ps-img img-fluid"
                                 alt="Home Page in Version 4.4 Light"></a>
                         <p>Home Page in Version 4.4 - Light Mode</p>
                     </figcaption>
@@ -258,7 +251,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/d9t1Q85.jpeg" class="portfolio-img"><img
-                                src="https://i.imgur.com/d9t1Q85.jpeg" class="img-fluid"
+                                src="https://i.imgur.com/d9t1Q85.jpeg" class="ps-img img-fluid"
                                 alt="Home Page in Version 4.4 Dark"></a>
                         <p>Home Page in Version 4.4 - Dark Mode</p>
                     </figcaption>
@@ -284,7 +277,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/7PgQdj3.png" class="portfolio-img"><img
-                                src="https://i.imgur.com/7PgQdj3.png" class="img-fluid" alt="style.css"></a>
+                                src="https://i.imgur.com/7PgQdj3.png" class="ps-img img-fluid" alt="style.css"></a>
                         <p>Style.css - The core Stylesheet</p>
                     </figcaption>
                 </div>
@@ -292,7 +285,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/I6xQRxE.png" class="portfolio-img"><img
-                                src="https://i.imgur.com/I6xQRxE.png" class="img-fluid" alt="style-breakpoints.css"></a>
+                                src="https://i.imgur.com/I6xQRxE.png" class="ps-img img-fluid" alt="style-breakpoints.css"></a>
                         <p>Style-breakpoints.css - To control the Responsiveness on different devices</p>
                     </figcaption>
                 </div>
@@ -300,7 +293,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/mNFuREc.png" class="portfolio-img"><img
-                                src="https://i.imgur.com/mNFuREc.png" class="img-fluid" alt="dark-mode.css"></a>
+                                src="https://i.imgur.com/mNFuREc.png" class="ps-img img-fluid" alt="dark-mode.css"></a>
                         <p>Dark-mode.css - Core Stylesheet for Dark Mode</p>
                     </figcaption>
                 </div>
@@ -338,7 +331,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/8aTvbZk.png" class="portfolio-img"><img
-                                src="https://i.imgur.com/8aTvbZk.png" class="img-fluid" style="width:80%"
+                                src="https://i.imgur.com/8aTvbZk.png" class="ps-img img-fluid" style="width:80%"
                                 alt="GitHub Copilot"></a>
                         <p>GitHub Copilot</p>
                     </figcaption>
@@ -347,16 +340,16 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/9e2crTc.png" class="portfolio-img"><img
-                                src="https://i.imgur.com/9e2crTc.png" class="img-fluid" style="width:80%"
+                                src="https://i.imgur.com/9e2crTc.png" class="ps-img img-fluid" style="width:80%"
                                 alt="GitHub Copilot in VSCode"></a>
-                        <p>GitHub Copilot in VSCode</p>
+                        <p class="no-align">GitHub Copilot in VSCode</p>
                     </figcaption>
                 </div>
 
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/zYY75sv.png" class="portfolio-img"><img
-                                src="https://i.imgur.com/zYY75sv.png" class="img-fluid" alt="Hero Image Section"></a>
+                                src="https://i.imgur.com/zYY75sv.png" class="ps-img img-fluid" alt="Hero Image Section"></a>
                         <p>GitHub Copilot in VSCode Button</p>
                     </figcaption>
                 </div>
@@ -396,7 +389,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/Qm2oHBz.png" id="gc1" class="portfolio-img"><img
-                                src="https://i.imgur.com/Qm2oHBz.png" id="gc1-img" class="img-fluid" style="width:80%"
+                                src="https://i.imgur.com/Qm2oHBz.png" id="gc1-img" class="ps-img img-fluid" style="width:80%"
                                 alt="Old Design"></a>
                         <p>Old Design (V4.4)</p>
                     </figcaption>
@@ -405,7 +398,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/3fUcmIB.png" id="gc2" class="portfolio-img"><img
-                                src="https://i.imgur.com/3fUcmIB.png" id="gc2-img" class="img-fluid" style="width:80%"
+                                src="https://i.imgur.com/3fUcmIB.png" id="gc2-img" class="ps-img img-fluid" style="width:80%"
                                 alt="New Design"></a>
                         <p>New Design (V5)</p>
                     </figcaption>
@@ -427,7 +420,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/Xt7Xhev.png" id="eicwv4" class="portfolio-img"><img
-                                src="https://i.imgur.com/Xt7Xhev.png" id="eicwv4-img" class="img-fluid"
+                                src="https://i.imgur.com/Xt7Xhev.png" id="eicwv4-img" class="ps-img img-fluid"
                                 alt="Old Design"></a>
                         <p>Old Design (V4.4)</p>
                     </figcaption>
@@ -436,7 +429,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/wybzXsU.jpeg" id="eicwv5" class="portfolio-img"><img
-                                src="https://i.imgur.com/wybzXsU.jpeg" id="eicwv5-img" class="img-fluid"
+                                src="https://i.imgur.com/wybzXsU.jpeg" id="eicwv5-img" class="ps-img img-fluid"
                                 alt="New Design"></a>
                         <p>New Design (V5)</p>
                     </figcaption>
@@ -457,7 +450,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/aXX0gH4.png" id="opv4" class="portfolio-img"><img
-                                src="https://i.imgur.com/aXX0gH4.png" id="opv4-img" class="img-fluid" style="width:90%"
+                                src="https://i.imgur.com/aXX0gH4.png" id="opv4-img" class="ps-img img-fluid" style="width:90%"
                                 alt="Old Placement"></a>
                         <p>Old Placement (V4.4)</p>
                     </figcaption>
@@ -466,7 +459,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/NH8ryqW.png" id="opv5" class="portfolio-img"><img
-                                src="https://i.imgur.com/NH8ryqW.png" id="opv5-img" class="img-fluid" style="width:90%"
+                                src="https://i.imgur.com/NH8ryqW.png" id="opv5-img" class="ps-img img-fluid" style="width:90%"
                                 alt="New Placement"></a>
                         <p>New Placement (V5)</p>
                     </figcaption>
@@ -487,7 +480,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/AUOgj3s.png" id="hmv4" class="portfolio-img"><img
-                                src="https://i.imgur.com/AUOgj3s.png" id="hmv4-img" class="img-fluid" style="width:60%"
+                                src="https://i.imgur.com/AUOgj3s.png" id="hmv4-img" class="ps-img img-fluid" style="width:60%"
                                 alt="New Placement"></a>
                         <p>Menu Design (V4.4)</p>
                     </figcaption>
@@ -496,7 +489,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/hAlBg3D.png" id="hmv5" class="portfolio-img"><img
-                                src="https://i.imgur.com/hAlBg3D.png" id="hmv5-img" class="img-fluid" style="width:60%"
+                                src="https://i.imgur.com/hAlBg3D.png" id="hmv5-img" class="ps-img img-fluid" style="width:60%"
                                 alt="New Placement"></a>
                         <p>Menu Design (V5)</p>
                     </figcaption>
@@ -512,7 +505,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/PgMi16g.png" id="footv4" class="portfolio-img"><img
-                                src="https://i.imgur.com/PgMi16g.png" id="footv4-img" class="img-fluid"
+                                src="https://i.imgur.com/PgMi16g.png" id="footv4-img" class="ps-img img-fluid"
                                 style="width:90%" alt="Footer Design"></a>
                         <p>Footer Design (V4.4)</p>
                     </figcaption>
@@ -521,7 +514,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/Tw1NomM.png" id="footv5" class="portfolio-img"><img
-                                src="https://i.imgur.com/Tw1NomM.png" id="footv5-img" class="img-fluid"
+                                src="https://i.imgur.com/Tw1NomM.png" id="footv5-img" class="ps-img img-fluid"
                                 style="width:90%" alt="Footer Design"></a>
                         <p>Footer Design (V5)</p>
                     </figcaption>
@@ -537,7 +530,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/L7s06d7.jpeg" id="aboutv4" class="portfolio-img"><img
-                                src="https://i.imgur.com/L7s06d7.jpeg" id="aboutv4-img" class="img-fluid"
+                                src="https://i.imgur.com/L7s06d7.jpeg" id="aboutv4-img" class="ps-img img-fluid"
                                 style="width:90%" alt="'About' Card Sizes"></a>
                         <p>'About' Card Sizes (V4.4)</p>
                     </figcaption>
@@ -546,7 +539,7 @@
                 <div class="column column-pic">
                     <figcaption>
                         <a href="https://i.imgur.com/kNbnjvx.png" id="aboutv5" class="portfolio-img"><img
-                                src="https://i.imgur.com/kNbnjvx.png" id="aboutv5-img" class="img-fluid"
+                                src="https://i.imgur.com/kNbnjvx.png" id="aboutv5-img" class="ps-img img-fluid"
                                 style="width:90%" alt="'About' Card Sizes"></a>
                         <p>'About' Card Sizes (V5)</p>
                     </figcaption>
@@ -562,43 +555,19 @@
 
                 <div class="banner-eicw">
                     <a href="https://i.imgur.com/lqMA2oV.jpeg" id="homev5" class="portfolio-img">
-                        <img src="https://i.imgur.com/lqMA2oV.jpeg" id="homev5-img" class="img-fluid" alt="tf">
+                        <img src="https://i.imgur.com/lqMA2oV.jpeg" id="homev5-img" class="ps-img img-fluid" alt="tf">
                     </a>
                 </div>
 
 
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-social">
-                <a href="https://github.com/nurafianZulkifli" class="social-link">
-                    <i class="fa-brands fa-github" aria-hidden="true"></i>
-                </a>
-                <a href="https://twitter.com/nrfzlkf_" class="social-link">
-                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.facebook.com/Nrfnzlkf/" class="social-link">
-                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.instagram.com/nrfzlkf/" class="social-link">
-                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="footer-copy">
-            © 2026 Nurafian Zulkifli
-        </div>
-    </footer>
-
     <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
         data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
         data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
         </script>
 
-    <script src="../js/navtabs.js"></script>
+    <script src="../js/mob-navtabs.js"></script>
 
     <script src="js/personal-v5-0.js"></script>
 

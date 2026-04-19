@@ -3555,3 +3555,37 @@ img.mfp-img {
 .carousel-cell-count-1 .flickity-prev-next-button {
     display: none !important;
 }
+
+/* ------------------------------------------ 25.0 Cookies Banner (Light Mode) ------------------------------------------ */
+
+.cookiebanner {
+    background: #f8f9fa !important;
+    color: #333 !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease;
+}
+
+.cookiebanner span {
+    color: #333 !important;
+}
+
+.cookiebanner a {
+    color: #0070a0 !important;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.cookiebanner a:hover {
+    color: #005080 !important;
+}
+
+.cookiebanner-close {
+    color: #666 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cookiebanner-close:hover {
+    color: #333 !important;
+    transform: scale(1.1);
+}

@@ -179,8 +179,36 @@ body.dark-mode #check {
     display: none;
 }
 
+/* ---- Cookies Banner */
+body.dark-mode .cookiebanner {
+    background: #1c1f2b !important;
+    color: #ddd !important;
+    border-top: 1px solid #2b2b2b33;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
 body.dark-mode .cookiebanner span {
-    color: #000;
+    color: #ddd !important;
+}
+
+body.dark-mode .cookiebanner a {
+    color: #80a8cc !important;
+    text-decoration: underline;
+}
+
+body.dark-mode .cookiebanner a:hover {
+    color: #a2c4e0 !important;
+}
+
+body.dark-mode .cookiebanner-close {
+    color: #ddd !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .cookiebanner-close:hover {
+    color: #fff !important;
+    transform: scale(1.1);
 }
 
 /* ---- Progress Bar */

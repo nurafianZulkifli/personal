@@ -129,6 +129,9 @@ let velocity = 0;
 let lastX = 0;
 let lastTime = 0;
 let animationId = null;
+let isDragging = false;   // true once movement exceeds drag threshold
+let clickBlocked = false; // suppress synthetic click after a real drag
+const DRAG_THRESHOLD = 6; // px — below this is a tap, above is a drag
 
 // Easing function for smooth deceleration
 function easeOut(t) {
@@ -203,7 +206,7 @@ if (scrollableTabs) {
     // Touch events
     scrollableTabs.addEventListener('touchstart', (e) => {
         isDown = true;
-        scrollableTabs.classList.add('dragging');
+        isDragging = false;
         scrollableTabs.style.scrollBehavior = 'auto';
         startX = e.touches[0].pageX - scrollableTabs.offsetLeft;
         lastX = startX;
@@ -212,23 +215,49 @@ if (scrollableTabs) {
         velocity = 0;
         lastTouchX = e.touches[0].pageX;
         if (animationId) cancelAnimationFrame(animationId);
-    }, { passive: false });
+    }, { passive: true }); // passive: true — no preventDefault needed here
 
-    scrollableTabs.addEventListener('touchend', () => {
+    // Cancel (e.g. incoming call, system interrupt) — clean up state
+    scrollableTabs.addEventListener('touchcancel', () => {
+        isDown = false;
+        isDragging = false;
+        scrollableTabs.classList.remove('dragging');
+        scrollableTabs.style.scrollBehavior = 'smooth';
+        velocity = 0;
+    });
+
+    scrollableTabs.addEventListener('touchend', (e) => {
         isDown = false;
         scrollableTabs.classList.remove('dragging');
         scrollableTabs.style.scrollBehavior = 'smooth';
-        // Start momentum animation
+
+        // Block the synthetic click that fires after a real drag
+        if (isDragging) {
+            clickBlocked = true;
+            setTimeout(() => { clickBlocked = false; }, 300);
+        }
+        isDragging = false;
+
         if (Math.abs(velocity) > 0.5) {
             animateMomentum();
         }
-    }, { passive: false });
+    }, { passive: true });
 
     scrollableTabs.addEventListener('touchmove', (e) => {
         if (!isDown) return;
         const touchX = e.touches[0].pageX - scrollableTabs.offsetLeft;
-        const walk = (touchX - startX) * 1.5; // Slightly reduced sensitivity for smoothness
-        scrollableTabs.scrollLeft = scrollLeft - walk;
+        const deltaX = touchX - startX;
+
+        // Promote to a real drag once movement exceeds threshold
+        if (!isDragging && Math.abs(deltaX) > DRAG_THRESHOLD) {
+            isDragging = true;
+            scrollableTabs.classList.add('dragging');
+        }
+
+        if (isDragging) {
+            scrollableTabs.scrollLeft = scrollLeft - deltaX;
+            e.preventDefault(); // prevent page scroll only during confirmed horizontal drag
+        }
 
         // Calculate velocity for momentum
         const now = Date.now();
@@ -238,11 +267,15 @@ if (scrollableTabs) {
         }
         lastX = touchX;
         lastTime = now;
-
-        // Prevent vertical scroll if horizontal movement is significant
-        if (Math.abs(e.touches[0].pageX - lastTouchX) > 5) {
-            e.preventDefault();
-        }
         lastTouchX = e.touches[0].pageX;
     }, { passive: false });
+
+    // Suppress synthetic click that fires after a drag (capture phase catches it first)
+    scrollableTabs.addEventListener('click', (e) => {
+        if (clickBlocked) {
+            e.preventDefault();
+            e.stopPropagation();
+            clickBlocked = false;
+        }
+    }, true);
 }

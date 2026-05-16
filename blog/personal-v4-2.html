@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -161,45 +161,26 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="scrollable-tabs-container">
-                    <div class="left-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                        </svg>
-
-                    </div>
-
-                    <ul>
-                        <li>
-                            <a href="#changes">Changes & Improvements</a>
-                        </li>
-
-                        <li>
-                            <a href="#old-vs-new">Old vs New</a>
-                        </li>
-
-                        <li>
-                            <a href="#conclusion">Conclusion</a>
-                        </li>
-                    </ul>
-
-                    <div class="right-arrow active">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                        </svg>
-
-                    </div>
-                </div>
-                <hr>
             </div>
 
         </div>
-
     </section>
 
+    <!-- Sticky Section Nav -->
+    <div class="sticky-nav-wrap">
+        <div class="eicw-nav-dropdown" id="eicwNavDropdown">
+            <button class="eicw-nav-btn" type="button" aria-haspopup="true" aria-expanded="false">
+                <span class="eicw-nav-label"><i class="fa-regular fa-pen-to-square"></i> Changes &amp; Improvements</span>
+                <i class="fa-regular fa-chevron-down eicw-nav-chevron"></i>
+            </button>
+            <ul class="eicw-nav-menu" role="menu">
+                <li><a href="#changes" class="active"><i class="fa-regular fa-pen-to-square"></i> Changes &amp; Improvements</a></li>
+                <li><a href="#old-vs-new"><i class="fa-regular fa-code-compare"></i> Old vs New</a></li>
+                <li><a href="#conclusion"><i class="fa-regular fa-clipboard-list"></i> Conclusion</a></li>
+            </ul>
+        </div>
+        <hr style="margin: 0;">
+    </div>
     <!-- Cover Header -->
     <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-pv5"
         style="background-image: url(https://i.imgur.com/XfoBdpk.png); height: 72vh;">
@@ -421,6 +402,8 @@
         </script>
 
     <script src="../js/mob-navtabs.js"></script>
+
+    <script src="../js/nav-dropdown.js"></script>
 
     <script src="js/personal-v4-2.js"></script>
 

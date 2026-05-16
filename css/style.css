@@ -2217,7 +2217,7 @@ li.breadcrumb-item.active a {
 }
 
 .parallax {
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2542,13 +2542,6 @@ select:focus {
     background-color: #f5f6f2;
     padding-top: 8em;
     padding-bottom: 10px;
-}
-
-.parallax {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 
@@ -3018,11 +3011,22 @@ li.breadcrumb-item a:hover {
     display: none;
 }
 
+@media (max-width: 1200px) {
+    .sticky-nav-wrap.is-sticky {
+        width: calc(100% - 30px);
+    }
+}
+
 @media (max-width: 994px) {
     .sticky-nav-wrap.is-sticky {
-        top: 72px;
-        width: calc(100% - 40px);
+        top: 20px;
         margin-top: 0;
+    }
+
+    .sticky-nav-wrap.is-sticky .eicw-nav-dropdown {
+        margin: 0;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
@@ -3038,7 +3042,7 @@ li.breadcrumb-item a:hover {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 12px 16px;
+    padding: 10px 16px;
     border-radius: 24px;
     border: 1px solid #2b2b2b33;
     background: #fff;
@@ -3109,6 +3113,38 @@ li.breadcrumb-item a:hover {
 .eicw-nav-menu a.active {
     background: linear-gradient(58deg, #97a19f 0%, #606b94 100%);
     color: #fff;
+}
+
+/* Desktop: section nav merged into .navbar */
+.navbar.has-section-nav {
+    gap: 12px;
+}
+
+.eicw-nav-dropdown.navbar-merged {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+}
+
+.eicw-nav-dropdown.navbar-merged .eicw-nav-btn {
+    border-radius: 20px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.35);
+    font-size: 0.875rem;
+}
+
+/* Menu hoisted to .navbar-container to escape .navbar overflow clipping */
+.eicw-nav-menu.navbar-escaped-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+}
+
+.sticky-nav-wrap.nav-merged-desktop {
+    display: none;
 }
 
 /* ------------------------------------------*/

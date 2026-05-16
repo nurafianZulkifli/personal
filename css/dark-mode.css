@@ -664,15 +664,15 @@ body.dark-mode .scrollable-tabs-container svg {
 
 /* ------------------------------------------ 8.1 EICW Navigation Dropdown (dark) ------------------------------------------ */
 
-body.dark-mode .eicw-nav-btn {
+body.dark-mode .eicw-nav-btn,
+body.dark-mode .eicw-nav-dropdown.navbar-merged .eicw-nav-btn {
     background: #393e53;
     color: #fff;
-    border-color: #ffffff22;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .sticky-nav-wrap.is-sticky {
-    background: #1a1f35be ;
+    background: #1a1f35be;
     backdrop-filter: blur(14px);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }

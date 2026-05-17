@@ -3078,8 +3078,8 @@ li.breadcrumb-item a:hover {
     display: none;
     position: absolute;
     top: calc(100% + 6px);
-    left: 30px;
-    right: 30px;
+    left: 4px;
+    right: 4px;
     background: #fff;
     border-radius: 16px;
     border: 1px solid #2b2b2b22;

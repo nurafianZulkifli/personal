@@ -1,0 +1,307 @@
+{
+  "bp12": {
+    "title": "New Wayfinding System for BP12 Jelapang",
+    "coverImage": "https://i.imgur.com/3d1gj9y.png",
+    "coverHeight": "75vh",
+    "category": "Designs",
+    "year": "2023/2024",
+    "description": "A concept proposal I made to showcase my replication works capability. Design is updated in July 2024, to align with current design standards.",
+    "links": [
+      { "icon": "fa-solid fa-file-pdf", "label": "View PDF Version", "href": "https://drive.google.com/file/d/1gw_glFIaAOs9FSBloBTBgmgOObMK1GcL/view?usp=sharing" }
+    ],
+    "contentType": "banner",
+    "images": ["https://i.imgur.com/EfNQBgk.png"]
+  },
+  "bus-rep": {
+    "title": "Bus Replications",
+    "coverImage": "https://i.imgur.com/sv6PN9u.png",
+    "coverHeight": "80vh",
+    "category": "Mockups",
+    "year": "2021-2022",
+    "description": "These replications all started with me waiting for my bus, and me getting fascinated with the different looks and colour of the buses. Hence, I decided \"Hey, let's try and replicate a Bus Model.\" (The A&S Double Decker Bus is a commissioned work.)",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/lNLv8Kk.png",
+      "https://i.imgur.com/pZ7f9jk.png",
+      "https://i.imgur.com/joEQsBb.png",
+      "https://i.imgur.com/ow3Q8BU.png",
+      "https://i.imgur.com/Dd73c6J.png",
+      "https://i.imgur.com/MvzVLVS.png",
+      "https://i.imgur.com/oGWqSQN.png",
+      "https://i.imgur.com/nv7q5DP.png",
+      "https://i.imgur.com/lR9xv3F.png",
+      "https://i.imgur.com/s0Kje0c.png"
+    ]
+  },
+  "buszy": {
+    "title": "Buszy - Bus Arrival Timings",
+    "coverImage": "https://i.imgur.com/Wvet10n.png",
+    "coverHeight": "70vh",
+    "category": "Website Design",
+    "year": "2025",
+    "description": "A passion project. Started off from vibe-coding, it has slowly transformed into a fully functional Bus Arrival Web App.",
+    "links": [
+      { "icon": "fa-solid fa-arrow-up-right-from-square", "label": "View Website", "href": "https://worksbynrfz.com/buszy" }
+    ],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/fH61bhG.png",
+      "https://i.imgur.com/JCXkgpK.png",
+      "https://i.imgur.com/FQgAbIh.png",
+      "https://i.imgur.com/Qo9M4nH.png"
+    ]
+  },
+  "delays-checker": {
+    "title": "RailBuddy - Stay on track, always",
+    "coverImage": "https://i.imgur.com/Celb2DC.png",
+    "coverHeight": "75vh",
+    "category": "Website Design",
+    "year": "2026 (Version 4)",
+    "description": "A pet-project of mine. Created to keep track of rail delays. The new version includes real-time updates, improved user interface, and the inclusion of First/Last Train Timings.",
+    "links": [
+      { "icon": "fa-solid fa-arrow-up-right-from-square", "label": "View Website", "href": "https://worksbynrfz.com/rail-buddy" }
+    ],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/XfVuuA7.png",
+      "https://i.imgur.com/AhkkGcD.png",
+      "https://i.imgur.com/v88e091.png"
+    ]
+  },
+  "ezlink-red": {
+    "title": "EZ-Link Card Redesign",
+    "coverImage": "https://i.imgur.com/naXKAq4.png",
+    "coverHeight": "80vh",
+    "category": "Designs",
+    "year": "2023",
+    "description": "An attempt to redesign the EZ-Link Concession Cards, based on the current design language of the <a href=\"https://www.samuel-lim.com/signage-system\" class=\"hyperlink\">wayfinding system</a>.",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/AMC8nHL.png",
+      "https://i.imgur.com/OTo0ld5.png",
+      "https://i.imgur.com/oqCPDMP.png",
+      "https://i.imgur.com/PI0mMEs.png",
+      "https://i.imgur.com/Mzm9gci.png"
+    ]
+  },
+  "ffl": {
+    "title": "Friends Forever Logo Design",
+    "coverImage": "https://i.imgur.com/VwiI7Zx.png",
+    "coverHeight": "82vh",
+    "category": "Logos",
+    "year": "2017",
+    "description": "A submission for a logo competition based on the theme \"Friends Forever\", conducted by ITE College West's School of Electronics and Infocomm Technology.",
+    "links": [],
+    "contentType": "banner",
+    "images": ["https://i.imgur.com/m7XFEWx.png"]
+  },
+  "food-rev-flash-app": {
+    "title": "Food Review Compiler/Flashify - a Flashcard App",
+    "coverImage": "https://i.imgur.com/b0dgplx.png",
+    "coverHeight": "82vh",
+    "category": "Mockups",
+    "year": "2020/2021",
+    "description": "<strong>Food Review Compiler App</strong> - A Food Review Compiler App Mockup that compiles all the reviews and suggestions by the community, and arranges them by ratings.<br><strong>Flashify</strong> - A Flashcard App Mockup with gaming features to make learning fun and exciting.",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/9ieLSnx.png",
+      "https://i.imgur.com/KcijXhN.png"
+    ]
+  },
+  "hydrationreg": {
+    "title": "Hydration Regime Infographic",
+    "coverImage": "https://i.imgur.com/np9A6TT.png",
+    "coverHeight": "75vh",
+    "category": "Infographics",
+    "year": "2022",
+    "description": "A remake of SAF's Hydration Regime Infographic.",
+    "links": [
+      { "icon": "fa-solid fa-up-right-and-down-left-from-center", "label": "View Actual Size", "href": "https://i.imgur.com/19W6L4q.png" }
+    ],
+    "contentType": "banner",
+    "images": ["https://i.imgur.com/19W6L4q.png"]
+  },
+  "igra1": {
+    "title": "Infographic Resume",
+    "coverImage": "https://i.imgur.com/eUK5ouF.png",
+    "coverHeight": "75vh",
+    "category": "Infographics",
+    "year": "2020",
+    "description": "A submission for an assignment to turn my Resume into an Infographic Version.",
+    "links": [
+      { "icon": "fa-solid fa-up-right-and-down-left-from-center", "label": "View Actual Size", "href": "https://i.imgur.com/IZtl7ID.png" }
+    ],
+    "contentType": "banner",
+    "images": ["https://i.imgur.com/IZtl7ID.png"]
+  },
+  "igra2": {
+    "title": "COVID-19 Shopping Habits Infographic",
+    "coverImage": "https://i.imgur.com/9kVqz4M.png",
+    "coverHeight": "75vh",
+    "category": "Infographics",
+    "year": "2021",
+    "description": "A submission for an assignment to produce an actual Infographic, based on a given topic.",
+    "links": [
+      { "icon": "fa-solid fa-up-right-and-down-left-from-center", "label": "View Actual Size", "href": "https://i.imgur.com/lkWD0vn.png" }
+    ],
+    "contentType": "banner",
+    "images": ["https://i.imgur.com/lkWD0vn.png"]
+  },
+  "igra3": {
+    "title": "How To Use TimeTree Infographic",
+    "coverImage": "https://i.imgur.com/Kck51Ru.png",
+    "coverHeight": "75vh",
+    "category": "Infographics",
+    "year": "2023",
+    "description": "TimeTree is a shared calendar app that makes it very easy to share and coordinate schedules. Great to monitor unavailability of NSFs/Regulars. Details have been redacted for privacy reasons.",
+    "links": [
+      { "icon": "fa-solid fa-file-pdf", "label": "View PDF Version", "href": "https://drive.google.com/file/d/1JAwwdZ1DZtpb1xlRrICBFnGwgZeQSGi3/view?usp=sharing" }
+    ],
+    "contentType": "banner",
+    "images": ["https://i.imgur.com/vrY4q9w.png"]
+  },
+  "improve-wf": {
+    "title": "Experimenting Improvements of Current Wayfinding",
+    "coverId": "cv-iwf",
+    "coverImage": "../eicw/img/cover-light.png",
+    "coverImageDark": "../eicw/img/cover-dark.png",
+    "coverHeight": "75vh",
+    "category": "Concepts & Replications",
+    "year": "2024",
+    "description": "A microsite page in my Personal Website where I explored different ways and ideas to make the current Wayfinding system better. These includes the changes and improvements, as well as some original ideas of my own. First conceptualized as a Handbook.",
+    "links": [
+      { "icon": "fa-solid fa-arrow-up-right-from-square", "label": "View Website", "href": "../eicw/eicw.html" },
+      { "icon": "fa-solid fa-arrow-up-right-from-square", "label": "View Handbook (Old)", "href": "https://drive.google.com/file/d/1jKlaRXYsOWCaQVGjVIBPz8G8X-uq_GfO/view?usp=sharing" }
+    ],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/sBOOEqY.png",
+      "https://i.imgur.com/W3vPlwI.png",
+      "https://i.imgur.com/94YwAP9.png"
+    ]
+  },
+  "lta-bp": {
+    "title": "LTA Bus Stop Pole Design Refresh",
+    "coverImage": "https://i.imgur.com/DDpX3Mw.png",
+    "coverHeight": "80vh",
+    "category": "Designs, Mockups",
+    "year": "2024",
+    "description": "A metal pole erected beside the bus stop, which shows the bus routes that call at the particular stop. Last modernized back in 2009, I believe the iconographies and colours are due for a refresh - in line with the new <a href=\"https://www.samuel-lim.com/signage-system\" class=\"hyperlink\">wayfinding system</a> introduced in 2019.",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/bSU8bxu.png",
+      "https://i.imgur.com/INw8fUm.png",
+      "https://i.imgur.com/gjkgAaO.png"
+    ]
+  },
+  "lta-pids": {
+    "title": "LTA Bus PIDS Redesign",
+    "coverImage": "https://i.imgur.com/mkWI0ZO.png",
+    "coverHeight": "80vh",
+    "category": "Designs, Mockups",
+    "year": "2023",
+    "description": "My take on the redesign of LTA's Bus Passenger Information Display System (PIDS).",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/XiG7syJ.png",
+      "https://i.imgur.com/7UMYr3S.png",
+      "https://i.imgur.com/4sneWU4.png"
+    ]
+  },
+  "man-a22-masc": {
+    "title": "MAN A22 Lion Mascot Replication",
+    "coverImage": "https://i.imgur.com/H87HoFp.png",
+    "coverHeight": "82vh",
+    "category": "Designs",
+    "year": "2022",
+    "description": "This legendary mascot used to be everywhere in the early 2010s. The mascot was used in promoting SMRT's newest bus model, back then, the MAN A22.",
+    "links": [],
+    "contentType": "banner",
+    "images": ["https://i.imgur.com/s1Ir8of.png"]
+  },
+  "more-rep": {
+    "title": "More Replications",
+    "coverImage": "https://i.imgur.com/bGtwTLM.png",
+    "coverHeight": "80vh",
+    "category": "Mockups",
+    "year": "2023",
+    "description": "Aside from Buses only, I attempted to replicate Trains, Cars and Lorries too. The classic bus was an experimental work, because hey, I wasn't born yet, so I didn't know how the buses actually looked like exactly.",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/wOZPE8u.png",
+      "https://i.imgur.com/5TI3rRc.png",
+      "https://i.imgur.com/IRtxYmD.png",
+      "https://i.imgur.com/8gJhPOc.png"
+    ]
+  },
+  "mrt-signage-rep-s1": {
+    "title": "MRT Signages Concept/Replications S1",
+    "coverImage": "https://i.imgur.com/Fri8cfl.png",
+    "coverHeight": "80vh",
+    "category": "Designs/Mockups",
+    "year": "2023",
+    "description": "An attempt to replicate the new signage designs, as well as to update older signages to the new <a href=\"https://www.samuel-lim.com/signage-system\" class=\"hyperlink\">wayfinding system.</a>",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/VNASRNj.png",
+      "https://i.imgur.com/QQvxbH5.png",
+      "https://i.imgur.com/yZ1EbxU.png",
+      "https://i.imgur.com/vKKXGQX.png"
+    ]
+  },
+  "mrt-signage-rep-s2": {
+    "title": "MRT Signages Concept/Replications S2",
+    "coverImage": "https://i.imgur.com/BaoOxSP.png",
+    "coverHeight": "80vh",
+    "category": "Designs/Mockups",
+    "year": "2023",
+    "description": "Ever taken the brown line (heh, poop colour)? Some of these may look familiar to you. But I've injected some of my improvements in the designs in here. The first picture - The Yew Tee Train Timings, were made way back in 2021. But the real-life counterpart is shockingly similiar.",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/jinDMiY.png",
+      "https://i.imgur.com/K2IrgIf.png",
+      "https://i.imgur.com/8QgIRuZ.png",
+      "https://i.imgur.com/XHL0R3p.png"
+    ]
+  },
+  "myts-app": {
+    "title": "MyTransport.SG App Redesign",
+    "coverImage": "https://i.imgur.com/pZkfDrD.png",
+    "coverHeight": "80vh",
+    "category": "Mockups",
+    "year": "2023",
+    "description": "An app concept of the redesigned MyTransport.SG App, updated with the current design language from the <a href=\"https://www.samuel-lim.com/singapore-mrt-signage-system\" class=\"hyperlink\">new wayfinding system</a>.",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/5kFHfk1.png",
+      "https://i.imgur.com/Gtf8pbT.png",
+      "https://i.imgur.com/PqN0t9i.png",
+      "https://i.imgur.com/EveTel1.png"
+    ]
+  },
+  "sit": {
+    "title": "Store Inventory Tracking",
+    "coverImage": "https://i.imgur.com/hXgVN2l.png",
+    "coverHeight": "80vh",
+    "category": "Designs",
+    "year": "2023",
+    "description": "3 out of my many ideas and prototypes on how to enhance store/inventory tracking operations. (Details redacted for privacy)",
+    "links": [],
+    "contentType": "carousel",
+    "images": [
+      "https://i.imgur.com/fz1b5Wu.png",
+      "https://i.imgur.com/JF01ey9.png",
+      "https://i.imgur.com/gNawehn.png",
+      "https://i.imgur.com/w3kOpM3.png"
+    ]
+  }
+}

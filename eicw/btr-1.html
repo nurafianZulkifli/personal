@@ -23,6 +23,58 @@
   <link rel="stylesheet" href="../css/style-breakpoints.css">
   <link rel="stylesheet" href="../css/dark-mode.css">
 
+  <style>
+        .eicw-collapsible {
+            border: none;
+            outline: none;
+            margin-bottom: 8px;
+        }
+        .eicw-collapsible summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            list-style: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            transition: background 0.2s ease, border-color 0.2s ease;
+            user-select: none;
+            margin-bottom: 0;
+        }
+        .eicw-collapsible summary::-webkit-details-marker { display: none; }
+        .eicw-collapsible summary:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.22);
+        }
+        .eicw-collapsible[open] summary {
+            border-radius: 8px 8px 0 0;
+            border-color: rgba(255,255,255,0.22);
+            background: rgba(255,255,255,0.07);
+        }
+        .eicw-collapsible-title { font-size: 22px; font-weight: bold; flex: 1; }
+        .eicw-collapsible-chevron {
+            font-size: 14px;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+        .eicw-collapsible[open] .eicw-collapsible-chevron { transform: rotate(180deg); }
+        body.dark-mode .eicw-collapsible-chevron { color: #fff; opacity: 1; }
+        .eicw-collapsible-body {
+            border: 1px solid rgba(255,255,255,0.12);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 16px 20px;
+            animation: collapsibleFadeIn 0.2s ease;
+        }
+        @keyframes collapsibleFadeIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+  </style>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN76281P3Q"></script>
   <script>
@@ -224,18 +276,6 @@
                   </p>
                 </div>
               </div>
-              <div class="portfolio-filter portfolio-filter-sub mt-3 wow fadeIn" data-wow-delay="100ms"
-                style="padding-bottom: 2em;">
-                <a href="#bcr">
-                  <button class="btn">Bus Card Reader UI (LTA)</button>
-                </a>
-                <a href="#staris2">
-                  <button class="btn">STARiS 2.0 (SMRT)</button>
-                </a>
-                <!-- <a href="#cddbp">
-                  <button class="btn">Car Door Display (BPLRT)</button>
-                </a> -->
-              </div>
             </div>
           </div>
         </div>
@@ -250,225 +290,224 @@
       <div class="container container-mobile">
         <div class="row justify-content-center">
           <!-- Bus Card Reader UI (LTA) -->
-          <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-            <div class="info justify-content-center">
-
-              <h2 class="text-center" style="font-size: 30px; font-weight: bold;" id="bcr">Bus Card
-                Reader UI (LTA)
-              </h2>
-              </h2>
-              <p>The current Bus Card Readers are getting old. Hence, the UI will need a
-                refresh as well!
-                Had a quick look at the upcoming Card Readers that are being trialled on selected buses, and I feel the
-                UI is good! I have decided to make a guess on how the UI could look like, and also incorporated some
-                elemnts from the current Design System.
-              </p>
-
-              <div class="row">
-                <div class="column column-pic">
-                  <figcaption>
-                    <a href="img-2/bcr-compare-light.png" id="bcrcrc" class="portfolio-img ">
-                      <img src="img-2/bcr-compare-light.png" id="bcrcrc-img" class="img-fluid cp-img" alt="bcrcrc">
-                    </a>
-                    <p>📸: <br>
-                      - <a
-                        href="//images.squarespace-cdn.com/content/v1/5bcfc8c07a1fbd730b2ba933/1558377402895-3VI3FNHXOZQWI997KRES/MRT+gate+to+tap.jpg">Current
-                        MRT Card Reader</a><br>
-                      - <a href="https://x.com/big_pedestrian/status/1782216274090836184/photo/1">Current Bus Card
-                        Reader (via X)</a>
-                    </p>
-                  </figcaption>
-                </div>
-
-                <div class="column column-pic">
-                  <figcaption>
-                    <a href="img-2/bcr-tap-light.png" id="bcrtap" class="portfolio-img">
-                      <img src="img-2/bcr-tap-light.png" id="bcrtap-img" class="img-fluid cp-img" alt="bcrtap">
-                    </a>
-                  </figcaption>
-                </div>
-
-                <div class="banner-eicw">
-                  <a href="img-2/btrcr1-light.png" id="btrcr1" class="portfolio-img">
-                    <img src="img-2/btrcr1-light.png" id="btrcr1-img" class="img-fluid" alt="btrcr1"
-                      style="box-shadow: none; border: none;">
-                  </a>
-
-                  <a href="img-2/btrcr2-light.png" id="btrcr2" class="portfolio-img">
-                    <img src="img-2/btrcr2-light.png" id="btrcr2-img" class="img-fluid" alt="btrcr2"
-                      style="box-shadow: none; border: none;">
-                  </a>
-
-                  <a href="img-2/btrcr3-light.png" id="btrcr3" class="portfolio-img">
-                    <img src="img-2/btrcr3-light.png" id="btrcr3-img" class="img-fluid" alt="btrcr3"
-                      style="box-shadow: none; border: none;">
-                  </a>
+          <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="bcr">
+            <details class="eicw-collapsible">
+              <summary>
+                <span class="eicw-collapsible-title">Bus Card Reader UI (LTA)</span>
+                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+              </summary>
+              <div class="eicw-collapsible-body">
+                <div class="info justify-content-center">
+                  <p>The current Bus Card Readers are getting old. Hence, the UI will need a
+                    refresh as well!
+                    Had a quick look at the upcoming Card Readers that are being trialled on selected buses, and I feel the
+                    UI is good! I have decided to make a guess on how the UI could look like, and also incorporated some
+                    elemnts from the current Design System.
+                  </p>
+                  <div class="row">
+                    <div class="column column-pic">
+                      <figcaption>
+                        <a href="img-2/bcr-compare-light.png" id="bcrcrc" class="portfolio-img ">
+                          <img src="img-2/bcr-compare-light.png" id="bcrcrc-img" class="img-fluid cp-img" alt="bcrcrc">
+                        </a>
+                        <p>📸: <br>
+                          - <a
+                            href="//images.squarespace-cdn.com/content/v1/5bcfc8c07a1fbd730b2ba933/1558377402895-3VI3FNHXOZQWI997KRES/MRT+gate+to+tap.jpg">Current
+                            MRT Card Reader</a><br>
+                          - <a href="https://x.com/big_pedestrian/status/1782216274090836184/photo/1">Current Bus Card
+                            Reader (via X)</a>
+                        </p>
+                      </figcaption>
+                    </div>
+                    <div class="column column-pic">
+                      <figcaption>
+                        <a href="img-2/bcr-tap-light.png" id="bcrtap" class="portfolio-img">
+                          <img src="img-2/bcr-tap-light.png" id="bcrtap-img" class="img-fluid cp-img" alt="bcrtap">
+                        </a>
+                      </figcaption>
+                    </div>
+                    <div class="banner-eicw">
+                      <a href="img-2/btrcr1-light.png" id="btrcr1" class="portfolio-img">
+                        <img src="img-2/btrcr1-light.png" id="btrcr1-img" class="img-fluid" alt="btrcr1"
+                          style="box-shadow: none; border: none;">
+                      </a>
+                      <a href="img-2/btrcr2-light.png" id="btrcr2" class="portfolio-img">
+                        <img src="img-2/btrcr2-light.png" id="btrcr2-img" class="img-fluid" alt="btrcr2"
+                          style="box-shadow: none; border: none;">
+                      </a>
+                      <a href="img-2/btrcr3-light.png" id="btrcr3" class="portfolio-img">
+                        <img src="img-2/btrcr3-light.png" id="btrcr3-img" class="img-fluid" alt="btrcr3"
+                          style="box-shadow: none; border: none;">
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-            </div>
+            </details>
           </div>
-          <hr>
 
-          <!-- Car Door Display (BPLRT) -->
-          <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-            <div class="info justify-content-center">
+          <!-- STARiS 2 (SMRT) -->
+          <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="staris2">
+            <details class="eicw-collapsible">
+              <summary>
+                <span class="eicw-collapsible-title">STARiS 2 (SMRT)</span>
+                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+              </summary>
+              <div class="eicw-collapsible-body">
+                <div class="info justify-content-center">
+                  <p>The current STARiS 2's UI is about 16 years old, and it recently got a
+                    minor upgrade, though only for the Next Stop and Station Name Screens. A major redesign is needed to
+                    align with the current design used on the R151s, but at the same time I wanted to retain some elements
+                    from the current STARiS UI.
+                  </p>
+                  <div class="row">
+                    <div class="column column-pic">
+                      <figcaption>
+                        <a href="img-2/staris2-D.png" id="staris2-b" class="portfolio-img ">
+                          <img src="img-2/staris2-D.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b">
+                        </a>
+                        <p>Revamped STARiS 2.0 UI - <b>Updated</b>
+                          Line
+                          Diagram Layout and <b>New</b> Next Station Interface
+                        </p>
+                      </figcaption>
+                    </div>
 
-              <h2 class="text-center" style="font-size: 30px; font-weight: bold;" id="staris2">STARiS 2 (SMRT)
-              </h2>
-              <p>The current STARiS 2's UI is about 16 years old, and it recently got a
-                minor upgrade, though only for the Next Stop and Station Name Screens. A major redesign is needed to
-                align with the current design used on the R151s, but at the same time I wanted to retain some elements
-                from the current STARiS UI.
-              </p>
+                    <div class="column column-pic">
+                      <figcaption>
+                        <a href="img-2/staris2-D-stn.png" id="staris2-b" class="portfolio-img ">
+                          <img src="img-2/staris2-D-stn.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b">
+                        </a>
+                        <p>Revamped STARiS 2.0 UI - <b>Updated</b>
+                          Station Name Interface
+                        </p>
+                      </figcaption>
+                    </div>
 
-              <div class="row">
-                <div class="column column-pic">
-                  <figcaption>
-                    <a href="img-2/staris2-D.png" id="staris2-b" class="portfolio-img ">
-                      <img src="img-2/staris2-D.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b">
-                    </a>
-                    <p>Revamped STARiS 2.0 UI - <b>Updated</b>
-                      Line
-                      Diagram Layout and <b>New</b> Next Station Interface
+                    <hr>
+
+                    <p style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
+                      It's time for a makeover.</p>
+
+                    <p>As mentioned, I wanted to retain some elements from the current STARiS
+                      UI,
+                      hence I kept the Line Diagram layout similar to the current one, modernized with a newer Doors Closing
+                      animation and also a simplified Arrival Screen.
                     </p>
-                  </figcaption>
-                </div>
 
-                <div class="column column-pic">
-                  <figcaption>
-                    <a href="img-2/staris2-D-stn.png" id="staris2-b" class="portfolio-img ">
-                      <img src="img-2/staris2-D-stn.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b">
-                    </a>
-                    <p>Revamped STARiS 2.0 UI - <b>Updated</b>
-                      Station Name Interface
+                    <div class="banner-eicw">
+                      <a href="img-2/btrcr4-light.png" id="btrcr4" class="portfolio-img">
+                        <img src="img-2/btrcr4-light.png" id="btrcr4-img" class="img-fluid" alt="btrcr4"
+                          style="box-shadow: none; border: none;">
+                      </a>
+
+                      <a href="img-2/btrcr5-light.png" id="btrcr5" class="portfolio-img">
+                        <img src="img-2/btrcr5-light.png" id="btrcr5-img" class="img-fluid" alt="btrcr5"
+                          style="box-shadow: none; border: none;">
+                      </a>
+
+                      <!-- <a href="img-2/btrcr3-light.png" id="btrcr3" class="portfolio-img">
+                      <img src="img-2/btrcr3-light.png" id="btrcr3-img" class="img-fluid" alt="btrcr3"
+                        style="box-shadow: none; border: none;">
+                    </a> -->
+                    </div>
+
+                    <hr>
+
+                    <h3 class="text-center" style="font-size: 28px; font-weight: bold; padding-top: 1em;">
+                      Doors Closing Animation
+                    </h3>
+
+                    <p>The Door Closing Animations pays homage to the countdown, now presented
+                      in a different manner. The two blinking arrow replaces the numbered countdown, giving a more dynamic
+                      feel to
+                      it.
                     </p>
-                  </figcaption>
+
+                    <div class="video-row">
+                      <figure style="width:100%;">
+                        <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
+                          muted loop playsinline width="100%" class="column-vid">
+                          <source src="img-2/door-old.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <figcaption>
+                          <p>Original Doors Closing Animation - Left Screen</p>
+                        </figcaption>
+                      </figure>
+
+                      <figure style="width:100%;">
+                        <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
+                          muted loop playsinline width="100%" class="column-vid">
+                          <source src="img-2/door-old-r.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <figcaption>
+                          <p>Original Doors Closing Animation - Right Screen</p>
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="video-row">
+                      <figure style="width:100%;">
+                        <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
+                          muted loop playsinline width="100%" class="column-vid">
+                          <source src="img-2/door-new.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <figcaption>
+                          <p>Revamped Doors Closing Animation - Left Screen</p>
+                        </figcaption>
+                      </figure>
+
+                      <figure style="width:100%;">
+                        <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
+                          muted loop playsinline width="100%" class="column-vid">
+                          <source src="img-2/door-new-r.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <figcaption>
+                          <p>Revamped Doors Closing Animation - Right Screen</p>
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <hr>
+
+                    <h3 class="text-center" style="font-size: 28px; font-weight: bold; padding-top: 1em;">
+                      Arrival Animation
+                    </h3>
+
+                    <div class="video-row">
+                      <figure style="width:100%;">
+                        <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
+                          muted loop playsinline width="100%" class="column-vid">
+                          <source src="img-2/arr-jur.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <figcaption>
+                          <p>Revamped Arrival Animation Example 1 - Jurong East [A]</p>
+                        </figcaption>
+                      </figure>
+
+                      <figure style="width:100%;">
+                        <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
+                          muted loop playsinline width="100%" class="column-vid">
+                          <source src="img-2/arr-wdl.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                        <figcaption>
+                          <p>Revamped Arrival Animation Example 2 - Woodlands [A]</p>
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <p><i>This section is being updated. Check back soon for more!</i></p>
+
+                  </div>
                 </div>
-
-                <hr>
-
-                <p style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                  It's time for a makeover.</p>
-
-                <p>As mentioned, I wanted to retain some elements from the current STARiS
-                  UI,
-                  hence I kept the Line Diagram layout similar to the current one, modernized with a newer Doors Closing
-                  animation and also a simplified Arrival Screen.
-                </p>
-
-                <div class="banner-eicw">
-                  <a href="img-2/btrcr4-light.png" id="btrcr4" class="portfolio-img">
-                    <img src="img-2/btrcr4-light.png" id="btrcr4-img" class="img-fluid" alt="btrcr4"
-                      style="box-shadow: none; border: none;">
-                  </a>
-
-                  <a href="img-2/btrcr5-light.png" id="btrcr5" class="portfolio-img">
-                    <img src="img-2/btrcr5-light.png" id="btrcr5-img" class="img-fluid" alt="btrcr5"
-                      style="box-shadow: none; border: none;">
-                  </a>
-
-                  <!-- <a href="img-2/btrcr3-light.png" id="btrcr3" class="portfolio-img">
-                  <img src="img-2/btrcr3-light.png" id="btrcr3-img" class="img-fluid" alt="btrcr3"
-                    style="box-shadow: none; border: none;">
-                </a> -->
-                </div>
-
-                <hr>
-
-                <h3 class="text-center" style="font-size: 28px; font-weight: bold; padding-top: 1em;">
-                  Doors Closing Animation
-                </h3>
-
-                <p>The Door Closing Animations pays homage to the countdown, now presented
-                  in a different manner. The two blinking arrow replaces the numbered countdown, giving a more dynamic
-                  feel to
-                  it.
-                </p>
-
-                <div class="video-row">
-                  <figure style="width:100%;">
-                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
-                      muted loop playsinline width="100%" class="column-vid">
-                      <source src="img-2/door-old.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                    <figcaption>
-                      <p>Original Doors Closing Animation - Left Screen</p>
-                    </figcaption>
-                  </figure>
-
-                  <figure style="width:100%;">
-                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
-                      muted loop playsinline width="100%" class="column-vid">
-                      <source src="img-2/door-old-r.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                    <figcaption>
-                      <p>Original Doors Closing Animation - Right Screen</p>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="video-row">
-                  <figure style="width:100%;">
-                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
-                      muted loop playsinline width="100%" class="column-vid">
-                      <source src="img-2/door-new.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                    <figcaption>
-                      <p>Revamped Doors Closing Animation - Left Screen</p>
-                    </figcaption>
-                  </figure>
-
-                  <figure style="width:100%;">
-                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
-                      muted loop playsinline width="100%" class="column-vid">
-                      <source src="img-2/door-new-r.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                    <figcaption>
-                      <p>Revamped Doors Closing Animation - Right Screen</p>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <hr>
-
-                <h3 class="text-center" style="font-size: 28px; font-weight: bold; padding-top: 1em;">
-                  Arrival Animation
-                </h3>
-
-                <div class="video-row">
-                  <figure style="width:100%;">
-                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
-                      muted loop playsinline width="100%" class="column-vid">
-                      <source src="img-2/arr-jur.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                    <figcaption>
-                      <p>Revamped Arrival Animation Example 1 - Jurong East [A]</p>
-                    </figcaption>
-                  </figure>
-
-                  <figure style="width:100%;">
-                    <video id="eicw2-vid2" controls controlsList="nodownload" oncontextmenu="return false;"
-                      muted loop playsinline width="100%" class="column-vid">
-                      <source src="img-2/arr-wdl.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
-                    <figcaption>
-                      <p>Revamped Arrival Animation Example 2 - Woodlands [A]</p>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <p><i>This section is being updated. Check back soon for more!</i></p>
-
               </div>
-
-            </div>
+            </details>
           </div>
 
         </div>

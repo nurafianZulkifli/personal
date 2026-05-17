@@ -23,6 +23,58 @@
     <link rel="stylesheet" href="../css/style-breakpoints.css">
     <link rel="stylesheet" href="../css/dark-mode.css">
 
+    <style>
+        .eicw-collapsible {
+            border: none;
+            outline: none;
+            margin-bottom: 8px;
+        }
+        .eicw-collapsible summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            list-style: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            transition: background 0.2s ease, border-color 0.2s ease;
+            user-select: none;
+            margin-bottom: 0;
+        }
+        .eicw-collapsible summary::-webkit-details-marker { display: none; }
+        .eicw-collapsible summary:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.22);
+        }
+        .eicw-collapsible[open] summary {
+            border-radius: 8px 8px 0 0;
+            border-color: rgba(255,255,255,0.22);
+            background: rgba(255,255,255,0.07);
+        }
+        .eicw-collapsible-title { font-size: 22px; font-weight: bold; flex: 1; }
+        .eicw-collapsible-chevron {
+            font-size: 14px;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+        .eicw-collapsible[open] .eicw-collapsible-chevron { transform: rotate(180deg); }
+        body.dark-mode .eicw-collapsible-chevron { color: #fff; opacity: 1; }
+        .eicw-collapsible-body {
+            border: 1px solid rgba(255,255,255,0.12);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 16px 20px;
+            animation: collapsibleFadeIn 0.2s ease;
+        }
+        @keyframes collapsibleFadeIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN76281P3Q"></script>
     <script>
@@ -216,23 +268,9 @@
                                         them further.
                                     </p>
                                 </div>
-
-                                <div class="portfolio-filter portfolio-filter-sub mt-3 wow fadeIn"
-                                    data-wow-delay="100ms" style="padding-top: 1em;">
-                                    <a href="#ci-img">
-                                        <button class="btn">Changes & Improvements over...</button>
-                                    </a>
-                                    <a href="#dsb-img">
-                                        <button class="btn">Design Standards Brainstorm</button>
-                                    </a>
-                                    <a href="#iu-img">
-                                        <button class="btn">Incorporating My Own Ideas</button>
-                                    </a>
-                                    <a href="#ie-img">
-                                        <button class="btn">Implementation Explorations</button>
-                                    </a>
-                                </div>
                             </div>
+
+                            <hr>
 
                             <!-- Enhancements Overview -->
                             <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
@@ -283,381 +321,291 @@
 
                     <!-- Way Out Icon -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Way Out Icon</p>
-
-                                        <p>The proposed new Way Out icon combines two
-                                            elements: the Emergency Exit
-                                            Icon and the Exit Icon.
-
-                                            Commuters will be able to distinguish the Exit icon more easily with the use
-                                            of the Exit colour,
-                                            as well as the 'Exit Border' symbol, which is currently being used to
-                                            signify exits.
-                                        </p>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Way Out Icon</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>The proposed new Way Out icon combines two
+                                        elements: the Emergency Exit Icon and the Exit Icon.
+                                        Commuters will be able to distinguish the Exit icon more easily with the use
+                                        of the Exit colour, as well as the 'Exit Border' symbol, which is currently
+                                        being used to signify exits.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/wo1-light.png" id="wo1" class="portfolio-img ">
+                                                <img src="img/wo1-light.png" id="wo1-img" class="img-fluid cp-img" alt="wo1">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/wo1-light.png" id="wo1" class="portfolio-img ">
-                                                    <img src="img/wo1-light.png" id="wo1-img" class="img-fluid cp-img"
-                                                        alt="wo1">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/wo2-light.png" id="wo2" class="portfolio-img">
-                                                    <img src="img/wo2-light.png" id="wo2-img" class="img-fluid cp-img"
-                                                        alt="wo2">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <video id="eicw-vid1" controls controlsList="nodownload"
-                                            oncontextmenu="return false;" muted loop playsinline width="100%"
-                                            class="column-vid">
-                                            <source src="img/eicw-vid1-light.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/wo2-light.png" id="wo2" class="portfolio-img">
+                                                <img src="img/wo2-light.png" id="wo2-img" class="img-fluid cp-img" alt="wo2">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
+                                    <video id="eicw-vid1" controls controlsList="nodownload"
+                                        oncontextmenu="return false;" muted loop playsinline width="100%"
+                                        class="column-vid">
+                                        <source src="img/eicw-vid1-light.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
+                        </details>
                     </div>
 
                     <!-- Exit Icon -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Exit Icon</p>
-                                        <p>The proposed new Exit icon standardises the use
-                                            of
-                                            the 'Exit Border'
-                                            symbol for those using both numbers or alphabets. Currently, the Exit icons
-                                            for numbers and
-                                            alphabets are labelled differently. 
-                                        </p>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Exit Icon</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>The proposed new Exit icon standardises the use of the 'Exit Border'
+                                        symbol for those using both numbers or alphabets. Currently, the Exit icons
+                                        for numbers and alphabets are labelled differently.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/exit-light.png" id="exit" class="portfolio-img ">
+                                                <img src="img/exit-light.png" id="exit-img" class="img-fluid cp-img" alt="exit">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/exit-light.png" id="exit" class="portfolio-img ">
-                                                    <img src="img/exit-light.png" id="exit-img" class="img-fluid cp-img"
-                                                        alt="exit">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <video id="eicw-vid2" controls controlsList="nodownload"
-                                            oncontextmenu="return false;" muted loop playsinline width="100%"
-                                            class="column-vid">
-                                            <source src="img/eicw-vid2-light.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-
+                                    <video id="eicw-vid2" controls controlsList="nodownload"
+                                        oncontextmenu="return false;" muted loop playsinline width="100%"
+                                        class="column-vid">
+                                        <source src="img/eicw-vid2-light.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
+                        </details>
                     </div>
 
                     <!-- Lift Icon -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Lift Icon</p>
-
-                                        <p>The Lift Icon received a minor change. To
-                                            maximise
-                                            space, the Up and
-                                            Down arrows have been placed in the icon, and the inclusion of only one
-                                            person in the lift icon. 
-                                            <br>
-                                            This is because the wheelchair symbol has been included together with the
-                                            'Priority Use' signage,
-                                            hence, it is redundant to include the wheelchair icon.
-                                            <br><br>
-                                            The use of Blue Signages to signify lifts has also been expanded. This is to
-                                            ensure that the lift
-                                            signs
-                                            are easily distinguishable from the rest of the signage variants. <br> (i.e
-                                            Blue Signages =
-                                            Lift)
-                                        </p>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Lift Icon</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>The Lift Icon received a minor change. To maximise space, the Up and
+                                        Down arrows have been placed in the icon, and the inclusion of only one
+                                        person in the lift icon.
+                                        <br>
+                                        This is because the wheelchair symbol has been included together with the
+                                        'Priority Use' signage, hence, it is redundant to include the wheelchair icon.
+                                        <br><br>
+                                        The use of Blue Signages to signify lifts has also been expanded. This is to
+                                        ensure that the lift signs are easily distinguishable from the rest of the
+                                        signage variants. <br> (i.e Blue Signages = Lift)
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/lift-light1.png" id="lift1" class="portfolio-img ">
+                                                <img src="img/lift-light1.png" id="lift1-img" class="img-fluid cp-img" alt="lift1">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/lift-light1.png" id="lift1" class="portfolio-img ">
-                                                    <img src="img/lift-light1.png" id="lift1-img"
-                                                        class="img-fluid cp-img" alt="lift1">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/lift-light2.png" id="lift2" class="portfolio-img ">
-                                                    <img src="img/lift-light2.png" id="lift2-img"
-                                                        class="img-fluid cp-img" alt="lift2">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <video id="eicw-vid3" controls controlsList="nodownload"
-                                            oncontextmenu="return false;" muted loop playsinline width="100%"
-                                            class="column-vid">
-                                            <source src="img/eicw-vid3-light.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/lift-light2.png" id="lift2" class="portfolio-img ">
+                                                <img src="img/lift-light2.png" id="lift2-img" class="img-fluid cp-img" alt="lift2">
+                                            </a>
+                                        </figcaption>
                                     </div>
+                                    <video id="eicw-vid3" controls controlsList="nodownload"
+                                        oncontextmenu="return false;" muted loop playsinline width="100%"
+                                        class="column-vid">
+                                        <source src="img/eicw-vid3-light.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
+                        </details>
                     </div>
 
                     <!-- Lift Directory Sign -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Lift Directory Sign</p>
-                                        <p>The Lift Directory sign has also received some
-                                            minor updates. The floor
-                                            number has been brought back, and the 'You Are Here' icon removed and
-                                            replaced with the colour
-                                            itself.
-                                            <br><br>
-                                            The Floor Rows in the sign is now clearly highlighted for better clarity and
-                                            helps commuters
-                                            identify the level they are at instantly.
-                                        </p>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Lift Directory Sign</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>The Lift Directory sign has also received some minor updates. The floor
+                                        number has been brought back, and the 'You Are Here' icon removed and
+                                        replaced with the colour itself.
+                                        <br><br>
+                                        The Floor Rows in the sign is now clearly highlighted for better clarity and
+                                        helps commuters identify the level they are at instantly.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/liftd-light.png" id="liftd" class="portfolio-img ">
+                                                <img src="img/liftd-light.png" id="liftd-img" class="img-fluid cp-img" alt="liftd">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/liftd-light.png" id="liftd" class="portfolio-img ">
-                                                    <img src="img/liftd-light.png" id="liftd-img"
-                                                        class="img-fluid cp-img" alt="liftd">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <video id="eicw-vid4" controls controlsList="nodownload"
-                                            oncontextmenu="return false;" muted loop playsinline width="100%"
-                                            class="column-vid">
-                                            <source src="img/eicw-vid4-light.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-
-                                    </div>
+                                    <video id="eicw-vid4" controls controlsList="nodownload"
+                                        oncontextmenu="return false;" muted loop playsinline width="100%"
+                                        class="column-vid">
+                                        <source src="img/eicw-vid4-light.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
+                        </details>
                     </div>
 
                     <!-- Exit Directory Sign -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Exit Directory Sign</p>
-
-                                        <p>The Exit Directory received a minor change and
-                                            addition. Previously,
-                                            the initial proposal was to arrange it by Exits, but that proved to be
-                                            infeasible because
-                                            constant
-                                            adding or removing of buildings or landmarks will make the process difficult
-                                            and inefficient.
-                                            The
-                                            only enhancement is the inclusion of Bus Stop Name alongside its existing
-                                            Bus Stop Codes..
-                                            <br><br>
-                                            The Exit banner have been enhanced as well. Instead of an empty space, the
-                                            Exit Directories on
-                                            Exits have been re-instated. This was done before, but removed in the
-                                            current system.
-                                        </p>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/ed1-light.png" id="ed1" class="portfolio-img ">
-                                                    <img src="img/ed1-light.png" id="ed1-img" class="img-fluid cp-img"
-                                                        alt="ed1">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="https://ourhound.com/wp-content/uploads/2020/09/ourhound-directions-how-to-go-to-ann-siang-hill-4.jpg"
-                                                    id="exit-dir" class="portfolio-img ">
-                                                    <img src="https://ourhound.com/wp-content/uploads/2020/09/ourhound-directions-how-to-go-to-ann-siang-hill-4.jpg"
-                                                        id="exit-dir-img" class="img-fluid cp-img" alt="exit-dir">
-                                                </a>
-                                                <p style="text-align: center;" class="no-align">"Exit-Specific" Exit
-                                                    Directory <br> 📸:
-                                                    <a
-                                                        href="https://ourhound.com/wp-content/uploads/2020/09/ourhound-directions-how-to-go-to-ann-siang-hill-4.jpg">
-                                                        ourhound.com </a>
-                                                </p>
-                                            </figcaption>
-                                        </div>
-                                    </div>
-
-                                    <video id="eicw-vid5" controls controlsList="nodownload"
-                                        oncontextmenu="return false;" muted loop playsinline width="100%"
-                                        class="column-vid">
-                                        <source src="img/eicw-vid5-light.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-
-                                    <video id="eicw-vid6" controls controlsList="nodownload"
-                                        oncontextmenu="return false;" muted loop playsinline width="100%"
-                                        class="column-vid">
-                                        <source src="img/eicw-vid6-light.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Exit Directory Sign</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>The Exit Directory received a minor change and addition. Previously,
+                                        the initial proposal was to arrange it by Exits, but that proved to be
+                                        infeasible because constant adding or removing of buildings or landmarks will
+                                        make the process difficult and inefficient.
+                                        The only enhancement is the inclusion of Bus Stop Name alongside its existing
+                                        Bus Stop Codes.
+                                        <br><br>
+                                        The Exit banner have been enhanced as well. Instead of an empty space, the
+                                        Exit Directories on Exits have been re-instated. This was done before, but
+                                        removed in the current system.
+                                    </p>
                                 </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ed1-light.png" id="ed1" class="portfolio-img ">
+                                                <img src="img/ed1-light.png" id="ed1-img" class="img-fluid cp-img" alt="ed1">
+                                            </a>
+                                        </figcaption>
+                                    </div>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="https://ourhound.com/wp-content/uploads/2020/09/ourhound-directions-how-to-go-to-ann-siang-hill-4.jpg"
+                                                id="exit-dir" class="portfolio-img ">
+                                                <img src="https://ourhound.com/wp-content/uploads/2020/09/ourhound-directions-how-to-go-to-ann-siang-hill-4.jpg"
+                                                    id="exit-dir-img" class="img-fluid cp-img" alt="exit-dir">
+                                            </a>
+                                            <p style="text-align: center;" class="no-align">"Exit-Specific" Exit
+                                                Directory <br> 📸:
+                                                <a href="https://ourhound.com/wp-content/uploads/2020/09/ourhound-directions-how-to-go-to-ann-siang-hill-4.jpg">ourhound.com</a>
+                                            </p>
+                                        </figcaption>
+                                    </div>
+                                </div>
+                                <video id="eicw-vid5" controls controlsList="nodownload"
+                                    oncontextmenu="return false;" muted loop playsinline width="100%"
+                                    class="column-vid">
+                                    <source src="img/eicw-vid5-light.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <video id="eicw-vid6" controls controlsList="nodownload"
+                                    oncontextmenu="return false;" muted loop playsinline width="100%"
+                                    class="column-vid">
+                                    <source src="img/eicw-vid6-light.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
-                        </div>
-                        <hr>
+                        </details>
                     </div>
-
 
                     <!-- Station Name Sign -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Station Name Sign</p>
-
-                                        <p>Currently, there are two variants to the Station
-                                            Name signs. Those
-                                            earlier versions have a smaller station name, while
-                                            the latest ones are enlarged. The current enlarged texts are found on most
-                                            TEL4 stations and
-                                            stations like Ang Mo Kio,
-                                            signifying that this will be the standard moving forward. However, the
-                                            current enlarged ones
-                                            seemed quite awkward looking,
-                                            and the new design aims to fix these issues, although minor.
-                                        </p>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/sn-light.png" id="sn" class="portfolio-img ">
-                                                    <img src="img/sn-light.png" id="sn-img" class="img-fluid cp-img"
-                                                        alt="sn">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-                                    </div>
-
-                                    <video id="eicw-vid7" controls controlsList="nodownload"
-                                        oncontextmenu="return false;" muted loop playsinline width="100%"
-                                        class="column-vid">
-                                        <source src="img/eicw-vid7-light.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Station Name Sign</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>Currently, there are two variants to the Station Name signs. Those
+                                        earlier versions have a smaller station name, while the latest ones are
+                                        enlarged. The current enlarged texts are found on most TEL4 stations and
+                                        stations like Ang Mo Kio, signifying that this will be the standard moving
+                                        forward. However, the current enlarged ones seemed quite awkward looking,
+                                        and the new design aims to fix these issues, although minor.
+                                    </p>
                                 </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/sn-light.png" id="sn" class="portfolio-img ">
+                                                <img src="img/sn-light.png" id="sn-img" class="img-fluid cp-img" alt="sn">
+                                            </a>
+                                        </figcaption>
+                                    </div>
+                                </div>
+                                <video id="eicw-vid7" controls controlsList="nodownload"
+                                    oncontextmenu="return false;" muted loop playsinline width="100%"
+                                    class="column-vid">
+                                    <source src="img/eicw-vid7-light.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
-                        </div>
-                        <hr>
+                        </details>
                     </div>
-
 
                     <!-- Station Exit Sign -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Station Exit Sign</p>
-
-                                        <p>Currently, there are three variants to the
-                                            Station
-                                            Exit signs. The
-                                            current version has the Exit Number and icons with a
-                                            grey base, another, with the Exit Name and Exit Letter Icon. The latest
-                                            ones, only available at
-                                            Punggol Coast, have a coloured Exit sign with
-                                            only the Exit Number
-                                            present. The new design combines all three elements, alongside the addition
-                                            of street names on the
-                                            Exit
-                                            sign.
-                                        </p>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/se-light.png" id="se" class="portfolio-img ">
-                                                    <img src="img/se-light.png" id="se-img" class="img-fluid cp-img"
-                                                        alt="se">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-                                    </div>
-
-                                    <video id="eicw-vid8" controls controlsList="nodownload"
-                                        oncontextmenu="return false;" muted loop playsinline width="100%"
-                                        class="column-vid">
-                                        <source src="img/eicw-vid8-light.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Station Exit Sign</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>Currently, there are three variants to the Station Exit signs. The
+                                        current version has the Exit Number and icons with a grey base, another,
+                                        with the Exit Name and Exit Letter Icon. The latest ones, only available at
+                                        Punggol Coast, have a coloured Exit sign with only the Exit Number present.
+                                        The new design combines all three elements, alongside the addition of street
+                                        names on the Exit sign.
+                                    </p>
                                 </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/se-light.png" id="se" class="portfolio-img ">
+                                                <img src="img/se-light.png" id="se-img" class="img-fluid cp-img" alt="se">
+                                            </a>
+                                        </figcaption>
+                                    </div>
+                                </div>
+                                <video id="eicw-vid8" controls controlsList="nodownload"
+                                    oncontextmenu="return false;" muted loop playsinline width="100%"
+                                    class="column-vid">
+                                    <source src="img/eicw-vid8-light.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
-                        </div>
-                        <hr>
+                        </details>
                     </div>
 
                 </div>
@@ -699,177 +647,181 @@
 
                             <!-- Train Timings -->
                             <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                                <h2 class="mb-3" style="font-size: 30px; font-weight:bold;">
-                                    Train
-                                    Timings</h2>
-
-                                <div class="row">
-                                    <div class="column column-pic">
-                                        <figcaption>
-                                            <a href="img/tt-light.png" id="tt" class="portfolio-img ">
-                                                <img src="img/tt-light.png" id="tt-img" class="img-fluid cp-img"
-                                                    alt="tt">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Train Timings</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="row">
+                                            <div class="column column-pic">
+                                                <figcaption>
+                                                    <a href="img/tt-light.png" id="tt" class="portfolio-img ">
+                                                        <img src="img/tt-light.png" id="tt-img" class="img-fluid cp-img"
+                                                            alt="tt">
+                                                    </a>
+                                                </figcaption>
+                                            </div>
+                                        </div>
+                                        <div class="banner-eicw">
+                                            <a href="img/ttann-light.png" id="ttann" class="portfolio-img">
+                                                <img src="img/ttann-light.png" id="ttann-img" class="img-fluid" alt="ttann">
                                             </a>
-                                        </figcaption>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="banner-eicw">
-                                    <a href="img/ttann-light.png" id="ttann" class="portfolio-img">
-                                        <img src="img/ttann-light.png" id="ttann-img" class="img-fluid" alt="ttann">
-                                    </a>
-                                </div>
-                                <hr>
+                                </details>
                             </div>
 
                             <!-- Lift Signages -->
                             <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                                <h2 class="mb-3"
-                                    style="font-size: 30px; font-weight:bold; padding-top: 10px;">
-                                    Lift Signages</h2>
-
-                                <div class="row">
-                                    <div class="column column-pic">
-                                        <figcaption>
-                                            <a href="img/lsb-light.png" id="lsb" class="portfolio-img ">
-                                                <img src="img/lsb-light.png" id="lsb-img" class="img-fluid cp-img"
-                                                    alt="lsb">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Lift Signages</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="row">
+                                            <div class="column column-pic">
+                                                <figcaption>
+                                                    <a href="img/lsb-light.png" id="lsb" class="portfolio-img ">
+                                                        <img src="img/lsb-light.png" id="lsb-img" class="img-fluid cp-img"
+                                                            alt="lsb">
+                                                    </a>
+                                                </figcaption>
+                                            </div>
+                                        </div>
+                                        <div class="banner-eicw">
+                                            <a href="img/lsbann1-light.png" id="lsbann1" class="portfolio-img">
+                                                <img src="img/lsbann1-light.png" id="lsbann1-img" class="img-fluid"
+                                                    alt="lsbann1">
                                             </a>
-                                        </figcaption>
+                                        </div>
+                                        <div class="banner-eicw">
+                                            <a href="img/lsbann2-light.png" id="lsbann2" class="portfolio-img">
+                                                <img src="img/lsbann2-light.png" id="lsbann2-img" class="img-fluid"
+                                                    alt="lsbann2">
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="banner-eicw">
-                                    <a href="img/lsbann1-light.png" id="lsbann1" class="portfolio-img">
-                                        <img src="img/lsbann1-light.png" id="lsbann1-img" class="img-fluid"
-                                            alt="lsbann1">
-                                    </a>
-                                    <hr>
-                                </div>
-
-                                <div class="banner-eicw">
-                                    <a href="img/lsbann2-light.png" id="lsbann2" class="portfolio-img">
-                                        <img src="img/lsbann2-light.png" id="lsbann2-img" class="img-fluid"
-                                            alt="lsbann2">
-                                    </a>
-                                </div>
-                                <hr>
+                                </details>
                             </div>
 
                             <!-- Exit Directories -->
                             <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                                <h2 class="mb-3"
-                                    style="font-size: 30px; font-weight:bold; padding-top: 10px;">
-                                    Exit Directories</h2>
-
-                                <div class="row">
-                                    <div class="column column-pic">
-                                        <figcaption>
-                                            <a href="img/ed-light.png" id="ed" class="portfolio-img ">
-                                                <img src="img/ed-light.png" id="ed-img" class="img-fluid cp-img"
-                                                    alt="ed">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Exit Directories</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="row">
+                                            <div class="column column-pic">
+                                                <figcaption>
+                                                    <a href="img/ed-light.png" id="ed" class="portfolio-img ">
+                                                        <img src="img/ed-light.png" id="ed-img" class="img-fluid cp-img"
+                                                            alt="ed">
+                                                    </a>
+                                                </figcaption>
+                                            </div>
+                                        </div>
+                                        <div class="banner-eicw">
+                                            <a href="img/edann1-light.png" id="edann1" class="portfolio-img">
+                                                <img src="img/edann1-light.png" id="edann1-img" class="img-fluid" alt="edann1">
                                             </a>
-                                        </figcaption>
+                                        </div>
+                                        <div class="banner-eicw">
+                                            <a href="img/edann2-light.png" id="edann2" class="portfolio-img">
+                                                <img src="img/edann2-light.png" id="edann2-img" class="img-fluid" alt="edann2">
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="banner-eicw">
-                                    <a href="img/edann1-light.png" id="edann1" class="portfolio-img">
-                                        <img src="img/edann1-light.png" id="edann1-img" class="img-fluid" alt="edann1">
-                                    </a>
-                                </div>
-                                <hr>
-
-                                <div class="banner-eicw">
-                                    <a href="img/edann2-light.png" id="edann2" class="portfolio-img">
-                                        <img src="img/edann2-light.png" id="edann2-img" class="img-fluid" alt="edann2">
-                                    </a>
-                                </div>
-
+                                </details>
                             </div>
-                            <hr>
 
                             <!-- Totem Signs -->
                             <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                                <h2 class="mb-3"
-                                    style="font-size: 30px; font-weight:bold; padding-top: 10px;">
-                                    Totem Signs</h2>
-
-                                <div class="row">
-                                    <div class="column column-pic">
-                                        <figcaption>
-                                            <a href="img/ts-light.png" id="ts" class="portfolio-img ">
-                                                <img src="img/ts-light.png" id="ts-img" class="img-fluid cp-img"
-                                                    alt="ts">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Totem Signs</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="row">
+                                            <div class="column column-pic">
+                                                <figcaption>
+                                                    <a href="img/ts-light.png" id="ts" class="portfolio-img ">
+                                                        <img src="img/ts-light.png" id="ts-img" class="img-fluid cp-img"
+                                                            alt="ts">
+                                                    </a>
+                                                </figcaption>
+                                            </div>
+                                        </div>
+                                        <div class="banner-eicw">
+                                            <a href="img/tsann1-light.png" id="tsann1" class="portfolio-img">
+                                                <img src="img/tsann1-light.png" id="tsann1-img" class="img-fluid" alt="tsann1">
                                             </a>
-                                        </figcaption>
+                                        </div>
+                                        <div class="banner-eicw">
+                                            <a href="img/tsann2-light.png" id="tsann2" class="portfolio-img">
+                                                <img src="img/tsann2-light.png" id="tsann2-img" class="img-fluid" alt="tsann2">
+                                            </a>
+                                        </div>
+                                        <p>📸 (Thumbnail on the right):
+                                            <a
+                                                href="https://www.lta.gov.sg/content/dam/ltagov/news/press/2024/241010_NEL_Punggol_Coast_station_AnnexB.pdf">
+                                                LTA </a>
+                                        </p>
                                     </div>
-                                </div>
-
-                                <div class="banner-eicw">
-                                    <a href="img/tsann1-light.png" id="tsann1" class="portfolio-img">
-                                        <img src="img/tsann1-light.png" id="tsann1-img" class="img-fluid" alt="tsann1">
-                                    </a>
-                                </div>
-
-                                <hr>
-
-                                <div class="banner-eicw">
-                                    <a href="img/tsann2-light.png" id="tsann2" class="portfolio-img">
-                                        <img src="img/tsann2-light.png" id="tsann2-img" class="img-fluid" alt="tsann2">
-                                    </a>
-                                </div>
-                                <p>📸 (Thumbnail on the right):
-                                    <a
-                                        href="https://www.lta.gov.sg/content/dam/ltagov/news/press/2024/241010_NEL_Punggol_Coast_station_AnnexB.pdf">
-                                        LTA </a>
-                                </p>
+                                </details>
                             </div>
-
-                            <hr>
 
                             <!-- Overhead Signs -->
                             <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                                <h2 class="mb-3"
-                                    style="font-size: 30px; font-weight:bold; padding-top: 10px;">
-                                    Overhead Signs</h2>
-
-                                <div class="row">
-                                    <div class="column column-pic">
-                                        <figcaption>
-                                            <a href="img/os-light.png" id="os" class="portfolio-img ">
-                                                <img src="img/os-light.png" id="os-img" class="img-fluid cp-img"
-                                                    alt="os">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Overhead Signs</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="row">
+                                            <div class="column column-pic">
+                                                <figcaption>
+                                                    <a href="img/os-light.png" id="os" class="portfolio-img ">
+                                                        <img src="img/os-light.png" id="os-img" class="img-fluid cp-img"
+                                                            alt="os">
+                                                    </a>
+                                                </figcaption>
+                                            </div>
+                                        </div>
+                                        <div class="banner-eicw">
+                                            <a href="img/osann1-light.png" id="osann1" class="portfolio-img">
+                                                <img src="img/osann1-light.png" id="osann1-img" class="img-fluid" alt="osann1">
                                             </a>
-                                        </figcaption>
+                                            <p>📸 (Thumbnail on the bottom right):
+                                                <a
+                                                    href="https://www.lta.gov.sg/content/dam/ltagov/news/press/2024/241010_NEL_Punggol_Coast_station_AnnexB.pdf">
+                                                    LTA </a>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="banner-eicw">
-                                    <a href="img/osann1-light.png" id="osann1" class="portfolio-img">
-                                        <img src="img/osann1-light.png" id="osann1-img" class="img-fluid" alt="osann1">
-                                    </a>
-                                    <p>📸 (Thumbnail on the bottom right):
-                                        <a
-                                            href="https://www.lta.gov.sg/content/dam/ltagov/news/press/2024/241010_NEL_Punggol_Coast_station_AnnexB.pdf">
-                                            LTA </a>
-                                    </p>
-                                </div>
+                                </details>
                             </div>
-
-                            <hr>
 
                             <!-- Unused Designs -->
                             <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                                <h2 class="mb-3"
-                                    style="font-size: 30px; font-weight:bold; padding-top: 10px;">
-                                    Unused Designs</h2>
-
-                                <div class="banner-eicw">
-                                    <a href="img/ud-light.png" id="ud" class="portfolio-img">
-                                        <img src="img/ud-light.png" id="ud-img" class="img-fluid" alt="ud">
-                                    </a>
-                                </div>
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Unused Designs</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="banner-eicw">
+                                            <a href="img/ud-light.png" id="ud" class="portfolio-img">
+                                                <img src="img/ud-light.png" id="ud-img" class="img-fluid" alt="ud">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </details>
                             </div>
                         </div>
                     </div>
@@ -911,211 +863,160 @@
 
                     <!-- Labels -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center" style="padding-top: 10px;">
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Labels</p>
-
-                                        <p>From feedbacks on the ground, many commuters
-                                            didn't
-                                            understand what
-                                            "A with
-                                            a Dash below" the "Gate"
-                                            meant. Those descriptions actually refers to the Platforms and Exits
-                                            respectively. To make it
-                                            clearer,
-                                            an 'Exit'/'Platform' label has been added, and it is now mandatory to be
-                                            added. Current
-                                            implementations
-                                            saw the labels at the top for Exits as temporary (stickered on at a later
-                                            part, and not
-                                            integrated
-                                            into the
-                                            design.)
-                                        </p>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Labels</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center" style="padding-top: 10px;">
+                                    <p>From feedbacks on the ground, many commuters
+                                        didn't understand what "A with a Dash below" the "Gate" meant. Those
+                                        descriptions actually refers to the Platforms and Exits respectively. To
+                                        make it clearer, an 'Exit'/'Platform' label has been added, and it is now
+                                        mandatory to be added. Current implementations saw the labels at the top
+                                        for Exits as temporary (stickered on at a later part, and not integrated
+                                        into the design.)
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/lb1-light.png" id="lb1" class="portfolio-img ">
+                                                <img src="img/lb1-light.png" id="lb1-img" class="img-fluid cp-img" alt="lb1">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/lb1-light.png" id="lb1" class="portfolio-img ">
-                                                    <img src="img/lb1-light.png" id="lb1-img" class="img-fluid cp-img"
-                                                        alt="lb1">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/lb2-light.png" id="lb2" class="portfolio-img">
-                                                    <img src="img/lb2-light.png" id="lb2-img" class="img-fluid cp-img"
-                                                        alt="lb2">
-                                                </a>
-                                            </figcaption>
-                                        </div>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/lb2-light.png" id="lb2" class="portfolio-img">
+                                                <img src="img/lb2-light.png" id="lb2-img" class="img-fluid cp-img" alt="lb2">
+                                            </a>
+                                        </figcaption>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
-                        </div>
+                        </details>
                     </div>
 
                     <!-- Iconography -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Iconography</p>
-                                        <p>It's time to let the Dark Green Background
-                                            retire.
-                                            Previously used on
-                                            backgrounds of Station Name signages, it progressively got replaced with a
-                                            darker shade of Grey.
-                                            The current implementation uses a combination of both Dark Green and Dark
-                                            Grey, hence I have
-                                            decided to only stick with just the Dark Grey colour across all signages.
-                                        </p>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Iconography</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>It's time to let the Dark Green Background retire. Previously used on
+                                        backgrounds of Station Name signages, it progressively got replaced with a
+                                        darker shade of Grey. The current implementation uses a combination of both
+                                        Dark Green and Dark Grey, hence I have decided to only stick with just the
+                                        Dark Grey colour across all signages.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ic1-light.png" id="ic1" class="portfolio-img ">
+                                                <img src="img/ic1-light.png" id="ic1-img" class="img-fluid cp-img" alt="ic1">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/ic1-light.png" id="ic1" class="portfolio-img ">
-                                                    <img src="img/ic1-light.png" id="ic1-img" class="img-fluid cp-img"
-                                                        alt="ic1">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/ic2-light.png" id="ic2" class="portfolio-img">
-                                                    <img src="img/ic2-light.png" id="ic2-img" class="img-fluid cp-img"
-                                                        alt="ic2">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/ic3-light.png" id="ic3" class="portfolio-img">
-                                                    <img src="img/ic3-light.png" id="ic3-img" class="img-fluid cp-img"
-                                                        alt="ic3">
-                                                </a>
-                                                <p>📸:
-                                                    <a
-                                                        href="https://www.skyscrapercity.com/cdn-cgi/image/format=auto,onerror=redirect,width=1920,height=1920,fit=scale-down/https://www.skyscrapercity.com/attachments/img_2128-jpeg.7437489/">
-                                                        Skyscrapercity </a>
-                                                </p>
-                                            </figcaption>
-                                        </div>
-
-                                        <p>For the MRT/LRT icons, the main MRT/LRT line
-                                            that
-                                            exit
-                                            serves, takes precedence (e.g If Exit 5 serves the Bukit Panjang LRT, the
-                                            caplets will reflect the LRT's colour)
-                                        </p>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/ic4-light.png" id="ic4" class="portfolio-img">
-                                                    <img src="img/ic4-light.png" id="ic4-img" class="img-fluid cp-img"
-                                                        alt="ic4">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <video id="eicw2-vid1" controls controlsList="nodownload"
-                                            oncontextmenu="return false;" muted loop playsinline width="100%"
-                                            class="column-vid">
-                                            <source src="img/eicw2-vid1-light.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ic2-light.png" id="ic2" class="portfolio-img">
+                                                <img src="img/ic2-light.png" id="ic2-img" class="img-fluid cp-img" alt="ic2">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ic3-light.png" id="ic3" class="portfolio-img">
+                                                <img src="img/ic3-light.png" id="ic3-img" class="img-fluid cp-img" alt="ic3">
+                                            </a>
+                                            <p>📸:
+                                                <a href="https://www.skyscrapercity.com/cdn-cgi/image/format=auto,onerror=redirect,width=1920,height=1920,fit=scale-down/https://www.skyscrapercity.com/attachments/img_2128-jpeg.7437489/">Skyscrapercity</a>
+                                            </p>
+                                        </figcaption>
+                                    </div>
+                                    <p>For the MRT/LRT icons, the main MRT/LRT line that exit
+                                        serves, takes precedence (e.g If Exit 5 serves the Bukit Panjang LRT, the
+                                        caplets will reflect the LRT's colour)
+                                    </p>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ic4-light.png" id="ic4" class="portfolio-img">
+                                                <img src="img/ic4-light.png" id="ic4-img" class="img-fluid cp-img" alt="ic4">
+                                            </a>
+                                        </figcaption>
+                                    </div>
+                                    <video id="eicw2-vid1" controls controlsList="nodownload"
+                                        oncontextmenu="return false;" muted loop playsinline width="100%"
+                                        class="column-vid">
+                                        <source src="img/eicw2-vid1-light.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
+                        </details>
                     </div>
 
                     <!-- Station Names on Exit -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Station Names on Exit</p>
-                                        <p>The Street Names on the Overhead signages were
-                                            removed in
-                                            the New Wayfinding System. While it is understood that the
-                                            removal of the Street Names was to make the signages more
-                                            simplified, I believe there is a better way to still fit them in the
-                                            new system.
-                                            <br><br>
-                                            The Street Names will appear when there are only 1 or 2 exits
-                                            ahead. For multiple exits, the same principle currently being
-                                            implemented will apply here. To make up for the loss of
-                                            information, a separate wall Vertical Wall Signage will be
-                                            pasted instead.
-                                        </p>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Station Names on Exit</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>The Street Names on the Overhead signages were removed in
+                                        the New Wayfinding System. While it is understood that the
+                                        removal of the Street Names was to make the signages more simplified, I
+                                        believe there is a better way to still fit them in the new system.
+                                        <br><br>
+                                        The Street Names will appear when there are only 1 or 2 exits ahead. For
+                                        multiple exits, the same principle currently being implemented will apply
+                                        here. To make up for the loss of information, a separate wall Vertical Wall
+                                        Signage will be pasted instead.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/sne1-light.png" id="sne1" class="portfolio-img">
+                                                <img src="img/sne1-light.png" id="sne1-img" class="img-fluid cp-img" alt="sne1">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/sne1-light.png" id="sne1" class="portfolio-img">
-                                                    <img src="img/sne1-light.png" id="sne1-img" class="img-fluid cp-img"
-                                                        alt="sne1">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/sne2-light.png" id="sne2" class="portfolio-img">
-                                                    <img src="img/sne2-light.png" id="sne2-img" class="img-fluid cp-img"
-                                                        alt="sne2">
-                                                </a>
-                                                <p>📸:
-                                                    <a
-                                                        href="https://landtransportguru.net/web/wp-content/uploads/2022/12/Orchard-MRT-Station-Nov22-23.jpg">
-                                                        Land Transport Guru </a>
-                                                </p>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/sne3-light.png" id="sne3" class="portfolio-img">
-                                                    <img src="img/sne3-light.png" id="sne3-img" class="img-fluid cp-img"
-                                                        alt="sne3">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <video id="eicw2-vid2" controls controlsList="nodownload"
-                                            oncontextmenu="return false;" muted loop playsinline width="100%"
-                                            class="column-vid">
-                                            <source src="img/eicw2-vid2-light.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/sne2-light.png" id="sne2" class="portfolio-img">
+                                                <img src="img/sne2-light.png" id="sne2-img" class="img-fluid cp-img" alt="sne2">
+                                            </a>
+                                            <p>📸:
+                                                <a href="https://landtransportguru.net/web/wp-content/uploads/2022/12/Orchard-MRT-Station-Nov22-23.jpg">Land Transport Guru</a>
+                                            </p>
+                                        </figcaption>
                                     </div>
-
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/sne3-light.png" id="sne3" class="portfolio-img">
+                                                <img src="img/sne3-light.png" id="sne3-img" class="img-fluid cp-img" alt="sne3">
+                                            </a>
+                                        </figcaption>
+                                    </div>
+                                    <video id="eicw2-vid2" controls controlsList="nodownload"
+                                        oncontextmenu="return false;" muted loop playsinline width="100%"
+                                        class="column-vid">
+                                        <source src="img/eicw2-vid2-light.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                             </div>
-                        </div>
+                        </details>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -1155,171 +1056,133 @@
 
                     <!-- Exit Prominence -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Exit Prominence</p>
-                                        <p>The implementation of the Main Exit Sign in
-                                            Punggol
-                                            Coast gives us a
-                                            glimpse of how they would label exits. Yes, it's just putting the Exit
-                                            Numbers there and calling it a day. The rest are all empty spaces.
-                                            Hence I proposed adding on more icons on the signage - just the icons.
-                                            If Commuters need more details, they can refer to the Signage on the
-                                            Wall.
-                                        </p>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Exit Prominence</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>The implementation of the Main Exit Sign in Punggol Coast gives us a
+                                        glimpse of how they would label exits. Yes, it's just putting the Exit
+                                        Numbers there and calling it a day. The rest are all empty spaces.
+                                        Hence I proposed adding on more icons on the signage - just the icons.
+                                        If Commuters need more details, they can refer to the Signage on the Wall.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ep1-light.png" id="ep1" class="portfolio-img ">
+                                                <img src="img/ep1-light.png" id="ep1-img" class="img-fluid cp-img" alt="ep1">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/ep1-light.png" id="ep1" class="portfolio-img ">
-                                                    <img src="img/ep1-light.png" id="ep1-img" class="img-fluid cp-img"
-                                                        alt="ep1">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/ep2-light.png" id="ep2" class="portfolio-img">
-                                                    <img src="img/ep2-light.png" id="ep2-img" class="img-fluid cp-img"
-                                                        alt="ep2">
-                                                </a>
-                                                <p>📸:
-                                                    <a href="https://x.com/yuiurbanfantasy/status/1866871282765279531">
-                                                        yuirbanfantasy (via X) </a>
-                                                </p>
-                                            </figcaption>
-                                        </div>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ep2-light.png" id="ep2" class="portfolio-img">
+                                                <img src="img/ep2-light.png" id="ep2-img" class="img-fluid cp-img" alt="ep2">
+                                            </a>
+                                            <p>📸:
+                                                <a href="https://x.com/yuiurbanfantasy/status/1866871282765279531">yuirbanfantasy (via X)</a>
+                                            </p>
+                                        </figcaption>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
-                        </div>
+                        </details>
                     </div>
 
                     <!-- Modernizing Old Signages (1) -->
                     <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                        <div class="details_info">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12">
-                                    <div class="info justify-content-center">
-                                        <p
-                                            style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                            Modernizing Old Signages (1)</p>
-                                        <p>With LTA's vision of simplifying overhead
-                                            signs they removed useful information like
-                                            Street Names. Same concept as previously
-                                            mentioned, to compensate for the loss of
-                                            major information, on the overhead signage,
-                                            a separate wall Vertical Wall Signage will be
-                                            pasted instead.
-                                            <br><br>
-                                            For Platform Directions, I utilized the Floor
-                                            Indicator Signage, while the Street Name
-                                            information has been integrated in the
-                                            summarized Exit Directory as shown earlier,
-                                            into the lift signage.
-                                            <br><br>
-                                            My end goal for doing so is to offload the
-                                            information from the Overhead Signage to ta
-                                            more strategic place, such as the empty wall
-                                            spaces.
-                                        </p>
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Modernizing Old Signages (1)</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>With LTA's vision of simplifying overhead signs they removed useful
+                                        information like Street Names. Same concept as previously mentioned, to
+                                        compensate for the loss of major information, on the overhead signage,
+                                        a separate wall Vertical Wall Signage will be pasted instead.
+                                        <br><br>
+                                        For Platform Directions, I utilized the Floor Indicator Signage, while
+                                        the Street Name information has been integrated in the summarized Exit
+                                        Directory as shown earlier, into the lift signage.
+                                        <br><br>
+                                        My end goal for doing so is to offload the information from the Overhead
+                                        Signage to a more strategic place, such as the empty wall spaces.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ms1-light.png" id="ms1" class="portfolio-img ">
+                                                <img src="img/ms1-light.png" id="ms1-img" class="img-fluid cp-img" alt="ms1">
+                                            </a>
+                                        </figcaption>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/ms1-light.png" id="ms1" class="portfolio-img ">
-                                                    <img src="img/ms1-light.png" id="ms1-img" class="img-fluid cp-img"
-                                                        alt="ms1">
-                                                </a>
-                                            </figcaption>
-                                        </div>
-
-                                        <div class="column column-pic">
-                                            <figcaption>
-                                                <a href="img/ms2-light.png" id="ms2" class="portfolio-img">
-                                                    <img src="img/ms2-light.png" id="ms2-img" class="img-fluid cp-img"
-                                                        alt="ms2">
-                                                </a>
-                                            </figcaption>
-                                        </div>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ms2-light.png" id="ms2" class="portfolio-img">
+                                                <img src="img/ms2-light.png" id="ms2-img" class="img-fluid cp-img" alt="ms2">
+                                            </a>
+                                        </figcaption>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
-                        </div>
+                        </details>
+                    </div>
 
-                        <!-- Modernizing Old Signages (2) -->
-                        <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
-                            <div class="details_info">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-12">
-                                        <div class="info justify-content-center">
-                                            <p
-                                                style="margin-bottom: 0px; font-weight: bolder; font-size: 25px;">
-                                                Modernizing Old Signages (2)</p>
-                                            <p>Some signages got stuck in time. It is
-                                                either
-                                                those signages have been forgotten, or it is
-                                                simply not feasible to constantly update,
-                                                hence it was lat updated when Circle Line
-                                                Stage 2 commenced service. It has not
-                                                gotten an update ever since.
-                                                <br><br>
-                                                I considered giving the signages a fresh
-                                                redesign, while adding on the newer lines
-                                                but I felt that it could get too cluttered.
-                                                Hence, I've decided to list down the North
-                                                East Line's Key Interchanges instead. It will
-                                                be easier to update in the long run.
+                    <!-- Modernizing Old Signages (2) -->
+                    <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                        <details class="eicw-collapsible">
+                            <summary>
+                                <span class="eicw-collapsible-title">Modernizing Old Signages (2)</span>
+                                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                            </summary>
+                            <div class="eicw-collapsible-body">
+                                <div class="info justify-content-center">
+                                    <p>Some signages got stuck in time. It is either those signages have been
+                                        forgotten, or it is simply not feasible to constantly update, hence it
+                                        was last updated when Circle Line Stage 2 commenced service. It has not
+                                        gotten an update ever since.
+                                        <br><br>
+                                        I considered giving the signages a fresh redesign, while adding on the
+                                        newer lines but I felt that it could get too cluttered. Hence, I've
+                                        decided to list down the North East Line's Key Interchanges instead.
+                                        It will be easier to update in the long run.
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ms3-light.png" id="ms3" class="portfolio-img">
+                                                <img src="img/ms3-light.png" id="ms3-img" class="img-fluid cp-img" alt="ms3">
+                                            </a>
+                                        </figcaption>
+                                    </div>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ms4-light.png" id="ms4" class="portfolio-img">
+                                                <img src="img/ms4-light.png" id="ms4-img" class="img-fluid cp-img" alt="ms4">
+                                            </a>
+                                            <p>📸:
+                                                <a href="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Ff8ugj70nbbce1.jpeg">Reddit (u/homerulez7)</a>
                                             </p>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="column column-pic">
-                                                <figcaption>
-                                                    <a href="img/ms3-light.png" id="ms3" class="portfolio-img">
-                                                        <img src="img/ms3-light.png" id="ms3-img"
-                                                            class="img-fluid cp-img" alt="ms3">
-                                                    </a>
-                                                </figcaption>
-                                            </div>
-
-                                            <div class="column column-pic">
-                                                <figcaption>
-                                                    <a href="img/ms4-light.png" id="ms4" class="portfolio-img">
-                                                        <img src="img/ms4-light.png" id="ms4-img"
-                                                            class="img-fluid cp-img" alt="ms4">
-                                                    </a>
-                                                    <p>📸:
-                                                        <a
-                                                            href="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Ff8ugj70nbbce1.jpeg">
-                                                            Reddit (u/homerulez7) </a>
-                                                    </p>
-                                                </figcaption>
-                                            </div>
-
-                                            <div class="column column-pic">
-                                                <figcaption>
-                                                    <a href="img/ms5-light.png" id="ms5" class="portfolio-img">
-                                                        <img src="img/ms5-light.png" id="ms5-img"
-                                                            class="img-fluid cp-img" alt="ms5">
-                                                    </a>
-                                                </figcaption>
-                                            </div>
-                                        </div>
+                                        </figcaption>
+                                    </div>
+                                    <div class="column column-pic">
+                                        <figcaption>
+                                            <a href="img/ms5-light.png" id="ms5" class="portfolio-img">
+                                                <img src="img/ms5-light.png" id="ms5-img" class="img-fluid cp-img" alt="ms5">
+                                            </a>
+                                        </figcaption>
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
+                        </details>
                     </div>
                 </div>
             </div>

@@ -148,7 +148,7 @@
       '          <div class="row justify-content-center">\n' +
       '            <div class="col-lg-12">\n' +
       '              <div class="info justify-content-center">\n' +
-      '                <p style="text-align: justify;">' + d.description + '</p>\n' +
+      '                <p id="wbn-desc-p">' + d.description + '</p>\n' +
       '              </div>\n' +
       '            </div>\n' +
       '          </div>\n' +
@@ -163,6 +163,14 @@
     var root = document.getElementById('wbn-content');
     if (!root) return;
     root.innerHTML = html;
+
+    // Align description: center for single-line, left for multi-line
+    document.fonts.ready.then(function () {
+      var p = document.getElementById('wbn-desc-p');
+      if (!p) return;
+      var lineHeight = parseFloat(window.getComputedStyle(p).lineHeight);
+      p.style.textAlign = p.scrollHeight <= Math.ceil(lineHeight * 1.1) ? 'center' : 'left';
+    });
 
     // Update cover function so theme toggle works after render
     window._wbnUpdateCover = function () {

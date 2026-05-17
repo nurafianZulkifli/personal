@@ -3060,9 +3060,16 @@ li.breadcrumb-item a:hover {
 }
 
 .eicw-nav-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.eicw-nav-label i {
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
 .eicw-nav-chevron {

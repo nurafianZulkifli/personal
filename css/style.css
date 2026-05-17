@@ -531,6 +531,7 @@ input:required {
     height: 100%;
     width: 0;
     background: linear-gradient(58deg, #97a19f 0%, #606b94 100%);
+    ;
     transition: width 0.1s ease;
 }
 
@@ -938,7 +939,7 @@ header {
     transition-duration: 800ms;
     height: 76px;
     width: 76px;
-    background: linear-gradient(58deg, rgba(197, 198, 190, 1) 0%, rgba(94, 94, 90, 1) 100%);
+    background: linear-gradient(58deg, #97a19f 0%, #606b94 100%);
     display: inline-block;
     text-align: center;
     line-height: 76px;
@@ -1094,7 +1095,7 @@ h4.timeline-date-edu {
 
 h4.timeline-date-exp {
     font-size: 18px;
-    background: linear-gradient(58deg, rgba(197, 198, 190, 1) 0%, rgba(94, 94, 90, 1) 100%);
+    background: linear-gradient(58deg, #97a19f 0%, #606b94 100%);
     color: #fff;
     border-radius: 20px;
     padding: 5px 15px;
@@ -1135,7 +1136,7 @@ h4.timeline-date-aa {
     transition-duration: 800ms;
     height: 76px;
     width: 76px;
-    background: linear-gradient(58deg, rgba(197, 198, 190, 1) 0%, rgba(94, 94, 90, 1) 100%);
+    background: linear-gradient(58deg, #97a19f 0%, #606b94 100%);
     display: inline-block;
     text-align: center;
     line-height: 76px;
@@ -1209,7 +1210,7 @@ h4.timeline-date-aa {
     transition-duration: 800ms;
     height: 76px;
     width: 76px;
-    background: linear-gradient(58deg, rgba(197, 198, 190, 1) 0%, rgba(94, 94, 90, 1) 100%);
+    background: linear-gradient(58deg, #97a19f 0%, #606b94 100%);
     display: inline-block;
     text-align: center;
     line-height: 76px;
@@ -1540,6 +1541,7 @@ img.profile-pic {
 .skill-ara .single-skill .progress-bar {
     background: #87bee8;
     background: linear-gradient(58deg, #97a19f 0%, #606b94 100%);
+    ;
     width: 0%;
     border-radius: 15px;
 }
@@ -2936,6 +2938,7 @@ li.breadcrumb-item a:hover {
 
 .scrollable-tabs-container a.active {
     background: linear-gradient(58deg, #97a19f 0%, #606b94 100%);
+    ;
     color: #fff;
 }
 
@@ -3119,6 +3122,7 @@ li.breadcrumb-item a:hover {
 
 .eicw-nav-menu a.active {
     background: linear-gradient(58deg, #97a19f 0%, #606b94 100%);
+    ;
     color: #fff;
 }
 

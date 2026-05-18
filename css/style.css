@@ -3121,6 +3121,7 @@ li.breadcrumb-item a:hover {
     color: #000;
     text-decoration: none;
     transition: background 0.2s ease, color 0.2s ease;
+    margin-top: 0.3em;
 }
 
 .eicw-nav-menu a:hover {

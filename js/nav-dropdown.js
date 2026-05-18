@@ -201,7 +201,11 @@
     // Sync escaped menu visibility whenever dropdown open/close state changes
     const observer = new MutationObserver(() => {
         if (!escapedMenu) return;
-        escapedMenu.style.display = dropdown.classList.contains('open') ? 'block' : 'none';
+        const isOpen = dropdown.classList.contains('open');
+        escapedMenu.style.opacity = isOpen ? '1' : '';
+        escapedMenu.style.visibility = isOpen ? 'visible' : '';
+        escapedMenu.style.pointerEvents = isOpen ? 'auto' : '';
+        escapedMenu.style.transform = isOpen ? 'translateY(0)' : '';
     });
     observer.observe(dropdown, { attributes: true, attributeFilter: ['class'] });
 
@@ -213,7 +217,6 @@
         if (escapedMenu) {
             navbarContainer.appendChild(escapedMenu);
             escapedMenu.classList.add('navbar-escaped-menu');
-            escapedMenu.style.display = 'none';
         }
         navbar.classList.add('has-section-nav');
         dropdown.classList.add('navbar-merged');
@@ -226,7 +229,10 @@
         if (escapedMenu) {
             dropdown.appendChild(escapedMenu);
             escapedMenu.classList.remove('navbar-escaped-menu');
-            escapedMenu.style.display = '';
+            escapedMenu.style.opacity = '';
+            escapedMenu.style.visibility = '';
+            escapedMenu.style.pointerEvents = '';
+            escapedMenu.style.transform = '';
             escapedMenu = null;
         }
         const hr = navWrap.querySelector('hr');

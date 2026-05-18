@@ -11,7 +11,7 @@ body.dark-mode .page-header-section {
 }
 
 .nav-link.active {
-    background: linear-gradient(58deg, #97a19f 0%, #606b94 100%) !important;
+    background: linear-gradient(47deg, rgba(105, 132, 166, 1) 0%, rgba(51, 151, 161, 1) 100%) !important;
 }
 
 .mobile-bottom-nav,
@@ -317,7 +317,7 @@ body.dark-mode .list-group-item:hover {
     }
 
     .mobile-bottom-nav li.active {
-        background: linear-gradient(58deg, #97a19f 0%, #505a7d 100%);
+        background: linear-gradient(47deg, rgba(105, 132, 166, 1) 0%, rgba(51, 151, 161, 1) 100%);
     }
 
     .mobile-bottom-nav li a {

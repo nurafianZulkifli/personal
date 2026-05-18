@@ -57,3 +57,37 @@
         }
         window.addEventListener('scroll', updateBreadcrumbAtTop);
         window.addEventListener('DOMContentLoaded', updateBreadcrumbAtTop);
+
+// Haptic feedback on tap for interactive elements (mobile only)
+(function () {
+    if (!navigator.vibrate) return;
+
+    const HAPTIC_SHORT = 8;   // buttons, links
+    const HAPTIC_MEDIUM = 18; // nav items, dropdowns
+
+    const selector = [
+        'a',
+        'button',
+        '[role="button"]',
+        '.nav-link',
+        '.mobile-bottom-nav a',
+        '.eicw-nav-btn',
+        '.eicw-nav-menu a',
+        'summary',
+        '.list-group-item',
+        '.eicw-collapsible summary',
+    ].join(',');
+
+    document.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'touch') return;
+        const target = e.target.closest(selector);
+        if (!target) return;
+
+        const isMedium =
+            target.closest('.mobile-bottom-nav') ||
+            target.classList.contains('eicw-nav-btn') ||
+            target.tagName === 'SUMMARY';
+
+        navigator.vibrate(isMedium ? HAPTIC_MEDIUM : HAPTIC_SHORT);
+    }, { passive: true });
+})();

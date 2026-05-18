@@ -564,10 +564,9 @@
         text-align: center;
     }
 
-    /* .wbnrfz-works {
-        padding-left: 30px;
-        padding-right: 30px;
-    } */
+    .section-heading h2 {
+        font-size: 30px !important;
+    }
 
 }
 

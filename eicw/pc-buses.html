@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Proposed Wayfinding Changes - Buses | EICW</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
+
+  <link rel="icon" href="../img/core-img/favicon.png">
+
+  <script src="https://kit.fontawesome.com/965e82ac01.js" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css'>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style-mobNav.css">
+  <link rel="stylesheet" href="../css/style-breakpoints.css">
+  <link rel="stylesheet" href="../css/dark-mode.css">
+
+  <style>
+    .eicw-collapsible {
+      border: none;
+      outline: none;
+      margin-bottom: 8px;
+    }
+
+    .eicw-collapsible summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(214, 214, 214, 0.651);
+      background: #fefffc;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      user-select: none;
+      margin-bottom: 0;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .eicw-collapsible summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .eicw-collapsible summary:hover {
+      background: #c7e3fb;
+      border-color: #809fb9;
+    }
+
+    .eicw-collapsible[open] summary {
+      border-radius: 20px 20px 0 0;
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .eicw-collapsible-title {
+      font-size: 17px;
+      font-weight: bold;
+      flex: 1;
+    }
+
+    .eicw-collapsible-chevron {
+      font-size: 14px;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .eicw-collapsible[open] .eicw-collapsible-chevron {
+      transform: rotate(180deg);
+    }
+
+    body.dark-mode .eicw-collapsible-chevron {
+      color: #fff;
+      opacity: 1;
+    }
+
+    .eicw-collapsible-body {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 16px 20px;
+      animation: collapsibleFadeIn 0.2s ease;
+    }
+
+    @keyframes collapsibleFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN76281P3Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-WN76281P3Q');
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+  <div class="breadcrumb-fixed-placeholder">
+    <nav aria-label="breadcrumb" style="margin-bottom:0;">
+      <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="../index.html">
+            <i class="fa-regular fa-house"></i>
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="pc-trains.html"><i class="fa-regular fa-train"></i>
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar-container">
+    <div class="navbar">
+      <!-- Logo -->
+      <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo"></a>
+
+      <!-- Navigation Links -->
+      <ul class="navbar-nav" id="navbarNav">
+        <li class="nav-item">
+          <a href="../index.html" class="nav-link">
+            <i class="fa-sharp fa-regular fa-house"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../about.html" class="nav-link">
+            <i class="fa-regular fa-circle-user"></i>
+            <span>About</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../eicw/intro.html" class="nav-link active">
+            <i class="fa-regular fa-map-location"></i>
+            <span>EICW</span>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a href="../menu.html" class="nav-link">
+            <i class="fa-regular fa-bars"></i>
+            <span>Menu</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <ul>
+      <li>
+        <a href="../index.html">
+          <span class="icon">
+            <i class="fa-sharp fa-regular fa-house"></i>
+          </span>
+          <span class="label">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="../about.html">
+          <span class="icon">
+            <i class="fa-regular fa-circle-user"></i>
+          </span>
+          <span class="label">About</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="../eicw/intro.html">
+          <span class="icon">
+            <i class="fa-regular fa-map-location"></i>
+          </span>
+          <span class="label">EICW</span>
+        </a>
+      </li>
+      <li>
+        <a href="../menu.html">
+          <span class="icon">
+            <i class="fa-regular fa-bars"></i>
+          </span>
+          <span class="label">Menu</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <!-- Scroll Indicator -->
+  <div id="scroll-indicator-container">
+    <div id="scroll-indicator"></div>
+  </div>
+
+
+  <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
+  <!-- Title/Breadcrumbs -->
+  <section class="about-me-summ clearfix">
+    <div class="wbnrfz_eicw">
+      <div class="page-header-section">
+        <div class="container-xxl container-mobile container-mobile-header">
+          <div class="breadcrumb-wrapper">
+            <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="../index.html">
+                    <i class="fa-regular fa-house"></i>
+                  </a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="pc-buses.html"><i class="fa-regular fa-bus"></i>
+                  </a>
+                </li>
+              </ol>
+            </nav>
+            <div class="page-title-wrapper">
+              <h1 class="page-title-single">Proposed Wayfinding Changes - Buses</h1>
+              <p class="page-subtitle">5 mins read</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sticky Section Nav -->
+  <div class="sticky-nav-wrap">
+    <div class="eicw-nav-dropdown" id="eicwNavDropdown">
+      <button class="eicw-nav-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span class="eicw-nav-label"><i class="fa-regular fa-bus"></i> Buses</span>
+        <i class="fa-regular fa-chevron-down eicw-nav-chevron"></i>
+      </button>
+      <ul class="eicw-nav-menu" role="menu">
+        <li><a href="intro.html"><i class="fa-regular fa-circle-info"></i> Introduction</a></li>
+        <li><a href="pc-trains.html"><i class="fa-regular fa-train"></i> Trains</a></li>
+        <li><a href="pc-buses.html" class="active"><i class="fa-regular fa-bus"></i> Buses</a></li>
+        <li><a href="ui-ux.html"><i class="fa-regular fa-pencil"></i> UI/UX</a></li>
+        <li><a href="ccl6.html"><i class="fa-regular fa-signs-post"></i> Rethinking CCL6 Signages</a></li>
+        <li><a href="btr-1.html"><i class="fa-regular fa-eye"></i> Behind The Redesign</a></li>
+      </ul>
+    </div>
+    <hr style="margin: 0;">
+  </div>
+
+  <!-- Cover Header -->
+  <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cbus-img">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Content -->
+  <section class="about-me-summ clearfix">
+    <div class="wbnrfz_details_body">
+      <div class="container container-mobile">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="row justify-content-center">
+
+              <!-- Preface -->
+              <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                <div class="info justify-content-center">
+                  <p style="padding-top: 2em;">This section is catered for the Buses side of things
+                    - signages and what
+                    not. A lot of focus has been given to the Train's side of things, so why not show the same love for
+                    the Buses' side of things too?</i></p>
+
+                  <p class="no-align"> For the redesigns in this section, I'll be adopting my own design language and
+                    principles, based
+                    on the changes I proposed on <a href="pc-trains.html" class="hyperlink">the second page</a>.</p>
+                </div>
+
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Content 1 -->
+  <section class="about-me-summ clearfix" style="padding-bottom: 10px; padding-top: 3em;" id="psrith">
+    <div class="wbnrfz_details_body_tchp">
+      <div class="container container-mobile">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+            <details class="eicw-collapsible">
+              <summary>
+                <span class="eicw-collapsible-title">Pasir Ris ITH</span>
+                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+              </summary>
+              <div class="eicw-collapsible-body">
+                <div class="info justify-content-center">
+
+                  <h2 class="text-center" style="font-size: 30px; font-weight: bold; padding-top: 1em;">Wayfinding
+                    Signages
+                    for Bus Interchanges/Terminals</h2>
+
+                  <h3 style="font-size: 30px; font-weight: bold; margin-top: 2em;"><i
+                      class="fa-solid fa-location-dot"></i>&nbsp; Pasir Ris ITH</h3>
+
+                  <h3 style="font-size: 25px; font-weight: bold; margin-top: 2em;"><u>Overhead/Wall Signages</u></h3>
+
+                  <p style="text-align: left;"> Let's take the newly opened Integrated Transport Hub (ITH) at Pasir Ris
+                    as
+                    an example. While it has already adopted the current wayfnding systems, the implementation, in my
+                    opinion, leaves much to be desired.
+                  </p>
+
+                  <p class="no-align"> Firstly, for the Wayfinding Icons, I find them too cluttered as everything
+                    has been lumped together.
+                  </p>
+                </div>
+
+                <div class="row wow fadeIn" data-wow-delay="100ms">
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="img/psr-1.jpg" id="psr1" class="portfolio-img ">
+                        <img src="img/psr-1.jpg" id="psr1-img" class="img-fluid cp-img" alt="psr1">
+                      </a>
+                      <p>Current Implementation</p>
+                    </figcaption>
+                  </div>
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="img/psr-1a-light.png" id="psr1a" class="portfolio-img ">
+                        <img src="img/psr-1a-light.png" id="psr1a-img" class="img-fluid cp-img" alt="psr1a">
+                      </a>
+                      <p>Current Implementation - Recreated</p>
+                    </figcaption>
+                  </div>
+                </div>
+
+                <div class="banner-eicw">
+                  <figcaption>
+                    <a href="https://landtransportguru.net/web/wp-content/uploads/2025/05/Pasir-Ris-ITH-May25-5.jpg"
+                      id="ltg1" class="portfolio-img ">
+                      <img src="https://landtransportguru.net/web/wp-content/uploads/2025/05/Pasir-Ris-ITH-May25-5.jpg"
+                        id="dpm-img" class="img-fluid cp-img" alt="ltg1" style="margin-bottom: 0em;">
+                    </a>
+                    <p>📸: Land Transport Guru</p>
+                  </figcaption>
+                </div>
+
+                <p style="text-align: left;">So I've decided, why not decouple the Exit signage from the other signages?
+                  Labels are also added for enhanced clarity.</p>
+
+                <div class="banner-eicw">
+                  <figcaption>
+                    <a href="img/psr-2-light.png" id="psr2" class="portfolio-img ">
+                      <img src="img/psr-2-light.png" id="psr2-img" class="img-fluid cp-img" alt="psr2"
+                        style="margin-bottom: 0em;">
+                    </a>
+                  </figcaption>
+                </div>
+
+                <video id="eicw-vid9" controls controlsList="nodownload" oncontextmenu="return false;" muted loop
+                  playsinline width="100%" class="column-vid" style="margin-top: 2em;">
+                  <source src="img/eicw-vid9-light.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+
+                <hr>
+                <h3 style="font-size: 25px; font-weight: bold; margin-top: 2em;"><u>Interchange Name Signages</u></h3>
+
+                <p class="no-align">Let's take a look at the Interchange Name signages implemented at the Pasir Ris ITH.
+                </p>
+
+                <div class="row wow fadeIn" data-wow-delay="100ms">
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="img/psr3.jpg" id="psr3" class="portfolio-img ">
+                        <img src="img/psr3.jpg" id="psr3-img" class="img-fluid cp-img" alt="psr3">
+                      </a>
+                      <p>Current Implementation <br> 📸: Land Transport Guru</p>
+                    </figcaption>
+                  </div>
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="img/psr-3a-light.png" id="psr3a" class="portfolio-img ">
+                        <img src="img/psr-3a-light.png" id="psr3a-img" class="img-fluid cp-img" alt="psr3a">
+                      </a>
+                      <p>Current Implementation - Recreated</p>
+                    </figcaption>
+                  </div>
+                </div>
+
+                <p>The design implemented here is very inconsistent and weird. The caplets were weirdly scaled, and the
+                  weird
+                  duplication of caplets (the yellow SG icon itself were used on the previous Design
+                  System, and the new Bus Icon were used on the new Design System) makes it look awkward.</p>
+
+                <div class="row wow fadeIn" data-wow-delay="100ms">
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="img/psr-3b-light.png" id="psr3b" class="portfolio-img ">
+                        <img src="img/psr-3b-light.png" id="psr3b-img" class="img-fluid cp-img" alt="psr3b">
+                      </a>
+                      <p>Interchange Name signage with the old design system</p>
+                    </figcaption>
+                  </div>
+                </div>
+
+                <p>Hence I've decided to redesign and make the design more consistent. As mentioned in the <a
+                    href="pc-trains.html" class="hyperlink">second page</a>, I have decided to only stick with just the
+                  Dark Grey colour across all
+                  signages.</p>
+
+                <div class="banner-eicw">
+                  <figcaption>
+                    <a href="img/psr5a-light.png" id="psr5a" class="portfolio-img ">
+                      <img src="img/psr5a-light.png" id="psr5a-img" class="img-fluid cp-img" alt="psr5a"
+                        style="margin-bottom: 0em;">
+                    </a>
+                  </figcaption>
+                </div>
+
+                <br>
+
+                <p>The MRT caplet on the current signage, (the one in blue) might confuse commuters. Usually, a blue
+                  coloured
+                  caplets
+                  meant that the MRT line it is bringing the commuters to, is the Downtown Line. To reduce confusion, I
+                  have
+                  decided to replace it with the MRT caplets (my redesigned version) shown on Station Entrances.</p>
+
+                <hr>
+              </div><!-- end eicw-collapsible-body -->
+            </details>
+          </div>
+          <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+            <details class="eicw-collapsible">
+              <summary>
+                <span class="eicw-collapsible-title">Choa Chu Kang Bus Int</span>
+                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+              </summary>
+              <div class="eicw-collapsible-body">
+                <div class="info justify-content-center">
+
+                  <h3 style="font-size: 30px; font-weight: bold; margin-top: 0em;"><i
+                      class="fa-solid fa-location-dot"></i>&nbsp; Choa Chu Kang Bus Int</h3>
+
+                  <h3 style="font-size: 25px; font-weight: bold; margin-top: 2em;"><u>Overhead/Wall Signages</u></h3>
+
+                  <p class="no-align"> What about the older design language? Can I adopt the new designs too? Of
+                    course!
+                  </p>
+
+                  <p class="no-align"> Same goal as before, I want to minimal texts but at the same time, the
+                    removed information must be compensated somewhere.
+                  </p>
+                </div>
+
+                <div class="row wow fadeIn" data-wow-delay="100ms">
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="img/cck-1.png" id="psr1" class="portfolio-img ">
+                        <img src="img/cck-1.png" id="psr1-img" class="img-fluid cp-img" alt="psr1">
+                      </a>
+                      <p>Current Implementation <br> 📸: Land Transport Guru</p>
+                    </figcaption>
+                  </div>
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="img/cck-1a-light.png" id="cck1a" class="portfolio-img ">
+                        <img src="img/cck-1a-light.png" id="cck1a-img" class="img-fluid cp-img" alt="cck1a">
+                      </a>
+                      <p>Current Implementation - Recreated (188R has been withdrawn)</p>
+                    </figcaption>
+                  </div>
+                </div>
+
+                <div class="banner-eicw">
+                  <figcaption>
+                    <a href="https://landtransportguru.net/web/wp-content/uploads/2018/12/Choa-Chu-Kang-Int-Dec-18-5.jpg"
+                      id="ltg1" class="portfolio-img ">
+                      <img
+                        src="https://landtransportguru.net/web/wp-content/uploads/2018/12/Choa-Chu-Kang-Int-Dec-18-5.jpg"
+                        id="dpm-img" class="img-fluid cp-img" alt="ltg1" style="margin-bottom: 0em;">
+                    </a>
+                    <p>📸: Land Transport Guru</p>
+                  </figcaption>
+                </div>
+
+                <br>
+
+                <p style="text-align: left;">So I've decided, why not decouple the Exit signage from the other signages?
+                  Labels are also added for enhanced clarity. Wall signages are also introduced, as seen in Pasir Ris
+                  ITH.</p>
+
+                <div class="banner-eicw">
+                  <figcaption>
+                    <a href="img/cck-2-light.png" id="cck2" class="portfolio-img ">
+                      <img src="img/cck-2-light.png" id="cck2-img" class="img-fluid cp-img" alt="cck2"
+                        style="margin-bottom: 0em;">
+                    </a>
+                  </figcaption>
+                </div>
+
+                <video id="eicw-vid10" controls controlsList="nodownload" oncontextmenu="return false;" muted loop
+                  playsinline width="100%" class="column-vid" style="margin-top: 2em;">
+                  <source src="img/eicw-vid10-light.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+
+                <hr>
+                <h3 style="font-size: 25px; font-weight: bold; margin-top: 2em;"><u>Interchange Name Signages</u></h3>
+
+                <p class="no-align">Let's take a look at the Interchange Name signages implemented at the Pasir Ris ITH.
+                </p>
+
+                <p class="no-align">The design system used here is the ones designed by <a
+                    href="https://www.transportdesign.com/projects/singapore-connecting-a-city"
+                    class="hyperlink">TDC</a>.
+                  Hence, I will be
+                  switching over to the new design system, but using my changes.</p>
+
+                <div class="row wow fadeIn" data-wow-delay="100ms">
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="img/cck3.png" id="cck3" class="portfolio-img ">
+                        <img src="img/cck3.png" id="cck3-img" class="img-fluid cp-img" alt="cck3">
+                      </a>
+                      <p>Current Implementation <br> 📸: Land Transport Guru</p>
+                    </figcaption>
+                  </div>
+                  <div class="column column-pic">
+                    <figcaption>
+                      <a href="img/cck-3a-light.png" id="cck3a" class="portfolio-img ">
+                        <img src="img/cck-3a-light.png" id="cck3a-img" class="img-fluid cp-img" alt="cck3a">
+                      </a>
+                      <p>Current Implementation - Recreated</p>
+                    </figcaption>
+                  </div>
+                </div>
+
+                <p>The older design system lacked Overhead signages near/at the respective Exits. The new system already
+                  has
+                  these, as seen in Pasir Ris ITH. Hence, I'll be bringing those elements over to Choa Chu Kang Bus Int
+                  as well.
+                </p>
+
+                <div class="banner-eicw">
+                  <figcaption>
+                    <a href="img/cck-4a-light.png" id="cck4a" class="portfolio-img ">
+                      <img src="img/cck-4a-light.png" id="cck4a-img" class="img-fluid cp-img" alt="cck4a"
+                        style="margin-bottom: 0em;">
+                    </a>
+                  </figcaption>
+                </div>
+
+                <hr>
+              </div><!-- end eicw-collapsible-body -->
+            </details>
+          </div>
+          <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+            <details class="eicw-collapsible">
+              <summary>
+                <span class="eicw-collapsible-title">Bus Route Diagrams Signages for key Bus Stops</span>
+                <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+              </summary>
+              <div class="eicw-collapsible-body">
+                <div class="info justify-content-center">
+                  <p style="text-align: left;">Introducing new Bus Route Diagrams Signages for key Bus Stops! (e.g. MRT
+                    Stations, Hospitals etc). The route diagrams are here to help commuters visualize roughly the
+                    direction
+                    of services.
+                    <br> For full route
+                    details, commuters can refer to the Bus Services Board which lists down the whole Bus Stops.
+                  </p>
+                </div>
+                <div class="banner-eicw">
+                  <a href="img/cs-light.png" id="cs" class="portfolio-img">
+                    <img src="img/cs-light.png" id="cs-img" class="img-fluid" alt="cs">
+                  </a>
+                </div>
+              </div>
+            </details>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
+    data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
+    data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
+    </script>
+
+  <script src="../js/mob-navtabs.js"></script>
+
+  <script src="js/pc-buses.js"></script>
+  <script src="js/eicw-nav.js"></script>
+
+  <script src="../js/jquery.min.js"></script>
+
+  <script src='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.js'></script>
+
+  <script src="../js/dstabs.js"></script>
+
+  <script src="../js/popper.min.js"></script>
+
+  <script src="../js/bootstrap.min.js"></script>
+
+  <script src="../js/pw.bundle.js"></script>
+
+  <script src="../js/default-assets/active.js"></script>
+
+</body>
+
+</html>

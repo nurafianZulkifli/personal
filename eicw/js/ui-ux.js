@@ -157,88 +157,80 @@ function updateThemeIcon(theme) {
 
 function updateHrefForDarkMode() {
     /* Banners */
-    const coverSect = document.getElementById('covbtr-img');
+    const coverSect = document.getElementById('cui-img');
 
     /* Images */
-    const bcrcrc_link = document.getElementById('bcrcrc');
-    const bcrcrc_img = document.getElementById('bcrcrc-img');
+    const lcd1_link = document.getElementById('lcd1');
+    const lcd1_img = document.getElementById('lcd1-img');
 
-    const bcrtap_link = document.getElementById('bcrtap');
-    const bcrtap_img = document.getElementById('bcrtap-img');
+    const lcd2_link = document.getElementById('lcd2');
+    const lcd2_img = document.getElementById('lcd2-img');
 
-    const btrcr1_link = document.getElementById('btrcr1');
-    const btrcr1_img = document.getElementById('btrcr1-img');
+    const lcd3_link = document.getElementById('lcd3');
+    const lcd3_img = document.getElementById('lcd3-img');
 
-    const btrcr2_link = document.getElementById('btrcr2');
-    const btrcr2_img = document.getElementById('btrcr2-img');
+    const bcr1_link = document.getElementById('bcr1');
+    const bcr1_img = document.getElementById('bcr1-img');
 
-    const btrcr3_link = document.getElementById('btrcr3');
-    const btrcr3_img = document.getElementById('btrcr3-img');
+    const bcr2_link = document.getElementById('bcr2');
+    const bcr2_img = document.getElementById('bcr2-img');
 
-    const btrcr4_link = document.getElementById('btrcr4');
-    const btrcr4_img = document.getElementById('btrcr4-img');
+    const bcr4_link = document.getElementById('bcr4');
+    const bcr4_img = document.getElementById('bcr4-img');
 
-    const btrcr5_link = document.getElementById('btrcr5');
-    const btrcr5_img = document.getElementById('btrcr5-img');
-
+    const cddbp_link = document.getElementById('cddbp-lcd');
+    const cddbp_img = document.getElementById('cddbp-lcd-img');
 
 
     const isDarkMode = document.body.classList.contains('dark-mode');
 
     if (isDarkMode) {
         /* Banners */
-        coverSect.style.backgroundImage = "url('./img/cover-eicw-4-dark.png')";
+        if (coverSect) coverSect.style.backgroundImage = "url('./img/cover-eicw-4-dark.png')";
 
 
         /* Images */
-        bcrcrc_link.href = './img-2/bcr-compare-dark.png';
-        bcrcrc_img.src = './img-2/bcr-compare-dark.png';
+        if (lcd1_link) lcd1_link.href = './img/lcd-dark.png';
+        if (lcd1_img) lcd1_img.src = './img/lcd-dark.png';
 
-        bcrtap_link.href = './img-2/bcr-tap-dark.png';
-        bcrtap_img.src = './img-2/bcr-tap-dark.png';
+        if (lcd2_link) lcd2_link.href = './img/lcd2-dark.png';
+        if (lcd2_img) lcd2_img.src = './img/lcd2-dark.png';
 
-        btrcr1_link.href = './img-2/btrcr1-dark.png';
-        btrcr1_img.src = './img-2/btrcr1-dark.png';
+        if (lcd3_link) lcd3_link.href = './img/lcd3-dark.png';
+        if (lcd3_img) lcd3_img.src = './img/lcd3-dark.png';
 
-        btrcr2_link.href = './img-2/btrcr2-dark.png';
-        btrcr2_img.src = './img-2/btrcr2-dark.png';
+        if (bcr1_link) bcr1_link.href = './img-2/bcr-dark.png';
+        if (bcr1_img) bcr1_img.src = './img-2/bcr-dark.png';
 
-        btrcr3_link.href = './img-2/btrcr3-dark.png';
-        btrcr3_img.src = './img-2/btrcr3-dark.png';
+        if (bcr4_link) bcr4_link.href = './img-2/bcr-var-dark.png';
+        if (bcr4_img) bcr4_img.src = './img-2/bcr-var-dark.png';
 
-        btrcr4_link.href = './img-2/btrcr4-dark.png';
-        btrcr4_img.src = './img-2/btrcr4-dark.png';
-
-        btrcr5_link.href = './img-2/btrcr5-dark.png';
-        btrcr5_img.src = './img-2/btrcr5-dark.png';
+        if (cddbp_link) cddbp_link.href = './img-2/cddbp-dark.png';
+        if (cddbp_img) cddbp_img.src = './img-2/cddbp-dark.png';
 
 
     } else {
         /* Banners */
-        coverSect.style.backgroundImage = "url('./img/cover-ui-ux-light.png')";
+        if (coverSect) coverSect.style.backgroundImage = "url('./img/cover-eicw-4-light.png')";
 
         /* Images */
-        bcrcrc_link.href = './img-2/bcr-compare-light.png';
-        bcrcrc_img.src = './img-2/bcr-compare-light.png';
+        if (lcd1_link) lcd1_link.href = './img/lcd-light.png';
+        if (lcd1_img) lcd1_img.src = './img/lcd-light.png';
 
-        bcrtap_link.href = './img-2/bcr-tap-light.png';
-        bcrtap_img.src = './img-2/bcr-tap-light.png';
+        if (lcd2_link) lcd2_link.href = './img/lcd2-light.png';
+        if (lcd2_img) lcd2_img.src = './img/lcd2-light.png';
 
-        btrcr1_link.href = './img-2/btrcr1-light.png';
-        btrcr1_img.src = './img-2/btrcr1-light.png';
+        if (lcd3_link) lcd3_link.href = './img/lcd3-light.png';
+        if (lcd3_img) lcd3_img.src = './img/lcd3-light.png';
 
-        btrcr2_link.href = './img-2/btrcr2-light.png';
-        btrcr2_img.src = './img-2/btrcr2-light.png';
+        if (bcr1_link) bcr1_link.href = './img-2/bcr-light.png';
+        if (bcr1_img) bcr1_img.src = './img-2/bcr-light.png';
 
-        btrcr3_link.href = './img-2/btrcr3-light.png';
-        btrcr3_img.src = './img-2/btrcr3-light.png';
+        if (bcr4_link) bcr4_link.href = './img-2/bcr-var-light.png';
+        if (bcr4_img) bcr4_img.src = './img-2/bcr-var-light.png';
 
-        btrcr4_link.href = './img-2/btrcr4-light.png';
-        btrcr4_img.src = './img-2/btrcr4-light.png';
-
-        btrcr5_link.href = './img-2/btrcr5-light.png';
-        btrcr5_img.src = './img-2/btrcr5-light.png';
-
+        if (cddbp_link) cddbp_link.href = './img-2/cddbp-light.png';
+        if (cddbp_img) cddbp_img.src = './img-2/cddbp-light.png';
 
     }
 
@@ -251,78 +243,4 @@ window.addEventListener("scroll", function () {
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
     const scrollPercentage = (scrollTop / scrollHeight) * 100; // Calculate scroll percentage
     scrollIndicator.style.width = scrollPercentage + "%"; // Update the width of the indicator
-});
-
-// Autoplay videos row by row when scrolled into view
-document.addEventListener('DOMContentLoaded', function () {
-    var rows = Array.from(document.querySelectorAll('.video-row'));
-    if (rows.length === 0) return;
-
-    var currentRowIndex = 0;
-    var isPlaying = false;
-
-    // Prepare all videos: muted, no loop, inline
-    rows.forEach(function (row) {
-        var videos = row.querySelectorAll('video');
-        videos.forEach(function (video) {
-            video.loop = false;
-            video.muted = true;
-            video.playsInline = true;
-        });
-    });
-
-    function isRowInViewport(row) {
-        var rect = row.getBoundingClientRect();
-        // Row is considered visible when at least part of it is in the viewport
-        return rect.top < window.innerHeight && rect.bottom > 0;
-    }
-
-    function playRow(index) {
-        if (index >= rows.length) {
-            isPlaying = false;
-            return;
-        }
-
-        currentRowIndex = index;
-
-        // If the row isn't visible yet, wait for scroll
-        if (!isRowInViewport(rows[index])) {
-            isPlaying = false;
-            return;
-        }
-
-        isPlaying = true;
-        var videos = rows[index].querySelectorAll('video');
-        var finishedCount = 0;
-
-        videos.forEach(function (video) {
-            video.addEventListener('ended', function onEnded() {
-                video.removeEventListener('ended', onEnded);
-                finishedCount++;
-                if (finishedCount >= videos.length) {
-                    playRow(index + 1);
-                }
-            });
-
-            video.play().catch(function (error) {
-                console.log('Autoplay was prevented:', error);
-                finishedCount++;
-                if (finishedCount >= videos.length) {
-                    playRow(index + 1);
-                }
-            });
-        });
-    }
-
-    function onScroll() {
-        // If not currently playing and there are rows left, check if the next row is visible
-        if (!isPlaying && currentRowIndex < rows.length && isRowInViewport(rows[currentRowIndex])) {
-            playRow(currentRowIndex);
-        }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    // Also check immediately in case the first row is already visible on load
-    onScroll();
 });

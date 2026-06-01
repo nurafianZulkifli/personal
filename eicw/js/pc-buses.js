@@ -154,93 +154,139 @@ function updateThemeIcon(theme) {
     }, 300); // Match the duration of the CSS transition
 }
 
-
 function updateHrefForDarkMode() {
     /* Banners */
-    const coverSect = document.getElementById('covbtr-img');
+    const coverSect = document.getElementById('cbus-img');
+    const cdSect = document.getElementById('cd-img');
+
 
     /* Images */
-    const bcrcrc_link = document.getElementById('bcrcrc');
-    const bcrcrc_img = document.getElementById('bcrcrc-img');
+    const psr1a_link = document.getElementById('psr1a');
+    const psr1a_img = document.getElementById('psr1a-img');
 
-    const bcrtap_link = document.getElementById('bcrtap');
-    const bcrtap_img = document.getElementById('bcrtap-img');
+    const psr2_link = document.getElementById('psr2');
+    const psr2_img = document.getElementById('psr2-img');
 
-    const btrcr1_link = document.getElementById('btrcr1');
-    const btrcr1_img = document.getElementById('btrcr1-img');
+    const psr3a_link = document.getElementById('psr3a');
+    const psr3a_img = document.getElementById('psr3a-img');
 
-    const btrcr2_link = document.getElementById('btrcr2');
-    const btrcr2_img = document.getElementById('btrcr2-img');
+    const psr3b_link = document.getElementById('psr3b');
+    const psr3b_img = document.getElementById('psr3b-img');
 
-    const btrcr3_link = document.getElementById('btrcr3');
-    const btrcr3_img = document.getElementById('btrcr3-img');
+    const psr5a_link = document.getElementById('psr5a');
+    const psr5a_img = document.getElementById('psr5a-img');
 
-    const btrcr4_link = document.getElementById('btrcr4');
-    const btrcr4_img = document.getElementById('btrcr4-img');
+    const cck1a_link = document.getElementById('cck1a');
+    const cck1a_img = document.getElementById('cck1a-img');
 
-    const btrcr5_link = document.getElementById('btrcr5');
-    const btrcr5_img = document.getElementById('btrcr5-img');
+    const cck2_link = document.getElementById('cck2');
+    const cck2_img = document.getElementById('cck2-img');
 
+    const cck3a_link = document.getElementById('cck3a');
+    const cck3a_img = document.getElementById('cck3a-img');
+
+    const cck4a_link = document.getElementById('cck4a');
+    const cck4a_img = document.getElementById('cck4a-img');
+
+    const cs_link = document.getElementById('cs');
+    const cs_img = document.getElementById('cs-img');
+
+    /* Videos */
+    const vid9 = document.getElementById('eicw-vid9');
+    const vid9Source = vid9.querySelector('source');
+
+    const vid10 = document.getElementById('eicw-vid10');
+    const vid10Source = vid10.querySelector('source');
 
 
     const isDarkMode = document.body.classList.contains('dark-mode');
 
     if (isDarkMode) {
         /* Banners */
-        coverSect.style.backgroundImage = "url('./img/cover-eicw-4-dark.png')";
+        if (coverSect) coverSect.style.backgroundImage = "url('./img/cover-psr-dark.png')";
+        if (cdSect) cdSect.style.backgroundImage = "url('./img/cdbus-dark.png')";
 
 
         /* Images */
-        bcrcrc_link.href = './img-2/bcr-compare-dark.png';
-        bcrcrc_img.src = './img-2/bcr-compare-dark.png';
+        if (psr1a_link) psr1a_link.href = './img/psr-1a-dark.png';
+        if (psr1a_img) psr1a_img.src = './img/psr-1a-dark.png';
 
-        bcrtap_link.href = './img-2/bcr-tap-dark.png';
-        bcrtap_img.src = './img-2/bcr-tap-dark.png';
+        if (psr2_link) psr2_link.href = './img/psr-2-dark.png';
+        if (psr2_img) psr2_img.src = './img/psr-2-dark.png';
 
-        btrcr1_link.href = './img-2/btrcr1-dark.png';
-        btrcr1_img.src = './img-2/btrcr1-dark.png';
+        if (psr3a_link) psr3a_link.href = './img/psr-3a-dark.png';
+        if (psr3a_img) psr3a_img.src = './img/psr-3a-dark.png';
 
-        btrcr2_link.href = './img-2/btrcr2-dark.png';
-        btrcr2_img.src = './img-2/btrcr2-dark.png';
+        if (psr3b_link) psr3b_link.href = './img/psr-3b-dark.png';
+        if (psr3b_img) psr3b_img.src = './img/psr-3b-dark.png';
 
-        btrcr3_link.href = './img-2/btrcr3-dark.png';
-        btrcr3_img.src = './img-2/btrcr3-dark.png';
+        if (psr5a_link) psr5a_link.href = './img/psr5a-dark.png';
+        if (psr5a_img) psr5a_img.src = './img/psr5a-dark.png';
 
-        btrcr4_link.href = './img-2/btrcr4-dark.png';
-        btrcr4_img.src = './img-2/btrcr4-dark.png';
+        if (cck1a_link) cck1a_link.href = './img/cck-1a-dark.png';
+        if (cck1a_img) cck1a_img.src = './img/cck-1a-dark.png';
 
-        btrcr5_link.href = './img-2/btrcr5-dark.png';
-        btrcr5_img.src = './img-2/btrcr5-dark.png';
+        if (cck2_link) cck2_link.href = './img/cck-2-dark.png';
+        if (cck2_img) cck2_img.src = './img/cck-2-dark.png';
 
+        if (cck3a_link) cck3a_link.href = './img/cck-3a-dark.png';
+        if (cck3a_img) cck3a_img.src = './img/cck-3a-dark.png';
+
+        if (cck4a_link) cck4a_link.href = './img/cck-4a-dark.png';
+        if (cck4a_img) cck4a_img.src = './img/cck-4a-dark.png';
+
+        if (cs_link) cs_link.href = './img/cs-dark.png';
+        if (cs_img) cs_img.src = './img/cs-dark.png';
+
+        /* Videos */
+        if (vid9Source) vid9Source.src = './img/eicw-vid9-dark.mp4';
+        if (vid10Source) vid10Source.src = './img/eicw-vid10-dark.mp4';
 
     } else {
         /* Banners */
-        coverSect.style.backgroundImage = "url('./img/cover-ui-ux-light.png')";
+        if (coverSect) coverSect.style.backgroundImage = "url('./img/cover-psr-light.png')";
+        if (cdSect) cdSect.style.backgroundImage = "url('./img/cdbus-light.png')";
+
 
         /* Images */
-        bcrcrc_link.href = './img-2/bcr-compare-light.png';
-        bcrcrc_img.src = './img-2/bcr-compare-light.png';
+        if (psr1a_link) psr1a_link.href = './img/psr-1a-light.png';
+        if (psr1a_img) psr1a_img.src = './img/psr-1a-light.png';
 
-        bcrtap_link.href = './img-2/bcr-tap-light.png';
-        bcrtap_img.src = './img-2/bcr-tap-light.png';
+        if (psr2_link) psr2_link.href = './img/psr-2-light.png';
+        if (psr2_img) psr2_img.src = './img/psr-2-light.png';
 
-        btrcr1_link.href = './img-2/btrcr1-light.png';
-        btrcr1_img.src = './img-2/btrcr1-light.png';
+        if (psr3a_link) psr3a_link.href = './img/psr-3a-light.png';
+        if (psr3a_img) psr3a_img.src = './img/psr-3a-light.png';
 
-        btrcr2_link.href = './img-2/btrcr2-light.png';
-        btrcr2_img.src = './img-2/btrcr2-light.png';
+        if (psr3b_link) psr3b_link.href = './img/psr-3b-light.png';
+        if (psr3b_img) psr3b_img.src = './img/psr-3b-light.png';
 
-        btrcr3_link.href = './img-2/btrcr3-light.png';
-        btrcr3_img.src = './img-2/btrcr3-light.png';
+        if (psr5a_link) psr5a_link.href = './img/psr5a-light.png';
+        if (psr5a_img) psr5a_img.src = './img/psr5a-light.png';
 
-        btrcr4_link.href = './img-2/btrcr4-light.png';
-        btrcr4_img.src = './img-2/btrcr4-light.png';
+        if (cck1a_link) cck1a_link.href = './img/cck-1a-light.png';
+        if (cck1a_img) cck1a_img.src = './img/cck-1a-light.png';
 
-        btrcr5_link.href = './img-2/btrcr5-light.png';
-        btrcr5_img.src = './img-2/btrcr5-light.png';
+        if (cck2_link) cck2_link.href = './img/cck-2-light.png';
+        if (cck2_img) cck2_img.src = './img/cck-2-light.png';
 
+        if (cck3a_link) cck3a_link.href = './img/cck-3a-light.png';
+        if (cck3a_img) cck3a_img.src = './img/cck-3a-light.png';
+
+        if (cck4a_link) cck4a_link.href = './img/cck-4a-light.png';
+        if (cck4a_img) cck4a_img.src = './img/cck-4a-light.png';
+
+        if (cs_link) cs_link.href = './img/cs-light.png';
+        if (cs_img) cs_img.src = './img/cs-light.png';
+
+        /* Videos */
+        if (vid9Source) vid9Source.src = './img/eicw-vid9-light.mp4';
+        if (vid10Source) vid10Source.src = './img/eicw-vid10-light.mp4';
 
     }
+
+    if (vid9) vid9.load();
+    if (vid10) vid10.load();
 
 }
 

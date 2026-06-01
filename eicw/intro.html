@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="57TuruPNu5wqSSia_cUehl5t9Gh1AbxrHNPcMiFx-aQ" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Introduction | EICW</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta property="og:image" content="https://i.imgur.com/i8n9KYs.png" />
+
+    <link rel="icon" href="../img/core-img/favicon.png">
+
+    <script src="https://kit.fontawesome.com/965e82ac01.js" crossorigin="anonymous"></script>
+
+    <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css'>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-mobNav.css">
+    <link rel="stylesheet" href="../css/style-breakpoints.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+
+
+    <style>
+        .eicw-collapsible {
+            border: none;
+            outline: none;
+            padding-top: 0.7em;
+            padding-bottom: 0.7em;
+        }
+
+        .eicw-collapsible summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            list-style: none;
+            padding: 14px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(214, 214, 214, 0.651);
+            background: #fefffc;
+            transition: background 0.2s ease, border-color 0.2s ease;
+            user-select: none;
+            margin-bottom: 0;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .eicw-collapsible summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .eicw-collapsible summary:hover {
+            background: #c7e3fb;
+            border-color: #809fb9;
+        }
+
+        .eicw-collapsible[open] summary {
+            border-radius: 20px 20px 0 0;
+            border-color: rgba(255, 255, 255, 0.22);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .eicw-collapsible-title {
+            font-size: 17px;
+            font-weight: bold;
+            flex: 1;
+        }
+
+        .eicw-collapsible-chevron {
+            font-size: 14px;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        .eicw-collapsible[open] .eicw-collapsible-chevron {
+            transform: rotate(180deg);
+        }
+
+        body.dark-mode .eicw-collapsible-chevron {
+            color: #fff;
+            opacity: 1;
+        }
+
+        .eicw-collapsible-body {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 16px 20px;
+            animation: collapsibleFadeIn 0.2s ease;
+        }
+
+        @keyframes collapsibleFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN76281P3Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WN76281P3Q');
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+    <div class="breadcrumb-fixed-placeholder">
+        <nav aria-label="breadcrumb" style="margin-bottom:0;">
+            <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="../index.html">
+                        <i class="fa-regular fa-house"></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="intro.html"><i class="fa-regular fa-circle-info"></i>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar-container">
+        <div class="navbar">
+            <!-- Logo -->
+            <a href="../index.html"><img src="../img/core-img/logo.png" alt="logo" class="logo"></a>
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        <i class="fa-sharp fa-regular fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../eicw/intro.html" class="nav-link active">
+                        <i class="fa-regular fa-map-location"></i>
+                        <span>EICW</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="../menu.html" class="nav-link">
+                        <i class="fa-regular fa-bars"></i>
+                        <span>Menu</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <span class="icon">
+                        <i class="fa-sharp fa-regular fa-house"></i>
+                    </span>
+                    <span class="label">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="../about.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-circle-user"></i>
+                    </span>
+                    <span class="label">About</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="../eicw/intro.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-map-location"></i>
+                    </span>
+                    <span class="label">EICW</span>
+                </a>
+            </li>
+            <li>
+                <a href="../menu.html">
+                    <span class="icon">
+                        <i class="fa-regular fa-bars"></i>
+                    </span>
+                    <span class="label">Menu</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- Scroll Indicator -->
+    <div id="scroll-indicator-container">
+        <div id="scroll-indicator"></div>
+    </div>
+
+
+    <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
+
+    <!-- Title/Breadcrumbs -->
+    <section class="about-me-sum clearfix">
+        <div class="wbnrfz_eicw">
+            <div class="page-header-section">
+                <div class="container container-xxl container-mobile container-mobile-header">
+                    <div class="breadcrumb-wrapper">
+                        <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="../index.html">
+                                        <i class="fa-regular fa-house"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="intro.html"><i class="fa-regular fa-circle-info"></i>
+                                    </a>
+                                </li>
+                            </ol>
+                        </nav>
+                        <div class="page-title-wrapper">
+                            <div>
+                                <h1 class="page-title-single">Introduction to the New Wayfinding System</h1>
+                                <p class="page-subtitle">4 mins read</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Sticky Section Nav -->
+    <div class="sticky-nav-wrap">
+        <div class="eicw-nav-dropdown" id="eicwNavDropdown">
+            <button class="eicw-nav-btn" type="button" aria-haspopup="true" aria-expanded="false">
+                <span class="eicw-nav-label"><i class="fa-regular fa-circle-info"></i> Introduction</span>
+                <i class="fa-regular fa-chevron-down eicw-nav-chevron"></i>
+            </button>
+            <ul class="eicw-nav-menu" role="menu">
+                <li><a href="intro.html" class="active"><i class="fa-regular fa-circle-info"></i> Introduction</a></li>
+                <li><a href="pc-trains.html"><i class="fa-regular fa-train"></i> Trains</a></li>
+                <li><a href="pc-buses.html"><i class="fa-regular fa-bus"></i> Buses</a></li>
+                <li><a href="ui-ux.html"><i class="fa-regular fa-pencil"></i> UI/UX</a></li>
+                <li><a href="ccl6.html"><i class="fa-regular fa-signs-post"></i> Rethinking CCL6 Signages</a></li>
+                <li><a href="btr-1.html"><i class="fa-regular fa-eye"></i> Behind The Redesign</a></li>
+            </ul>
+        </div>
+        <hr style="margin: 0;">
+    </div>
+
+    <!-- Cover Header -->
+    <section class="breadcrumb-area-eicw-cover bg-img bg-overlay" id="cv-img">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contents -->
+    <section class="about-me-sum clearfix">
+        <div class="wbnrfz_eicw">
+            <div class="container container-mobile" style="padding-bottom: 2em;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="row justify-content-center">
+
+                            <!-- Preface -->
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="dsi" style="padding-top: 3em;">
+                                <div class="info justify-content-center">
+                                    <h2 style="font-size: 30px; font-weight:bold;">Design
+                                        System Introduction</h2>
+                                    <p style="text-align: left;">The new Wayfinding system was first launched on the
+                                        Thomson-East
+                                        Coast Line stations. It spots a new design
+                                        system, where the emphasis was mainly on iconographies, rather than pure
+                                        texts.
+                                        I for one, am a
+                                        huge fan of this new design.
+                                    </p>
+                                </div>
+
+                                <!-- Evolution of our Transit System Design -->
+                                <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                                    <div class="banner-eicw">
+                                        <a href="img/evo-light.png" id="evo" class="portfolio-img"
+                                            style="box-shadow: none; border: none;">
+                                            <img src="img/evo-light.png" id="evo-img" class="img-fluid" alt="evo"
+                                                style="box-shadow: none; border: none;">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <p style="text-align: left;">I love icons and pictorials as compared to texts.
+                                    Of course, with every new implementations, there has got to be areas that
+                                    can be
+                                    improved, and in
+                                    this microsite, I will be brainstorming on ideas on how to make the current
+                                    system better. Do take
+                                    note, these are just
+                                    ideas and concepts, and technicalities like Dimensions & Measurements will
+                                    not
+                                    be taken into
+                                    account.
+                                    Overall Assets and Designs' credit go to the Land Transport Authority.
+                                    <br><br> The Colour Palettes provided here are matched to be identical to
+                                    the
+                                    real-life
+                                    counterparts as
+                                    well.
+                                </p>
+                                </p>
+                                <hr>
+                            </div>
+
+                            <!-- Font Typeface -->
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="typeface">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Font Typeface</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="banner-eicw">
+                                            <a href="img/typeface-light.png" id="tf" class="portfolio-img">
+                                                <img src="img/typeface-light.png" id="tf-img" class="img-fluid"
+                                                    alt="tf">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <!-- Colour Palettes -->
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="colour">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Colour Palettes</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="banner-eicw">
+                                            <a href="img/palettes-light.png" id="pl" class="portfolio-img">
+                                                <img src="img/palettes-light.png" id="pl-img" class="img-fluid"
+                                                    alt="pl">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Header -->
+    <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="eia-img"
+        style="background-image: url(img/eia-light.png)">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content text-center">
+                        <!-- <h2 class="page-title">Existing Icon Assets</h2> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Content -->
+    <section class="about-me-summ  clearfix">
+        <div class="wbnrfz_details_body">
+            <div class="container container-mobile">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="row justify-content-center">
+
+                            <div class="info justify-content-center text-center" style="padding-top: 3em;">
+                                <h2 style="font-size: 30px; font-weight:bold;">Existing Icon Assets</h2>
+                                <p style="text-align: justify;">This section will showcase the existing icon assets
+                                    currently in use, categorised into different sections.
+                                </p>
+                            </div>
+
+                            <hr>
+
+                            <!-- Exit Signs -->
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Exit Signs</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="banner-eicw">
+                                            <a href="img/es-light.png" id="es" class="portfolio-img">
+                                                <img src="img/es-light.png" id="es-img" class="img-fluid" alt="es">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <!-- Line/Station/Network Caplets -->
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Line/Station/Network Caplets</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="banner-eicw">
+                                            <a href="img/cp-light.png" id="cp" class="portfolio-img">
+                                                <img src="img/cp-light.png" id="cp-img" class="img-fluid" alt="cp">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <!-- Lift Signs -->
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Lift Signs</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="banner-eicw">
+                                            <a href="img/ls-light.png" id="ls" class="portfolio-img">
+                                                <img src="img/ls-light.png" id="ls-img" class="img-fluid" alt="ls">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+
+                            <!-- Wayfinding Signs -->
+                            <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                                <details class="eicw-collapsible">
+                                    <summary>
+                                        <span class="eicw-collapsible-title">Wayfinding Signs</span>
+                                        <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
+                                    </summary>
+                                    <div class="eicw-collapsible-body">
+                                        <div class="banner-eicw">
+                                            <a href="img/wf1-light.png" id="wf1" class="portfolio-img">
+                                                <img src="img/wf1-light.png" id="wf1-img" class="img-fluid" alt="wf1">
+                                            </a>
+                                        </div>
+                                        <div class="banner-eicw">
+                                            <a href="img/wf2-light.png" id="wf2" class="portfolio-img">
+                                                <img src="img/wf2-light.png" id="wf2-img" class="img-fluid" alt="wf2">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </details>
+                                <hr>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" id="cookiebanner" src="../js/cookies-banner.js" data-position="bottom"
+        data-bg="#f2f3e5" data-fg="#000" data-font-family="Onest, sans-serif" data-zindex="12345111111"
+        data-message="This website uses cookies to provide necessary site functionality and to improve your experience. By using this website, you agree to our use of cookies.">
+        </script>
+
+    <script src="../js/mob-navtabs.js"></script>
+
+    <script src="js/intro.js"></script>
+    <script src="js/eicw-nav.js"></script>
+
+    <script src="../js/jquery.min.js"></script>
+
+    <script src='https://unpkg.com/swiper@6.8.1/swiper-bundle.min.js'></script>
+
+    <script src="../js/dstabs.js"></script>
+
+    <script src="../js/popper.min.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/pw.bundle.js"></script>
+
+    <script src="../js/default-assets/active.js"></script>
+
+</body>
+
+</html>

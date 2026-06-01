@@ -155,174 +155,119 @@ function updateThemeIcon(theme) {
 }
 
 
+
 function updateHrefForDarkMode() {
-    /* Banners */
-    const coverSect = document.getElementById('covbtr-img');
+    /* Existing logic for updating banners, images, and videos */
+    const coverSect = document.getElementById('cv-img');
+    const eiaSect = document.getElementById('eia-img');
 
-    /* Images */
-    const bcrcrc_link = document.getElementById('bcrcrc');
-    const bcrcrc_img = document.getElementById('bcrcrc-img');
+    const tf_link = document.getElementById('tf');
+    const tf_img = document.getElementById('tf-img');
 
-    const bcrtap_link = document.getElementById('bcrtap');
-    const bcrtap_img = document.getElementById('bcrtap-img');
+    const pl_link = document.getElementById('pl');
+    const pl_img = document.getElementById('pl-img');
 
-    const btrcr1_link = document.getElementById('btrcr1');
-    const btrcr1_img = document.getElementById('btrcr1-img');
+    const pl2_link = document.getElementById('pl2');
+    const pl2_img = document.getElementById('pl2-img');
 
-    const btrcr2_link = document.getElementById('btrcr2');
-    const btrcr2_img = document.getElementById('btrcr2-img');
+    const evo_link = document.getElementById('evo');
+    const evo_img = document.getElementById('evo-img');
 
-    const btrcr3_link = document.getElementById('btrcr3');
-    const btrcr3_img = document.getElementById('btrcr3-img');
+    const es_link = document.getElementById('es');
+    const es_img = document.getElementById('es-img');
 
-    const btrcr4_link = document.getElementById('btrcr4');
-    const btrcr4_img = document.getElementById('btrcr4-img');
+    const cp_link = document.getElementById('cp');
+    const cp_img = document.getElementById('cp-img');
 
-    const btrcr5_link = document.getElementById('btrcr5');
-    const btrcr5_img = document.getElementById('btrcr5-img');
+    const ls_link = document.getElementById('ls');
+    const ls_img = document.getElementById('ls-img');
 
+    const wf1_link = document.getElementById('wf1');
+    const wf1_img = document.getElementById('wf1-img');
 
+    const wf2_link = document.getElementById('wf2');
+    const wf2_img = document.getElementById('wf2-img');
 
     const isDarkMode = document.body.classList.contains('dark-mode');
 
     if (isDarkMode) {
-        /* Banners */
-        coverSect.style.backgroundImage = "url('./img/cover-eicw-4-dark.png')";
+        if (coverSect) coverSect.style.backgroundImage = "url('./img/cover-dark.png')";
+        if (eiaSect) eiaSect.style.backgroundImage = "url('./img/eia-dark.png')";
 
+        if (tf_link) tf_link.href = './img/typeface-dark.png';
+        if (tf_img) tf_img.src = './img/typeface-dark.png';
 
-        /* Images */
-        bcrcrc_link.href = './img-2/bcr-compare-dark.png';
-        bcrcrc_img.src = './img-2/bcr-compare-dark.png';
+        if (pl_link) pl_link.href = './img/palettes-dark.png';
+        if (pl_img) pl_img.src = './img/palettes-dark.png';
 
-        bcrtap_link.href = './img-2/bcr-tap-dark.png';
-        bcrtap_img.src = './img-2/bcr-tap-dark.png';
+        if (pl2_link) pl2_link.href = './img/palettes-dark2.png';
+        if (pl2_img) pl2_img.src = './img/palettes-dark2.png';
 
-        btrcr1_link.href = './img-2/btrcr1-dark.png';
-        btrcr1_img.src = './img-2/btrcr1-dark.png';
+        if (evo_link) evo_link.href = './img/evo-dark.png';
+        if (evo_img) evo_img.src = './img/evo-dark.png';
 
-        btrcr2_link.href = './img-2/btrcr2-dark.png';
-        btrcr2_img.src = './img-2/btrcr2-dark.png';
+        if (es_link) es_link.href = './img/es-dark.png';
+        if (es_img) es_img.src = './img/es-dark.png';
 
-        btrcr3_link.href = './img-2/btrcr3-dark.png';
-        btrcr3_img.src = './img-2/btrcr3-dark.png';
+        if (cp_link) cp_link.href = './img/cp-dark.png';
+        if (cp_img) cp_img.src = './img/cp-dark.png';
 
-        btrcr4_link.href = './img-2/btrcr4-dark.png';
-        btrcr4_img.src = './img-2/btrcr4-dark.png';
+        if (ls_link) ls_link.href = './img/ls-dark.png';
+        if (ls_img) ls_img.src = './img/ls-dark.png';
 
-        btrcr5_link.href = './img-2/btrcr5-dark.png';
-        btrcr5_img.src = './img-2/btrcr5-dark.png';
+        if (wf1_link) wf1_link.href = './img/wf1-dark.png';
+        if (wf1_img) wf1_img.src = './img/wf1-dark.png';
+
+        if (wf2_link) wf2_link.href = './img/wf2-dark.png';
+        if (wf2_img) wf2_img.src = './img/wf2-dark.png';
 
 
     } else {
-        /* Banners */
-        coverSect.style.backgroundImage = "url('./img/cover-ui-ux-light.png')";
+        if (coverSect) coverSect.style.backgroundImage = "url('./img/cover-light.png')";
+        if (eiaSect) eiaSect.style.backgroundImage = "url('./img/eia-light.png')";
 
-        /* Images */
-        bcrcrc_link.href = './img-2/bcr-compare-light.png';
-        bcrcrc_img.src = './img-2/bcr-compare-light.png';
+        if (tf_link) tf_link.href = './img/typeface-light.png';
+        if (tf_img) tf_img.src = './img/typeface-light.png';
 
-        bcrtap_link.href = './img-2/bcr-tap-light.png';
-        bcrtap_img.src = './img-2/bcr-tap-light.png';
+        if (pl_link) pl_link.href = './img/palettes-light.png';
+        if (pl_img) pl_img.src = './img/palettes-light.png';
 
-        btrcr1_link.href = './img-2/btrcr1-light.png';
-        btrcr1_img.src = './img-2/btrcr1-light.png';
+        if (pl2_link) pl2_link.href = './img/palettes-light2.png';
+        if (pl2_img) pl2_img.src = './img/palettes-light2.png';
 
-        btrcr2_link.href = './img-2/btrcr2-light.png';
-        btrcr2_img.src = './img-2/btrcr2-light.png';
+        if (evo_link) evo_link.href = './img/evo-light.png';
+        if (evo_img) evo_img.src = './img/evo-light.png';
 
-        btrcr3_link.href = './img-2/btrcr3-light.png';
-        btrcr3_img.src = './img-2/btrcr3-light.png';
+        if (es_link) es_link.href = './img/es-light.png';
+        if (es_img) es_img.src = './img/es-light.png';
 
-        btrcr4_link.href = './img-2/btrcr4-light.png';
-        btrcr4_img.src = './img-2/btrcr4-light.png';
+        if (cp_link) cp_link.href = './img/cp-light.png';
+        if (cp_img) cp_img.src = './img/cp-light.png';
 
-        btrcr5_link.href = './img-2/btrcr5-light.png';
-        btrcr5_img.src = './img-2/btrcr5-light.png';
+        if (ls_link) ls_link.href = './img/ls-light.png';
+        if (ls_img) ls_img.src = './img/ls-light.png';
 
+        if (wf1_link) wf1_link.href = './img/wf1-light.png';
+        if (wf1_img) wf1_img.src = './img/wf1-light.png';
 
+        if (wf2_link) wf2_link.href = './img/wf2-light.png';
+        if (wf2_img) wf2_img.src = './img/wf2-light.png';
     }
-
 }
 
-// Update the scroll indicator width based on scroll position
-window.addEventListener("scroll", function () {
-    const scrollIndicator = document.getElementById("scroll-indicator");
-    const scrollTop = window.scrollY; // Current scroll position
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
-    const scrollPercentage = (scrollTop / scrollHeight) * 100; // Calculate scroll percentage
-    scrollIndicator.style.width = scrollPercentage + "%"; // Update the width of the indicator
+
+// Update the scroll indicator width on scroll
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / docHeight) * 100;
+    document.getElementById('scroll-indicator').style.width = scrollPercentage + '%';
 });
 
-// Autoplay videos row by row when scrolled into view
-document.addEventListener('DOMContentLoaded', function () {
-    var rows = Array.from(document.querySelectorAll('.video-row'));
-    if (rows.length === 0) return;
-
-    var currentRowIndex = 0;
-    var isPlaying = false;
-
-    // Prepare all videos: muted, no loop, inline
-    rows.forEach(function (row) {
-        var videos = row.querySelectorAll('video');
-        videos.forEach(function (video) {
-            video.loop = false;
-            video.muted = true;
-            video.playsInline = true;
-        });
-    });
-
-    function isRowInViewport(row) {
-        var rect = row.getBoundingClientRect();
-        // Row is considered visible when at least part of it is in the viewport
-        return rect.top < window.innerHeight && rect.bottom > 0;
-    }
-
-    function playRow(index) {
-        if (index >= rows.length) {
-            isPlaying = false;
-            return;
-        }
-
-        currentRowIndex = index;
-
-        // If the row isn't visible yet, wait for scroll
-        if (!isRowInViewport(rows[index])) {
-            isPlaying = false;
-            return;
-        }
-
-        isPlaying = true;
-        var videos = rows[index].querySelectorAll('video');
-        var finishedCount = 0;
-
-        videos.forEach(function (video) {
-            video.addEventListener('ended', function onEnded() {
-                video.removeEventListener('ended', onEnded);
-                finishedCount++;
-                if (finishedCount >= videos.length) {
-                    playRow(index + 1);
-                }
-            });
-
-            video.play().catch(function (error) {
-                console.log('Autoplay was prevented:', error);
-                finishedCount++;
-                if (finishedCount >= videos.length) {
-                    playRow(index + 1);
-                }
-            });
-        });
-    }
-
-    function onScroll() {
-        // If not currently playing and there are rows left, check if the next row is visible
-        if (!isPlaying && currentRowIndex < rows.length && isRowInViewport(rows[currentRowIndex])) {
-            playRow(currentRowIndex);
-        }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    // Also check immediately in case the first row is already visible on load
-    onScroll();
+// Update the scroll indicator width on scroll
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = Math.min((scrollTop / docHeight) * 100, 100); // Cap at 100%
+    document.getElementById('scroll-indicator').style.width = scrollPercentage + '%';
 });

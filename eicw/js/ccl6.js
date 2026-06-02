@@ -30,6 +30,11 @@ function getActiveWfVariant() {
     return activeTab ? activeTab.getAttribute('data-wf-variant') : 'A';
 }
 
+function getActiveDirvVariant() {
+    const activeTab = document.querySelector('.dirv-variant-tab.is-active');
+    return activeTab ? activeTab.getAttribute('data-dirv-variant') : 'A';
+}
+
 // Apply theme on page load
 if (shouldBeDark()) {
     document.body.classList.add('dark-mode');
@@ -187,6 +192,24 @@ function updateHrefForDarkMode() {
     const evo3_link = document.getElementById('evo3');
     const evo3_img = document.getElementById('evo3-img');
 
+    const dirv1_link = document.getElementById('dirv1');
+    const dirv1_img = document.getElementById('dirv1-img');
+    const activeDirvVariant = getActiveDirvVariant();
+    const dirvImageMap = {
+        dark: {
+            A: './img-2/dirv1-dark.png',
+            B: './img-2/dirv2-dark.png',
+            C: './img-2/dirv3-dark.png',
+            D: './img-2/dirv4-dark.png'
+        },
+        light: {
+            A: './img-2/dirv1-light.png',
+            B: './img-2/dirv2-light.png',
+            C: './img-2/dirv3-light.png',
+            D: './img-2/dirv4-light.png'
+        }
+    };
+
     const wf_link = document.getElementById('wf');
     const wf_img = document.getElementById('wf-img');
     const activeWfVariant = getActiveWfVariant();
@@ -232,6 +255,9 @@ function updateHrefForDarkMode() {
         if (evo3_link) evo3_link.href = './img/ccl6-overview-dark.png';
         if (evo3_img) evo3_img.src = './img/ccl6-overview-dark.png';
 
+        if (dirv1_link) dirv1_link.href = dirvImageMap.dark[activeDirvVariant] || dirvImageMap.dark.A;
+        if (dirv1_img) dirv1_img.src = dirvImageMap.dark[activeDirvVariant] || dirvImageMap.dark.A;
+
         if (wf_link) wf_link.href = wfImageMap.dark[activeWfVariant] || wfImageMap.dark.A;
         if (wf_img) wf_img.src = wfImageMap.dark[activeWfVariant] || wfImageMap.dark.A;
 
@@ -262,6 +288,9 @@ function updateHrefForDarkMode() {
         if (evo3_link) evo3_link.href = './img/ccl6-overview-light.png';
         if (evo3_img) evo3_img.src = './img/ccl6-overview-light.png';
 
+        if (dirv1_link) dirv1_link.href = dirvImageMap.light[activeDirvVariant] || dirvImageMap.light.A;
+        if (dirv1_img) dirv1_img.src = dirvImageMap.light[activeDirvVariant] || dirvImageMap.light.A;
+
         if (wf_link) wf_link.href = wfImageMap.light[activeWfVariant] || wfImageMap.light.A;
         if (wf_img) wf_img.src = wfImageMap.light[activeWfVariant] || wfImageMap.light.A;
 
@@ -274,6 +303,41 @@ function updateHrefForDarkMode() {
 
 
 }
+
+// Direction variant tabs
+document.addEventListener('DOMContentLoaded', function () {
+    var variantTabs = Array.from(document.querySelectorAll('.dirv-variant-tab'));
+    var dirvPanel = document.getElementById('dirv-image-wrap');
+    var dirvCaption = document.getElementById('dirv-caption');
+
+    if (variantTabs.length === 0) return;
+
+    function setDirectionVariant(variant) {
+        variantTabs.forEach(function (tab) {
+            var isActive = tab.getAttribute('data-dirv-variant') === variant;
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        if (dirvPanel) {
+            dirvPanel.setAttribute('aria-labelledby', variant === 'B' ? 'dirv-variant-b' : 'dirv-variant-a');
+        }
+
+        if (dirvCaption) {
+            dirvCaption.textContent = 'My Redesigned Version - Variant ' + variant;
+        }
+
+        updateHrefForDarkMode();
+    }
+
+    variantTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            setDirectionVariant(tab.getAttribute('data-dirv-variant'));
+        });
+    });
+
+    setDirectionVariant(getActiveDirvVariant());
+});
 
 // Wayfinding flow variant tabs
 document.addEventListener('DOMContentLoaded', function () {

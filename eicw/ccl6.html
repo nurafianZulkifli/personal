@@ -103,7 +103,8 @@
       }
     }
 
-    .wf-variant-tabs {
+    .wf-variant-tabs,
+    .dirv-variant-tabs {
       display: flex;
       justify-content: center;
       gap: 10px;
@@ -111,7 +112,8 @@
       flex-wrap: wrap;
     }
 
-    .wf-variant-tab {
+    .wf-variant-tab,
+    .dirv-variant-tab {
       border: 1px solid #c9d4dc;
       background: #f6fafc;
       color: #274257;
@@ -124,30 +126,35 @@
       transition: all 0.2s ease;
     }
 
-    .wf-variant-tab:hover {
+    .wf-variant-tab:hover,
+    .dirv-variant-tab:hover {
       background: #c7e3fb;
       border-color: #90b2cc;
     }
 
-    .wf-variant-tab.is-active {
+    .wf-variant-tab.is-active,
+    .dirv-variant-tab.is-active {
       background: #5a9aaf;
       color: #fff;
       border-color: #5a9aaf;
       box-shadow: 0 5px 14px rgba(20, 58, 91, 0.28);
     }
 
-    body.dark-mode .wf-variant-tab {
+    body.dark-mode .wf-variant-tab,
+    body.dark-mode .dirv-variant-tab {
       background: rgba(255, 255, 255, 0.05);
       border-color: rgba(255, 255, 255, 0.2);
       color: #e9f5ff;
     }
 
-    body.dark-mode .wf-variant-tab:hover {
+    body.dark-mode .wf-variant-tab:hover,
+    body.dark-mode .dirv-variant-tab:hover {
       background: #52718d;
       border-color: rgba(255, 255, 255, 0.32);
     }
 
-    body.dark-mode .wf-variant-tab.is-active {
+    body.dark-mode .wf-variant-tab.is-active,
+    body.dark-mode .dirv-variant-tab.is-active {
       background: #5a9aaf;
       color: #fff;
       border-color: #5a9aaf;
@@ -355,9 +362,6 @@
                 <h2 class="text-center"
                   style="font-size: 30px; font-weight:bold; text-align: center; padding-top: 2em;">
                   Enhancements Overview</h2>
-                <!-- <p style="text-align: center;">This is the pre-revised Enhancements, based on initial feedback and
-                  insights. To view the revised version, please refer to the <a href="ccl6.html"
-                    class="hyperlink">Revised</a> page.</p> -->
                 <div class="banner-eicw">
                   <a href="img/ccl6-overview-light.png" id="evo3" class="portfolio-img"
                     style="box-shadow: none; border: none;">
@@ -446,6 +450,59 @@
                 </figcaption>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- Direction Variants -->
+  <section class="about-me-summ clearfix" style="padding-bottom: 30px;">
+    <div class="wbnrfz_details_body">
+      <div class="container container-mobile">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="row justify-content-center">
+
+              <!-- CCL6 -->
+              <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                <div class="info justify-content-center">
+                  <h2 class="mb-3 text-center" style="font-size: 30px; font-weight:bold; text-align: left;">Direction
+                    Variants</h2>
+                  <p style="text-align: left; margin-bottom: 0em;">To get you started, select a direction variant to
+                    view its corresponding route (Example station: Promenade):</p>
+                  </p>
+                </div>
+              </div>
+
+              <div class="dirv-variant-tabs" role="tablist" aria-label="Direction variants">
+                <button type="button" class="dirv-variant-tab is-active" id="dirv-variant-a" data-dirv-variant="A"
+                  role="tab" aria-selected="true" aria-controls="dirv-image-wrap">
+                  Anticlockwise via Paya Lebar
+                </button>
+                <button type="button" class="dirv-variant-tab" id="dirv-variant-b" data-dirv-variant="B" role="tab"
+                  aria-selected="false" aria-controls="dirv-image-wrap">
+                  Clockwise via Bayfront
+                </button>
+                <button type="button" class="dirv-variant-tab" id="dirv-variant-c" data-dirv-variant="C" role="tab"
+                  aria-selected="false" aria-controls="dirv-image-wrap">
+                  Clockwise (Spur) ends at Dhoby Ghaut
+                </button>
+                <button type="button" class="dirv-variant-tab" id="dirv-variant-d" data-dirv-variant="D" role="tab"
+                  aria-selected="false" aria-controls="dirv-image-wrap">
+                  Anticlockwise ends at Prince Edward Road
+                </button>
+              </div>
+
+              <div class="banner-eicw" id="dirv-image-wrap" role="tabpanel" aria-labelledby="dirv-variant-a">
+                <a href="img-2/dirv1-light.png" id="dirv1" class="portfolio-img">
+                  <img src="img-2/dirv1-light.png" id="dirv1-img" class="img-fluid" alt="dirv1">
+                </a>
+              </div>
+
+            </div>>
           </div>
         </div>
       </div>

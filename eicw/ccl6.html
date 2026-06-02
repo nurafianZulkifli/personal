@@ -102,6 +102,56 @@
         transform: translateY(0);
       }
     }
+
+    .wf-variant-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 18px 0 22px;
+      flex-wrap: wrap;
+    }
+
+    .wf-variant-tab {
+      border: 1px solid #c9d4dc;
+      background: #f6fafc;
+      color: #274257;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .wf-variant-tab:hover {
+      background: #c7e3fb;
+      border-color: #90b2cc;
+    }
+
+    .wf-variant-tab.is-active {
+      background: #5a9aaf;
+      color: #fff;
+      border-color: #5a9aaf;
+      box-shadow: 0 5px 14px rgba(20, 58, 91, 0.28);
+    }
+
+    body.dark-mode .wf-variant-tab {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #e9f5ff;
+    }
+
+    body.dark-mode .wf-variant-tab:hover {
+      background: #52718d;
+      border-color: rgba(255, 255, 255, 0.32);
+    }
+
+    body.dark-mode .wf-variant-tab.is-active {
+      background: #5a9aaf;
+      color: #fff;
+      border-color: #5a9aaf;
+    }
   </style>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -275,7 +325,8 @@
         <li><a href="pc-trains.html"><i class="fa-regular fa-train"></i> Trains</a></li>
         <li><a href="pc-buses.html"><i class="fa-regular fa-bus"></i> Buses</a></li>
         <li><a href="ui-ux.html"><i class="fa-regular fa-pencil"></i> UI/UX</a></li>
-        <li><a href="ccl6.html" class="active"><i class="fa-regular fa-signs-post"></i> Rethinking CCL6 Signages</a></li>
+        <li><a href="ccl6.html" class="active"><i class="fa-regular fa-signs-post"></i> Rethinking CCL6 Signages</a>
+        </li>
         <li><a href="btr-1.html"><i class="fa-regular fa-eye"></i> Behind The Redesign</a></li>
       </ul>
     </div>
@@ -372,6 +423,9 @@
               <a href="#plat">
                 <button class="btn">Section 3 : Platform</button>
               </a>
+              <a href="#wflow">
+                <button class="btn">Wayfinding Flow</button>
+              </a>
             </div>
 
             <p style="text-align: left;"> Do note that for all my ideas, I'll be going with the
@@ -401,7 +455,7 @@
   <!----- Section 1 Header ----->
   <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="ent-img"
     style="background-image: url(img/ent-light.png); height: 45vh;">
-    <div class="container h-100" id="ent">
+    <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-content text-center">
@@ -411,10 +465,10 @@
   </section>
 
   <!-- Touch Point 1 - Digital Panel for Arrival Times -->
-  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3px;">
+  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3px;" id="ent">
     <div class="wbnrfz_details_body">
       <div class="container container-mobile">
-        <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="ent">
+        <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
           <!-- Collapsible Section -->
           <details class="eicw-collapsible">
             <summary>
@@ -467,7 +521,7 @@
   <!----- Section 2 Header ----->
   <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="conc-img"
     style="background-image: url(img/conc-light.png); height: 45vh;">
-    <div class="container h-100" id="conc">
+    <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-content text-center">
@@ -477,10 +531,10 @@
   </section>
 
   <!-- Touch Point 2 - Wayfinding Signages -->
-  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3px;">
+  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3px;" id="conc">
     <div class="wbnrfz_details_body">
       <div class="container container-mobile">
-        <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="conc">
+        <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
           <details class="eicw-collapsible">
             <summary>
               <span class="eicw-collapsible-title">Section 2 : Concourse</span>
@@ -557,7 +611,7 @@
   <!----- Section 3 Header ----->
   <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="plat-img"
     style="background-image: url(img/plat-light.png)">
-    <div class="container h-100" id="plat">
+    <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-content text-center">
@@ -567,10 +621,10 @@
   </section>
 
   <!-- Touch Point 3 - Arrival Times of the respective train services -->
-  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3em;">
+  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3em;" id="plat">
     <div class="wbnrfz_details_body">
       <div class="container container-mobile">
-        <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="plat">
+        <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
           <details class="eicw-collapsible">
             <summary>
               <span class="eicw-collapsible-title">Section 3 : Platform</span>
@@ -725,7 +779,8 @@
               <h5>For my Redesign, I added:</h5>
               <p>
                 • Black background <br>
-                • UI is matched exactly to the ones found in TEL - Variant A is for the current system, Variant B is for when the new system is implemented <br>
+                • UI is matched exactly to the ones found in TEL - Variant A is for the current system, Variant B is for
+                when the new system is implemented <br>
                 • Added the Clockwise/Anti-Clockwise arrows <br>
 
               </p>
@@ -834,6 +889,49 @@
     </div>
   </section>
 
+  <hr>
+
+  <!-- Wayfinding Flow -->
+  <section class="about-me-summ clearfix" style="padding-bottom: 7px; padding-top: 3em;" id="wflow">
+    <div class="wbnrfz_details_body_tchp">
+      <div class="container container-xxl">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="row justify-content-center">
+
+              <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
+                <h2 class="text-center"
+                  style="font-size: 30px; font-weight:bold; text-align: center; padding-top: 2em;">
+                  Wayfinding Flow</h2>
+                <div class="wf-variant-tabs" role="tablist" aria-label="Wayfinding flow variants">
+                  <button type="button" class="wf-variant-tab is-active" id="wf-variant-a" data-wf-variant="A"
+                    role="tab" aria-selected="true" aria-controls="wf-image-wrap">
+                    Variant A
+                  </button>
+                  <button type="button" class="wf-variant-tab" id="wf-variant-b" data-wf-variant="B" role="tab"
+                    aria-selected="false" aria-controls="wf-image-wrap">
+                    Variant B
+                  </button>
+                </div>
+                <div class="banner-eicw wow fadeIn" data-wow-delay="100ms" id="wf-image-wrap" role="tabpanel"
+                  aria-labelledby="wf-variant-a">
+                  <figcaption>
+                    <a href="img/wflow-light.png" id="wf" class="portfolio-img" style="box-shadow: none; border: none;">
+                      <img src="img/wflow-light.png" id="wf-img" class="img-fluid wf-img" alt="wf"
+                        style="box-shadow: none; border: none;">
+                    </a>
+                  </figcaption>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
 
 
 
@@ -844,7 +942,7 @@
 
   <script src="../js/mob-navtabs.js"></script>
 
-  <script src="js/eicw-5.js"></script>
+  <script src="js/ccl6.js"></script>
   <script src="js/eicw-nav.js"></script>
 
   <script src="../js/jquery.min.js"></script>

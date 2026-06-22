@@ -359,4 +359,13 @@ body.dark-mode .list-group-item:hover {
     body.dark-mode .mobile-bottom-nav .icon {
         color: #fff;
     }
+
+    /* Safari safe area adjustment for address bar */
+    .mobile-bottom-nav ul {
+        padding-bottom: max(4px, env(safe-area-inset-bottom));
+    }
+
+    body {
+        padding-bottom: max(80px, calc(80px + env(safe-area-inset-bottom)));
+    }
 }

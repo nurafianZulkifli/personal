@@ -61,7 +61,7 @@
     <nav class="navbar-container">
         <div class="navbar">
             <!-- Logo -->
-            <a href="./"><img src="img/core-img/logo.png" alt="logo" class="logo"></a>
+            <a href="./"><img src="img/core-img/logo.png" alt="logo" class="logo" loading="lazy"></a>
 
             <!-- Navigation Links -->
             <ul class="navbar-nav" id="navbarNav">
@@ -168,40 +168,22 @@
                 </div>
 
 
-                <div class="scrollable-tabs-container">
-                    <div class="left-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                        </svg>
-                    </div>
-
-                    <ul>
-                        <li>
-                            <a href="#" class="btn-filter-blog active" data-filter="*"><i
-                                    class="fa-light fa-comment-dots"></i> All Posts</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="btn-filter-blog" data-filter=".wbd"><i class="fa-regular fa-browser"></i>
-                                Website Design</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="btn-filter-blog" data-filter=".wfd"><i
-                                    class="fa-regular fa-map-location"></i> Wayfinding Design</a>
-                        </li>
-                    </ul>
-
-                    <div class="right-arrow active">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                        </svg>
-
+                <!-- Sticky Filter Dropdown Nav -->
+                <div class="sticky-nav-wrap">
+                    <div class="eicw-nav-dropdown" id="filterDropdown">
+                        <button class="eicw-nav-btn" type="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="eicw-nav-label"><i class="fa-light fa-comment-dots"></i> All Posts</span>
+                            <i class="fa-regular fa-chevron-down eicw-nav-chevron"></i>
+                        </button>
+                        <ul class="eicw-nav-menu" role="menu">
+                            <li><a href="#" class="btn-filter-blog active" data-filter="*"><i class="fa-light fa-comment-dots"></i> All Posts</a></li>
+                            <li><a href="#" class="btn-filter-blog" data-filter=".wbd"><i class="fa-regular fa-browser"></i> Website Design</a></li>
+                            <li><a href="#" class="btn-filter-blog" data-filter=".wfd"><i class="fa-regular fa-map-location"></i> Wayfinding Design</a></li>
+                        </ul>
                     </div>
                 </div>
-                <hr>
+
+                <hr style="margin: 0;">
             </div>
 
         </div>
@@ -229,7 +211,7 @@
             <div class="container">
                 <div class="wbnrfz-grid">
                     <div class="card wbd" data-date="2025-06-01">
-                        <img src="https://i.imgur.com/PD32Zwl.png" alt="Work 1">
+                        <img src="https://i.imgur.com/PD32Zwl.png" alt="Work 1" loading="lazy">
                         <div class="card-content">
                             <h3>Personal Version 6.1 - Improving Consistencies</h3>
                             <a href="blog/personal-v6-1.html" class="pw-btn-small btn-2"><i
@@ -238,7 +220,7 @@
                     </div>
 
                     <div class="card wbd" data-date="2025-06-01">
-                        <img src="https://i.imgur.com/2GkeIsN.png" alt="Work 1">
+                        <img src="https://i.imgur.com/2GkeIsN.png" alt="Work 1" loading="lazy">
                         <div class="card-content">
                             <h3>Personal Version 6.0 - A Significant Refresh</h3>
                             <a href="blog/personal-v6-0.html" class="pw-btn-small btn-2"><i
@@ -247,7 +229,7 @@
                     </div>
 
                     <div class="card wbd" data-date="2025-06-01">
-                        <img src="https://i.imgur.com/sycXHkv.png" alt="Work 2">
+                        <img src="https://i.imgur.com/sycXHkv.png" alt="Work 2" loading="lazy">
                         <div class="card-content">
                             <h3>Personal Version 5.0 - Iterations & AI</h3>
                             <a href="blog/personal-v5-0.html" class="pw-btn-small btn-2"><i
@@ -256,7 +238,7 @@
                     </div>
 
                     <div class="card wbd" data-date="2024-10-12">
-                        <img src="https://i.imgur.com/jgMsRKZ.png" alt="Work 3">
+                        <img src="https://i.imgur.com/jgMsRKZ.png" alt="Work 3" loading="lazy">
                         <div class="card-content">
                             <h3>Personal Version 4.4 - Optimizations Galore</h3>
                             <a href="blog/personal-v4-3.html" class="pw-btn-small btn-2"><i
@@ -265,7 +247,7 @@
                     </div>
 
                     <div class="card wfd" data-date="2024-10-12">
-                        <img src="https://i.imgur.com/FA2hB9i.png" alt="Work 4">
+                        <img src="https://i.imgur.com/FA2hB9i.png" alt="Work 4" loading="lazy">
                         <div class="card-content">
                             <h3>If you can't beat them, join them</h3>
                             <a href="blog/wayfind-2.html" class="pw-btn-small btn-2"><i
@@ -274,7 +256,7 @@
                     </div>
 
                     <div class="card wbd" data-date="2024-09-01">
-                        <img src="https://i.imgur.com/0CCS3Ks.png" alt="Work 4">
+                        <img src="https://i.imgur.com/0CCS3Ks.png" alt="Work 4" loading="lazy">
                         <div class="card-content">
                             <h3>Personal V4 - A big redesign</h3>
                             <a href="blog/personal-v4-1.html" class="pw-btn-small btn-2"><i
@@ -283,7 +265,7 @@
                     </div>
 
                     <div class="card wfd" data-date="2024-06-30">
-                        <img src="https://i.imgur.com/smZXorB.png" alt="Work 4">
+                        <img src="https://i.imgur.com/smZXorB.png" alt="Work 4" loading="lazy">
                         <div class="card-content">
                             <h3>New Wayfinding System - How has it been so far?</h3>
                             <a href="blog/wayfind.html" class="pw-btn-small btn-2"><i
@@ -319,6 +301,8 @@
     <script src="js/blogFunct.js"></script>
 
     <script src="js/dstabs.js"></script>
+
+    <script src="js/filter-nav-blog.js"></script>
 
 </body>
 

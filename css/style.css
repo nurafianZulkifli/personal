@@ -2634,7 +2634,7 @@ h2.page-title {
 .wbnrfz_eicw {
     background: #ececea;
     backdrop-filter: blur(10px);
-    padding-bottom: 0em;
+    padding-bottom: 2em;
     position: relative;
     z-index: 10;
 }

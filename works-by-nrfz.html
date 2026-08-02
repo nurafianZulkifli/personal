@@ -27,8 +27,6 @@
   <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/glightbox.min.css">
 
-
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WN76281P3Q"></script>
   <script>
@@ -66,7 +64,7 @@
   <nav class="navbar-container">
     <div class="navbar">
       <!-- Logo -->
-      <a href="./"><img src="img/core-img/logo.png" alt="logo" class="logo"></a>
+      <a href="./"><img src="img/core-img/logo.png" alt="logo" class="logo" loading="lazy"></a>
 
       <!-- Navigation Links -->
       <ul class="navbar-nav" id="navbarNav">
@@ -178,59 +176,34 @@
           </div>
         </div>
 
-
-        <div class="scrollable-tabs-container">
-          <div class="left-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="size-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-            </svg>
-          </div>
-
-          <ul>
-            <li>
-              <a href="#" class="btn-filter active" data-filter="*"><i class="fa-regular fa-pen-paintbrush"></i> All
-                Projects</a>
-            </li>
-
-            <li>
-              <a href="#" class="btn-filter" data-filter=".ds"><i class="fa-regular fa-brush"></i> Designs</a>
-            </li>
-
-            <li>
-              <a href="#" class="btn-filter" data-filter=".mc"><i class="fa-regular fa-object-ungroup"></i> Mockups</a>
-            </li>
-
-            <li>
-              <a href="#" class="btn-filter" data-filter=".ig"><i class="fa-regular fa-chart-pie"></i> Infographics</a>
-            </li>
-
-            <li>
-              <a href="#" class="btn-filter" data-filter=".lg"><i class="fa-regular fa-shapes"></i> Logos</a>
-            </li>
-
-            <li>
-              <a href="#" class="btn-filter" data-filter=".in"><i class="fa-regular fa-lightbulb"></i> Innovations</a>
-            </li>
-          </ul>
-
-          <div class="right-arrow active">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="size-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg>
-
-          </div>
-        </div>
-        <hr>
       </div>
 
     </div>
 
   </section>
 
+  <!-- Sticky Filter Dropdown Nav -->
+  <div class="sticky-nav-wrap">
+    <div class="eicw-nav-dropdown" id="filterDropdown">
+      <button class="eicw-nav-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span class="eicw-nav-label"><i class="fa-regular fa-pen-paintbrush"></i> All Projects</span>
+        <i class="fa-regular fa-chevron-down eicw-nav-chevron"></i>
+      </button>
+      <ul class="eicw-nav-menu" role="menu">
+        <li><a href="#" class="btn-filter active" data-filter="*"><i class="fa-regular fa-pen-paintbrush"></i> All Projects</a></li>
+        <li><a href="#" class="btn-filter" data-filter=".ds"><i class="fa-regular fa-brush"></i> Designs</a></li>
+        <li><a href="#" class="btn-filter" data-filter=".mc"><i class="fa-regular fa-object-ungroup"></i> Mockups</a></li>
+        <li><a href="#" class="btn-filter" data-filter=".ig"><i class="fa-regular fa-chart-pie"></i> Infographics</a></li>
+        <li><a href="#" class="btn-filter" data-filter=".lg"><i class="fa-regular fa-shapes"></i> Logos</a></li>
+        <li><a href="#" class="btn-filter" data-filter=".in"><i class="fa-regular fa-lightbulb"></i> Innovations</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr style="margin: 0;">
+
   <!-- Section Contents -->
-  <section class="about-me-summ clearfix">
+  <section class="about-me-summ clearfix" style="padding-top: 40px; padding-bottom: 20px;">
     <div class="container-xxl">
       <div class="row">
         <div class="col-12">
@@ -250,7 +223,7 @@
       <div class="container">
         <div class="wbnrfz-grid">
           <div class="card in" data-date="2025-11-30">
-            <img src="https://i.imgur.com/ii25MFr.png" alt="buszy">
+            <img src="https://i.imgur.com/ii25MFr.png" alt="buszy" loading="lazy">
             <div class="card-content">
               <h3>Buszy - Bus Arrival Timings</h3>
               <a href="https://worksbynrfz.com/buszy" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -258,7 +231,7 @@
           </div>
 
           <div class="card in" data-date="2026-02-01">
-            <img src="https://i.imgur.com/3iBJ4YK.png" alt="rlb-v4">
+            <img src="https://i.imgur.com/3iBJ4YK.png" alt="rlb-v4" loading="lazy">
             <div class="card-content">
               <h3>RailBuddy - Stay on track, always</h3>
               <a href="https://worksbynrfz.com/rail-buddy" class="pw-btn-small btn-2"><i
@@ -267,7 +240,7 @@
           </div>
 
           <div class="card ds" data-date="2025-01-01">
-            <img src="https://i.imgur.com/HaCQ71l.png" alt="eicw-brainstorm">
+            <img src="https://i.imgur.com/HaCQ71l.png" alt="eicw-brainstorm" loading="lazy">
             <div class="card-content">
               <h3>EICW - Implementation Brainstorming</h3>
               <a href="eicw/intro.html" class="pw-btn-small btn-2"><i
@@ -276,7 +249,7 @@
           </div>
 
           <div class="card in" data-date="2023-01-01">
-            <img src="https://i.imgur.com/h91oHX9.png" alt="store-invent">
+            <img src="https://i.imgur.com/h91oHX9.png" alt="store-invent" loading="lazy">
             <div class="card-content">
               <h3>Store Inventory Tracking</h3>
               <a href="worksbynrfz/project.html?p=sit" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -284,7 +257,7 @@
           </div>
 
           <div class="card ds" data-date="2023-01-01">
-            <img src="https://i.imgur.com/Y7RzeWB.png" alt="bp12-nws">
+            <img src="https://i.imgur.com/Y7RzeWB.png" alt="bp12-nws" loading="lazy">
             <div class="card-content">
               <h3>New Wayfinding System for BP12 Jelapang</h3>
               <a href="worksbynrfz/project.html?p=bp12" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -292,7 +265,7 @@
           </div>
 
           <div class="card ds mc" data-date="2024-01-01">
-            <img src="https://i.imgur.com/H41Qcdd.png" alt="bus-pids">
+            <img src="https://i.imgur.com/H41Qcdd.png" alt="bus-pids" loading="lazy">
             <div class="card-content">
               <h3>LTA Bus PIDS Redesign</h3>
               <a href="worksbynrfz/project.html?p=lta-pids" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -300,7 +273,7 @@
           </div>
 
           <div class="card ds mc" data-date="2024-01-01">
-            <img src="https://i.imgur.com/IeRTJiV.png" alt="bus-stop-pole">
+            <img src="https://i.imgur.com/IeRTJiV.png" alt="bus-stop-pole" loading="lazy">
             <div class="card-content">
               <h3>LTA Bus Stop Pole Design Refresh</h3>
               <a href="worksbynrfz/project.html?p=lta-bp" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -308,7 +281,7 @@
           </div>
 
           <div class="card mc" data-date="2022-01-01">
-            <img src="https://i.imgur.com/GeKldfP.png" alt="man-a22-mascot">
+            <img src="https://i.imgur.com/GeKldfP.png" alt="man-a22-mascot" loading="lazy">
             <div class="card-content">
               <h3>MAN A22 Lion Mascot Replication</h3>
               <a href="worksbynrfz/project.html?p=man-a22-masc" class="pw-btn-small btn-2"><i
@@ -317,7 +290,7 @@
           </div>
 
           <div class="card mc" data-date="2023-01-01">
-            <img src="https://i.imgur.com/NsltGte.png" alt="myts-app">
+            <img src="https://i.imgur.com/NsltGte.png" alt="myts-app" loading="lazy">
             <div class="card-content">
               <h3>MyTransport.SG App Redesign</h3>
               <a href="worksbynrfz/project.html?p=myts-app" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -325,7 +298,7 @@
           </div>
 
           <div class="card ds" data-date="2022-01-01">
-            <img src="https://i.imgur.com/JAQpFxJ.png" alt="bus-rep">
+            <img src="https://i.imgur.com/JAQpFxJ.png" alt="bus-rep" loading="lazy">
             <div class="card-content">
               <h3>Bus Replications</h3>
               <a href="worksbynrfz/project.html?p=bus-rep" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -333,7 +306,7 @@
           </div>
 
           <div class="card ig" data-date="2023-01-01">
-            <img src="https://i.imgur.com/fLPs7g4.png" alt="time-tree">
+            <img src="https://i.imgur.com/fLPs7g4.png" alt="time-tree" loading="lazy">
             <div class="card-content">
               <h3>How To Use TimeTree Infographic</h3>
               <a href="worksbynrfz/project.html?p=igra3" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -341,7 +314,7 @@
           </div>
 
           <div class="card ds" data-date="2023-01-01">
-            <img src="https://i.imgur.com/VEDgOwO.png" alt="more-rep">
+            <img src="https://i.imgur.com/VEDgOwO.png" alt="more-rep" loading="lazy">
             <div class="card-content">
               <h3>More Replications</h3>
               <a href="worksbynrfz/project.html?p=more-rep" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -349,7 +322,7 @@
           </div>
 
           <div class="card ds mc" data-date="2023-01-01">
-            <img src="https://i.imgur.com/b1p4yg3.png" alt="mrt-sign-s1">
+            <img src="https://i.imgur.com/b1p4yg3.png" alt="mrt-sign-s1" loading="lazy">
             <div class="card-content">
               <h3>MRT Signages Concept/Replications S1</h3>
               <a href="worksbynrfz/project.html?p=mrt-signage-rep-s1" class="pw-btn-small btn-2"><i
@@ -358,7 +331,7 @@
           </div>
 
           <div class="card ds mc" data-date="2023-01-01">
-            <img src="https://i.imgur.com/OOsyWrU.png" alt="mrt-sign-s2">
+            <img src="https://i.imgur.com/OOsyWrU.png" alt="mrt-sign-s2" loading="lazy">
             <div class="card-content">
               <h3>MRT Signages Concept/Replications S2</h3>
               <a href="worksbynrfz/project.html?p=mrt-signage-rep-s2" class="pw-btn-small btn-2"><i
@@ -368,7 +341,7 @@
 
 
           <div class="card ig" data-date="2022-01-01">
-            <img src="https://i.imgur.com/y8FkWzk.png" alt="hydration-reg">
+            <img src="https://i.imgur.com/y8FkWzk.png" alt="hydration-reg" loading="lazy">
             <div class="card-content">
               <h3>Hydration Regime Infographic</h3>
               <a href="worksbynrfz/project.html?p=hydrationreg" class="pw-btn-small btn-2"><i
@@ -378,7 +351,7 @@
 
 
           <div class="card ds" data-date="2023-01-01">
-            <img src="https://i.imgur.com/2STNFPm.png" alt="ezlink-red">
+            <img src="https://i.imgur.com/2STNFPm.png" alt="ezlink-red" loading="lazy">
             <div class="card-content">
               <h3>EZ-Link Card Redesign</h3>
               <a href="worksbynrfz/project.html?p=ezlink-red" class="pw-btn-small btn-2"><i
@@ -388,7 +361,7 @@
 
 
           <div class="card mc" data-date="2020-01-01">
-            <img src="https://i.imgur.com/rW2romm.png" alt="frc-flash-app">
+            <img src="https://i.imgur.com/rW2romm.png" alt="frc-flash-app" loading="lazy">
             <div class="card-content">
               <h3>Food Review Compiler/Flashify - a Flashcard App</h3>
               <a href="worksbynrfz/project.html?p=food-rev-flash-app" class="pw-btn-small btn-2"><i
@@ -398,7 +371,7 @@
 
 
           <div class="card lg" data-date="2017-01-01">
-            <img src="https://i.imgur.com/ian4hrp.png" alt="friends-forever">
+            <img src="https://i.imgur.com/ian4hrp.png" alt="friends-forever" loading="lazy">
             <div class="card-content">
               <h3>Friends Forever Logo Design</h3>
               <a href="worksbynrfz/project.html?p=ffl" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -407,7 +380,7 @@
 
 
           <div class="card ig" data-date="2020-01-01">
-            <img src="https://i.imgur.com/AsrVHVA.png" alt="infographic-resume">
+            <img src="https://i.imgur.com/AsrVHVA.png" alt="infographic-resume" loading="lazy">
             <div class="card-content">
               <h3>Infographic Resume</h3>
               <a href="worksbynrfz/project.html?p=igra1" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -416,7 +389,7 @@
 
 
           <div class="card ig" data-date="2021-01-01">
-            <img src="https://i.imgur.com/FtHn22x.png" alt="hydration-reg">
+            <img src="https://i.imgur.com/FtHn22x.png" alt="hydration-reg" loading="lazy">
             <div class="card-content">
               <h3>COVID-19 Shopping Habits Infographic</h3>
               <a href="worksbynrfz/project.html?p=igra2" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
@@ -453,6 +426,8 @@
   <script src="js/isotope.pkgd.min.js"></script>
 
   <script src="js/dstabs.js"></script>
+
+  <script src="js/filter-nav.js"></script>
 
   <script src="js/portFunct.js"></script>
 

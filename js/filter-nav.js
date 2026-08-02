@@ -66,7 +66,20 @@
     function mobileStickyPos() {
         if (window.innerWidth > 994) return;
         const bc = document.querySelector('.breadcrumb.breadcrumb-fixed');
-        const bcRight = bc ? bc.getBoundingClientRect().right : 20;
+        const bcRect = bc ? bc.getBoundingClientRect() : null;
+
+        if (window.innerWidth <= 430) {
+            // Too narrow to sit beside the breadcrumb — stack below it instead
+            navWrap.style.left = '20px';
+            navWrap.style.right = '20px';
+            navWrap.style.width = 'auto';
+            navWrap.style.transform = 'none';
+            navWrap.style.maxWidth = 'none';
+            navWrap.style.top = ((bcRect ? bcRect.bottom : 68) + 10) + 'px';
+            return;
+        }
+
+        const bcRight = bcRect ? bcRect.right : 20;
         navWrap.style.left = (bcRight + 10) + 'px';
         navWrap.style.right = '20px';
         navWrap.style.width = 'auto';

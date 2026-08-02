@@ -3051,6 +3051,12 @@ li.breadcrumb-item a:hover {
     }
 }
 
+@media (max-width: 430px) {
+    .sticky-nav-wrap.is-sticky {
+        top: 95px;
+    }
+}
+
 .eicw-nav-dropdown {
     max-width: 1400px;
     margin: 20px auto;

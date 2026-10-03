@@ -39,21 +39,13 @@
 </head>
 
 <body>
-  <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
+  <!-- Fixed back button at very top (mobile/tablet only) -->
   <div class="breadcrumb-fixed-placeholder">
-    <nav aria-label="breadcrumb" style="margin-bottom:0;">
+    <nav aria-label="Back" style="margin-bottom:0;">
       <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
         <li class="breadcrumb-item">
-          <a href="./">
-            <i class="fa-regular fa-house"></i>
-          </a>
-        </li>
-        <li class="breadcrumb-item">
-          <a href="menu.html"><i class="fa-regular fa-bars"></i>
-          </a>
-        </li>
-        <li class="breadcrumb-item">
-          <a href="works-by-nrfz.html"><i class="fa-regular fa-pen-paintbrush"></i>
+          <a href="menu.html" aria-label="Back to menu">
+            <i class="fa-solid fa-arrow-left"></i>
           </a>
         </li>
       </ol>
@@ -137,25 +129,17 @@
 
 
   <!------------------------------------------------------------------------ Start of Sections ------------------------------------------------------------------------>
-  <!-- Breadcrumbs -->
+  <!-- Back button -->
   <section class="about-me-sum clearfix">
     <div class="wbnrfz_eicw">
       <div class="page-header-section">
         <div class="container container-xxl container-mobile container-mobile-header">
           <div class="breadcrumb-wrapper">
-            <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
+            <nav aria-label="Back" class="breadcrumb-desktop" style="display:none;">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="../index.html">
-                    <i class="fa-regular fa-house"></i>
-                  </a>
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="menu.html"><i class="fa-regular fa-bars"></i>
-                  </a>
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="works-by-nrfz.html"><i class="fa-regular fa-pen-paintbrush"></i>
+                  <a href="menu.html" aria-label="Back to menu">
+                    <i class="fa-solid fa-arrow-left"></i>
                   </a>
                 </li>
               </ol>
@@ -190,12 +174,16 @@
         <i class="fa-regular fa-chevron-down eicw-nav-chevron"></i>
       </button>
       <ul class="eicw-nav-menu" role="menu">
-        <li><a href="#" class="btn-filter active" data-filter="*"><i class="fa-regular fa-pen-paintbrush"></i> All Projects</a></li>
+        <li><a href="#" class="btn-filter active" data-filter="*"><i class="fa-regular fa-pen-paintbrush"></i> All
+            Projects</a></li>
         <li><a href="#" class="btn-filter" data-filter=".ds"><i class="fa-regular fa-brush"></i> Designs</a></li>
-        <li><a href="#" class="btn-filter" data-filter=".mc"><i class="fa-regular fa-object-ungroup"></i> Mockups</a></li>
-        <li><a href="#" class="btn-filter" data-filter=".ig"><i class="fa-regular fa-chart-pie"></i> Infographics</a></li>
+        <li><a href="#" class="btn-filter" data-filter=".mc"><i class="fa-regular fa-object-ungroup"></i> Mockups</a>
+        </li>
+        <li><a href="#" class="btn-filter" data-filter=".ig"><i class="fa-regular fa-chart-pie"></i> Infographics</a>
+        </li>
         <li><a href="#" class="btn-filter" data-filter=".lg"><i class="fa-regular fa-shapes"></i> Logos</a></li>
-        <li><a href="#" class="btn-filter" data-filter=".in"><i class="fa-regular fa-lightbulb"></i> Innovations</a></li>
+        <li><a href="#" class="btn-filter" data-filter=".in"><i class="fa-regular fa-lightbulb"></i> Innovations</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -221,17 +209,34 @@
       </div>
 
       <div class="container">
-        <div class="wbnrfz-grid">
+        <div class="wbnrfz-grid featured-cards">
+          <div class="card in" data-date="2026-09-25">
+            <img src="https://i.imgur.com/clFlMPt.png" alt="buszy" loading="lazy">
+            <div class="card-content">
+              <h3>SMRT STARiS 2 Redesign</h3>
+              <a href="https://nurafianzulkifli.github.io/staris-2.0" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="card in" data-date="2026-04-30">
+            <img src="https://i.imgur.com/dQHFpSs.png" alt="buszy" loading="lazy">
+            <div class="card-content">
+              <h3>LTA CDD-CLD Redesign</h3>
+              <a href="https://nurafianzulkifli.github.io/cdd-cld/" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
           <div class="card in" data-date="2025-11-30">
-            <img src="https://i.imgur.com/ii25MFr.png" alt="buszy" loading="lazy">
+            <img src="https://i.imgur.com/n4KAkrT.png" alt="buszy" loading="lazy">
             <div class="card-content">
               <h3>Buszy - Bus Arrival Timings</h3>
-              <a href="https://worksbynrfz.com/buszy" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://worksbynrfz.com/buszy" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
           <div class="card in" data-date="2026-02-01">
-            <img src="https://i.imgur.com/3iBJ4YK.png" alt="rlb-v4" loading="lazy">
+            <img src="https://i.imgur.com/udHxdYE.png" alt="rlb-v4" loading="lazy">
             <div class="card-content">
               <h3>RailBuddy - Stay on track, always</h3>
               <a href="https://worksbynrfz.com/rail-buddy" class="pw-btn-small btn-2"><i
@@ -243,8 +248,7 @@
             <img src="https://i.imgur.com/HaCQ71l.png" alt="eicw-brainstorm" loading="lazy">
             <div class="card-content">
               <h3>EICW - Implementation Brainstorming</h3>
-              <a href="eicw/intro.html" class="pw-btn-small btn-2"><i
-                  class="fa-solid fa-arrow-right"></i></a>
+              <a href="eicw/intro.html" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -252,7 +256,8 @@
             <img src="https://i.imgur.com/h91oHX9.png" alt="store-invent" loading="lazy">
             <div class="card-content">
               <h3>Store Inventory Tracking</h3>
-              <a href="worksbynrfz/project.html?p=sit" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=sit" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -260,7 +265,8 @@
             <img src="https://i.imgur.com/Y7RzeWB.png" alt="bp12-nws" loading="lazy">
             <div class="card-content">
               <h3>New Wayfinding System for BP12 Jelapang</h3>
-              <a href="worksbynrfz/project.html?p=bp12" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=bp12" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -268,7 +274,8 @@
             <img src="https://i.imgur.com/H41Qcdd.png" alt="bus-pids" loading="lazy">
             <div class="card-content">
               <h3>LTA Bus PIDS Redesign</h3>
-              <a href="worksbynrfz/project.html?p=lta-pids" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=lta-pids" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -276,7 +283,8 @@
             <img src="https://i.imgur.com/IeRTJiV.png" alt="bus-stop-pole" loading="lazy">
             <div class="card-content">
               <h3>LTA Bus Stop Pole Design Refresh</h3>
-              <a href="worksbynrfz/project.html?p=lta-bp" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=lta-bp" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -293,7 +301,8 @@
             <img src="https://i.imgur.com/NsltGte.png" alt="myts-app" loading="lazy">
             <div class="card-content">
               <h3>MyTransport.SG App Redesign</h3>
-              <a href="worksbynrfz/project.html?p=myts-app" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=myts-app" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -301,7 +310,8 @@
             <img src="https://i.imgur.com/JAQpFxJ.png" alt="bus-rep" loading="lazy">
             <div class="card-content">
               <h3>Bus Replications</h3>
-              <a href="worksbynrfz/project.html?p=bus-rep" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=bus-rep" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -309,7 +319,8 @@
             <img src="https://i.imgur.com/fLPs7g4.png" alt="time-tree" loading="lazy">
             <div class="card-content">
               <h3>How To Use TimeTree Infographic</h3>
-              <a href="worksbynrfz/project.html?p=igra3" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=igra3" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -317,7 +328,8 @@
             <img src="https://i.imgur.com/VEDgOwO.png" alt="more-rep" loading="lazy">
             <div class="card-content">
               <h3>More Replications</h3>
-              <a href="worksbynrfz/project.html?p=more-rep" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=more-rep" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -374,7 +386,8 @@
             <img src="https://i.imgur.com/ian4hrp.png" alt="friends-forever" loading="lazy">
             <div class="card-content">
               <h3>Friends Forever Logo Design</h3>
-              <a href="worksbynrfz/project.html?p=ffl" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=ffl" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -383,7 +396,8 @@
             <img src="https://i.imgur.com/AsrVHVA.png" alt="infographic-resume" loading="lazy">
             <div class="card-content">
               <h3>Infographic Resume</h3>
-              <a href="worksbynrfz/project.html?p=igra1" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=igra1" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -392,7 +406,8 @@
             <img src="https://i.imgur.com/FtHn22x.png" alt="hydration-reg" loading="lazy">
             <div class="card-content">
               <h3>COVID-19 Shopping Habits Infographic</h3>
-              <a href="worksbynrfz/project.html?p=igra2" class="pw-btn-small btn-2"><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="worksbynrfz/project.html?p=igra2" class="pw-btn-small btn-2"><i
+                  class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>

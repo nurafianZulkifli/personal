@@ -117,23 +117,25 @@
       '          <div class="container container-xxl container-mobile">\n' +
       '            <div class="row">\n' +
       '              <div class="col-md-6 col-lg-4 box-indiv">\n' +
-      '                <div class="port-summary port-cat text-center mb-80 wow fadeIn" data-wow-delay="100ms">\n' +
+      '                <div class="about-me-summary text-center mb-80 wow fadeIn" data-wow-delay="100ms">\n' +
       '                  <div class="summ-icon"><i class="fa-solid fa-list"></i></div>\n' +
-      '                  <h3 style="font-size: 18px; font-weight: bolder;">Category</h3>\n' +
-      '                  <h4 style="font-size: 13px;">' + d.category + '</h4>\n' +
+      '                  <h3>Category</h3>\n' +
       '                </div>\n' +
+      '                <div class="summary-value wow fadeIn" data-wow-delay="100ms"><h4>' + d.category + '</h4></div>\n' +
       '              </div>\n' +
       '              <div class="col-md-6 col-lg-4 box-indiv">\n' +
-      '                <div class="port-summary port-year text-center mb-80 wow fadeIn" data-wow-delay="100ms">\n' +
+      '                <div class="about-me-summary text-center mb-80 wow fadeIn" data-wow-delay="100ms">\n' +
       '                  <div class="summ-icon"><i class="fa-solid fa-calendar"></i></div>\n' +
-      '                  <h3 style="font-size: 18px; font-weight: bolder;">Project Year</h3>\n' +
-      '                  <h4 style="font-size: 13px;">' + d.year + '</h4>\n' +
+      '                  <h3>Project Year</h3>\n' +
       '                </div>\n' +
+      '                <div class="summary-value wow fadeIn" data-wow-delay="100ms"><h4>' + d.year + '</h4></div>\n' +
       '              </div>\n' +
       '              <div class="col-md-6 col-lg-4 box-indiv">\n' +
-      '                <div class="port-summary port-share text-center mb-80 wow fadeIn" data-wow-delay="100ms">\n' +
+      '                <div class="about-me-summary text-center mb-80 wow fadeIn" data-wow-delay="100ms">\n' +
       '                  <div class="summ-icon"><i class="fa-solid fa-share-from-square"></i></div>\n' +
-      '                  <h3 style="font-size: 18px; font-weight: bolder;">Share Project</h3>\n' +
+      '                  <h3>Share Project</h3>\n' +
+      '                </div>\n' +
+      '                <div class="summary-value wow fadeIn" data-wow-delay="100ms">\n' +
       '                  <div class="social_links">\n' +
       '                    <a href="https://www.facebook.com/sharer/sharer.php?u=' + pageUrl + '" title="Facebook"><i class="fa-brands fa-facebook"></i></a>\n' +
       '                    <a href="https://x.com/intent/post?url=' + pageUrl + '&text=' + encodedTitle + '" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>\n' +

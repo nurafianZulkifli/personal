@@ -130,7 +130,7 @@
 /* ---- 1.0.4a Min Width: 992px */
 @media (min-width: 995px) {
     #hero {
-        height: 90vh;
+        height: 100vh;
     }
 }
 

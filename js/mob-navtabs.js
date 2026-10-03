@@ -1,27 +1,89 @@
-      // Hide/show mobile bottom nav on scroll (mobile only)
+// (part of Version 7 Redesign) Replace breadcrumb trails with a single back link.
+(function () {
+    function getBackTarget() {
+        var path = window.location.pathname.toLowerCase();
+
+        if (/\/blog\/[^/]+\.html$/.test(path)) {
+            return { href: '../blog.html', label: 'Back to blog' };
+        }
+        if (/\/worksbynrfz\/project\.html$/.test(path)) {
+            return { href: '../works-by-nrfz.html', label: 'Back to projects' };
+        }
+        if (/\/eicw\/(?!intro\.html$)[^/]+\.html$/.test(path)) {
+            return { href: 'intro.html', label: 'Back to EICW' };
+        }
+        if (/\/eicw\/intro\.html$/.test(path)) {
+            return { href: '../menu.html', label: 'Back to menu' };
+        }
+        if (/\/menu\.html$/.test(path)) {
+            return { href: './', label: 'Back home' };
+        }
+
+        return { href: 'menu.html', label: 'Back to menu' };
+    }
+
+    function replaceBreadcrumbs() {
+        var target = getBackTarget();
+        document.querySelectorAll('ol.breadcrumb').forEach(function (list) {
+            if (list.dataset.backButtonApplied === 'true') return;
+
+            var nav = list.closest('nav');
+            if (nav) nav.setAttribute('aria-label', target.label);
+            list.innerHTML =
+                '<li class="breadcrumb-item">' +
+                '<a href="' + target.href + '" aria-label="' + target.label + '">' +
+                '<i class="fa-solid fa-arrow-left" aria-hidden="true"></i>' +
+                '</a></li>';
+            list.dataset.backButtonApplied = 'true';
+        });
+    }
+
+    replaceBreadcrumbs();
+
+    if (document.body) {
+        new MutationObserver(replaceBreadcrumbs).observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    }
+})();
+
+        // (part of Version 7 Redesign) Collapse desktop navigation labels on scroll down.
+        (function () {
+            var navbar = document.querySelector('.navbar-container');
+            if (!navbar) return;
+            var lastScrollY = window.scrollY;
+
+            function updateNavbar() {
+                var currentScrollY = window.scrollY;
+                if (currentScrollY <= 50 || currentScrollY < lastScrollY - 4) {
+                    navbar.classList.remove('scrolled');
+                } else if (currentScrollY > lastScrollY + 4) {
+                    navbar.classList.add('scrolled');
+                }
+                lastScrollY = currentScrollY;
+            }
+
+            updateNavbar();
+            window.addEventListener('scroll', updateNavbar, { passive: true });
+        })();
+
+      // (part of Version 7 Redesign) Collapse mobile navigation labels based on scroll direction.
         (function () {
             var lastScrollY = window.scrollY;
             var nav = document.querySelector('.mobile-bottom-nav');
             var ticking = false;
-            var isHidden = false;
 
             function onScroll() {
                 var currentScrollY = window.scrollY;
-                if (window.innerWidth > 600) return; // Only on mobile
+                if (!nav) return;
+                if (window.innerWidth > 994) return;
                 if (currentScrollY > lastScrollY + 4) {
                     // Scrolling down
-                    if (!isHidden) {
-                        nav.style.transform = 'translateY(100%)';
-                        nav.style.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
-                        isHidden = true;
-                    }
+                    nav.classList.add('labels-hidden');
                 } else if (currentScrollY < lastScrollY - 4) {
                     // Scrolling up
-                    if (isHidden) {
-                        nav.style.transform = 'translateY(0)';
-                        nav.style.transition = 'transform 0.3s cubic-bezier(.4,0,.2,1)';
-                        isHidden = false;
-                    }
+                    nav.classList.remove('labels-hidden');
                 }
                 lastScrollY = currentScrollY;
             }
@@ -38,9 +100,8 @@
 
             // Reset nav position on resize
             window.addEventListener('resize', function () {
-                if (window.innerWidth > 600) {
-                    nav.style.transform = '';
-                    isHidden = false;
+                if (window.innerWidth > 994 && nav) {
+                    nav.classList.remove('labels-hidden');
                 }
             });
         })();

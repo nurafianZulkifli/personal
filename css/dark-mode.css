@@ -264,7 +264,8 @@ body.dark-mode .about-me-area {
     transition: all 0.5s ease;
 }
 
-body.dark-mode .about-me-content {
+body.dark-mode .about-me-content,
+body.dark-mode .about-me-area .skill-card {
     background-color: #292d3d;
     transition: all 0.5s ease;
     border: 1px solid #2b2b2b33;
@@ -665,7 +666,7 @@ body.dark-mode .scrollable-tabs-container svg {
 
 body.dark-mode .eicw-nav-btn,
 body.dark-mode .eicw-nav-dropdown.navbar-merged .eicw-nav-btn {
-    background: #393e53c9;
+    background: #393e536b;
     color: #fff;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -867,4 +868,44 @@ body.dark-mode .flickity-prev-next-button svg {
 
 body.dark-mode .flickity-prev-next-button .arrow {
     fill: #fff !important;
+}
+/* (part of Version 7 Redesign) */
+body.dark-mode #lppl .skill-ara .single-skill .progress-count,
+body.dark-mode #lppl .skill-ara .skill-card {
+    background-color: #292d3d;
+    border: 1px solid #2b2b2b33;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* (part of Version 7 Redesign) */
+body.dark-mode .timeline-item:hover,
+body.dark-mode .timeline-item.is-open {
+    background-color: #313649;
+}
+
+body.dark-mode .timeline-item[data-type="edu"] { --tl-accent: 110, 160, 220; }
+
+body.dark-mode .about-me-summ .summary-value {
+    background-color: #292d3d;
+    color: #fff;
+    border: 1px solid #2b2b2b33;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .about-me-summ .summary-value h4 {
+    color: #fff;
+}
+@media (max-width: 994px) {
+    body.dark-mode .sticky-nav-wrap.is-sticky {
+        background: none;
+        box-shadow: none;
+        backdrop-filter: none;
+    }
+
+    body.dark-mode .sticky-nav-wrap .eicw-nav-btn {
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
 }

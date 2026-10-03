@@ -1,9 +1,12 @@
+/* (part of Version 7 Redesign) */
+@import url("./style-mobNav-scrolled.css");
+
 body.dark-mode {
     background: #121521 !important;
 }
 
 body.dark-mode .navbar {
-    background: #1a1f35be !important;
+    background: #14192b86 !important;
 }
 
 body.dark-mode .page-header-section {
@@ -191,7 +194,7 @@ body.dark-mode .list-group-item:hover {
 
     /* Floating breadcrumb only on mobile/tablet */
     .breadcrumb-fixed-placeholder {
-        padding-top: 4em;
+        padding-top: 5em;
     }
 
     .breadcrumb.breadcrumb-fixed {
@@ -202,7 +205,7 @@ body.dark-mode .list-group-item:hover {
         width: auto;
         max-width: 90vw;
         z-index: 2000;
-        background: rgba(253, 253, 253, 0.635);
+        background: rgba(253, 253, 253, 0.068);
         backdrop-filter: blur(25px);
         margin: 0;
         border-radius: 50px;
@@ -215,7 +218,7 @@ body.dark-mode .list-group-item:hover {
     }
 
     body.dark-mode .breadcrumb.breadcrumb-fixed {
-        background: #1f243bc9;
+        background: #1f243b1c;
         backdrop-filter: blur(25px);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
         position: fixed;
@@ -234,21 +237,7 @@ body.dark-mode .list-group-item:hover {
         transition: background 0.2s, box-shadow 0.2s, top 0.2s;
     }
 
-    .breadcrumb.breadcrumb-fixed.at-top {
-        top: 0;
-        background: none;
-        box-shadow: none;
-        padding-top: 1.5em;
-        padding-left: 0em;
-    }
-
-    body.dark-mode .breadcrumb.breadcrumb-fixed.at-top {
-        top: 0;
-        background: none;
-        box-shadow: none;
-        padding-top: 1.5em;
-        padding-left: 0em;
-    }
+    /* (part of Version 7 Redesign) back-button pill stays visible at the top; styled in style.css */
 
     .mobile-bottom-nav {
         position: fixed;
@@ -282,7 +271,7 @@ body.dark-mode .list-group-item:hover {
     }
 
     .mobile-bottom-nav ul {
-        background: #f1f1f193;
+        background: #f1f1f133;
         backdrop-filter: blur(15px);
         border-radius: 50px;
         box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
@@ -297,7 +286,7 @@ body.dark-mode .list-group-item:hover {
 
 
     body.dark-mode .mobile-bottom-nav ul {
-        background: #1a1f35be;
+        background: #1f243b1c;
         backdrop-filter: blur(15px);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
     }
@@ -309,6 +298,7 @@ body.dark-mode .list-group-item:hover {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        position: relative; /* (part of Version 7 Redesign) */
         padding: 0;
         margin: 4px 2px;
         border-radius: 50px;
@@ -336,6 +326,7 @@ body.dark-mode .list-group-item:hover {
         justify-content: center;
         margin-bottom: 5px;
         color: #000;
+        transition: transform 0.3s cubic-bezier(.4, 0, .2, 1), color 0.2s; /* (part of Version 7 Redesign) */
     }
 
     .mobile-bottom-nav li.active .label {
@@ -349,10 +340,12 @@ body.dark-mode .list-group-item:hover {
 
     .mobile-bottom-nav .label {
         font-size: 11px;
+        line-height: 14px; /* (part of Version 7 Redesign) */
         color: #000;
         margin-top: 0px;
         letter-spacing: 0.01em;
-        transition: color 0.2s, font-weight 0.2s;
+        opacity: 1; /* (part of Version 7 Redesign) */
+        transition: opacity 0.2s ease, color 0.2s, font-weight 0.2s; /* (part of Version 7 Redesign) */
     }
 
     body.dark-mode .mobile-bottom-nav .label,

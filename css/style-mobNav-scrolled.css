@@ -1,0 +1,11 @@
+/* (part of Version 7 Redesign) Mobile nav: hide labels and center icons on scroll down */
+@media (max-width: 994px) {
+    .mobile-bottom-nav.labels-hidden .label {
+        opacity: 0;
+    }
+
+    /* Half of (icon margin 5px + label line-height 14px) moves the icon to the item's center */
+    .mobile-bottom-nav.labels-hidden .icon {
+        transform: translateY(9.5px);
+    }
+}

@@ -271,7 +271,7 @@ input:required {
 
 .about-me-area {
     padding-top: 50px;
-    padding-bottom: 83px;
+    padding-bottom: 7em;
     background-color: #f6f7f2;
 }
 
@@ -453,7 +453,7 @@ input:required {
 
 .follow-area.clearfix {
     padding-top: 80px;
-    padding-bottom: 120px;
+    padding-bottom: 12em;
     background-color: #ececea;
 }
 
@@ -1020,7 +1020,7 @@ header {
 .about-me-area .col-6>.about-me-content {
     min-height: 0;
     margin: 0;
-    padding: 16px 18px;
+    padding: 16px 3px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -1887,7 +1887,7 @@ img.profile-pic {
 .about-me-area .skill-card {
     background-color: #ffffff;
     box-shadow: 3px 0 15px -1px rgba(0, 0, 0, 0.15);
-    padding: 18px 22px;
+    padding: 18px 0px;
 }
 
 .about-me-area .skill-card .single-skill {
@@ -2820,7 +2820,7 @@ select:focus {
     background: #ececea;
     margin-top: -3.2em;
     padding-top: 3em;
-    padding-bottom: 2em;
+    padding-bottom: 10em;
 }
 
 .wbnrfz_details_body_tchp {
@@ -4559,7 +4559,7 @@ body:not(.dark-mode) .featured-cards .card .card-content h3 {
     .sticky-nav-wrap.is-sticky {
         position: fixed !important;
         top: auto !important;
-        bottom: 100px;
+        bottom: 90px;
         left: 20px !important;
         right: 20px !important;
         width: auto !important;
@@ -4669,8 +4669,10 @@ body:not(.dark-mode) .featured-cards .card .card-content h3 {
 
     body.dark-mode #scrollUp {
         color: #fff;
-        background: #1f243bc9;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: #1f243b1c;
+        backdrop-filter: blur(25px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        transition: background 0.2s, box-shadow 0.2s, top 0.2s;
     }
 
     body.dark-mode #scrollUp:focus,

@@ -270,7 +270,7 @@ input:required {
 }
 
 .about-me-area {
-    padding-top: 50px;
+    padding-top: 5em;
     padding-bottom: 7em;
     background-color: #f6f7f2;
 }
@@ -581,7 +581,7 @@ input:required {
     padding: 0 30px;
     text-align: center;
     text-transform: capitalize;
-    background-color: #7e899a;
+    background-color: #5a9aaf;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
     color: #252525;
     border-radius: 60px;
@@ -1475,6 +1475,7 @@ body.dark-mode .wbnrfz-works.floating-cards .card {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 26px;
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: default;
 }
 
 .wbnrfz-works.floating-cards .card::before {
@@ -1870,7 +1871,7 @@ img.profile-pic {
 
 .skill-ara .single-skill .progress {
     height: 12px;
-    background-color: #fff;
+    background-color: #d4d4d4;
     border: 1px solid #2b2b2b09;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -4679,5 +4680,34 @@ body:not(.dark-mode) .featured-cards .card .card-content h3 {
     body.dark-mode #scrollUp:hover {
         background: #1f243bc9;
         color: #fff;
+    }
+}
+
+/* Desktop: back button styled as a circular glass pill, matching the mobile one */
+@media (min-width: 995px) {
+    .breadcrumb-desktop .breadcrumb {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 1em;
+    }
+
+    .breadcrumb-desktop li.breadcrumb-item a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border-radius: 50%;
+        background: rgba(253, 253, 253, 0.635);
+        -webkit-backdrop-filter: blur(25px);
+        backdrop-filter: blur(25px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 1.5px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .breadcrumb-desktop li.breadcrumb-item a:hover {
+        padding: 0;
+        background: #adc6db;
+        transform: translateY(-2px);
     }
 }

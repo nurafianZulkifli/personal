@@ -79,13 +79,7 @@
       '    <div class="page-header-section">\n' +
       '      <div class="container-xxl container-mobile container-mobile-header">\n' +
       '        <div class="breadcrumb-wrapper">\n' +
-      '          <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">\n' +
-      '            <ol class="breadcrumb">\n' +
-      '              <li class="breadcrumb-item"><a href="../index.html"><i class="fa-regular fa-house"></i></a></li>\n' +
-      '              <li class="breadcrumb-item"><a href="../menu.html"><i class="fa-regular fa-bars"></i></a></li>\n' +
-      '              <li class="breadcrumb-item"><a href="../works-by-nrfz.html"><i class="fa-regular fa-pen-paintbrush"></i></a></li>\n' +
-      '            </ol>\n' +
-      '          </nav>\n' +
+      '          <nav aria-label="Back" class="breadcrumb-desktop"><ol class="breadcrumb" data-back-href="../works-by-nrfz.html"><li class="breadcrumb-item"><a href="#"></a></li></ol></nav>\n' +
       '          <div class="page-title-wrapper">\n' +
       '            <h1 class="page-title-single">' + d.title + '</h1>\n' +
       '          </div>\n' +

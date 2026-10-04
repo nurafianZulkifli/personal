@@ -214,7 +214,7 @@ body.dark-mode .cookiebanner-close:hover {
 /* ---- Progress Bar */
 body.dark-mode .single-skill .progress {
     transition: all 0.5s ease;
-    background-color: #292d3d;
+    background-color: #3e445c;
     border: 1px solid #2b2b2b33;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -904,5 +904,18 @@ body.dark-mode .about-me-summ .summary-value h4 {
         -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* Desktop back button (dark mode) */
+@media (min-width: 995px) {
+    body.dark-mode .breadcrumb-desktop li.breadcrumb-item a {
+        background: #393e536b;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode .breadcrumb-desktop li.breadcrumb-item a:hover {
+        padding: 0;
+        background: #5f7c95;
     }
 }

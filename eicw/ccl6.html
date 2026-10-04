@@ -142,6 +142,10 @@
       box-shadow: 0 5px 14px rgba(20, 58, 91, 0.28);
     }
 
+    .wbnrfz_details_body {
+      padding-bottom: 0em;
+    }
+
     body.dark-mode .wf-variant-tab,
     body.dark-mode .dirv-variant-tab {
       background: rgba(255, 255, 255, 0.05);
@@ -180,7 +184,7 @@
   <!-- Fixed Breadcrumb at very top (mobile/tablet only) -->
   <div class="breadcrumb-fixed-placeholder">
     <nav aria-label="breadcrumb" style="margin-bottom:0;">
-      <ol class="breadcrumb breadcrumb-fixed" id="floating-breadcrumb">
+      <ol class="breadcrumb breadcrumb-fixed" data-back-href="intro.html" id="floating-breadcrumb">
         <li class="breadcrumb-item">
           <a href="../index.html">
             <i class="fa-regular fa-house"></i>
@@ -283,17 +287,9 @@
       <div class="page-header-section">
         <div class="container-xxl container-mobile container-mobile-header">
           <div class="breadcrumb-wrapper">
-            <nav aria-label="breadcrumb" class="breadcrumb-desktop" style="display:none;">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="../index.html">
-                    <i class="fa-regular fa-house"></i>
-                  </a>
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="ccl6.html"><i class="fa-regular fa-signs-post"></i>
-                  </a>
-                </li>
+            <nav aria-label="Back" class="breadcrumb-desktop">
+              <ol class="breadcrumb" data-back-href="../">
+                <li class="breadcrumb-item"><a href="#"></a></li>
               </ol>
             </nav>
             <div class="page-title-wrapper">

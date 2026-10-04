@@ -23,10 +23,14 @@
     }
 
     function replaceBreadcrumbs() {
-        var target = getBackTarget();
+        var auto = getBackTarget();
         document.querySelectorAll('ol.breadcrumb').forEach(function (list) {
             if (list.dataset.backButtonApplied === 'true') return;
 
+            var target = {
+                href: list.dataset.backHref || auto.href,
+                label: list.dataset.backLabel || auto.label
+            };
             var nav = list.closest('nav');
             if (nav) nav.setAttribute('aria-label', target.label);
             list.innerHTML =

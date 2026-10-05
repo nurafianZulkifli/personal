@@ -270,7 +270,7 @@ input:required {
 }
 
 .about-me-area {
-    padding-top: 5em;
+    padding-top: 8em;
     padding-bottom: 7em;
     background-color: #f6f7f2;
 }
@@ -1468,7 +1468,7 @@ body.dark-mode .wbnrfz-works.floating-cards .card {
     aspect-ratio: auto;
     overflow: hidden;
     padding: 10px 10px 20px;
-    background: #0e111d6c !important;
+    background: #2e3a5f63 !important;
     -webkit-backdrop-filter: blur(18px) saturate(140%);
     backdrop-filter: blur(18px) saturate(140%);
     border: 1px solid #2b2b2b33;
@@ -1639,7 +1639,7 @@ body.dark-mode .featured-cards .card .card-content {
 
     .wbnrfz-works.floating-cards .card .card-content h3,
     body.dark-mode .wbnrfz-works.floating-cards .card .card-content h3 {
-        font-size: 12px;
+        font-size: 15px;
         line-height: 1.25;
     }
 

@@ -362,3 +362,127 @@ body.dark-mode .list-group-item:hover {
         padding-bottom: max(80px, calc(80px + env(safe-area-inset-bottom)));
     }
 }
+/* Mobile/tablet: navbar collapses to a logo-only pill styled like the floating back button */
+@media (max-width: 994px) {
+    .navbar-container.logo-only {
+        top: 20px;
+        left: 20px;
+        transform: none;
+        width: auto;
+    }
+
+    .navbar-container.logo-only .navbar,
+    body.dark-mode .navbar-container.logo-only .navbar {
+        display: flex !important;
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50px;
+        background: rgba(253, 253, 253, 0.635) !important;
+        backdrop-filter: blur(25px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 1.5px 8px rgba(0, 0, 0, 0.08);
+        transform: none;
+    }
+
+    body.dark-mode .navbar-container.logo-only .navbar {
+        background: #1f243b96 !important;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.233), 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-container.logo-only .navbar-nav {
+        display: none !important;
+    }
+
+    .navbar-container.logo-only .logo {
+        width: 24px;
+        display: block;
+    }
+}
+
+/* Logo-only pill: hover circle is inset like the back button's */
+@media (max-width: 994px) {
+    .navbar-container.logo-only .navbar:hover {
+        transform: none;
+    }
+
+    .navbar-container.logo-only .navbar > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .navbar-container.logo-only .navbar > a:hover {
+        background-color: #adc6db;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.082);
+    }
+
+    body.dark-mode .navbar-container.logo-only .navbar > a:hover {
+        background-color: #5f7c95;
+    }
+}
+
+/* Back button: hover circle fills the whole pill */
+@media (max-width: 994px) {
+    .breadcrumb.breadcrumb-fixed,
+    body.dark-mode .breadcrumb.breadcrumb-fixed,
+    .breadcrumb.breadcrumb-fixed.at-top,
+    body.dark-mode .breadcrumb.breadcrumb-fixed.at-top {
+        padding: 0;
+    }
+
+    .breadcrumb.breadcrumb-fixed li.breadcrumb-item a,
+    .breadcrumb.breadcrumb-fixed li.breadcrumb-item a:hover,
+    body.dark-mode .breadcrumb.breadcrumb-fixed li.breadcrumb-item a,
+    body.dark-mode .breadcrumb.breadcrumb-fixed li.breadcrumb-item a:hover {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        margin: 0;
+        border-radius: 50%;
+    }
+}
+
+/* Featured cards: fluid columns, and content that always clears the fixed bottom nav + filter pill */
+.wbnrfz-grid.featured-cards {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+}
+
+.featured-cards .card .card-content h3 {
+    font-size: clamp(12px, 1.2vw + 8px, 17px);
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    .wbnrfz-grid.featured-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-me-summ:has(.featured-cards) {
+        padding-bottom: calc(190px + env(safe-area-inset-bottom)) !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .wbnrfz-grid.featured-cards {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .featured-cards .card .card-content h3 {
+        font-size: 15px;
+    }
+
+    .featured-cards .card .pw-btn-small {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+    }
+}

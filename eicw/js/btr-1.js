@@ -181,6 +181,15 @@ function updateHrefForDarkMode() {
     const btrcr5_link = document.getElementById('btrcr5');
     const btrcr5_img = document.getElementById('btrcr5-img');
 
+    const btrcr6_link = document.getElementById('btrcr6');
+    const btrcr6_img = document.getElementById('btrcr6-img');
+
+    const btrcr7_link = document.getElementById('btrcr7');
+    const btrcr7_img = document.getElementById('btrcr7-img');
+
+    const btrcr7a_link = document.getElementById('btrcr7a');
+    const btrcr7a_img = document.getElementById('btrcr7a-img');
+
 
 
     const isDarkMode = document.body.classList.contains('dark-mode');
@@ -211,6 +220,15 @@ function updateHrefForDarkMode() {
 
         btrcr5_link.href = './img-2/btrcr5-dark.png';
         btrcr5_img.src = './img-2/btrcr5-dark.png';
+        
+        btrcr6_link.href = './img-2/btrcr6-dark.png';
+        btrcr6_img.src = './img-2/btrcr6-dark.png';
+
+        btrcr7_link.href = './img-2/btrcr7-dark.png';
+        btrcr7_img.src = './img-2/btrcr7-dark.png';
+
+        btrcr7a_link.href = './img-2/btrcr7a-dark.png';
+        btrcr7a_img.src = './img-2/btrcr7a-dark.png';
 
 
     } else {
@@ -239,6 +257,15 @@ function updateHrefForDarkMode() {
         btrcr5_link.href = './img-2/btrcr5-light.png';
         btrcr5_img.src = './img-2/btrcr5-light.png';
 
+        btrcr6_link.href = './img-2/btrcr6-light.png';
+        btrcr6_img.src = './img-2/btrcr6-light.png';
+
+        btrcr7_link.href = './img-2/btrcr7-light.png';
+        btrcr7_img.src = './img-2/btrcr7-light.png';
+
+        btrcr7a_link.href = './img-2/btrcr7a-light.png';
+        btrcr7a_img.src = './img-2/btrcr7a-light.png';
+
 
     }
 
@@ -253,76 +280,97 @@ window.addEventListener("scroll", function () {
     scrollIndicator.style.width = scrollPercentage + "%"; // Update the width of the indicator
 });
 
-// Autoplay videos row by row when scrolled into view
+// Play each accordion's video rows in order when it is opened
 document.addEventListener('DOMContentLoaded', function () {
-    var rows = Array.from(document.querySelectorAll('.video-row'));
-    if (rows.length === 0) return;
+    var sections = Array.from(document.querySelectorAll('.eicw-collapsible'))
+        .map(function (details) {
+            return {
+                details: details,
+                rows: Array.from(details.querySelectorAll('.video-row'))
+            };
+        })
+        .filter(function (section) {
+            return section.rows.length > 0;
+        });
+    var activeDetails = null;
+    var activeRun = 0;
 
-    var currentRowIndex = 0;
-    var isPlaying = false;
-
-    // Prepare all videos: muted, no loop, inline
-    rows.forEach(function (row) {
-        var videos = row.querySelectorAll('video');
-        videos.forEach(function (video) {
-            video.loop = false;
-            video.muted = true;
-            video.playsInline = true;
+    sections.forEach(function (section) {
+        section.rows.forEach(function (row) {
+            row.querySelectorAll('video').forEach(function (video) {
+                video.loop = false;
+                video.muted = true;
+                video.playsInline = true;
+            });
         });
     });
 
-    function isRowInViewport(row) {
-        var rect = row.getBoundingClientRect();
-        // Row is considered visible when at least part of it is in the viewport
-        return rect.top < window.innerHeight && rect.bottom > 0;
-    }
-
-    function playRow(index) {
-        if (index >= rows.length) {
-            isPlaying = false;
-            return;
-        }
-
-        currentRowIndex = index;
-
-        // If the row isn't visible yet, wait for scroll
-        if (!isRowInViewport(rows[index])) {
-            isPlaying = false;
-            return;
-        }
-
-        isPlaying = true;
-        var videos = rows[index].querySelectorAll('video');
-        var finishedCount = 0;
-
-        videos.forEach(function (video) {
-            video.addEventListener('ended', function onEnded() {
-                video.removeEventListener('ended', onEnded);
-                finishedCount++;
-                if (finishedCount >= videos.length) {
-                    playRow(index + 1);
-                }
-            });
-
-            video.play().catch(function (error) {
-                console.log('Autoplay was prevented:', error);
-                finishedCount++;
-                if (finishedCount >= videos.length) {
-                    playRow(index + 1);
-                }
+    function stopSection(section) {
+        section.rows.forEach(function (row) {
+            row.querySelectorAll('video').forEach(function (video) {
+                video.pause();
+                video.currentTime = 0;
             });
         });
     }
 
-    function onScroll() {
-        // If not currently playing and there are rows left, check if the next row is visible
-        if (!isPlaying && currentRowIndex < rows.length && isRowInViewport(rows[currentRowIndex])) {
-            playRow(currentRowIndex);
+    function playSection(section) {
+        activeRun++;
+        var run = activeRun;
+
+        sections.forEach(function (otherSection) {
+            stopSection(otherSection);
+        });
+        activeDetails = section.details;
+
+        function playRow(index) {
+            if (run !== activeRun || !section.details.open) return;
+            if (index >= section.rows.length) {
+                activeDetails = null;
+                return;
+            }
+
+            var videos = Array.from(section.rows[index].querySelectorAll('video'));
+            if (videos.length === 0) {
+                playRow(index + 1);
+                return;
+            }
+
+            var finishedCount = 0;
+            videos.forEach(function (video) {
+                video.currentTime = 0;
+
+                function onEnded() {
+                    if (run !== activeRun) return;
+                    finishedCount++;
+                    if (finishedCount === videos.length) {
+                        playRow(index + 1);
+                    }
+                }
+
+                video.addEventListener('ended', onEnded, { once: true });
+                video.play().catch(function (error) {
+                    if (run !== activeRun) return;
+                    console.error('Accordion video playback failed:', error);
+                    activeRun++;
+                    activeDetails = null;
+                    sections.forEach(stopSection);
+                });
+            });
         }
+
+        playRow(0);
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    // Also check immediately in case the first row is already visible on load
-    onScroll();
+    sections.forEach(function (section) {
+        section.details.addEventListener('toggle', function () {
+            if (section.details.open) {
+                playSection(section);
+            } else if (activeDetails === section.details) {
+                activeRun++;
+                activeDetails = null;
+                stopSection(section);
+            }
+        });
+    });
 });

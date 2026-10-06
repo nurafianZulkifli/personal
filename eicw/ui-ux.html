@@ -93,6 +93,11 @@
       border-radius: 0 0 8px 8px;
       padding: 16px 20px;
       animation: collapsibleFadeIn 0.2s ease;
+      background: #f3f3f3;
+    }
+
+    body.dark-mode .eicw-collapsible-body {
+      background: #121521;
     }
 
     @keyframes collapsibleFadeIn {
@@ -104,6 +109,23 @@
       to {
         opacity: 1;
         transform: translateY(0);
+      }
+    }
+
+    .staris-red-images {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      width: 100%;
+    }
+
+    .staris-red-images img {
+      width: 100%;
+    }
+
+    @media (max-width: 575.98px) {
+      .staris-red-images {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -228,7 +250,11 @@
       <div class="page-header-section">
         <div class="container-xxl container-mobile container-mobile-header">
           <div class="breadcrumb-wrapper">
-              <nav aria-label="Back" class="breadcrumb-desktop"><ol class="breadcrumb" data-back-href="intro.html"><li class="breadcrumb-item"><a href="#"></a></li></ol></nav>
+            <nav aria-label="Back" class="breadcrumb-desktop">
+              <ol class="breadcrumb" data-back-href="intro.html">
+                <li class="breadcrumb-item"><a href="#"></a></li>
+              </ol>
+            </nav>
             <div class="page-title-wrapper">
               <h1 class="page-title-single">Proposed UI/UX Changes</h1>
               <p class="page-subtitle">5 mins read</p>
@@ -318,7 +344,8 @@
                             <img src="img-2/bcr-light.png" id="bcr1-img" class="img-fluid" alt="bcr1" loading="lazy">
                           </a>
                           <a href="img-2/bcr-var-light.png" id="bcr4" class="portfolio-img">
-                            <img src="img-2/bcr-var-light.png" id="bcr4-img" class="img-fluid" alt="bcr4" loading="lazy">
+                            <img src="img-2/bcr-var-light.png" id="bcr4-img" class="img-fluid" alt="bcr4"
+                              loading="lazy">
                           </a>
                         </div>
                       </div>
@@ -350,18 +377,18 @@
                 </details>
               </div>
 
-              <!-- TrainVision (TEL) -->
+              <!-- CDD/TrainVision -->
               <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms" id="tv">
                 <details class="eicw-collapsible">
                   <summary>
-                    <span class="eicw-collapsible-title">TrainVision (TEL)</span>
+                    <span class="eicw-collapsible-title">CDD/TrainVision</span>
                     <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
                   </summary>
                   <div class="eicw-collapsible-body">
                     <div class="info justify-content-center">
-                      <p> For the LCD screens on the TEL trains, I have redesigned it to look
-                        exactly
-                        like the other counterparts on the NSL, EWL, NEL and CCL.</p>
+                      <p> For the LCD screens on the new trains, I have redesigned it to look more modern and visually
+                        appealing. The line diagram has been updated to be clearer and easier to read, enhancing the
+                        overall commuter experience - they are all in one screen, without the need to switch between different screens.</p>
                       <div class="banner-eicw">
                         <a href="img/lcd2-light.png" id="lcd2" class="portfolio-img">
                           <img src="img/lcd2-light.png" id="lcd2-img" class="img-fluid" alt="lcd2" loading="lazy">
@@ -391,7 +418,8 @@
                         <div class="column column-pic">
                           <figcaption>
                             <a href="img/staris2-B.png" id="staris2-b" class="portfolio-img ">
-                              <img src="img/staris2-B.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b" loading="lazy">
+                              <img src="img/staris2-B.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b"
+                                loading="lazy">
                             </a>
                             <p>Current STARiS 2.0 UI, on most of the KSFB/C Trains. <b>Older</b>
                               Line
@@ -402,8 +430,8 @@
                         <div class="column column-pic">
                           <figcaption>
                             <a href="img-2/staris2-D.png" id="staris2-b" class="portfolio-img ">
-                              <img src="img-2/staris2-D.png" id="staris2-b-img" class="img-fluid cp-img"
-                                alt="staris2-b" loading="lazy">
+                              <img src="img-2/staris2-D.png" id="staris2-b-img" class="img-fluid cp-img" alt="staris2-b"
+                                loading="lazy">
                             </a>
                             <p>Revamped STARiS 2.0 UI, on most of the KSFC Trains. <b>Updated</b>
                               Line
@@ -413,10 +441,16 @@
                         </div>
                         <div class="column column-pic">
                           <figcaption>
-                            <a href="img-2/staris2-red.png" id="staris2-b" class="portfolio-img ">
-                              <img src="img-2/staris2-red.png" id="staris2-b-img" class="img-fluid cp-img"
-                                alt="staris2-b" loading="lazy">
-                            </a>
+                            <div class="staris-red-images">
+                              <a href="img-2/staris2-red.png" id="staris2-red-1" class="portfolio-img">
+                                <img src="img-2/staris2-red.png" id="staris2-red-1-img" class="img-fluid cp-img"
+                                  alt="Proposed STARiS 2.0 redesign preview" loading="lazy">
+                              </a>
+                              <a href="img-2/staris2-red2.png" id="staris2-red-2" class="portfolio-img">
+                                <img src="img-2/staris2-red2.png" id="staris2-red-2-img" class="img-fluid cp-img"
+                                  alt="Proposed STARiS 2.0 redesign preview" loading="lazy">
+                              </a>
+                            </div>
                             <p>Revamped STARiS 2.0 UI. <b>Proposed Redesign</b>
                             </p>
                           </figcaption>
@@ -426,11 +460,6 @@
                             <img src="img/lcd3-light.png" id="lcd3-img" class="img-fluid" alt="lcd3" loading="lazy">
                           </a>
                         </div>
-                        <iframe width="1280" height="512"
-                          src="https://www.youtube.com/embed/dQoxy7rBRAU?si=-Ko9xKEyeDRb1Kni"
-                          title="YouTube video player" frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                       </div>
                       <br>
                     </div>
@@ -456,7 +485,8 @@
                         <div class="column column-pic">
                           <figcaption>
                             <a href="img-2/cddbpori.png" id="cddbpori" class="portfolio-img ">
-                              <img src="img-2/cddbpori.png" id="cddbpori-img" class="img-fluid cp-img" alt="cddbpori" loading="lazy">
+                              <img src="img-2/cddbpori.png" id="cddbpori-img" class="img-fluid cp-img" alt="cddbpori"
+                                loading="lazy">
                             </a>
                             <p>Current CDD UI Design on the C801B Trains.
                             </p>
@@ -464,7 +494,8 @@
                         </div>
                         <div class="banner-eicw">
                           <a href="img-2/cddbp-light.png" id="cddbp-lcd" class="portfolio-img">
-                            <img src="img-2/cddbp-light.png" id="cddbp-lcd-img" class="img-fluid" alt="cddbp" loading="lazy">
+                            <img src="img-2/cddbp-light.png" id="cddbp-lcd-img" class="img-fluid" alt="cddbp"
+                              loading="lazy">
                           </a>
                         </div>
                         <iframe width="1280" height="512"

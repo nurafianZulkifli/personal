@@ -684,7 +684,7 @@
 /* ---- 1.0.10 Max Width: 450px */
 @media (max-width: 450px) {
     .btn {
-        width: 70px;
+        width: auto;
     }
 
     .light:after {
@@ -1261,7 +1261,7 @@
 
     .column-vid,
     body.dark-mode .column-vid {
-        border-radius: 20px !important;
+        border-radius: 10px !important;
     }
 
     .wrapper {

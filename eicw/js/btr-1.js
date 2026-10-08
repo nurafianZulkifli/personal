@@ -190,6 +190,9 @@ function updateHrefForDarkMode() {
     const btrcr7a_link = document.getElementById('btrcr7a');
     const btrcr7a_img = document.getElementById('btrcr7a-img');
 
+    const btrcr7b_link = document.getElementById('btrcr7b');
+    const btrcr7b_img = document.getElementById('btrcr7b-img');
+
 
 
     const isDarkMode = document.body.classList.contains('dark-mode');
@@ -230,6 +233,9 @@ function updateHrefForDarkMode() {
         btrcr7a_link.href = './img-2/btrcr7a-dark.png';
         btrcr7a_img.src = './img-2/btrcr7a-dark.png';
 
+        btrcr7b_link.href = './img-2/btrcr7b-dark.png';
+        btrcr7b_img.src = './img-2/btrcr7b-dark.png';
+
 
     } else {
         /* Banners */
@@ -265,6 +271,9 @@ function updateHrefForDarkMode() {
 
         btrcr7a_link.href = './img-2/btrcr7a-light.png';
         btrcr7a_img.src = './img-2/btrcr7a-light.png';
+
+        btrcr7b_link.href = './img-2/btrcr7b-light.png';
+        btrcr7b_img.src = './img-2/btrcr7b-light.png';
 
 
     }

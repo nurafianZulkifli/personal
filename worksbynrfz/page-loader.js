@@ -29,9 +29,20 @@
     }).join('\n            ');
   }
 
+  function isVideo(url) {
+    return /\.(mp4|webm|mov)(\?.*)?$/i.test(url);
+  }
+
   function buildCarouselCells(images) {
     return images.map(function (url, i) {
       var id = slug + (i + 1);
+      if (isVideo(url)) {
+        return (
+          '<div class="carousel-cell">' +
+          '<video class="img-fluid carousel-video" src="' + url + '" controls controlsList="nodownload" playsinline preload="metadata"></video>' +
+          '</div>'
+        );
+      }
       return (
         '<div class="carousel-cell">' +
         '<a href="' + url + '" class="portfolio-img" data-gallery="carousel" id="' + id + '">' +
@@ -67,6 +78,8 @@
     } else if (d.contentType === 'carousel' && d.images && d.images.length) {
       imagesHtml =
         '<div class="wrapper">' +
+        '<style>.carousel-cell video.carousel-video{display:block;width:100%;height:420px;object-fit:cover;border-radius:32px;background:#000;}' +
+        '@media (max-width:767px){.carousel-cell video.carousel-video{height:300px;}}</style>' +
         '<div class="carousel" id="delays-carousel">' +
         buildCarouselCells(d.images) +
         '</div></div>';

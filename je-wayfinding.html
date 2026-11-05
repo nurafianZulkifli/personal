@@ -200,6 +200,31 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 0 12px;
                 padding-top: 40px;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .cs-meta .box-indiv {
+                min-width: 0;
+            }
+
+            .cs-meta .about-me-summary {
+                padding: 12px 8px;
+                gap: 8px;
+            }
+
+            .cs-meta .about-me-summary h3 {
+                font-size: 14px;
+                min-width: 0;
+                overflow-wrap: anywhere;
+            }
+
+            .cs-meta .about-me-summary .summ-icon {
+                flex: 0 0 32px;
+                height: 32px;
+                width: 32px;
+                line-height: 32px;
+                font-size: 13px;
             }
         }
 
@@ -502,6 +527,10 @@
         }
 
         @media (max-width: 800px) {
+
+            .cs-hero {
+                padding-bottom: 22vh;
+            }
 
             .cs-grid,
             .cs-two {

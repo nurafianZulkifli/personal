@@ -277,6 +277,24 @@ body.dark-mode .about-me-content p {
     color: #fff;
 }
 
+body.dark-mode .linkedin-cta {
+    background: linear-gradient(120deg, #292d3d 0%, #242f3c 100%);
+    border-color: rgba(135, 190, 232, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .linkedin-cta:hover {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+body.dark-mode .linkedin-cta-copy span {
+    color: #87bee8;
+}
+
+body.dark-mode .linkedin-cta-copy p {
+    color: #c1c6d0;
+}
+
 body.dark-mode .about-me-content:hover {
     background-color: #52718d;
 }

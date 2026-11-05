@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Jurong East Wayfinding | NRFZ</title>
-    <meta name="description" content="A case study of the Jurong East wayfinding project with LTA, from ideation to execution.">
+    <meta name="description"
+        content="A case study of the Jurong East wayfinding project with LTA, from ideation to execution.">
     <meta property="og:image" content="https://i.imgur.com/vKeG4gn.png" />
     <meta name="theme-color" content="#ececea">
     <link rel="icon" href="./img/core-img/favicon.png">
@@ -39,8 +40,13 @@
             --line: rgba(255, 255, 255, .08);
         }
 
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body.cs {
             overflow: visible;
@@ -51,7 +57,9 @@
             line-height: 1.6;
         }
 
-        .cs a { color: inherit; }
+        .cs a {
+            color: inherit;
+        }
 
         .cs-top {
             position: fixed;
@@ -65,9 +73,15 @@
             color: #fff;
         }
 
-        .cs-top a { text-decoration: none; font-weight: 600; }
+        .cs-top a {
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-        .cs .breadcrumb-fixed-placeholder { padding-top: 0; height: 0; }
+        .cs .breadcrumb-fixed-placeholder {
+            padding-top: 0;
+            height: 0;
+        }
 
         .cs-hero {
             position: relative;
@@ -100,12 +114,33 @@
             letter-spacing: -0.03em;
         }
 
-        .cs-hero p { max-width: 640px; font-size: 1.15rem; line-height: 1.6; margin: 0; color: #fff; opacity: .92; }
+        .cs-hero p {
+            max-width: 640px;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin: 0;
+            color: #fff;
+            opacity: .92;
+        }
 
-        .cs-scroll { margin-top: 28px; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+        .cs-scroll {
+            margin-top: 28px;
+            font-size: .85rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            opacity: .8;
+        }
 
-        .cs h1, .cs h2 { color: var(--fg); font-family: "Outfit", sans-serif; font-weight: 600; }
-        .cs-hero h1 { color: #fff; }
+        .cs h1,
+        .cs h2 {
+            color: var(--fg);
+            font-family: "Outfit", sans-serif;
+            font-weight: 600;
+        }
+
+        .cs-hero h1 {
+            color: #fff;
+        }
 
         .cs-meta {
             display: grid;
@@ -116,25 +151,65 @@
             margin: 0 auto;
         }
 
-        .cs .cs-meta.about-me-summ { background: transparent; }
-        .cs-meta .box-indiv { margin-bottom: 0; }
-        .cs-meta .about-me-summary { padding: 14px 12px; gap: 10px; }
-        .cs-meta .about-me-summary h3 { font-size: 16px; }
-        .cs-meta .about-me-summary .summ-icon { height: 40px; width: 40px; line-height: 40px; font-size: 16px; }
-        .cs-meta .summary-value h4 { font-size: 15px; font-weight: 500; }
-        .cs-meta .summary-value a { text-decoration: underline; text-underline-offset: 3px; }
+        .cs .cs-meta.about-me-summ {
+            background: transparent;
+        }
+
+        .cs-meta .box-indiv {
+            margin-bottom: 0;
+        }
+
+        .cs-meta .about-me-summary {
+            padding: 14px 12px;
+            gap: 10px;
+        }
+
+        .cs-meta .about-me-summary h3 {
+            font-size: 16px;
+        }
+
+        .cs-meta .about-me-summary .summ-icon {
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+
+        .cs-meta .summary-value h4 {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .cs-meta .summary-value a {
+            text-decoration: none;
+            text-underline-offset: 3px;
+        }
 
         @media (max-width: 1100px) {
-            .cs-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-            .cs-meta .box-indiv { margin-bottom: 16px; }
+            .cs-meta {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .cs-meta .box-indiv {
+                margin-bottom: 16px;
+            }
         }
 
         @media (max-width: 800px) {
-            .cs-meta { grid-template-columns: 1fr 1fr; gap: 0 12px; padding-top: 40px; }
+            .cs-meta {
+                grid-template-columns: 1fr 1fr;
+                gap: 0 12px;
+                padding-top: 40px;
+            }
         }
 
-        .cs-sec { padding: 12vh 7vw; }
-        .cs-sec.alt { background: var(--soft); }
+        .cs-sec {
+            padding: 12vh 7vw;
+        }
+
+        .cs-sec.alt {
+            background: var(--soft);
+        }
 
         .cs-grid {
             display: grid;
@@ -159,13 +234,31 @@
             letter-spacing: -0.02em;
         }
 
-        .cs-sec p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin: 0 0 1.1em; }
-        .cs-sec p strong { color: var(--fg); }
+        .cs-sec p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0 0 1.1em;
+        }
 
-        .cs-list { padding-left: 1.1em; color: var(--muted); }
-        .cs-list li { margin-bottom: .5em; list-style: disc; }
+        .cs-sec p strong {
+            color: var(--fg);
+        }
 
-        .cs-media { max-width: 1300px; margin: 56px auto 0; }
+        .cs-list {
+            padding-left: 1.1em;
+            color: var(--muted);
+        }
+
+        .cs-list li {
+            margin-bottom: .5em;
+            list-style: disc;
+        }
+
+        .cs-media {
+            max-width: 1300px;
+            margin: 56px auto 0;
+        }
 
         .cs-media img,
         .cs-media video {
@@ -175,38 +268,137 @@
             background: var(--soft);
         }
 
-        .cs-two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .cs-impl { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; max-width: 1000px; gap: 12px; }
-        .cs-impl img { width: 100%; height: 100%; object-fit: cover; }
-        .cs-impl img:first-child { grid-column: span 2; grid-row: span 2; }
-        @media (max-width: 800px) {
-            .cs-impl { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
-            .cs-impl img:first-child { grid-column: span 2; grid-row: span 2; }
+        .cs-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
-        .cs-research { display: flex; gap: 20px; align-items: flex-start; justify-content: center; }
-        .cs-research + .cs-research { margin-top: 28px; }
-        .cs-research-sm { max-width: 640px; }
-        .cs img { -webkit-user-drag: none; user-select: none; }
-        .cs-research figure { margin: 0; min-width: 0; flex: 1; }
-        .cs-research figcaption { margin-top: 10px; font-size: .9rem; color: var(--muted); line-height: 1.5; }
-
-        @media (max-width: 800px) {
-            .cs-research { flex-direction: column; gap: 28px; }
-            .cs-research figure { flex: none !important; width: 100%; }
+        .cs-impl {
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            max-width: 1000px;
+            gap: 12px;
         }
 
-        .cs-row { display: flex; gap: 28px; align-items: flex-start; justify-content: center; }
-        .cs-row > video { width: auto; max-width: 40%; max-height: 70vh; flex: 0 0 auto; }
-        .cs-embeds { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 20px; max-width: 540px; }
-        .cs-embeds img { width: 100%; border-radius: 14px; }
-        .cs-embeds iframe { max-width: 100% !important; }
+        .cs-impl img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cs-impl img:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
 
         @media (max-width: 800px) {
-            .cs-row { flex-direction: column; align-items: center; }
-            .cs-row > video { max-width: 100%; }
-            .cs-embeds { width: 100%; max-width: none; }
+            .cs-impl {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 160px;
+            }
+
+            .cs-impl img:first-child {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
         }
+
+        .cs-research {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .cs-research+.cs-research {
+            margin-top: 28px;
+        }
+
+        .cs-research-sm {
+            max-width: 640px;
+        }
+
+        .cs img {
+            -webkit-user-drag: none;
+            user-select: none;
+        }
+
+        .cs-research figure {
+            margin: 0;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .cs-research figcaption {
+            margin-top: 10px;
+            font-size: .9rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 800px) {
+            .cs-research {
+                flex-direction: column;
+                gap: 28px;
+            }
+
+            .cs-research figure {
+                flex: none !important;
+                width: 100%;
+            }
+        }
+
+        .cs-row {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .cs-row>video {
+            width: auto;
+            max-width: 40%;
+            max-height: 70vh;
+            flex: 0 0 auto;
+        }
+
+        .cs-embeds {
+            flex: 1 1 0;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 540px;
+        }
+
+        .cs-embeds img {
+            width: 100%;
+            border-radius: 14px;
+        }
+
+        .cs-embeds iframe {
+            max-width: 100% !important;
+        }
+
+        @media (max-width: 800px) {
+            .cs-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cs-row>video {
+                max-width: 100%;
+            }
+
+            .cs-embeds {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        .cs-posts { max-width: 1000px; margin-top: 28px; align-items: start; }
+        .cs-posts img { width: 100%; border-radius: 14px; }
 
         .cs-learn {
             display: grid;
@@ -216,9 +408,27 @@
             margin: 56px auto 0;
         }
 
-        .cs-learn > div { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
-        .cs-learn span { display: block; color: var(--accent); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; margin-bottom: 8px; }
-        .cs-learn p { margin: 0; font-size: 1rem; }
+        .cs-learn>div {
+            background: var(--bg);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 24px;
+        }
+
+        .cs-learn span {
+            display: block;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            font-size: .8rem;
+            margin-bottom: 8px;
+        }
+
+        .cs-learn p {
+            margin: 0;
+            font-size: 1rem;
+        }
 
         .cs-sec p.cs-end {
             max-width: 1300px;
@@ -245,8 +455,17 @@
             border-radius: 20px;
         }
 
-        .cs-promo h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin: 8px 0 12px; }
-        .cs-promo p { margin: 0 auto; max-width: 560px; color: var(--muted); line-height: 1.8; }
+        .cs-promo h2 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            margin: 8px 0 12px;
+        }
+
+        .cs-promo p {
+            margin: 0 auto;
+            max-width: 560px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
 
         .cs .cs-foot a {
             display: inline-block;
@@ -259,18 +478,43 @@
             font-weight: 600;
         }
 
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
-        .reveal.in { opacity: 1; transform: none; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
 
         @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1; transform: none; transition: none; }
-            html { scroll-behavior: auto; }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
         }
 
         @media (max-width: 800px) {
-            .cs-grid, .cs-two { grid-template-columns: 1fr; }
-            .cs-sec { padding: 9vh 6vw; }
-            .cs-foot { padding-bottom: 22vh; }
+
+            .cs-grid,
+            .cs-two {
+                grid-template-columns: 1fr;
+            }
+
+            .cs-sec {
+                padding: 9vh 6vw;
+            }
+
+            .cs-foot {
+                padding-bottom: 22vh;
+            }
         }
     </style>
 </head>
@@ -362,24 +606,49 @@
 
     <section class="cs-meta about-me-summ">
         <div class="box-indiv">
-            <div class="about-me-summary text-center"><div class="summ-icon"><i class="fa-solid fa-list"></i></div><h3>Category</h3></div>
-            <div class="summary-value"><h4>Design &amp; Concept</h4></div>
+            <div class="about-me-summary text-center">
+                <div class="summ-icon"><i class="fa-solid fa-list"></i></div>
+                <h3>Category</h3>
+            </div>
+            <div class="summary-value">
+                <h4>Design &amp; Mockups</h4>
+            </div>
         </div>
         <div class="box-indiv">
-            <div class="about-me-summary text-center"><div class="summ-icon"><i class="fa-solid fa-users"></i></div><h3>Collaborators</h3></div>
-            <div class="summary-value"><h4><a href="https://www.linkedin.com/in/adiel-rusyaidi/">Adiel Rusyaidi</a></h4></div>
+            <div class="about-me-summary text-center">
+                <div class="summ-icon"><i class="fa-solid fa-users"></i></div>
+                <h3>Collaborator(s)</h3>
+            </div>
+            <div class="summary-value">
+                <h4><a href="https://www.linkedin.com/in/adiel-rusyaidi/">Adiel Rusyaidi</a></h4>
+            </div>
         </div>
         <div class="box-indiv">
-            <div class="about-me-summary text-center"><div class="summ-icon"><i class="fa-solid fa-handshake"></i></div><h3>Partner</h3></div>
-            <div class="summary-value"><h4>LTA</h4></div>
+            <div class="about-me-summary text-center">
+                <div class="summ-icon"><i class="fa-solid fa-handshake"></i></div>
+                <h3>Partner</h3>
+            </div>
+            <div class="summary-value">
+                <h4>LTA</h4>
+            </div>
         </div>
         <div class="box-indiv">
-            <div class="about-me-summary text-center"><div class="summ-icon"><i class="fa-solid fa-calendar"></i></div><h3>Year</h3></div>
-            <div class="summary-value"><h4>2026</h4></div>
+            <div class="about-me-summary text-center">
+                <div class="summ-icon"><i class="fa-solid fa-calendar"></i></div>
+                <h3>Year</h3>
+            </div>
+            <div class="summary-value">
+                <h4>2026</h4>
+            </div>
         </div>
         <div class="box-indiv">
-            <div class="about-me-summary text-center"><div class="summ-icon"><i class="fa-solid fa-newspaper"></i></div><h3>Featured in</h3></div>
-            <div class="summary-value"><h4>8days</h4></div>
+            <div class="about-me-summary text-center">
+                <div class="summ-icon"><i class="fa-solid fa-newspaper"></i></div>
+                <h3>Featured in</h3>
+            </div>
+            <div class="summary-value">
+                <h4>8days</h4>
+            </div>
         </div>
     </section>
 
@@ -406,25 +675,49 @@
 
     <section class="cs-sec" id="overview">
         <div class="cs-grid reveal">
-            <div><div class="cs-label">01 — Overview</div><h2>Navigating around Jurong East shouldn't be that confusing</h2></div>
             <div>
-                <p>A collaborative wayfinding project by me and Adiel Rusyaidi, together with LTA, to help residents and visitors navigate Jurong East's highly connected transport and commercial district.</p>
-                <p>Getting from the MRT station to the two bus interchanges should be one of the simplest journeys in the area. Instead, commuters face a web of linkbridges, escalators and covered walkways, with few cues on which way leads to which interchange.
-                <p>By simplifying complex pedestrian routes into <strong>clear, accessible signage</strong>, the initiative aimed to improve everyday navigation and user experience.</p>
+                <div class="cs-label">01 — Overview</div>
+                <h2>Navigating around Jurong East shouldn't be that confusing</h2>
+            </div>
+            <div>
+                <p>A collaborative wayfinding project by me and Adiel Rusyaidi, together with LTA, to help residents and
+                    visitors navigate Jurong East's highly connected transport and commercial district.</p>
+                <p>Getting from the MRT station to the two bus interchanges should be one of the simplest journeys in
+                    the area. Instead, commuters face a web of linkbridges, escalators and covered walkways, with few
+                    cues on which way leads to which interchange.
+                <p>By simplifying complex pedestrian routes into <strong>clear, accessible signage</strong>, the
+                    initiative aimed to improve everyday navigation and user experience.</p>
             </div>
         </div>
         <div class="cs-research cs-overview-imgs reveal" style="margin-top:40px">
-            <figure style="flex:0 0 24%"><img src="eicw/je-wayfind/je-1.jpg" alt="Covered walkway with Jurong East Bus Interchange sign" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px"><figcaption>Covered walkway towards the interchange</figcaption></figure>
-            <figure style="flex:0 0 24%"><img src="eicw/je-wayfind/je-2.jpg" alt="Walkway sign pointing to MRT and bus interchange" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px"><figcaption>Overhead signs along the route</figcaption></figure>
-            <figure style="flex:0 0 24%"><img src="eicw/je-wayfind/je-3.jpg" alt="Staircase with signage to buses and MRT" loading="lazy" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px"><figcaption>Signage at the staircase</figcaption></figure>
+            <figure style="flex:0 0 24%"><img src="eicw/je-wayfind/je-1.jpg"
+                    alt="Covered walkway with Jurong East Bus Interchange sign" loading="lazy"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px">
+                <figcaption>Covered walkway towards the interchange</figcaption>
+            </figure>
+            <figure style="flex:0 0 24%"><img src="eicw/je-wayfind/je-2.jpg"
+                    alt="Walkway sign pointing to MRT and bus interchange" loading="lazy"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px">
+                <figcaption>Overhead signs along the route</figcaption>
+            </figure>
+            <figure style="flex:0 0 24%"><img src="eicw/je-wayfind/je-3.jpg"
+                    alt="Staircase with signage to buses and MRT" loading="lazy"
+                    style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px">
+                <figcaption>Signage at the staircase</figcaption>
+            </figure>
         </div>
     </section>
 
     <section class="cs-sec alt" id="problem">
         <div class="cs-grid reveal">
-            <div><div class="cs-label">02 — Problem</div><h2>Connected, but confusing</h2></div>
             <div>
-                <p>Jurong East, at its current state, links an MRT station, 2 bus interchanges, constructions for the upcoming Jurong Region Line and surrounding developmentsas well as a network of covered walkways and linkbridges. Great for connectivity but can be daunting for first-time visitors.</p>
+                <div class="cs-label">02 — Problem</div>
+                <h2>Connected, but confusing</h2>
+            </div>
+            <div>
+                <p>Jurong East, at its current state, links an MRT station, 2 bus interchanges, constructions for the
+                    upcoming Jurong Region Line and surrounding developments as well as a network of covered walkways
+                    and overhead bridges. Great for connectivity but can be daunting for first-time visitors.</p>
                 <ul class="cs-list">
                     <li>2 Bus Interchanges but each of them serves different bus services.</li>
                     <li>Existing signs are inconsistent in style and information.</li>
@@ -433,39 +726,70 @@
             </div>
         </div>
         <div class="cs-research cs-research-sm reveal" style="margin-top:40px; margin-left:auto; margin-right:auto">
-            <figure><img src="eicw/je-wayfind/map.png" alt="Map of Jurong East showing the MRT station and two bus interchanges" loading="lazy" style="width:100%;border-radius:12px"><figcaption>At a glance: Jurong East MRT station and the two bus interchanges</figcaption></figure>
+            <figure><img src="eicw/je-wayfind/map.png"
+                    alt="Map of Jurong East showing the MRT station and two bus interchanges" loading="lazy"
+                    style="width:100%;border-radius:12px">
+                <figcaption>At a glance: Jurong East MRT station and the two bus interchanges</figcaption>
+            </figure>
         </div>
     </section>
 
     <section class="cs-sec" id="research">
         <div class="cs-grid reveal">
-            <div><div class="cs-label">03 — Research</div><h2>Site Walk-through</h2></div>
             <div>
-                <p>We walked the key journeys on foot — from the station to the bus interchanges, noting decision points, confusing areas and opportunities for clearer signage.</p>
+                <div class="cs-label">03 — Research</div>
+                <h2>Site Walk-through</h2>
+            </div>
+            <div>
+                <p>We walked the key journeys on foot — from the station to the bus interchanges, noting decision
+                    points, confusing areas and opportunities for clearer signage.</p>
+                <p style="font-size:.75rem;opacity:.8">Image courtesy of LTA.</p>
                 <ul class="cs-list">
                     <li>Site walk-throughs and photo documentation.</li>
                     <li>Mapping of key origins, destinations and decision points.</li>
-                    <li>Review of existing LTA signage standards and how we can apply it to our wayfinding designs which we would be developing after the research phase.</li>
+                    <li>Review of existing LTA signage standards and how we can apply it to our wayfinding designs which
+                        we would be developing after the research phase.</li>
                 </ul>
             </div>
         </div>
         <div class="cs-media cs-research reveal">
-            <figure style="flex:0 0 32%"><img src="eicw/je-wayfind/img1.png" alt="Covered walkway beside construction hoarding, with a highlighted area" loading="lazy"><figcaption>Site walk-through along a covered walkway, with the highlighted area marking a spot to review.</figcaption></figure>
-            <figure style="flex:0 0 48%"><img src="eicw/je-wayfind/img2.png" alt="Annotated photo of the route from Jurong East MRT" loading="lazy"><figcaption>Annotated photo from the MRT side, marking where bus service information could be placed.</figcaption></figure>
+            <figure style="flex:0 0 32%"><img src="eicw/je-wayfind/img1.png"
+                    alt="Covered walkway beside construction hoarding, with a highlighted area" loading="lazy">
+                <figcaption>Site walk-through along a covered walkway, with the highlighted area marking a spot to
+                    review.</figcaption>
+            </figure>
+            <figure style="flex:0 0 48%"><img src="eicw/je-wayfind/img2.png"
+                    alt="Annotated photo of the route from Jurong East MRT" loading="lazy">
+                <figcaption>Annotated photo from the MRT side, marking where bus service information could be placed.
+                </figcaption>
+            </figure>
         </div>
         <div class="cs-media cs-research cs-research-wide cs-research-sm reveal">
-            <figure><img src="eicw/je-wayfind/img3.png" alt="Existing boarding berth signs in different styles" loading="lazy"><figcaption>Existing signs to the boarding berths, which differ in style and information.</figcaption></figure>
+            <figure><img src="eicw/je-wayfind/img3.png" alt="Existing boarding berth signs in different styles"
+                    loading="lazy">
+                <figcaption>Existing signs to the boarding berths, which differ in style and information.</figcaption>
+            </figure>
         </div>
         <div class="cs-media cs-research cs-research-wide reveal">
-            <figure><img src="eicw/je-wayfind/img4.png" alt="Existing overhead bridge signs listing buses, MRT, JCube and Jurong Regional Library" loading="lazy"><figcaption>Existing overhead bridge signs listing buses, MRT, JCube and Jurong Regional Library.</figcaption></figure>
+            <figure><img src="eicw/je-wayfind/img4.png"
+                    alt="Existing overhead bridge signs listing buses, MRT, JCube and Jurong Regional Library"
+                    loading="lazy">
+                <figcaption>Existing overhead bridge signs listing buses, MRT, JCube and Jurong Regional Library.
+                </figcaption>
+            </figure>
         </div>
     </section>
 
     <section class="cs-sec alt" id="ideation">
         <div class="cs-grid reveal">
-            <div><div class="cs-label">04 — Ideation</div><h2>From different mockups to a finalized design</h2></div>
             <div>
-                <p>Each of us began developing our own designs at first, to see which of our designs align with LTA's Design Principles and requirements. Although we started with different approaches, we converged on a consistent system that addressed hierarchy, colour, iconography and legibility.</p>
+                <div class="cs-label">04 — Ideation</div>
+                <h2>From different mockups to a finalized design</h2>
+            </div>
+            <div>
+                <p>Each of us began developing our own designs at first, to see which of our designs align with LTA's
+                    Design Principles and requirements. Although we started with different approaches, we converged on a
+                    consistent system that addressed hierarchy, colour, iconography and legibility.</p>
                 <ul class="cs-list">
                     <li>Familiarity with existing transport signage.</li>
                     <li>Colour and iconography aligned with existing transport identity.</li>
@@ -475,14 +799,19 @@
             </div>
         </div>
         <!-- Add sketches / mood boards here -->
-        <div class="cs-media reveal"><img src="eicw/je-wayfind/Ideation.png" alt="Ideation sketches" loading="lazy"></div>
+        <div class="cs-media reveal"><img src="eicw/je-wayfind/Ideation.png" alt="Ideation sketches" loading="lazy">
+        </div>
     </section>
 
     <section class="cs-sec" id="design">
         <div class="cs-grid reveal">
-            <div><div class="cs-label">05 — Design</div><h2>Clear, accessible signage</h2></div>
             <div>
-                <p>The final design language pairs strong contrast and generous type sizes with simple pictograms, so a sign can be understood in a glance by locals, tourists and commuters alike.</p>
+                <div class="cs-label">05 — Design</div>
+                <h2>Clear, accessible signage</h2>
+            </div>
+            <div>
+                <p>The final design language pairs strong contrast and generous type sizes with simple pictograms, so a
+                    sign can be understood in a glance by locals, tourists and commuters alike.</p>
             </div>
         </div>
         <div class="cs-media cs-two reveal">
@@ -493,10 +822,17 @@
 
     <section class="cs-sec alt" id="implementation">
         <div class="cs-grid reveal">
-            <div><div class="cs-label">06 — Implementation</div><h2>On the ground</h2></div>
             <div>
-                <p>Working with LTA, the designs moved from mockups to actual installation in Jurong East. LTA provided guidance and approvals throughout the process to ensure compliance with their standards.</p>
-                <p style="font-size:.75rem;opacity:.8">Image courtesy of <a href="https://www.linkedin.com/in/vareckng/">Vareck Ng</a> and <a href="https://www.linkedin.com/in/adiel-rusyaidi/">Adiel Rusyaidi</a>.</p>
+                <div class="cs-label">06 — Implementation</div>
+                <h2>From mockups to installation</h2>
+            </div>
+            <div>
+                <p>Working with LTA, the designs moved from mockups to actual installations. LTA provided guidance,
+                    approval and overall fabrication of these signs, and ensured compliance with their standards and
+                    specifications.</p>
+                <p style="font-size:.75rem;opacity:.8">Image courtesy of <a
+                        href="https://www.linkedin.com/in/vareckng/">Vareck Ng</a> and <a
+                        href="https://www.linkedin.com/in/adiel-rusyaidi/">Adiel Rusyaidi</a>.</p>
             </div>
         </div>
         <div class="cs-media cs-two cs-impl reveal">
@@ -505,63 +841,85 @@
             <img src="eicw/je-wayfind/je-4.jpg" alt="Installed wayfinding signage close-up" loading="lazy">
             <img src="eicw/je-wayfind/je-5.jpg" alt="Installed wayfinding signage in context" loading="lazy">
             <img src="eicw/je-wayfind/je-6.jpg" alt="Installed wayfinding signage in context" loading="lazy">
-            
+
         </div>
     </section>
 
     <section class="cs-sec" id="reception">
         <div class="cs-grid reveal">
-            <div><div class="cs-label">07 — Public Reception</div><h2>What people said</h2></div>
             <div>
-                <p>Once installed, the signs drew public attention, with LTA and commuters sharing them online. From Reddit to Instagram, people discussed and appreciated the clarity and design of the wayfinding signs.</p>
+                <div class="cs-label">07 — Public Reception</div>
+                <h2>What people said</h2>
+            </div>
+            <div>
+                <p>Once installed, the signs drew public attention, with LTA and commuters sharing them online. From
+                    Reddit to Instagram, people discussed and appreciated the clarity and design of the wayfinding
+                    signs.</p>
             </div>
         </div>
         <div class="cs-media cs-row reveal">
             <video src="https://i.imgur.com/T2TUKJS.mp4" autoplay muted loop playsinline controls></video>
             <div class="cs-embeds">
-                <img src="img/je-wayfinding/lta-post.png" alt="LTA Facebook post about the wayfinding signs at Jurong East Bus Interchange" loading="lazy">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dek_E9uE879/" data-instgrm-version="14"
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dek_E9uE879/"
+                    data-instgrm-version="14"
                     style="background:#fff; border:0; border-radius:14px; margin:0; max-width:540px; min-width:280px; width:100%;">
                     <a href="https://www.instagram.com/p/Dek_E9uE879/">View this post on Instagram</a>
                 </blockquote>
             </div>
+        </div>
+        <div class="cs-media cs-two cs-posts reveal">
+            <img src="eicw/je-wayfind/lta-post.png"
+                alt="LTA Facebook post about the wayfinding signs at Jurong East Bus Interchange" loading="lazy">
+            <img src="eicw/je-wayfind/reddit.png"
+                alt="Reddit post about the wayfinding signs at Jurong East Bus Interchange" loading="lazy">
         </div>
         <script async src="https://www.instagram.com/embed.js"></script>
     </section>
 
     <section class="cs-sec alt" id="conclusion">
         <div class="cs-grid reveal">
-            <div><div class="cs-label">08 — Conclusion</div><h2>What I learnt</h2></div>
             <div>
-                <p>The project gained significant public attention and was featured by 8days. Looking back, the result came from every stage connecting to the next: understanding the routes, aligning on one design, and working with LTA until it was installed.</p>
+                <div class="cs-label">08 — Conclusion</div>
+                <h2>What I learnt</h2>
+            </div>
+            <div>
+                <p>The project gained significant public attention and was featured by 8days. Looking back, the result
+                    came from every stage connecting to the next: understanding the routes, aligning on one design, and
+                    working with LTA until it was installed.</p>
             </div>
         </div>
         <div class="cs-learn reveal">
             <div>
                 <span>Research</span>
-                <p>Walking the routes from the station to both bus interchanges showed where people hesitate. Signs should answer those decisions, not just fill space.</p>
+                <p>Walking the routes from the station to both bus interchanges showed where people hesitate. Signs
+                    should answer those decisions, not just fill space.</p>
             </div>
             <div>
                 <span>Ideation</span>
-                <p>Starting with separate designs let us test ideas against LTA's design principles, then converge on one consistent system.</p>
+                <p>Starting with separate designs let us test ideas against LTA's design principles, then converge on
+                    one consistent system.</p>
             </div>
             <div>
                 <span>Design</span>
-                <p>Familiar colours and icons, strong contrast and generous type let a sign be understood at a glance, even when rushing.</p>
+                <p>Familiar colours and icons, strong contrast and generous type let a sign be understood at a glance,
+                    even when rushing.</p>
             </div>
             <div>
                 <span>Coordination</span>
-                <p>LTA's guidance and approvals, and working closely with my collaborator, kept the designs compliant and moving from mockup to installation.</p>
+                <p>LTA's guidance and approvals, and working closely with my collaborator, kept the designs compliant
+                    and moving from mockup to installation.</p>
             </div>
         </div>
-        <p class="cs-end reveal">Special thanks to LTA and my collaborator, Adiel for their contributions and support throughout the project.</p>
+        <p class="cs-end reveal">Special thanks to LTA and my collaborator, Adiel for their contributions and support
+            throughout the project.</p>
     </section>
 
     <footer class="cs-foot reveal">
         <div class="cs-promo">
             <div class="cs-label">Related project</div>
             <h2>EICW — Experimenting Improvements of Current Wayfinding</h2>
-            <p>My own exploration of how the current wayfinding system can be improved, from trains and buses to UI/UX and rethinking signage.</p>
+            <p>My own exploration of how the current wayfinding system can be improved, from trains and buses to UI/UX
+                and rethinking signage.</p>
             <a href="eicw/intro.html">Explore EICW <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </footer>

@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="../css/style-mobNav.css">
   <link rel="stylesheet" href="../css/style-breakpoints.css">
   <link rel="stylesheet" href="../css/dark-mode.css">
-  <link rel="stylesheet" href="css/ccl6-walkthrough.css?v=14">
+  <link rel="stylesheet" href="css/ccl6-walkthrough.css?v=16">
 
   <style>
     .eicw-collapsible {
@@ -417,13 +417,13 @@
 
             <div class="portfolio-filter portfolio-filter-sub mt-3 wow fadeIn" data-wow-delay="100ms"
               style="padding-bottom: 2em;">
-              <a href="#ent">
+              <a href="#ent" data-jump-step="0">
                 <button class="btn">Section 1 : Entrance Level</button>
               </a>
-              <a href="#conc">
+              <a href="#conc" data-jump-step="1">
                 <button class="btn">Section 2 : Concourse</button>
               </a>
-              <a href="#plat">
+              <a href="#plat" data-jump-step="4">
                 <button class="btn">Section 3 : Platform</button>
               </a>
               <a href="#wflow">
@@ -566,7 +566,7 @@
               <h3 tabindex="-1">Check the next trains</h3>
               <p>You arrive at Promenade and look at the entrance display. Find Platform B and the clockwise service via Bayfront.</p>
               <div class="ccl-journey-insight"><strong>Why it helps</strong><p>Platform letters, direction and the via station appear together, so you can identify the service before entering.</p></div>
-              <a class="ccl-walkthrough-link" href="#ent">Explore the entrance display <span aria-hidden="true">&rarr;</span></a>
+              <a class="ccl-walkthrough-link" href="#journey-detail-1">Explore the entrance display <span aria-hidden="true">&rarr;</span></a>
             </div>
             <figure class="ccl-walkthrough-visual">
               <a href="img/ccl6-6.png"><img src="img/ccl6-6.png" alt="Example entrance display showing Platform A anticlockwise via Paya Lebar and Platform B clockwise via Bayfront." loading="lazy" decoding="async"></a>
@@ -579,7 +579,7 @@
               <h3 tabindex="-1">Follow the Circle Line signs</h3>
               <p>In the concourse, follow the Circle Line markers and directional arrows. If you need a lift, look for the blue lift signs.</p>
               <div class="ccl-journey-insight"><strong>Why it helps</strong><p>Line markers and simplified icons help you recognise the route and accessible lift option at a glance.</p></div>
-              <a class="ccl-walkthrough-link" href="#conc">Explore the concourse signs <span aria-hidden="true">&rarr;</span></a>
+              <a class="ccl-walkthrough-link" href="#journey-detail-2">Explore the concourse signs <span aria-hidden="true">&rarr;</span></a>
             </div>
             <figure class="ccl-walkthrough-visual">
               <a id="walkthrough-concourse-link" href="img/ccl6-7aL.png"><img id="walkthrough-concourse-img" src="img/ccl6-7aL.png" alt="Proposed concourse signs with Circle Line and Downtown Line markers, arrows, and two lift sign variants." loading="lazy" decoding="async"></a>
@@ -592,7 +592,7 @@
               <h3 tabindex="-1">Find HarbourFront on the route</h3>
               <p>Check the route diagram at Promenade. HarbourFront is on the clockwise route via Bayfront, shown on the Platform B diagram.</p>
               <div class="ccl-journey-insight"><strong>Why it helps</strong><p>The highlighted route and direction labels help you connect your destination with the right platform.</p></div>
-              <a class="ccl-walkthrough-link" href="#plat">Explore the route diagrams <span aria-hidden="true">&rarr;</span></a>
+              <a class="ccl-walkthrough-link" href="#journey-detail-3">Explore the route diagrams <span aria-hidden="true">&rarr;</span></a>
             </div>
             <figure class="ccl-walkthrough-visual">
               <a href="img/ccl6-9a.png"><img src="img/ccl6-9a.png" alt="Proposed Promenade route diagrams showing Platform B clockwise via Bayfront and Platform A anticlockwise via Paya Lebar." loading="lazy" decoding="async"></a>
@@ -605,7 +605,7 @@
               <h3 tabindex="-1">Check which train to take</h3>
               <p>Look at the departure display for Platform B. Choose the clockwise train via Bayfront, not the spur service that ends at Dhoby Ghaut.</p>
               <div class="ccl-journey-insight"><strong>Why it helps</strong><p>Direction icons, via and end-station labels distinguish services sharing the same platform.</p></div>
-              <a class="ccl-walkthrough-link" href="#conc">Explore the arrival display <span aria-hidden="true">&rarr;</span></a>
+              <a class="ccl-walkthrough-link" href="#journey-detail-4">Explore the arrival display <span aria-hidden="true">&rarr;</span></a>
             </div>
             <figure class="ccl-walkthrough-visual">
               <a href="img/ccl6-3.png"><img src="img/ccl6-3.png" alt="Example departure display showing Platform B clockwise via Bayfront and clockwise spur ending at Dhoby Ghaut." loading="lazy" decoding="async"></a>
@@ -618,7 +618,7 @@
               <h3 tabindex="-1">Confirm your direction</h3>
               <p>At Platform B, check the signs above the screen doors for clockwise via Bayfront before waiting for your train.</p>
               <div class="ccl-journey-insight"><strong>Why it helps</strong><p>The platform letter, direction and route appear together again where you board.</p></div>
-              <a class="ccl-walkthrough-link" href="#plat">Explore the platform signs <span aria-hidden="true">&rarr;</span></a>
+              <a class="ccl-walkthrough-link" href="#journey-detail-5">Explore the platform signs <span aria-hidden="true">&rarr;</span></a>
             </div>
             <figure class="ccl-walkthrough-visual">
               <a href="img/ccl6-11a.png"><img src="img/ccl6-11a.png" alt="Proposed Promenade Platform B screen doors with clockwise via Bayfront and clockwise spur to Dhoby Ghaut signs." loading="lazy" decoding="async"></a>
@@ -638,7 +638,7 @@
                   Your browser does not support audio playback. <a href="walkthrough-ccl6/pmn-platB.mp3">Download the announcement</a>.
                 </audio>
               </div>
-              <a class="ccl-walkthrough-link" href="#plat">Explore the platform displays <span aria-hidden="true">&rarr;</span></a>
+              <a class="ccl-walkthrough-link" href="#journey-detail-6">Explore the platform displays <span aria-hidden="true">&rarr;</span></a>
             </div>
             <figure class="ccl-walkthrough-visual">
               <a href="img/ccl6-1.png"><img src="img/ccl6-1.png" alt="Example Platform B waiting screen showing a clockwise train via Bayfront and a spur train ending at Dhoby Ghaut." loading="lazy" decoding="async"></a>
@@ -652,7 +652,7 @@
   </section>
 
   <!----- Section 1 Header ----->
-  <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="ent-img"
+  <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="ent-img" data-journey-section-banner
     style="background-image: url(img/ent-light.png); height: 45vh;">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
@@ -664,7 +664,7 @@
   </section>
 
   <!-- Touch Point 1 - Digital Panel for Arrival Times -->
-  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3px;" id="ent">
+  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3px;" id="ent" data-journey-section>
     <div class="wbnrfz_details_body">
       <div class="container container-mobile">
         <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
@@ -675,6 +675,7 @@
               <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
             </summary>
             <div class="eicw-collapsible-body">
+              <div id="journey-detail-1" data-journey-content="0">
               <div class="info justify-content-center">
                 <h5>For my Redesign, I have included two variants, mainly:</h5>
                 <p>
@@ -709,6 +710,7 @@
                     <p style="text-align: center;">My Redesigned Version - Variant B</p>
                   </figcaption>
                 </div>
+                </div>
               </div>
             </div>
           </details>
@@ -718,7 +720,7 @@
   </section>
 
   <!----- Section 2 Header ----->
-  <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="conc-img"
+  <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="conc-img" data-journey-section-banner
     style="background-image: url(img/conc-light.png); height: 45vh;">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
@@ -730,7 +732,7 @@
   </section>
 
   <!-- Touch Point 2 - Wayfinding Signages -->
-  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3px;" id="conc">
+  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3px;" id="conc" data-journey-section>
     <div class="wbnrfz_details_body">
       <div class="container container-mobile">
         <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
@@ -740,6 +742,7 @@
               <i class="fa-regular fa-chevron-down eicw-collapsible-chevron"></i>
             </summary>
             <div class="eicw-collapsible-body">
+              <div id="journey-detail-2" data-journey-content="1">
               <div class="info justify-content-center">
                 <h2 class="text-center"
                   style="font-size: 25px; font-weight:bold; text-align: left; margin-top: 1em; margin-bottom: 1em;">
@@ -765,7 +768,8 @@
                   </figcaption>
                 </div>
               </div>
-              <hr>
+              </div>
+              <div id="journey-detail-4" data-journey-content="3">
               <h2 class="mb-3 text-center" style="font-size: 25px; font-weight:bold; text-align: left;">Touch
                 Point 3 - Arrival Times of the respective train services</h2>
               <h5>For my Redesign, I retained the same elements with some tweaks, mainly:</h5>
@@ -798,6 +802,7 @@
                     <p style="text-align: center;">My Redesigned Version - Variant B</p>
                   </figcaption>
                 </div>
+                </div>
               </div>
             </div>
 
@@ -808,7 +813,7 @@
   </section>
 
   <!----- Section 3 Header ----->
-  <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="plat-img"
+  <section class="breadcrumb-area-eicw-subs bg-img bg-overlay-section" id="plat-img" data-journey-section-banner
     style="background-image: url(img/plat-light.png)">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
@@ -820,7 +825,7 @@
   </section>
 
   <!-- Touch Point 3 - Arrival Times of the respective train services -->
-  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3em;" id="plat">
+  <section class="about-me-summ clearfix" style="padding-top: 3em; padding-bottom: 3em;" id="plat" data-journey-section>
     <div class="wbnrfz_details_body">
       <div class="container container-mobile">
         <div class="col-lg-12 wow fadeIn" data-wow-delay="100ms">
@@ -831,6 +836,7 @@
             </summary>
             <div class="eicw-collapsible-body">
               <!-- Touch Point 4 - Wayfinding Signages - Platform -->
+              <div id="journey-detail-5" data-journey-content="4">
               <div class="info justify-content-center">
                 <h2 class="text-center"
                   style="font-size: 25px; font-weight:bold; text-align: left; margin-top: 1em; margin-bottom: 1em; margin-top: 1em;">
@@ -863,6 +869,8 @@
               <hr>
 
               <!-- Touch Point 5A - Route Diagrams -->
+              </div>
+              <div id="journey-detail-3" data-journey-content="2">
               <div class="info justify-content-center">
                 <h2 class="mb-3 text-center" style="font-size: 25px; font-weight:bold; text-align: left;">Touch
                   Point 5A - Route Diagrams</h2>
@@ -896,7 +904,7 @@
                   </figcaption>
                 </div>
               </div>
-              <hr>
+              </div>
 
               <!-- Touch Point 5B - Transfer Icon -->
               <!-- <div class="info justify-content-center">
@@ -946,6 +954,7 @@
               <hr> -->
 
               <!-- Touch Point 6 - Platform Screen Doors Wayfinding -->
+              <div data-journey-content="4">
               <div class="info justify-content-center">
                 <h2 class="mb-3 text-center" style="font-size: 25px; font-weight:bold; text-align: left;">Touch
                   Point 6 - Platform Screen Doors Wayfinding</h2>
@@ -967,9 +976,10 @@
                   </figcaption>
                 </div>
               </div>
-              <hr>
+              </div>
 
               <!-- Touch Point 7A - Waiting Page -->
+              <div id="journey-detail-6" data-journey-content="5">
               <div class="info justify-content-center">
                 <h2 class="mb-3 text-center" style="font-size: 25px; font-weight:bold; text-align: left;">Touch
                   Point 7A - Waiting Page</h2>
@@ -1080,6 +1090,7 @@
                 </div>
               </div>
 
+              </div>
             </div><!-- end eicw-collapsible-body -->
           </details>
         </div>
@@ -1141,8 +1152,8 @@
 
   <script src="../js/mob-navtabs.js"></script>
 
-  <script src="js/ccl6.js"></script>
-  <script src="js/ccl6-walkthrough.js?v=10"></script>
+  <script src="js/ccl6.js?v=2"></script>
+  <script src="js/ccl6-walkthrough.js?v=11"></script>
   <script src="js/eicw-nav.js"></script>
 
   <script src="../js/jquery.min.js"></script>

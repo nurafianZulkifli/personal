@@ -52,7 +52,7 @@
 
 .ccl-station-diagram {
   position: relative;
-  max-width: 960px;
+  width: 100%;
   margin: 1rem auto 0;
 }
 
@@ -314,6 +314,16 @@
 
 .ccl-journey [hidden] {
   display: none;
+}
+
+[data-journey-section][hidden],
+[data-journey-section-banner][hidden],
+[data-journey-content][hidden] {
+  display: none !important;
+}
+
+[data-journey-content] {
+  scroll-margin-top: 120px;
 }
 
 .ccl-journey [data-journey-panel]:not([hidden]) + [data-journey-panel]:not([hidden]) {

@@ -405,6 +405,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function openTargetCollapsible(hash) {
+        var target = document.querySelector(hash);
+        var targetSection = target && target.closest('[data-journey-section]');
+        if (targetSection) hash = '#' + targetSection.id;
         if (sectionIds.indexOf(hash) === -1) return;
 
         sectionIds.forEach(function (sectionId) {
@@ -420,6 +423,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     jumpLinks.forEach(function (link) {
         link.addEventListener('click', function (event) {
+            if (link.hasAttribute('data-jump-step')) return;
             var hash = link.getAttribute('href');
             if (!hash || hash.length < 2) return;
 

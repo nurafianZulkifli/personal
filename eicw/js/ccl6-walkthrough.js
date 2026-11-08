@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!journey) return;
 
     var panels = Array.from(journey.querySelectorAll('[data-journey-panel]'));
+    var detailSections = Array.from(document.querySelectorAll('[data-journey-section]'));
+    var detailContent = Array.from(document.querySelectorAll('[data-journey-content]'));
+    var sectionBanners = Array.from(document.querySelectorAll('[data-journey-section-banner]'));
     var stepButtons = Array.from(journey.querySelectorAll('[data-journey-step]'));
     var controls = journey.querySelector('.ccl-journey-controls');
     var status = journey.querySelector('.ccl-journey-status');
@@ -24,9 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
         ['90%', '47.87%'], ['42%', '87.31%'], ['76%', '87.31%']
     ];
 
-    function showStep(index, moveFocus) {
+    function showStep(index, moveFocus, preserveHash) {
         clearTimeout(scrollTimer);
         current = index;
+        if (!preserveHash && /^#(journey-detail-[1-6]|ent|conc|plat)$/.test(window.location.hash) && window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', '#journey');
+        }
         if (traveller) {
             traveller.style.left = travellerPositions[current][0];
             traveller.style.top = travellerPositions[current][1];
@@ -41,6 +47,14 @@ document.addEventListener('DOMContentLoaded', function () {
             if (panel.hidden) {
                 panel.querySelectorAll('audio').forEach(function (audio) {
                     audio.pause();
+                });
+                detailContent.forEach(function (content) {
+                    content.hidden = Number(content.getAttribute('data-journey-content')) !== current;
+                });
+                detailSections.forEach(function (section) {
+                    var matches = section.querySelector('[data-journey-content="' + current + '"]');
+                    section.hidden = !matches;
+                    section.querySelector('details').open = !!matches;
                 });
             }
         });
@@ -123,6 +137,12 @@ document.addEventListener('DOMContentLoaded', function () {
     replay.addEventListener('click', function () {
         showStepAndScroll(0);
     });
+    document.querySelectorAll('[data-jump-step]').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            showStepAndScroll(Number(link.getAttribute('data-jump-step')));
+        });
+    });
 
     if (platformAudio && audioButton && audioError) {
         function updateAudioButton() {
@@ -153,6 +173,29 @@ document.addEventListener('DOMContentLoaded', function () {
         panel.hidden = true;
         panel.querySelector('h3').setAttribute('aria-describedby', 'station-hint');
     });
+    sectionBanners.forEach(function (banner) {
+        banner.hidden = true;
+    });
+    detailSections.forEach(function (section) {
+        section.hidden = true;
+    });
+    detailContent.forEach(function (content) {
+        content.hidden = true;
+    });
+    function showHashTarget() {
+        var hashTarget = document.getElementById(window.location.hash.slice(1));
+        if (!hashTarget) return;
+        var targetContent = hashTarget.closest('[data-journey-content]');
+        if (!targetContent && hashTarget.hasAttribute('data-journey-section')) {
+            targetContent = hashTarget.querySelector('[data-journey-content]');
+        }
+        if (targetContent) {
+            showStep(Number(targetContent.getAttribute('data-journey-content')), false, true);
+            hashTarget.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }
+    }
+    window.addEventListener('hashchange', showHashTarget);
+    showHashTarget();
     if (hotspots) hotspots.hidden = false;
     if (stationHint) stationHint.hidden = false;
     if (traveller) traveller.removeAttribute('hidden');

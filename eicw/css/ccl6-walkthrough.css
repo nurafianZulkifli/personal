@@ -1,0 +1,428 @@
+.ccl-walkthrough {
+  padding: 5rem 0;
+  background: #f5f7f8;
+  color: #17283a;
+}
+
+.ccl-walkthrough-header {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.ccl-walkthrough-header h2 {
+  margin: 0 0 0.75rem;
+  color: inherit;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 700;
+}
+
+.ccl-walkthrough-header p,
+.ccl-walkthrough-content p {
+  color: inherit;
+}
+
+.ccl-walkthrough-header .ccl-walkthrough-disclaimer {
+  font-size: 0.875rem;
+}
+
+.ccl-station-overview {
+  margin-bottom: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid #dce3e8;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.ccl-station-overview-heading {
+  text-align: center;
+}
+
+.ccl-station-overview-heading h3 {
+  margin: 0 0 0.5rem;
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.ccl-station-overview-heading p {
+  margin-bottom: 0.5rem;
+  color: inherit;
+}
+
+.ccl-station-diagram {
+  position: relative;
+  max-width: 960px;
+  margin: 1rem auto 0;
+}
+
+.ccl-station-diagram > img:first-child {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  color-scheme: light;
+}
+
+.ccl-station-diagram .ccl-station-entrance-display {
+  position: absolute;
+  left: 6.25%;
+  top: 20.37%;
+  width: 13.125%;
+  height: auto;
+}
+
+.ccl-station-diagram .ccl-station-entrance-icon {
+  position: absolute;
+  left: 10.1%;
+  top: 29%;
+  width: 5.5%;
+  height: auto;
+}
+
+.ccl-station-diagram .ccl-station-concourse-display {
+  position: absolute;
+  left: 30.21%;
+  top: 21.11%;
+  width: 13.33%;
+  height: auto;
+}
+
+.ccl-station-traveller {
+  position: absolute;
+  left: 13%;
+  top: 47.87%;
+  width: clamp(18px, 3.2%, 31px);
+  height: auto;
+  transform: translate(-50%, -92.97%);
+  overflow: visible;
+  pointer-events: none;
+  fill: #ff692e;
+  /* stroke: #15232e;
+  stroke-width: 2; */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: left 0.8s ease-in-out, top 0.8s ease-in-out;
+}
+
+.ccl-traveller-body,
+.ccl-traveller-leg {
+  fill: none;
+  stroke: #ff692e;
+  stroke-width: 5;
+}
+
+.ccl-traveller-leg {
+  transform-origin: 16px 39px;
+}
+
+.ccl-station-traveller.is-moving .ccl-traveller-leg-left {
+  animation: ccl-walk 0.3s ease-in-out infinite alternate;
+}
+
+.ccl-station-traveller.is-moving .ccl-traveller-leg-right {
+  animation: ccl-walk 0.3s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes ccl-walk {
+  from { transform: rotate(-24deg); }
+  to { transform: rotate(24deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ccl-station-traveller {
+    transition: none;
+  }
+
+  .ccl-station-traveller.is-moving .ccl-traveller-leg {
+    animation: none;
+  }
+}
+
+.ccl-station-hotspots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ccl-station-point {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 20%;
+  height: 24%;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.ccl-station-point span {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #004e78;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-weight: 700;
+}
+
+.ccl-station-point:hover span,
+.ccl-station-point[aria-current="step"] span {
+  background: #ffb02e;
+  color: #17283a;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ccl-station-point span {
+    opacity: 0;
+  }
+
+  .ccl-station-point:hover span,
+  .ccl-station-point:focus-visible span {
+    opacity: 1;
+  }
+}
+
+.ccl-station-point-1 { left: 13%; top: 28%; }
+.ccl-station-point-2 { left: 37%; top: 28%; }
+.ccl-station-point-3 { left: 61%; top: 28%; }
+.ccl-station-point-4 { left: 84%; top: 28%; }
+.ccl-station-point-5 { left: 32%; top: 72%; }
+.ccl-station-point-6 { left: 68%; top: 72%; }
+
+.ccl-journey-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ccl-journey-controls button {
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #aebfc9;
+  border-radius: 999px;
+  background: #fff;
+  color: #17283a;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ccl-journey-controls [data-journey-next] {
+  border-color: #005582;
+  background: #005582;
+  color: #fff;
+}
+
+.ccl-journey-controls button:disabled {
+  border-color: #d3dade;
+  background: #eef1f3;
+  color: #596973;
+  cursor: not-allowed;
+}
+
+.ccl-journey-status {
+  min-height: 1.5em;
+  margin: 0 0 0.75rem;
+  color: inherit;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.ccl-journey-status:empty {
+  display: none;
+}
+
+.ccl-journey-controls {
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.ccl-journey [hidden] {
+  display: none;
+}
+
+.ccl-journey [data-journey-panel]:not([hidden]) + [data-journey-panel]:not([hidden]) {
+  margin-top: 1rem;
+}
+
+.ccl-journey-insight {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-left: 4px solid #e99500;
+  background: #f4f7f8;
+}
+
+.ccl-journey-insight p {
+  margin: 0.5rem 0 0;
+}
+
+.ccl-walkthrough .ccl-walkthrough-eyebrow {
+  margin: 0 0 0.75rem;
+  color: #895000;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ccl-walkthrough-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(0, 1.7fr);
+  scroll-margin-top: 120px;
+  overflow: hidden;
+  border: 1px solid #dce3e8;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(23, 40, 58, 0.08);
+}
+
+.ccl-walkthrough-content {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: left;
+}
+
+.ccl-walkthrough-content h3 {
+  margin: 0 0 1rem;
+  color: inherit;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.ccl-walkthrough-content h4 {
+  margin: 1.75rem 0 0.75rem;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.ccl-walkthrough-content ul {
+  margin: 0 0 2rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.ccl-walkthrough-content li {
+  margin-bottom: 0.5rem;
+  list-style: disc;
+}
+
+.ccl-walkthrough-link {
+  display: inline-block;
+  color: #005582;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ccl-walkthrough-link:hover {
+  color: #003b5a;
+}
+
+.ccl-walkthrough a:focus-visible,
+.ccl-walkthrough button:focus-visible,
+.ccl-walkthrough h3:focus-visible {
+  outline: 3px solid #b66b00;
+  outline-offset: 4px;
+}
+
+.ccl-walkthrough-visual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: #eaf0f3;
+}
+
+.ccl-walkthrough-visual a {
+  display: block;
+}
+
+.ccl-walkthrough-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.ccl-walkthrough-visual figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+body.dark-mode .ccl-walkthrough {
+  background: #101c27;
+  color: #edf4f8;
+}
+
+body.dark-mode .ccl-walkthrough-layout {
+  border-color: #40515e;
+  background: #1b2b38;
+}
+
+body.dark-mode .ccl-station-overview {
+  border-color: #40515e;
+  background: #1b2b38;
+}
+
+body.dark-mode .ccl-station-diagram > img:first-child {
+  color-scheme: dark;
+}
+
+body.dark-mode .ccl-walkthrough-visual {
+  background: #263947;
+}
+
+body.dark-mode .ccl-journey-insight {
+  background: #263947;
+}
+
+body.dark-mode .ccl-journey-controls button {
+  border-color: #61798b;
+  background: #1b2b38;
+  color: #edf4f8;
+}
+
+body.dark-mode .ccl-journey-controls [data-journey-next]:not(:disabled) {
+  border-color: #90d4f5;
+  background: #90d4f5;
+  color: #102330;
+}
+
+body.dark-mode .ccl-journey-controls button:disabled {
+  border-color: #40515e;
+  background: #263947;
+  color: #a9bac5;
+}
+
+body.dark-mode .ccl-walkthrough .ccl-walkthrough-eyebrow {
+  color: #ffc879;
+}
+
+body.dark-mode .ccl-walkthrough-link {
+  color: #a9ddff;
+}
+
+body.dark-mode .ccl-walkthrough-link:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .ccl-walkthrough {
+    padding: 3rem 0;
+  }
+
+  .ccl-walkthrough-layout {
+    grid-template-columns: 1fr;
+    scroll-margin-top: 100px;
+  }
+}

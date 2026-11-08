@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .outer { fill: #263947; }
+      .interior { fill: #1b2b38; stroke: #536a79; }
+      .label { fill: #c2d3dc; }
+      .gate { fill: #526b79; stroke: #9eb4bf; }
+      .route-map { fill: #344b59; stroke: #8ca4b0; }
+      .route-stops { fill: #344b59; }
+      .structure { stroke: #718b99; }
+      .platform { fill: #344b59; stroke: #718b99; }
+      .doors { stroke: #718b99; }
+    }
+  </style>
+  <rect class="outer" width="960" height="540" rx="14" fill="#eef4f7"/>
+  <rect class="interior" x="28" y="24" width="904" height="474" rx="12" fill="#fff" stroke="#cfdae0" stroke-width="2"/>
+  <g font-family="Arial, sans-serif">
+    <text class="label" x="54" y="60" fill="#536c7d" font-size="17" font-weight="bold" letter-spacing="2">ENTRANCE &amp; CONCOURSE</text>
+    <text class="label" x="54" y="323" fill="#536c7d" font-size="17" font-weight="bold" letter-spacing="2">PLATFORM B</text>
+    <g class="gate" fill="#c8d7de" stroke="#91a8b4" stroke-width="2">
+      <rect x="314" y="208" width="21" height="48" rx="4"/>
+      <rect x="354" y="208" width="21" height="48" rx="4"/>
+      <rect x="394" y="208" width="21" height="48" rx="4"/>
+    </g>
+    <rect class="route-map" x="511" y="106" width="139" height="134" rx="9" fill="#fff" stroke="#a9bac5" stroke-width="4"/>
+    <rect x="511" y="106" width="139" height="30" rx="6" fill="#15232e"/>
+    <text x="538" y="127" fill="#fff" font-size="13" font-weight="bold">ROUTE MAP</text>
+    <path d="M542 164 H620 M542 184 H620 M542 204 H620" fill="none" stroke="#ffae25" stroke-width="5"/>
+    <g class="route-stops" fill="#fff" stroke="#ffae25" stroke-width="3"><circle cx="556" cy="164" r="5"/><circle cx="592" cy="164" r="5"/><circle cx="574" cy="184" r="5"/><circle cx="606" cy="204" r="5"/></g>
+    <rect x="736" y="110" width="135" height="88" rx="6" fill="#15232e"/>
+    <text x="747" y="133" fill="#fff" font-size="12" font-weight="bold">DEPARTURES</text>
+    <text x="747" y="155" fill="#ffb02e" font-size="12">B  via Bayfront</text>
+    <text x="747" y="177" fill="#fff" font-size="12">B  to Dhoby Ghaut</text>
+    <path class="structure" d="M45 265 H915" stroke="#aebfc8" stroke-width="13"/>
+    <path class="structure" d="M784 270 L898 365 M762 280 L876 375" fill="none" stroke="#aebfc8" stroke-width="9"/>
+    <rect class="platform" x="63" y="355" width="834" height="109" rx="7" fill="#e5edf1" stroke="#c1d0d8" stroke-width="3"/>
+    <path class="doors" d="M63 385 H897 M271 385 V464 M479 385 V464 M687 385 V464" stroke="#b3c5ce" stroke-width="3"/>
+    <rect x="63" y="355" width="834" height="17" fill="#ffad28"/>
+    <rect x="220" y="334" width="175" height="32" rx="5" fill="#15232e"/>
+    <text x="232" y="355" fill="#fff" font-size="13" font-weight="bold">B  CLOCKWISE  →</text>
+    <rect x="594" y="349" width="135" height="83" rx="6" fill="#15232e"/>
+    <text x="606" y="372" fill="#fff" font-size="12" font-weight="bold">PLATFORM B</text>
+    <text x="606" y="394" fill="#ffb02e" font-size="12">via Bayfront</text>
+    <text x="606" y="415" fill="#fff" font-size="12">to Dhoby Ghaut</text>
+    <path class="structure" d="M43 477 H916" stroke="#aebfc8" stroke-width="11"/>
+    <text class="label" x="54" y="525" fill="#536c7d" font-size="13">Schematic illustration · not to scale</text>
+  </g>
+</svg>

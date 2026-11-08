@@ -188,6 +188,8 @@ function updateHrefForDarkMode() {
 
     const wfm_link = document.getElementById('wfm');
     const wfm_img = document.getElementById('wfm-img');
+    const walkthroughConcourseLink = document.getElementById('walkthrough-concourse-link');
+    const walkthroughConcourseImg = document.getElementById('walkthrough-concourse-img');
 
     const evo3_link = document.getElementById('evo3');
     const evo3_img = document.getElementById('evo3-img');
@@ -248,6 +250,8 @@ function updateHrefForDarkMode() {
 
         if (wfm_link) wfm_link.href = './img/ccl6-7aD.png';
         if (wfm_img) wfm_img.src = './img/ccl6-7aD.png';
+        if (walkthroughConcourseLink) walkthroughConcourseLink.href = './img/ccl6-7aD.png';
+        if (walkthroughConcourseImg) walkthroughConcourseImg.src = './img/ccl6-7aD.png';
 
         if (wfp_link) wfp_link.href = './img/ccl6-7D.png';
         if (wfp_img) wfp_img.src = './img/ccl6-7D.png';
@@ -281,6 +285,8 @@ function updateHrefForDarkMode() {
 
         if (wfm_link) wfm_link.href = './img/ccl6-7aL.png';
         if (wfm_img) wfm_img.src = './img/ccl6-7aL.png';
+        if (walkthroughConcourseLink) walkthroughConcourseLink.href = './img/ccl6-7aL.png';
+        if (walkthroughConcourseImg) walkthroughConcourseImg.src = './img/ccl6-7aL.png';
 
         if (wfp_link) wfp_link.href = './img/ccl6-7.png';
         if (wfp_img) wfp_img.src = './img/ccl6-7.png';
@@ -376,7 +382,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Section jump links: scroll to anchors just below fixed nav elements
 document.addEventListener('DOMContentLoaded', function () {
-    var jumpLinks = Array.from(document.querySelectorAll('.portfolio-filter-sub a[href^="#"]'));
+    var jumpLinks = Array.from(document.querySelectorAll('.portfolio-filter-sub a[href^="#"], .ccl-walkthrough-link[href^="#"]'));
     var sectionIds = ['#ent', '#conc', '#plat'];
     if (jumpLinks.length === 0) return;
 

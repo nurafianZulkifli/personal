@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var previous = journey.querySelector('[data-journey-prev]');
     var next = journey.querySelector('[data-journey-next]');
     var replay = journey.querySelector('[data-journey-replay]');
+    var platformAudio = journey.querySelector('#platform-announcement');
+    var audioButton = journey.querySelector('[data-platform-audio-button]');
+    var audioError = journey.querySelector('[data-platform-audio-error]');
     var current = -1;
     var movementTimer;
     var scrollTimer;
@@ -35,6 +38,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         panels.forEach(function (panel, panelIndex) {
             panel.hidden = panelIndex !== current;
+            if (panel.hidden) {
+                panel.querySelectorAll('audio').forEach(function (audio) {
+                    audio.pause();
+                });
+            }
         });
         stepButtons.forEach(function (button) {
             if (Number(button.getAttribute('data-journey-step')) === current) {
@@ -115,6 +123,31 @@ document.addEventListener('DOMContentLoaded', function () {
     replay.addEventListener('click', function () {
         showStepAndScroll(0);
     });
+
+    if (platformAudio && audioButton && audioError) {
+        function updateAudioButton() {
+            var playing = !platformAudio.paused;
+            audioButton.textContent = playing ? '\u23f8' : '\u25b6';
+            audioButton.setAttribute('aria-label', (playing ? 'Pause' : 'Play') + ' Platform B announcement');
+        }
+
+        audioButton.addEventListener('click', function () {
+            if (!platformAudio.paused) {
+                platformAudio.pause();
+                return;
+            }
+            audioError.hidden = true;
+            platformAudio.play().catch(function (error) {
+                if (error.name === 'AbortError') return;
+                audioError.textContent = 'Unable to play the Platform B announcement. Please try again.';
+                audioError.hidden = false;
+            });
+        });
+        platformAudio.addEventListener('play', updateAudioButton);
+        platformAudio.addEventListener('pause', updateAudioButton);
+        platformAudio.addEventListener('ended', updateAudioButton);
+        audioButton.hidden = false;
+    }
 
     panels.forEach(function (panel) {
         panel.hidden = true;

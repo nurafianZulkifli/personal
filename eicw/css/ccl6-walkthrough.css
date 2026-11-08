@@ -82,9 +82,41 @@
 
 .ccl-station-diagram .ccl-station-concourse-display {
   position: absolute;
-  left: 30.21%;
+  left: 31.3%;
   top: 21.11%;
   width: 13.33%;
+  height: auto;
+}
+
+.ccl-station-diagram .ccl-station-route-map {
+  position: absolute;
+  left: 53.23%;
+  top: 19.63%;
+  width: 14.48%;
+  height: auto;
+}
+
+.ccl-station-diagram .ccl-station-departure-display {
+  position: absolute;
+  left: 75.2%;
+  top: 20.37%;
+  width: 17%;
+  height: auto;
+}
+
+.ccl-station-diagram .ccl-station-platform-sign {
+  position: absolute;
+  left: 22.92%;
+  top: 61.85%;
+  width: 18.23%;
+  height: auto;
+}
+
+.ccl-station-diagram .ccl-station-platform-display {
+  position: absolute;
+  left: 58.46%;
+  top: 64.63%;
+  width: 21%;
   height: auto;
 }
 
@@ -198,6 +230,40 @@
 .ccl-station-point-5 { left: 32%; top: 72%; }
 .ccl-station-point-6 { left: 68%; top: 72%; }
 
+.ccl-station-audio-button {
+  position: absolute;
+  left: 68%;
+  top: 80%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #005582;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ccl-station-audio-button {
+    opacity: 0;
+  }
+
+  .ccl-station-hotspots:has(.ccl-station-point-6:hover, .ccl-station-point-6:focus-visible) ~ .ccl-station-audio-button,
+  .ccl-station-audio-button:hover,
+  .ccl-station-audio-button:focus-visible {
+    opacity: 1;
+  }
+
+  .ccl-station-diagram:has(.ccl-station-audio-button:hover, .ccl-station-audio-button:focus-visible) .ccl-station-point-6 span {
+    opacity: 1;
+  }
+}
+
 .ccl-journey-controls {
   display: flex;
   flex-wrap: wrap;
@@ -263,6 +329,20 @@
 
 .ccl-journey-insight p {
   margin: 0.5rem 0 0;
+}
+
+.ccl-journey-audio {
+  margin: 1.5rem 0;
+}
+
+.ccl-journey-audio p {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.ccl-journey-audio audio {
+  display: block;
+  max-width: 100%;
 }
 
 .ccl-walkthrough .ccl-walkthrough-eyebrow {

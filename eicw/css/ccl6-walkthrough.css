@@ -280,8 +280,12 @@
 }
 
 .ccl-journey-controls {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "prev next"
+    "replay replay";
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -323,8 +327,22 @@
 }
 
 .ccl-journey-controls {
-  justify-content: space-between;
   margin-top: 1rem;
+}
+
+.ccl-journey-controls [data-journey-prev] {
+  grid-area: prev;
+  justify-self: start;
+}
+
+.ccl-journey-controls [data-journey-next] {
+  grid-area: next;
+  justify-self: end;
+}
+
+.ccl-journey-controls [data-journey-replay] {
+  grid-area: replay;
+  justify-self: center;
 }
 
 .ccl-journey [hidden] {

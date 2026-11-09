@@ -284,11 +284,29 @@ var alignParagraphsConfig = {
   manyLinesAlign: "left",
 };
 
+var autoAlignedParagraphs = new WeakSet();
+
 function alignParagraphs() {
   var cfg = alignParagraphsConfig;
   document.querySelectorAll(cfg.selector).forEach(function (p) {
     // Skip excluded elements
     if (p.classList.contains(cfg.excludeClass)) return;
+
+    var wasAutoAligned = autoAlignedParagraphs.has(p);
+    var hasAlignmentOverride = Array.prototype.some.call(p.classList, function (className) {
+      return /^text-(?:(?:sm|md|lg|xl|xxl)-)?(?:left|center|right|justify)$/.test(className);
+    });
+    var hasDataOverride = p.dataset.alignFew != null ||
+      p.dataset.alignMany != null ||
+      p.dataset.alignThreshold != null;
+
+    if (hasAlignmentOverride) return;
+
+    var computedStyle = window.getComputedStyle(p);
+    if (!wasAutoAligned && !hasDataOverride &&
+        (p.style.textAlign || (computedStyle.textAlign !== "left" && computedStyle.textAlign !== "start"))) {
+      return;
+    }
 
     // Per-element overrides via data attributes:
     //   data-align-few="left"   → overrides fewLinesAlign
@@ -300,10 +318,27 @@ function alignParagraphs() {
                       ? parseInt(p.dataset.alignThreshold, 10)
                       : cfg.lineThreshold;
 
-    var lineHeight = parseFloat(window.getComputedStyle(p).lineHeight);
-    var lines = lineHeight > 0 ? Math.round(p.offsetHeight / lineHeight) : 1;
+    var range = document.createRange();
+    range.selectNodeContents(p);
+    var rects = Array.prototype.slice.call(range.getClientRects())
+      .filter(function (rect) { return rect.height > 0; })
+      .sort(function (a, b) { return a.top - b.top; });
+    if (!rects.length) return;
+
+    var lineHeight = parseFloat(computedStyle.lineHeight);
+    var fontSize = parseFloat(computedStyle.fontSize);
+    var lineTolerance = Math.max(1, (lineHeight > 0 ? lineHeight : fontSize || 16) / 2);
+    var lines = 0;
+    var lastLineTop = -Infinity;
+    rects.forEach(function (rect) {
+      if (rect.top - lastLineTop > lineTolerance) {
+        lines++;
+        lastLineTop = rect.top;
+      }
+    });
 
     p.style.textAlign = lines <= threshold ? few : many;
+    autoAlignedParagraphs.add(p);
   });
 }
 

@@ -50,6 +50,15 @@
   color: inherit;
 }
 
+.ccl-station-zoom,
+.ccl-station-zoom-hint {
+  display: none;
+}
+
+.ccl-station-diagram-scroll {
+  overflow-x: auto;
+}
+
 .ccl-station-diagram {
   position: relative;
   width: 100%;
@@ -106,9 +115,9 @@
 
 .ccl-station-diagram .ccl-station-platform-sign {
   position: absolute;
-  left: 22.92%;
-  top: 61.85%;
-  width: 18.23%;
+  left: 18.53%;
+  top: 64.63%;
+  width: 27%;
   height: auto;
 }
 
@@ -204,6 +213,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   color: #fff;
   font-weight: 700;
+  opacity: 0;
 }
 
 .ccl-station-point:hover span,
@@ -212,13 +222,18 @@
   color: #17283a;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .ccl-station-point span {
-    opacity: 0;
-  }
+.ccl-station-point:focus-visible span {
+  opacity: 1;
+}
 
-  .ccl-station-point:hover span,
-  .ccl-station-point:focus-visible span {
+@media (hover: hover) and (pointer: fine) {
+  .ccl-station-point:hover span {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .ccl-station-point[aria-current="step"] span {
     opacity: 1;
   }
 }
@@ -437,6 +452,12 @@
   display: block;
 }
 
+.ccl-walkthrough-visual .ccl-walkthrough-route-image {
+  width: 75%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .ccl-walkthrough-visual img {
   display: block;
   width: 100%;
@@ -450,18 +471,24 @@
 }
 
 body.dark-mode .ccl-walkthrough {
-  background: #101c27;
+  background: #121521;
   color: #edf4f8;
 }
 
 body.dark-mode .ccl-walkthrough-layout {
-  border-color: #40515e;
-  background: #1b2b38;
+  border-color: #41475a;
+  background: #1c1f2b;
 }
 
 body.dark-mode .ccl-station-overview {
-  border-color: #40515e;
-  background: #1b2b38;
+  border-color: #41475a;
+  background: #1c1f2b;
+}
+
+body.dark-mode .ccl-station-zoom {
+  border-color: #667087;
+  background: #292d3d;
+  color: #edf4f8;
 }
 
 body.dark-mode .ccl-station-diagram > img:first-child {
@@ -469,16 +496,16 @@ body.dark-mode .ccl-station-diagram > img:first-child {
 }
 
 body.dark-mode .ccl-walkthrough-visual {
-  background: #263947;
+  background: #292d3d;
 }
 
 body.dark-mode .ccl-journey-insight {
-  background: #263947;
+  background: #292d3d;
 }
 
 body.dark-mode .ccl-journey-controls button {
-  border-color: #61798b;
-  background: #1b2b38;
+  border-color: #667087;
+  background: #292d3d;
   color: #edf4f8;
 }
 
@@ -489,8 +516,8 @@ body.dark-mode .ccl-journey-controls [data-journey-next]:not(:disabled) {
 }
 
 body.dark-mode .ccl-journey-controls button:disabled {
-  border-color: #40515e;
-  background: #263947;
+  border-color: #41475a;
+  background: #292d3d;
   color: #a9bac5;
 }
 
@@ -507,6 +534,31 @@ body.dark-mode .ccl-walkthrough-link:hover {
 }
 
 @media (max-width: 768px) {
+  .ccl-station-zoom:not([hidden]) {
+    display: block;
+    min-height: 44px;
+    margin: 1rem auto 0;
+    padding: 0.6rem 1rem;
+    border: 1px solid #aebfc9;
+    border-radius: 999px;
+    background: #fff;
+    color: #17283a;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .ccl-station-zoom-hint:not([hidden]) {
+    display: block;
+    margin: 0.75rem 0 0;
+    text-align: center;
+  }
+
+  .ccl-station-diagram-scroll.is-enlarged .ccl-station-diagram {
+    width: 200%;
+    max-width: none;
+  }
+
   .ccl-walkthrough {
     padding: 3rem 0;
   }

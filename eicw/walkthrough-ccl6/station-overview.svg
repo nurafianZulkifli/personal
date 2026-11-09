@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
   <style>
     @media (prefers-color-scheme: dark) {
-      .outer { fill: #263947; }
-      .interior { fill: #1b2b38; stroke: #536a79; }
-      .label { fill: #c2d3dc; }
-      .gate { fill: #526b79; stroke: #9eb4bf; }
-      .structure { stroke: #718b99; }
-      .platform { fill: #344b59; stroke: #718b99; }
-      .doors { stroke: #718b99; }
+      .outer { fill: #292d3d; }
+      .interior { fill: #121521; stroke: #667087; }
+      .label { fill: #d3dae7; }
+      .gate { fill: #59677a; stroke: #b0bdcb; }
+      .structure { stroke: #8190a3; }
+      .platform { fill: #343e4f; stroke: #8190a3; }
+      .doors { stroke: #8190a3; }
     }
   </style>
   <rect class="outer" width="960" height="540" rx="14" fill="#eef4f7"/>

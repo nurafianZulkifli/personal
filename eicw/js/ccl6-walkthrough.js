@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var status = journey.querySelector('.ccl-journey-status');
     var hotspots = journey.querySelector('.ccl-station-hotspots');
     var stationHint = journey.querySelector('[data-station-hint]');
+    var zoomButton = journey.querySelector('[data-station-zoom]');
+    var zoomHint = journey.querySelector('[data-station-zoom-hint]');
+    var diagramScroll = journey.querySelector('#station-diagram-scroll');
     var traveller = journey.querySelector('[data-station-traveller]');
     var previous = journey.querySelector('[data-journey-prev]');
     var next = journey.querySelector('[data-journey-next]');
@@ -143,6 +146,22 @@ document.addEventListener('DOMContentLoaded', function () {
             showStepAndScroll(Number(link.getAttribute('data-jump-step')));
         });
     });
+
+    if (zoomButton && zoomHint && diagramScroll) {
+        zoomButton.addEventListener('click', function () {
+            var enlarged = diagramScroll.classList.toggle('is-enlarged');
+            zoomButton.setAttribute('aria-pressed', String(enlarged));
+            zoomButton.textContent = enlarged ? 'Reduce overview' : 'Enlarge overview';
+            zoomHint.hidden = !enlarged;
+            if (enlarged) {
+                diagramScroll.setAttribute('tabindex', '0');
+            } else {
+                diagramScroll.removeAttribute('tabindex');
+                diagramScroll.scrollLeft = 0;
+            }
+        });
+        zoomButton.hidden = false;
+    }
 
     if (platformAudio && audioButton && audioError) {
         function updateAudioButton() {

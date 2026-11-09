@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="../css/style-mobNav.css">
   <link rel="stylesheet" href="../css/style-breakpoints.css">
   <link rel="stylesheet" href="../css/dark-mode.css">
-  <link rel="stylesheet" href="css/ccl6-walkthrough.css?v=16">
+  <link rel="stylesheet" href="css/ccl6-walkthrough.css?v=25">
 
   <style>
     .eicw-collapsible {
@@ -523,7 +523,7 @@
           <div class="ccl-station-overview-heading">
             <h3 id="station-overview-title">Your journey at a glance</h3>
             <p>A simplified station overview, not a map of the actual station.</p>
-            <p id="station-hint" data-station-hint hidden>Explore the signs and displays to discover each part of the journey. Hover over an area or use Tab to focus a point. Select a point to view its details, or use the arrow keys on a point, step heading or journey control to move between points.</p>
+            <p id="station-hint" data-station-hint hidden>Explore the signs and displays to discover each part of the journey. Hover or tap an area, or use Tab to focus a point. Select a point to view its details, or use the arrow keys on a point, step heading or journey control to move between points.</p>
             <p data-platform-audio-error role="status" hidden></p>
           </div>
           <div class="ccl-journey-controls" hidden>
@@ -531,14 +531,17 @@
             <button type="button" data-journey-replay>Start again</button>
             <button type="button" data-journey-next>Next &rarr;</button>
           </div>
+          <button type="button" class="ccl-station-zoom" data-station-zoom aria-pressed="false" aria-controls="station-diagram-scroll" hidden>Enlarge overview</button>
+          <p class="ccl-station-zoom-hint" data-station-zoom-hint hidden>Swipe left or right to explore the enlarged overview. Tap a point to see its details.</p>
+          <div class="ccl-station-diagram-scroll" id="station-diagram-scroll" role="region" aria-label="Station overview">
           <div class="ccl-station-diagram">
-            <img src="walkthrough-ccl6/station-overview.svg?v=7" alt="Illustrative cross-section of a station, showing the entrance, concourse and Platform B." width="960" height="540">
+            <img src="walkthrough-ccl6/station-overview.svg?v=8" alt="Illustrative cross-section of a station, showing the entrance, concourse and Platform B." width="960" height="540">
             <img class="ccl-station-entrance-display" src="walkthrough-ccl6/a1-thumb.png" alt="" width="190" height="55">
             <img class="ccl-station-entrance-icon" src="walkthrough-ccl6/exit.png" alt="" width="166" height="151">
             <img class="ccl-station-concourse-display" src="walkthrough-ccl6/a2-thumb.png" alt="" width="172" height="100">
             <img class="ccl-station-route-map" src="walkthrough-ccl6/a3-thumb.png" alt="" width="134" height="123">
             <img class="ccl-station-departure-display" src="walkthrough-ccl6/a4-thumb.png" alt="" width="275" height="108">
-            <img class="ccl-station-platform-sign" src="walkthrough-ccl6/a5-thumb.png" alt="" width="162" height="105">
+            <img class="ccl-station-platform-sign" src="walkthrough-ccl6/a5-thumb.png" alt="" width="331" height="48">
             <img class="ccl-station-platform-display" src="walkthrough-ccl6/a6-thumb.png?v=2" alt="" width="300" height="86">
             <svg class="ccl-station-traveller" data-station-traveller viewBox="0 0 32 64" aria-hidden="true" focusable="false" hidden>
               <circle cx="16" cy="8" r="6"/>
@@ -555,6 +558,7 @@
               <button type="button" class="ccl-station-point ccl-station-point-6" data-journey-step="5" aria-label="Step 6: Platform waiting display"><span aria-hidden="true">6</span></button>
             </div>
             <button type="button" class="ccl-station-audio-button" data-platform-audio-button aria-label="Play Platform B announcement" aria-controls="platform-announcement" hidden>&#9654;</button>
+          </div>
           </div>
         </section>
         <p class="ccl-journey-status" role="status" aria-live="polite" aria-atomic="true"></p>
@@ -595,8 +599,8 @@
               <a class="ccl-walkthrough-link" href="#journey-detail-3">Explore the route diagrams <span aria-hidden="true">&rarr;</span></a>
             </div>
             <figure class="ccl-walkthrough-visual">
-              <a href="img/ccl6-9a.png"><img src="img/ccl6-9a.png" alt="Proposed Promenade route diagrams showing Platform B clockwise via Bayfront and Platform A anticlockwise via Paya Lebar." loading="lazy" decoding="async"></a>
-              <figcaption>Route diagrams at Promenade &middot; Select to view full size</figcaption>
+              <a class="ccl-walkthrough-route-image" href="../eicw//walkthrough-ccl6/new-md.png"><img src="../eicw//walkthrough-ccl6/new-md.png" alt="Proposed Promenade route diagrams showing Platform B clockwise via Bayfront and Platform A anticlockwise via Paya Lebar." loading="lazy" decoding="async"></a>
+              <figcaption>Route diagram at Promenade - Clockwise &middot; Select to view full size</figcaption>
             </figure>
           </article>
           <article class="ccl-walkthrough-layout" data-journey-panel>
@@ -641,7 +645,7 @@
               <a class="ccl-walkthrough-link" href="#journey-detail-6">Explore the platform displays <span aria-hidden="true">&rarr;</span></a>
             </div>
             <figure class="ccl-walkthrough-visual">
-              <a href="img/ccl6-1.png"><img src="img/ccl6-1.png" alt="Example Platform B waiting screen showing a clockwise train via Bayfront and a spur train ending at Dhoby Ghaut." loading="lazy" decoding="async"></a>
+              <a href="../eicw//walkthrough-ccl6/new-ratis.png"><img src="../eicw//walkthrough-ccl6/new-ratis.png" alt="Example Platform B waiting screen showing a clockwise train via Bayfront and a spur train ending at Dhoby Ghaut." loading="lazy" decoding="async"></a>
               <figcaption>Platform waiting display &middot; Select to view full size</figcaption>
             </figure>
           </article>
@@ -1153,7 +1157,7 @@
   <script src="../js/mob-navtabs.js"></script>
 
   <script src="js/ccl6.js?v=2"></script>
-  <script src="js/ccl6-walkthrough.js?v=11"></script>
+  <script src="js/ccl6-walkthrough.js?v=12"></script>
   <script src="js/eicw-nav.js"></script>
 
   <script src="../js/jquery.min.js"></script>

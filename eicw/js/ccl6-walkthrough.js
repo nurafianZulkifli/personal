@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var panels = Array.from(journey.querySelectorAll('[data-journey-panel]'));
     var detailSections = Array.from(document.querySelectorAll('[data-journey-section]'));
     var detailContent = Array.from(document.querySelectorAll('[data-journey-content]'));
+    var panelsContainer = journey.querySelector('[data-journey-panels]');
     var sectionBanners = Array.from(document.querySelectorAll('[data-journey-section-banner]'));
     var stepButtons = Array.from(journey.querySelectorAll('[data-journey-step]'));
     var controls = journey.querySelector('.ccl-journey-controls');
@@ -29,6 +30,17 @@ document.addEventListener('DOMContentLoaded', function () {
         ['13%', '47.87%'], ['44%', '47.87%'], ['68%', '47.87%'],
         ['90%', '47.87%'], ['42%', '87.31%'], ['76%', '87.31%']
     ];
+
+    panels.forEach(function (panel, index) {
+        var target = detailContent.find(function (content) {
+            return Number(content.getAttribute('data-journey-content')) === index;
+        });
+        if (!target) {
+            throw new Error('Missing accordion content for walkthrough step ' + (index + 1));
+        }
+        target.insertBefore(panel, target.firstChild);
+    });
+    if (panelsContainer) panelsContainer.remove();
 
     function showStep(index, moveFocus, preserveHash) {
         clearTimeout(scrollTimer);
@@ -103,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showStepAndScroll(Number(button.getAttribute('data-journey-step')));
         });
     });
-    journey.addEventListener('keydown', function (event) {
+    document.addEventListener('keydown', function (event) {
         if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
         var button = event.target.closest('[data-journey-step]');
         var heading = event.target.matches('[data-journey-panel] h3');

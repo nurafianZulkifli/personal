@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (dirvPanel) {
-            dirvPanel.setAttribute('aria-labelledby', variant === 'B' ? 'dirv-variant-b' : 'dirv-variant-a');
+            dirvPanel.setAttribute('aria-labelledby', 'dirv-variant-' + variant.toLowerCase());
         }
 
         if (dirvCaption) {
@@ -337,6 +337,86 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     setDirectionVariant(getActiveDirvVariant());
+});
+
+// Direction variant announcement buttons
+document.addEventListener('DOMContentLoaded', function () {
+    var announcementAudio = document.getElementById('dirv-announcement-audio');
+    var announcementError = document.getElementById('dirv-announcement-error');
+    var announcementButtons = Array.from(document.querySelectorAll('[data-dirv-announcement]'));
+    var variantTabs = Array.from(document.querySelectorAll('.dirv-variant-tab'));
+    var announcementSources = {
+        A: 'walkthrough-ccl6/pmn-platA.mp3',
+        B: 'walkthrough-ccl6/pmn-platB.mp3',
+        C: 'walkthrough-ccl6/pmn-platB_DBG.mp3',
+        D: 'walkthrough-ccl6/pmn-platA_PER.mp3'
+    };
+    var announcementNames = {
+        A: 'Anticlockwise - Loop via Paya Lebar',
+        B: 'Clockwise - Loop via Bayfront',
+        C: 'Clockwise - Ends at Dhoby Ghaut',
+        D: 'Anticlockwise - Ends at Prince Edward Road'
+    };
+    var currentAnnouncement = null;
+    var activeVariant = getActiveDirvVariant();
+    var playbackRequest = 0;
+
+    if (!announcementAudio || !announcementError || announcementButtons.length === 0) return;
+
+    function updateAnnouncementButtons() {
+        announcementButtons.forEach(function (button) {
+            var variant = button.getAttribute('data-dirv-announcement');
+            var isPlaying = variant === currentAnnouncement && !announcementAudio.paused;
+            var label = (isPlaying ? 'Pause' : 'Play') + ' announcement for ' + announcementNames[variant];
+            button.hidden = variant !== activeVariant;
+            button.textContent = isPlaying ? '\u23f8' : '\u25b6';
+            button.setAttribute('aria-label', label);
+            button.setAttribute('title', label);
+        });
+    }
+
+    variantTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            var variant = tab.getAttribute('data-dirv-variant');
+            if (variant === activeVariant) return;
+            activeVariant = variant;
+            playbackRequest++;
+            announcementAudio.pause();
+            currentAnnouncement = null;
+            announcementError.hidden = true;
+            updateAnnouncementButtons();
+        });
+    });
+
+    announcementButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            var variant = button.getAttribute('data-dirv-announcement');
+            if (variant === currentAnnouncement && !announcementAudio.paused) {
+                announcementAudio.pause();
+                return;
+            }
+
+            announcementAudio.pause();
+            currentAnnouncement = variant;
+            announcementError.hidden = true;
+            announcementAudio.src = announcementSources[variant];
+            announcementAudio.load();
+            updateAnnouncementButtons();
+            var request = ++playbackRequest;
+            announcementAudio.play().catch(function (error) {
+                if (error.name === 'AbortError' || request !== playbackRequest) return;
+                announcementError.textContent = 'Unable to play this announcement. Please try again.';
+                announcementError.hidden = false;
+                currentAnnouncement = null;
+                updateAnnouncementButtons();
+            });
+        });
+    });
+
+    announcementAudio.addEventListener('play', updateAnnouncementButtons);
+    announcementAudio.addEventListener('pause', updateAnnouncementButtons);
+    announcementAudio.addEventListener('ended', updateAnnouncementButtons);
+    updateAnnouncementButtons();
 });
 
 // Wayfinding flow variant tabs

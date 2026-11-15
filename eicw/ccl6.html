@@ -143,6 +143,48 @@
       box-shadow: 0 5px 14px rgba(20, 58, 91, 0.28);
     }
 
+    .dirv-announcement-controls {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      padding: 0 15px;
+      margin: -12px 0 8px;
+    }
+
+    .dirv-announcement-button {
+      border: 1px solid #c9d4dc;
+      background: #f6fafc;
+      color: #274257;
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .dirv-announcement-button:hover {
+      background: #c7e3fb;
+      border-color: #90b2cc;
+    }
+
+    .dirv-announcement-button:focus-visible {
+      outline: 3px solid #5a9aaf;
+      outline-offset: 2px;
+    }
+
+    body.dark-mode .dirv-announcement-button {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #e9f5ff;
+    }
+
+    body.dark-mode .dirv-announcement-button:hover {
+      background: #52718d;
+      border-color: rgba(255, 255, 255, 0.32);
+    }
+
     .wbnrfz_details_body {
       padding-bottom: 0em;
     }
@@ -476,6 +518,26 @@
                   Anticlockwise - Ends at Prince Edward Road
                 </button>
               </div>
+              <div class="dirv-announcement-controls" role="group" aria-label="Direction variant announcements">
+                <button type="button" class="dirv-announcement-button" data-dirv-announcement="A"
+                  aria-label="Play announcement for Anticlockwise - Loop via Paya Lebar"
+                  title="Play announcement for Anticlockwise - Loop via Paya Lebar"
+                  aria-controls="dirv-announcement-audio">&#9654;</button>
+                <button type="button" class="dirv-announcement-button" data-dirv-announcement="B" hidden
+                  aria-label="Play announcement for Clockwise - Loop via Bayfront"
+                  title="Play announcement for Clockwise - Loop via Bayfront"
+                  aria-controls="dirv-announcement-audio">&#9654;</button>
+                <button type="button" class="dirv-announcement-button" data-dirv-announcement="C" hidden
+                  aria-label="Play announcement for Clockwise - Ends at Dhoby Ghaut"
+                  title="Play announcement for Clockwise - Ends at Dhoby Ghaut"
+                  aria-controls="dirv-announcement-audio">&#9654;</button>
+                <button type="button" class="dirv-announcement-button" data-dirv-announcement="D" hidden
+                  aria-label="Play announcement for Anticlockwise - Ends at Prince Edward Road"
+                  title="Play announcement for Anticlockwise - Ends at Prince Edward Road"
+                  aria-controls="dirv-announcement-audio">&#9654;</button>
+              </div>
+              <audio id="dirv-announcement-audio" preload="none" hidden></audio>
+              <p id="dirv-announcement-error" role="status" aria-live="polite" hidden></p>
 
               <div class="banner-eicw" id="dirv-image-wrap" role="tabpanel" aria-labelledby="dirv-variant-a">
                 <a href="img-2/dirv1-light.png" id="dirv1" class="portfolio-img">
@@ -490,6 +552,8 @@
       </div>
     </div>
   </section>
+
+  <hr>
 
   <!-- Guided journey -->
   <section class="ccl-walkthrough" id="journey" aria-labelledby="walkthrough-title">
@@ -1160,7 +1224,7 @@
 
   <script src="../js/mob-navtabs.js"></script>
 
-  <script src="js/ccl6.js?v=3"></script>
+  <script src="js/ccl6.js?v=5"></script>
   <script src="js/ccl6-walkthrough.js?v=12"></script>
   <script src="js/eicw-nav.js"></script>
 

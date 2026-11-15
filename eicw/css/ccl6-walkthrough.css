@@ -493,6 +493,11 @@
 .ccl-walkthrough-visual figcaption {
   margin-top: 0.75rem;
   font-size: 0.875rem;
+  cursor: default;
+}
+
+body.dark-mode .ccl-walkthrough-visual figcaption {
+  color: #fff;
 }
 
 body.dark-mode .ccl-walkthrough {

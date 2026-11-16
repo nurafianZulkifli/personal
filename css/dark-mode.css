@@ -706,8 +706,8 @@ body.dark-mode .eicw-nav-btn:hover {
 }
 
 body.dark-mode .eicw-nav-menu {
-    background: #1e2235;
-    border-color: #393e53;
+    background: rgba(30, 34, 53, 0.9);
+    border-color: rgba(255, 255, 255, 0.07);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 

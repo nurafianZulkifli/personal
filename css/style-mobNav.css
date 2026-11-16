@@ -9,6 +9,19 @@ body.dark-mode .navbar {
     background: #14192b86 !important;
 }
 
+.navbar-container .navbar,
+.mobile-bottom-nav ul {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.55), 0 8px 32px rgba(0, 0, 0, 0.14);
+    -webkit-backdrop-filter: blur(25px) saturate(150%);
+    backdrop-filter: blur(25px) saturate(150%);
+}
+
+body.dark-mode .navbar-container .navbar,
+body.dark-mode .mobile-bottom-nav ul {
+    border-color: rgba(255, 255, 255, 0.07);
+}
+
 body.dark-mode .page-header-section {
     background: #121521 !important;
 }
